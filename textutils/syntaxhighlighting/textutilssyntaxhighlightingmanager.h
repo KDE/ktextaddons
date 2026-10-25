@@ -57,7 +57,7 @@ public:
     KSyntaxHighlighting::Repository &repo() const;
 
 private:
-    TextUtilsSyntaxHighlightingManager();
+    TEXTUTILS_NO_EXPORT TextUtilsSyntaxHighlightingManager();
     TEXTUTILS_NO_EXPORT void initialize();
     mutable KSyntaxHighlighting::Repository mRepo;
     KSyntaxHighlighting::Definition mDefaultDef;

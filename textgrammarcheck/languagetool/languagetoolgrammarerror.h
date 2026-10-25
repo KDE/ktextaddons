@@ -19,7 +19,7 @@ public:
     void setTesting(bool b);
 
 private:
-    [[nodiscard]] static QStringList parseSuggestion(const QJsonObject &obj);
+    [[nodiscard]] TEXTGRAMMARCHECK_NO_EXPORT static QStringList parseSuggestion(const QJsonObject &obj);
     bool mTesting = false;
 };
 }

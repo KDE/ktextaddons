@@ -45,7 +45,7 @@ public:
     [[nodiscard]] int retry() const;
 
 private:
-    void parseLine(QByteArrayView line, QList<Event> &events);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void parseLine(QByteArrayView line, QList<Event> &events);
     QByteArray mBuffer;
     QByteArray mEventType;
     QByteArray mData;

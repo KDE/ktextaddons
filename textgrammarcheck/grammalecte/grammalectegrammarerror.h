@@ -17,8 +17,8 @@ public:
     void parse(const QJsonObject &obj, int blockindex) override;
 
 private:
-    [[nodiscard]] static QStringList parseSuggestion(const QJsonObject &obj);
-    [[nodiscard]] static QColor parseColor(const QJsonObject &obj);
+    [[nodiscard]] TEXTGRAMMARCHECK_NO_EXPORT static QStringList parseSuggestion(const QJsonObject &obj);
+    [[nodiscard]] TEXTGRAMMARCHECK_NO_EXPORT static QColor parseColor(const QJsonObject &obj);
 };
 }
 Q_DECLARE_METATYPE(TextGrammarCheck::GrammalecteGrammarError)

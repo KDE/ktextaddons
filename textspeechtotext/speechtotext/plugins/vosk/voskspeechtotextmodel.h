@@ -55,10 +55,10 @@ public:
 
 private:
     int columnCount(const QModelIndex &parent) const override;
-    [[nodiscard]] bool isInstalled(const QString &shortName) const;
-    [[nodiscard]] QString versionInstalled(const QString &shortName) const;
-    [[nodiscard]] bool needToUpdateLanguageModel(const VoskSpeechToTextInfo &language) const;
-    [[nodiscard]] bool isActive(const VoskSpeechToTextInfo &language) const;
+    [[nodiscard]] LIBVOSKSPEECHTOTEXT_NO_EXPORT bool isInstalled(const QString &shortName) const;
+    [[nodiscard]] LIBVOSKSPEECHTOTEXT_NO_EXPORT QString versionInstalled(const QString &shortName) const;
+    [[nodiscard]] LIBVOSKSPEECHTOTEXT_NO_EXPORT bool needToUpdateLanguageModel(const VoskSpeechToTextInfo &language) const;
+    [[nodiscard]] LIBVOSKSPEECHTOTEXT_NO_EXPORT bool isActive(const VoskSpeechToTextInfo &language) const;
     QList<VoskSpeechToTextInfo> mSpeechToTextInfos;
     QList<VoskEngineUtils::LanguageInstalled> mLanguageInstalled;
     QString mActiveLanguage;

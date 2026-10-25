@@ -49,9 +49,9 @@ public:
     void updateInstalledLanguage();
 
 private:
-    [[nodiscard]] bool isInstalled(const QString &shortName) const;
-    [[nodiscard]] int versionInstalled(const QString &shortName) const;
-    [[nodiscard]] bool needToUpdateLanguageModel(const Translator &translator) const;
+    [[nodiscard]] LIBBERGAMOT_NO_EXPORT bool isInstalled(const QString &shortName) const;
+    [[nodiscard]] LIBBERGAMOT_NO_EXPORT int versionInstalled(const QString &shortName) const;
+    [[nodiscard]] LIBBERGAMOT_NO_EXPORT bool needToUpdateLanguageModel(const Translator &translator) const;
     QVector<Translator> mTranslators;
     QVector<BergamotEngineUtils::LanguageInstalled> mLanguageInstalled;
 };

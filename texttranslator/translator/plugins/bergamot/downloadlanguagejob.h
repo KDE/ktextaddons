@@ -32,8 +32,8 @@ Q_SIGNALS:
     void extractDone();
 
 private:
-    void slotExtractDone();
-    void extractLanguage();
+    LIBBERGAMOT_NO_EXPORT void slotExtractDone();
+    LIBBERGAMOT_NO_EXPORT void extractLanguage();
     QCryptographicHash *mHash = nullptr;
     QUrl mUrl;
     QString mCheckSum;

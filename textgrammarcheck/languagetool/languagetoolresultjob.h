@@ -50,10 +50,10 @@ private:
         LanguageNotDefined,
     };
 
-    [[nodiscard]] LanguageToolResultJob::JobError canStartError() const;
-    void slotCheckGrammarFinished();
-    void addRequestAttribute(QNetworkRequest &request) const;
-    void slotFinish(QNetworkReply *reply);
+    [[nodiscard]] TEXTGRAMMARCHECK_NO_EXPORT LanguageToolResultJob::JobError canStartError() const;
+    TEXTGRAMMARCHECK_NO_EXPORT void slotCheckGrammarFinished();
+    TEXTGRAMMARCHECK_NO_EXPORT void addRequestAttribute(QNetworkRequest &request) const;
+    TEXTGRAMMARCHECK_NO_EXPORT void slotFinish(QNetworkReply *reply);
     QStringList mArguments;
     QString mText;
     QString mUrl;

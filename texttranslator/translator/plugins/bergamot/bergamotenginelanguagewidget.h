@@ -21,13 +21,13 @@ public:
     ~BergamotEngineLanguageWidget() override;
 
 private:
-    void slotTextChanged(const QString &str);
-    void slotDownLoad(const QString &url, const QString &checkSum);
-    void slotDelete(const QString &identifier);
-    void slotUpdateListLanguage();
-    void slotError(const QString &str);
-    void updateListModel();
-    void slotProgressInfo(const ManagerModelTranslator::ProgressInfo &info);
+    LIBBERGAMOT_NO_EXPORT void slotTextChanged(const QString &str);
+    LIBBERGAMOT_NO_EXPORT void slotDownLoad(const QString &url, const QString &checkSum);
+    LIBBERGAMOT_NO_EXPORT void slotDelete(const QString &identifier);
+    LIBBERGAMOT_NO_EXPORT void slotUpdateListLanguage();
+    LIBBERGAMOT_NO_EXPORT void slotError(const QString &str);
+    LIBBERGAMOT_NO_EXPORT void updateListModel();
+    LIBBERGAMOT_NO_EXPORT void slotProgressInfo(const ManagerModelTranslator::ProgressInfo &info);
     QTreeView *const mTreeView;
     QLineEdit *const mSearchLineEdit;
     TranslatorModel *const mTranslatorModel;

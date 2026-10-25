@@ -41,6 +41,6 @@ private:
     TextAutoGenerateResultWidget *const mTextAutoGenerateResultWidget;
     TextAutoGenerateQuickAskHeaderWidget *const mTextAutoGenerateQuickAskHeaderWidget;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
-    void slotShowInternalToolsMetaData();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotShowInternalToolsMetaData();
 };
 }

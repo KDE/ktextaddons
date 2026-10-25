@@ -27,9 +27,9 @@ Q_SIGNALS:
     void configureChanged(const QString &engineName);
 
 private:
-    void fillEngine();
-    void slotConfigureEngine();
-    void slotEngineChanged(int index);
+    TEXTTRANSLATOR_NO_EXPORT void fillEngine();
+    TEXTTRANSLATOR_NO_EXPORT void slotConfigureEngine();
+    TEXTTRANSLATOR_NO_EXPORT void slotEngineChanged(int index);
     QComboBox *const mEngineComboBox;
     QToolButton *const mConfigureEngine;
 };

@@ -27,5 +27,5 @@ Q_SIGNALS:
 
 private:
     QString mSource;
-    void extractRecursive(const KArchiveDirectory *dir, const QString &path);
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void extractRecursive(const KArchiveDirectory *dir, const QString &path);
 };

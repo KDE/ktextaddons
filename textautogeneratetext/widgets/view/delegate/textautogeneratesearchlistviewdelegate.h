@@ -34,9 +34,12 @@ private:
         // TODO remove it ???
         qreal baseLine; // used to draw sender/timestamp
     };
-    void draw(QPainter *painter, const MessageLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
-    [[nodiscard]] TextAutoGenerateSearchListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    TEXTAUTOGENERATETEXT_NO_EXPORT void
+    draw(QPainter *painter, const MessageLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateSearchListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option,
+                                                                                                                const QModelIndex &index) const;
     [[nodiscard]] bool mouseEvent(QEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index) override;
-    [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool
+    handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
 };
 }

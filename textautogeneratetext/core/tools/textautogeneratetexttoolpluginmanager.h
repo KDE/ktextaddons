@@ -103,7 +103,7 @@ public:
     [[nodiscard]] QJsonArray internalToolsMetaData() const;
 
 private:
-    explicit TextAutoGenerateTextToolPluginManager(QObject *parent = nullptr);
+    TEXTAUTOGENERATETEXT_NO_EXPORT explicit TextAutoGenerateTextToolPluginManager(QObject *parent = nullptr);
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugin(TextAutoGenerateTextToolPluginManagerInfo *item);
     QList<TextAutoGenerateTextToolPluginManagerInfo> mPluginList;

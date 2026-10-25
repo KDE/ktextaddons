@@ -42,8 +42,8 @@ Q_SIGNALS:
     void searchStringEmpty(bool);
 
 private:
-    void slotAutoSearch(const QString &str);
-    void slotRegularExpressionChanged(bool b);
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotAutoSearch(const QString &str);
+    TEXTCUSTOMEDITOR_NO_EXPORT void slotRegularExpressionChanged(bool b);
     QLineEdit *const mSearch;
     QAction *mCaseSensitiveAct = nullptr;
     QAction *mWholeWordAct = nullptr;

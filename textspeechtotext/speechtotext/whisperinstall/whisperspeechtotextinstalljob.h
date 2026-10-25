@@ -38,9 +38,9 @@ Q_SIGNALS:
     void installMessage(const QString &message);
 
 private:
-    void installNextModule();
-    void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
-    void failed(const QString &errorMessage);
+    SPEECHTOTEXTWHISPERINSTALL_NO_EXPORT void installNextModule();
+    SPEECHTOTEXTWHISPERINSTALL_NO_EXPORT void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
+    SPEECHTOTEXTWHISPERINSTALL_NO_EXPORT void failed(const QString &errorMessage);
 
     QStringList mModules;
     QStringList mRemainingModules;

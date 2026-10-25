@@ -159,14 +159,20 @@ private:
         QList<QRect> attachmentsRectList;
     };
 
-    [[nodiscard]] TextAutoGenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
-    void draw(QPainter *painter, const MessageLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
-    [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect decoRect, QRect textRect, const QStyleOptionViewItem &option, const QModelIndex &index);
-    [[nodiscard]] bool maybeStartDrag(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
-    void drawDateAndIcons(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option, const MessageLayout &layout) const;
-    [[nodiscard]] int buttonIconSize(const QStyleOptionViewItem &option) const;
-    void drawInProgressIndicator(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option, const MessageLayout &layout) const;
-    void slotUpdateColors();
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateListViewDelegate::MessageLayout doLayout(const QStyleOptionViewItem &option,
+                                                                                                          const QModelIndex &index) const;
+    TEXTAUTOGENERATETEXT_NO_EXPORT void
+    draw(QPainter *painter, const MessageLayout &layout, const QModelIndex &index, const QStyleOptionViewItem &option) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool
+    handleMouseEvent(QMouseEvent *mouseEvent, QRect decoRect, QRect textRect, const QStyleOptionViewItem &option, const QModelIndex &index);
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool
+    maybeStartDrag(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void
+    drawDateAndIcons(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option, const MessageLayout &layout) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int buttonIconSize(const QStyleOptionViewItem &option) const;
+    TEXTAUTOGENERATETEXT_NO_EXPORT void
+    drawInProgressIndicator(QPainter *painter, const QModelIndex &index, const QStyleOptionViewItem &option, const MessageLayout &layout) const;
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotUpdateColors();
 
     const QIcon mEditedIcon;
     const QIcon mCopyIcon;

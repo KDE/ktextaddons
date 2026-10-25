@@ -75,7 +75,7 @@ Q_SIGNALS:
     void repaintNeeded(const QModelIndex &index);
 
 private:
-    void selectWord(const QModelIndex &index, int charPos, QTextDocument *doc);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void selectWord(const QModelIndex &index, int charPos, QTextDocument *doc);
     struct OrderedPositions {
         int fromRow;
         int fromCharPos;
@@ -83,8 +83,9 @@ private:
         int toCharPos;
     };
 
-    [[nodiscard]] OrderedPositions orderedPositions() const;
-    void selectionText(const OrderedPositions ordered, Format format, int row, const QModelIndex &index, QTextDocument *doc, QString &str) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT OrderedPositions orderedPositions() const;
+    TEXTAUTOGENERATETEXT_NO_EXPORT void
+    selectionText(const OrderedPositions ordered, Format format, int row, const QModelIndex &index, QTextDocument *doc, QString &str) const;
 
     QPersistentModelIndex mStartIndex;
     QPersistentModelIndex mEndIndex;

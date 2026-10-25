@@ -37,7 +37,7 @@ protected:
     void wheelEvent(QWheelEvent *e) override;
 
 private:
-    [[nodiscard]] QSize originalImageSize() const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QSize originalImageSize() const;
     TextAutoGenerateGraphicsPixmapItem *const mGraphicsPixmapItem;
     QGraphicsProxyWidget *mGraphicsProxyWidget = nullptr;
     qreal mMinimumZoom;

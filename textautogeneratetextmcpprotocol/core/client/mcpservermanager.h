@@ -62,7 +62,7 @@ Q_SIGNALS:
     void serverLoaded();
 
 private:
-    void loadAuthTokens(const QList<QByteArray> &identifiers);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_NO_EXPORT void loadAuthTokens(const QList<QByteArray> &identifiers);
     // Auth tokens stored in keychain, used to avoid rewriting unchanged ones
     QMap<QByteArray, QByteArray> mStoredAuthTokens;
     QSet<QByteArray> mPendingAuthTokenReads;

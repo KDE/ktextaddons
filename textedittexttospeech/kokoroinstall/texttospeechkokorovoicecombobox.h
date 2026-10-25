@@ -30,9 +30,9 @@ protected:
     void resizeEvent(QResizeEvent *event) override;
 
 private:
-    void fill();
-    void toggleItem(const QModelIndex &index);
-    void updateDisplayText();
+    KOKOROINSTALLTEXTTOSPEECH_NO_EXPORT void fill();
+    KOKOROINSTALLTEXTTOSPEECH_NO_EXPORT void toggleItem(const QModelIndex &index);
+    KOKOROINSTALLTEXTTOSPEECH_NO_EXPORT void updateDisplayText();
 
     bool mUpdatingSelection = false;
 };

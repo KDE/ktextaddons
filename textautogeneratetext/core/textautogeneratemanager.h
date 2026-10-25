@@ -667,7 +667,7 @@ Q_SIGNALS:
     void information(const QString &str);
 
 private Q_SLOTS:
-    void slotChatListChanged(const QString &id);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotChatListChanged(const QString &id);
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void setChatPersistence(const QByteArray &chatId, TextAutoGenerateChat::Persistence persistence);

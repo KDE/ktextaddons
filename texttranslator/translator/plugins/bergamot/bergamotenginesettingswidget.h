@@ -22,7 +22,7 @@ public:
     [[nodiscard]] BergamotEngineUtils::SettingsInfo settingsInfo() const;
 
 private:
-    void fillCombobox();
+    LIBBERGAMOT_NO_EXPORT void fillCombobox();
     QComboBox *const mNumberThreads;
     QComboBox *const mMemoryByThreads;
     QCheckBox *const mUseLocalCache;

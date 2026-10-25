@@ -39,15 +39,17 @@ private:
         QList<CategoryLayout> categoriesLayout;
         QRect categoryRect;
     };
-    void draw(QPainter *painter,
-              const PluginCommonModelInstalledInfosDelegate::ModelInfoLayout &layout,
-              const QModelIndex &index,
-              const QStyleOptionViewItem &option) const;
-    void drawCategories(QPainter *painter,
-                        const PluginCommonModelInstalledInfosDelegate::ModelInfoLayout &layout,
-                        const QModelIndex &index,
-                        const QStyleOptionViewItem &option) const;
+    TEXTAUTOGENERATEPLUGINCOMMON_NO_EXPORT void draw(QPainter *painter,
+                                                     const PluginCommonModelInstalledInfosDelegate::ModelInfoLayout &layout,
+                                                     const QModelIndex &index,
+                                                     const QStyleOptionViewItem &option) const;
+    TEXTAUTOGENERATEPLUGINCOMMON_NO_EXPORT void drawCategories(QPainter *painter,
+                                                               const PluginCommonModelInstalledInfosDelegate::ModelInfoLayout &layout,
+                                                               const QModelIndex &index,
+                                                               const QStyleOptionViewItem &option) const;
 
-    [[nodiscard]] PluginCommonModelInstalledInfosDelegate::ModelInfoLayout doLayout(const QStyleOptionViewItem &option, const QModelIndex &index) const;
-    [[nodiscard]] bool handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
+    [[nodiscard]] TEXTAUTOGENERATEPLUGINCOMMON_NO_EXPORT PluginCommonModelInstalledInfosDelegate::ModelInfoLayout doLayout(const QStyleOptionViewItem &option,
+                                                                                                                           const QModelIndex &index) const;
+    [[nodiscard]] TEXTAUTOGENERATEPLUGINCOMMON_NO_EXPORT bool
+    handleMouseEvent(QMouseEvent *mouseEvent, QRect messageRect, const QStyleOptionViewItem &option, const QModelIndex &index);
 };

@@ -21,10 +21,10 @@ public:
     [[nodiscard]] bool exportData(const QString &language, const QString &fileName, QString &errorMessage, const QString &writablePath) override;
 
 private:
-    [[nodiscard]] bool exportDocumentList();
-    [[nodiscard]] bool exportSentenceExceptList();
-    [[nodiscard]] bool exportWordExceptList();
-    [[nodiscard]] bool exportManifest();
+    [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT bool exportDocumentList();
+    [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT bool exportSentenceExceptList();
+    [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT bool exportWordExceptList();
+    [[nodiscard]] TEXTAUTOCORRECTIONCORE_NO_EXPORT bool exportManifest();
     std::unique_ptr<KZip> mZip;
 };
 }

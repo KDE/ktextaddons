@@ -29,8 +29,8 @@ public:
     void setParentWidget(QWidget *parentWidget);
 
 private:
-    void slotGetLanguagesFinished(const QString &result);
-    void slotGetLanguagesError(const QString &error);
+    TEXTGRAMMARCHECK_NO_EXPORT void slotGetLanguagesFinished(const QString &result);
+    TEXTGRAMMARCHECK_NO_EXPORT void slotGetLanguagesError(const QString &error);
     static inline bool mBListWasLoaded = false;
     LanguageToolComboBox *mLanguageToolCombobox = nullptr;
     QWidget *mParentWidget = nullptr;

@@ -23,14 +23,14 @@ public:
     ~VoskEngineLanguageWidget() override;
 
 private:
-    void slotTextChanged(const QString &str);
-    void slotDownLoad(const VoskDownloadLanguageJob::DownloadLanguageInfo &info);
-    void slotDelete(const QString &identifier);
-    void slotUpdateListLanguage();
-    void slotError(const QString &str);
-    void updateListModel();
-    void slotProgressInfo(const ManagerModelVoskSpeechToText::ProgressInfo &info);
-    void slotDownloadLanguage();
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void slotTextChanged(const QString &str);
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void slotDownLoad(const VoskDownloadLanguageJob::DownloadLanguageInfo &info);
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void slotDelete(const QString &identifier);
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void slotUpdateListLanguage();
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void slotError(const QString &str);
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void updateListModel();
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void slotProgressInfo(const ManagerModelVoskSpeechToText::ProgressInfo &info);
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void slotDownloadLanguage();
     VoskEngineLanguageTreeView *const mTreeView;
     QLineEdit *const mSearchLineEdit;
     VoskSpeechToTextModel *const mVoskSpeechToTextModel;

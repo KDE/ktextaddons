@@ -85,7 +85,7 @@ public:
     [[nodiscard]] QString generatePluginsInformation() const;
 
 private:
-    explicit TextAutoGeneratePluginTextManager(QObject *parent = nullptr);
+    TEXTAUTOGENERATETEXT_NO_EXPORT explicit TextAutoGeneratePluginTextManager(QObject *parent = nullptr);
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugin(TextAutoGeneratePluginTextManagerInfo *item);
     QList<TextAutoGeneratePluginTextManagerInfo> mPluginList;

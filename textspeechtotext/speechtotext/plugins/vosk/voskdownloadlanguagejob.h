@@ -36,9 +36,9 @@ Q_SIGNALS:
     void extractDone();
 
 private:
-    void generateInstalledLanguageInfo();
-    void extractLanguage();
-    void slotGenerateInstalledLanguageInfoDone();
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void generateInstalledLanguageInfo();
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void extractLanguage();
+    LIBVOSKSPEECHTOTEXT_NO_EXPORT void slotGenerateInstalledLanguageInfoDone();
     DownloadLanguageInfo mInfo;
     QCryptographicHash *mHash = nullptr;
     QTemporaryFile *mDestination = nullptr;

@@ -61,12 +61,12 @@ Q_SIGNALS:
     void moveChatToProjectRequested(const QByteArray &chatId, const QByteArray &projectId);
 
 private:
-    void onRowsInserted(const QModelIndex &parent, int first, int last);
-    void onRowsAboutToBeRemoved(const QModelIndex &parent, int first, int last);
-    void onDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
-    void onProjectsDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
-    void rebuildSections();
-    void resetSections();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void onRowsInserted(const QModelIndex &parent, int first, int last);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void onRowsAboutToBeRemoved(const QModelIndex &parent, int first, int last);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void onDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void onProjectsDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void rebuildSections();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void resetSections();
 
     struct Section {
         //! The project this section stands for, empty when it is a date section.
@@ -89,13 +89,13 @@ private:
         Section,
         History,
     };
-    [[nodiscard]] IndexType type(const QModelIndex &index) const;
-    [[nodiscard]] bool isValidSectionRow(int row) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT IndexType type(const QModelIndex &index) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool isValidSectionRow(int row) const;
     //! Returns the row of the section the given source index belongs to.
-    [[nodiscard]] int sectionId(const QModelIndex &sourceIndex) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int sectionId(const QModelIndex &sourceIndex) const;
     /*! Returns the project a drop on \a parent would move the chats to, or an empty identifier when
      *  \a parent is not a project. */
-    [[nodiscard]] QByteArray dropProjectId(const QModelIndex &parent) const;
-    [[nodiscard]] TextAutoGenerateProjectsModel *projectsModel() const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray dropProjectId(const QModelIndex &parent) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateProjectsModel *projectsModel() const;
 };
 }
