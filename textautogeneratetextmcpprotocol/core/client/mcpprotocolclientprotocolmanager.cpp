@@ -15,6 +15,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitResult>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitationCompleteNotification>
 
+#include <KLocalizedString>
 #include <QCoreApplication>
 #include <QJsonArray>
 #include <QJsonObject>
@@ -432,7 +433,7 @@ void McpProtocolClientProtocolManager::checkTimeouts()
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Request timed out:" << identifier << type;
         if (type == MethodType::Initialize) {
             // Initialize request must not be cancelled: stop client
-            Q_EMIT error(u"Initialize request timed out"_s);
+            Q_EMIT error(i18n("Initialize request timed out."));
             mClient->stop();
             return;
         }
@@ -607,7 +608,7 @@ void McpProtocolClientProtocolManager::initializeClient()
     if (!mServer.isValid()) {
         // Don't create a client which can't start
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid server:" << mServer;
-        Q_EMIT error(u"Invalid server settings"_s);
+        Q_EMIT error(i18n("Invalid server settings."));
         return;
     }
     if (!mClient) {
@@ -627,7 +628,7 @@ void McpProtocolClientProtocolManager::initializeClient()
     mClient->setSettings(mServer.settings());
     if (!mClient->canStart()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Impossible to start client:" << mServer;
-        Q_EMIT error(u"Impossible to start client"_s);
+        Q_EMIT error(i18n("Impossible to start client."));
         return;
     }
     mClientStarted = true;
@@ -880,7 +881,7 @@ void McpProtocolClientProtocolManager::initializeResponseReceived(const QJsonObj
         const McpProtocolInitializeResult result = McpProtocolInitializeResult::fromJson(resultValue.toObject());
         if (McpProtocolUtils::convertProtocolVersionFromString(result.protocolVersion()) == McpProtocolUtils::ProtocolVersion::Unknown) {
             qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Unsupported protocol version:" << result.protocolVersion();
-            Q_EMIT error(u"Unsupported protocol version: %1"_s.arg(result.protocolVersion()));
+            Q_EMIT error(i18n("Unsupported protocol version: %1", result.protocolVersion()));
             // Specification: client must disconnect
             mClient->stop();
             return;
