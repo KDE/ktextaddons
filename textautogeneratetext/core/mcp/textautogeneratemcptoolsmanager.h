@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetext_export.h"
 #include <QHash>
 #include <QJsonObject>
 #include <QObject>
@@ -33,8 +33,10 @@ class TextAutoGenerateTextPlugin;
  * \brief Connects to MCP servers and provides their tools to LLM.
  * Connection is created when a server is used (connectServer()), and closed
  * when server is removed, disabled or modified.
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateMcpToolsManager
  */
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMcpToolsManager : public QObject
+class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMcpToolsManager : public QObject
 {
     Q_OBJECT
 public:
@@ -54,7 +56,7 @@ public:
     };
     Q_ENUM(ToolRisk)
 
-    struct TEXTAUTOGENERATETEXT_TESTS_EXPORT McpTool {
+    struct TEXTAUTOGENERATETEXT_EXPORT McpTool {
         QByteArray serverIdentifier;
         // Name used by MCP server
         QString name;
@@ -78,7 +80,7 @@ public:
     };
     Q_ENUM(ToolConfirmation)
 
-    struct TEXTAUTOGENERATETEXT_TESTS_EXPORT ToolConfirmationInfo {
+    struct TEXTAUTOGENERATETEXT_EXPORT ToolConfirmationInfo {
         McpTool tool;
         QString serverName;
         QJsonObject arguments;
@@ -88,7 +90,7 @@ public:
      */
     using ConfirmationHandler = std::function<void(const ToolConfirmationInfo &info, const std::function<void(ToolConfirmation)> &answer)>;
 
-    struct TEXTAUTOGENERATETEXT_TESTS_EXPORT ElicitationInfo {
+    struct TEXTAUTOGENERATETEXT_EXPORT ElicitationInfo {
         QString serverName;
         TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest request;
     };
@@ -98,7 +100,7 @@ public:
     using ElicitationHandler = std::function<void(const ElicitationInfo &info,
                                                   const std::function<void(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &)> &answer)>;
 
-    struct TEXTAUTOGENERATETEXT_TESTS_EXPORT SamplingInfo {
+    struct TEXTAUTOGENERATETEXT_EXPORT SamplingInfo {
         QString serverName;
         TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest request;
     };

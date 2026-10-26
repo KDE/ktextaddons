@@ -654,6 +654,14 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetexttoolscor
     RELATIVE core/tools
 )
 
+ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremcp_HEADERS
+    HEADER_NAMES
+    TextAutoGenerateMcpToolsManager
+    REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextcoremcp_HEADERS
+    PREFIX TextAutoGenerateText
+    RELATIVE core/mcp
+)
+
 ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextcoremodels_HEADERS
     HEADER_NAMES
     TextAutoGenerateHistorySortFilterProxyModel
@@ -849,6 +857,7 @@ set(TextAutoGenerateTextCamelCaseIncludeFiles
     ${TextAutoGenerateText_Camelcasestextautogeneratetextcoreprompts_HEADERS}
     ${TextAutoGenerateText_Camelcasestextautogeneratetextcoretags_HEADERS}
     ${TextAutoGenerateText_Camelcasestextautogeneratetextcoreprojects_HEADERS}
+    ${TextAutoGenerateText_Camelcasestextautogeneratetextcoremcp_HEADERS}
 )
 
 install(
@@ -877,6 +886,7 @@ set(TextAutoGenerateTextIncludeFiles
     ${TextAutoGenerateText_textautogeneratetextcoreprompts_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextcoretags_HEADERS}
     ${TextAutoGenerateText_textautogeneratetextcoreprojects_HEADERS}
+    ${TextAutoGenerateText_textautogeneratetextcoremcp_HEADERS}
 )
 
 install(
