@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-25 00:49+0000\n"
-"PO-Revision-Date: 2026-10-21 09:23-0300\n"
+"PO-Revision-Date: 2026-10-25 09:05-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -492,7 +492,7 @@ msgstr "API do OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:68
 #, kde-format
 msgid "DeepSeek"
-msgstr ""
+msgstr "DeepSeek"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:254
 #, kde-format
@@ -555,10 +555,9 @@ msgid "OpenAI API (custom)"
 msgstr "API do OpenAI (personalizada)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:291
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "DeepSeek large language models"
-msgstr "Modelos de linguagem grandes da IA Mistral"
+msgstr "Modelos de linguagem grandes do DeepSeek"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -3952,12 +3951,10 @@ msgstr ""
 "Mostrar apenas os bate-papos que possuem uma das etiquetas selecionadas"
 
 #: widgets/textautogeneratehistorywidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Clear"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear tags"
-msgstr "Limpar"
+msgstr "Limpar etiquetas"
 
 #: widgets/textautogeneratehistorywidget.cpp:80
 #, kde-format

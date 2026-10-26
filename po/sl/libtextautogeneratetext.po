@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-25 00:49+0000\n"
-"PO-Revision-Date: 2026-10-21 07:08+0200\n"
+"PO-Revision-Date: 2026-10-25 07:14+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
@@ -492,7 +492,7 @@ msgstr "Vmesnik OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:68
 #, kde-format
 msgid "DeepSeek"
-msgstr ""
+msgstr "DeepSeek"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:254
 #, kde-format
@@ -555,10 +555,9 @@ msgid "OpenAI API (custom)"
 msgstr "OpenAI API (po meri)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:291
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "DeepSeek large language models"
-msgstr "Veliki jezikovni modeli Mistral AI"
+msgstr "Veliki jezikovni modeli DeepSeek"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -3920,12 +3919,10 @@ msgid "Only show the chats which have one of the selected tags"
 msgstr "Prikaži samo klepete, ki imajo eno od izbranih značk"
 
 #: widgets/textautogeneratehistorywidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Clear"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear tags"
-msgstr "Očisti"
+msgstr "Očisti značke"
 
 #: widgets/textautogeneratehistorywidget.cpp:80
 #, kde-format

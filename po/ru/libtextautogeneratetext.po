@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-25 00:49+0000\n"
-"PO-Revision-Date: 2026-10-21 16:02+0200\n"
+"PO-Revision-Date: 2026-10-25 07:45+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -489,7 +489,7 @@ msgstr "OpenAI API"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:68
 #, kde-format
 msgid "DeepSeek"
-msgstr ""
+msgstr "DeepSeek"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:254
 #, kde-format
@@ -552,10 +552,9 @@ msgid "OpenAI API (custom)"
 msgstr "OpenAI API (свой)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:291
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "DeepSeek large language models"
-msgstr "Большие языковые модели Mistral AI"
+msgstr "Большие языковые модели DeepSeek"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -3951,12 +3950,10 @@ msgid "Only show the chats which have one of the selected tags"
 msgstr "Показывать только чаты, у которых есть одна из выбранных меток"
 
 #: widgets/textautogeneratehistorywidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Clear"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear tags"
-msgstr "Очистить"
+msgstr "Очистить метки"
 
 #: widgets/textautogeneratehistorywidget.cpp:80
 #, kde-format

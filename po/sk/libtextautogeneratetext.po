@@ -489,7 +489,7 @@ msgstr "API OpenAI"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:68
 #, kde-format
 msgid "DeepSeek"
-msgstr ""
+msgstr "DeepSeek"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:254
 #, kde-format
@@ -552,10 +552,9 @@ msgid "OpenAI API (custom)"
 msgstr "API OpenAI (vlastné)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:291
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "DeepSeek large language models"
-msgstr "Veľké jazykové modely Mistral AI"
+msgstr "Veľké jazykové modely DeepSeek"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -3887,12 +3886,10 @@ msgid "Only show the chats which have one of the selected tags"
 msgstr "Zobraziť len chaty, ktoré majú niektorú z vybraných značiek"
 
 #: widgets/textautogeneratehistorywidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Clear"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear tags"
-msgstr "Vyčistiť"
+msgstr "Vyčistiť značky"
 
 #: widgets/textautogeneratehistorywidget.cpp:80
 #, kde-format

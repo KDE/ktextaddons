@@ -144,45 +144,42 @@ msgstr "Správa prijatá od klienta je príliš veľká."
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server from MCP Registry"
-msgstr ""
+msgstr "Pridať server z registra MCP"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Load More"
-msgstr ""
+msgstr "Načítať ďalšie"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search in MCP registry…"
-msgstr ""
+msgstr "Hľadať v registri MCP…"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:137
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "Načítava sa…"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:154
-#, fuzzy, kde-format
-#| msgid "Impossible to start server: %1"
+#, kde-format
 msgid "Impossible to load servers: %1"
-msgstr "Server nie je možné spustiť: %1"
+msgstr "Servery nie je možné načítať: %1"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:162
 #, kde-format
 msgid "Invalid answer from MCP registry."
-msgstr ""
+msgstr "Neplatná odpoveď z registra MCP."
 
 #: widgets/client/addmcpregistryserverwidget.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgid "1 server"
 msgid_plural "%1 servers"
-msgstr[0] "Pridať server…"
-msgstr[1] "Pridať server…"
-msgstr[2] "Pridať server…"
+msgstr[0] "1 server"
+msgstr[1] "%1 servery"
+msgstr[2] "%1 serverov"
 
 #: widgets/client/addmcpserverdialog.cpp:26
 #, kde-format
@@ -345,65 +342,62 @@ msgstr "Odstrániť hlavičku"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Select a server to see its information."
-msgstr ""
+msgstr "Vyberte server, aby ste videli jeho informácie."
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:58
 #, kde-format
 msgid "<b>Version:</b> %1"
-msgstr ""
+msgstr "<b>Verzia:</b> %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:61
 #, kde-format
 msgid "<b>Repository:</b> %1"
-msgstr ""
+msgstr "<b>Repozitár:</b> %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:64
 #, kde-format
 msgid "<b>Website:</b> %1"
-msgstr ""
+msgstr "<b>Webová stránka:</b> %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Remove"
+#, kde-format
 msgid "Remotes"
-msgstr "Odstrániť"
+msgstr "Vzdialené"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:79
 #, kde-format
 msgid "Packages"
-msgstr ""
+msgstr "Balíky"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:85
 #, kde-format
 msgid "Registry: %1"
-msgstr ""
+msgstr "Register: %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:87
-#, fuzzy, kde-format
-#| msgid "Error: %1"
+#, kde-format
 msgid "Transport: %1"
-msgstr "Chyba: %1"
+msgstr "Prenos: %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:90
 #, kde-format
 msgid "Runtime: %1"
-msgstr ""
+msgstr "Behové prostredie: %1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:94
 #, kde-format
 msgid "Environment variables:"
-msgstr ""
+msgstr "Premenné prostredia:"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:98
 #, kde-format
 msgid "(required)"
-msgstr ""
+msgstr "(povinné)"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:101
 #, kde-format
 msgid "(secret)"
-msgstr ""
+msgstr "(tajné)"
 
 #: widgets/client/mcpserverlistview.cpp:52
 #, kde-format
@@ -448,18 +442,16 @@ msgid "Add Server…"
 msgstr "Pridať server…"
 
 #: widgets/client/mcpserverwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#, kde-format
 msgctxt "@action"
 msgid "Server"
-msgstr "Pridať server"
+msgstr "Server"
 
 #: widgets/client/mcpserverwidget.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
-msgstr ""
+msgstr "Z registra MCP…"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
