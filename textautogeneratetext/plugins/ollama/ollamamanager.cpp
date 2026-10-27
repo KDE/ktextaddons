@@ -177,6 +177,7 @@ void OllamaManager::loadModels()
                 installed.setLanguages((*it).languages());
                 installed.setModelUrl((*it).url());
             }
+            i.chat = !installed.isEmbeddingModel();
             info.models.push_back(std::move(i));
             mInstalledInfos.append(std::move(installed));
         }

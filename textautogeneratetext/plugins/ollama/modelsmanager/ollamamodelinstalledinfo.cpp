@@ -80,6 +80,12 @@ void OllamaModelInstalledInfo::setModifyAt(const QString &newModifyAt)
     mModifyAt = newModifyAt;
 }
 
+bool OllamaModelInstalledInfo::isEmbeddingModel() const
+{
+    // Category is known for models of Ollama library, family for others (bert, nomic-bert…)
+    return categories().testFlag(TextAutoGenerateText::TextAutoGenerateManager::Category::Embedding) || mFamily.endsWith("bert"_L1);
+}
+
 QString OllamaModelInstalledInfo::family() const
 {
     return mFamily;

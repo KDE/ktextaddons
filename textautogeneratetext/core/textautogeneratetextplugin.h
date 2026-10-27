@@ -46,6 +46,8 @@ public:
     struct TEXTAUTOGENERATETEXT_EXPORT ModelInfoNameAndIdentifier {
         QString modelName;
         QString identifier;
+        // Model can answer messages (false for embedding models): only these models are used as fallback model
+        bool chat = true;
         [[nodiscard]] bool isValid() const;
     };
 

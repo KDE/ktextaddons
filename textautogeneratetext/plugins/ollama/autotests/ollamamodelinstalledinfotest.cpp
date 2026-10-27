@@ -42,4 +42,22 @@ void OllamaModelInstalledInfoTest::shouldGenerateModelName()
     QCOMPARE(OllamaModelInstalledInfo::convertModelNameToDisplay(modelname), displaymodelname);
 }
 
+void OllamaModelInstalledInfoTest::shouldDetectEmbeddingModel()
+{
+    OllamaModelInstalledInfo info;
+    QVERIFY(!info.isEmbeddingModel());
+    info.setFamily(u"llama"_s);
+    QVERIFY(!info.isEmbeddingModel());
+    // Family given by Ollama for all-minilm, bge-large, nomic-embed-text…
+    info.setFamily(u"bert"_s);
+    QVERIFY(info.isEmbeddingModel());
+    info.setFamily(u"nomic-bert"_s);
+    QVERIFY(info.isEmbeddingModel());
+    // Category of Ollama library
+    OllamaModelInstalledInfo other;
+    other.setFamily(u"qwen3"_s);
+    other.setCategories(TextAutoGenerateText::TextAutoGenerateManager::Category::Embedding);
+    QVERIFY(other.isEmbeddingModel());
+}
+
 #include "moc_ollamamodelinstalledinfotest.cpp"

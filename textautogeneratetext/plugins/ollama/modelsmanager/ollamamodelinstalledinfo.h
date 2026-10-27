@@ -16,6 +16,8 @@ public:
     OllamaModelInstalledInfo();
 
     [[nodiscard]] QString family() const;
+    // Embedding models can't answer messages
+    [[nodiscard]] bool isEmbeddingModel() const;
     void setFamily(const QString &newFamily);
 
     void parseInfo(const QJsonObject &obj) override;

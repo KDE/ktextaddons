@@ -410,9 +410,11 @@ bool TextAutoGenerateTextPlugin::hasTextOnlySupport() const
 
 QString TextAutoGenerateTextPlugin::fallBackModel() const
 {
-    // Fallback to first model
-    if (!mModels.isEmpty()) {
-        return mModels.constFirst().identifier;
+    // Fallback to first model which can answer messages: chat requests fail with embedding models
+    for (const ModelInfoNameAndIdentifier &model : std::as_const(mModels)) {
+        if (model.chat) {
+            return model.identifier;
+        }
     }
     qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Current model is empty. It will failed to work.";
     return {};
