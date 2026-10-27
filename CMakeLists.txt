@@ -248,7 +248,7 @@ set(EXCLUDE_DEPRECATED_BEFORE_AND_AT
 )
 
 if(BERGAMOT_TRANSLATOR_PLUGIN)
-    find_package(slimt)
+    find_package(Slimt)
     set_package_properties(
         slimt
         PROPERTIES

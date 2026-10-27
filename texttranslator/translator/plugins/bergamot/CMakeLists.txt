@@ -53,7 +53,7 @@ target_link_libraries(
     KF6::TextAddonsWidgets
     KF6::WidgetsAddons
     KF6::Archive
-    slimt::slimt-shared
+    slimt::Lib
 )
 
 set_target_properties(

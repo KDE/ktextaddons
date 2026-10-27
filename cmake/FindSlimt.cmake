@@ -14,7 +14,7 @@ if(slimt_INCLUDE_DIRS AND slimt_LIBRARIES)
     # Already in cache
     set(slimt_FOUND TRUE)
 else()
-    find_path(slimt_INCLUDE_DIRS NAMES slimt.hh PATH_SUFFIXES slimt)
+    find_path(slimt_INCLUDE_DIRS NAMES slimt/slimt.hh)
 
     message(STATUS "slimt_INCLUDE_DIRS************** ${slimt_INCLUDE_DIRS}")
 
