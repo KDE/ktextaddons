@@ -420,4 +420,9 @@ QString TextAutoGenerateTextPlugin::fallBackModel() const
     return {};
 }
 
+bool TextAutoGenerateTextPlugin::isLocalServer() const
+{
+    return false;
+}
+
 #include "moc_textautogeneratetextplugin.cpp"

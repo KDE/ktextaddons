@@ -254,4 +254,11 @@ void OllamaPlugin::slotDownloadOllama()
     QDesktopServices::openUrl(QUrl(u"https://ollama.com/download/mac"_s));
 #endif
 }
+
+bool OllamaPlugin::isLocalServer() const
+{
+    const QString host = mOllamaSettings->serverUrl().host();
+    return host.compare("localhost"_L1, Qt::CaseInsensitive) == 0 || QHostAddress(host).isLoopback();
+}
+
 #include "moc_ollamaplugin.cpp"

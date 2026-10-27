@@ -115,6 +115,12 @@ void LLamaCppPlugin::askToAssistant(const QString &msg)
     Q_UNUSED(msg)
 }
 
+bool LLamaCppPlugin::isLocalServer() const
+{
+    // TODO verify
+    return true;
+}
+
 void LLamaCppPlugin::sendToAssistant(const SendToAssistantInfo &info)
 {
 #if 0

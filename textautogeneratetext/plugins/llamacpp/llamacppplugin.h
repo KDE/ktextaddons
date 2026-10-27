@@ -50,6 +50,8 @@ public:
 
     void askToAssistant(const QString &msg) override;
 
+    [[nodiscard]] bool isLocalServer() const override;
+
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
 

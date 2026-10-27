@@ -223,6 +223,12 @@ public:
      * Caller owns returned reply. Returns nullptr when not supported (default).
      */
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateReply *chatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request);
+
+    /*!
+     * \brief isLocalServer
+     * \return
+     */
+    [[nodiscard]] virtual bool isLocalServer() const;
 Q_SIGNALS:
     /*!
      */

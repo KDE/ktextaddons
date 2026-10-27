@@ -201,6 +201,12 @@ QString LMStudioPlugin::passwordServiceName() const
     return u"LMStudioPluginAutoGenerateText"_s;
 }
 
+bool LMStudioPlugin::isLocalServer() const
+{
+    const QString host = mLMStudioSettings->serverUrl().host();
+    return host.compare("localhost"_L1, Qt::CaseInsensitive) == 0 || QHostAddress(host).isLoopback();
+}
+
 TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo LMStudioPlugin::activateInstanceAction()
 {
     if (mCurrentAction) {

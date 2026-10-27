@@ -48,6 +48,7 @@ public:
     [[nodiscard]] QString passwordServiceName() const;
 
     [[nodiscard]] ActivateInstanceActionInfo activateInstanceAction() override;
+    [[nodiscard]] bool isLocalServer() const override;
 
 protected:
     void sendToAssistant(const SendToAssistantInfo &info) override;
