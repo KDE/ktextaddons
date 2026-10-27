@@ -34,9 +34,15 @@ OllamaCommonReply::OllamaCommonReply(QNetworkReply *netReply, RequestTypes reque
             Q_EMIT finished();
             return;
         }
-        Q_EMIT errorOccurred(e, mReply->errorString());
+        // Ollama explains error in body, e.g. {"error":"model does not support tools"}: more useful than "Bad Request"
+        QString message = mReply->errorString();
+        const QByteArray body = QByteArray(mIncompleteTokens + mReply->readAll()).trimmed();
+        if (const QString serverError = QJsonDocument::fromJson(body).object().value("error"_L1).toString(); !serverError.isEmpty()) {
+            message = u"%1 (%2)"_s.arg(serverError, message);
+        }
+        Q_EMIT errorOccurred(e, message);
         Q_EMIT finished();
-        qCDebug(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "Ollama HTTP error:" << e;
+        qCDebug(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "Ollama HTTP error:" << e << message;
     });
     connect(mReply, &QNetworkReply::downloadProgress, mReply, [this](qint64 received, qint64 /*total*/) {
         const QByteArray data = mReply->read(received - mReceivedSize);
