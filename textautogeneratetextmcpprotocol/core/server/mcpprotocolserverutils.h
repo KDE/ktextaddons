@@ -6,6 +6,7 @@
 #pragma once
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <KSharedConfig>
 #include <QByteArray>
 #include <QUrl>
 #include <functional>
@@ -53,5 +54,20 @@ TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void loadSettings(QObject *context, s
  * Save server settings. Token is stored in the system wallet
  */
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void saveSettings(const McpProtocolSettings &settings);
+
+/*!
+ * \brief loadSettings
+ * \param config
+ * \param context
+ * \param callback
+ */
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void
+loadSettings(const KSharedConfig::Ptr &config, QObject *context, std::function<void(const McpProtocolSettings &)> callback);
+/*!
+ * \brief saveSettings
+ * \param config
+ * \param settings
+ */
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void saveSettings(const KSharedConfig::Ptr &config, const McpProtocolSettings &settings);
 }
 }

@@ -51,7 +51,11 @@ QUrl McpProtocolServerUtils::defaultServerUrl()
 
 void McpProtocolServerUtils::loadSettings(QObject *context, std::function<void(const McpProtocolSettings &)> callback)
 {
-    const auto config = KSharedConfig::openConfig(McpProtocolCommonUtils::serverConfigFileName());
+    loadSettings(KSharedConfig::openConfig(McpProtocolCommonUtils::serverConfigFileName()), context, std::move(callback));
+}
+
+void McpProtocolServerUtils::loadSettings(const KSharedConfig::Ptr &config, QObject *context, std::function<void(const McpProtocolSettings &)> callback)
+{
     const KConfigGroup group(config, QLatin1StringView(myLocalServerGroupName));
     McpProtocolSettings settings;
     settings.load(group);
@@ -68,9 +72,8 @@ void McpProtocolServerUtils::loadSettings(QObject *context, std::function<void(c
     });
 }
 
-void McpProtocolServerUtils::saveSettings(const McpProtocolSettings &settings)
+void McpProtocolServerUtils::saveSettings(const KSharedConfig::Ptr &config, const McpProtocolSettings &settings)
 {
-    const auto config = KSharedConfig::openConfig(McpProtocolCommonUtils::serverConfigFileName());
     KConfigGroup group(config, QLatin1StringView(myLocalServerGroupName));
     const bool hadAuthToken = group.readEntry(myHasAuthTokenKey, false);
     group.deleteGroup();
@@ -83,4 +86,9 @@ void McpProtocolServerUtils::saveSettings(const McpProtocolSettings &settings)
         removeAuthToken();
     }
     config->sync();
+}
+
+void McpProtocolServerUtils::saveSettings(const McpProtocolSettings &settings)
+{
+    saveSettings(KSharedConfig::openConfig(McpProtocolCommonUtils::serverConfigFileName()), settings);
 }
