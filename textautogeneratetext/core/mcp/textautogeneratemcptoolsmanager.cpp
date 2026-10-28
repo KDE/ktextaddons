@@ -47,6 +47,13 @@ TextAutoGenerateMcpToolsManager::ToolRisk toolRisk(const TextAutoGenerateTextMcp
 }
 }
 
+bool TextAutoGenerateMcpToolsManager::McpTool::operator==(const McpTool &other) const
+{
+    return serverIdentifier == other.serverIdentifier && name == other.name && displayName == other.displayName && exposedName == other.exposedName
+        && description == other.description && inputSchema == other.inputSchema && risk == other.risk && groupName == other.groupName
+        && groupTitle == other.groupTitle;
+}
+
 TextAutoGenerateMcpToolsManager::TextAutoGenerateMcpToolsManager(TextAutoGenerateTextMcpProtocolCore::McpServerManager *serverManager, QObject *parent)
     : QObject{parent}
     , mServerManager(serverManager)

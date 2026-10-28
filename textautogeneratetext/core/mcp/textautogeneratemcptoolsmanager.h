@@ -69,7 +69,7 @@ public:
         // Group of tool defined in _meta ("org.kde/group", "org.kde/groupTitle"), empty when tool has no group
         QString groupName;
         QString groupTitle;
-        [[nodiscard]] bool operator==(const McpTool &other) const = default;
+        [[nodiscard]] bool operator==(const McpTool &other) const;
     };
 
     enum class ToolConfirmation : uint8_t {
