@@ -27,6 +27,8 @@ private Q_SLOTS:
     void shouldNotifyRootsListChanged();
     void shouldAnnounceSamplingCapability();
     void shouldAnswerSamplingRequest();
+    void shouldAcceptOlderProtocolVersion_data();
+    void shouldAcceptOlderProtocolVersion();
     void shouldRejectUnsupportedProtocolVersion();
     void shouldCancelRequestWhenTimeoutExpired();
     void shouldNotTimeoutWhileElicitationIsPending();

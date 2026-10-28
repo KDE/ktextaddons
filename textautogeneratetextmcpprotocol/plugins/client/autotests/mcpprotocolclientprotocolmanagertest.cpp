@@ -568,6 +568,36 @@ void McpProtocolClientProtocolManagerTest::shouldAnswerSamplingRequest()
     }
 }
 
+void McpProtocolClientProtocolManagerTest::shouldAcceptOlderProtocolVersion_data()
+{
+    QTest::addColumn<QString>("protocolVersion");
+    QTest::newRow("2024-11-05") << u"2024-11-05"_s;
+    QTest::newRow("2025-03-26") << u"2025-03-26"_s;
+    QTest::newRow("2025-06-18") << u"2025-06-18"_s;
+}
+
+void McpProtocolClientProtocolManagerTest::shouldAcceptOlderProtocolVersion()
+{
+    QFETCH(QString, protocolVersion);
+    FakeMcpHttpServer fakeServer;
+    fakeServer.setHandler(createHandler(protocolVersion));
+    McpProtocolClientProtocolManager manager(createServer(fakeServer));
+    const QSignalSpy errorSpy(&manager, &McpProtocolClientProtocolManager::error);
+    initialize(manager);
+    QCOMPARE(errorSpy.count(), 0);
+    QCOMPARE(manager.initializeResult().protocolVersion(), protocolVersion);
+
+    // Version chosen by server is sent in next requests
+    const QSignalSpy receivedSpy(&manager, &McpProtocolClientProtocolManager::received);
+    QVERIFY(manager.executeAction(McpProtocolClientProtocolManager::MethodType::ListTools) > 0);
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    for (const auto &request : fakeServer.requests("POST")) {
+        if (request.json().value("method"_L1).toString() == u"tools/list"_s) {
+            QCOMPARE(request.header("MCP-Protocol-Version"), protocolVersion.toLatin1());
+        }
+    }
+}
+
 void McpProtocolClientProtocolManagerTest::shouldRejectUnsupportedProtocolVersion()
 {
     FakeMcpHttpServer fakeServer;
