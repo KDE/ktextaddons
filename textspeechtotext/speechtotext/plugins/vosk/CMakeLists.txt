@@ -28,8 +28,6 @@ target_sources(
         voskengineutils.h
         voskenginelanguagewidget.h
         voskenginelanguagewidget.cpp
-        voskengineutils.h
-        voskengineutils.cpp
         voskenginedialog.h
         voskenginedialog.cpp
         voskspeechtotextdevice.h
