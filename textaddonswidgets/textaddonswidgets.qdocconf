@@ -21,7 +21,7 @@ qhp.projects            = textaddonswidgets
 qhp.textaddonswidgets.file                = textaddonswidgets.qhp
 qhp.textaddonswidgets.namespace           = org.kde.textaddonswidgets.$QT_VERSION_TAG
 qhp.textaddonswidgets.virtualFolder       = textaddonswidgets
-qhp.textaddonswidgets.indexTitle          = textaddonswidgets
+qhp.textaddonswidgets.indexTitle          = TextAddonsWidgets
 qhp.textaddonswidgets.indexRoot           =
 
 qhp.textaddonswidgets.subprojects         = classes

@@ -21,7 +21,7 @@ qhp.projects            = textutils
 qhp.textutils.file                = textutils.qhp
 qhp.textutils.namespace           = org.kde.textutils.$QT_VERSION_TAG
 qhp.textutils.virtualFolder       = textutils
-qhp.textutils.indexTitle          = textutils
+qhp.textutils.indexTitle          = TextUtils
 qhp.textutils.indexRoot           =
 
 qhp.textutils.subprojects         = classes

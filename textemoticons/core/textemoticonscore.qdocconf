@@ -21,7 +21,7 @@ qhp.projects            = textemoticonscore
 qhp.textemoticonscore.file                = textemoticonscore.qhp
 qhp.textemoticonscore.namespace           = org.kde.textemoticonscore.$QT_VERSION_TAG
 qhp.textemoticonscore.virtualFolder       = textemoticonscore
-qhp.textemoticonscore.indexTitle          = textemoticonscore
+qhp.textemoticonscore.indexTitle          = TextEmoticonsCore
 qhp.textemoticonscore.indexRoot           =
 
 qhp.textemoticonscore.subprojects         = classes

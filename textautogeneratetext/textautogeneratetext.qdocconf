@@ -21,7 +21,7 @@ qhp.projects            = textautogeneratetext
 qhp.textautogeneratetext.file                = textautogeneratetext.qhp
 qhp.textautogeneratetext.namespace           = org.kde.textautogeneratetext.$QT_VERSION_TAG
 qhp.textautogeneratetext.virtualFolder       = textautogeneratetext
-qhp.textautogeneratetext.indexTitle          = textautogeneratetext
+qhp.textautogeneratetext.indexTitle          = TextAutoGenerateText
 qhp.textautogeneratetext.indexRoot           =
 
 qhp.textautogeneratetext.subprojects         = classes

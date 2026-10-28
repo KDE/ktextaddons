@@ -1,6 +1,6 @@
 /*!
     \module TextUtils
-    \title TextUtils C++ Class
+    \title TextUtils C++ Classes
     \ingroup modules
     \cmakepackage KF6
     \cmakecomponent TextUtils

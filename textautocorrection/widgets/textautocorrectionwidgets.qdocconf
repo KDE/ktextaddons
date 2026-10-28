@@ -21,7 +21,7 @@ qhp.projects            = textautocorrectionwidgets
 qhp.textautocorrectionwidgets.file                = textautocorrectionwidgets.qhp
 qhp.textautocorrectionwidgets.namespace           = org.kde.textautocorrectionwidgets.$QT_VERSION_TAG
 qhp.textautocorrectionwidgets.virtualFolder       = textautocorrectionwidgets
-qhp.textautocorrectionwidgets.indexTitle          = textautocorrectionwidgets
+qhp.textautocorrectionwidgets.indexTitle          = TextAutoCorrectionWidgets
 qhp.textautocorrectionwidgets.indexRoot           =
 
 qhp.textautocorrectionwidgets.subprojects         = classes

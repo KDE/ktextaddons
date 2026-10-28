@@ -21,7 +21,7 @@ qhp.projects            = textautocorrectioncore
 qhp.textautocorrectioncore.file                = textautocorrectioncore.qhp
 qhp.textautocorrectioncore.namespace           = org.kde.textautocorrectioncore.$QT_VERSION_TAG
 qhp.textautocorrectioncore.virtualFolder       = textautocorrectioncore
-qhp.textautocorrectioncore.indexTitle          = textautocorrectioncore
+qhp.textautocorrectioncore.indexTitle          = TextAutoCorrectionCore
 qhp.textautocorrectioncore.indexRoot           =
 
 qhp.textautocorrectioncore.subprojects         = classes

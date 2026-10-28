@@ -21,7 +21,7 @@ qhp.projects            = texttranslator
 qhp.texttranslator.file                = texttranslator.qhp
 qhp.texttranslator.namespace           = org.kde.texttranslator.$QT_VERSION_TAG
 qhp.texttranslator.virtualFolder       = texttranslator
-qhp.texttranslator.indexTitle          = texttranslator
+qhp.texttranslator.indexTitle          = TextTranslator
 qhp.texttranslator.indexRoot           =
 
 qhp.texttranslator.subprojects         = classes

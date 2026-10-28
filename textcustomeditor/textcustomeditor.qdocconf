@@ -16,12 +16,12 @@ depends += \
 
 navigation.landingpage = "TextCustomEditor"
 
-qhp.projects            = textaddonswidgets
+qhp.projects            = textcustomeditor
 
 qhp.textcustomeditor.file                = textcustomeditor.qhp
 qhp.textcustomeditor.namespace           = org.kde.textcustomeditor.$QT_VERSION_TAG
 qhp.textcustomeditor.virtualFolder       = textcustomeditor
-qhp.textcustomeditor.indexTitle          = textcustomeditor
+qhp.textcustomeditor.indexTitle          = TextCustomEditor
 qhp.textcustomeditor.indexRoot           =
 
 qhp.textcustomeditor.subprojects         = classes

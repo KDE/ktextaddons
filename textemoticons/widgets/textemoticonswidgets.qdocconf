@@ -21,7 +21,7 @@ qhp.projects            = textemoticonswidgets
 qhp.textemoticonswidgets.file                = textemoticonswidgets.qhp
 qhp.textemoticonswidgets.namespace           = org.kde.textemoticonswidgets.$QT_VERSION_TAG
 qhp.textemoticonswidgets.virtualFolder       = textemoticonswidgets
-qhp.textemoticonswidgets.indexTitle          = textemoticonswidgets
+qhp.textemoticonswidgets.indexTitle          = TextEmoticonsWidgets
 qhp.textemoticonswidgets.indexRoot           =
 
 qhp.textemoticonswidgets.subprojects         = classes

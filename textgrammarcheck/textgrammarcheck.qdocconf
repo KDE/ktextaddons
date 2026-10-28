@@ -21,7 +21,7 @@ qhp.projects            = textgrammarcheck
 qhp.textgrammarcheck.file                = textgrammarcheck.qhp
 qhp.textgrammarcheck.namespace           = org.kde.textgrammarcheck.$QT_VERSION_TAG
 qhp.textgrammarcheck.virtualFolder       = textgrammarcheck
-qhp.textgrammarcheck.indexTitle          = textgrammarcheck
+qhp.textgrammarcheck.indexTitle          = TextGrammarCheck
 qhp.textgrammarcheck.indexRoot           =
 
 qhp.textgrammarcheck.subprojects         = classes

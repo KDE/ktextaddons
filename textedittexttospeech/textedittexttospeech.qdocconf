@@ -21,7 +21,7 @@ qhp.projects            = textedittexttospeech
 qhp.textedittexttospeech.file                = textedittexttospeech.qhp
 qhp.textedittexttospeech.namespace           = org.kde.textedittexttospeech.$QT_VERSION_TAG
 qhp.textedittexttospeech.virtualFolder       = textedittexttospeech
-qhp.textedittexttospeech.indexTitle          = textedittexttospeech
+qhp.textedittexttospeech.indexTitle          = TextEditTextToSpeech
 qhp.textedittexttospeech.indexRoot           =
 
 qhp.textedittexttospeech.subprojects         = classes
