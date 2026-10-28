@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-27 00:58+0000\n"
-"PO-Revision-Date: 2026-10-24 07:52-0300\n"
+"PO-Revision-Date: 2026-10-27 10:20-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,23 +20,22 @@ msgstr ""
 #: core/client/mcpprotocolclientprotocolmanager.cpp:436
 #, kde-format
 msgid "Initialize request timed out."
-msgstr ""
+msgstr "Tempo de solicitação de inicialização esgotado."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:611
 #, kde-format
 msgid "Invalid server settings."
-msgstr ""
+msgstr "Configurações inválidas do servidor."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:631
-#, fuzzy, kde-format
-#| msgid "Impossible to start client. URL is invalid."
+#, kde-format
 msgid "Impossible to start client."
-msgstr "Não é possível iniciar o cliente. A URL é inválida."
+msgstr "Não é possível iniciar o cliente."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:884
 #, kde-format
 msgid "Unsupported protocol version: %1"
-msgstr ""
+msgstr "Versão de protocolo não suportada: %1"
 
 #: core/client/mcpserver.cpp:111
 #, kde-format

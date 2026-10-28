@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-25 00:49+0000\n"
+"POT-Creation-Date: 2026-10-28 00:59+0000\n"
 "PO-Revision-Date: 2026-09-28 21:07+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -575,8 +575,8 @@ msgstr "Mistral AIren hizkuntza-eredu handiak"
 msgid "LLamaCpp"
 msgstr "LLamaCpp"
 
-#: plugins/llamacpp/llamacppplugin.cpp:225
-#: plugins/lmstudio/lmstudioplugin.cpp:213
+#: plugins/llamacpp/llamacppplugin.cpp:231
+#: plugins/lmstudio/lmstudioplugin.cpp:219
 #, kde-format
 msgid ""
 "LMStudio not found on system. Ask to your administrator system to install it."
@@ -584,21 +584,21 @@ msgstr ""
 "LMStudio ez da sisteman aurkitu. Sistema-administratzaileari instalatu dezan "
 "eskatu."
 
-#: plugins/llamacpp/llamacppplugin.cpp:227
-#: plugins/lmstudio/lmstudioplugin.cpp:215
+#: plugins/llamacpp/llamacppplugin.cpp:233
+#: plugins/lmstudio/lmstudioplugin.cpp:221
 #, kde-format
 msgid "LMStudio not found on system. Please install it."
 msgstr "LMStudio ez da sisteman aurkitu. Instalatu."
 
-#: plugins/llamacpp/llamacppplugin.cpp:228
-#: plugins/lmstudio/lmstudioplugin.cpp:216
+#: plugins/llamacpp/llamacppplugin.cpp:234
+#: plugins/lmstudio/lmstudioplugin.cpp:222
 #, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
 msgstr "LMStudio zama-jaitsi"
 
-#: plugins/llamacpp/llamacppplugin.cpp:234
-#: plugins/lmstudio/lmstudioplugin.cpp:222
+#: plugins/llamacpp/llamacppplugin.cpp:240
+#: plugins/lmstudio/lmstudioplugin.cpp:228
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
@@ -3033,32 +3033,32 @@ msgstr ""
 msgid "Context Window Size:"
 msgstr "Testuinguru-leihoaren neurria:"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:181
+#: plugins/ollamacommon/ollamacommonreply.cpp:187
 #, kde-format
 msgid "Capabilities"
 msgstr "Gaitasunak"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:183
+#: plugins/ollamacommon/ollamacommonreply.cpp:189
 #, kde-format
 msgid "Template"
 msgstr "Txantiloia"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:184
+#: plugins/ollamacommon/ollamacommonreply.cpp:190
 #, kde-format
 msgid "Modelfile"
 msgstr "Eredu-fitxategia"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:186
+#: plugins/ollamacommon/ollamacommonreply.cpp:192
 #, kde-format
 msgid "Parameters"
 msgstr "Parametroak"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:188
+#: plugins/ollamacommon/ollamacommonreply.cpp:194
 #, kde-format
 msgid "Details"
 msgstr "Xehetasunak"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:190
+#: plugins/ollamacommon/ollamacommonreply.cpp:196
 #, kde-format
 msgid "Model Info"
 msgstr "Ereduaren informazioa"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-27 00:58+0000\n"
-"PO-Revision-Date: 2026-10-24 07:46+0200\n"
+"PO-Revision-Date: 2026-10-27 07:46+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -20,23 +20,22 @@ msgstr ""
 #: core/client/mcpprotocolclientprotocolmanager.cpp:436
 #, kde-format
 msgid "Initialize request timed out."
-msgstr ""
+msgstr "Истекло время ожидания ответа на запрос инициализации."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:611
 #, kde-format
 msgid "Invalid server settings."
-msgstr ""
+msgstr "Недопустимые параметры сервера."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:631
-#, fuzzy, kde-format
-#| msgid "Impossible to start client. URL is invalid."
+#, kde-format
 msgid "Impossible to start client."
-msgstr "Не удалось запустить клиент. Недопустимый URL."
+msgstr "Не удалось запустить клиент."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:884
 #, kde-format
 msgid "Unsupported protocol version: %1"
-msgstr ""
+msgstr "Неподдерживаемая версия протокола: %1"
 
 #: core/client/mcpserver.cpp:111
 #, kde-format

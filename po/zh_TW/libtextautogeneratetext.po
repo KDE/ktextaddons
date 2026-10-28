@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-25 00:49+0000\n"
+"POT-Creation-Date: 2026-10-28 00:59+0000\n"
 "PO-Revision-Date: 2026-05-21 22:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -576,8 +576,8 @@ msgstr "Mistral AI 大型語言模型"
 msgid "LLamaCpp"
 msgstr ""
 
-#: plugins/llamacpp/llamacppplugin.cpp:225
-#: plugins/lmstudio/lmstudioplugin.cpp:213
+#: plugins/llamacpp/llamacppplugin.cpp:231
+#: plugins/lmstudio/lmstudioplugin.cpp:219
 #, fuzzy, kde-format
 #| msgid ""
 #| "Ollama not found on system. Ask to your administrator system to install "
@@ -586,15 +586,15 @@ msgid ""
 "LMStudio not found on system. Ask to your administrator system to install it."
 msgstr "系統上沒有找到 Ollama。請向您的管理員請求安裝它。"
 
-#: plugins/llamacpp/llamacppplugin.cpp:227
-#: plugins/lmstudio/lmstudioplugin.cpp:215
+#: plugins/llamacpp/llamacppplugin.cpp:233
+#: plugins/lmstudio/lmstudioplugin.cpp:221
 #, fuzzy, kde-format
 #| msgid "Ollama not found on system. Please install it."
 msgid "LMStudio not found on system. Please install it."
 msgstr "系統上沒有找到 Ollama。請安裝它。"
 
-#: plugins/llamacpp/llamacppplugin.cpp:228
-#: plugins/lmstudio/lmstudioplugin.cpp:216
+#: plugins/llamacpp/llamacppplugin.cpp:234
+#: plugins/lmstudio/lmstudioplugin.cpp:222
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Download Model"
@@ -602,8 +602,8 @@ msgctxt "@action"
 msgid "Download LMStudio"
 msgstr "下載模型"
 
-#: plugins/llamacpp/llamacppplugin.cpp:234
-#: plugins/lmstudio/lmstudioplugin.cpp:222
+#: plugins/llamacpp/llamacppplugin.cpp:240
+#: plugins/lmstudio/lmstudioplugin.cpp:228
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
@@ -2785,32 +2785,32 @@ msgstr "控制模型能同時記住並處理多少 token（詞元）。"
 msgid "Context Window Size:"
 msgstr "前後文窗口大小："
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:181
+#: plugins/ollamacommon/ollamacommonreply.cpp:187
 #, kde-format
 msgid "Capabilities"
 msgstr "能力"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:183
+#: plugins/ollamacommon/ollamacommonreply.cpp:189
 #, kde-format
 msgid "Template"
 msgstr "樣本"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:184
+#: plugins/ollamacommon/ollamacommonreply.cpp:190
 #, kde-format
 msgid "Modelfile"
 msgstr "模型檔案"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:186
+#: plugins/ollamacommon/ollamacommonreply.cpp:192
 #, kde-format
 msgid "Parameters"
 msgstr "參數"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:188
+#: plugins/ollamacommon/ollamacommonreply.cpp:194
 #, kde-format
 msgid "Details"
 msgstr "詳細資料"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:190
+#: plugins/ollamacommon/ollamacommonreply.cpp:196
 #, kde-format
 msgid "Model Info"
 msgstr "模型資訊"
