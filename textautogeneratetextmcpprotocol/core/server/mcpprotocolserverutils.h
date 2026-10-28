@@ -8,6 +8,7 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <KSharedConfig>
 #include <QByteArray>
+#include <QString>
 #include <QUrl>
 #include <functional>
 class QObject;
@@ -27,21 +28,23 @@ namespace McpProtocolServerUtils
  */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QByteArray generateAuthToken();
 /*!
- * Identifier used to store the server token in the system wallet
+ * Identifier used to store the server token in the system wallet.
+ * Each config file \a configName has its own token, so several servers can coexist
  */
-[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QByteArray authTokenIdentifier();
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QByteArray authTokenIdentifier(const QString &configName = {});
 /*!
  * Store the server token in the system wallet
  */
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void writeAuthToken(const QByteArray &token);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void writeAuthToken(const QByteArray &token, const QString &configName = {});
 /*!
  * Read the server token from the system wallet. \a callback is called with an empty token on error
  */
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void readAuthToken(QObject *context, std::function<void(const QByteArray &)> callback);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void
+readAuthToken(QObject *context, std::function<void(const QByteArray &)> callback, const QString &configName = {});
 /*!
  * Remove the server token from the system wallet
  */
-TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void removeAuthToken();
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void removeAuthToken(const QString &configName = {});
 /*!
  * Default url where server listens (streamable http transport)
  */

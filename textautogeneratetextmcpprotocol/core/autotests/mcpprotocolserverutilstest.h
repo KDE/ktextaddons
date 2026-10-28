@@ -17,5 +17,6 @@ public:
 private Q_SLOTS:
     void initTestCase();
     void shouldHaveDefaultValues();
+    void shouldHaveAuthTokenIdentifierPerConfig();
     void shouldSaveAndLoadSettings();
 };

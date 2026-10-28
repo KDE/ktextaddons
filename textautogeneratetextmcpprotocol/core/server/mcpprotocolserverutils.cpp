@@ -24,24 +24,28 @@ QByteArray McpProtocolServerUtils::generateAuthToken()
     return McpProtocolCommonUtils::generateAuthToken();
 }
 
-QByteArray McpProtocolServerUtils::authTokenIdentifier()
+QByteArray McpProtocolServerUtils::authTokenIdentifier(const QString &configName)
 {
-    return "mcp-server"_ba;
+    // Keep the historical identifier for the default server
+    if (configName.isEmpty() || configName == McpProtocolCommonUtils::serverConfigFileName()) {
+        return "mcp-server"_ba;
+    }
+    return "mcp-server-"_ba + configName.toUtf8();
 }
 
-void McpProtocolServerUtils::writeAuthToken(const QByteArray &token)
+void McpProtocolServerUtils::writeAuthToken(const QByteArray &token, const QString &configName)
 {
-    McpProtocolKeychainUtils::writeAuthToken(authTokenIdentifier(), token);
+    McpProtocolKeychainUtils::writeAuthToken(authTokenIdentifier(configName), token);
 }
 
-void McpProtocolServerUtils::readAuthToken(QObject *context, std::function<void(const QByteArray &)> callback)
+void McpProtocolServerUtils::readAuthToken(QObject *context, std::function<void(const QByteArray &)> callback, const QString &configName)
 {
-    McpProtocolKeychainUtils::readAuthToken(authTokenIdentifier(), context, std::move(callback));
+    McpProtocolKeychainUtils::readAuthToken(authTokenIdentifier(configName), context, std::move(callback));
 }
 
-void McpProtocolServerUtils::removeAuthToken()
+void McpProtocolServerUtils::removeAuthToken(const QString &configName)
 {
-    McpProtocolKeychainUtils::removeAuthToken(authTokenIdentifier());
+    McpProtocolKeychainUtils::removeAuthToken(authTokenIdentifier(configName));
 }
 
 QUrl McpProtocolServerUtils::defaultServerUrl()
@@ -66,10 +70,13 @@ void McpProtocolServerUtils::loadSettings(const KSharedConfig::Ptr &config, QObj
         callback(settings);
         return;
     }
-    readAuthToken(context, [settings, callback = std::move(callback)](const QByteArray &token) mutable {
-        settings.setAuthToken(token);
-        callback(settings);
-    });
+    readAuthToken(
+        context,
+        [settings, callback = std::move(callback)](const QByteArray &token) mutable {
+            settings.setAuthToken(token);
+            callback(settings);
+        },
+        config->name());
 }
 
 void McpProtocolServerUtils::saveSettings(const KSharedConfig::Ptr &config, const McpProtocolSettings &settings)
@@ -81,9 +88,9 @@ void McpProtocolServerUtils::saveSettings(const KSharedConfig::Ptr &config, cons
     const QByteArray token = settings.authToken();
     if (!token.isEmpty()) {
         group.writeEntry(myHasAuthTokenKey, true);
-        writeAuthToken(token);
+        writeAuthToken(token, config->name());
     } else if (hadAuthToken) {
-        removeAuthToken();
+        removeAuthToken(config->name());
     }
     config->sync();
 }

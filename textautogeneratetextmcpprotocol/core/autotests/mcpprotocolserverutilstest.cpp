@@ -30,6 +30,14 @@ void McpProtocolServerUtilsTest::shouldHaveDefaultValues()
     QCOMPARE(McpProtocolServerUtils::generateAuthToken().size(), 43);
 }
 
+void McpProtocolServerUtilsTest::shouldHaveAuthTokenIdentifierPerConfig()
+{
+    QCOMPARE(McpProtocolServerUtils::authTokenIdentifier(), "mcp-server"_ba);
+    QCOMPARE(McpProtocolServerUtils::authTokenIdentifier(u"mcpprotocolserver"_s), "mcp-server"_ba);
+    QCOMPARE(McpProtocolServerUtils::authTokenIdentifier(u"akonadimcpprotocolrc"_s), "mcp-server-akonadimcpprotocolrc"_ba);
+    QVERIFY(McpProtocolServerUtils::authTokenIdentifier(u"foorc"_s) != McpProtocolServerUtils::authTokenIdentifier(u"barrc"_s));
+}
+
 void McpProtocolServerUtilsTest::shouldSaveAndLoadSettings()
 {
     // Without token: no access to system wallet, callback is called synchronously
