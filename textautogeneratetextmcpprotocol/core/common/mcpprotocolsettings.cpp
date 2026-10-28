@@ -96,18 +96,28 @@ void McpProtocolSettings::save(KConfigGroup &config) const
 {
     if (!mCommand.isEmpty()) {
         config.writeEntry(u"Command"_s, mCommand);
+    } else {
+        config.deleteEntry(u"Command"_s);
     }
     if (!mArguments.isEmpty()) {
         config.writeEntry(u"Arguments"_s, mArguments);
+    } else {
+        config.deleteEntry(u"Arguments"_s);
     }
     if (!mServerUrl.isEmpty()) {
         config.writeEntry(u"ServerUrl"_s, mServerUrl);
+    } else {
+        config.deleteEntry(u"ServerUrl"_s);
     }
     if (!mHeaders.isEmpty()) {
         config.writeEntry(u"Headers"_s, mHeaders);
+    } else {
+        config.deleteEntry(u"Headers"_s);
     }
     if (!mRoots.isEmpty()) {
         config.writeEntry(u"Roots"_s, mRoots);
+    } else {
+        config.deleteEntry(u"Roots"_s);
     }
     if (!mEnvironments.isEmpty()) {
         QStringList environments;
@@ -116,6 +126,8 @@ void McpProtocolSettings::save(KConfigGroup &config) const
             environments.append(it.key() + u'=' + it.value());
         }
         config.writeEntry(u"Environments"_s, environments);
+    } else {
+        config.deleteEntry(u"Environments"_s);
     }
 }
 
