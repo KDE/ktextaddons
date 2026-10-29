@@ -21,6 +21,8 @@ private Q_SLOTS:
     void shouldConvertLoggingLevelFromString();
     void shouldConvertTaskStatusToString();
     void shouldConvertTaskStatusFromString();
+    void shouldConvertCacheScopeToString();
+    void shouldConvertCacheScopeFromString();
     void shouldConvertProtocolVersionToString();
     void shouldConvertProtocolVersionFromString();
     void shouldOrderLoggingLevelBySeverity();

@@ -165,6 +165,12 @@ enum class TaskStatus : uint8_t {
     Working,
     Unknown,
 };
+
+enum class CacheScope : uint8_t {
+    Public,
+    Private,
+    Unknown,
+};
 using ServerNotification = std::variant<McpProtocolCancelledNotification,
                                         McpProtocolProgressNotification,
                                         McpProtocolResourceListChangedNotification,
@@ -278,6 +284,9 @@ embeddedResourceResourceFromJson(const QJsonValue &val);
 
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertTaskStatusToString(McpProtocolUtils::TaskStatus status);
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::TaskStatus convertTaskStatusFromString(const QString &str);
+
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertCacheScopeToString(McpProtocolUtils::CacheScope scope);
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::CacheScope convertCacheScopeFromString(const QString &str);
 
 [[nodiscard]] QJsonObject contentBlocktoJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock &val);
 [[nodiscard]] std::optional<TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock> contentBlockFromJson(const QJsonValue &val);

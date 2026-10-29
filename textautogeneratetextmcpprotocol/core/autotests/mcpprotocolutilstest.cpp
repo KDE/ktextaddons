@@ -137,6 +137,31 @@ void McpProtocolUtilsTest::shouldConvertTaskStatusFromString()
              TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::TaskStatus::Unknown);
 }
 
+void McpProtocolUtilsTest::shouldConvertCacheScopeToString()
+{
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertCacheScopeToString(
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CacheScope::Public),
+             u"public"_s);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertCacheScopeToString(
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CacheScope::Private),
+             u"private"_s);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertCacheScopeToString(
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CacheScope::Unknown),
+             QString());
+}
+
+void McpProtocolUtilsTest::shouldConvertCacheScopeFromString()
+{
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertCacheScopeFromString(u"public"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CacheScope::Public);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertCacheScopeFromString(u"private"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CacheScope::Private);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertCacheScopeFromString(u"foo"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CacheScope::Unknown);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertCacheScopeFromString(QString()),
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CacheScope::Unknown);
+}
+
 void McpProtocolUtilsTest::shouldConvertProtocolVersionToString()
 {
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(

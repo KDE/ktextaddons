@@ -86,6 +86,7 @@ target_sources(
         impl/mcpprotocolgetpromptrequest.cpp
         impl/mcpprotocolreadresourcerequest.cpp
         impl/mcpprotocolpingrequest.cpp
+        impl/mcpprotocoldiscoverrequest.cpp
         impl/mcpprotocollisttoolsrequest.cpp
         impl/mcpprotocollistresourcetemplatesrequest.cpp
         impl/mcpprotocolinitializerequest.cpp
@@ -172,6 +173,7 @@ target_sources(
         impl/mcpprotocolgetpromptrequest.h
         impl/mcpprotocolreadresourcerequest.h
         impl/mcpprotocolpingrequest.h
+        impl/mcpprotocoldiscoverrequest.h
         impl/mcpprotocollisttoolsrequest.h
         impl/mcpprotocollistresourcetemplatesrequest.h
         impl/mcpprotocolinitializerequest.h
@@ -245,6 +247,8 @@ target_sources(
         impl/mcpprotocoljsonrpcresultresponse.h
         impl/mcpprotocolinitializeresult.cpp
         impl/mcpprotocolinitializeresult.h
+        impl/mcpprotocoldiscoverresult.cpp
+        impl/mcpprotocoldiscoverresult.h
         impl/mcpprotocolservercapabilities.h
         impl/mcpprotocolservercapabilities.cpp
         impl/mcpprotocolelicitrequestformparams.h
@@ -423,6 +427,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolPaginatedRequestParams
     McpProtocolPaginatedResult
     McpProtocolPingRequest
+    McpProtocolDiscoverRequest
     McpProtocolProgressNotification
     McpProtocolProgressNotificationParams
     McpProtocolPromptArgument
@@ -478,6 +483,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolReadResourceResult
     McpProtocolJSONRPCResultResponse
     McpProtocolInitializeResult
+    McpProtocolDiscoverResult
     McpProtocolServerCapabilities
     McpProtocolElicitRequestFormParams
     McpProtocolElicitRequestURLParams

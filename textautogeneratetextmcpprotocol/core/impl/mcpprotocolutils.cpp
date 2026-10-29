@@ -207,6 +207,32 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertTaskStatusFromStri
     }
 }
 
+QString TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertCacheScopeToString(McpProtocolUtils::CacheScope scope)
+{
+    switch (scope) {
+    case McpProtocolUtils::CacheScope::Public:
+        return u"public"_s;
+    case McpProtocolUtils::CacheScope::Private:
+        return u"private"_s;
+    case McpProtocolUtils::CacheScope::Unknown:
+        return {};
+    }
+    return {};
+}
+
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CacheScope
+TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertCacheScopeFromString(const QString &str)
+{
+    if (str == "public"_L1) {
+        return McpProtocolUtils::CacheScope::Public;
+    } else if (str == "private"_L1) {
+        return McpProtocolUtils::CacheScope::Private;
+    } else {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid CacheScope: " << str;
+        return McpProtocolUtils::CacheScope::Unknown;
+    }
+}
+
 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProgressToken
 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::progressTokenFromJson(const QJsonValue &val)
 {
