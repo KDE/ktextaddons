@@ -10,6 +10,7 @@
 #include <QWidget>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 class QCheckBox;
+class QComboBox;
 class QLabel;
 class QLineEdit;
 class QListWidget;
@@ -36,12 +37,13 @@ public:
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateTools();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateStatus();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotSearchChanged(const QString &str);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void updateVisibleTools();
     TEXTAUTOGENERATETEXT_NO_EXPORT void setAllChecked(bool checked);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool canListTools() const;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     QCheckBox *const mFilterToolsCheckBox;
     QLineEdit *const mSearchLineEdit;
+    QComboBox *const mRiskComboBox;
     QListWidget *const mToolsListWidget;
     QLabel *const mStatusLabel;
     TextAutoGenerateTextMcpProtocolCore::McpServer mServer;

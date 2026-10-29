@@ -11,6 +11,7 @@
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QCheckBox>
+#include <QComboBox>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
@@ -22,11 +23,17 @@
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
+namespace
+{
+// Risk of tool, not defined for allowed tools which are not provided by server
+constexpr int riskRole = Qt::UserRole + 1;
+}
 TextAutoGenerateMcpServerToolsWidget::TextAutoGenerateMcpServerToolsWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
     , mManager(manager)
     , mFilterToolsCheckBox(new QCheckBox(i18nc("@option:check", "Only allow selected tools"), this))
     , mSearchLineEdit(new QLineEdit(this))
+    , mRiskComboBox(new QComboBox(this))
     , mToolsListWidget(new QListWidget(this))
     , mStatusLabel(new QLabel(this))
 {
@@ -49,6 +56,17 @@ TextAutoGenerateMcpServerToolsWidget::TextAutoGenerateMcpServerToolsWidget(TextA
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
     hboxLayout->addWidget(mSearchLineEdit);
 
+    mRiskComboBox->setObjectName(u"mRiskComboBox"_s);
+    mRiskComboBox->addItem(i18nc("@item:inlistbox", "All Tools"));
+    for (const auto risk : {TextAutoGenerateMcpToolsManager::ToolRisk::ReadOnly,
+                            TextAutoGenerateMcpToolsManager::ToolRisk::Modify,
+                            TextAutoGenerateMcpToolsManager::ToolRisk::Destructive}) {
+        mRiskComboBox->addItem(QIcon::fromTheme(TextAutoGenerateMcpToolsUtils::toolRiskIconName(risk)),
+                               TextAutoGenerateMcpToolsUtils::toolRiskText(risk),
+                               static_cast<int>(risk));
+    }
+    hboxLayout->addWidget(mRiskComboBox);
+
     auto selectAllButton = new QPushButton(i18nc("@action:button", "Select All"), this);
     selectAllButton->setObjectName(u"selectAllButton"_s);
     hboxLayout->addWidget(selectAllButton);
@@ -66,13 +84,15 @@ TextAutoGenerateMcpServerToolsWidget::TextAutoGenerateMcpServerToolsWidget(TextA
 
     const auto updateEnabled = [this, selectAllButton, unselectAllButton](bool filter) {
         mSearchLineEdit->setEnabled(filter);
+        mRiskComboBox->setEnabled(filter);
         mToolsListWidget->setEnabled(filter);
         selectAllButton->setEnabled(filter);
         unselectAllButton->setEnabled(filter);
     };
     updateEnabled(false);
     connect(mFilterToolsCheckBox, &QCheckBox::toggled, this, updateEnabled);
-    connect(mSearchLineEdit, &QLineEdit::textChanged, this, &TextAutoGenerateMcpServerToolsWidget::slotSearchChanged);
+    connect(mSearchLineEdit, &QLineEdit::textChanged, this, &TextAutoGenerateMcpServerToolsWidget::updateVisibleTools);
+    connect(mRiskComboBox, &QComboBox::currentIndexChanged, this, &TextAutoGenerateMcpServerToolsWidget::updateVisibleTools);
     connect(selectAllButton, &QPushButton::clicked, this, [this]() {
         setAllChecked(true);
     });
@@ -185,6 +205,7 @@ void TextAutoGenerateMcpServerToolsWidget::updateTools()
                 item->setToolTip(u"<qt>%1<br /><b>%2</b></qt>"_s.arg(tool.description.toHtmlEscaped(), riskText.toHtmlEscaped()));
             }
             item->setData(Qt::UserRole, tool.name);
+            item->setData(riskRole, static_cast<int>(tool.risk));
             toolNames.append(tool.name);
         }
     }
@@ -200,22 +221,26 @@ void TextAutoGenerateMcpServerToolsWidget::updateTools()
         item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
         item->setCheckState(mAllowedTools.contains(item->data(Qt::UserRole).toString()) ? Qt::Checked : Qt::Unchecked);
     }
-    slotSearchChanged(mSearchLineEdit->text());
+    updateVisibleTools();
 }
 
-void TextAutoGenerateMcpServerToolsWidget::slotSearchChanged(const QString &str)
+void TextAutoGenerateMcpServerToolsWidget::updateVisibleTools()
 {
+    const QString str = mSearchLineEdit->text();
+    // Invalid when all tools are shown
+    const QVariant risk = mRiskComboBox->currentData();
     for (int i = 0; i < mToolsListWidget->count(); ++i) {
         QListWidgetItem *item = mToolsListWidget->item(i);
-        const bool match =
+        const bool matchText =
             str.isEmpty() || item->text().contains(str, Qt::CaseInsensitive) || item->data(Qt::UserRole).toString().contains(str, Qt::CaseInsensitive);
-        item->setHidden(!match);
+        const bool matchRisk = !risk.isValid() || item->data(riskRole) == risk;
+        item->setHidden(!matchText || !matchRisk);
     }
 }
 
 void TextAutoGenerateMcpServerToolsWidget::setAllChecked(bool checked)
 {
-    // Only visible tools: select result of search
+    // Only visible tools: select result of search and risk filter
     for (int i = 0; i < mToolsListWidget->count(); ++i) {
         QListWidgetItem *item = mToolsListWidget->item(i);
         if (!item->isHidden()) {

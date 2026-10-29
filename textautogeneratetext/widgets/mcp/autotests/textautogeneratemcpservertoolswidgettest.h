@@ -20,4 +20,5 @@ private Q_SLOTS:
     void shouldShowAllowedTools();
     void shouldChangeAllowedTools();
     void shouldFilterListOfTools();
+    void shouldFilterByRisk();
 };

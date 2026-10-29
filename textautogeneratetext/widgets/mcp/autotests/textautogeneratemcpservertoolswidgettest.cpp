@@ -7,6 +7,7 @@
 #include "textautogeneratemcpservertoolswidgettest.h"
 #include "widgets/mcp/textautogeneratemcpservertoolswidget.h"
 #include <QCheckBox>
+#include <QComboBox>
 #include <QLabel>
 #include <QLineEdit>
 #include <QListWidget>
@@ -50,6 +51,14 @@ void TextAutoGenerateMcpServerToolsWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mSearchLineEdit->isClearButtonEnabled());
     QVERIFY(!mSearchLineEdit->placeholderText().isEmpty());
     QVERIFY(!mSearchLineEdit->isEnabled());
+
+    auto mRiskComboBox = w.findChild<QComboBox *>(u"mRiskComboBox"_s);
+    QVERIFY(mRiskComboBox);
+    // All tools, read-only, modify, destructive
+    QCOMPARE(mRiskComboBox->count(), 4);
+    QCOMPARE(mRiskComboBox->currentIndex(), 0);
+    QVERIFY(!mRiskComboBox->currentData().isValid());
+    QVERIFY(!mRiskComboBox->isEnabled());
 
     auto mToolsListWidget = w.findChild<QListWidget *>(u"mToolsListWidget"_s);
     QVERIFY(mToolsListWidget);
@@ -127,6 +136,29 @@ void TextAutoGenerateMcpServerToolsWidgetTest::shouldFilterListOfTools()
     QCOMPARE(w.server().allowedTools(), QStringList{u"list_directory"_s});
 
     mSearchLineEdit->clear();
+    QVERIFY(!mToolsListWidget->item(1)->isHidden());
+}
+
+void TextAutoGenerateMcpServerToolsWidgetTest::shouldFilterByRisk()
+{
+    TextAutoGenerateText::TextAutoGenerateMcpServerToolsWidget w(nullptr);
+    w.setServer(createServer());
+
+    auto mRiskComboBox = w.findChild<QComboBox *>(u"mRiskComboBox"_s);
+    QVERIFY(mRiskComboBox->isEnabled());
+    auto mToolsListWidget = w.findChild<QListWidget *>(u"mToolsListWidget"_s);
+    // Risk of tools not provided by server is unknown: hidden when a risk is selected
+    mRiskComboBox->setCurrentIndex(1);
+    QVERIFY(mToolsListWidget->item(0)->isHidden());
+    QVERIFY(mToolsListWidget->item(1)->isHidden());
+
+    // Hidden tools are not changed
+    auto unselectAllButton = w.findChild<QPushButton *>(u"unselectAllButton"_s);
+    unselectAllButton->click();
+    QCOMPARE(w.server().allowedTools().count(), 2);
+
+    mRiskComboBox->setCurrentIndex(0);
+    QVERIFY(!mToolsListWidget->item(0)->isHidden());
     QVERIFY(!mToolsListWidget->item(1)->isHidden());
 }
 
