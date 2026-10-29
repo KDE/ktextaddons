@@ -68,7 +68,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d << "]";
     d.space() << "arguments" << (t.arguments().isEmpty() ? QString() : u"***"_s);
     d.space() << "command" << t.command();
-    d.space() << "roots" << t.roots();
+    d.space() << "roots" << t.roots().join(u", "_s);
     d.space() << "mAuthToken is empty " << t.authToken().isEmpty();
     return d;
 }
