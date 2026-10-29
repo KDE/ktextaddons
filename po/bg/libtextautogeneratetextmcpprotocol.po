@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-27 00:58+0000\n"
-"PO-Revision-Date: 2026-10-24 08:34+0200\n"
+"PO-Revision-Date: 2026-10-28 16:55+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -20,23 +20,22 @@ msgstr ""
 #: core/client/mcpprotocolclientprotocolmanager.cpp:436
 #, kde-format
 msgid "Initialize request timed out."
-msgstr ""
+msgstr "Изтече времето за заявка за инициализиране."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:611
 #, kde-format
 msgid "Invalid server settings."
-msgstr ""
+msgstr "Невалидни настройки на сървъра."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:631
-#, fuzzy, kde-format
-#| msgid "Impossible to start client. URL is invalid."
+#, kde-format
 msgid "Impossible to start client."
-msgstr "Невъзможно е стартирането на клиента. URL адресът е невалиден."
+msgstr "Невъзможно е стартирането на клиента."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:884
 #, kde-format
 msgid "Unsupported protocol version: %1"
-msgstr ""
+msgstr "Неподдържана версия на протокол: %1"
 
 #: core/client/mcpserver.cpp:111
 #, kde-format

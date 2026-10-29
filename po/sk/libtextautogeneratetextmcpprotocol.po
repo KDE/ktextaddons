@@ -17,23 +17,22 @@ msgstr ""
 #: core/client/mcpprotocolclientprotocolmanager.cpp:436
 #, kde-format
 msgid "Initialize request timed out."
-msgstr ""
+msgstr "Vypršal čas požiadavky na inicializáciu."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:611
 #, kde-format
 msgid "Invalid server settings."
-msgstr ""
+msgstr "Neplatné nastavenia servera."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:631
-#, fuzzy, kde-format
-#| msgid "Impossible to start client. URL is invalid."
+#, kde-format
 msgid "Impossible to start client."
-msgstr "Klienta nie je možné spustiť. URL je neplatná."
+msgstr "Klienta nie je možné spustiť."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:884
 #, kde-format
 msgid "Unsupported protocol version: %1"
-msgstr ""
+msgstr "Nepodporovaná verzia protokolu: %1"
 
 #: core/client/mcpserver.cpp:111
 #, kde-format

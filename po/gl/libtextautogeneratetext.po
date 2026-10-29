@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 00:59+0000\n"
+"POT-Creation-Date: 2026-10-29 00:52+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -118,7 +118,7 @@ msgstr ""
 msgid "Error: impossible to call tool \"%1\"."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:94
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:101
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr ""
