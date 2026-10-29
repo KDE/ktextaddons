@@ -9,9 +9,14 @@
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
+namespace
+{
+const char myTextAutoGenerateMcpServerToolsDialogGroupName[] = "TextAutoGenerateMcpServerToolsDialog";
+}
 TextAutoGenerateMcpServerToolsDialog::TextAutoGenerateMcpServerToolsDialog(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QDialog(parent)
     , mTextAutoGenerateMcpServerToolsWidget(new TextAutoGenerateMcpServerToolsWidget(manager, this))
@@ -28,6 +33,7 @@ TextAutoGenerateMcpServerToolsDialog::TextAutoGenerateMcpServerToolsDialog(TextA
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::accepted, this, &TextAutoGenerateMcpServerToolsDialog::accept);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateMcpServerToolsDialog::reject);
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextAutoGenerateMcpServerToolsDialogGroupName), QSize(400, 300));
 }
 
 TextAutoGenerateMcpServerToolsDialog::~TextAutoGenerateMcpServerToolsDialog() = default;
