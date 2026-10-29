@@ -81,9 +81,17 @@ void TextAutoGenerateMcpToolsManager::slotServersChanged()
     const QList<QByteArray> identifiers = mServers.keys();
     for (const QByteArray &identifier : identifiers) {
         const TextAutoGenerateTextMcpProtocolCore::McpServer server = mServerManager->mcpServerModel()->mcpServer(identifier);
-        if (server != mServers.value(identifier).server || !server.enabled()) {
+        ServerState &state = mServers[identifier];
+        if (server == state.server) {
+            continue;
+        }
+        if (!server.enabled() || !TextAutoGenerateMcpToolsUtils::sameConnectionSettings(server, state.server)) {
             qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "MCP server changed, disconnect it:" << identifier;
             disconnectServer(identifier);
+        } else {
+            // Only allowed tools changed: connection can be kept
+            state.server = server;
+            Q_EMIT toolsChanged(identifier);
         }
     }
 }
@@ -413,6 +421,24 @@ QString TextAutoGenerateMcpToolsManager::errorString(const QByteArray &identifie
 
 QList<TextAutoGenerateMcpToolsManager::McpTool> TextAutoGenerateMcpToolsManager::tools(const QByteArray &serverIdentifier) const
 {
+    const auto it = mServers.constFind(serverIdentifier);
+    if (it == mServers.cend()) {
+        return {};
+    }
+    if (!it->server.filterTools()) {
+        return it->tools;
+    }
+    QList<McpTool> list;
+    for (const auto &tool : it->tools) {
+        if (it->server.isToolAllowed(tool.name)) {
+            list.append(tool);
+        }
+    }
+    return list;
+}
+
+QList<TextAutoGenerateMcpToolsManager::McpTool> TextAutoGenerateMcpToolsManager::allTools(const QByteArray &serverIdentifier) const
+{
     return mServers.value(serverIdentifier).tools;
 }
 
@@ -422,6 +448,10 @@ std::optional<TextAutoGenerateMcpToolsManager::McpTool> TextAutoGenerateMcpTools
     bool severalToolsWithSameName = false;
     for (const auto &state : mServers) {
         for (const auto &tool : state.tools) {
+            // Tool not allowed can't be called
+            if (!state.server.isToolAllowed(tool.name)) {
+                continue;
+            }
             if (tool.exposedName == exposedName) {
                 return tool;
             }

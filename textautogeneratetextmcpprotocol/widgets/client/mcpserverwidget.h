@@ -39,11 +39,22 @@ public:
      */
     ~McpServerWidget() override;
 
+    /*!
+     * \brief setConfigureToolsSupported
+     * \param supported true to show action which emits configureToolsRequested()
+     */
+    void setConfigureToolsSupported(bool supported);
+
 Q_SIGNALS:
     /*!
      * \brief settingsChanged
      */
     void settingsChanged();
+    /*!
+     * \brief configureToolsRequested
+     * \param identifier server whose tools must be configured
+     */
+    void configureToolsRequested(const QByteArray &identifier);
 
 private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotAddServer();

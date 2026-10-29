@@ -5,6 +5,7 @@
 */
 #include "textautogeneratetoolswidget.h"
 #include "core/mcp/textautogeneratemcptoolsmanager.h"
+#include "core/mcp/textautogeneratemcptoolsutils.h"
 #include "core/textautogeneratemanager.h"
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratetextwidget_debug.h"
@@ -24,32 +25,6 @@ using namespace TextAutoGenerateText;
 namespace
 {
 constexpr const char *button_property("identifier");
-
-QString toolRiskIconName(TextAutoGenerateMcpToolsManager::ToolRisk risk)
-{
-    switch (risk) {
-    case TextAutoGenerateMcpToolsManager::ToolRisk::ReadOnly:
-        return u"security-high"_s;
-    case TextAutoGenerateMcpToolsManager::ToolRisk::Modify:
-        return u"security-medium"_s;
-    case TextAutoGenerateMcpToolsManager::ToolRisk::Destructive:
-        return u"security-low"_s;
-    }
-    return {};
-}
-
-QString toolRiskText(TextAutoGenerateMcpToolsManager::ToolRisk risk)
-{
-    switch (risk) {
-    case TextAutoGenerateMcpToolsManager::ToolRisk::ReadOnly:
-        return i18n("Read-only");
-    case TextAutoGenerateMcpToolsManager::ToolRisk::Modify:
-        return i18n("Modifies data");
-    case TextAutoGenerateMcpToolsManager::ToolRisk::Destructive:
-        return i18n("May delete or overwrite data");
-    }
-    return {};
-}
 }
 TextAutoGenerateToolsWidget::TextAutoGenerateToolsWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
     : QWidget{parent}
@@ -247,8 +222,8 @@ void TextAutoGenerateToolsWidget::fillMcpToolsMenu(QToolButton *button, const QB
             menu->addSection(tool.groupTitle.isEmpty() ? tool.groupName : tool.groupTitle);
         }
         auto action = menu->addAction(tool.displayName.isEmpty() ? tool.name : tool.displayName);
-        action->setIcon(QIcon::fromTheme(toolRiskIconName(tool.risk)));
-        const QString riskText = toolRiskText(tool.risk);
+        action->setIcon(QIcon::fromTheme(TextAutoGenerateMcpToolsUtils::toolRiskIconName(tool.risk)));
+        const QString riskText = TextAutoGenerateMcpToolsUtils::toolRiskText(tool.risk);
         QString tooltipStr;
         if (tool.description.isEmpty()) {
             tooltipStr = u"<qt><b>%1</b></qt>"_s.arg(riskText.toHtmlEscaped());

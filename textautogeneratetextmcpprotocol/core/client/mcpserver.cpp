@@ -18,7 +18,7 @@ McpServer::~McpServer() = default;
 bool McpServer::operator==(const McpServer &other) const
 {
     return mEnabled == other.mEnabled && mName == other.mName && mIconName == other.mIconName && mIdentifier == other.mIdentifier
-        && mTransportType == other.mTransportType && mSettings == other.mSettings;
+        && mTransportType == other.mTransportType && mSettings == other.mSettings && mFilterTools == other.mFilterTools && mAllowedTools == other.mAllowedTools;
 }
 
 void McpServer::createUniqueIdentifier()
@@ -63,6 +63,8 @@ void McpServer::load(const KConfigGroup &config)
     setIconName(config.readEntry("IconName", QString()));
     mIdentifier = config.readEntry("Id", QByteArray());
     mTransportType = convertTransportTypeFromString(config.readEntry("TransportType", QString()));
+    mFilterTools = config.readEntry("FilterTools", false);
+    mAllowedTools = config.readEntry("AllowedTools", QStringList());
 
     mSettings.load(config);
 }
@@ -74,6 +76,8 @@ void McpServer::save(KConfigGroup &config) const
     config.writeEntry(u"Enabled"_s, mEnabled);
     config.writeEntry(u"TransportType"_s, convertTransportTypeToString(mTransportType));
     config.writeEntry(u"IconName"_s, mIconName);
+    config.writeEntry(u"FilterTools"_s, mFilterTools);
+    config.writeEntry(u"AllowedTools"_s, mAllowedTools);
     mSettings.save(config);
 }
 
@@ -148,6 +152,31 @@ QIcon McpServer::icon() const
     return mIcon;
 }
 
+bool McpServer::filterTools() const
+{
+    return mFilterTools;
+}
+
+void McpServer::setFilterTools(bool newFilterTools)
+{
+    mFilterTools = newFilterTools;
+}
+
+QStringList McpServer::allowedTools() const
+{
+    return mAllowedTools;
+}
+
+void McpServer::setAllowedTools(const QStringList &newAllowedTools)
+{
+    mAllowedTools = newAllowedTools;
+}
+
+bool McpServer::isToolAllowed(const QString &toolName) const
+{
+    return !mFilterTools || mAllowedTools.contains(toolName);
+}
+
 QString McpServer::convertTransportTypeToString(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType type)
 {
     switch (type) {
@@ -186,5 +215,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpServer
     d.space() << "identifier:" << t.identifier();
     d.space() << "serverType:" << t.transportType();
     d.space() << "settings:" << t.settings();
+    d.space() << "filterTools:" << t.filterTools();
+    d.space() << "allowedTools:" << t.allowedTools();
     return d;
 }

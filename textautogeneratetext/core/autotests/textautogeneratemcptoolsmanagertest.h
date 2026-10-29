@@ -21,6 +21,7 @@ private Q_SLOTS:
     void shouldReportErrorForInvalidServer();
     void shouldDisconnectWhenServerIsDisabled();
     void shouldRefreshToolsWhenListChanged();
+    void shouldFilterAllowedTools();
     void shouldCreateUniqueNames();
     void shouldConvertToolIdentifiers();
     void shouldSelectTools();

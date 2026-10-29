@@ -125,7 +125,14 @@ public:
     [[nodiscard]] Status status(const QByteArray &identifier) const;
     [[nodiscard]] QString errorString(const QByteArray &identifier) const;
 
+    /*!
+     * Tools of server \a serverIdentifier which can be used (filtered by allowed tools of server).
+     */
     [[nodiscard]] QList<McpTool> tools(const QByteArray &serverIdentifier) const;
+    /*!
+     * All tools provided by server \a serverIdentifier, allowed or not.
+     */
+    [[nodiscard]] QList<McpTool> allTools(const QByteArray &serverIdentifier) const;
     /*!
      * Returns tool named \a exposedName. LLM can drop server prefix of exposed name (it uses tool names found in descriptions
      * or results of other tools), so a tool whose sanitized name is \a exposedName is returned when it's unique.
@@ -245,6 +252,7 @@ private:
         TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager *client = nullptr;
         Status status = Status::Disconnected;
         QString errorString;
+        // All tools of server, tools() returns allowed tools
         QList<McpTool> tools;
         qint64 listToolsRequestId = -1;
     };

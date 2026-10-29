@@ -149,6 +149,45 @@ void TextAutoGenerateMcpToolsManagerTest::shouldRefreshToolsWhenListChanged()
     QCOMPARE(manager.tools(server.identifier()).at(2).exposedName, "foo__new_tool"_ba);
 }
 
+void TextAutoGenerateMcpToolsManagerTest::shouldFilterAllowedTools()
+{
+    FakeMcpServer fakeServer;
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    auto server = fakeServer.mcpServer(u"foo"_s);
+    serverManager.mcpServerModel()->addMcpServer(server);
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    manager.connectServer(server.identifier());
+    QTRY_COMPARE(manager.tools(server.identifier()).count(), 2);
+    auto client = manager.client(server.identifier());
+    QVERIFY(client);
+
+    // Only allowed tools changed: connection is kept
+    QSignalSpy toolsChangedSpy(&manager, &TextAutoGenerateMcpToolsManager::toolsChanged);
+    server.setFilterTools(true);
+    server.setAllowedTools({u"weather"_s});
+    serverManager.mcpServerModel()->editMcpServer(server);
+    QCOMPARE(toolsChangedSpy.count(), 1);
+    QCOMPARE(manager.status(server.identifier()), TextAutoGenerateMcpToolsManager::Status::Connected);
+    QCOMPARE(manager.client(server.identifier()), client);
+
+    const auto tools = manager.tools(server.identifier());
+    QCOMPARE(tools.count(), 1);
+    QCOMPARE(tools.at(0).name, u"weather"_s);
+    QCOMPARE(manager.allTools(server.identifier()).count(), 2);
+    QCOMPARE(manager.toolsMetaData({server.identifier()}).count(), 1);
+    QCOMPARE(manager.selectedTools({TextAutoGenerateMcpToolsManager::toolIdentifier(server.identifier())}).count(), 1);
+    // Tool not allowed can't be called
+    QVERIFY(manager.tool("foo__weather"_ba).has_value());
+    QVERIFY(!manager.tool("foo__get_time"_ba).has_value());
+    QVERIFY(!manager.tool("get_time"_ba).has_value());
+
+    // Tools are not filtered anymore
+    server.setFilterTools(false);
+    serverManager.mcpServerModel()->editMcpServer(server);
+    QCOMPARE(manager.tools(server.identifier()).count(), 2);
+    QVERIFY(manager.tool("foo__get_time"_ba).has_value());
+}
+
 void TextAutoGenerateMcpToolsManagerTest::shouldCreateUniqueNames()
 {
     FakeMcpServer fakeServer;

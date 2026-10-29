@@ -5,7 +5,9 @@
 */
 #include "textautogeneratemcptoolsutils.h"
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KSharedConfig>
+#include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 using namespace Qt::Literals::StringLiterals;
 bool TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(const QString &serverConfigFileName, const QByteArray &serverIdentifier)
 {
@@ -51,4 +53,40 @@ void TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::setAlwaysAllowedServer
     KConfigGroup group(KSharedConfig::openConfig(serverConfigFileName), u"ToolConfirmation"_s);
     group.writeEntry("AlwaysAllowedServers", servers);
     group.sync();
+}
+
+bool TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::sameConnectionSettings(TextAutoGenerateTextMcpProtocolCore::McpServer first,
+                                                                                 TextAutoGenerateTextMcpProtocolCore::McpServer second)
+{
+    first.setFilterTools(false);
+    first.setAllowedTools({});
+    second.setFilterTools(false);
+    second.setAllowedTools({});
+    return first == second;
+}
+
+QString TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::toolRiskIconName(TextAutoGenerateMcpToolsManager::ToolRisk risk)
+{
+    switch (risk) {
+    case TextAutoGenerateMcpToolsManager::ToolRisk::ReadOnly:
+        return u"security-high"_s;
+    case TextAutoGenerateMcpToolsManager::ToolRisk::Modify:
+        return u"security-medium"_s;
+    case TextAutoGenerateMcpToolsManager::ToolRisk::Destructive:
+        return u"security-low"_s;
+    }
+    return {};
+}
+
+QString TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::toolRiskText(TextAutoGenerateMcpToolsManager::ToolRisk risk)
+{
+    switch (risk) {
+    case TextAutoGenerateMcpToolsManager::ToolRisk::ReadOnly:
+        return i18n("Read-only");
+    case TextAutoGenerateMcpToolsManager::ToolRisk::Modify:
+        return i18n("Modifies data");
+    case TextAutoGenerateMcpToolsManager::ToolRisk::Destructive:
+        return i18n("May delete or overwrite data");
+    }
+    return {};
 }

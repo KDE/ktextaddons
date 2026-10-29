@@ -33,6 +33,12 @@ public:
      */
     void slotSearchChanged(const QString &str);
 
+    /*!
+     * \brief setConfigureToolsSupported
+     * \param supported true to show action which emits configureTools()
+     */
+    void setConfigureToolsSupported(bool supported);
+
 Q_SIGNALS:
     /*!
      * \brief addServer
@@ -48,6 +54,11 @@ Q_SIGNALS:
      * \param id
      */
     void removeServer(const QByteArray &id);
+    /*!
+     * \brief configureTools
+     * \param id
+     */
+    void configureTools(const QByteArray &id);
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
@@ -55,5 +66,6 @@ protected:
 private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotEditMcpServer(const QModelIndex &index);
     McpServerSortFilterProxyModel *const mSortFilterProxyModel;
+    bool mConfigureToolsSupported = false;
 };
 }

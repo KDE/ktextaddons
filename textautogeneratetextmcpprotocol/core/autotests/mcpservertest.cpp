@@ -5,6 +5,8 @@
 */
 #include "mcpservertest.h"
 #include "client/mcpserver.h"
+#include <KConfig>
+#include <KConfigGroup>
 #include <QStandardPaths>
 #include <QTest>
 
@@ -23,6 +25,8 @@ void McpServerTest::shouldHaveDefaultValues()
     QVERIFY(w.name().isEmpty());
     QVERIFY(w.identifier().isEmpty());
     QVERIFY(w.iconName().isEmpty());
+    QVERIFY(!w.filterTools());
+    QVERIFY(w.allowedTools().isEmpty());
     QVERIFY(!w.isValid());
 }
 
@@ -126,6 +130,49 @@ void McpServerTest::shouldCompareServers()
     settings.setCommand(u"bla"_s);
     second.setSettings(settings);
     QVERIFY(first != second);
+
+    second = first;
+    second.setFilterTools(true);
+    QVERIFY(first != second);
+
+    second = first;
+    second.setAllowedTools({u"tool"_s});
+    QVERIFY(first != second);
+}
+
+void McpServerTest::shouldFilterTools()
+{
+    TextAutoGenerateTextMcpProtocolCore::McpServer w;
+    w.setAllowedTools({u"read_file"_s});
+    // Not filtered: all tools are allowed
+    QVERIFY(w.isToolAllowed(u"read_file"_s));
+    QVERIFY(w.isToolAllowed(u"write_file"_s));
+
+    w.setFilterTools(true);
+    QVERIFY(w.isToolAllowed(u"read_file"_s));
+    QVERIFY(!w.isToolAllowed(u"write_file"_s));
+
+    w.setAllowedTools({});
+    QVERIFY(!w.isToolAllowed(u"read_file"_s));
+}
+
+void McpServerTest::shouldLoadSaveAllowedTools()
+{
+    TextAutoGenerateTextMcpProtocolCore::McpServer server;
+    server.setName(u"foo"_s);
+    server.createUniqueIdentifier();
+    server.setFilterTools(true);
+    server.setAllowedTools({u"read_file"_s, u"list_directory"_s});
+
+    // Not backed by a file
+    KConfig config(QString(), KConfig::SimpleConfig);
+    KConfigGroup group(&config, u"Server"_s);
+    server.save(group);
+
+    TextAutoGenerateTextMcpProtocolCore::McpServer loaded;
+    loaded.load(group);
+    QVERIFY(loaded.filterTools());
+    QCOMPARE(loaded.allowedTools(), server.allowedTools());
 }
 
 #include "moc_mcpservertest.cpp"

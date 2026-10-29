@@ -524,6 +524,10 @@ target_sources(
         widgets/mcp/textautogeneratemcpsampling.cpp
         widgets/mcp/textautogeneratesamplingdialog.h
         widgets/mcp/textautogeneratesamplingdialog.cpp
+        widgets/mcp/textautogeneratemcpservertoolswidget.h
+        widgets/mcp/textautogeneratemcpservertoolswidget.cpp
+        widgets/mcp/textautogeneratemcpservertoolsdialog.h
+        widgets/mcp/textautogeneratemcpservertoolsdialog.cpp
 )
 
 if(BUILD_TESTING)

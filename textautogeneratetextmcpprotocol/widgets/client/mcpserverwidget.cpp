@@ -67,6 +67,7 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
     connect(mMcpServerListView, &McpServerListView::addServer, this, &McpServerWidget::slotAddServer);
     connect(mMcpServerListView, &McpServerListView::removeServer, this, &McpServerWidget::slotRemoveServer);
     connect(mMcpServerListView, &McpServerListView::editServer, this, &McpServerWidget::slotEditServer);
+    connect(mMcpServerListView, &McpServerListView::configureTools, this, &McpServerWidget::configureToolsRequested);
     if (mModel) {
         // Server was enabled/disabled from checkbox
         connect(mModel, &QAbstractItemModel::dataChanged, this, [this](const QModelIndex &, const QModelIndex &, const QList<int> &roles) {
@@ -78,6 +79,11 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
 }
 
 McpServerWidget::~McpServerWidget() = default;
+
+void McpServerWidget::setConfigureToolsSupported(bool supported)
+{
+    mMcpServerListView->setConfigureToolsSupported(supported);
+}
 
 TextAutoGenerateTextMcpProtocolCore::McpServer
 McpServerWidget::convertMcpRegistryServerInfoToMcpServer(const TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo &serverInfo) const

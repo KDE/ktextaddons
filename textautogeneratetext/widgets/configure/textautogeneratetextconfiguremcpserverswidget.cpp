@@ -6,9 +6,11 @@
 #include "textautogeneratetextconfiguremcpserverswidget.h"
 #include "core/mcp/textautogeneratemcptoolsutils.h"
 #include "core/textautogeneratemanager.h"
+#include "widgets/mcp/textautogeneratemcpservertoolsdialog.h"
 #include <KLocalizedString>
 #include <QLabel>
 #include <QListWidget>
+#include <QPointer>
 #include <QSplitter>
 #include <QVBoxLayout>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
@@ -41,6 +43,11 @@ TextAutoGenerateTextConfigureMcpServersWidget::TextAutoGenerateTextConfigureMcpS
             &TextAutoGenerateTextMcpProtocolWidgets::McpServerWidget::settingsChanged,
             this,
             &TextAutoGenerateTextConfigureMcpServersWidget::settingsChanged);
+    mMcpServerWidget->setConfigureToolsSupported(true);
+    connect(mMcpServerWidget,
+            &TextAutoGenerateTextMcpProtocolWidgets::McpServerWidget::configureToolsRequested,
+            this,
+            &TextAutoGenerateTextConfigureMcpServersWidget::slotConfigureTools);
 
     auto widget = new QWidget(this);
     splitter->addWidget(widget);
@@ -110,6 +117,18 @@ void TextAutoGenerateTextConfigureMcpServersWidget::updateAlwaysAllowedServers()
         item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
         item->setCheckState(checkedServers.contains(server.identifier()) ? Qt::Checked : Qt::Unchecked);
     }
+}
+
+void TextAutoGenerateTextConfigureMcpServersWidget::slotConfigureTools(const QByteArray &identifier)
+{
+    QPointer<TextAutoGenerateMcpServerToolsDialog> dlg = new TextAutoGenerateMcpServerToolsDialog(mManager, this);
+    dlg->setServer(mMcpServerModel->mcpServer(identifier));
+    if (dlg->exec()) {
+        // Applied with save() as other changes
+        mMcpServerModel->editMcpServer(dlg->server());
+        Q_EMIT settingsChanged();
+    }
+    delete dlg;
 }
 
 void TextAutoGenerateTextConfigureMcpServersWidget::save()

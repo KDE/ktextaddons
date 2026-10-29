@@ -19,4 +19,6 @@ private Q_SLOTS:
     void shouldVerifyValidValue();
     void verifyConvertServerTypeToString();
     void verifyConvertServerTypeFromString();
+    void shouldFilterTools();
+    void shouldLoadSaveAllowedTools();
 };

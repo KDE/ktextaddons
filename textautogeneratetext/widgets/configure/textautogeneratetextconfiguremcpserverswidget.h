@@ -52,6 +52,7 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateAlwaysAllowedServers();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureTools(const QByteArray &identifier);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QList<QByteArray> checkedAlwaysAllowedServers() const;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
     // Servers are modified in a copy: changes are applied with save()

@@ -37,6 +37,11 @@ void McpServerListView::slotSearchChanged(const QString &str)
     mSortFilterProxyModel->setFilterString(str);
 }
 
+void McpServerListView::setConfigureToolsSupported(bool supported)
+{
+    mConfigureToolsSupported = supported;
+}
+
 void McpServerListView::slotEditMcpServer(const QModelIndex &index)
 {
     if (const QByteArray uuid = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::Identifier).toByteArray(); uuid.isEmpty()) {
@@ -60,6 +65,17 @@ void McpServerListView::contextMenuEvent(QContextMenuEvent *event)
             slotEditMcpServer(index);
         });
         menu.addAction(editAction);
+        if (mConfigureToolsSupported) {
+            auto configureToolsAction = new QAction(QIcon::fromTheme(u"configure"_s), i18nc("@action", "Configure Tools…"), &menu);
+            connect(configureToolsAction, &QAction::triggered, this, [index, this]() {
+                if (const QByteArray uuid = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::Identifier).toByteArray(); uuid.isEmpty()) {
+                    qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "invalid identifier";
+                } else {
+                    Q_EMIT configureTools(uuid);
+                }
+            });
+            menu.addAction(configureToolsAction);
+        }
         menu.addSeparator();
         auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Server"), &menu);
         connect(removeAction, &QAction::triggered, this, [index, this]() {

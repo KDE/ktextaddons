@@ -148,11 +148,42 @@ public:
      */
     [[nodiscard]] QIcon icon() const;
 
+    /*!
+     * \brief filterTools
+     * \return true when only allowed tools can be used
+     */
+    [[nodiscard]] bool filterTools() const;
+    /*!
+     * \brief setFilterTools
+     * \param newFilterTools
+     */
+    void setFilterTools(bool newFilterTools);
+
+    /*!
+     * \brief allowedTools
+     * \return names of tools which can be used when tools are filtered
+     */
+    [[nodiscard]] QStringList allowedTools() const;
+    /*!
+     * \brief setAllowedTools
+     * \param newAllowedTools
+     */
+    void setAllowedTools(const QStringList &newAllowedTools);
+
+    /*!
+     * \brief isToolAllowed
+     * \param toolName
+     * \return true when tool \a toolName can be used (tools are not filtered or tool is allowed)
+     */
+    [[nodiscard]] bool isToolAllowed(const QString &toolName) const;
+
 private:
     bool mEnabled = true;
+    bool mFilterTools = false;
     QString mName;
     QString mIconName;
     QIcon mIcon;
+    QStringList mAllowedTools;
     QByteArray mIdentifier;
     TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType mTransportType =
         TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType::Unknown;
