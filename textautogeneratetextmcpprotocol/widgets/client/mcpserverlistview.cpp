@@ -66,6 +66,7 @@ void McpServerListView::contextMenuEvent(QContextMenuEvent *event)
         });
         menu.addAction(editAction);
         if (mConfigureToolsSupported) {
+            menu.addSeparator();
             auto configureToolsAction = new QAction(QIcon::fromTheme(u"configure"_s), i18nc("@action", "Configure Tools…"), &menu);
             connect(configureToolsAction, &QAction::triggered, this, [index, this]() {
                 if (const QByteArray uuid = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::Identifier).toByteArray(); uuid.isEmpty()) {
