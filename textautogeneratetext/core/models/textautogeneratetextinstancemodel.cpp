@@ -101,7 +101,28 @@ void TextAutoGenerateTextInstanceModel::setTextInstances(const QList<TextAutoGen
     qDeleteAll(mTextInstances);
     mTextInstances.clear();
     mTextInstances = newTextInstances;
+    for (const auto &inst : std::as_const(mTextInstances)) {
+        connectPlugin(inst);
+    }
     endResetModel();
+}
+
+void TextAutoGenerateTextInstanceModel::connectPlugin(TextAutoGenerateTextInstance *instance)
+{
+    auto plugin = instance->plugin();
+    if (!plugin) {
+        return;
+    }
+    // Plugin config (e.g. server url) can change isLocalServer()
+    connect(plugin, &TextAutoGenerateTextPlugin::configChanged, this, [this, plugin]() {
+        const auto it = std::find_if(mTextInstances.constBegin(), mTextInstances.constEnd(), [plugin](TextAutoGenerateTextInstance *instance) {
+            return instance->plugin() == plugin;
+        });
+        if (it != mTextInstances.constEnd()) {
+            const auto idx = index(std::distance(mTextInstances.constBegin(), it), 0);
+            Q_EMIT dataChanged(idx, idx, {InstanceRoles::IsLocalServer});
+        }
+    });
 }
 
 bool TextAutoGenerateTextInstanceModel::isEmpty() const
@@ -190,6 +211,7 @@ void TextAutoGenerateTextInstanceModel::addInstance(TextAutoGenerateTextInstance
 {
     beginInsertRows(QModelIndex(), mTextInstances.count(), mTextInstances.count());
     mTextInstances.append(instance);
+    connectPlugin(instance);
     endInsertRows();
 }
 

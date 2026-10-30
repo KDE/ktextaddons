@@ -133,6 +133,7 @@ public:
     [[nodiscard]] QStringList instanceDisplayNames() const;
 
 private:
+    void connectPlugin(TextAutoGenerateTextInstance *instance);
     QList<TextAutoGenerateTextInstance *> mTextInstances;
     QByteArray mCurrentinstance;
 };
