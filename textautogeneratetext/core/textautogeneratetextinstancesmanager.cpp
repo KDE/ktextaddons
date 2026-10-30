@@ -12,9 +12,24 @@
 #include "textautogeneratetextutils.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QCoreApplication>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
+namespace
+{
+// We want to save in own apps name
+[[nodiscard]] KConfigGroup currentInstanceConfigGroup(const KSharedConfig::Ptr &config)
+{
+    KConfigGroup configGeneralGroup(config, u"General"_s);
+    const QString appName = QCoreApplication::applicationName();
+    if (appName.isEmpty()) {
+        return configGeneralGroup;
+    }
+    return configGeneralGroup.group(appName);
+}
+}
+
 TextAutoGenerateTextInstancesManager::TextAutoGenerateTextInstancesManager(TextAutoGenerateManager *manager, QObject *parent)
     : QObject{parent}
     , mTextAutoGenerateTextInstanceModel(new TextAutoGenerateTextInstanceModel(this))
@@ -23,9 +38,7 @@ TextAutoGenerateTextInstancesManager::TextAutoGenerateTextInstancesManager(TextA
 {
 }
 
-TextAutoGenerateTextInstancesManager::~TextAutoGenerateTextInstancesManager()
-{
-}
+TextAutoGenerateTextInstancesManager::~TextAutoGenerateTextInstancesManager() = default;
 
 bool TextAutoGenerateTextInstancesManager::isEmpty() const
 {
@@ -74,14 +87,17 @@ void TextAutoGenerateTextInstancesManager::loadInstances()
     setInstances(lstInstances);
     // Set current Instance after loading all instances. Otherwise we can'"t have default instance
     const KConfigGroup configGeneralGroup(config, u"General"_s);
-    setCurrentinstance(configGeneralGroup.readEntry("currentInstance", QByteArray()));
+    const KConfigGroup currentInstanceGroup = currentInstanceConfigGroup(config);
+    // Fall back to the legacy global key for migration
+    const QByteArray legacyCurrentInstance = configGeneralGroup.readEntry("currentInstance", QByteArray());
+    setCurrentinstance(currentInstanceGroup.readEntry("currentInstance", legacyCurrentInstance));
 }
 
 void TextAutoGenerateTextInstancesManager::saveInstances()
 {
     auto config = KSharedConfig::openConfig(TextAutoGenerateTextUtils::instanceConfigFileName());
-    KConfigGroup configGeneralGroup(config, u"General"_s);
-    configGeneralGroup.writeEntry("currentInstance", currentInstance());
+    KConfigGroup currentInstanceGroup = currentInstanceConfigGroup(config);
+    currentInstanceGroup.writeEntry("currentInstance", currentInstance());
 
     const auto instanceList = TextAutoGenerateTextUtils::instancesList(config);
     for (const auto &group : instanceList) {
