@@ -72,6 +72,8 @@ QVariant TextAutoGenerateTextInstanceModel::data(const QModelIndex &index, int r
         return !instance->instanceUuid().isEmpty() && !mCurrentinstance.isEmpty() && (instance->instanceUuid() == mCurrentinstance) && instance->enabled();
     case InstanceRoles::TranslatedPluginName:
         return instance->plugin()->translatedPluginName();
+    case InstanceRoles::IsLocalServer:
+        return instance->plugin()->isLocalServer();
     default:
         break;
     }

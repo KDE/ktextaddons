@@ -33,6 +33,7 @@ public:
         Enabled,
         IsDefault,
         TranslatedPluginName,
+        IsLocalServer,
     };
     /*!
      * Constructs a new TextAutoGenerateTextInstanceModel object.

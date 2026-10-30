@@ -7,6 +7,7 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 #include <TextAddonsWidgets/SortFilterProxyModelBase>
+#include <TextAutoGenerateText/TextAutoGenerateTextInstancesManager>
 namespace TextAutoGenerateText
 {
 /*!
@@ -27,9 +28,23 @@ public:
      */
     ~TextAutoGenerateTextInstanceSortFilterProxyModel() override;
 
+    /*!
+     * \brief instanceFilter
+     * \return
+     */
+    [[nodiscard]] TextAutoGenerateTextInstancesManager::InstanceFilter instanceFilter() const;
+    /*!
+     * \brief setInstanceFilter
+     * \param newInstanceFilter
+     */
+    void setInstanceFilter(TextAutoGenerateTextInstancesManager::InstanceFilter newInstanceFilter);
+
 protected:
     /*!
      */
     [[nodiscard]] bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
+
+private:
+    TextAutoGenerateTextInstancesManager::InstanceFilter mInstanceFilter = TextAutoGenerateTextInstancesManager::InstanceFilter::All;
 };
 }

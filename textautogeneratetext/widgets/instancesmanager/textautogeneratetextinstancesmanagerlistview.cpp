@@ -25,7 +25,12 @@ TextAutoGenerateTextInstancesManagerListView::TextAutoGenerateTextInstancesManag
     setItemDelegate(new TextAutoGenerateTextInstancesManagerListViewDelegate(this));
     setDragEnabled(false);
     if (manager) {
-        mSortFilterProxyModel->setSourceModel(manager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel());
+        auto instancesManager = manager->textAutoGenerateTextInstancesManager();
+        mSortFilterProxyModel->setInstanceFilter(instancesManager->instanceFilter());
+        mSortFilterProxyModel->setSourceModel(instancesManager->textAutoGenerateTextInstanceModel());
+        connect(instancesManager, &TextAutoGenerateTextInstancesManager::instanceFilterChanged, this, [this, instancesManager]() {
+            mSortFilterProxyModel->setInstanceFilter(instancesManager->instanceFilter());
+        });
     }
     setModel(mSortFilterProxyModel);
     connect(this, &QListView::doubleClicked, this, &TextAutoGenerateTextInstancesManagerListView::slotEditInstance);
