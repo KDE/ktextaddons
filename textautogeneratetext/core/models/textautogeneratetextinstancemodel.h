@@ -132,6 +132,12 @@ public:
      */
     [[nodiscard]] QStringList instanceDisplayNames() const;
 
+    /*!
+     * \brief hasAtLeastALocalInstance
+     * \return
+     */
+    [[nodiscard]] bool hasAtLeastALocalInstance() const;
+
 private:
     void connectPlugin(TextAutoGenerateTextInstance *instance);
     QList<TextAutoGenerateTextInstance *> mTextInstances;

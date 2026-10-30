@@ -143,6 +143,14 @@ QByteArray TextAutoGenerateTextInstanceModel::currentInstance() const
     return mCurrentinstance;
 }
 
+bool TextAutoGenerateTextInstanceModel::hasAtLeastALocalInstance() const
+{
+    return std::any_of(mTextInstances.cbegin(), mTextInstances.cend(), [](TextAutoGenerateTextInstance *instance) {
+        const auto plugin = instance->plugin();
+        return instance->enabled() && plugin && plugin->isLocalServer();
+    });
+}
+
 void TextAutoGenerateTextInstanceModel::setCurrentInstance(const QByteArray &newCurrentinstance)
 {
     if (mCurrentinstance != newCurrentinstance) {

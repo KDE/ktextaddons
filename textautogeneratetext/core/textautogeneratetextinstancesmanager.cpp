@@ -175,4 +175,9 @@ TextAutoGenerateEngineLoader *TextAutoGenerateTextInstancesManager::textAutoGene
     return mTextAutoGenerateEngineLoader;
 }
 
+bool TextAutoGenerateTextInstancesManager::hasAtLeastALocalInstance() const
+{
+    return mTextAutoGenerateTextInstanceModel->hasAtLeastALocalInstance();
+}
+
 #include "moc_textautogeneratetextinstancesmanager.cpp"

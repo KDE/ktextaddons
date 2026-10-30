@@ -103,6 +103,11 @@ public:
      */
     void setInstanceFilter(InstanceFilter newInstanceFilter);
 
+    /*!
+     * \brief hasAtLeastALocalInstance
+     * \return
+     */
+    [[nodiscard]] bool hasAtLeastALocalInstance() const;
 Q_SIGNALS:
     /*!
      * \brief instanceFilterChanged
