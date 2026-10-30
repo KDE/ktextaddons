@@ -6,6 +6,7 @@
 #include "textautogeneratetextinstancecombobox.h"
 #include "core/textautogenerateengineloader.h"
 #include "core/textautogeneratemanager.h"
+#include "core/textautogeneratetextinstancesmanager.h"
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstanceComboBox::TextAutoGenerateTextInstanceComboBox(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
@@ -14,6 +15,10 @@ TextAutoGenerateTextInstanceComboBox::TextAutoGenerateTextInstanceComboBox(TextA
 {
     if (mManager) {
         fillEngine();
+        connect(mManager->textAutoGenerateTextInstancesManager(),
+                &TextAutoGenerateTextInstancesManager::instanceFilterChanged,
+                this,
+                &TextAutoGenerateTextInstanceComboBox::fillEngine);
     }
 }
 
@@ -22,8 +27,13 @@ TextAutoGenerateTextInstanceComboBox::~TextAutoGenerateTextInstanceComboBox() = 
 void TextAutoGenerateTextInstanceComboBox::fillEngine()
 {
     clear();
+    const bool localOnly =
+        mManager->textAutoGenerateTextInstancesManager()->instanceFilter() == TextAutoGenerateTextInstancesManager::InstanceFilter::LocalOnly;
     const QList<TextAutoGenerateTextClient::SupportedServer> list = mManager->textAutoGenerateEngineLoader()->supportedServers();
     for (const auto &info : list) {
+        if (localOnly && !info.isLocalServer) {
+            continue;
+        }
         addItem(info.localizedName, QVariant::fromValue(info));
     }
 }

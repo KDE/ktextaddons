@@ -41,6 +41,7 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> LLamaCp
             TextAutoGenerateText::TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Network)),
         .identifier = name(),
         .pluginName = name(),
+        .isLocalServer = true,
     };
     return {info};
 }

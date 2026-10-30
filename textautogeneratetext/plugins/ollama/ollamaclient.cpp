@@ -40,6 +40,7 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> OllamaC
             TextAutoGenerateText::TextAutoGenerateTextPlugin::convertEngineType(TextAutoGenerateText::TextAutoGenerateTextPlugin::EngineType::Local)),
         .identifier = name(),
         .pluginName = name(),
+        .isLocalServer = true,
     };
     return {info};
 }

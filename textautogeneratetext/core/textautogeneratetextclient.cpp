@@ -25,6 +25,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextClie
     d.space() << "localizedName:" << t.localizedName;
     d.space() << "identifier:" << t.identifier;
     d.space() << "pluginName:" << t.pluginName;
+    d.space() << "isLocalServer:" << t.isLocalServer;
     return d;
 }
 #include "moc_textautogeneratetextclient.cpp"

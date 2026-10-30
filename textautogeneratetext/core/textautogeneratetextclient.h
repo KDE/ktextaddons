@@ -39,6 +39,7 @@ public:
         QString localizedName;
         QString identifier;
         QString pluginName;
+        bool isLocalServer = false;
         [[nodiscard]] bool isValid() const;
     };
 
