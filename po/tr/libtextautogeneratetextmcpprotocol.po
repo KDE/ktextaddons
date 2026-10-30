@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-27 00:58+0000\n"
+"POT-Creation-Date: 2026-10-30 00:52+0000\n"
 "PO-Revision-Date: 2026-10-24 21:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -38,19 +38,19 @@ msgstr "İstemci başlatılamıyor; URL geçersiz."
 msgid "Unsupported protocol version: %1"
 msgstr ""
 
-#: core/client/mcpserver.cpp:111
+#: core/client/mcpserver.cpp:115
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr "SSE"
 
-#: core/client/mcpserver.cpp:113
+#: core/client/mcpserver.cpp:117
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "Standard Girdi–Çıktı"
 
-#: core/client/mcpserver.cpp:115
+#: core/client/mcpserver.cpp:119
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
@@ -422,31 +422,37 @@ msgstr "(zorunlu)"
 msgid "(secret)"
 msgstr "(gizli)"
 
-#: widgets/client/mcpserverlistview.cpp:52
+#: widgets/client/mcpserverlistview.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "Add Server…"
 msgstr "Sunucu Ekle…"
 
-#: widgets/client/mcpserverlistview.cpp:58
+#: widgets/client/mcpserverlistview.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Düzenle…"
 
-#: widgets/client/mcpserverlistview.cpp:64
+#: widgets/client/mcpserverlistview.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "Configure Tools…"
+msgstr ""
+
+#: widgets/client/mcpserverlistview.cpp:81
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "Sunucuyu Kaldır"
 
-#: widgets/client/mcpserverlistview.cpp:71
+#: widgets/client/mcpserverlistview.cpp:88
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "Bu sunucuyu (%1) kaldırmak istiyor musunuz?"
 
-#: widgets/client/mcpserverlistview.cpp:72
+#: widgets/client/mcpserverlistview.cpp:89
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Server"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-27 00:58+0000\n"
+"POT-Creation-Date: 2026-10-30 00:52+0000\n"
 "PO-Revision-Date: 2026-10-27 16:52+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -38,19 +38,19 @@ msgstr "Odjemalca ni mogoče zagnati."
 msgid "Unsupported protocol version: %1"
 msgstr "Nepodprta različica protokola: %1"
 
-#: core/client/mcpserver.cpp:111
+#: core/client/mcpserver.cpp:115
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr "SSE"
 
-#: core/client/mcpserver.cpp:113
+#: core/client/mcpserver.cpp:117
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "Standard VI"
 
-#: core/client/mcpserver.cpp:115
+#: core/client/mcpserver.cpp:119
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
@@ -423,31 +423,37 @@ msgstr "(obvezno)"
 msgid "(secret)"
 msgstr "(tajno)"
 
-#: widgets/client/mcpserverlistview.cpp:52
+#: widgets/client/mcpserverlistview.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "Add Server…"
 msgstr "Dodaj strežnik…"
 
-#: widgets/client/mcpserverlistview.cpp:58
+#: widgets/client/mcpserverlistview.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Uredi…"
 
-#: widgets/client/mcpserverlistview.cpp:64
+#: widgets/client/mcpserverlistview.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "Configure Tools…"
+msgstr ""
+
+#: widgets/client/mcpserverlistview.cpp:81
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "Oddaljeni strežnik"
 
-#: widgets/client/mcpserverlistview.cpp:71
+#: widgets/client/mcpserverlistview.cpp:88
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "Ali želite odstraniti ta strežnik (%1)?"
 
-#: widgets/client/mcpserverlistview.cpp:72
+#: widgets/client/mcpserverlistview.cpp:89
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Server"

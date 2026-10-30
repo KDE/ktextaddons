@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 00:52+0000\n"
+"POT-Creation-Date: 2026-10-30 00:52+0000\n"
 "PO-Revision-Date: 2026-10-25 07:14+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -98,7 +98,8 @@ msgstr ""
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:160
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:221
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:182
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:196
 #, kde-format
 msgid "Error: %1"
 msgstr "Napaka: %1"
@@ -124,10 +125,25 @@ msgstr "Klicanje orodja \"%1\"…"
 msgid "Error: impossible to call tool \"%1\"."
 msgstr "Napaka: ni mogoče klicati orodja \"%1\"."
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:101
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:109
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr "Strežnik je neveljaven ali onemogočen."
+
+#: core/mcp/textautogeneratemcptoolsutils.cpp:85
+#, kde-format
+msgid "Read-only"
+msgstr "Samo za branje"
+
+#: core/mcp/textautogeneratemcptoolsutils.cpp:87
+#, kde-format
+msgid "Modifies data"
+msgstr "Spremeni podatke"
+
+#: core/mcp/textautogeneratemcptoolsutils.cpp:89
+#, kde-format
+msgid "May delete or overwrite data"
+msgstr "Lahko zbriše ali prepiše podatke"
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -3201,7 +3217,7 @@ msgstr "Napaka pri odpiranju datoteke"
 msgid "Metadata Info"
 msgstr "Informacije metapodatkov"
 
-#: widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp:52
+#: widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp:59
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"
@@ -3315,6 +3331,7 @@ msgid "Remove Instance"
 msgstr "Odstrani pojavek"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:55
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -3367,6 +3384,89 @@ msgstr "%1 (obvezen):"
 msgctxt "Label of field"
 msgid "%1:"
 msgstr "%1:"
+
+#: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Configure"
+msgctxt "@title:window"
+msgid "Configure Tools"
+msgstr "Konfiguriraj"
+
+#: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure %1"
+msgctxt "@title:window"
+msgid "Configure Tools of %1"
+msgstr "Konfiguriraj %1"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Allow to select tools"
+msgctxt "@option:check"
+msgid "Only allow selected tools"
+msgstr "Dovoli izbiro orodij"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:45
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Tools which are not selected are not sent to LLM. New tools of server are "
+"not allowed."
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:60
+#, fuzzy, kde-format
+#| msgid "Tools"
+msgctxt "@item:inlistbox"
+msgid "All Tools"
+msgstr "Orodja"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
+msgctxt "@action:button"
+msgid "Select All"
+msgstr "Izberi vse"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
+msgctxt "@action:button"
+msgid "Unselect All"
+msgstr "Izberi vse"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:161
+#, kde-format
+msgid "Apply changes to load the list of tools of this server."
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:162
+#, kde-format
+msgid "Enable this server to load the list of its tools."
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:183
+#, kde-format
+msgid "Not connected"
+msgstr "Ni povezano"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:172
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:186
+#, kde-format
+msgid "Connecting…"
+msgstr "Povezovanje…"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:178
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
+#, kde-format
+msgid "Loading tools…"
+msgstr "Nalaganje orodij…"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
@@ -3964,38 +4064,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Napaka"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
-#, kde-format
-msgid "Read-only"
-msgstr "Samo za branje"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
-#, kde-format
-msgid "Modifies data"
-msgstr "Spremeni podatke"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:49
-#, kde-format
-msgid "May delete or overwrite data"
-msgstr "Lahko zbriše ali prepiše podatke"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:62
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:37
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Orodja:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:208
-#, kde-format
-msgid "Not connected"
-msgstr "Ni povezano"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:211
-#, kde-format
-msgid "Connecting…"
-msgstr "Povezovanje…"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:215
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:190
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
@@ -4004,12 +4079,7 @@ msgstr[1] "%1 orodje"
 msgstr[2] "%1 orodja"
 msgstr[3] "%1 orodja"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:217
-#, kde-format
-msgid "Loading tools…"
-msgstr "Nalaganje orodij…"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:224
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:199
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr "Orodja strežnika MCP \"%1\" (%2)"
@@ -4226,10 +4296,6 @@ msgstr "Ni najdenih sporočil."
 
 #~ msgid "..."
 #~ msgstr "..."
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Configure"
-#~ msgstr "Konfiguriraj"
 
 #~ msgctxt "Find and go to the next search match"
 #~ msgid "Next"

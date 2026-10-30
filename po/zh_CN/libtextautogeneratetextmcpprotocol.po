@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-27 00:58+0000\n"
+"POT-Creation-Date: 2026-10-30 00:52+0000\n"
 "PO-Revision-Date: 2026-05-05 07:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -38,20 +38,20 @@ msgstr ""
 msgid "Unsupported protocol version: %1"
 msgstr ""
 
-#: core/client/mcpserver.cpp:111
+#: core/client/mcpserver.cpp:115
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
 msgstr ""
 
-#: core/client/mcpserver.cpp:113
+#: core/client/mcpserver.cpp:117
 #, fuzzy, kde-format
 #| msgid "Standard IO"
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "Standard IO"
 
-#: core/client/mcpserver.cpp:115
+#: core/client/mcpserver.cpp:119
 #, fuzzy, kde-format
 #| msgid "Streamable HTTP"
 msgctxt "@item:inlistbox"
@@ -438,7 +438,7 @@ msgstr ""
 msgid "(secret)"
 msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:52
+#: widgets/client/mcpserverlistview.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Add server…"
@@ -446,26 +446,32 @@ msgctxt "@action"
 msgid "Add Server…"
 msgstr "添加服务器…"
 
-#: widgets/client/mcpserverlistview.cpp:58
+#: widgets/client/mcpserverlistview.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "编辑…"
 
-#: widgets/client/mcpserverlistview.cpp:64
+#: widgets/client/mcpserverlistview.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "Configure Tools…"
+msgstr ""
+
+#: widgets/client/mcpserverlistview.cpp:81
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "移除服务器"
 
-#: widgets/client/mcpserverlistview.cpp:71
+#: widgets/client/mcpserverlistview.cpp:88
 #, fuzzy, kde-format
 #| msgid "Do you want to remove this server (%1)?"
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "您想要移除此服务器 (%1) 吗？"
 
-#: widgets/client/mcpserverlistview.cpp:72
+#: widgets/client/mcpserverlistview.cpp:89
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Remove Server"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 00:52+0000\n"
+"POT-Creation-Date: 2026-10-30 00:52+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -95,7 +95,8 @@ msgstr ""
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:160
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:221
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:182
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:196
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Error"
@@ -123,9 +124,25 @@ msgstr ""
 msgid "Error: impossible to call tool \"%1\"."
 msgstr ""
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:101
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:109
 #, kde-format
 msgid "Server is invalid or disabled."
+msgstr ""
+
+#: core/mcp/textautogeneratemcptoolsutils.cpp:85
+#, kde-format
+msgid "Read-only"
+msgstr ""
+
+#: core/mcp/textautogeneratemcptoolsutils.cpp:87
+#, fuzzy, kde-format
+#| msgid "Modified At:"
+msgid "Modifies data"
+msgstr " 修改时间："
+
+#: core/mcp/textautogeneratemcptoolsutils.cpp:89
+#, kde-format
+msgid "May delete or overwrite data"
 msgstr ""
 
 #: core/models/textautogeneratechatsmodel.cpp:98
@@ -3034,7 +3051,7 @@ msgstr "打开文件时出错"
 msgid "Metadata Info"
 msgstr "元数据信息"
 
-#: widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp:52
+#: widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp:59
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"
@@ -3148,6 +3165,7 @@ msgid "Remove Instance"
 msgstr "移除实例"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:55
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -3200,6 +3218,91 @@ msgstr ""
 msgctxt "Label of field"
 msgid "%1:"
 msgstr ""
+
+#: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure %1"
+msgctxt "@title:window"
+msgid "Configure Tools"
+msgstr "配置 %1"
+
+#: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure %1"
+msgctxt "@title:window"
+msgid "Configure Tools of %1"
+msgstr "配置 %1"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Allow to select tools"
+msgctxt "@option:check"
+msgid "Only allow selected tools"
+msgstr "允许选择工具"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:45
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Tools which are not selected are not sent to LLM. New tools of server are "
+"not allowed."
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:60
+#, fuzzy, kde-format
+#| msgid "Tools"
+msgctxt "@item:inlistbox"
+msgid "All Tools"
+msgstr "工具"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
+msgctxt "@action:button"
+msgid "Select All"
+msgstr "全部选中"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
+msgctxt "@action:button"
+msgid "Unselect All"
+msgstr "全部选中"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:161
+#, kde-format
+msgid "Apply changes to load the list of tools of this server."
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:162
+#, kde-format
+msgid "Enable this server to load the list of its tools."
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:183
+#, kde-format
+msgid "Not connected"
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:172
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:186
+#, kde-format
+msgid "Connecting…"
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:178
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Show internal tools…"
+msgid "Loading tools…"
+msgstr "显示内建工具…"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
@@ -3838,52 +3941,19 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "错误"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
-#, kde-format
-msgid "Read-only"
-msgstr ""
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
-#, fuzzy, kde-format
-#| msgid "Modified At:"
-msgid "Modifies data"
-msgstr " 修改时间："
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:49
-#, kde-format
-msgid "May delete or overwrite data"
-msgstr ""
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:62
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:37
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "工具："
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:208
-#, kde-format
-msgid "Not connected"
-msgstr ""
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:211
-#, kde-format
-msgid "Connecting…"
-msgstr ""
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:215
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:190
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
 msgstr[0] ""
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Show internal tools…"
-msgid "Loading tools…"
-msgstr "显示内建工具…"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:224
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:199
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr ""

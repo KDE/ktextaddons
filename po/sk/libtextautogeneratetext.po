@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-29 00:52+0000\n"
+"POT-Creation-Date: 2026-10-30 00:52+0000\n"
 "PO-Revision-Date: 2026-09-14 20:10+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@kde.org>\n"
@@ -95,7 +95,8 @@ msgstr ""
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:160
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:221
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:182
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:196
 #, kde-format
 msgid "Error: %1"
 msgstr "Chyba: %1"
@@ -121,10 +122,25 @@ msgstr "Volá sa nástroj „%1“…"
 msgid "Error: impossible to call tool \"%1\"."
 msgstr "Chyba: nástroj „%1“ nie je možné zavolať."
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:101
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:109
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr "Server je neplatný alebo zakázaný."
+
+#: core/mcp/textautogeneratemcptoolsutils.cpp:85
+#, kde-format
+msgid "Read-only"
+msgstr "Len na čítanie"
+
+#: core/mcp/textautogeneratemcptoolsutils.cpp:87
+#, kde-format
+msgid "Modifies data"
+msgstr "Mení údaje"
+
+#: core/mcp/textautogeneratemcptoolsutils.cpp:89
+#, kde-format
+msgid "May delete or overwrite data"
+msgstr "Môže odstrániť alebo prepísať údaje"
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -3168,7 +3184,7 @@ msgstr "Chyba pri otváraní súboru"
 msgid "Metadata Info"
 msgstr "Informácie o metadátach"
 
-#: widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp:52
+#: widgets/configure/textautogeneratetextconfiguremcpserverswidget.cpp:59
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"
@@ -3282,6 +3298,7 @@ msgid "Remove Instance"
 msgstr "Odstrániť inštanciu"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:55
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
 msgctxt "@info:placeholder"
@@ -3334,6 +3351,89 @@ msgstr "%1 (povinné):"
 msgctxt "Label of field"
 msgid "%1:"
 msgstr "%1:"
+
+#: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure %1"
+msgctxt "@title:window"
+msgid "Configure Tools"
+msgstr "Nastaviť %1"
+
+#: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:43
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Configure %1"
+msgctxt "@title:window"
+msgid "Configure Tools of %1"
+msgstr "Nastaviť %1"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:34
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Allow to select tools"
+msgctxt "@option:check"
+msgid "Only allow selected tools"
+msgstr "Povoliť výber nástrojov"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:45
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Tools which are not selected are not sent to LLM. New tools of server are "
+"not allowed."
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:60
+#, fuzzy, kde-format
+#| msgid "Tools"
+msgctxt "@item:inlistbox"
+msgid "All Tools"
+msgstr "Nástroje"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
+msgctxt "@action:button"
+msgid "Select All"
+msgstr "Vybrať všetko"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Select All"
+msgctxt "@action:button"
+msgid "Unselect All"
+msgstr "Vybrať všetko"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:161
+#, kde-format
+msgid "Apply changes to load the list of tools of this server."
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:162
+#, kde-format
+msgid "Enable this server to load the list of its tools."
+msgstr ""
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:183
+#, kde-format
+msgid "Not connected"
+msgstr "Nepripojené"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:172
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:186
+#, kde-format
+msgid "Connecting…"
+msgstr "Pripája sa…"
+
+#: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:178
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
+#, kde-format
+msgid "Loading tools…"
+msgstr "Načítavajú sa nástroje…"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
@@ -3931,38 +4031,13 @@ msgctxt "@title:window"
 msgid "Error"
 msgstr "Chyba"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:45
-#, kde-format
-msgid "Read-only"
-msgstr "Len na čítanie"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:47
-#, kde-format
-msgid "Modifies data"
-msgstr "Mení údaje"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:49
-#, kde-format
-msgid "May delete or overwrite data"
-msgstr "Môže odstrániť alebo prepísať údaje"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:62
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:37
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Tools:"
 msgstr "Nástroje:"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:208
-#, kde-format
-msgid "Not connected"
-msgstr "Nepripojené"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:211
-#, kde-format
-msgid "Connecting…"
-msgstr "Pripája sa…"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:215
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:190
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
@@ -3970,12 +4045,7 @@ msgstr[0] "1 nástroj"
 msgstr[1] "%1 nástroje"
 msgstr[2] "%1 nástrojov"
 
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:217
-#, kde-format
-msgid "Loading tools…"
-msgstr "Načítavajú sa nástroje…"
-
-#: widgets/toolswidget/textautogeneratetoolswidget.cpp:224
+#: widgets/toolswidget/textautogeneratetoolswidget.cpp:199
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr "Nástroje servera MCP „%1“ (%2)"
