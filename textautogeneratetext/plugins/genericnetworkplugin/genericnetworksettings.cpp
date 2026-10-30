@@ -44,8 +44,16 @@ void GenericNetworkSettings::save(KConfigGroup &config)
     PluginCommonSettings::save(config);
     config.writeEntry(u"MaxToken"_s, maxTokens());
     config.writeEntry(u"Seed"_s, seed());
-    config.writeEntry(u"CustomUrl"_s, customUrl());
-    config.writeEntry(u"CustomModels"_s, customModels());
+    if (const auto value = customUrl(); !value.isEmpty()) {
+        config.writeEntry(u"CustomUrl"_s, value);
+    } else {
+        config.deleteEntry(u"CustomUrl"_s);
+    }
+    if (const auto value = customModels(); !value.isEmpty()) {
+        config.writeEntry(u"CustomModels"_s, value);
+    } else {
+        config.deleteEntry(u"CustomModels"_s);
+    }
 }
 
 QString GenericNetworkSettings::customUrl() const
