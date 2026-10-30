@@ -179,7 +179,7 @@ QString OllamaCommonReply::generateModelInfo() const
         const QJsonArray array = doc["capabilities"_L1].toArray();
         for (const auto &val : array) {
             if (!capabilities.isEmpty()) {
-                capabilities += u", "_s;
+                capabilities += u", ";
             }
             capabilities += val.toString();
         }

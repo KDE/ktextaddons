@@ -53,7 +53,7 @@ QString McpRegistryServerInfoWidget::generateHtml(const TextAutoGenerateTextMcpP
     if (!info.description().isEmpty()) {
         html += u"<p>%1</p>"_s.arg(info.description().toHtmlEscaped());
     }
-    html += u"<p>"_s;
+    html += u"<p>";
     if (!info.version().isEmpty()) {
         html += i18n("<b>Version:</b> %1", info.version().toHtmlEscaped()) + u"<br/>"_s;
     }
@@ -63,7 +63,7 @@ QString McpRegistryServerInfoWidget::generateHtml(const TextAutoGenerateTextMcpP
     if (!info.websiteUrl().isEmpty()) {
         html += i18n("<b>Website:</b> %1", link(info.websiteUrl())) + u"<br/>"_s;
     }
-    html += u"</p>"_s;
+    html += u"</p>";
 
     const auto remotes = info.remotes();
     if (!remotes.isEmpty()) {
@@ -71,7 +71,7 @@ QString McpRegistryServerInfoWidget::generateHtml(const TextAutoGenerateTextMcpP
         for (const auto &remote : remotes) {
             html += u"<li>%1 (%2)</li>"_s.arg(link(remote.url), remote.type.toHtmlEscaped());
         }
-        html += u"</ul>"_s;
+        html += u"</ul>";
     }
 
     const auto packages = info.packages();
@@ -89,7 +89,7 @@ QString McpRegistryServerInfoWidget::generateHtml(const TextAutoGenerateTextMcpP
             if (!package.runtimeHint.isEmpty()) {
                 html += u"<br/>"_s + i18n("Runtime: %1", package.runtimeHint.toHtmlEscaped());
             }
-            html += u"</p>"_s;
+            html += u"</p>";
             if (!package.environmentVariables.isEmpty()) {
                 html += u"<p>%1</p><ul>"_s.arg(i18n("Environment variables:"));
                 for (const auto &env : package.environmentVariables) {
@@ -103,9 +103,9 @@ QString McpRegistryServerInfoWidget::generateHtml(const TextAutoGenerateTextMcpP
                     if (!env.description.isEmpty()) {
                         html += u"<br/>%1"_s.arg(env.description.toHtmlEscaped());
                     }
-                    html += u"</li>"_s;
+                    html += u"</li>";
                 }
-                html += u"</ul>"_s;
+                html += u"</ul>";
             }
         }
     }

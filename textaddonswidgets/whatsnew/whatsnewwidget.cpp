@@ -111,31 +111,31 @@ QString WhatsNewWidget::createVersionInformation(const WhatsNewInfo &info)
     const QStringList changes = info.changes();
     if (!changes.isEmpty()) {
         message += importantChangeStr();
-        message += u"<ul>"_s;
+        message += u"<ul>";
         for (const QString &c : changes) {
             message += u"<li>%1</li>"_s.arg(c);
         }
-        message += u"</ul>"_s;
+        message += u"</ul>";
     }
 
     const QStringList newFeatures = info.newFeatures();
     if (!newFeatures.isEmpty()) {
         message += featuresChangeStr();
-        message += u"<ul>"_s;
+        message += u"<ul>";
         for (const QString &c : newFeatures) {
             message += u"<li>%1</li>"_s.arg(c);
         }
-        message += u"</ul>"_s;
+        message += u"</ul>";
     }
 
     const QStringList bugFixings = info.bugFixings();
     if (!bugFixings.isEmpty()) {
         message += bugFixingChangeStr();
-        message += u"<ul>"_s;
+        message += u"<ul>";
         for (const QString &c : bugFixings) {
             message += u"<li>%1</li>"_s.arg(c);
         }
-        message += u"</ul>"_s;
+        message += u"</ul>";
     }
     return message;
 }

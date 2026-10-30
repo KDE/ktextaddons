@@ -39,7 +39,7 @@ void TextAutoGenerateSearchListView::slotGoToMessage(const QString &link)
 {
     QString path = link;
     path.remove(TextAutoGenerateSearchMessageUtils::scheme() + u"://"_s);
-    if (const QStringList pathList = path.split(u':'); pathList.count() == 2) {
+    if (const QList<QStringView> pathList = QStringView(path).split(u':'); pathList.count() == 2) {
         mManager->goToMessage(pathList.at(0).toLatin1(), pathList.at(1).toLatin1());
     }
 }

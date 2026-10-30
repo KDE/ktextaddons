@@ -127,7 +127,7 @@ std::unique_ptr<QSqlTableModel> TextAutoGenerateLocalMessagesDatabase::createMes
 QString TextAutoGenerateLocalMessagesDatabase::generateQueryStr()
 {
     QString query = u"SELECT * FROM MESSAGES"_s;
-    query += u" ORDER BY timestamp DESC"_s;
+    query += u" ORDER BY timestamp DESC";
     return query;
 }
 

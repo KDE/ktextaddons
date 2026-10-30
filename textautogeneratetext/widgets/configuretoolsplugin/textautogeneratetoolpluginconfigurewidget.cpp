@@ -72,14 +72,14 @@ void TextAutoGenerateToolPluginConfigureWidget::generateArguments(TextAutoGenera
     for (const auto &prop : properties) {
         propertiesText += u"<li>%1: %2</li>"_s.arg(prop.name().toHtmlEscaped(), prop.description().toString().toHtmlEscaped());
         if (const QStringList typeElements = prop.typeElements(); !typeElements.isEmpty()) {
-            propertiesText += u"<ul>"_s;
+            propertiesText += u"<ul>";
             for (const QString &e : typeElements) {
                 propertiesText += u"<li>%1</li>"_s.arg(e.toHtmlEscaped());
             }
-            propertiesText += u"</ul>"_s;
+            propertiesText += u"</ul>";
         }
     }
-    propertiesText += u"</ul>"_s;
+    propertiesText += u"</ul>";
     mArgumentsLabel->setText(propertiesText);
 }
 

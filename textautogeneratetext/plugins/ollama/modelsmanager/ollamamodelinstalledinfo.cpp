@@ -32,10 +32,10 @@ QString OllamaModelInstalledInfo::convertModelNameToDisplay(const QString &model
         const int position = modelName.indexOf(u':');
         originalModelName = modelName.first(position);
     }
-    originalModelName = originalModelName.at(0).toUpper() + originalModelName.mid(1, originalModelName.size());
+    originalModelName = originalModelName.at(0).toUpper() + QStringView(originalModelName).mid(1);
     if (const QStringList lst = originalModelName.split(u'-'); lst.count() == 2) {
         const QString &secondPart = lst.at(1);
-        originalModelName = lst.at(0) + u' ' + secondPart.at(0).toUpper() + secondPart.mid(1, secondPart.size());
+        originalModelName = lst.at(0) + u' ' + secondPart.at(0).toUpper() + QStringView(secondPart).mid(1);
     }
     return originalModelName;
 }
