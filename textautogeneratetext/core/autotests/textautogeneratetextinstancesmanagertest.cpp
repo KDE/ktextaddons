@@ -127,6 +127,7 @@ void TextAutoGenerateTextInstancesManagerTest::shouldHaveDefaultValues()
     QVERIFY(w.textAutoGenerateTextInstanceModel());
     QVERIFY(w.instanceDisplayNames().isEmpty());
     QVERIFY(!w.textAutoGeneratePlugin());
+    QCOMPARE(w.instanceFilter(), TextAutoGenerateText::TextAutoGenerateTextInstancesManager::InstanceFilter::All);
 }
 
 void TextAutoGenerateTextInstancesManagerTest::shouldAddInstances()

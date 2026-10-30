@@ -111,6 +111,19 @@ QStringList TextAutoGenerateTextInstancesManager::instanceDisplayNames() const
     return mTextAutoGenerateTextInstanceModel->instanceDisplayNames();
 }
 
+TextAutoGenerateTextInstancesManager::InstanceFilter TextAutoGenerateTextInstancesManager::instanceFilter() const
+{
+    return mInstanceFilter;
+}
+
+void TextAutoGenerateTextInstancesManager::setInstanceFilter(InstanceFilter newInstanceFilter)
+{
+    if (mInstanceFilter != newInstanceFilter) {
+        mInstanceFilter = newInstanceFilter;
+        Q_EMIT instanceFilterChanged();
+    }
+}
+
 QList<TextAutoGenerateTextInstance *> TextAutoGenerateTextInstancesManager::instances() const
 {
     return mTextAutoGenerateTextInstanceModel->textInstances();

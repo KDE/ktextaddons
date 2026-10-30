@@ -25,6 +25,14 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManager : public 
     Q_OBJECT
 public:
     /*!
+     * \brief The InstanceFilter enum
+     */
+    enum class InstanceFilter : uint8_t {
+        All = 0,
+        LocalOnly,
+    };
+
+    /*!
      */
     explicit TextAutoGenerateTextInstancesManager(TextAutoGenerateText::TextAutoGenerateManager *manager, QObject *parent = nullptr);
     /*!
@@ -84,9 +92,27 @@ public:
      */
     [[nodiscard]] QStringList instanceDisplayNames() const;
 
+    /*!
+     * \brief instanceFilter
+     * \return
+     */
+    [[nodiscard]] InstanceFilter instanceFilter() const;
+    /*!
+     * \brief setInstanceFilter
+     * \param newInstanceFilter
+     */
+    void setInstanceFilter(InstanceFilter newInstanceFilter);
+
+Q_SIGNALS:
+    /*!
+     * \brief instanceFilterChanged
+     */
+    void instanceFilterChanged();
+
 private:
     TextAutoGenerateTextInstanceModel *const mTextAutoGenerateTextInstanceModel;
     TextAutoGenerateEngineLoader *const mTextAutoGenerateEngineLoader;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
+    InstanceFilter mInstanceFilter = InstanceFilter::All;
 };
 }
