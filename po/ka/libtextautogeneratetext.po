@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-30 00:52+0000\n"
-"PO-Revision-Date: 2026-10-25 05:25+0100\n"
+"POT-Creation-Date: 2026-10-31 00:49+0000\n"
+"PO-Revision-Date: 2026-10-30 04:32+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3294,19 +3294,19 @@ msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "გაშვებული ასლების მორგება"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:53
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr "გაშვებული ასლის დამატება…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "ნაგულისხმევად მონიშვნა"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:73
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:33
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:33
@@ -3315,18 +3315,18 @@ msgctxt "@action"
 msgid "Edit…"
 msgstr "ჩასწორება…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "გაშვებული ასლის წაშლა"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "გნებავთ, წაშალოთ ეს გაშვებული ასლი (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -3388,28 +3388,22 @@ msgid "%1:"
 msgstr "%1:"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools"
-msgstr "%1-ის მორგება"
+msgstr "ხელსაწყოების მორგება"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools of %1"
-msgstr "%1-ის მორგება"
+msgstr "%1-ის ხელსაწყოების მორგება"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Allow to select tools"
+#, kde-format
 msgctxt "@option:check"
 msgid "Only allow selected tools"
-msgstr "ხელსაწყოების არჩევნის დაშვება"
+msgstr "მხოლოდ, მონიშნული ხელსაწყოების დაშვება"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:45
 #, kde-format
@@ -3418,39 +3412,36 @@ msgid ""
 "Tools which are not selected are not sent to LLM. New tools of server are "
 "not allowed."
 msgstr ""
+"ხელსაწყოები, რომლებიც მონიშნული არაა, LLM-ს არ გაეგზავნება. სერვერის ახალი "
+"ხელსაწყოები დაშვებული არაა."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "All Tools"
-msgstr "ხელსაწყოები"
+msgstr "ყველა ხელსაწყო"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
-msgstr "ყველას მონიშვნა"
+msgstr "ყველაფრის მონიშვნა"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr "ყველას მონიშვნა"
+msgstr "მონიშვნის ყველაფერზე მოხსნა"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:161
 #, kde-format
 msgid "Apply changes to load the list of tools of this server."
-msgstr ""
+msgstr "ამ სერვერი ხელსაწყოების სიის ჩასატვირთად გადაატარეთ ცვლილებები."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:162
 #, kde-format
 msgid "Enable this server to load the list of its tools."
-msgstr ""
+msgstr "ამ სერვერისთვის ხელსაწყოთა სიის ჩატვირთვის უფლების მიცემა."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:183

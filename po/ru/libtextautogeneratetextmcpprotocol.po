@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-30 00:52+0000\n"
-"PO-Revision-Date: 2026-10-27 07:46+0200\n"
+"PO-Revision-Date: 2026-10-30 07:45+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -439,7 +439,7 @@ msgstr "Изменить…"
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
-msgstr ""
+msgstr "Настроить инструменты…"
 
 #: widgets/client/mcpserverlistview.cpp:81
 #, kde-format

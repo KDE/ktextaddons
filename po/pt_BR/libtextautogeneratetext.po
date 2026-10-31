@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-30 00:52+0000\n"
-"PO-Revision-Date: 2026-10-25 09:05-0300\n"
+"POT-Creation-Date: 2026-10-31 00:49+0000\n"
+"PO-Revision-Date: 2026-10-30 07:26-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -3322,19 +3322,19 @@ msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "Configurar instâncias"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:53
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr "Adicionar instância…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Marcar como padrão"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:73
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:33
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:33
@@ -3343,18 +3343,18 @@ msgctxt "@action"
 msgid "Edit…"
 msgstr "Editar…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Remover instância"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Você deseja remover esta instância (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -3416,28 +3416,22 @@ msgid "%1:"
 msgstr "%1:"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools"
-msgstr "Configurar"
+msgstr "Configurar ferramentas"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools of %1"
-msgstr "Configurar %1"
+msgstr "Configurar ferramentas de %1"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Allow to select tools"
+#, kde-format
 msgctxt "@option:check"
 msgid "Only allow selected tools"
-msgstr "Permitir selecionar ferramentas"
+msgstr "Permitir somente ferramentas selecionadas"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:45
 #, kde-format
@@ -3446,39 +3440,37 @@ msgid ""
 "Tools which are not selected are not sent to LLM. New tools of server are "
 "not allowed."
 msgstr ""
+"Ferramentas que não forem selecionadas não são enviadas ao LLM. Não é "
+"permitida a inclusão de novas ferramentas no servidor."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "All Tools"
-msgstr "Ferramentas"
+msgstr "Todas as ferramentas"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
-msgstr "Selecionar tudo"
+msgstr "Selecionar todas"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr "Selecionar tudo"
+msgstr "Desmarcar todas"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:161
 #, kde-format
 msgid "Apply changes to load the list of tools of this server."
 msgstr ""
+"Aplicar as alterações para carregar a lista de ferramentas deste servidor."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:162
 #, kde-format
 msgid "Enable this server to load the list of its tools."
-msgstr ""
+msgstr "Permitir que este servidor carregue a lista de suas ferramentas."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:183

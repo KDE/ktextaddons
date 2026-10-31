@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-30 00:52+0000\n"
-"PO-Revision-Date: 2026-10-25 12:37+0200\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"POT-Creation-Date: 2026-10-31 00:49+0000\n"
+"PO-Revision-Date: 2026-10-30 17:53+0200\n"
+"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3313,19 +3313,19 @@ msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "Налаштовування екземплярів"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:53
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr "Додати екземпляр…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Позначити як типовий"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:73
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:33
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:33
@@ -3334,18 +3334,18 @@ msgctxt "@action"
 msgid "Edit…"
 msgstr "Змінити…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Вилучити екземпляр"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Хочете вилучити цей екземпляр (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -3407,28 +3407,22 @@ msgid "%1:"
 msgstr "%1:"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools"
-msgstr "Налаштувати"
+msgstr "Налаштовування інструментів"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools of %1"
-msgstr "Налаштовування %1"
+msgstr "Налаштовув*ання інструментів %1"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Allow to select tools"
+#, kde-format
 msgctxt "@option:check"
 msgid "Only allow selected tools"
-msgstr "Дозволити вибір інструментів"
+msgstr "Дозволити лише позначені інструменти"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:45
 #, kde-format
@@ -3437,39 +3431,36 @@ msgid ""
 "Tools which are not selected are not sent to LLM. New tools of server are "
 "not allowed."
 msgstr ""
+"Інструменти, пункти яких не позначено, не буде надіслано до ВММ. Нові "
+"інструменти сервера не можна використовувати."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "All Tools"
-msgstr "Інструменти"
+msgstr "Усі інструменти"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Позначити все"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr "Позначити все"
+msgstr "Зняти позначення з усіх"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:161
 #, kde-format
 msgid "Apply changes to load the list of tools of this server."
-msgstr ""
+msgstr "Застосуйте зміни, щоб завантажити список інструментів цього сервера."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:162
 #, kde-format
 msgid "Enable this server to load the list of its tools."
-msgstr ""
+msgstr "Увімкніть цей сервер, щоб завантажити список його інструментів."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:183

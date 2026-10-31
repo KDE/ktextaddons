@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-30 00:52+0000\n"
-"PO-Revision-Date: 2026-09-28 11:10+0200\n"
+"POT-Creation-Date: 2026-10-31 00:49+0000\n"
+"PO-Revision-Date: 2026-10-30 11:53+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -40,16 +40,14 @@ msgid "Json File"
 msgstr "File de json"
 
 #: core/jobs/textautogenerateexportchatbasejob.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start LMStudio."
+#, kde-format
 msgid "Impossible to export file."
-msgstr "Impossibile startar LMStudio."
+msgstr "Impossibile exportar file."
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
-#, fuzzy, kde-format
-#| msgid "Failed to write to file: %1"
+#, kde-format
 msgid "Failed to parse JSon file: %1"
-msgstr "Falleva a scriber a file :%1"
+msgstr "Falleva a analysar file JSon: %1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
@@ -57,10 +55,9 @@ msgid "Failed to open file for reading: %1"
 msgstr "Falleva a aperir file per lectura: %1"
 
 #: core/jobs/textautogenerateimportchatbasejob.cpp:37
-#, fuzzy, kde-format
-#| msgid "Impossible to start LMStudio."
+#, kde-format
 msgid "Impossible to import file."
-msgstr "Impossibile startar LMStudio."
+msgstr "Impossibile importar file."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:96
 #, kde-format
@@ -102,7 +99,7 @@ msgstr ""
 #| msgctxt "@title:window"
 #| msgid "Error"
 msgid "Error: %1"
-msgstr "Error"
+msgstr "Error: %1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:68
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:80
@@ -133,7 +130,7 @@ msgstr ""
 #: core/mcp/textautogeneratemcptoolsutils.cpp:85
 #, kde-format
 msgid "Read-only"
-msgstr ""
+msgstr "Solmente de lectura"
 
 #: core/mcp/textautogeneratemcptoolsutils.cpp:87
 #, fuzzy, kde-format
@@ -2856,19 +2853,19 @@ msgctxt "@title:window"
 msgid "Configure Instances"
 msgstr "Configura "
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:53
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Add instance…"
 msgstr "Adde instantia…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:61
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Mark As Default"
 msgstr "Marca como Predefinite"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:73
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:33
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:33
@@ -2877,18 +2874,18 @@ msgctxt "@action"
 msgid "Edit…"
 msgstr "Modifica…"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:79
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Remove Instance"
 msgstr "Remove Instantia"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:86
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:91
 #, kde-format
 msgid "Do you want to remove this instance (%1)?"
 msgstr "Tu vole remover iste instantia (%1)?"
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:87
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "Remove Instance"
@@ -2915,16 +2912,16 @@ msgid "Request from MCP Server"
 msgstr ""
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:30
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Accept"
-msgstr ""
+msgstr "Accepta"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Decline"
-msgstr ""
+msgstr "Declina"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:55
 #, kde-format
@@ -2935,13 +2932,13 @@ msgstr ""
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:217
 #, kde-format
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:246
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "Label of required field"
 msgid "%1 (required):"
-msgstr ""
+msgstr "Requirite "
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:248
 #, kde-format
@@ -3002,7 +2999,7 @@ msgstr "Selige toto"
 #| msgid "Select All"
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr "Selige toto"
+msgstr "Annulla toto"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:161
 #, kde-format
@@ -3016,17 +3013,15 @@ msgstr ""
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "No tag selected"
+#, kde-format
 msgid "Not connected"
-msgstr "Nulle etiquetta seligite"
+msgstr "Non connectite"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:172
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:186
 #, kde-format
 msgid "Connecting…"
-msgstr ""
+msgstr "Il es connectente…"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:178
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
@@ -3059,7 +3054,7 @@ msgstr "Instrumento de Plugins:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Allow"
-msgstr ""
+msgstr "Permitte"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
 #, kde-format
@@ -3068,20 +3063,20 @@ msgid "Always Allow This Server"
 msgstr ""
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Deny"
-msgstr ""
+msgstr "Nega"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:29
-#, kde-format
+#, fuzzy, kde-format
 msgid "[Image]"
-msgstr ""
+msgstr "Imagine"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:32
-#, kde-format
+#, fuzzy, kde-format
 msgid "[Audio]"
-msgstr ""
+msgstr "Audio"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:35
 #, kde-format
@@ -3106,12 +3101,10 @@ msgid "Send to LLM"
 msgstr ""
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Project"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reject"
-msgstr "Projecto"
+msgstr "Rejecta"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:89
 #, kde-format
@@ -3223,10 +3216,9 @@ msgid "Text Plugins:"
 msgstr "Plugins de Texto:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Tool identifier: %1"
+#, kde-format
 msgid "Text identifier: %1"
-msgstr "Identificator de instrumento: %1"
+msgstr "Identificator de texto: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format
@@ -3304,7 +3296,7 @@ msgstr "Nomine de projecto…"
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
 msgid "Icon:"
-msgstr ""
+msgstr "Icone:"
 
 #: widgets/promptswidget/textautogenerateagentdialog.cpp:23
 #, kde-format
@@ -3332,7 +3324,7 @@ msgstr "Viage"
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:23
 #, kde-format
 msgid "Undefined"
-msgstr ""
+msgstr "Non definite"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, kde-format
@@ -3356,15 +3348,13 @@ msgstr ""
 #| msgid "Add Tag…"
 msgctxt "@action"
 msgid "Add Agent…"
-msgstr "Adde etiquetta…"
+msgstr "Adde Agente  ..."
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Agent"
-msgstr "Remove etiquetta"
+msgstr "Remove agente"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:44
 #, fuzzy, kde-format
@@ -3373,12 +3363,10 @@ msgid "Do you want to remove this agent (%1)?"
 msgstr "Tu vole remover iste etiquetta (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Agent"
-msgstr "Remove etiquetta"
+msgstr "Remove agente"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -3649,11 +3637,11 @@ msgid "Tools:"
 msgstr "Instrumentos:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:190
-#, kde-format
+#, fuzzy, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Instrumento"
+msgstr[1] "Instrumentos"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:199
 #, kde-format

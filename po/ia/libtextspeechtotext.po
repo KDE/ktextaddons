@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-07 00:46+0000\n"
-"PO-Revision-Date: 2026-09-23 10:46+0200\n"
+"PO-Revision-Date: 2026-10-30 11:57+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -197,7 +197,7 @@ msgstr ""
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
 #, kde-format
 msgid "Unable to start %1"
-msgstr ""
+msgstr "Incapace a startar %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
 #, kde-format
@@ -328,7 +328,7 @@ msgstr "Configura Pronuncia a texto"
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
 #, kde-format
 msgid "Test:"
-msgstr ""
+msgstr "Test:"
 
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:109
 #, kde-format
