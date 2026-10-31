@@ -205,10 +205,3 @@ msgstr "Cerca…"
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Afegeix un servidor…"
-
-#~ msgid "Sse"
-#~ msgstr "SSE"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Add Instance…"
-#~ msgstr "Afegeix una instància…"

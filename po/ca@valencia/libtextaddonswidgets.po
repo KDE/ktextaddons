@@ -328,6 +328,3 @@ msgstr "<h3><i>Què hi ha de nou a la versió %1 (No publicada)</i></h3>"
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>Historial de Què hi ha de nou</h1>"
-
-#~ msgid "..."
-#~ msgstr "…"

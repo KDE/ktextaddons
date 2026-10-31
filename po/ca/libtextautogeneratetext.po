@@ -3844,18 +3844,3 @@ msgstr "No s'ha trobat cap arxiu."
 #, kde-format
 msgid "No Messages Found."
 msgstr "No s'ha trobat cap missatge."
-
-#~ msgid "Plugins Text:"
-#~ msgstr "Text dels connectors:"
-
-#~ msgid "Images (*.png *.xpm *.jpg *.gif)"
-#~ msgstr "Imatges (*.png *.xpm *.jpg *.gif)"
-
-#~ msgid "Audio (*.mp4 *.avi)"
-#~ msgstr "Àudio (*.mp4 *.avi)"
-
-#~ msgid "Text (*.txt *.md)"
-#~ msgstr "Text (*.txt *.md)"
-
-#~ msgid "Plugins Tool:"
-#~ msgstr "Eina dels connectors:"

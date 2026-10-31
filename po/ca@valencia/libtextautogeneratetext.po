@@ -3742,7 +3742,7 @@ msgstr "Zoom:"
 #, kde-format
 msgctxt "@action:button"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: widgets/view/images/textautogenerateshowimagewidget.cpp:75
 #, kde-format
