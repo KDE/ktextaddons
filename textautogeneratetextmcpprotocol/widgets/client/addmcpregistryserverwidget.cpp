@@ -132,7 +132,7 @@ void AddMcpRegistryServerWidget::fetchServers(const QString &cursor)
     url.setQuery(query);
 
     QNetworkRequest request(url);
-    request.setRawHeader("Accept", "application/json");
+    request.setRawHeader("Accept"_ba, "application/json"_ba);
     mLoadMoreButton->setEnabled(false);
     mStatusLabel->setText(i18n("Loading…"));
     QNetworkReply *reply = mNetworkAccessManager->get(request);

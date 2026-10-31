@@ -60,18 +60,18 @@ void WhisperSpeechToTextDownloadModelJobTest::shouldParseEvents_data()
     QTest::addColumn<QString>("path");
     QTest::addColumn<QString>("message");
 
-    QTest::newRow("start") << QByteArray(R"({"type":"start","model":"small","repo":"Systran/faster-whisper-small"})") << u"start"_s << qint64(0) << qint64(0)
-                           << -1 << QString() << QString();
-    QTest::newRow("progress") << QByteArray(R"({"type":"progress","model":"small","received":2665349,"total":78203619,"percent":3})") << u"progress"_s
-                              << qint64(2665349) << qint64(78203619) << 3 << QString() << QString();
+    QTest::newRow("start") << R"({"type":"start","model":"small","repo":"Systran/faster-whisper-small"})"_ba << u"start"_s << qint64(0) << qint64(0) << -1
+                           << QString() << QString();
+    QTest::newRow("progress") << R"({"type":"progress","model":"small","received":2665349,"total":78203619,"percent":3})"_ba << u"progress"_s << qint64(2665349)
+                              << qint64(78203619) << 3 << QString() << QString();
     // The bytes of a big model do not fit in an int.
-    QTest::newRow("progress-large") << QByteArray(R"({"type":"progress","model":"large-v3","received":3000000000,"total":3240000000,"percent":92})")
-                                    << u"progress"_s << qint64(3000000000) << qint64(3240000000) << 92 << QString() << QString();
-    QTest::newRow("cached") << QByteArray(R"({"type":"cached","model":"tiny","path":"/home/foo/.cache/huggingface"})") << u"cached"_s << qint64(0) << qint64(0)
-                            << -1 << u"/home/foo/.cache/huggingface"_s << QString();
-    QTest::newRow("finished") << QByteArray(R"({"type":"finished","model":"tiny","path":"/home/foo/.cache/huggingface"})") << u"finished"_s << qint64(0)
-                              << qint64(0) << -1 << u"/home/foo/.cache/huggingface"_s << QString();
-    QTest::newRow("error") << QByteArray(R"({"type":"error","model":"small","message":"OSError: no space left"})") << u"error"_s << qint64(0) << qint64(0) << -1
+    QTest::newRow("progress-large") << R"({"type":"progress","model":"large-v3","received":3000000000,"total":3240000000,"percent":92})"_ba << u"progress"_s
+                                    << qint64(3000000000) << qint64(3240000000) << 92 << QString() << QString();
+    QTest::newRow("cached") << R"({"type":"cached","model":"tiny","path":"/home/foo/.cache/huggingface"})"_ba << u"cached"_s << qint64(0) << qint64(0) << -1
+                            << u"/home/foo/.cache/huggingface"_s << QString();
+    QTest::newRow("finished") << R"({"type":"finished","model":"tiny","path":"/home/foo/.cache/huggingface"})"_ba << u"finished"_s << qint64(0) << qint64(0)
+                              << -1 << u"/home/foo/.cache/huggingface"_s << QString();
+    QTest::newRow("error") << R"({"type":"error","model":"small","message":"OSError: no space left"})"_ba << u"error"_s << qint64(0) << qint64(0) << -1
                            << QString() << u"OSError: no space left"_s;
 }
 

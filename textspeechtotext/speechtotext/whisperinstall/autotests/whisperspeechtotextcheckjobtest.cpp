@@ -46,29 +46,26 @@ void WhisperSpeechToTextCheckJobTest::shouldParseCheckResult_data()
     QTest::addColumn<bool>("needToReinstall");
 
     QTest::newRow("empty") << QByteArray() << QStringList() << QString() << 0 << 0 << true;
-    QTest::newRow("invalid-json") << QByteArray("not json at all") << QStringList() << QString() << 0 << 0 << true;
-    QTest::newRow("empty-object") << QByteArray("{}") << QStringList() << QString() << 0 << 0 << true;
+    QTest::newRow("invalid-json") << "not json at all"_ba << QStringList() << QString() << 0 << 0 << true;
+    QTest::newRow("empty-object") << "{}"_ba << QStringList() << QString() << 0 << 0 << true;
     // A json array is not what the script prints.
-    QTest::newRow("array") << QByteArray("[]") << QStringList() << QString() << 0 << 0 << true;
+    QTest::newRow("array") << "[]"_ba << QStringList() << QString() << 0 << 0 << true;
 
-    QTest::newRow("available") << QByteArray(
-        R"({"available": true, "missing": [], "python": "/home/foo/.venv/whisper/bin/python", "sampleRate": 16000, "channels": 1})")
+    QTest::newRow("available") << R"({"available": true, "missing": [], "python": "/home/foo/.venv/whisper/bin/python", "sampleRate": 16000, "channels": 1})"_ba
                                << QStringList() << u"/home/foo/.venv/whisper/bin/python"_s << 16000 << 1 << false;
 
-    QTest::newRow("missing-one") << QByteArray(
-        R"({"available": false, "missing": ["faster-whisper"], "python": "/usr/bin/python", "sampleRate": 16000, "channels": 1})")
+    QTest::newRow("missing-one") << R"({"available": false, "missing": ["faster-whisper"], "python": "/usr/bin/python", "sampleRate": 16000, "channels": 1})"_ba
                                  << QStringList{u"faster-whisper"_s} << u"/usr/bin/python"_s << 16000 << 1 << false;
 
-    QTest::newRow("missing-all") << QByteArray(R"({"available": false, "missing": ["faster-whisper", "numpy"], "python": "/usr/bin/python"})")
+    QTest::newRow("missing-all") << R"({"available": false, "missing": ["faster-whisper", "numpy"], "python": "/usr/bin/python"})"_ba
                                  << QStringList{u"faster-whisper"_s, u"numpy"_s} << u"/usr/bin/python"_s << 0 << 0 << false;
 
     // Not usable but nothing named: only a reinstallation can fix it.
-    QTest::newRow("unavailable-without-missing") << QByteArray(R"({"available": false, "missing": [], "python": "/usr/bin/python"})") << QStringList()
+    QTest::newRow("unavailable-without-missing") << R"({"available": false, "missing": [], "python": "/usr/bin/python"})"_ba << QStringList()
                                                  << u"/usr/bin/python"_s << 0 << 0 << true;
 
     // Defensive: the script must not be able to ask for the installation of "".
-    QTest::newRow("empty-module-name") << QByteArray(R"({"available": false, "missing": ["", "numpy"]})") << QStringList{u"numpy"_s} << QString() << 0 << 0
-                                       << false;
+    QTest::newRow("empty-module-name") << R"({"available": false, "missing": ["", "numpy"]})"_ba << QStringList{u"numpy"_s} << QString() << 0 << 0 << false;
 }
 
 void WhisperSpeechToTextCheckJobTest::shouldParseCheckResult()

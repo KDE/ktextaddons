@@ -57,7 +57,7 @@ void YandexEnginePlugin::parseCredentials(QNetworkReply *reply)
         return;
     }
     // qCDebug(TRANSLATOR_YANDEX_LOG) << "webSiteData  " << webSiteData;
-    const QByteArray sidBeginString = "SID: '";
+    const QByteArray sidBeginString = "SID: '"_ba;
     const int sidBeginStringPos = webSiteData.indexOf(sidBeginString);
 
     if (sidBeginStringPos == -1) {

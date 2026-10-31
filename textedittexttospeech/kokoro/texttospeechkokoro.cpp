@@ -62,7 +62,7 @@ TextToSpeechKokoro::~TextToSpeechKokoro()
     if (mProcess && mProcess->state() != QProcess::NotRunning) {
         // "quit" lets the script close the model cleanly, killing it is the
         // fallback for a backend stuck in a synthesis.
-        mProcess->write(QByteArrayLiteral("{\"cmd\": \"quit\"}\n"));
+        mProcess->write("{\"cmd\": \"quit\"}\n"_ba);
         mProcess->closeWriteChannel();
         if (!mProcess->waitForFinished(2000)) {
             mProcess->kill();
