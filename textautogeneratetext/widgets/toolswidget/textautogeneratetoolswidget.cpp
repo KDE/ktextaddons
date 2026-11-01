@@ -187,7 +187,12 @@ void TextAutoGenerateToolsWidget::updateMcpServerButton(const QByteArray &server
         break;
     case TextAutoGenerateMcpToolsManager::Status::Connected:
         if (toolsManager->isReady(serverIdentifier)) {
-            status = i18np("1 tool", "%1 tools", toolsManager->tools(serverIdentifier).count());
+            const int toolsCount = toolsManager->tools(serverIdentifier).count();
+            if (toolsCount == 0) {
+                status = toolsManager->allTools(serverIdentifier).isEmpty() ? i18n("No tools found") : i18n("No allowed tools");
+            } else {
+                status = i18np("1 tool", "%1 tools", toolsCount);
+            }
         } else {
             status = i18n("Loading tools…");
         }
