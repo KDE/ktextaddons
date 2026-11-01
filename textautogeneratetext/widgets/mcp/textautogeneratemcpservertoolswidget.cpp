@@ -91,6 +91,12 @@ TextAutoGenerateMcpServerToolsWidget::TextAutoGenerateMcpServerToolsWidget(TextA
     };
     updateEnabled(false);
     connect(mFilterToolsCheckBox, &QCheckBox::toggled, this, updateEnabled);
+    // Enabling filter without allowed tools would disallow all tools: allow them by default
+    connect(mFilterToolsCheckBox, &QCheckBox::clicked, this, [this](bool checked) {
+        if (checked && mAllowedTools.isEmpty()) {
+            setAllChecked(true);
+        }
+    });
     connect(mSearchLineEdit, &QLineEdit::textChanged, this, &TextAutoGenerateMcpServerToolsWidget::updateVisibleTools);
     connect(mRiskComboBox, &QComboBox::currentIndexChanged, this, &TextAutoGenerateMcpServerToolsWidget::updateVisibleTools);
     connect(selectAllButton, &QPushButton::clicked, this, [this]() {

@@ -21,4 +21,5 @@ private Q_SLOTS:
     void shouldChangeAllowedTools();
     void shouldFilterListOfTools();
     void shouldFilterByRisk();
+    void shouldAllowAllToolsWhenEnablingFilterWithoutAllowedTools();
 };

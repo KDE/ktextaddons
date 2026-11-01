@@ -162,4 +162,32 @@ void TextAutoGenerateMcpServerToolsWidgetTest::shouldFilterByRisk()
     QVERIFY(!mToolsListWidget->item(1)->isHidden());
 }
 
+void TextAutoGenerateMcpServerToolsWidgetTest::shouldAllowAllToolsWhenEnablingFilterWithoutAllowedTools()
+{
+    TextAutoGenerateText::TextAutoGenerateMcpServerToolsWidget w(nullptr);
+    auto server = createServer();
+    server.setFilterTools(false);
+    w.setServer(server);
+
+    auto mToolsListWidget = w.findChild<QListWidget *>(u"mToolsListWidget"_s);
+    mToolsListWidget->item(0)->setCheckState(Qt::Unchecked);
+    mToolsListWidget->item(1)->setCheckState(Qt::Unchecked);
+    QVERIFY(w.server().allowedTools().isEmpty());
+
+    auto mFilterToolsCheckBox = w.findChild<QCheckBox *>(u"mFilterToolsCheckBox"_s);
+    mFilterToolsCheckBox->click();
+    QVERIFY(w.server().filterTools());
+    QCOMPARE(w.server().allowedTools().count(), 2);
+    QCOMPARE(mToolsListWidget->item(0)->checkState(), Qt::Checked);
+    QCOMPARE(mToolsListWidget->item(1)->checkState(), Qt::Checked);
+
+    // Unselecting all tools is kept
+    auto unselectAllButton = w.findChild<QPushButton *>(u"unselectAllButton"_s);
+    unselectAllButton->click();
+    QVERIFY(w.server().allowedTools().isEmpty());
+    mFilterToolsCheckBox->click();
+    QVERIFY(!w.server().filterTools());
+    QVERIFY(w.server().allowedTools().isEmpty());
+}
+
 #include "moc_textautogeneratemcpservertoolswidgettest.cpp"
