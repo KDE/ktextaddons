@@ -201,7 +201,7 @@ void TextAutoGenerateToolsWidget::updateMcpServerButton(const QByteArray &server
         status = i18n("Error: %1", toolsManager->errorString(serverIdentifier));
         break;
     }
-    (*it)->setToolTip(i18n("Tools of MCP server \"%1\" (%2)", (*it)->text(), status));
+    (*it)->setToolTip(i18n("Tools of MCP server \"%1\" (%2)", (*it)->text().remove(u"&"_s), status));
     fillMcpToolsMenu(*it, serverIdentifier, status);
 }
 
