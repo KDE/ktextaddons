@@ -118,6 +118,8 @@ TextAutoGenerateMcpServerToolsWidget::TextAutoGenerateMcpServerToolsWidget(TextA
         connect(toolsManager, &TextAutoGenerateMcpToolsManager::toolsChanged, this, [this](const QByteArray &identifier) {
             if (identifier == mServer.identifier()) {
                 updateTools();
+                // Tools loaded: remove "Loading tools…"
+                updateStatus();
             }
         });
         connect(toolsManager, &TextAutoGenerateMcpToolsManager::statusChanged, this, [this](const QByteArray &identifier) {

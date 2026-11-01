@@ -269,6 +269,8 @@ void TextAutoGenerateMcpToolsManager::slotReceived(const QByteArray &identifier,
     if (!obj.contains("result"_L1)) {
         const auto response = TextAutoGenerateTextMcpProtocolCore::McpProtocolJSONRPCErrorResponse::fromJson(obj);
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to list tools of" << identifier << response.error().message();
+        // Server is ready now: "Loading tools…" must be removed
+        Q_EMIT toolsChanged(identifier);
         return;
     }
     const auto result = TextAutoGenerateTextMcpProtocolCore::McpProtocolListToolsResult::fromJson(obj.value("result"_L1).toObject());
