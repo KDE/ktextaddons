@@ -234,7 +234,7 @@ void TextAutoGenerateMcpServerToolsWidget::updateTools()
 
 void TextAutoGenerateMcpServerToolsWidget::updateVisibleTools()
 {
-    const QString str = mSearchLineEdit->text();
+    const QString str = mSearchLineEdit->text().trimmed();
     // Invalid when all tools are shown
     const QVariant risk = mRiskComboBox->currentData();
     for (int i = 0; i < mToolsListWidget->count(); ++i) {
