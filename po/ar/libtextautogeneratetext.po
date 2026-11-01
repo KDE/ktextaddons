@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:49+0000\n"
-"PO-Revision-Date: 2026-09-30 19:06+0400\n"
+"PO-Revision-Date: 2026-10-31 21:00+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
@@ -62,27 +62,27 @@ msgstr "من المستحيل استيراد الملف."
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:96
 #, kde-format
 msgid "No LLM available."
-msgstr ""
+msgstr "لا يتوفر نموذج لغوي كبير."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:101
 #, kde-format
 msgid "Sampling request contains unsupported content."
-msgstr ""
+msgstr "طلب أخذ العينات يحتوي على محتوى غير مدعوم."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:110
 #, kde-format
 msgid "LLM doesn't support sampling requests."
-msgstr ""
+msgstr "النموذج اللغوي الكبير لا يدعم طلبات أخذ العينات."
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:125
 #, kde-format
 msgid "LLM returned an empty answer."
-msgstr ""
+msgstr "أعاد النموذج اللغوي الكبير إجابة فارغة."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:35
 #, kde-format
 msgid "Tool \"%1\" is not available."
-msgstr ""
+msgstr "الأداة \"%1\" غير متوفرة."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:57
 #, kde-format
@@ -90,58 +90,57 @@ msgid ""
 "Tool \"%1\" needs an authorization: user was asked to open a web page. Ask "
 "the user to tell you when it is done, then call the tool again."
 msgstr ""
+"الأداة \"%1\" تحتاج إلى استيثاق: طُلب من المستخدم فتح صفحة ويب. اطلب من "
+"المستخدم إخبارك عند الانتهاء، ثم استدعِ الأداة مجددًا."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:160
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:182
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "خطأ"
+msgstr "خطأ: %1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:68
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:80
 #, kde-format
 msgid "Error: server was stopped."
-msgstr ""
+msgstr "خطأ: أُوقف الخادم."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:76
 #, kde-format
 msgid "User refused to run tool \"%1\"."
-msgstr ""
+msgstr "رفض المستخدم تشغيل الأداة \"%1\"."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:83
 #, kde-format
 msgid "Calling tool \"%1\"…"
-msgstr ""
+msgstr "استدعاء الأداة \"%1\"…"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:86
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
-msgstr ""
+msgstr "خطأ: تعذّر استدعاء الأداة \"%1\"."
 
 #: core/mcp/textautogeneratemcptoolsmanager.cpp:109
 #, kde-format
 msgid "Server is invalid or disabled."
-msgstr ""
+msgstr "الخادم غير صالح أو معطّل."
 
 #: core/mcp/textautogeneratemcptoolsutils.cpp:85
 #, kde-format
 msgid "Read-only"
-msgstr ""
+msgstr "للقراءة فقط"
 
 #: core/mcp/textautogeneratemcptoolsutils.cpp:87
-#, fuzzy, kde-format
-#| msgid "Modified At:"
+#, kde-format
 msgid "Modifies data"
-msgstr "عُدّل في:"
+msgstr "يعدّل البيانات"
 
 #: core/mcp/textautogeneratemcptoolsutils.cpp:89
 #, kde-format
 msgid "May delete or overwrite data"
-msgstr ""
+msgstr "قد يحذف البيانات أو يكتب فوقها"
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -315,12 +314,12 @@ msgstr "<br><b>رمز الإكمال:</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
 msgid "MCP tool: %1 (%2)"
-msgstr ""
+msgstr "أداة MCP: %1 (%2)"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
 msgid "MCP server: %1"
-msgstr ""
+msgstr "خادم MCP: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:252
 #, kde-format
@@ -353,7 +352,7 @@ msgstr "نشّط: %1"
 #: core/tools/textautogeneratetoolcalljob.cpp:48
 #, kde-format
 msgid "Tool \"%1\" not found."
-msgstr ""
+msgstr "الأداة \"%1\" غير موجودة."
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:28
 #, kde-format
@@ -505,7 +504,7 @@ msgstr "أوبن أيه آي API"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:68
 #, kde-format
 msgid "DeepSeek"
-msgstr ""
+msgstr "DeepSeek"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:254
 #, kde-format
@@ -568,10 +567,9 @@ msgid "OpenAI API (custom)"
 msgstr "واجهة برمجة تطبيقات أوبن إيه آي (مخصصة)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:291
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "DeepSeek large language models"
-msgstr "نماذج ميسطرال للذكاء الاصطناعي للغة الضخمة"
+msgstr "نماذج DeepSeek اللغوية الكبيرة"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
@@ -2480,7 +2478,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:279
 #, kde-format
 msgid "Devstral: the best open source model for coding agents."
-msgstr "Devstral: أفضل نموذج مفتوح المصدر لوكلاء التشفير."
+msgstr "Devstral: أفضل نموذج مفتوح المصدر لوكلاء البرمجة."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:280
 #, kde-format
@@ -3128,7 +3126,7 @@ msgstr "البيانات الوصفية"
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"
-msgstr ""
+msgstr "تشغيل الأدوات دون تأكيد:"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
@@ -3255,66 +3253,60 @@ msgstr "أضف نسخة…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from MCP Server"
-msgstr ""
+msgstr "طلب من خادم MCP"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Accept"
-msgstr ""
+msgstr "اقبل"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Decline"
-msgstr ""
+msgstr "ارفض"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from %1"
-msgstr ""
+msgstr "طلب من %1"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:217
 #, kde-format
 msgid "URL:"
-msgstr ""
+msgstr "المسار:"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:246
 #, kde-format
 msgctxt "Label of required field"
 msgid "%1 (required):"
-msgstr ""
+msgstr "%1 (مطلوب):"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:248
 #, kde-format
 msgctxt "Label of field"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools"
-msgstr "اضبط"
+msgstr "اضبط الأدوات"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools of %1"
-msgstr "اضبط %1"
+msgstr "اضبط أدوات %1"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Allow to select tools"
+#, kde-format
 msgctxt "@option:check"
 msgid "Only allow selected tools"
-msgstr "اسمح بتحديد الأدوات"
+msgstr "اسمح بالأدوات المحددة فقط"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:45
 #, kde-format
@@ -3323,140 +3315,130 @@ msgid ""
 "Tools which are not selected are not sent to LLM. New tools of server are "
 "not allowed."
 msgstr ""
+"الأدوات غير المحددة لا تُرسل إلى النموذج اللغوي الكبير. الأدوات الجديدة "
+"للخادم غير مسموح بها."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "All Tools"
-msgstr "أدوات"
+msgstr "كل الأدوات"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
-msgstr "حدّد الكلّ"
+msgstr "حدّد الكل"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr "حدّد الكلّ"
+msgstr "أزِل تحديد الكلّ"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:161
 #, kde-format
 msgid "Apply changes to load the list of tools of this server."
-msgstr ""
+msgstr "طبّق التغييرات لتحميل قائمة أدوات هذا الخادم."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:162
 #, kde-format
 msgid "Enable this server to load the list of its tools."
-msgstr ""
+msgstr "مكّن هذا الخادم لتحميل قائمة أدواته."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "No tag selected"
+#, kde-format
 msgid "Not connected"
-msgstr "لا وسوم محدّدة"
+msgstr "غير متّصل"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:172
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:186
 #, kde-format
 msgid "Connecting…"
-msgstr ""
+msgstr "يتّصل…"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:178
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Show internal tools…"
+#, kde-format
 msgid "Loading tools…"
-msgstr "أظهر الأدوات الداخلية…"
+msgstr "يحمّل الأدوات…"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
 msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
-msgstr ""
+msgstr "يريد خادم MCP \"%1\" تشغيل الأداة \"%2\"."
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Arguments:"
+#, kde-format
 msgid ""
 "Arguments:\n"
 "%1"
-msgstr "المعاملات:"
+msgstr ""
+"المعاملات:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:27
-#, fuzzy, kde-format
-#| msgid "Plugins Tool:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Run Tool"
-msgstr "أداة الملحقات:"
+msgstr "شغّل الأداة"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Allow"
-msgstr ""
+msgstr "اسمح"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Always Allow This Server"
-msgstr ""
+msgstr "اسمح لهذا الخادم دائمًا"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Deny"
-msgstr ""
+msgstr "امنع"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:29
 #, kde-format
 msgid "[Image]"
-msgstr ""
+msgstr "[صورة]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:32
 #, kde-format
 msgid "[Audio]"
-msgstr ""
+msgstr "[صوت]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:35
 #, kde-format
 msgid "[Tool call]"
-msgstr ""
+msgstr "[استدعاء أداة]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:38
 #, kde-format
 msgid "[Tool result]"
-msgstr ""
+msgstr "[نتيجة أداة]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Sampling Request from MCP Server"
-msgstr ""
+msgstr "طلب أخذ عينات من خادم MCP"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Send to LLM"
-msgstr ""
+msgstr "أرسل إلى النموذج اللغوي الكبير"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Project"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reject"
-msgstr "المشروع"
+msgstr "ارفض"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:89
 #, kde-format
@@ -3464,14 +3446,17 @@ msgid ""
 "The MCP server \"%1\" wants to send the following messages to the LLM. The "
 "generated answer will be returned to the server."
 msgstr ""
+"يريد خادم MCP \"%1\" إرسال الرسائل التالية إلى النموذج اللغوي الكبير. ستُعاد "
+"الإجابة المولّدة إلى الخادم."
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:102
-#, fuzzy, kde-format
-#| msgid "No system prompt"
+#, kde-format
 msgid ""
 "System prompt:\n"
 "%1"
-msgstr "لا يوجد موجّه للنظام"
+msgstr ""
+"توجيه النظام:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3479,6 +3464,8 @@ msgid ""
 "Assistant:\n"
 "%1"
 msgstr ""
+"المساعد:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3486,6 +3473,8 @@ msgid ""
 "User:\n"
 "%1"
 msgstr ""
+"المستخدم:\n"
+"%1"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3544,7 +3533,7 @@ msgstr "اضبط…"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Comma-separated, used when the server doesn't list its models"
-msgstr ""
+msgstr "مفصولة بفواصل، تُستخدم عندما لا يسرد الخادم نماذجه"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:54
 #, kde-format
@@ -3552,10 +3541,9 @@ msgid "Custom URL:"
 msgstr "عنوان مخصص:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:55
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Models:"
-msgstr "النّماذج"
+msgstr "النماذج:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:58
 #, kde-format
@@ -3654,7 +3642,7 @@ msgstr "الأيقونة:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Agent"
-msgstr ""
+msgstr "الوكيل"
 
 #: widgets/promptswidget/textautogenerateagentwidget.cpp:30
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
@@ -3676,7 +3664,7 @@ msgstr "سفر"
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:23
 #, kde-format
 msgid "Undefined"
-msgstr ""
+msgstr "غير محدد"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, kde-format
@@ -3692,37 +3680,30 @@ msgstr "الفئة:"
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
 #, kde-format
 msgid "Command Completion:"
-msgstr ""
+msgstr "إكمال الأوامر:"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Tag…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Agent…"
-msgstr "أضف وسمًا…"
+msgstr "أضف عاملًا…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Agent"
-msgstr "أزل الوسم"
+msgstr "أزِل الوكيل"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this tag (%1)?"
+#, kde-format
 msgid "Do you want to remove this agent (%1)?"
-msgstr "هل تريد إزالة هذا الوسم (%1)؟"
+msgstr "هل تريد إزالة هذا الوكيل (%1)؟"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Agent"
-msgstr "أزل الوسم"
+msgstr "أزِل الوكيل"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -3748,34 +3729,27 @@ msgid "Remove Prompt"
 msgstr "أزل الطلب"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Tag…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Skill…"
-msgstr "أضف وسمًا…"
+msgstr "أضف مهارة…"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Skill"
-msgstr "أزل النموذج"
+msgstr "أزل المهارة"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this skill (%1)?"
-msgstr "أتريد إزالة هذه النموذج (%1)؟"
+msgstr "هل تريد إزالة هذه المهارة (%1)؟"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Skill"
-msgstr "أزل النموذج"
+msgstr "أزل المهارة"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
@@ -3939,12 +3913,10 @@ msgid "Only show the chats which have one of the selected tags"
 msgstr "اعرض فقط المحادثات التي تحمل أحد الوسوم المحددة"
 
 #: widgets/textautogeneratehistorywidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Clear"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear tags"
-msgstr "امحُ"
+msgstr "امسح الوسوم"
 
 #: widgets/textautogeneratehistorywidget.cpp:80
 #, kde-format
@@ -3996,17 +3968,17 @@ msgstr "أدوات:"
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لا توجد أداة"
+msgstr[1] "أداة واحدة"
+msgstr[2] "أداتان اثنتان"
+msgstr[3] "%1 أدوات"
+msgstr[4] "%1 أداة"
+msgstr[5] "%1 أداة"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:199
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
-msgstr ""
+msgstr "أدوات خادم MCP «%1» (%2)"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:501
 #, kde-format
