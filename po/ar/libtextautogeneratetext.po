@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the ktextaddons package.
-# SPDX-FileCopyrightText: 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-09-30 19:06+0400\n"
+"PO-Revision-Date: 2026-10-31 21:00+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
@@ -40,16 +40,14 @@ msgid "Json File"
 msgstr "ملف  جوسن JSON"
 
 #: core/jobs/textautogenerateexportchatbasejob.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to export file."
-msgstr "من المستحيل بدء أولاما."
+msgstr "من المستحيل تصدير الملف."
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
-#, fuzzy, kde-format
-#| msgid "Failed to write to file: %1"
+#, kde-format
 msgid "Failed to parse JSon file: %1"
-msgstr "فشل الكتابة إلى الملف : %1"
+msgstr "فشَلَ تحليل ملف جوسن %1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
@@ -57,10 +55,9 @@ msgid "Failed to open file for reading: %1"
 msgstr "فشل فتح ملف للقراءة: %1"
 
 #: core/jobs/textautogenerateimportchatbasejob.cpp:37
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to import file."
-msgstr "من المستحيل بدء أولاما."
+msgstr "من المستحيل استيراد الملف."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -2372,7 +2369,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:279
 #, kde-format
 msgid "Devstral: the best open source model for coding agents."
-msgstr "Devstral: أفضل نموذج مفتوح المصدر لوكلاء التشفير."
+msgstr "Devstral: أفضل نموذج مفتوح المصدر لوكلاء البرمجة."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:280
 #, kde-format
@@ -3203,10 +3200,9 @@ msgid "Text Plugins:"
 msgstr "ملحقات النصوص:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Tool identifier: %1"
+#, kde-format
 msgid "Text identifier: %1"
-msgstr "معرف الأداة: %1"
+msgstr "معرف النص: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format
