@@ -84,6 +84,14 @@ public:
     };
     Q_ENUM(FileType)
 
+    enum class EmptyHistory : uint8_t {
+        // Creates a new chat when there is no chat
+        CreateChat,
+        // Keeps the list of chats empty (e.g. clients without user interface)
+        KeepEmpty,
+    };
+    Q_ENUM(EmptyHistory)
+
     /*!
      * Constructs a new TextAutoGenerateManager object.
      * \param parent The parent QObject
@@ -102,8 +110,14 @@ public:
 
     /*!
      * Loads the chat history from the database.
+     * A new chat is created when there is no chat.
      */
     void loadHistory();
+    /*!
+     * Loads the chat history from the database.
+     * \param emptyHistory Whether a new chat is created when there is no chat
+     */
+    void loadHistory(TextAutoGenerateText::TextAutoGenerateManager::EmptyHistory emptyHistory);
 
     /*!
      * Returns whether archived chats are shown.
@@ -178,8 +192,9 @@ public:
      * Creates a new chat.
      * \param title The title of the new chat (optional)
      * \param persistence The Persistence info (optional)
+     * \return The identifier of the new chat. It becomes the current chat when plugin is initialized
      */
-    void createNewChat(const QString &title = {}, TextAutoGenerateChat::Persistence persistence = TextAutoGenerateChat::Persistence::Persisted);
+    QByteArray createNewChat(const QString &title = {}, TextAutoGenerateChat::Persistence persistence = TextAutoGenerateChat::Persistence::Persisted);
     /*!
      * Creates a new ephemeral chat, which is never stored in database until it is saved.
      * Unlike createNewChat(), the current chat is not changed.
@@ -216,6 +231,12 @@ public:
      * \return true if the request was cancelled, false otherwise
      */
     [[nodiscard]] bool cancelRequest(const QByteArray &chatId, const QModelIndex &index);
+    /*!
+     * Cancels the answer in progress of a chat: request of plugin and tool calls are stopped.
+     * \param chatId The ID of the chat
+     * \return true if an answer was in progress, false otherwise
+     */
+    bool cancelRequest(const QByteArray &chatId);
 
     /*!
      * Changes the favorite status of a chat.

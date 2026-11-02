@@ -22,4 +22,7 @@ private Q_SLOTS:
     void shouldCreateEphemeralChatWithoutChangingCurrentChat();
     void shouldResetCurrentChatIdWhenRemovingCurrentChat();
     void shouldKeepCurrentChatIdWhenRemovingAnotherChat();
+    void shouldReturnIdentifierOfNewChat();
+    void shouldNotCreateChatWhenHistoryIsKeptEmpty();
+    void shouldCancelAnswerInProgress();
 };

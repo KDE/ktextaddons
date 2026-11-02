@@ -213,13 +213,14 @@ void TextAutoGenerateManager::ask(const TextAutoGenerateText::TextAutoGenerateMa
     Q_EMIT askMessageRequested(info);
 }
 
-void TextAutoGenerateManager::createNewChat(const QString &title, TextAutoGenerateChat::Persistence persistence)
+QByteArray TextAutoGenerateManager::createNewChat(const QString &title, TextAutoGenerateChat::Persistence persistence)
 {
     // Switch back to not archived list
     setShowArchived(false);
     const QByteArray chatId = addChat(title, persistence);
     switchToChatId(chatId);
     Q_EMIT discussionListIsEmpty(false);
+    return chatId;
 }
 
 QByteArray TextAutoGenerateManager::createEphemeralChat()
@@ -407,6 +408,11 @@ void TextAutoGenerateManager::setShowArchived(bool newShowArchived)
 
 void TextAutoGenerateManager::loadHistory()
 {
+    loadHistory(EmptyHistory::CreateChat);
+}
+
+void TextAutoGenerateManager::loadHistory(TextAutoGenerateText::TextAutoGenerateManager::EmptyHistory emptyHistory)
+{
     const bool needPurge = !mPurgeDone;
     mPurgeDone = true;
     QList<TextAutoGenerateChat> chats = mDatabaseManager->loadChats();
@@ -416,14 +422,17 @@ void TextAutoGenerateManager::loadHistory()
             chats.append(chat);
         }
     }
+    const bool createChat = emptyHistory == EmptyHistory::CreateChat;
     if (chats.isEmpty()) {
-        createNewChat();
+        if (createChat) {
+            createNewChat();
+        }
     } else {
         mTextAutoGenerateChatsModel->setChats(chats);
         if (needPurge) {
             purgeExpiredChats();
         }
-        if (mTextAutoGenerateChatsModel->isEmpty()) {
+        if (createChat && mTextAutoGenerateChatsModel->isEmpty()) {
             createNewChat();
         }
     }
@@ -484,6 +493,29 @@ bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId, const QMod
         return messagesModel->cancelRequest(index);
     }
     return false;
+}
+
+bool TextAutoGenerateManager::cancelRequest(const QByteArray &chatId)
+{
+    auto messagesModel = messagesModelFromChatId(chatId);
+    if (!messagesModel) {
+        return false;
+    }
+    const QList<TextAutoGenerateMessage> messages = messagesModel->messages();
+    const auto it = std::find_if(messages.crbegin(), messages.crend(), [](const TextAutoGenerateMessage &msg) {
+        return msg.inProgress();
+    });
+    if (it == messages.crend()) {
+        return false;
+    }
+    const QByteArray uuid = it->uuid();
+    if (!cancelRequest(chatId, messagesModel->indexForUuid(uuid))) {
+        return false;
+    }
+    if (auto plugin = textAutoGeneratePlugin(); plugin) {
+        plugin->cancelRequest(uuid);
+    }
+    return true;
 }
 
 void TextAutoGenerateManager::duplicateChat(const QByteArray &chatId, const QByteArray &untilMessageUUid)

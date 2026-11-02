@@ -5,7 +5,9 @@
 */
 
 #include "textautogeneratemanagertest.h"
+#include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/models/textautogeneratechatsmodel.h"
+#include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratemanager.h"
 #include <QSignalSpy>
 #include <QStandardPaths>
@@ -104,6 +106,46 @@ void TextAutoGenerateManagerTest::shouldKeepCurrentChatIdWhenRemovingAnotherChat
     QCOMPARE(spy.count(), 0);
     QVERIFY(w.textAutoGenerateChatsModel()->chat(otherChatId).identifier().isEmpty());
     QCOMPARE(w.textAutoGenerateChatsModel()->chat(currentChatId).identifier(), currentChatId);
+}
+
+void TextAutoGenerateManagerTest::shouldReturnIdentifierOfNewChat()
+{
+    TextAutoGenerateText::TextAutoGenerateManager w;
+    const QByteArray chatId = w.createNewChat(u"title"_s, TextAutoGenerateText::TextAutoGenerateChat::Persistence::Ephemeral);
+    QVERIFY(!chatId.isEmpty());
+    const TextAutoGenerateText::TextAutoGenerateChat chat = w.textAutoGenerateChatsModel()->chat(chatId);
+    QCOMPARE(chat.identifier(), chatId);
+    QCOMPARE(chat.title(), u"title"_s);
+    w.removeDiscussion(chatId);
+}
+
+void TextAutoGenerateManagerTest::shouldNotCreateChatWhenHistoryIsKeptEmpty()
+{
+    TextAutoGenerateText::TextAutoGenerateManager w;
+    const qsizetype savedChats = w.databaseManager()->loadChats().count();
+    w.loadHistory(TextAutoGenerateText::TextAutoGenerateManager::EmptyHistory::KeepEmpty);
+    QCOMPARE(w.textAutoGenerateChatsModel()->chats().count(), savedChats);
+}
+
+void TextAutoGenerateManagerTest::shouldCancelAnswerInProgress()
+{
+    TextAutoGenerateText::TextAutoGenerateManager w;
+    QVERIFY(!w.cancelRequest("unknown"_ba));
+
+    const QByteArray chatId = w.createEphemeralChat();
+    QVERIFY(!w.cancelRequest(chatId));
+
+    TextAutoGenerateText::TextAutoGenerateMessage answer;
+    answer.setUuid("answer"_ba);
+    answer.setSender(TextAutoGenerateText::TextAutoGenerateMessage::Sender::Assistant);
+    answer.setInProgress(true);
+    w.addMessage(chatId, answer);
+
+    QVERIFY(w.cancelRequest(chatId));
+    QVERIFY(!w.messagesModelFromChatId(chatId)->message("answer"_ba).inProgress());
+    // Nothing left to cancel
+    QVERIFY(!w.cancelRequest(chatId));
+    w.removeDiscussion(chatId);
 }
 
 #include "moc_textautogeneratemanagertest.cpp"
