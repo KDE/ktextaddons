@@ -200,7 +200,7 @@ void TextAutoGenerateMcpServerToolsWidget::updateTools()
     if (canListTools()) {
         auto tools = mManager->textAutoGenerateMcpToolsManager()->allTools(mServer.identifier());
         std::sort(tools.begin(), tools.end(), [](const TextAutoGenerateMcpToolsManager::McpTool &left, const TextAutoGenerateMcpToolsManager::McpTool &right) {
-            return left.name < right.name;
+            return left.displayName < right.displayName;
         });
         for (const auto &tool : std::as_const(tools)) {
             auto item = new QListWidgetItem(QIcon::fromTheme(TextAutoGenerateMcpToolsUtils::toolRiskIconName(tool.risk)),
