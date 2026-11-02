@@ -219,7 +219,7 @@ QList<TextAutoGenerateSearchMessage> TextAutoGenerateLocalMessagesDatabase::sear
         const QString fileName = dbFileName(chatIdentifier);
         // qDebug() << " fileName " << fileName;
         if (!QFileInfo::exists(fileName)) {
-            qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Filename doesn't exist: " << fileName;
+            qCDebug(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Filename doesn't exist: " << fileName;
             return {};
         }
         db = QSqlDatabase::addDatabase(u"QSQLITE"_s, dbName);

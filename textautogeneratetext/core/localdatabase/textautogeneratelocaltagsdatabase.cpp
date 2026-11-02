@@ -86,7 +86,7 @@ QList<TextAutoGenerateTag> TextAutoGenerateLocalTagsDatabase::loadTags() const
         // Open the DB if it exists (don't create a new one)
         const QString fileName = dbFileName(QString());
         if (!QFileInfo::exists(fileName)) {
-            qCWarning(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Filename doesn't exist: " << fileName;
+            qCDebug(TEXTAUTOGENERATETEXT_CORE_DATABASE_LOG) << "Filename doesn't exist: " << fileName;
             return {};
         }
         db = QSqlDatabase::addDatabase(u"QSQLITE"_s, dbName);
