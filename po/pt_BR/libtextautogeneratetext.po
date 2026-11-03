@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:53+0000\n"
-"PO-Revision-Date: 2026-10-30 07:26-0300\n"
+"PO-Revision-Date: 2026-11-02 08:00-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -4095,17 +4095,14 @@ msgid "Tools:"
 msgstr "Ferramentas:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgid "No plugin found."
+#, kde-format
 msgid "No tools found"
-msgstr "Nenhum plugin encontrado."
+msgstr "Nenhuma ferramenta encontrada"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Only allow selected tools"
+#, kde-format
 msgid "No allowed tools"
-msgstr "Permitir somente ferramentas selecionadas"
+msgstr "Nenhuma ferramenta permitida"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:194
 #, kde-format

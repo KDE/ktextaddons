@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:53+0000\n"
-"PO-Revision-Date: 2026-10-30 04:32+0100\n"
+"PO-Revision-Date: 2026-11-02 05:53+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -4065,17 +4065,14 @@ msgid "Tools:"
 msgstr "ხელსაწყოები:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgid "No plugin found."
+#, kde-format
 msgid "No tools found"
-msgstr "დამატებების გარეშე."
+msgstr "ხელსაწყოები აღმოჩენილი არაა"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Only allow selected tools"
+#, kde-format
 msgid "No allowed tools"
-msgstr "მხოლოდ, მონიშნული ხელსაწყოების დაშვება"
+msgstr "დაშვებული ხელსაწყოების გარეშე"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:194
 #, kde-format

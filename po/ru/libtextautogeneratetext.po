@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-02 00:53+0000\n"
-"PO-Revision-Date: 2026-10-30 07:45+0200\n"
+"PO-Revision-Date: 2026-11-02 07:45+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -4094,17 +4094,14 @@ msgid "Tools:"
 msgstr "Инструменты:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgid "No plugin found."
+#, kde-format
 msgid "No tools found"
-msgstr "Модуль не найден."
+msgstr "Инструменты не найдены"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Only allow selected tools"
+#, kde-format
 msgid "No allowed tools"
-msgstr "Разрешить только выбранные инструменты"
+msgstr "Нет разрешённых инструментов"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:194
 #, kde-format
