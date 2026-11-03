@@ -55,9 +55,12 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void emitFinished(const QString &content);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void removeToolCallInProgress();
     TextAutoGenerateMcpToolsManager *const mToolsManager;
     QJsonObject mArguments;
     QPointer<TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager> mClient;
+    // Server of tool while it's called (see TextAutoGenerateMcpToolsManager::addToolCallInProgress())
+    QByteArray mServerIdentifierInProgress;
     qint64 mRequestId = -1;
     bool mFinished = false;
 };

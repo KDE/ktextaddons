@@ -52,7 +52,7 @@ void TextAutoGenerateMcpToolCallJob::start()
                     if (response.error().code() == TextAutoGenerateTextMcpProtocolCore::McpProtocolURLElicitationRequiredError::errorCode) {
                         // Server needs that user opens URLs (authorization…) before calling tool
                         const auto urlError = TextAutoGenerateTextMcpProtocolCore::McpProtocolURLElicitationRequiredError::fromJson(obj);
-                        if (mToolsManager->showUrlElicitations(serverIdentifier, urlError.elicitations())) {
+                        if (mToolsManager->showUrlElicitations(mChatId, serverIdentifier, urlError.elicitations())) {
                             emitFinished(
                                 i18n("Tool \"%1\" needs an authorization: user was asked to open a web page. "
                                      "Ask the user to tell you when it is done, then call the tool again.",
@@ -68,7 +68,7 @@ void TextAutoGenerateMcpToolCallJob::start()
         emitFinished(i18n("Error: server was stopped."));
     });
     // User must accept tool call
-    mToolsManager->confirmToolCall(*tool, mArguments, this, [this, name = tool->name](bool accepted) {
+    mToolsManager->confirmToolCall(mChatId, *tool, mArguments, this, [this, name = tool->name, serverIdentifier = tool->serverIdentifier](bool accepted) {
         if (mFinished) {
             return;
         }
@@ -84,7 +84,11 @@ void TextAutoGenerateMcpToolCallJob::start()
         mRequestId = mClient->callTool(name, mArguments);
         if (mRequestId == -1) {
             emitFinished(i18n("Error: impossible to call tool \"%1\".", name));
+            return;
         }
+        // Requests of server (elicitation, sampling) received while it answers are associated to chat
+        mServerIdentifierInProgress = serverIdentifier;
+        mToolsManager->addToolCallInProgress(mServerIdentifierInProgress, mChatId);
     });
 }
 
@@ -94,6 +98,7 @@ void TextAutoGenerateMcpToolCallJob::cancel()
         return;
     }
     mFinished = true;
+    removeToolCallInProgress();
     if (mClient) {
         mClient->disconnect(this);
         if (mRequestId != -1) {
@@ -103,12 +108,21 @@ void TextAutoGenerateMcpToolCallJob::cancel()
     deleteLater();
 }
 
+void TextAutoGenerateMcpToolCallJob::removeToolCallInProgress()
+{
+    if (!mServerIdentifierInProgress.isEmpty()) {
+        mToolsManager->removeToolCallInProgress(mServerIdentifierInProgress, mChatId);
+        mServerIdentifierInProgress.clear();
+    }
+}
+
 void TextAutoGenerateMcpToolCallJob::emitFinished(const QString &content)
 {
     if (mFinished) {
         return;
     }
     mFinished = true;
+    removeToolCallInProgress();
     if (mClient) {
         mClient->disconnect(this);
     }

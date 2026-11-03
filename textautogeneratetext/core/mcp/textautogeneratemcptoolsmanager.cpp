@@ -24,6 +24,7 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRoot>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
+#include <algorithm>
 #include <memory>
 
 using namespace Qt::Literals::StringLiterals;
@@ -159,11 +160,13 @@ void TextAutoGenerateMcpToolsManager::connectServer(const QByteArray &identifier
         connect(client,
                 &McpProtocolClientProtocolManager::elicitationRequested,
                 this,
-                [this, serverName = server.name(), client = QPointer(client)](const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
-                                                                              const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &request) {
+                [this, identifier, serverName = server.name(), client = QPointer(client)](
+                    const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
+                    const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest &request) {
                     const ElicitationInfo info{
                         .serverName = serverName,
                         .request = request,
+                        .chatId = chatIdOfToolCallInProgress(identifier),
                     };
                     mElicitationHandler(info, [client, id](const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &result) {
                         // Client can be deleted while user answers
@@ -178,16 +181,17 @@ void TextAutoGenerateMcpToolsManager::connectServer(const QByteArray &identifier
         connect(client,
                 &McpProtocolClientProtocolManager::samplingRequested,
                 this,
-                [this, serverName = server.name(), client](const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
-                                                           const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &request) {
-                    slotSamplingRequested(serverName, client, id, request);
+                [this, identifier, serverName = server.name(), client](const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
+                                                                       const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &request) {
+                    slotSamplingRequested(identifier, serverName, client, id, request);
                 });
     }
     setStatus(identifier, Status::Connecting);
     client->initializeClient();
 }
 
-void TextAutoGenerateMcpToolsManager::slotSamplingRequested(const QString &serverName,
+void TextAutoGenerateMcpToolsManager::slotSamplingRequested(const QByteArray &identifier,
+                                                            const QString &serverName,
                                                             McpProtocolClientProtocolManager *client,
                                                             const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
                                                             const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &request)
@@ -195,6 +199,7 @@ void TextAutoGenerateMcpToolsManager::slotSamplingRequested(const QString &serve
     const SamplingInfo info{
         .serverName = serverName,
         .request = request,
+        .chatId = chatIdOfToolCallInProgress(identifier),
     };
     // Client can be deleted while user answers or while LLM generates message
     mSamplingHandler(info, [this, client = QPointer(client), id, request](bool accepted) {
@@ -645,7 +650,8 @@ bool TextAutoGenerateMcpToolsManager::needConfirmation(const McpTool &tool) cons
         && !TextAutoGenerateText::TextAutoGenerateMcpToolsUtils::isServerAlwaysAllowed(mServerManager->serverConfigFileName(), tool.serverIdentifier);
 }
 
-void TextAutoGenerateMcpToolsManager::confirmToolCall(const McpTool &tool,
+void TextAutoGenerateMcpToolsManager::confirmToolCall(const QByteArray &chatId,
+                                                      const McpTool &tool,
                                                       const QJsonObject &arguments,
                                                       QObject *context,
                                                       const std::function<void(bool)> &callback)
@@ -658,6 +664,7 @@ void TextAutoGenerateMcpToolsManager::confirmToolCall(const McpTool &tool,
         .tool = tool,
         .serverName = mServerManager->mcpServerModel()->mcpServer(tool.serverIdentifier).name(),
         .arguments = arguments,
+        .chatId = chatId,
     };
     const QPointer<QObject> guard(context);
     mConfirmationHandler(info, [this, guard, callback, serverIdentifier = tool.serverIdentifier](ToolConfirmation confirmation) {
@@ -670,7 +677,8 @@ void TextAutoGenerateMcpToolsManager::confirmToolCall(const McpTool &tool,
     });
 }
 
-bool TextAutoGenerateMcpToolsManager::showUrlElicitations(const QByteArray &serverIdentifier,
+bool TextAutoGenerateMcpToolsManager::showUrlElicitations(const QByteArray &chatId,
+                                                          const QByteArray &serverIdentifier,
                                                           const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams> &elicitations)
 {
     if (!mElicitationHandler || elicitations.isEmpty()) {
@@ -684,6 +692,7 @@ bool TextAutoGenerateMcpToolsManager::showUrlElicitations(const QByteArray &serv
         const ElicitationInfo info{
             .serverName = serverName,
             .request = request,
+            .chatId = chatId,
         };
         mElicitationHandler(info, [](const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &) { });
     }
@@ -693,6 +702,38 @@ bool TextAutoGenerateMcpToolsManager::showUrlElicitations(const QByteArray &serv
 McpProtocolClientProtocolManager *TextAutoGenerateMcpToolsManager::client(const QByteArray &serverIdentifier) const
 {
     return mServers.value(serverIdentifier).client;
+}
+
+void TextAutoGenerateMcpToolsManager::addToolCallInProgress(const QByteArray &serverIdentifier, const QByteArray &chatId)
+{
+    mToolCallsInProgress[serverIdentifier].append(chatId);
+}
+
+void TextAutoGenerateMcpToolsManager::removeToolCallInProgress(const QByteArray &serverIdentifier, const QByteArray &chatId)
+{
+    const auto it = mToolCallsInProgress.find(serverIdentifier);
+    if (it == mToolCallsInProgress.end()) {
+        return;
+    }
+    it->removeOne(chatId);
+    if (it->isEmpty()) {
+        mToolCallsInProgress.erase(it);
+    }
+}
+
+QByteArray TextAutoGenerateMcpToolsManager::chatIdOfToolCallInProgress(const QByteArray &serverIdentifier) const
+{
+    const QList<QByteArray> chatIds = mToolCallsInProgress.value(serverIdentifier);
+    if (chatIds.isEmpty()) {
+        return {};
+    }
+    const QByteArray chatId = chatIds.constFirst();
+    if (std::ranges::any_of(chatIds, [&chatId](const QByteArray &id) {
+            return id != chatId;
+        })) {
+        return {};
+    }
+    return chatId;
 }
 
 #include "moc_textautogeneratemcptoolsmanager.cpp"

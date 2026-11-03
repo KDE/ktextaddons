@@ -387,6 +387,8 @@ void TextAutoGenerateMcpToolsManagerTest::shouldAnswerElicitationRequest()
     const QJsonObject initialize = fakeServer.receivedRequests.constFirst();
     QVERIFY(initialize.value("params"_L1).toObject().value("capabilities"_L1).toObject().contains("elicitation"_L1));
     QTRY_VERIFY(fakeServer.eventStream);
+    // Request is sent while a tool of server is called for chat
+    manager.addToolCallInProgress(server.identifier(), "chat-1"_ba);
 
     const QJsonObject elicit{{"jsonrpc"_L1, u"2.0"_s},
                              {"id"_L1, u"srv-1"_s},
@@ -398,6 +400,8 @@ void TextAutoGenerateMcpToolsManagerTest::shouldAnswerElicitationRequest()
     FakeMcpHttpServer::sendEvents(fakeServer.eventStream, FakeMcpHttpServer::jsonEvent(elicit));
     QTRY_COMPARE(infos.count(), 1);
     QCOMPARE(infos.at(0).serverName, u"foo"_s);
+    QCOMPARE(infos.at(0).chatId, "chat-1"_ba);
+    manager.removeToolCallInProgress(server.identifier(), "chat-1"_ba);
     QJsonObject response;
     QTRY_VERIFY([&]() {
         for (const auto &obj : std::as_const(fakeServer.receivedRequests)) {
@@ -409,6 +413,32 @@ void TextAutoGenerateMcpToolsManagerTest::shouldAnswerElicitationRequest()
         return false;
     }());
     QCOMPARE(response.value("result"_L1).toObject().value("action"_L1).toString(), u"accept"_s);
+}
+
+void TextAutoGenerateMcpToolsManagerTest::shouldAssociateToolCallsInProgressToChat()
+{
+    TextAutoGenerateTextMcpProtocolCore::McpServerManager serverManager;
+    TextAutoGenerateMcpToolsManager manager(&serverManager);
+    QVERIFY(manager.chatIdOfToolCallInProgress("server"_ba).isEmpty());
+
+    manager.addToolCallInProgress("server"_ba, "chat-1"_ba);
+    manager.addToolCallInProgress("server"_ba, "chat-1"_ba);
+    QCOMPARE(manager.chatIdOfToolCallInProgress("server"_ba), "chat-1"_ba);
+    QVERIFY(manager.chatIdOfToolCallInProgress("other"_ba).isEmpty());
+
+    // Chat is unknown when tools of server are called for several chats
+    manager.addToolCallInProgress("server"_ba, "chat-2"_ba);
+    QVERIFY(manager.chatIdOfToolCallInProgress("server"_ba).isEmpty());
+    manager.removeToolCallInProgress("server"_ba, "chat-2"_ba);
+    QCOMPARE(manager.chatIdOfToolCallInProgress("server"_ba), "chat-1"_ba);
+
+    // One call of chat-1 is still in progress
+    manager.removeToolCallInProgress("server"_ba, "chat-1"_ba);
+    QCOMPARE(manager.chatIdOfToolCallInProgress("server"_ba), "chat-1"_ba);
+    manager.removeToolCallInProgress("server"_ba, "chat-1"_ba);
+    QVERIFY(manager.chatIdOfToolCallInProgress("server"_ba).isEmpty());
+    // Removing an unknown call is ignored
+    manager.removeToolCallInProgress("server"_ba, "chat-1"_ba);
 }
 
 void TextAutoGenerateMcpToolsManagerTest::shouldAnswerSamplingRequest()
@@ -468,6 +498,8 @@ void TextAutoGenerateMcpToolsManagerTest::shouldAnswerSamplingRequest()
     QTRY_COMPARE(infos.count(), 1);
     QCOMPARE(infos.at(0).serverName, u"foo"_s);
     QCOMPARE(infos.at(0).request.params().messages().count(), 1);
+    // No tool of server is called
+    QVERIFY(infos.at(0).chatId.isEmpty());
     QTRY_VERIFY(!response(u"srv-1"_s).isEmpty());
     QCOMPARE(response(u"srv-1"_s).value("error"_L1).toObject().value("code"_L1).toInt(), -1);
 

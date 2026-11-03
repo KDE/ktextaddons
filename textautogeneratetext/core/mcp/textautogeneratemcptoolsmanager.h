@@ -84,6 +84,8 @@ public:
         McpTool tool;
         QString serverName;
         QJsonObject arguments;
+        // Chat whose answer calls tool, empty when it's unknown
+        QByteArray chatId;
     };
     /*!
      * Asks user to confirm tool call, \a answer must be called with user choice.
@@ -93,6 +95,8 @@ public:
     struct TEXTAUTOGENERATETEXT_EXPORT ElicitationInfo {
         QString serverName;
         TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest request;
+        // Chat whose tool call led to request, empty when it's unknown (see chatIdOfToolCallInProgress())
+        QByteArray chatId;
     };
     /*!
      * Asks user to answer an elicitation request of a MCP server, \a answer must be called with user answer.
@@ -103,6 +107,8 @@ public:
     struct TEXTAUTOGENERATETEXT_EXPORT SamplingInfo {
         QString serverName;
         TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest request;
+        // Chat whose tool call led to request, empty when it's unknown (see chatIdOfToolCallInProgress())
+        QByteArray chatId;
     };
     /*!
      * Asks user to confirm that sampling request of a MCP server can be sent to LLM, \a answer must be called with user choice.
@@ -233,14 +239,28 @@ public:
      * Ask confirmation if needed and call \a callback with result (true: tool can be called).
      * \a callback is not called if \a context is deleted.
      */
-    void confirmToolCall(const McpTool &tool, const QJsonObject &arguments, QObject *context, const std::function<void(bool)> &callback);
+    void
+    confirmToolCall(const QByteArray &chatId, const McpTool &tool, const QJsonObject &arguments, QObject *context, const std::function<void(bool)> &callback);
     /*!
      * Server \a serverIdentifier needs that user opens \a elicitations URLs (e.g. authorization) before a request can succeed.
      * They are shown with elicitation handler, an URL is opened only when user accepts it.
      * Return false when there is no elicitation handler.
      */
-    bool showUrlElicitations(const QByteArray &serverIdentifier,
+    bool showUrlElicitations(const QByteArray &chatId,
+                             const QByteArray &serverIdentifier,
                              const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestURLParams> &elicitations);
+
+    /*!
+     * Tool of server \a serverIdentifier is called for chat \a chatId: requests sent by server while it answers
+     * (elicitation, sampling) are associated to this chat. Each call must be removed with removeToolCallInProgress().
+     */
+    void addToolCallInProgress(const QByteArray &serverIdentifier, const QByteArray &chatId);
+    void removeToolCallInProgress(const QByteArray &serverIdentifier, const QByteArray &chatId);
+    /*!
+     * Returns chat of tool calls in progress on server \a serverIdentifier.
+     * Requests of server don't refer to a tool call: it's empty when no tool is called or when tools are called for several chats.
+     */
+    [[nodiscard]] QByteArray chatIdOfToolCallInProgress(const QByteArray &serverIdentifier) const;
 
 Q_SIGNALS:
     void statusChanged(const QByteArray &identifier);
@@ -259,7 +279,8 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotServersChanged();
     TEXTAUTOGENERATETEXT_NO_EXPORT void setStatus(const QByteArray &identifier, Status status, const QString &errorString = {});
     TEXTAUTOGENERATETEXT_NO_EXPORT void listTools(const QByteArray &identifier);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotSamplingRequested(const QString &serverName,
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotSamplingRequested(const QByteArray &identifier,
+                                                              const QString &serverName,
                                                               TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager *client,
                                                               const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
                                                               const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &request);
@@ -267,6 +288,8 @@ private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray exposedName(const QByteArray &identifier, const QString &serverName, const QString &toolName) const;
     TextAutoGenerateTextMcpProtocolCore::McpServerManager *const mServerManager;
     QHash<QByteArray, ServerState> mServers;
+    // Chat of each tool call in progress, by server
+    QHash<QByteArray, QList<QByteArray>> mToolCallsInProgress;
     ConfirmationHandler mConfirmationHandler;
     ElicitationHandler mElicitationHandler;
     SamplingHandler mSamplingHandler;

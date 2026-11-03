@@ -30,6 +30,7 @@ private Q_SLOTS:
     void shouldNotCallCallbackWhenContextIsDeleted();
     void shouldCallCallbackAfterTimeout();
     void shouldAnswerElicitationRequest();
+    void shouldAssociateToolCallsInProgressToChat();
     void shouldAnswerSamplingRequest();
     void shouldConvertToRoots();
     void shouldAnswerRootsList();
