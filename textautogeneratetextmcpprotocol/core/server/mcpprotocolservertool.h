@@ -24,6 +24,19 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolServerTool
 {
 public:
     /*!
+     * \enum TextAutoGenerateTextMcpProtocolCore::McpProtocolServerTool::ToolKind
+     * \brief Effect of tool on its environment, used to set its annotations
+     * \value ReadOnly Tool doesn't modify its environment
+     * \value Modify Tool modifies its environment without destroying data (e.g. it creates an item)
+     * \value Destructive Tool can delete or overwrite data
+     */
+    enum class ToolKind : uint8_t {
+        ReadOnly,
+        Modify,
+        Destructive,
+    };
+
+    /*!
      * \brief McpProtocolServerTool
      */
     McpProtocolServerTool();
@@ -48,6 +61,25 @@ public:
 
     [[nodiscard]] static McpProtocolTool
     createTool(const QString &name, const QString &description, const QMap<QString, QJsonObject> &properties = {}, const QStringList &required = {});
+
+    /*!
+     * \brief createTool
+     * \return tool with \a title and annotations matching \a kind (see annotations()).
+     * Clients consider tools without annotations as destructive: use this method to always define them.
+     * Annotations can be adjusted afterwards (e.g. idempotentHint, openWorldHint).
+     */
+    [[nodiscard]] static McpProtocolTool createTool(const QString &name,
+                                                    const QString &title,
+                                                    const QString &description,
+                                                    ToolKind kind,
+                                                    const QMap<QString, QJsonObject> &properties = {},
+                                                    const QStringList &required = {});
+
+    /*!
+     * \brief annotations
+     * \return annotations matching \a kind: readOnlyHint, destructiveHint (when tool is not read only) and openWorldHint (false)
+     */
+    [[nodiscard]] static McpProtocolToolAnnotations annotations(ToolKind kind);
 
     [[nodiscard]] static QJsonObject schemaProperty(const QString &type, const QString &description);
 

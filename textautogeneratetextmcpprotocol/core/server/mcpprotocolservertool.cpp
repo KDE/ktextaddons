@@ -26,6 +26,39 @@ McpProtocolServerTool::createTool(const QString &name, const QString &descriptio
     return tool;
 }
 
+McpProtocolTool McpProtocolServerTool::createTool(const QString &name,
+                                                  const QString &title,
+                                                  const QString &description,
+                                                  ToolKind kind,
+                                                  const QMap<QString, QJsonObject> &properties,
+                                                  const QStringList &required)
+{
+    McpProtocolTool tool = createTool(name, description, properties, required);
+    tool.setTitle(title);
+    tool.setAnnotations(annotations(kind));
+    return tool;
+}
+
+McpProtocolToolAnnotations McpProtocolServerTool::annotations(ToolKind kind)
+{
+    McpProtocolToolAnnotations annotations;
+    annotations.setOpenWorldHint(false);
+    switch (kind) {
+    case ToolKind::ReadOnly:
+        annotations.setReadOnlyHint(true);
+        break;
+    case ToolKind::Modify:
+        annotations.setReadOnlyHint(false);
+        annotations.setDestructiveHint(false);
+        break;
+    case ToolKind::Destructive:
+        annotations.setReadOnlyHint(false);
+        annotations.setDestructiveHint(true);
+        break;
+    }
+    return annotations;
+}
+
 QJsonObject McpProtocolServerTool::schemaProperty(const QString &type, const QString &description)
 {
     return QJsonObject{{"type"_L1, type}, {"description"_L1, description}};

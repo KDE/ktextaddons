@@ -18,4 +18,7 @@ private Q_SLOTS:
     void shouldCreateSchemaProperty();
     void shouldCreateSchemaEnumProperty();
     void shouldCreateSchemaArrayProperty();
+    void shouldCreateToolWithAnnotations();
+    void shouldCreateAnnotations_data();
+    void shouldCreateAnnotations();
 };
