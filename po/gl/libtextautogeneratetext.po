@@ -2662,8 +2662,7 @@ msgid "Select File"
 msgstr ""
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:82
-#, fuzzy, kde-format
-#| msgid "Send"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Enviar"
