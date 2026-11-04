@@ -129,14 +129,16 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaOnlineManager::getChatComplet
     data["model"_L1] = request.model();
     data["messages"_L1] = request.messages();
 
-    data["temperature"_L1] = mOllamaOnlineSettings->temperature();
+    QJsonObject options;
+
+    options["temperature"_L1] = mOllamaOnlineSettings->temperature();
     generateToolsArray(request.tools(), data);
     if (mOllamaOnlineSettings->seed() != 0) {
-        data["seed"_L1] = mOllamaOnlineSettings->seed();
+        options["seed"_L1] = mOllamaOnlineSettings->seed();
     }
     addKeepAliveType(data, mOllamaOnlineSettings->keepAliveType(), mOllamaOnlineSettings->keepAliveMinutes());
-    data["num_ctx"_L1] = mOllamaOnlineSettings->contextWindowSize();
-
+    options["num_ctx"_L1] = mOllamaOnlineSettings->contextWindowSize();
+    data["options"_L1] = options;
     data["think"_L1] = request.thinking();
     qCDebug(AUTOGENERATETEXT_OLLAMAONLINE_GENERATE_JSON_LOG) << " Json: " << data;
     auto reply = new OllamaCommonReply{

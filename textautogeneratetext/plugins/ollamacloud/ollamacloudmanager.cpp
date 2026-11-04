@@ -131,13 +131,15 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getChatCompleti
     data["model"_L1] = request.model();
     data["messages"_L1] = request.messages();
 
-    data["temperature"_L1] = mOllamaCloudSettings->temperature();
     generateToolsArray(request.tools(), data);
+    QJsonObject options;
+    options["temperature"_L1] = mOllamaCloudSettings->temperature();
     if (mOllamaCloudSettings->seed() != 0) {
-        data["seed"_L1] = mOllamaCloudSettings->seed();
+        options["seed"_L1] = mOllamaCloudSettings->seed();
     }
     addKeepAliveType(data, mOllamaCloudSettings->keepAliveType(), mOllamaCloudSettings->keepAliveMinutes());
-    data["num_ctx"_L1] = mOllamaCloudSettings->contextWindowSize();
+    options["num_ctx"_L1] = mOllamaCloudSettings->contextWindowSize();
+    data["options"_L1] = options;
     data["think"_L1] = request.thinking();
 
     qCDebug(AUTOGENERATETEXT_OLLAMACLOUD_GENERATE_JSON_LOG) << " Json: " << data;

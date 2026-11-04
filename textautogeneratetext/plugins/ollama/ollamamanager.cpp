@@ -233,13 +233,15 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaManager::getChatCompletion(co
     QJsonObject data;
     data["model"_L1] = request.model();
     data["messages"_L1] = request.messages();
-    data["temperature"_L1] = mOllamaSettings->temperature();
+    QJsonObject options;
+    options["temperature"_L1] = mOllamaSettings->temperature();
     generateToolsArray(request.tools(), data);
     if (mOllamaSettings->seed() != 0) {
-        data["seed"_L1] = mOllamaSettings->seed();
+        options["seed"_L1] = mOllamaSettings->seed();
     }
     addKeepAliveType(data, mOllamaSettings->keepAliveType(), mOllamaSettings->keepAliveMinutes());
-    data["num_ctx"_L1] = mOllamaSettings->contextWindowSize();
+    options["num_ctx"_L1] = mOllamaSettings->contextWindowSize();
+    data["options"_L1] = options;
 
     data["think"_L1] = request.thinking();
 
