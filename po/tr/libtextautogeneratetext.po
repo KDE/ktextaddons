@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-09-26 19:49+0300\n"
+"PO-Revision-Date: 2026-11-03 22:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3378,7 +3378,7 @@ msgstr "Proje"
 #, kde-format
 msgctxt "@action"
 msgid "No Project"
-msgstr "Proje Yok"
+msgstr "Proje yok"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:77
 #, kde-format
@@ -3652,7 +3652,7 @@ msgstr "Ara"
 #: widgets/textautogeneratewidget.cpp:133
 #, kde-format
 msgid "No plugin found."
-msgstr "Bulunan eklenti yok."
+msgstr "Bulunan eklenti yok"
 
 #: widgets/textautogeneratewidget.cpp:244
 #, kde-format
@@ -3843,12 +3843,12 @@ msgstr "Tartışmayı Kaldır"
 #: widgets/view/textautogeneratehistorylistview.cpp:295
 #, kde-format
 msgid "No Archive Found."
-msgstr "Bulunan arşiv yok."
+msgstr "Bulunan arşiv yok"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
-msgstr "Bulunan ileti yok."
+msgstr "Bulunan ileti yok"
 
 #~ msgid "Plugins Text:"
 #~ msgstr "Eklenti metni:"
