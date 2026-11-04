@@ -350,15 +350,19 @@ void TextAutoGenerateTextPlugin::cancelToolCalls(const QByteArray &uuid)
 void TextAutoGenerateTextPlugin::clear()
 {
     cancelToolCalls({});
-    for (auto it = mConnections.keyValueBegin(); it != mConnections.keyValueEnd(); ++it) {
-        auto reply = it->first; // TextAutoGenerateText::TextAutoGenerateReply*
-        const auto &connection = it->second; // QPair<QByteArray, QMetaObject::Connection>
-        if (reply) {
-            reply->cancel();
-        }
+    // cancel() emits finished() synchronously and its handler modifies mConnections:
+    // take the connections and disconnect them before cancelling.
+    const auto connections = std::exchange(mConnections, {});
+    for (const auto &connection : connections) {
         disconnect(connection.second);
     }
-    mConnections.clear();
+    const auto replies = connections.uniqueKeys();
+    for (auto reply : replies) {
+        if (reply) {
+            reply->cancel();
+            reply->deleteLater();
+        }
+    }
 }
 
 void TextAutoGenerateTextPlugin::cancelRequest(const QByteArray &uuid)
@@ -367,15 +371,22 @@ void TextAutoGenerateTextPlugin::cancelRequest(const QByteArray &uuid)
         clear();
     } else {
         cancelToolCalls(uuid);
-        for (auto it = mConnections.keyValueBegin(); it != mConnections.keyValueEnd(); ++it) {
-            const auto &connection = it->second; // QPair<QByteArray, QMetaObject::Connection>
-            if (connection.first == uuid) {
-                auto reply = it->first; // TextAutoGenerateText::TextAutoGenerateReply*
-                if (reply) {
-                    reply->cancel();
-                }
+        QList<TextAutoGenerateText::TextAutoGenerateReply *> replies;
+        for (auto it = mConnections.cbegin(), end = mConnections.cend(); it != end; ++it) {
+            if (it.value().first == uuid && !replies.contains(it.key())) {
+                replies.append(it.key());
+            }
+        }
+        for (auto reply : std::as_const(replies)) {
+            // Disconnect before cancel(): it emits finished() synchronously
+            const auto connections = mConnections.values(reply);
+            mConnections.remove(reply);
+            for (const auto &connection : connections) {
                 disconnect(connection.second);
-                break;
+            }
+            if (reply) {
+                reply->cancel();
+                reply->deleteLater();
             }
         }
     }

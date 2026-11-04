@@ -166,21 +166,6 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkPlugin::chatCompletio
     return mGenericManager->getChatCompletion(request);
 }
 
-void GenericNetworkPlugin::cancelRequest(const QByteArray &uuid)
-{
-    if (uuid.isEmpty()) {
-        clear();
-    } else {
-        cancelToolCalls(uuid);
-        for (const auto &connection : std::as_const(mConnections)) {
-            if (connection.first == uuid) {
-                disconnect(connection.second);
-                // mConnections.take(connection.);
-            }
-        }
-    }
-}
-
 QString GenericNetworkPlugin::name() const
 {
     const GenericNetworkServerInfo info;
