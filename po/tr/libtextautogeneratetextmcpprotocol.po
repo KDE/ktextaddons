@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-30 00:52+0000\n"
-"PO-Revision-Date: 2026-10-24 21:10+0300\n"
+"PO-Revision-Date: 2026-11-03 22:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,23 +20,22 @@ msgstr ""
 #: core/client/mcpprotocolclientprotocolmanager.cpp:436
 #, kde-format
 msgid "Initialize request timed out."
-msgstr ""
+msgstr "İlklendirme isteği zaman aşımına uğradı."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:611
 #, kde-format
 msgid "Invalid server settings."
-msgstr ""
+msgstr "Geçersiz sunucu ayarları"
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:631
-#, fuzzy, kde-format
-#| msgid "Impossible to start client. URL is invalid."
+#, kde-format
 msgid "Impossible to start client."
-msgstr "İstemci başlatılamıyor; URL geçersiz."
+msgstr "İstemciyi başlatmak olanaksız"
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:884
 #, kde-format
 msgid "Unsupported protocol version: %1"
-msgstr ""
+msgstr "Desteklenmeyen protokol sürümü: %1"
 
 #: core/client/mcpserver.cpp:115
 #, kde-format
@@ -438,7 +437,7 @@ msgstr "Düzenle…"
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
-msgstr ""
+msgstr "Araçları Yapılandır…"
 
 #: widgets/client/mcpserverlistview.cpp:81
 #, kde-format

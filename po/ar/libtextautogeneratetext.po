@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-02 00:53+0000\n"
+"POT-Creation-Date: 2026-11-04 01:01+0000\n"
 "PO-Revision-Date: 2026-10-31 21:00+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -94,7 +94,7 @@ msgstr ""
 "المستخدم إخبارك عند الانتهاء، ثم استدعِ الأداة مجددًا."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:160
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:174
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:190
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:201
 #, kde-format
@@ -122,7 +122,7 @@ msgstr "استدعاء الأداة \"%1\"…"
 msgid "Error: impossible to call tool \"%1\"."
 msgstr "خطأ: تعذّر استدعاء الأداة \"%1\"."
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:109
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:110
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr "الخادم غير صالح أو معطّل."

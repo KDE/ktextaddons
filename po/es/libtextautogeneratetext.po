@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-02 00:53+0000\n"
+"POT-Creation-Date: 2026-11-04 01:01+0000\n"
 "PO-Revision-Date: 2026-11-03 00:15+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -97,7 +97,7 @@ msgstr ""
 "luego vuelva a llamar a la herramienta."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:160
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:174
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:190
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:201
 #, kde-format
@@ -125,7 +125,7 @@ msgstr "Llamando a la herramienta «%1»…"
 msgid "Error: impossible to call tool \"%1\"."
 msgstr "Error: no se puede llamar a la herramienta «%1»."
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:109
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:110
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr "El servidor no es válido o está desactivado."

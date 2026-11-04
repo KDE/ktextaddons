@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-02 00:53+0000\n"
-"PO-Revision-Date: 2026-10-25 20:26+0300\n"
+"POT-Creation-Date: 2026-11-04 01:01+0000\n"
+"PO-Revision-Date: 2026-11-03 22:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -61,7 +61,7 @@ msgstr "Dosya içe aktarmak olanaksız."
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:96
 #, kde-format
 msgid "No LLM available."
-msgstr "Kullanılabilir büyük dil modeli yok."
+msgstr "Kullanılabilir büyük dil modeli yok"
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:101
 #, kde-format
@@ -94,7 +94,7 @@ msgstr ""
 "sonrasında aracı yeniden çağırmasını isteyin."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
-#: core/mcp/textautogeneratemcptoolcalljob.cpp:160
+#: core/mcp/textautogeneratemcptoolcalljob.cpp:174
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:190
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:201
 #, kde-format
@@ -122,7 +122,7 @@ msgstr "“%1” aracı aranıyor…"
 msgid "Error: impossible to call tool \"%1\"."
 msgstr "Hata: “%1” aracını aramak olanaksız."
 
-#: core/mcp/textautogeneratemcptoolsmanager.cpp:109
+#: core/mcp/textautogeneratemcptoolsmanager.cpp:110
 #, kde-format
 msgid "Server is invalid or disabled."
 msgstr "Sunucu geçersiz veya devre dışı bırakılmış."
@@ -3388,28 +3388,22 @@ msgid "%1:"
 msgstr "%1:"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools"
-msgstr "Yapılandır: %1"
+msgstr "Araçları Yapılandır"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools of %1"
-msgstr "Yapılandır: %1"
+msgstr "%1 Araçlarını Yapılandır"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Allow to select tools"
+#, kde-format
 msgctxt "@option:check"
 msgid "Only allow selected tools"
-msgstr "Araçları seçmeye olanak tanı"
+msgstr "Yalnızca seçili araçlara izin ver"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:45
 #, kde-format
@@ -3418,39 +3412,37 @@ msgid ""
 "Tools which are not selected are not sent to LLM. New tools of server are "
 "not allowed."
 msgstr ""
+"Seçili olmayan araçlar büyük dil modeline gönderilmez. Sunucunun yeni "
+"araçlarına izin verilmez."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "All Tools"
-msgstr "Araçlar"
+msgstr "Tüm Araçlar"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Tümünü Seç"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr "Tümünü Seç"
+msgstr "Tümünün Seçimini Kaldır"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
 #, kde-format
 msgid "Apply changes to load the list of tools of this server."
 msgstr ""
+"Bu sunucunun araçlarının listesini yüklemek için değişiklikleri uygulayın."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:170
 #, kde-format
 msgid "Enable this server to load the list of its tools."
-msgstr ""
+msgstr "Araçlarının listesini yüklemek için bu sunucuyu etkinleştirin."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:177
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:183
@@ -3728,7 +3720,7 @@ msgstr "Proje"
 #, kde-format
 msgctxt "@action"
 msgid "No Project"
-msgstr "Proje Yok"
+msgstr "Proje yok"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:77
 #, kde-format
@@ -4054,7 +4046,7 @@ msgstr "Ara"
 #: widgets/textautogeneratewidget.cpp:136
 #, kde-format
 msgid "No plugin found."
-msgstr "Bulunan eklenti yok."
+msgstr "Bulunan eklenti yok"
 
 #: widgets/textautogeneratewidget.cpp:255
 #, kde-format
@@ -4074,17 +4066,14 @@ msgid "Tools:"
 msgstr "Araçlar:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgid "No plugin found."
+#, kde-format
 msgid "No tools found"
-msgstr "Bulunan eklenti yok."
+msgstr "Bulunan araç yok"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Allow to select tools"
+#, kde-format
 msgid "No allowed tools"
-msgstr "Araçları seçmeye olanak tanı"
+msgstr "İzin verilen araç yok"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:194
 #, kde-format
@@ -4264,12 +4253,12 @@ msgstr "Tartışmayı Kaldır"
 #: widgets/view/textautogeneratehistorylistview.cpp:294
 #, kde-format
 msgid "No Archive Found."
-msgstr "Bulunan arşiv yok."
+msgstr "Bulunan arşiv yok"
 
 #: widgets/view/textautogeneratesearchlistview.cpp:50
 #, kde-format
 msgid "No Messages Found."
-msgstr "Bulunan ileti yok."
+msgstr "Bulunan ileti yok"
 
 #~ msgctxt "@title"
 #~ msgid "Copy Block Code"

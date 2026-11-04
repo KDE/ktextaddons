@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 17:39+0000\n"
-"PO-Revision-Date: 2026-10-01 04:46+0900\n"
+"PO-Revision-Date: 2026-11-03 20:24+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -145,7 +145,7 @@ msgstr "加泰隆尼亞語"
 #: translator/misc/translatorutil.cpp:108
 #, kde-format
 msgid "Croatian"
-msgstr "克羅地亞語"
+msgstr "克羅埃西亞語"
 
 #: translator/misc/translatorutil.cpp:111
 #, kde-format
