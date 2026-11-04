@@ -11,6 +11,7 @@
 #include "textautogeneratetextmcpprotocol_widgets_debug.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <KShell>
 #include <QHBoxLayout>
 #include <QLineEdit>
@@ -161,9 +162,13 @@ void McpServerWidget::slotAddServerFromRegistry()
     }
     QPointer<AddMcpRegistryServerDialog> dlg = new AddMcpRegistryServerDialog(this);
     if (dlg->exec()) {
-        const TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo serverInfo = dlg->serverInfo();
-        mModel->addMcpServer(convertMcpRegistryServerInfoToMcpServer(serverInfo));
-        Q_EMIT settingsChanged();
+        const TextAutoGenerateTextMcpProtocolCore::McpServer server = convertMcpRegistryServerInfoToMcpServer(dlg->serverInfo());
+        if (server.isValid()) {
+            mModel->addMcpServer(server);
+            Q_EMIT settingsChanged();
+        } else {
+            KMessageBox::error(this, i18n("This server does not provide a supported transport (remote or package)."), i18nc("@title:window", "Add MCP Server"));
+        }
     }
     delete dlg;
 }
