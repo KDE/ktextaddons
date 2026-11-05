@@ -9,9 +9,7 @@
 #include "begamotenginedialog.h"
 #include "bergamotengineplugin.h"
 #include "translator/misc/translatorutil.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
 #include <QPointer>
 
 using namespace Qt::Literals::StringLiterals;
@@ -59,7 +57,6 @@ bool BergamotEngineClient::hasConfigurationDialog() const
 bool BergamotEngineClient::showConfigureDialog(QWidget *parentWidget)
 {
     bool settingsChanged = false;
-    const KConfigGroup myGroup(KSharedConfig::openConfig(), BergamotEngineUtils::groupName());
     QPointer<BegamotEngineDialog> dlg = new BegamotEngineDialog(parentWidget);
     BergamotEngineUtils::SettingsInfo info;
     info.loadSettingsInfo();

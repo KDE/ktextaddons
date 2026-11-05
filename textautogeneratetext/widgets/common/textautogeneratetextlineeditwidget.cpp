@@ -223,14 +223,12 @@ QList<QByteArray> TextAutoGenerateTextLineEditWidget::activatedTools() const
 
 void TextAutoGenerateTextLineEditWidget::slotCurrentModelChanged()
 {
-    const bool hasVisionSupport = mManager->textAutoGeneratePlugin()->hasVisionSupport();
     const bool hasToolsSupport = mManager->textAutoGeneratePlugin()->hasToolsSupport();
     mConfigureTools->setEnabled(hasToolsSupport);
     if (!hasToolsSupport) {
         mConfigureTools->setChecked(false);
         mTextAutoGenerateToolsWidget->setHidden(true);
     }
-    // mAttachFile->setChecked(hasVisionSupport);
 }
 
 #include "moc_textautogeneratetextlineeditwidget.cpp"
