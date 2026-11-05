@@ -9,6 +9,7 @@
 class QLineEdit;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
+class AddMcpStdioServerEnvironmentWidget;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT AddMcpStdioServerWidget : public AddMcpServerBaseWidget
 {
     Q_OBJECT
@@ -42,5 +43,6 @@ public:
 private:
     QLineEdit *const mCommandLineEdit;
     QLineEdit *const mArgumentsLineEdit;
+    AddMcpStdioServerEnvironmentWidget *const mEnvironmentWidget;
 };
 }

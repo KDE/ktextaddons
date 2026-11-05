@@ -96,6 +96,10 @@ void McpClientStdio::connection()
     QProcessEnvironment processEnvironment = QProcessEnvironment::systemEnvironment();
     const QMap<QString, QString> environments = settings.environments();
     for (auto it = environments.cbegin(); it != environments.cend(); ++it) {
+        // Empty value means "not configured": keep the value from the user environment
+        if (it.value().isEmpty()) {
+            continue;
+        }
         processEnvironment.insert(it.key(), it.value());
     }
     mProcess->setProcessEnvironment(processEnvironment);

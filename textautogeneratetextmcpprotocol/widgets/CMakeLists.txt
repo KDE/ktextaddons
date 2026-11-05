@@ -51,6 +51,8 @@ target_sources(
         client/mcpserverwidget.h
         client/addmcpstdioserverwidget.h
         client/addmcpstdioserverwidget.cpp
+        client/addmcpstdioserverenvironmentwidget.h
+        client/addmcpstdioserverenvironmentwidget.cpp
         client/addmcpsseserverwidget.cpp
         client/addmcpsseserverwidget.h
         client/addmcpstreamablehttpserverwidget.cpp

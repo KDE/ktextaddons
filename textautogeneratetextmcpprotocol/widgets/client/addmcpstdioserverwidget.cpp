@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "addmcpstdioserverwidget.h"
+#include "addmcpstdioserverenvironmentwidget.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -15,6 +16,7 @@ AddMcpStdioServerWidget::AddMcpStdioServerWidget(QWidget *parent)
     : AddMcpServerBaseWidget{parent}
     , mCommandLineEdit(new QLineEdit(this))
     , mArgumentsLineEdit(new QLineEdit(this))
+    , mEnvironmentWidget(new AddMcpStdioServerEnvironmentWidget(this))
 {
     auto mainLayout = new QFormLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -29,6 +31,9 @@ AddMcpStdioServerWidget::AddMcpStdioServerWidget(QWidget *parent)
     mainLayout->addRow(i18nc("@label:textbox", "Arguments:"), mArgumentsLineEdit);
     KLineEditEventHandler::catchReturnKey(mArgumentsLineEdit);
     mArgumentsLineEdit->setClearButtonEnabled(true);
+
+    mEnvironmentWidget->setObjectName(u"mEnvironmentWidget"_s);
+    mainLayout->addRow(i18nc("@label", "Environment:"), mEnvironmentWidget);
 
     connect(mCommandLineEdit, &QLineEdit::textChanged, this, &AddMcpStdioServerWidget::settingChanged);
     connect(mArgumentsLineEdit, &QLineEdit::textChanged, this, &AddMcpStdioServerWidget::settingChanged);
@@ -46,6 +51,7 @@ void AddMcpStdioServerWidget::saveSettings(TextAutoGenerateTextMcpProtocolCore::
     TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings = server.settings();
     settings.setCommand(mCommandLineEdit->text().trimmed());
     settings.setArguments(mArgumentsLineEdit->text().trimmed());
+    settings.setEnvironments(mEnvironmentWidget->environments());
     // Remove settings from another transport type
     settings.setServerUrl({});
     settings.setHeaders({});
@@ -59,6 +65,7 @@ void AddMcpStdioServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocol
     const auto settings = server.settings();
     mArgumentsLineEdit->setText(settings.arguments());
     mCommandLineEdit->setText(settings.command());
+    mEnvironmentWidget->setEnvironments(settings.environments());
 }
 
 #include "moc_addmcpstdioserverwidget.cpp"

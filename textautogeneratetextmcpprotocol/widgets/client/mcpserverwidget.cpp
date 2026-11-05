@@ -139,6 +139,8 @@ McpServerWidget::convertMcpRegistryServerInfoToMcpServer(const TextAutoGenerateT
             command = package.runtimeHint;
         }
 
+        // Store only names: an empty value is not exported (user environment is used),
+        // the user can fill them in the stdio settings
         QMap<QString, QString> environments;
         for (const auto &env : package.environmentVariables) {
             environments.insert(env.name, QString());
