@@ -240,6 +240,11 @@ bool GenericNetworkPlugin::hasThinkSupport() const
     return mGenericManager->hasThinkSupport(currentModel());
 }
 
+QString GenericNetworkPlugin::thinkingLevel() const
+{
+    return mGenericManager->genericNetworkSettings()->thinkingLevel();
+}
+
 bool GenericNetworkPlugin::hasSystemMessageSupport() const
 {
     return mGenericManager->hasSystemMessageSupport();

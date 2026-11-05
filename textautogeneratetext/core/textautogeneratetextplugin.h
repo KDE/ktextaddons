@@ -196,6 +196,12 @@ public:
     [[nodiscard]] virtual bool hasThinkSupport() const = 0;
 
     /*!
+     * Returns the thinking level sent to the server ("low", "high"…).
+     * Empty by default: the server default is used.
+     */
+    [[nodiscard]] virtual QString thinkingLevel() const;
+
+    /*!
      * \brief shareNamePrompt
      * \return
      */

@@ -64,6 +64,16 @@ void TextAutoGenerateTextRequest::setThinking(bool newThinking)
     mThinking = newThinking;
 }
 
+QString TextAutoGenerateTextRequest::thinkingLevel() const
+{
+    return mThinkingLevel;
+}
+
+void TextAutoGenerateTextRequest::setThinkingLevel(const QString &newThinkingLevel)
+{
+    mThinkingLevel = newThinkingLevel;
+}
+
 QDebug operator<<(QDebug d, const TextAutoGenerateTextRequest &t)
 {
     d.space() << "message:" << t.message();
@@ -71,6 +81,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextRequest &t)
     d.space() << "messages:" << t.messages();
     d.space() << "tools:" << t.tools();
     d.space() << "thinking:" << t.thinking();
+    d.space() << "thinkingLevel:" << t.thinkingLevel();
     return d;
 }
 

@@ -222,8 +222,16 @@ TextAutoGenerateText::TextAutoGenerateTextRequest TextAutoGenerateTextPlugin::co
     req.setModel(currentModel());
     req.setMessages(info.messagesArray);
     req.setTools(info.tools);
-    req.setThinking(hasThinkSupport());
+    if (hasThinkSupport()) {
+        req.setThinking(true);
+        req.setThinkingLevel(thinkingLevel());
+    }
     return req;
+}
+
+QString TextAutoGenerateTextPlugin::thinkingLevel() const
+{
+    return {};
 }
 
 void TextAutoGenerateTextPlugin::sendMessage(const EditSendInfo &editSendInfo)

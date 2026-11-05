@@ -82,21 +82,32 @@ public:
     void setTools(const QList<QByteArray> &newTools);
 
     /*!
-     * \brief thinking
-     * \return true if model has thinking support
+     * Returns true if thinking is enabled for this request.
      */
     [[nodiscard]] bool thinking() const;
     /*!
-     * Sets true if model has thinking support
-     * \param newThinking
+     * Sets whether thinking is enabled for this request.
+     * \param newThinking true to enable thinking
      */
     void setThinking(bool newThinking);
+
+    /*!
+     * Returns the thinking level sent to the server ("low", "high"…).
+     * An empty string means that the server default is used.
+     */
+    [[nodiscard]] QString thinkingLevel() const;
+    /*!
+     * Sets the thinking level sent to the server.
+     * \param newThinkingLevel The level, or an empty string to use the server default
+     */
+    void setThinkingLevel(const QString &newThinkingLevel);
 
 private:
     QList<QByteArray> mTools;
     QJsonArray mMessages;
     QString mMessage;
     QString mModel;
+    QString mThinkingLevel;
     bool mThinking = false;
 };
 }
