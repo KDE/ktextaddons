@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <TextAutoGenerateText/TextAutoGenerateAttachment>
 #include <TextAutoGenerateText/TextAutoGenerateListViewBaseDelegate>
 
 #include <QScopedPointer>

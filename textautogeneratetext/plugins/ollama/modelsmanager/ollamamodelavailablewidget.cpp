@@ -14,6 +14,7 @@
 #include "ollamamodeldownloadprogresswidget.h"
 #include "plugincommonmodelinstalledinfossortproxymodel.h"
 #include "widgets/availablemodel/textautogeneratemodelavailablelistview.h"
+#include <KLocalizedString>
 #include <KMessageBox>
 #include <QScrollArea>
 #include <QSplitter>

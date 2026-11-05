@@ -10,7 +10,6 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImplementation>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolRequestMeta>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <optional>
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore

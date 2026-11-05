@@ -9,6 +9,7 @@
 
 #include "lmstudioconfigurewidget.h"
 #include "lmstudioplugin.h"
+#include "modelsmanager/lmstudiomodelinstalledwidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QPushButton>

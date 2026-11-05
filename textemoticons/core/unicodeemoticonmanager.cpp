@@ -14,6 +14,9 @@
 #include <QHash>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QSet>
+#include <algorithm>
+#include <iterator>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextEmoticonsCore;
 class TextEmoticonsCore::UnicodeEmoticonManagerPrivate

@@ -9,6 +9,7 @@
 #include "textautogeneratetextcore_database_debug.h"
 
 #include <QDir>
+#include <QFileInfo>
 #include <QSqlError>
 #include <QSqlQuery>
 

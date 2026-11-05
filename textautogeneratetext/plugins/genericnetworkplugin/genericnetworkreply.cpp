@@ -6,6 +6,7 @@
 #include "genericnetworkreply.h"
 #include "autogeneratetext_genericnetwork_debug.h"
 #include <QJsonArray>
+#include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkReply>
 

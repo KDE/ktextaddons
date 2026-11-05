@@ -23,6 +23,7 @@
 #include <KMessageWidget>
 #include <QComboBox>
 #include <QFormLayout>
+#include <QHBoxLayout>
 #include <QPointer>
 #include <QPushButton>
 #include <QSignalBlocker>

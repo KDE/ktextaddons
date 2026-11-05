@@ -7,6 +7,7 @@
 #include "autocorrectionutils.h"
 
 #include <QCoreApplication>
+#include <QDebug>
 #include <QDir>
 #include <QFileInfo>
 #include <QLocale>

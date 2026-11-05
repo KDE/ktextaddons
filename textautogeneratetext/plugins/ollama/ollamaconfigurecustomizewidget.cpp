@@ -11,7 +11,6 @@
 #include <QCheckBox>
 #include <QFormLayout>
 #include <QLineEdit>
-#include <QVBoxLayout>
 
 using namespace Qt::Literals::StringLiterals;
 // https://docs.ollama.com/gpu#overrides-on-linux

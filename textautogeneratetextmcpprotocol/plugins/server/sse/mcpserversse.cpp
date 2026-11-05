@@ -9,6 +9,7 @@
 #include <KLocalizedString>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QSslError>
 using namespace Qt::Literals::StringLiterals;
 McpServerSse::McpServerSse(McpServerSsePluginInterface *interface, QObject *parent)
     : QObject{parent}

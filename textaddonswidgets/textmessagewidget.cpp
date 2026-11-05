@@ -7,7 +7,6 @@
 #include "textmessagewidget.h"
 
 #include <KMessageWidget>
-#include <QAbstractScrollArea>
 #include <QTimer>
 #include <QVBoxLayout>
 

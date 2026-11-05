@@ -8,8 +8,6 @@
 #include "widgets/findutils.h"
 #include "widgets/textfindreplacewidget.h"
 
-#include <KLocalizedString>
-
 #include <QRegularExpression>
 #include <QTextBrowser>
 

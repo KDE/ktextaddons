@@ -9,6 +9,7 @@
 #include <QClipboard>
 #include <QGuiApplication>
 #include <QHBoxLayout>
+#include <QIcon>
 #include <QLabel>
 #include <QPushButton>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerUtils>

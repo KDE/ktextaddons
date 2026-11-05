@@ -6,9 +6,9 @@
 #pragma once
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QDebug>
 #include <QList>
 #include <QString>
+class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {

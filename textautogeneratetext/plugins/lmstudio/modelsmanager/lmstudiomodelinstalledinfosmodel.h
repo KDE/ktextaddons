@@ -10,8 +10,6 @@
 #include "lmstudiomodelinstalledinfo.h"
 #include "plugincommonmodelinstalledinfosmodel.h"
 
-#include <QAbstractListModel>
-
 class LMStudioModelInstalledInfosModel : public PluginCommonModelInstalledInfosModel<LMStudioModelInstalledInfo>
 {
     Q_OBJECT

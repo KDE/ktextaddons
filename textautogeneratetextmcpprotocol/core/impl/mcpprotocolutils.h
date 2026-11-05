@@ -11,6 +11,7 @@
 #include <QString>
 #include <QStringList>
 #include <cstdint>
+#include <optional>
 #include <variant>
 class QDebug;
 class QJsonObject;

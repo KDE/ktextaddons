@@ -10,6 +10,7 @@
 #include <QUrl>
 
 class QPlainTextEdit;
+class QPushButton;
 namespace TextTranslator
 {
 class TranslatorDebugDialog : public QDialog

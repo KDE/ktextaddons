@@ -5,7 +5,8 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <QObject>
+#include <QString>
+#include <chrono>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateText

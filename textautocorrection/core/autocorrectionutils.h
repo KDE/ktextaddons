@@ -7,6 +7,7 @@
 #pragma once
 #include "textautocorrectioncore_export.h"
 #include <QChar>
+#include <QStringList>
 class QDebug;
 namespace TextAutoCorrectionCore
 {

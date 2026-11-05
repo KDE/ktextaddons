@@ -8,7 +8,6 @@
 #include "managermodelvoskspeechtotext.h"
 #include "voskdownloadlanguagejob.h"
 #include <QWidget>
-class QTreeView;
 class VoskSpeechToTextModel;
 class QLineEdit;
 class VoskSpeechToTextProxyModel;

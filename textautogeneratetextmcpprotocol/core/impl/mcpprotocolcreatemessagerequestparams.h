@@ -14,7 +14,6 @@
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTaskMetadata>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTool>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolChoice>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <optional>
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore

@@ -8,6 +8,7 @@
 #include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPaginatedRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <optional>
 class QJsonObject;
 class QDebug;

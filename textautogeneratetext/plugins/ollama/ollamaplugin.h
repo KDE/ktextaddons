@@ -8,6 +8,7 @@
 
 #include "core/textautogeneratetextplugin.h"
 
+class QAction;
 class OllamaManager;
 class OllamaSettings;
 class OllamaPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin

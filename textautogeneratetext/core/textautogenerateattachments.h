@@ -9,6 +9,7 @@
 #include <QSharedData>
 #include <TextAutoGenerateText/TextAutoGenerateAttachment>
 class QDebug;
+class QJsonArray;
 namespace TextAutoGenerateText
 {
 /*!

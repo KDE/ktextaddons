@@ -5,9 +5,10 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <QSqlTableModel>
 #include <TextAutoGenerateText/TextAutoGenerateChat>
 #include <TextAutoGenerateText/TextAutoGenerateLocalDatabaseAbstract>
+#include <memory>
+class QSqlTableModel;
 
 namespace TextAutoGenerateText
 {

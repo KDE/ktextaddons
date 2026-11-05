@@ -5,7 +5,6 @@
 */
 
 #pragma once
-#include "ollamacommonkeepaliveparameterswidget.h"
 #include "ollamacommonsettings.h"
 #include "textautogenerateollamacommon_export.h"
 #include <QComboBox>

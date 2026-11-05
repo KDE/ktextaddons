@@ -5,20 +5,16 @@
 */
 
 #include "textautogenerateshowimagedialog.h"
-#include "core/textautogeneratemanager.h"
 #include "textautogenerateshowimagewidget.h"
 #include "textautogeneratetextwidget_debug.h"
-#include <KApplicationTrader>
 #include <KLocalizedString>
 #include <KStandardActions>
 #include <QDialogButtonBox>
 #include <QMenu>
-#include <QMimeDatabase>
 #include <QPushButton>
 #include <QToolButton>
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
-#include <TextAutoGenerateText/TextAutoGenerateManager>
 namespace
 {
 const char myTextAutoGenerateShowImageDialogGroupName[] = "TextAutoGenerateShowImageDialog";

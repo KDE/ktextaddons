@@ -11,7 +11,6 @@
 #include "ollamamanager.h"
 #include "ollamamodeldownloadwidget.h"
 #include <KLocalizedString>
-#include <QDesktopServices>
 #include <QGroupBox>
 #include <QLabel>
 #include <QVBoxLayout>

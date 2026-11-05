@@ -10,8 +10,6 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QMimeDatabase>
-#include <QString>
-#include <QUuid>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;

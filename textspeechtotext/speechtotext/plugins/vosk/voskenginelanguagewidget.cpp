@@ -17,7 +17,6 @@
 #include <QLineEdit>
 #include <QProgressBar>
 #include <QPushButton>
-#include <QTreeView>
 #include <QVBoxLayout>
 
 #include <KLineEditEventHandler>

@@ -11,6 +11,7 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QSqlRecord>
+#include <QSqlTableModel>
 #include <QStandardPaths>
 #include <QTest>
 

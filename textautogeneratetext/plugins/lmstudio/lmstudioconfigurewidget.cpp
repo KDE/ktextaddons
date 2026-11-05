@@ -11,21 +11,16 @@
 #include "widgets/common/textautogenerateshowmodelinfodialog.h"
 
 #include "lmstudiomanager.h"
+#include "lmstudiosettings.h"
 
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <QFormLayout>
-#include <QGroupBox>
-#include <QLabel>
 #include <QLineEdit>
-#include <QPointer>
-#include <QPushButton>
 #include <QScrollArea>
-#include <QSpinBox>
-#include <TextAddonsWidgets/ExecutableUtils>
+#include <QUrl>
+#include <QVBoxLayout>
 #include <kpasswordlineedit.h>
-#include <qurl.h>
 
 using namespace Qt::Literals::StringLiterals;
 LMStudioConfigureWidget::LMStudioConfigureWidget(LMStudioManager *manager, LMStudioPlugin *plugin, QWidget *parent)

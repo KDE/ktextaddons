@@ -16,6 +16,7 @@
 #include <memory>
 class QDebug;
 class QAction;
+class QWidget;
 class QJsonObject;
 namespace TextAutoGenerateText
 {

@@ -6,9 +6,9 @@
 
 #pragma once
 #include "libvoskspeechtotext_export.h"
-#include <QJsonObject>
 #include <QString>
 class QDebug;
+class QJsonObject;
 class LIBVOSKSPEECHTOTEXT_EXPORT VoskSpeechToTextInfo
 {
 public:

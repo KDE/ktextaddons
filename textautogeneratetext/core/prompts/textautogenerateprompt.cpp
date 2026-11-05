@@ -7,6 +7,7 @@
 #include "textautogenerateprompt.h"
 #include <KConfigGroup>
 #include <QDebug>
+#include <QUuid>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGeneratePrompt::TextAutoGeneratePrompt()

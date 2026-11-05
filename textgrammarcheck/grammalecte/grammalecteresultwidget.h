@@ -11,7 +11,6 @@
 #include <TextGrammarCheck/GrammarResultWidget>
 namespace TextGrammarCheck
 {
-class GrammalecteResultJob;
 /*!
  * \class TextGrammarCheck::GrammalecteResultWidget
  * \inheaderfile TextGrammarCheck/GrammalecteResultWidget

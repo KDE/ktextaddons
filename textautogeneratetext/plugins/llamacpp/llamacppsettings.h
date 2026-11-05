@@ -7,9 +7,6 @@
 #pragma once
 #include "plugincommonsettings.h"
 #include "textautogeneratellamacpp_export.h"
-#include <QString>
-#include <QUrl>
-using namespace Qt::StringLiterals;
 class QDebug;
 class KConfigGroup;
 class TEXTAUTOGENERATELLAMACPP_EXPORT LLamaCppSettings : public PluginCommonSettings

@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "ollamamodelinstalledinfo.h"
+#include <QDateTime>
 #include <QJsonObject>
 #include <QLocale>
 

@@ -11,6 +11,7 @@
 #include <KLocalizedString>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QNetworkRequest>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextGrammarCheck;
 LanguageToolGetListOfLanguageJob::LanguageToolGetListOfLanguageJob(QObject *parent)

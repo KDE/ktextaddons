@@ -10,6 +10,7 @@
 #include "textautocorrectionwidgets_export.h"
 
 #include <QObject>
+#include <memory>
 
 class QPlainTextEdit;
 class QTextEdit;

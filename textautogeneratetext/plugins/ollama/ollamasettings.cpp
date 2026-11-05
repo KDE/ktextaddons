@@ -6,7 +6,6 @@
 
 #include "ollamasettings.h"
 #include <KConfigGroup>
-#include <KLocalizedString>
 #include <QDebug>
 #include <QProcessEnvironment>
 

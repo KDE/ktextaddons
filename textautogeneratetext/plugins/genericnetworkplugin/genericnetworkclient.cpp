@@ -5,7 +5,6 @@
 */
 
 #include "genericnetworkclient.h"
-#include "core/textautogeneratemanager.h"
 #include "genericnetworkplugin.h"
 #include "genericnetworkserverinfo.h"
 #include <KLocalizedString>

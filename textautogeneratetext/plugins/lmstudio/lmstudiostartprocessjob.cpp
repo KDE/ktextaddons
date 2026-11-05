@@ -6,8 +6,6 @@
 
 #include "lmstudiostartprocessjob.h"
 #include "autogeneratetext_lmstudio_debug.h"
-#include "lmstudiomanager.h"
-#include "lmstudiosettings.h"
 #include <KLocalizedString>
 #include <QProcess>
 #include <TextAddonsWidgets/ExecutableUtils>

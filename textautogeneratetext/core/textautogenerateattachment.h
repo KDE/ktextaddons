@@ -8,7 +8,8 @@
 
 #include "textautogeneratetext_export.h"
 #include <QMetaType>
-#include <QSharedData>
+class QJsonObject;
+class QDebug;
 
 namespace TextAutoGenerateText
 {

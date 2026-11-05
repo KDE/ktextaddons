@@ -8,6 +8,7 @@
 
 #include "voskspeechtotextinfo.h"
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QTest>
 
 using namespace Qt::Literals::StringLiterals;

@@ -5,9 +5,9 @@
 */
 #pragma once
 #include "libbergamot_export.h"
-#include <QDebug>
 #include <QList>
 #include <QString>
+class QDebug;
 
 namespace BergamotEngineUtils
 {

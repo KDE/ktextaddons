@@ -9,10 +9,11 @@
 
 #include "textutilsemoticonsparser_p.h"
 
-#include <QDebug>
 #include <QString>
 
+#include <algorithm>
 #include <cstring>
+#include <iterator>
 
 // ### keep sorted by first column and HTML entity-encoded!
 struct Emoticon {

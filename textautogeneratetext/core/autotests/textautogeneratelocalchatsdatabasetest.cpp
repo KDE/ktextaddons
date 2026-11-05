@@ -7,6 +7,7 @@
 
 #include "core/localdatabase/textautogeneratelocalchatsdatabase.h"
 #include <QSqlRecord>
+#include <QSqlTableModel>
 #include <QStandardPaths>
 #include <QTest>
 using namespace Qt::Literals::StringLiterals;

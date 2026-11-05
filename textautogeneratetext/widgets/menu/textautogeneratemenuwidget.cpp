@@ -8,7 +8,6 @@
 
 #include "textautogeneratemenuconfiguredialog.h"
 #include "textautogeneratemenutextmanager.h"
-#include "textautogeneratetextwidget_debug.h"
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 #include <TextAutoGenerateText/TextAutoGenerateQuickAskDialog>
 

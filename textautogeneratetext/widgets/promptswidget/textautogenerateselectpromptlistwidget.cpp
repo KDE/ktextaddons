@@ -8,7 +8,6 @@
 #include "core/models/textautogeneratetextpromptmodel.h"
 #include "textautogeneratepromptdialog.h"
 #include "textautogenerateselectpromptdelegate.h"
-#include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QContextMenuEvent>

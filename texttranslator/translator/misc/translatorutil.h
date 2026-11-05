@@ -7,6 +7,7 @@
 #pragma once
 
 #include "texttranslator_export.h"
+#include <QMap>
 #include <QString>
 
 class QComboBox;

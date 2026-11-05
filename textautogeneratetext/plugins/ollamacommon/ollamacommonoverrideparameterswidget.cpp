@@ -9,8 +9,8 @@
 #include <QDoubleSpinBox>
 #include <QFormLayout>
 #include <QGroupBox>
-#include <QLabel>
 #include <QSpinBox>
+#include <QVBoxLayout>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaCommonOverrideParametersWidget::OllamaCommonOverrideParametersWidget(QWidget *parent)

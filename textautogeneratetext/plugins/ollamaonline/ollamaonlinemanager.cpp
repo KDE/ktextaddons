@@ -20,6 +20,7 @@
 #include <QJsonObject>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include <QRegularExpression>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaOnlineManager::OllamaOnlineManager(OllamaOnlineSettings *settings, QObject *parent)

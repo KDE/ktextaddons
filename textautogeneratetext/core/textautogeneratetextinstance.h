@@ -6,8 +6,10 @@
 #pragma once
 #include "textautogeneratetext_export.h"
 
-#include <KConfigGroup>
+#include <QByteArray>
+#include <QString>
 class QDebug;
+class KConfigGroup;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextPlugin;

@@ -10,7 +10,6 @@
 #include "textautogeneratemanageprojectsdialog.h"
 #include <KLocalizedString>
 #include <QActionGroup>
-#include <QPixmap>
 #include <QPointer>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;

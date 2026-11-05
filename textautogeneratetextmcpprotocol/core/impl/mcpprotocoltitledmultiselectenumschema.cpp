@@ -6,6 +6,7 @@
 
 #include "mcpprotocoltitledmultiselectenumschema.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
+#include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
 using namespace Qt::Literals::StringLiterals;

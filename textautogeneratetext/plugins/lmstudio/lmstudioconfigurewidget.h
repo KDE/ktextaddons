@@ -7,10 +7,9 @@
 
 #pragma once
 #include "textautogeneratelmstudio_export.h"
-#include <KPasswordLineEdit>
 #include <QWidget>
 class QLineEdit;
-class QSpinBox;
+class KPasswordLineEdit;
 class LMStudioManager;
 class LMStudioPlugin;
 namespace TextAutoGenerateText

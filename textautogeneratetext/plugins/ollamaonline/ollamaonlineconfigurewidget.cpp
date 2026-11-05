@@ -18,7 +18,6 @@
 #include <KPasswordLineEdit>
 #include <QFormLayout>
 #include <QLineEdit>
-#include <QPointer>
 #include <QScrollArea>
 #include <QVBoxLayout>
 

@@ -6,8 +6,8 @@
 #pragma once
 
 #include "textautogenerateplugincommon_export.h"
+#include <QObject>
 #include <QString>
-#include <QUrl>
 class KConfigGroup;
 class TEXTAUTOGENERATEPLUGINCOMMON_EXPORT PluginCommonSettings
 {

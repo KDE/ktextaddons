@@ -5,10 +5,11 @@
 */
 #pragma once
 
-#include <QSqlTableModel>
 #include <TextAutoGenerateText/TextAutoGenerateLocalDatabaseAbstract>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 #include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
+#include <memory>
+class QSqlTableModel;
 
 namespace TextAutoGenerateText
 {

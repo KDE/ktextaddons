@@ -5,7 +5,6 @@
 */
 
 #include "texttospeechvoicecombobox.h"
-#include <QDebug>
 using namespace TextEditTextToSpeech;
 
 TextToSpeechVoiceComboBox::TextToSpeechVoiceComboBox(QWidget *parent)

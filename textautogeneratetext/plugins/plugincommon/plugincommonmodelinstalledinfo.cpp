@@ -6,6 +6,7 @@
 */
 
 #include "plugincommonmodelinstalledinfo.h"
+#include <QDebug>
 
 QString PluginCommonModelInstalledInfo::name() const
 {

@@ -10,10 +10,8 @@
 #include "textautogeneratenotworkingmessagewidget.h"
 #include "textautogeneratetextwidget_debug.h"
 #include <KLocalizedString>
-#include <QProcess>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <TextAddonsWidgets/ExecutableUtils>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 
 using namespace TextAutoGenerateText;

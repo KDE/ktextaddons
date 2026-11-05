@@ -6,6 +6,7 @@
 #include "textautogenerategraphicspixmapitem.h"
 
 #include <QApplication>
+#include <QDataStream>
 #include <QDrag>
 #include <QGraphicsSceneMouseEvent>
 #include <QIODevice>

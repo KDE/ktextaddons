@@ -6,7 +6,6 @@
 */
 
 #pragma once
-#include "lmstudiosettings.h"
 #include "modelsmanager/lmstudiomodelinstalledinfo.h"
 #include "textautogeneratelmstudio_export.h"
 #include <QObject>

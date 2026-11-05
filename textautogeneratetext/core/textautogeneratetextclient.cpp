@@ -5,7 +5,6 @@
 */
 
 #include "textautogeneratetextclient.h"
-#include <KLocalizedString>
 #include <QDebug>
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextClient::TextAutoGenerateTextClient(QObject *parent)

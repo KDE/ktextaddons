@@ -10,6 +10,7 @@
 #include <KLocalizedString>
 #include <QAudio>
 #include <QAudioSink>
+#include <QIODevice>
 #include <QJsonDocument>
 #include <QProcess>
 #include <QTimer>

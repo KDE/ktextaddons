@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpregistryserverinfo.h"
+#include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
 

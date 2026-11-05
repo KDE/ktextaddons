@@ -14,7 +14,6 @@ class TextAddonsWidgetFlowLayout;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextLineEditAttachmentClickableWidget;
-class TextAutoGenerateFlowLayout;
 class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateTextLineEditAttachmentWidget : public QWidget
 {
     Q_OBJECT

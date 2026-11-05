@@ -6,6 +6,9 @@
 
 #include "textutilssyntaxhighlightingmanager.h"
 #include "textutils_syntaxhighlighting_debug.h"
+
+#include <algorithm>
+
 using namespace TextUtils;
 using namespace Qt::Literals::StringLiterals;
 namespace

@@ -6,6 +6,7 @@
 #pragma once
 #include "textspeechtotext_export.h"
 #include <QObject>
+#include <memory>
 namespace TextSpeechToText
 {
 class SpeechToTextPlugin;

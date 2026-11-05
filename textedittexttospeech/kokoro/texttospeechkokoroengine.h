@@ -6,11 +6,14 @@
 
 #pragma once
 
-#include "texttospeechkokoroutils.h"
 #include <QTextToSpeechEngine>
 #include <memory>
 namespace TextEditTextToSpeech
 {
+namespace TextToSpeechKokoroUtils
+{
+struct KokoroVoice;
+}
 class TextToSpeechKokoro;
 class TextToSpeechKokoroEngine : public QTextToSpeechEngine
 {

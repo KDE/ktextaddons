@@ -7,7 +7,6 @@
 #include "textaddonswidgets_export.h"
 #include <QMetaType>
 #include <QStringList>
-#include <qnamespace.h>
 
 class QDebug;
 namespace TextAddonsWidgets

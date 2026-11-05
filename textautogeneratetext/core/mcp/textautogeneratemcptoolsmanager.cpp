@@ -7,13 +7,12 @@
 #include "core/mcp/textautogeneratemcpsamplingjob.h"
 #include "core/mcp/textautogeneratemcptoolsutils.h"
 #include "textautogeneratetextcore_debug.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
 #include <QDir>
 #include <QPointer>
 #include <QRegularExpression>
 #include <QTimer>
+#include <QUrl>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCommonUtils>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolCreateMessageResult>

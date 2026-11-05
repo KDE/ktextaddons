@@ -8,7 +8,6 @@
 #include "plugincommonsettings.h"
 #include "textautogenerateollamacommon_export.h"
 #include <QString>
-#include <QUrl>
 class QDebug;
 class KConfigGroup;
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonSettings : public PluginCommonSettings

@@ -8,10 +8,6 @@
 #include "textautogeneratetext_private_export.h"
 #include <QList>
 #include <QString>
-namespace TextAutoGenerateTextMcpProtocolCore
-{
-class McpServer;
-}
 namespace TextAutoGenerateText
 {
 namespace TextAutoGenerateMcpToolsUtils

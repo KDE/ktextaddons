@@ -8,6 +8,7 @@
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 class QDebug;
+class QJsonObject;
 class TEXTAUTOGENERATEOLLAMACOMMON_EXPORT OllamaCommonModelAvailableInfo
 {
     Q_GADGET

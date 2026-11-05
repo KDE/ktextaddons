@@ -25,13 +25,13 @@
 #include <KMessageBox>
 #include <QFormLayout>
 #include <QGroupBox>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
-#include <QPointer>
 #include <QPushButton>
 #include <QScrollArea>
 #include <QSpinBox>
-#include <TextAddonsWidgets/ExecutableUtils>
+#include <QVBoxLayout>
 
 using namespace Qt::Literals::StringLiterals;
 OllamaConfigureWidget::OllamaConfigureWidget(OllamaManager *manager, OllamaPlugin *plugin, QWidget *parent)

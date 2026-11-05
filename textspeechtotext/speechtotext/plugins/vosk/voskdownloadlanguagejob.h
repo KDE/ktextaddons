@@ -6,9 +6,9 @@
 
 #pragma once
 #include "libvoskspeechtotext_private_export.h"
-#include <QCryptographicHash>
 #include <QObject>
 #include <QUrl>
+class QCryptographicHash;
 class QTemporaryFile;
 class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT VoskDownloadLanguageJob : public QObject
 {

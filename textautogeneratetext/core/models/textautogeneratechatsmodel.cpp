@@ -5,7 +5,6 @@
 */
 #include "textautogeneratechatsmodel.h"
 
-#include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogeneratechatsettings.h"
 #include "core/textautogeneratetagsmanager.h"
 #include "textautogeneratetextcore_debug.h"

@@ -7,6 +7,7 @@
 #include "autocorrectionlanguagemodel.h"
 
 #include <QLocale>
+#include <QSet>
 
 using namespace TextAutoCorrectionWidgets;
 using namespace Qt::Literals::StringLiterals;

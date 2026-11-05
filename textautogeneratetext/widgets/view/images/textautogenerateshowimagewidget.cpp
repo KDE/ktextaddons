@@ -7,7 +7,6 @@
 #include "core/textautogeneratemanager.h"
 #include "widgets/view/images/textautogenerategraphicsview.h"
 #include <KIO/ApplicationLauncherJob>
-#include <KIO/JobUiDelegate>
 #include <KIO/JobUiDelegateFactory>
 #include <KLocalizedString>
 #include <QApplication>

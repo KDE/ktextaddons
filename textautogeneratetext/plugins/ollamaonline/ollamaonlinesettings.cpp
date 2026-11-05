@@ -6,7 +6,6 @@
 
 #include "ollamaonlinesettings.h"
 #include <KConfigGroup>
-#include <KLocalizedString>
 #include <QDebug>
 
 using namespace Qt::Literals::StringLiterals;

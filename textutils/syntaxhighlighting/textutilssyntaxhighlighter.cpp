@@ -13,9 +13,6 @@
 #include <KSyntaxHighlighting/Theme>
 
 #include <KIconLoader>
-#include <KIconTheme>
-#include <KLocalizedString>
-#include <QDebug>
 #include <QStringView>
 #include <QTextStream>
 using namespace TextUtils;

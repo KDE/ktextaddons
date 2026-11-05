@@ -8,6 +8,7 @@
 #include "textautogeneratetext_private_export.h"
 #include <QDialog>
 class QJsonArray;
+class QJsonObject;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateToolShowMetaDataWidget;

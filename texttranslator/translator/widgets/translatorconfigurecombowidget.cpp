@@ -12,6 +12,7 @@
 #include <KSharedConfig>
 #include <QComboBox>
 #include <QHBoxLayout>
+#include <QIcon>
 #include <QToolButton>
 
 using namespace Qt::Literals::StringLiterals;

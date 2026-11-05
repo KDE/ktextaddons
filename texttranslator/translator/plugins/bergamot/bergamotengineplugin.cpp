@@ -7,8 +7,6 @@
 #include "bergamotengineplugin.h"
 #include "bergamotmarianinterface.h"
 #include "bergamottranslator_debug.h"
-#include <KLocalizedString>
-#include <KSharedConfig>
 #include <QDir>
 
 BergamotEnginePlugin::BergamotEnginePlugin(QObject *parent)

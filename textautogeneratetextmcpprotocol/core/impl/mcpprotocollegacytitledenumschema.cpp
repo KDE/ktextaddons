@@ -6,6 +6,7 @@
 
 #include "mcpprotocollegacytitledenumschema.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
+#include <QDebug>
 #include <QJsonArray>
 #include <QJsonObject>
 #include <utility>

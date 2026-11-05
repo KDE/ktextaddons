@@ -6,7 +6,6 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QJsonObject>
-#include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <optional>
 

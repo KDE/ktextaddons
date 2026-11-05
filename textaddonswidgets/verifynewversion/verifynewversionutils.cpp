@@ -7,7 +7,6 @@
 
 #include "verifynewversionutils.h"
 
-#include <QUrl>
 using namespace TextAddonsWidgets;
 bool VerifyNewVersionUtils::canVerifyNewVersion()
 {

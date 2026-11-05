@@ -12,7 +12,6 @@
 #include "textautogeneratemessagewaitingansweranimation.h"
 #include "textautogenerateselectedmessagebackgroundanimation.h"
 #include "textautogeneratetextwidget_animation_debug.h"
-#include <KLocalizedString>
 #include <QMouseEvent>
 #include <QScrollBar>
 

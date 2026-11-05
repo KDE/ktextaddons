@@ -6,6 +6,7 @@
 #include "texttospeechkokoroutils.h"
 
 #include <QDir>
+#include <QFileInfo>
 #include <QFontMetrics>
 #include <QPainter>
 #include <QPixmap>

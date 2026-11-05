@@ -8,7 +8,7 @@
 #include <QByteArray>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolInitializeRequestParams>
-#include <optional>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore

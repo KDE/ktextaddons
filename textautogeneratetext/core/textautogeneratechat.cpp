@@ -6,6 +6,8 @@
 #include "textautogeneratechat.h"
 #include "core/models/textautogeneratemessagesmodel.h"
 
+#include <QCborValue>
+#include <QDateTime>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>

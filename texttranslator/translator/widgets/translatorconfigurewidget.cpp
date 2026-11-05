@@ -8,7 +8,6 @@
 
 #include "translatorconfigurecombowidget.h"
 #include <KLocalizedString>
-#include <KSharedConfig>
 #include <QLabel>
 #include <QVBoxLayout>
 using namespace TextTranslator;

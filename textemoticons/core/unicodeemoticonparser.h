@@ -9,6 +9,7 @@
 #include "textemoticonscore_export.h"
 #include "unicodeemoticon.h"
 #include <QList>
+class QJsonObject;
 namespace TextEmoticonsCore
 {
 /*!

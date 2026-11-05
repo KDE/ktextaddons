@@ -8,6 +8,7 @@
 #include "textspeechtotext_export.h"
 #include <QObject>
 #include <memory>
+class QIODevice;
 namespace TextSpeechToText
 {
 class SpeechToTextPluginPrivate;

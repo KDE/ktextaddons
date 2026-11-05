@@ -7,13 +7,9 @@
 
 #include "llamacppplugin.h"
 // #include "autogeneratetext_lmstudio_plugin_debug.h"
-#include "core/textautogeneratemanager.h"
-#include "core/textautogeneratetextinstancesmanager.h"
 #include "llamacppsettings.h"
-#include "misc/executableutils.h"
 #include <KLocalizedString>
 #include <QDesktopServices>
-#include <qt6keychain/keychain.h>
 
 using namespace Qt::Literals::StringLiterals;
 LLamaCppPlugin::LLamaCppPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,

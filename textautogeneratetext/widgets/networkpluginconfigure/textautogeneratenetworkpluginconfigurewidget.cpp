@@ -14,6 +14,7 @@
 #include <QDoubleSpinBox>
 #include <QFormLayout>
 #include <QLabel>
+#include <QLineEdit>
 #include <QSpinBox>
 
 using namespace Qt::Literals::StringLiterals;

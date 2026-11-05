@@ -30,7 +30,6 @@
 #include <QKeyEvent>
 #include <QLabel>
 #include <QMimeData>
-#include <QShortcut>
 #include <QSplitter>
 #include <QToolButton>
 #include <QVBoxLayout>

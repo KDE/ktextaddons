@@ -9,7 +9,6 @@
 
 #include "core/models/textautogeneratemessagesmodel.h"
 #include "core/textautogenerateengineloader.h"
-#include "core/textautogeneratetextclient.h"
 #include "core/textautogeneratetextplugin.h"
 #include "widgets/common/textautogeneratepowersavermessagewidget.h"
 #include "widgets/common/textautogenerateresultwidget.h"

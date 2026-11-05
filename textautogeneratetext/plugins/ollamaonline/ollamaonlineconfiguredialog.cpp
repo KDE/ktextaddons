@@ -6,7 +6,6 @@
 
 #include "ollamaonlineconfiguredialog.h"
 #include "autogeneratetext_ollamaonline_debug.h"
-#include "ollamacommonmodelavailableinfosmanager.h"
 #include "ollamacommonmodelavailablewidget.h"
 #include "ollamacommonmodelutils.h"
 #include "ollamaonlineconfigurewidget.h"

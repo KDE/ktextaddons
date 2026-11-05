@@ -11,9 +11,7 @@
 #include "textautogeneratetextwidget_debug.h"
 #include "widgets/view/delegate/textautogenerateattachmentdelegatehelperbase.h"
 #include "widgets/view/textautogeneratelistviewtextselection.h"
-#include <KIconLoader>
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <QAbstractTextDocumentLayout>
 #include <QClipboard>
 #include <QDesktopServices>

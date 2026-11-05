@@ -8,6 +8,7 @@
 
 #include <QJsonArray>
 #include <QJsonObject>
+#include <algorithm>
 using namespace TextGrammarCheck;
 LanguageToolListOfLanguagesParser::LanguageToolListOfLanguagesParser() = default;
 

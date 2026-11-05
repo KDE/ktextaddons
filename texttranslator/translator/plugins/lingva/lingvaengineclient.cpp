@@ -9,7 +9,6 @@
 #include "lingvaenginedialog.h"
 #include "lingvaengineplugin.h"
 #include "lingvaengineutil.h"
-#include "translator/misc/translatorutil.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>

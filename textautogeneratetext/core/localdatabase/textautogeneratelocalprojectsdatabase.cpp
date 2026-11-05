@@ -14,6 +14,7 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <QSqlTableModel>
 
 using namespace Qt::Literals::StringLiterals;
 static const char s_schemaProjectsDataBase[] = "CREATE TABLE PROJECTS (projectId TEXT PRIMARY KEY NOT NULL, json TEXT)";

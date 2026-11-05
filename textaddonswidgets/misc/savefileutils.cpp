@@ -11,7 +11,9 @@
 #include <KRecentDirs>
 
 #include <QDir>
+#include <QFile>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QMimeDatabase>
 #include <QUrl>
 

@@ -9,6 +9,7 @@
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolAnnotations>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolBlobResourceContents>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextResourceContents>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 #include <optional>

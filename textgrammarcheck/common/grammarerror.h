@@ -9,7 +9,7 @@
 #include "textgrammarcheck_export.h"
 #include <QColor>
 #include <QMetaType>
-#include <QString>
+#include <QStringList>
 class QDebug;
 class QJsonObject;
 namespace TextGrammarCheck

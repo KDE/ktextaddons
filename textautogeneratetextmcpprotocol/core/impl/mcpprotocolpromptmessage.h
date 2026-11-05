@@ -10,7 +10,6 @@
 #include "mcpprotocolresourcelink.h"
 #include "mcpprotocoltextcontent.h"
 #include "textautogeneratetextmcpprotocolcore_export.h"
-#include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
 class QJsonObject;
 class QDebug;

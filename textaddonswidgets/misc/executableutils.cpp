@@ -5,7 +5,7 @@
 */
 
 #include "executableutils.h"
-#ifdef Q_OS_WIN
+#if defined(Q_OS_WIN) || defined(Q_OS_MACOS)
 #include <QCoreApplication>
 #endif
 #include <QStandardPaths>

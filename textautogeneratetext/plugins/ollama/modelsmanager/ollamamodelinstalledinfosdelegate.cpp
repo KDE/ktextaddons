@@ -6,11 +6,6 @@
 #include "ollamamodelinstalledinfosdelegate.h"
 #include "ollamamodelinstalledinfosmodel.h"
 
-#include "widgets/view/textautogeneratelistviewtextselection.h"
-#include <QAbstractTextDocumentLayout>
-#include <QDesktopServices>
-#include <QPainter>
-
 using namespace Qt::Literals::StringLiterals;
 OllamaModelInstalledInfosDelegate::OllamaModelInstalledInfosDelegate(QListView *view)
     : PluginCommonModelInstalledInfosDelegate(view)

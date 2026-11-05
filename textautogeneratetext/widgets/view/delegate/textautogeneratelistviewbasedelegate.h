@@ -8,7 +8,6 @@
 #include <QItemDelegate>
 #include <QTextDocument>
 #include <TextAutoGenerateText/LRUCache>
-#include <TextAutoGenerateText/TextAutoGenerateAttachment>
 #include <memory>
 class QListView;
 namespace TextAutoGenerateText

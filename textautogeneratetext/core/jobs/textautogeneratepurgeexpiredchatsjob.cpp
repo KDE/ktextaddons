@@ -8,6 +8,7 @@
 #include "core/localdatabase/textautogeneratelocaldatabasemanager.h"
 #include "core/models/textautogeneratechatsmodel.h"
 #include "core/textautogeneratemanager.h"
+#include <QDateTime>
 
 using namespace TextAutoGenerateText;
 TextAutoGeneratePurgeExpiredChatsJob::TextAutoGeneratePurgeExpiredChatsJob(TextAutoGenerateManager *manager, QObject *parent)

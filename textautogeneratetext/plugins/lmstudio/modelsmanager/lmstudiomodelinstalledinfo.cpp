@@ -7,8 +7,7 @@
 
 #include "lmstudiomodelinstalledinfo.h"
 
-#include <QJsonArray>
-#include <QStringLiteral>
+#include <QJsonObject>
 
 using namespace Qt::StringLiterals;
 

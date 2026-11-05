@@ -7,10 +7,8 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolAudioContent>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolEmbeddedResource>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolImageContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
-#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceLink>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTextContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolResultContent>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolToolUseContent>

@@ -6,12 +6,13 @@
 
 #include "plaintextsyntaxspellcheckinghighlighter.h"
 #include "plaintexteditor.h"
-#include "textcustomeditor_debug.h"
 
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Format>
 #include <KSyntaxHighlighting/State>
 #include <KSyntaxHighlighting/Theme>
+
+#include <QDebug>
 
 #include <vector>
 

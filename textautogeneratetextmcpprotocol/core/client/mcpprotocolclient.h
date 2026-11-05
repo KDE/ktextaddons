@@ -11,6 +11,7 @@
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+class McpProtocolPluginInterface;
 class McpProtocolSettings;
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolClient : public QObject
 {

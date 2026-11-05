@@ -8,7 +8,6 @@
 #include "ollamalogtextedit.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
-#include <QPlainTextEdit>
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace

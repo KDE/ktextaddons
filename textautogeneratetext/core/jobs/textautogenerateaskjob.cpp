@@ -7,6 +7,7 @@
 #include "core/textautogeneratemanager.h"
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratetextcore_debug.h"
+#include <KLocalizedString>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateAskJob::TextAutoGenerateAskJob(QObject *parent)

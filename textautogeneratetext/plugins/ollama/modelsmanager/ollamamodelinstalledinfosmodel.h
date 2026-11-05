@@ -9,8 +9,6 @@
 #include "ollamamodelinstalledinfo.h"
 #include "plugincommonmodelinstalledinfosmodel.h"
 
-#include <QAbstractListModel>
-
 class OllamaModelInstalledInfosModel : public PluginCommonModelInstalledInfosModel<OllamaModelInstalledInfo>
 {
     Q_OBJECT

@@ -11,6 +11,7 @@
 #include <KLocalizedString>
 #include <KUser>
 #include <QMap>
+#include <QRegularExpression>
 
 using namespace Qt::Literals::StringLiterals;
 QString OllamaCommonModelUtils::description(const QString &modelName)

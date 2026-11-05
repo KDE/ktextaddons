@@ -7,7 +7,6 @@
 #include "emojicategorybuttons.h"
 
 #include "emojicategorybutton.h"
-#include "emoticonunicodeutils.h"
 #include <KLocalizedString>
 #include <QButtonGroup>
 #include <QHBoxLayout>

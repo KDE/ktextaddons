@@ -8,9 +8,7 @@
 #include "lmstudiosettings.h"
 
 #include <KConfigGroup>
-#include <KLocalizedString>
 #include <QDebug>
-#include <QProcessEnvironment>
 
 using namespace Qt::Literals::StringLiterals;
 

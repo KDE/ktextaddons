@@ -6,6 +6,7 @@
 #include "textautogeneratetextinstance.h"
 #include "core/textautogeneratetextplugin.h"
 #include "textautogeneratetextcore_memory_debug.h"
+#include <KConfigGroup>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstance::TextAutoGenerateTextInstance() = default;

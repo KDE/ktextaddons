@@ -6,7 +6,6 @@
 
 #include "yandexengineclient.h"
 
-#include "translator/misc/translatorutil.h"
 #include "yandexengineplugin.h"
 #include <KLocalizedString>
 

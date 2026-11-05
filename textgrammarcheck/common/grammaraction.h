@@ -5,7 +5,7 @@
 */
 #pragma once
 #include "textgrammarcheck_export.h"
-#include <QObject>
+#include <QMetaType>
 
 #include <QStringList>
 class QDebug;

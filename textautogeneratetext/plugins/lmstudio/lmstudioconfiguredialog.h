@@ -5,11 +5,11 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "modelsmanager/lmstudiomodelinstalledwidget.h"
 #include "textautogeneratelmstudio_export.h"
 #include <KPageDialog>
 class LMStudioConfigureWidget;
 class LMStudioManager;
+class LMStudioModelInstalledWidget;
 class LMStudioPlugin;
 class TEXTAUTOGENERATELMSTUDIO_EXPORT LMStudioConfigureDialog : public KPageDialog
 {

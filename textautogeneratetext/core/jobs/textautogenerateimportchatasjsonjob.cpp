@@ -10,6 +10,7 @@
 #include <KLocalizedString>
 #include <QFile>
 #include <QJsonArray>
+#include <QJsonDocument>
 #include <QJsonObject>
 
 using namespace TextAutoGenerateText;

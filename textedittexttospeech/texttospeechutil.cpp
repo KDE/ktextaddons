@@ -8,6 +8,8 @@
 
 #include <KConfig>
 #include <KConfigGroup>
+#include <QDataStream>
+#include <QDebug>
 #include <QIODevice>
 
 using namespace Qt::Literals::StringLiterals;

@@ -18,6 +18,7 @@
 #include <KLocalizedString>
 #include <QAction>
 #include <QDesktopServices>
+#include <QHostAddress>
 #include <QUrl>
 
 using namespace Qt::Literals::StringLiterals;

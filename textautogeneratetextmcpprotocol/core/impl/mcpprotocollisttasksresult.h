@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QList>
 #include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTask>

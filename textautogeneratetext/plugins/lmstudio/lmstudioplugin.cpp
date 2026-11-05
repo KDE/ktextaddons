@@ -17,7 +17,7 @@
 #include "plugincommonsaveloadpassword.h"
 #include <KLocalizedString>
 #include <QDesktopServices>
-#include <qtpreprocessorsupport.h>
+#include <QHostAddress>
 
 using namespace Qt::Literals::StringLiterals;
 LMStudioPlugin::LMStudioPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,

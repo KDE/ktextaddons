@@ -6,6 +6,7 @@
 
 #include "mcpprotocolgetpromptrequest.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
+#include <QDebug>
 #include <QJsonObject>
 #include <utility>
 

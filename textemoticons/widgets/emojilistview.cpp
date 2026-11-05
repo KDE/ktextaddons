@@ -7,7 +7,6 @@
 #include "emojilistview.h"
 
 #include "emojiitemdelegate.h"
-#include "emojimodel.h"
 
 #include <TextEmoticonsCore/EmojiModel>
 #include <TextEmoticonsCore/EmoticonUnicodeUtils>

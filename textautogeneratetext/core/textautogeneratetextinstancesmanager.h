@@ -13,6 +13,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateTextInstanceModel;
 class TextAutoGenerateEngineLoader;
 class TextAutoGenerateManager;
+class TextAutoGenerateTextPlugin;
 /*!
  * \class TextAutoGenerateText::TextAutoGenerateTextInstancesManager
  * \brief The TextAutoGenerateTextInstancesManager class

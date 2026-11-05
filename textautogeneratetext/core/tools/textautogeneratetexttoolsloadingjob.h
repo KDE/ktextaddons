@@ -8,6 +8,7 @@
 #include <QList>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolInternal>
+class QJsonArray;
 namespace TextAutoGenerateText
 {
 /*!

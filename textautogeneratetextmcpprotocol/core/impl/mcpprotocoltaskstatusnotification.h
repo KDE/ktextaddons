@@ -6,7 +6,6 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
-#include <QString>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTaskStatusNotificationParams>
 class QJsonObject;
 

@@ -7,10 +7,10 @@
 #pragma once
 
 #include "textgrammarcheck_export.h"
-#include <QNetworkRequest>
 #include <QObject>
 class QNetworkAccessManager;
 class QNetworkReply;
+class QNetworkRequest;
 namespace TextGrammarCheck
 {
 /*!

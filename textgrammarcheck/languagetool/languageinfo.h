@@ -7,7 +7,9 @@
 #pragma once
 #include "textgrammarcheck_export.h"
 
-#include <QObject>
+#include <QMetaType>
+#include <QString>
+class QJsonObject;
 namespace TextGrammarCheck
 {
 /*!

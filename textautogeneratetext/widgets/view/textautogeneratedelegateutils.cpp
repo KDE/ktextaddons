@@ -13,6 +13,7 @@
 #include <TextUtils/TextUtilsSyntaxHighlighter>
 
 #include <QClipboard>
+#include <QGuiApplication>
 #include <QTextDocument>
 #include <QTextFormat>
 #include <QTextStream>

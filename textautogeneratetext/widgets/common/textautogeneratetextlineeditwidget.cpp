@@ -15,7 +15,6 @@
 #include <KLocalizedString>
 #include <QFileDialog>
 #include <QHBoxLayout>
-#include <QMimeDatabase>
 #include <QToolButton>
 #include <TextSpeechToText/SpeechToTextToolButtonWidget>
 

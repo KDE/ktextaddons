@@ -19,6 +19,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
+#include <QDir>
 #include <QFileDialog>
 #include <QMenu>
 #include <QPointer>
