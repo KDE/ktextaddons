@@ -28,4 +28,5 @@ private Q_SLOTS:
     void shouldConvertThinkingLevel();
     void shouldTranslateThinkingLevel();
     void shouldOrderThinkingLevel();
+    void shouldDefineThinkingLevelList();
 };

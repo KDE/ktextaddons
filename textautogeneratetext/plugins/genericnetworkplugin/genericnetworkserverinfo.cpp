@@ -583,8 +583,82 @@ GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(Generic
     return limits;
 }
 
-QList<GenericNetworkServerInfo::ThinkingLevel> GenericNetworkServerInfo::thinkingLevelList(GenericNetworkManager::PluginNetworkType type)
+QList<GenericNetworkServerInfo::ThinkingLevel> GenericNetworkServerInfo::thinkingLevelList(GenericNetworkManager::PluginNetworkType type,
+                                                                                           const QString &identifier)
 {
+    // Values accepted by "reasoning_effort" for each model. Empty list: no level (thinking is unsupported or can only be switched on/off).
+    switch (type) {
+    case GenericNetworkManager::PluginNetworkType::Unknown:
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
+        return {};
+    case GenericNetworkManager::PluginNetworkType::OpenAI:
+    case GenericNetworkManager::PluginNetworkType::ChatGPT: {
+        if (identifier.startsWith(u"o1"_s) || identifier.startsWith(u"o3"_s) || identifier.startsWith(u"o4"_s)) {
+            return {ThinkingLevel::Low, ThinkingLevel::Medium, ThinkingLevel::High};
+        }
+        if (!identifier.startsWith(u"gpt-5"_s) || identifier.contains(u"-chat"_s)) {
+            // gpt-4o, gpt-4.1, gpt-5-chat… are not reasoning models
+            return {};
+        }
+        if (identifier.contains(u"-pro"_s)) {
+            return {ThinkingLevel::High};
+        }
+        if (identifier.startsWith(u"gpt-5-"_s) || identifier == u"gpt-5"_s) {
+            return {ThinkingLevel::Minimal, ThinkingLevel::Low, ThinkingLevel::Medium, ThinkingLevel::High};
+        }
+        if (identifier.startsWith(u"gpt-5.1"_s)) {
+            return {ThinkingLevel::Disabled, ThinkingLevel::Low, ThinkingLevel::Medium, ThinkingLevel::High};
+        }
+        // gpt-5.2 and later
+        return {ThinkingLevel::Disabled, ThinkingLevel::Low, ThinkingLevel::Medium, ThinkingLevel::High, ThinkingLevel::Xhigh};
+    }
+    case GenericNetworkManager::PluginNetworkType::Gemini: {
+        if (identifier.contains(u"gemini-2.5"_s)) {
+            if (identifier.contains(u"-pro"_s)) {
+                // Thinking can't be disabled on 2.5 Pro
+                return {ThinkingLevel::Low, ThinkingLevel::Medium, ThinkingLevel::High};
+            }
+            return {ThinkingLevel::Disabled, ThinkingLevel::Low, ThinkingLevel::Medium, ThinkingLevel::High};
+        }
+        if (identifier.contains(u"gemini-3"_s)) {
+            if (identifier.contains(u"flash"_s)) {
+                return {ThinkingLevel::Minimal, ThinkingLevel::Low, ThinkingLevel::Medium, ThinkingLevel::High};
+            }
+            return {ThinkingLevel::Low, ThinkingLevel::High};
+        }
+        return {};
+    }
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
+        // Only grok-3-mini accepts reasoning_effort, grok-4 always reasons
+        if (identifier.startsWith(u"grok-3-mini"_s)) {
+            return {ThinkingLevel::Low, ThinkingLevel::High};
+        }
+        return {};
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
+        // Unknown server: use the values that every reasoning_effort implementation accepts
+        return {ThinkingLevel::Low, ThinkingLevel::Medium, ThinkingLevel::High};
+    case GenericNetworkManager::PluginNetworkType::Anthropic:
+        // Uses a token budget ("thinking": {"budget_tokens"}), not named levels
+    case GenericNetworkManager::PluginNetworkType::DeepSeek:
+    case GenericNetworkManager::PluginNetworkType::Qwen:
+        // Thinking can only be switched on or off
+        return {};
+    case GenericNetworkManager::PluginNetworkType::MistralAI:
+    case GenericNetworkManager::PluginNetworkType::KlusterAI:
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+    case GenericNetworkManager::PluginNetworkType::CerebrasAI:
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+    case GenericNetworkManager::PluginNetworkType::NovitaAI:
+    case GenericNetworkManager::PluginNetworkType::DeepInfra:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
+    case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
+    case GenericNetworkManager::PluginNetworkType::AtlasCloud:
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
+        return {};
+    }
     return {};
 }
 

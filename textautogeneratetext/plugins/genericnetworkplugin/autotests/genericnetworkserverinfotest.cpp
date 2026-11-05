@@ -242,6 +242,57 @@ void GenericNetworkServerInfoTest::shouldOrderThinkingLevel()
     QVERIFY(Level::High < Level::Xhigh);
 }
 
+void GenericNetworkServerInfoTest::shouldDefineThinkingLevelList()
+{
+    using Level = GenericNetworkServerInfo::ThinkingLevel;
+    using Type = GenericNetworkManager::PluginNetworkType;
+    const GenericNetworkServerInfo info;
+
+    // OpenAI
+    QVERIFY(info.thinkingLevelList(Type::OpenAI, u"gpt-4o"_s).isEmpty());
+    QVERIFY(info.thinkingLevelList(Type::OpenAI, u"gpt-4.1-mini"_s).isEmpty());
+    QVERIFY(info.thinkingLevelList(Type::OpenAI, u"gpt-5-chat-latest"_s).isEmpty());
+    QCOMPARE(info.thinkingLevelList(Type::OpenAI, u"o3-mini"_s), (QList<Level>{Level::Low, Level::Medium, Level::High}));
+    QCOMPARE(info.thinkingLevelList(Type::OpenAI, u"o4-mini"_s), (QList<Level>{Level::Low, Level::Medium, Level::High}));
+    QCOMPARE(info.thinkingLevelList(Type::OpenAI, u"gpt-5"_s), (QList<Level>{Level::Minimal, Level::Low, Level::Medium, Level::High}));
+    QCOMPARE(info.thinkingLevelList(Type::OpenAI, u"gpt-5-mini"_s), (QList<Level>{Level::Minimal, Level::Low, Level::Medium, Level::High}));
+    QCOMPARE(info.thinkingLevelList(Type::OpenAI, u"gpt-5-pro"_s), (QList<Level>{Level::High}));
+    QCOMPARE(info.thinkingLevelList(Type::OpenAI, u"gpt-5.1"_s), (QList<Level>{Level::Disabled, Level::Low, Level::Medium, Level::High}));
+    QCOMPARE(info.thinkingLevelList(Type::OpenAI, u"gpt-5.2"_s), (QList<Level>{Level::Disabled, Level::Low, Level::Medium, Level::High, Level::Xhigh}));
+    QCOMPARE(info.thinkingLevelList(Type::ChatGPT, u"gpt-5.2"_s), info.thinkingLevelList(Type::OpenAI, u"gpt-5.2"_s));
+
+    // Gemini
+    QVERIFY(info.thinkingLevelList(Type::Gemini, u"models/gemini-2.0-flash"_s).isEmpty());
+    QCOMPARE(info.thinkingLevelList(Type::Gemini, u"models/gemini-2.5-pro"_s), (QList<Level>{Level::Low, Level::Medium, Level::High}));
+    QCOMPARE(info.thinkingLevelList(Type::Gemini, u"models/gemini-2.5-flash"_s), (QList<Level>{Level::Disabled, Level::Low, Level::Medium, Level::High}));
+    QCOMPARE(info.thinkingLevelList(Type::Gemini, u"models/gemini-3-pro-preview"_s), (QList<Level>{Level::Low, Level::High}));
+    QCOMPARE(info.thinkingLevelList(Type::Gemini, u"models/gemini-3-flash-preview"_s), (QList<Level>{Level::Minimal, Level::Low, Level::Medium, Level::High}));
+
+    // Grok
+    QCOMPARE(info.thinkingLevelList(Type::GrokAI, u"grok-3-mini"_s), (QList<Level>{Level::Low, Level::High}));
+    QVERIFY(info.thinkingLevelList(Type::GrokAI, u"grok-4"_s).isEmpty());
+
+    QCOMPARE(info.thinkingLevelList(Type::OpenAIGeneric, u"foo"_s), (QList<Level>{Level::Low, Level::Medium, Level::High}));
+    QVERIFY(info.thinkingLevelList(Type::Anthropic, u"claude-sonnet-4-5"_s).isEmpty());
+    QVERIFY(info.thinkingLevelList(Type::DeepSeek, u"deepseek-reasoner"_s).isEmpty());
+    QVERIFY(info.thinkingLevelList(Type::Qwen, u"qwen3-max"_s).isEmpty());
+    QVERIFY(info.thinkingLevelList(Type::MistralAI, u"magistral-medium-latest"_s).isEmpty());
+
+    // A plugin with thinking levels must support thinking, and levels must be sorted
+    const QStringList identifiers{u"gpt-5"_s, u"gpt-5.2"_s, u"o3"_s, u"gemini-2.5-flash"_s, u"gemini-3-pro"_s, u"grok-3-mini"_s, u"foo"_s};
+    for (int i = 1; i <= static_cast<int>(Type::LastElement); ++i) {
+        const auto type = static_cast<Type>(i);
+        for (const auto &identifier : identifiers) {
+            const QList<Level> levels = info.thinkingLevelList(type, identifier);
+            if (!levels.isEmpty()) {
+                QVERIFY(info.pluginHasThinkSupport(type));
+            }
+            QVERIFY(std::is_sorted(levels.cbegin(), levels.cend()));
+            QVERIFY(!levels.contains(Level::Unknown));
+        }
+    }
+}
+
 void GenericNetworkServerInfoTest::shouldDefineModelSupportsTools()
 {
     const GenericNetworkServerInfo info;

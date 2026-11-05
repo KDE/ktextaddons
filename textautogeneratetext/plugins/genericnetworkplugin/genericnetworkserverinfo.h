@@ -47,5 +47,5 @@ public:
     [[nodiscard]] static QString thinkingLevelI18n(ThinkingLevel level);
     [[nodiscard]] static QString thinkingLevel(ThinkingLevel level);
 
-    [[nodiscard]] static QList<ThinkingLevel> thinkingLevelList(GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static QList<ThinkingLevel> thinkingLevelList(GenericNetworkManager::PluginNetworkType type, const QString &identifier);
 };
