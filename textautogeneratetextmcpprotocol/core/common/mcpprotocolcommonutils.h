@@ -10,6 +10,7 @@
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolMeta;
+class McpProtocolTool;
 namespace McpProtocolCommonUtils
 {
 /*!
@@ -49,5 +50,13 @@ addToolMeta(TextAutoGenerateTextMcpProtocolCore::McpProtocolMeta &meta, const QS
  * \return
  */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString metaGroupTitle();
+
+/*!
+ * \brief addToolMeta
+ * \param tool
+ * \param groupName
+ * \param groupTitle
+ */
+void addToolMeta(TextAutoGenerateTextMcpProtocolCore::McpProtocolTool &tool, const QString &groupName, const QString &groupTitle);
 }
 }

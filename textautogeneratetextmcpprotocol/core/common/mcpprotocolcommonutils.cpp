@@ -5,6 +5,7 @@
 */
 #include "mcpprotocolcommonutils.h"
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTool>
 
 #include <QJsonValue>
 #include <QMap>
@@ -55,4 +56,11 @@ void McpProtocolCommonUtils::addToolMeta(TextAutoGenerateTextMcpProtocolCore::Mc
     newMeta.insert(metaGroupName(), groupName);
     newMeta.insert(metaGroupTitle(), groupTitle);
     meta.setMeta(newMeta);
+}
+
+void McpProtocolCommonUtils::addToolMeta(TextAutoGenerateTextMcpProtocolCore::McpProtocolTool &tool, const QString &groupName, const QString &groupTitle)
+{
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolMeta meta = tool.meta().value_or(TextAutoGenerateTextMcpProtocolCore::McpProtocolMeta{});
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolCommonUtils::addToolMeta(meta, groupName, groupTitle);
+    tool.setMeta(meta);
 }
