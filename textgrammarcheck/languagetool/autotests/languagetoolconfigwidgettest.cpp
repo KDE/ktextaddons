@@ -37,7 +37,7 @@ void LanguageToolConfigWidgetTest::shouldHaveDefaultValue()
     QVERIFY(!mUseLocalInstance->text().isEmpty());
     QVERIFY(!mUseLocalInstance->isChecked());
 
-    auto instancePathLabel = w.findChild<QLabel *>(u"instancepath"_s);
+    auto instancePathLabel = w.findChild<QLabel *>(u"instancepathlabel"_s);
     QVERIFY(instancePathLabel);
     QVERIFY(!instancePathLabel->text().isEmpty());
     QVERIFY(!instancePathLabel->isEnabled());
@@ -67,7 +67,7 @@ void LanguageToolConfigWidgetTest::shouldUpdateWidgets()
 
     auto mUseLocalInstance = w.findChild<QCheckBox *>(u"uselocalinstance"_s);
 
-    auto instancePathLabel = w.findChild<QLabel *>(u"instancepath"_s);
+    auto instancePathLabel = w.findChild<QLabel *>(u"instancepathlabel"_s);
 
     auto mInstancePath = w.findChild<QLineEdit *>(u"instancepath"_s);
     QTest::mouseClick(mUseLocalInstance, Qt::LeftButton);

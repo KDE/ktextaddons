@@ -48,7 +48,7 @@ TextAutoGenerateShowImageDialog::TextAutoGenerateShowImageDialog(TextAutoGenerat
     connect(mOpenWithMenu, &QMenu::triggered, this, &TextAutoGenerateShowImageDialog::slotOpenWith);
 
     mClipboardImageAction = KStandardActions::copy(mShowImageWidget, &TextAutoGenerateShowImageWidget::copyImage, this);
-    mClipboardImageAction->setObjectName(u"clipboardLocationAction"_s);
+    mClipboardImageAction->setObjectName(u"clipboardImageAction"_s);
     mClipboardImageAction->setText(i18n("Copy Image to Clipboard"));
 
     auto clipboardLocationAction = new QAction(QIcon::fromTheme(u"edit-copy"_s), i18n("Copy Location to Clipboard"), this);

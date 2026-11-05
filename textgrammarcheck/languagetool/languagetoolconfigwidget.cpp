@@ -37,7 +37,7 @@ LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
     auto instanceLayout = new QHBoxLayout;
     instanceLayout->setObjectName(u"instancelayout"_s);
     instanceLayout->setContentsMargins({});
-    mInstancePathLabel->setObjectName(u"instancepath"_s);
+    mInstancePathLabel->setObjectName(u"instancepathlabel"_s);
     mInstancePathLabel->setEnabled(false);
     mInstancePathLabel->setTextFormat(Qt::PlainText);
     instanceLayout->addWidget(mInstancePathLabel);

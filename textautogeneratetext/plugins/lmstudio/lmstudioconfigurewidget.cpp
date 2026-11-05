@@ -65,7 +65,7 @@ LMStudioConfigureWidget::LMStudioConfigureWidget(LMStudioManager *manager, LMStu
     KLineEditEventHandler::catchReturnKey(mUrl);
     formLayout->addRow(i18n("Url:"), mUrl);
 
-    mApiKey->setObjectName(u"mUrl"_s);
+    mApiKey->setObjectName(u"mApiKey"_s);
     KLineEditEventHandler::catchReturnKey(mApiKey);
     formLayout->addRow(i18n("Api token:"), mApiKey);
 
