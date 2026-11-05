@@ -172,7 +172,7 @@ qint64 McpProtocolClientProtocolManager::readResource(const QString &url)
     McpProtocolReadResourceRequest request;
     const qint64 identifier = requestId();
     request.setId(identifier);
-    request.setParams(std::move(params));
+    request.setParams(params);
     return sendRequest(McpProtocolReadResourceRequest::toJson(request), identifier, MethodType::ReadResource);
 }
 
@@ -207,14 +207,14 @@ qint64 McpProtocolClientProtocolManager::resourceSubscriptionRequest(const QStri
         params.setUri(uri);
         McpProtocolSubscribeRequest subscribeRequest;
         subscribeRequest.setId(identifier);
-        subscribeRequest.setParams(std::move(params));
+        subscribeRequest.setParams(params);
         request = McpProtocolSubscribeRequest::toJson(subscribeRequest);
     } else {
         McpProtocolUnsubscribeRequestParams params;
         params.setUri(uri);
         McpProtocolUnsubscribeRequest unsubscribeRequest;
         unsubscribeRequest.setId(identifier);
-        unsubscribeRequest.setParams(std::move(params));
+        unsubscribeRequest.setParams(params);
         request = McpProtocolUnsubscribeRequest::toJson(unsubscribeRequest);
     }
     return sendRequest(request, identifier, type);
@@ -262,7 +262,7 @@ qint64 McpProtocolClientProtocolManager::setLoggingLevel(McpProtocolUtils::Loggi
     McpProtocolSetLevelRequest request;
     const qint64 identifier = requestId();
     request.setId(identifier);
-    request.setParams(std::move(params));
+    request.setParams(params);
     return sendRequest(McpProtocolSetLevelRequest::toJson(request), identifier, MethodType::SetLoggingLevel);
 }
 
