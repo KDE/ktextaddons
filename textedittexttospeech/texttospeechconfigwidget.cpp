@@ -303,7 +303,7 @@ void TextToSpeechConfigWidget::updateAvailableLocales()
     updateLocale();
 }
 
-void TextToSpeechConfigWidget::checkKokoroEngine(const QString newEngineName)
+void TextToSpeechConfigWidget::checkKokoroEngine(const QString &newEngineName)
 {
     // The engine is only switched once the check succeeds: until then a test
     // would speak with the previous engine.
