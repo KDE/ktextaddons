@@ -225,7 +225,7 @@ QString GenericNetworkServerInfo::apiUrl(GenericNetworkManager::PluginNetworkTyp
     case GenericNetworkManager::PluginNetworkType::ChatGPT:
         return u"https://api.openai.com/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::CompactifAI:
-        return u"https://your-compactifai-api-endpoint/v1/"_s;
+        return u"https://api.compactif.ai/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
         return u"https://openrouter.ai/api/v1/"_s;
     case GenericNetworkManager::PluginNetworkType::SarvamAI:
