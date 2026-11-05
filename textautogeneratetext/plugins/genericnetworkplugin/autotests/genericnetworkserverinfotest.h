@@ -28,4 +28,9 @@ private Q_SLOTS:
     void shouldTranslateThinkingLevel();
     void shouldOrderThinkingLevel();
     void shouldDefineThinkingLevelList();
+    void shouldGenerateThinkingJson_data();
+    void shouldGenerateThinkingJson();
+    void shouldGenerateThinkingResponsesJson_data();
+    void shouldGenerateThinkingResponsesJson();
+    void shouldCheckThinkingLevelSupported();
 };

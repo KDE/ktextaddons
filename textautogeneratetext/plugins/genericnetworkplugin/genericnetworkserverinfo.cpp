@@ -8,6 +8,7 @@
 #include "autogeneratetext_genericnetwork_debug.h"
 
 #include <KLocalizedString>
+#include <QJsonObject>
 
 #include <algorithm>
 
@@ -677,6 +678,84 @@ QString GenericNetworkServerInfo::thinkingLevel(GenericNetworkServerInfo::Thinki
         return {};
     }
     return {};
+}
+
+bool GenericNetworkServerInfo::isThinkingLevelSupported(GenericNetworkManager::PluginNetworkType type, const QString &identifier, const QString &level)
+{
+    const QList<ThinkingLevel> levels = thinkingLevelList(type, identifier);
+    return std::ranges::any_of(levels, [&level](ThinkingLevel l) {
+        return thinkingLevel(l) == level;
+    });
+}
+
+void GenericNetworkServerInfo::thinkingJson(QJsonObject &data,
+                                            const QString &level,
+                                            GenericNetworkManager::PluginNetworkType type,
+                                            GenericNetworkManager::ApiType api)
+{
+    if (level.isEmpty()) {
+        return;
+    }
+    if (api == GenericNetworkManager::ApiType::Responses) {
+        // Other providers only expose chat/completions
+        if (type == GenericNetworkManager::PluginNetworkType::OpenAI || type == GenericNetworkManager::PluginNetworkType::ChatGPT
+            || type == GenericNetworkManager::PluginNetworkType::GrokAI || type == GenericNetworkManager::PluginNetworkType::OpenAIGeneric) {
+            QJsonObject reasoning;
+            reasoning["effort"_L1] = level;
+            data["reasoning"_L1] = reasoning;
+        }
+        return;
+    }
+    const bool disabled = (level == thinkingLevel(ThinkingLevel::Disabled));
+    switch (type) {
+    case GenericNetworkManager::PluginNetworkType::Unknown:
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
+        return;
+    case GenericNetworkManager::PluginNetworkType::OpenAI:
+    case GenericNetworkManager::PluginNetworkType::ChatGPT:
+    case GenericNetworkManager::PluginNetworkType::Gemini:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
+        // "none" is a valid reasoning_effort value (gpt-5.1+, gemini-2.5-flash)
+        data["reasoning_effort"_L1] = level;
+        return;
+    case GenericNetworkManager::PluginNetworkType::Anthropic: {
+        // Thinking is off by default
+        if (disabled) {
+            return;
+        }
+        QJsonObject thinking;
+        thinking["type"_L1] = u"enabled"_s;
+        thinking["budget_tokens"_L1] = 2048;
+        data["thinking"_L1] = thinking;
+        return;
+    }
+    case GenericNetworkManager::PluginNetworkType::DeepSeek: {
+        QJsonObject thinking;
+        thinking["type"_L1] = disabled ? u"disabled"_s : u"enabled"_s;
+        data["thinking"_L1] = thinking;
+        return;
+    }
+    case GenericNetworkManager::PluginNetworkType::Qwen:
+        // Default depends on the model, so always send it
+        data["enable_thinking"_L1] = !disabled;
+        return;
+    case GenericNetworkManager::PluginNetworkType::MistralAI:
+    case GenericNetworkManager::PluginNetworkType::KlusterAI:
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+    case GenericNetworkManager::PluginNetworkType::CerebrasAI:
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+    case GenericNetworkManager::PluginNetworkType::NovitaAI:
+    case GenericNetworkManager::PluginNetworkType::DeepInfra:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
+    case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
+    case GenericNetworkManager::PluginNetworkType::AtlasCloud:
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
+        return;
+    }
 }
 
 #include "moc_genericnetworkserverinfo.cpp"

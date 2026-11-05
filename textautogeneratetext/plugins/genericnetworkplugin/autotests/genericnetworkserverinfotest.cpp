@@ -6,6 +6,8 @@
 #include "genericnetworkserverinfotest.h"
 
 #include "genericnetworkserverinfo.h"
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QStandardPaths>
 #include <QTest>
 
@@ -309,6 +311,82 @@ void GenericNetworkServerInfoTest::shouldContainDeepSeekInSupportedServers()
     });
     QVERIFY(it != servers.cend());
     QCOMPARE(it->pluginName, u"generic"_s);
+}
+
+void GenericNetworkServerInfoTest::shouldGenerateThinkingJson_data()
+{
+    using Type = GenericNetworkManager::PluginNetworkType;
+    QTest::addColumn<GenericNetworkManager::PluginNetworkType>("type");
+    QTest::addColumn<QString>("level");
+    QTest::addColumn<QByteArray>("expected");
+
+    QTest::newRow("unknown") << Type::Unknown << u"low"_s << QByteArray("{}");
+    QTest::newRow("empty-level") << Type::OpenAI << QString() << QByteArray("{}");
+    QTest::newRow("openai-low") << Type::OpenAI << u"low"_s << QByteArray(R"({"reasoning_effort":"low"})");
+    QTest::newRow("openai-none") << Type::OpenAI << u"none"_s << QByteArray(R"({"reasoning_effort":"none"})");
+    QTest::newRow("chatgpt-high") << Type::ChatGPT << u"high"_s << QByteArray(R"({"reasoning_effort":"high"})");
+    QTest::newRow("gemini-minimal") << Type::Gemini << u"minimal"_s << QByteArray(R"({"reasoning_effort":"minimal"})");
+    QTest::newRow("grok-low") << Type::GrokAI << u"low"_s << QByteArray(R"({"reasoning_effort":"low"})");
+    QTest::newRow("openaigeneric-medium") << Type::OpenAIGeneric << u"medium"_s << QByteArray(R"({"reasoning_effort":"medium"})");
+    QTest::newRow("anthropic-enabled") << Type::Anthropic << u"enabled"_s << QByteArray(R"({"thinking":{"budget_tokens":2048,"type":"enabled"}})");
+    QTest::newRow("anthropic-none") << Type::Anthropic << u"none"_s << QByteArray("{}");
+    QTest::newRow("deepseek-enabled") << Type::DeepSeek << u"enabled"_s << QByteArray(R"({"thinking":{"type":"enabled"}})");
+    QTest::newRow("deepseek-none") << Type::DeepSeek << u"none"_s << QByteArray(R"({"thinking":{"type":"disabled"}})");
+    QTest::newRow("qwen-enabled") << Type::Qwen << u"enabled"_s << QByteArray(R"({"enable_thinking":true})");
+    QTest::newRow("qwen-none") << Type::Qwen << u"none"_s << QByteArray(R"({"enable_thinking":false})");
+    QTest::newRow("mistral-low") << Type::MistralAI << u"low"_s << QByteArray("{}");
+}
+
+void GenericNetworkServerInfoTest::shouldGenerateThinkingJson()
+{
+    QFETCH(GenericNetworkManager::PluginNetworkType, type);
+    QFETCH(QString, level);
+    QFETCH(QByteArray, expected);
+    QJsonObject data;
+    GenericNetworkServerInfo::thinkingJson(data, level, type);
+    QCOMPARE(QJsonDocument(data).toJson(QJsonDocument::Compact), expected);
+}
+
+void GenericNetworkServerInfoTest::shouldGenerateThinkingResponsesJson_data()
+{
+    using Type = GenericNetworkManager::PluginNetworkType;
+    QTest::addColumn<GenericNetworkManager::PluginNetworkType>("type");
+    QTest::addColumn<QString>("level");
+    QTest::addColumn<QByteArray>("expected");
+
+    QTest::newRow("empty-level") << Type::OpenAI << QString() << QByteArray("{}");
+    QTest::newRow("openai-low") << Type::OpenAI << u"low"_s << QByteArray(R"({"reasoning":{"effort":"low"}})");
+    QTest::newRow("openai-none") << Type::OpenAI << u"none"_s << QByteArray(R"({"reasoning":{"effort":"none"}})");
+    QTest::newRow("chatgpt-high") << Type::ChatGPT << u"high"_s << QByteArray(R"({"reasoning":{"effort":"high"}})");
+    QTest::newRow("grok-low") << Type::GrokAI << u"low"_s << QByteArray(R"({"reasoning":{"effort":"low"}})");
+    QTest::newRow("openaigeneric-medium") << Type::OpenAIGeneric << u"medium"_s << QByteArray(R"({"reasoning":{"effort":"medium"}})");
+    QTest::newRow("gemini-low") << Type::Gemini << u"low"_s << QByteArray("{}");
+    QTest::newRow("anthropic-enabled") << Type::Anthropic << u"enabled"_s << QByteArray("{}");
+    QTest::newRow("deepseek-enabled") << Type::DeepSeek << u"enabled"_s << QByteArray("{}");
+    QTest::newRow("qwen-none") << Type::Qwen << u"none"_s << QByteArray("{}");
+}
+
+void GenericNetworkServerInfoTest::shouldGenerateThinkingResponsesJson()
+{
+    QFETCH(GenericNetworkManager::PluginNetworkType, type);
+    QFETCH(QString, level);
+    QFETCH(QByteArray, expected);
+    QJsonObject data;
+    GenericNetworkServerInfo::thinkingJson(data, level, type, GenericNetworkManager::ApiType::Responses);
+    QCOMPARE(QJsonDocument(data).toJson(QJsonDocument::Compact), expected);
+}
+
+void GenericNetworkServerInfoTest::shouldCheckThinkingLevelSupported()
+{
+    using Type = GenericNetworkManager::PluginNetworkType;
+    QVERIFY(GenericNetworkServerInfo::isThinkingLevelSupported(Type::OpenAI, u"gpt-5.1"_s, u"none"_s));
+    QVERIFY(!GenericNetworkServerInfo::isThinkingLevelSupported(Type::OpenAI, u"gpt-5"_s, u"none"_s));
+    QVERIFY(GenericNetworkServerInfo::isThinkingLevelSupported(Type::OpenAI, u"gpt-5"_s, u"minimal"_s));
+    QVERIFY(!GenericNetworkServerInfo::isThinkingLevelSupported(Type::OpenAI, u"gpt-4o"_s, u"low"_s));
+    QVERIFY(GenericNetworkServerInfo::isThinkingLevelSupported(Type::Qwen, u"qwen3-max"_s, u"enabled"_s));
+    QVERIFY(!GenericNetworkServerInfo::isThinkingLevelSupported(Type::Qwen, u"qwen3-max"_s, u"low"_s));
+    QVERIFY(!GenericNetworkServerInfo::isThinkingLevelSupported(Type::MistralAI, u"mistral-large-latest"_s, u"low"_s));
+    QVERIFY(!GenericNetworkServerInfo::isThinkingLevelSupported(Type::OpenAI, u"gpt-5.1"_s, QString()));
 }
 
 #include "moc_genericnetworkserverinfotest.cpp"

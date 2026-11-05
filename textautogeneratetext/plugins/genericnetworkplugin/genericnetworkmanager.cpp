@@ -140,6 +140,7 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getChatCompl
     data["messages"_L1] = request.messages();
     data["temperature"_L1] = mGenericNetworkSettings->temperature();
     data["stream"_L1] = true;
+    addThinking(data, request.model(), ApiType::ChatCompletions);
     QJsonObject streamOptions;
     streamOptions["include_usage"_L1] = true;
     data["stream_options"_L1] = streamOptions;
@@ -194,6 +195,7 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkManager::getResponses
     data["input"_L1] = request.messages();
     data["temperature"_L1] = mGenericNetworkSettings->temperature();
     data["stream"_L1] = true;
+    addThinking(data, request.model(), ApiType::Responses);
     QJsonObject streamOptions;
     streamOptions["include_usage"_L1] = true;
     data["stream_options"_L1] = streamOptions;
@@ -360,6 +362,19 @@ bool GenericNetworkManager::hasTextOnlySupport() const
         return true;
     }
     return false;
+}
+
+void GenericNetworkManager::addThinking(QJsonObject &data, const QString &model, ApiType api) const
+{
+    const QString level = mGenericNetworkSettings->thinkingLevel();
+    if (level.isEmpty()) {
+        return;
+    }
+    if (!mServerInfo->isThinkingLevelSupported(mPluginNetworkType, model, level)) {
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "Thinking level" << level << "not supported by model" << model;
+        return;
+    }
+    mServerInfo->thinkingJson(data, level, mPluginNetworkType, api);
 }
 
 #include "moc_genericnetworkmanager.cpp"

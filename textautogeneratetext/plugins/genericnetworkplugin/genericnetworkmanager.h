@@ -10,6 +10,7 @@
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateManagerBase>
 class GenericNetworkSettings;
+class QJsonObject;
 class GenericNetworkServerInfo;
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
 {
@@ -52,6 +53,11 @@ public:
     Q_DECLARE_FLAGS(Limitations, Limitation)
     Q_FLAG(Limitations)
 
+    enum class ApiType : uint8_t {
+        ChatCompletions,
+        Responses,
+    };
+
     explicit GenericNetworkManager(GenericNetworkSettings *settings, QObject *parent = nullptr);
     ~GenericNetworkManager() override;
 
@@ -92,6 +98,7 @@ public:
     [[nodiscard]] bool hasCustomUrl() const;
 
 private:
+    TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void addThinking(QJsonObject &data, const QString &model, ApiType api) const;
     [[nodiscard]] TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT QString chatPath() const;
     [[nodiscard]] TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT QList<GenericNetworkModelAvailableInfo> fallbackModels() const;
     TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void applyModelsInfos(const QList<GenericNetworkModelAvailableInfo> &modelsInfos);

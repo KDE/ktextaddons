@@ -9,6 +9,7 @@
 #include <QList>
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateTextClient>
+class QJsonObject;
 
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkServerInfo
 {
@@ -48,4 +49,9 @@ public:
     [[nodiscard]] static QString thinkingLevel(ThinkingLevel level);
 
     [[nodiscard]] static QList<ThinkingLevel> thinkingLevelList(GenericNetworkManager::PluginNetworkType type, const QString &identifier);
+    [[nodiscard]] static bool isThinkingLevelSupported(GenericNetworkManager::PluginNetworkType type, const QString &identifier, const QString &level);
+    static void thinkingJson(QJsonObject &data,
+                             const QString &level,
+                             GenericNetworkManager::PluginNetworkType type,
+                             GenericNetworkManager::ApiType api = GenericNetworkManager::ApiType::ChatCompletions);
 };
