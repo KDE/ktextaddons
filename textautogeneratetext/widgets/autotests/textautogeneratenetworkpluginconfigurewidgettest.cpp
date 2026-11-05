@@ -56,6 +56,7 @@ void TextAutoGenerateNetworkPluginConfigureWidgetTest::shouldHaveDefaultValues()
     QCOMPARE(mThinkingLevel->count(), 0);
     QVERIFY(mThinkingLevel->isHidden());
     QVERIFY(mainLayout->labelForField(mThinkingLevel)->isHidden());
+    QVERIFY(!mThinkingLevel->toolTip().isEmpty());
     QVERIFY(w.thinkingLevel().isEmpty());
 }
 
@@ -85,6 +86,7 @@ void TextAutoGenerateNetworkPluginConfigureWidgetTest::shouldSetThinkingLevels()
     QCOMPARE(mThinkingLevel->count(), 0);
     QVERIFY(mThinkingLevel->isHidden());
     QVERIFY(mainLayout->labelForField(mThinkingLevel)->isHidden());
+    QVERIFY(!mThinkingLevel->toolTip().isEmpty());
     QVERIFY(w.thinkingLevel().isEmpty());
 }
 

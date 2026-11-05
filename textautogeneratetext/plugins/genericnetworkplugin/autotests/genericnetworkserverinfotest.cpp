@@ -192,25 +192,12 @@ void GenericNetworkServerInfoTest::shouldDefineDefaultModels()
     QVERIFY(info.defaultModels(GenericNetworkManager::PluginNetworkType::DeepSeek).isEmpty());
 }
 
-void GenericNetworkServerInfoTest::shouldHaveThinkingSupport()
-{
-    const GenericNetworkServerInfo info;
-    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::OpenAI));
-    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::Anthropic));
-    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::ChatGPT));
-    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::DeepSeek));
-    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::Gemini));
-    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::Qwen));
-    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::GrokAI));
-    QVERIFY(!info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::MistralAI));
-    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::OpenAIGeneric));
-}
-
 void GenericNetworkServerInfoTest::shouldConvertThinkingLevel()
 {
     using Level = GenericNetworkServerInfo::ThinkingLevel;
     QVERIFY(GenericNetworkServerInfo::thinkingLevel(Level::Unknown).isEmpty());
     QCOMPARE(GenericNetworkServerInfo::thinkingLevel(Level::Disabled), u"none"_s);
+    QCOMPARE(GenericNetworkServerInfo::thinkingLevel(Level::Enabled), u"enabled"_s);
     QCOMPARE(GenericNetworkServerInfo::thinkingLevel(Level::Minimal), u"minimal"_s);
     QCOMPARE(GenericNetworkServerInfo::thinkingLevel(Level::Low), u"low"_s);
     QCOMPARE(GenericNetworkServerInfo::thinkingLevel(Level::Medium), u"medium"_s);
@@ -222,7 +209,7 @@ void GenericNetworkServerInfoTest::shouldTranslateThinkingLevel()
 {
     using Level = GenericNetworkServerInfo::ThinkingLevel;
     QVERIFY(GenericNetworkServerInfo::thinkingLevelI18n(Level::Unknown).isEmpty());
-    const QList<Level> levels{Level::Disabled, Level::Minimal, Level::Low, Level::Medium, Level::High, Level::Xhigh};
+    const QList<Level> levels{Level::Disabled, Level::Enabled, Level::Minimal, Level::Low, Level::Medium, Level::High, Level::Xhigh};
     QStringList labels;
     for (const auto level : levels) {
         const QString label = GenericNetworkServerInfo::thinkingLevelI18n(level);
@@ -235,7 +222,8 @@ void GenericNetworkServerInfoTest::shouldTranslateThinkingLevel()
 void GenericNetworkServerInfoTest::shouldOrderThinkingLevel()
 {
     using Level = GenericNetworkServerInfo::ThinkingLevel;
-    QVERIFY(Level::Disabled < Level::Minimal);
+    QVERIFY(Level::Disabled < Level::Enabled);
+    QVERIFY(Level::Enabled < Level::Minimal);
     QVERIFY(Level::Minimal < Level::Low);
     QVERIFY(Level::Low < Level::Medium);
     QVERIFY(Level::Medium < Level::High);
@@ -273,20 +261,22 @@ void GenericNetworkServerInfoTest::shouldDefineThinkingLevelList()
     QVERIFY(info.thinkingLevelList(Type::GrokAI, u"grok-4"_s).isEmpty());
 
     QCOMPARE(info.thinkingLevelList(Type::OpenAIGeneric, u"foo"_s), (QList<Level>{Level::Low, Level::Medium, Level::High}));
-    QVERIFY(info.thinkingLevelList(Type::Anthropic, u"claude-sonnet-4-5"_s).isEmpty());
-    QVERIFY(info.thinkingLevelList(Type::DeepSeek, u"deepseek-reasoner"_s).isEmpty());
-    QVERIFY(info.thinkingLevelList(Type::Qwen, u"qwen3-max"_s).isEmpty());
+
+    // Thinking can only be switched on or off
+    const QList<Level> onOff{Level::Disabled, Level::Enabled};
+    QCOMPARE(info.thinkingLevelList(Type::Anthropic, u"claude-sonnet-4-5"_s), onOff);
+    QCOMPARE(info.thinkingLevelList(Type::Anthropic, u"claude-3-7-sonnet-latest"_s), onOff);
+    QVERIFY(info.thinkingLevelList(Type::Anthropic, u"claude-3-5-haiku-latest"_s).isEmpty());
+    QCOMPARE(info.thinkingLevelList(Type::DeepSeek, u"deepseek-chat"_s), onOff);
+    QCOMPARE(info.thinkingLevelList(Type::Qwen, u"qwen3-max"_s), onOff);
     QVERIFY(info.thinkingLevelList(Type::MistralAI, u"magistral-medium-latest"_s).isEmpty());
 
-    // A plugin with thinking levels must support thinking, and levels must be sorted
+    // Levels must be sorted
     const QStringList identifiers{u"gpt-5"_s, u"gpt-5.2"_s, u"o3"_s, u"gemini-2.5-flash"_s, u"gemini-3-pro"_s, u"grok-3-mini"_s, u"foo"_s};
     for (int i = 1; i <= static_cast<int>(Type::LastElement); ++i) {
         const auto type = static_cast<Type>(i);
         for (const auto &identifier : identifiers) {
             const QList<Level> levels = info.thinkingLevelList(type, identifier);
-            if (!levels.isEmpty()) {
-                QVERIFY(info.pluginHasThinkSupport(type));
-            }
             QVERIFY(std::is_sorted(levels.cbegin(), levels.cend()));
             QVERIFY(!levels.contains(Level::Unknown));
         }

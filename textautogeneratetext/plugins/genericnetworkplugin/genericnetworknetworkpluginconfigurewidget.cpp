@@ -32,8 +32,10 @@ void GenericNetworkNetworkPluginConfigureWidget::updateThinkingLevels()
     QList<std::pair<QString, QString>> items;
     if (!levels.isEmpty()) {
         items.reserve(levels.count() + 1);
-        // Empty value: don't send any level, the server uses its default
-        items.append({QString(), i18nc("@item:inlistbox thinking level", "Default")});
+        if (!levels.contains(GenericNetworkServerInfo::ThinkingLevel::Enabled)) {
+            // Empty value: don't send any level, the model uses its own default
+            items.append({QString(), i18nc("@item:inlistbox thinking level", "Model default")});
+        }
         for (const auto level : levels) {
             items.append({GenericNetworkServerInfo::thinkingLevel(level), GenericNetworkServerInfo::thinkingLevelI18n(level)});
         }

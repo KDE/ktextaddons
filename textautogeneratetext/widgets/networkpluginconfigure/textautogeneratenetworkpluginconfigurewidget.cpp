@@ -46,6 +46,9 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     mSeed->setMaximum(9999);
     mSeed->setObjectName(u"mSeed"_s);
     mThinkingLevel->setObjectName(u"mThinkingLevel"_s);
+    mThinkingLevel->setToolTip(
+        i18nc("@info:tooltip",
+              "How much the model reasons before answering. A higher level gives better answers to complex questions, but is slower and uses more tokens."));
 
     mCustomUrl->setObjectName(u"mCustomUrl"_s);
     mCustomModels->setObjectName(u"mCustomModels"_s);

@@ -417,40 +417,6 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
     return listInfo;
 }
 
-bool GenericNetworkServerInfo::pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType type)
-{
-    switch (type) {
-    case GenericNetworkManager::PluginNetworkType::Unknown:
-        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
-        return false;
-    case GenericNetworkManager::PluginNetworkType::Anthropic:
-    case GenericNetworkManager::PluginNetworkType::OpenAI:
-    case GenericNetworkManager::PluginNetworkType::ChatGPT:
-    case GenericNetworkManager::PluginNetworkType::DeepSeek:
-    case GenericNetworkManager::PluginNetworkType::Gemini:
-    case GenericNetworkManager::PluginNetworkType::Qwen:
-    case GenericNetworkManager::PluginNetworkType::GrokAI:
-    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
-        return true;
-    case GenericNetworkManager::PluginNetworkType::MistralAI:
-    case GenericNetworkManager::PluginNetworkType::KlusterAI:
-    case GenericNetworkManager::PluginNetworkType::GroqAI:
-    case GenericNetworkManager::PluginNetworkType::VeniceAI:
-    case GenericNetworkManager::PluginNetworkType::LlamaApi:
-    case GenericNetworkManager::PluginNetworkType::CerebrasAI:
-    case GenericNetworkManager::PluginNetworkType::KimiAI:
-    case GenericNetworkManager::PluginNetworkType::NovitaAI:
-    case GenericNetworkManager::PluginNetworkType::DeepInfra:
-    case GenericNetworkManager::PluginNetworkType::CompactifAI:
-    case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
-    case GenericNetworkManager::PluginNetworkType::SarvamAI:
-    case GenericNetworkManager::PluginNetworkType::AtlasCloud:
-    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
-        return false;
-    }
-    return false;
-}
-
 bool GenericNetworkServerInfo::hasCustomUrl(GenericNetworkManager::PluginNetworkType type)
 {
     if (type == GenericNetworkManager::PluginNetworkType::OpenAIGeneric) {
@@ -638,11 +604,16 @@ QList<GenericNetworkServerInfo::ThinkingLevel> GenericNetworkServerInfo::thinkin
         // Unknown server: use the values that every reasoning_effort implementation accepts
         return {ThinkingLevel::Low, ThinkingLevel::Medium, ThinkingLevel::High};
     case GenericNetworkManager::PluginNetworkType::Anthropic:
-        // Uses a token budget ("thinking": {"budget_tokens"}), not named levels
+        // Uses a token budget ("thinking": {"budget_tokens"}), not named levels.
+        // Extended thinking exists since Claude 3.7
+        if (identifier.startsWith(u"claude-3-"_s) && !identifier.startsWith(u"claude-3-7"_s)) {
+            return {};
+        }
+        return {ThinkingLevel::Disabled, ThinkingLevel::Enabled};
     case GenericNetworkManager::PluginNetworkType::DeepSeek:
     case GenericNetworkManager::PluginNetworkType::Qwen:
         // Thinking can only be switched on or off
-        return {};
+        return {ThinkingLevel::Disabled, ThinkingLevel::Enabled};
     case GenericNetworkManager::PluginNetworkType::MistralAI:
     case GenericNetworkManager::PluginNetworkType::KlusterAI:
     case GenericNetworkManager::PluginNetworkType::GroqAI:
@@ -667,6 +638,8 @@ QString GenericNetworkServerInfo::thinkingLevelI18n(GenericNetworkServerInfo::Th
     switch (level) {
     case GenericNetworkServerInfo::ThinkingLevel::Disabled:
         return i18nc("@item:inlistbox thinking level", "Disabled");
+    case GenericNetworkServerInfo::ThinkingLevel::Enabled:
+        return i18nc("@item:inlistbox thinking level", "Enabled");
     case GenericNetworkServerInfo::ThinkingLevel::Minimal:
         return i18nc("@item:inlistbox thinking level", "Minimal");
     case GenericNetworkServerInfo::ThinkingLevel::Low:
@@ -688,6 +661,8 @@ QString GenericNetworkServerInfo::thinkingLevel(GenericNetworkServerInfo::Thinki
     switch (level) {
     case GenericNetworkServerInfo::ThinkingLevel::Disabled:
         return u"none"_s;
+    case GenericNetworkServerInfo::ThinkingLevel::Enabled:
+        return u"enabled"_s;
     case GenericNetworkServerInfo::ThinkingLevel::Minimal:
         return u"minimal"_s;
     case GenericNetworkServerInfo::ThinkingLevel::Low:

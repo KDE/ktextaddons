@@ -17,6 +17,7 @@ public:
     enum class ThinkingLevel : uint8_t {
         Unknown = 0,
         Disabled,
+        Enabled,
         Minimal,
         Low,
         Medium,
@@ -43,7 +44,6 @@ public:
     [[nodiscard]] static bool hasCustomUrl(GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static QList<GenericNetworkModelAvailableInfo> defaultModels(GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static bool modelSupportsTools(GenericNetworkManager::PluginNetworkType type, const QString &identifier);
-    [[nodiscard]] static bool pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static QString thinkingLevelI18n(ThinkingLevel level);
     [[nodiscard]] static QString thinkingLevel(ThinkingLevel level);
 

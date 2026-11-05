@@ -24,7 +24,6 @@ private Q_SLOTS:
     void shouldDefineDefaultModels();
     void shouldDefineModelSupportsTools();
     void shouldContainDeepSeekInSupportedServers();
-    void shouldHaveThinkingSupport();
     void shouldConvertThinkingLevel();
     void shouldTranslateThinkingLevel();
     void shouldOrderThinkingLevel();
