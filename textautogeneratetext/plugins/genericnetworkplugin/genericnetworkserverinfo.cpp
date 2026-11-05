@@ -417,6 +417,40 @@ QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> Generic
     return listInfo;
 }
 
+bool GenericNetworkServerInfo::pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType type)
+{
+    switch (type) {
+    case GenericNetworkManager::PluginNetworkType::Unknown:
+        qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";
+        return false;
+    case GenericNetworkManager::PluginNetworkType::Anthropic:
+    case GenericNetworkManager::PluginNetworkType::OpenAI:
+    case GenericNetworkManager::PluginNetworkType::ChatGPT:
+    case GenericNetworkManager::PluginNetworkType::DeepSeek:
+    case GenericNetworkManager::PluginNetworkType::Gemini:
+    case GenericNetworkManager::PluginNetworkType::Qwen:
+    case GenericNetworkManager::PluginNetworkType::GrokAI:
+    case GenericNetworkManager::PluginNetworkType::OpenAIGeneric:
+        return true;
+    case GenericNetworkManager::PluginNetworkType::MistralAI:
+    case GenericNetworkManager::PluginNetworkType::KlusterAI:
+    case GenericNetworkManager::PluginNetworkType::GroqAI:
+    case GenericNetworkManager::PluginNetworkType::VeniceAI:
+    case GenericNetworkManager::PluginNetworkType::LlamaApi:
+    case GenericNetworkManager::PluginNetworkType::CerebrasAI:
+    case GenericNetworkManager::PluginNetworkType::KimiAI:
+    case GenericNetworkManager::PluginNetworkType::NovitaAI:
+    case GenericNetworkManager::PluginNetworkType::DeepInfra:
+    case GenericNetworkManager::PluginNetworkType::CompactifAI:
+    case GenericNetworkManager::PluginNetworkType::OpenRouterAI:
+    case GenericNetworkManager::PluginNetworkType::SarvamAI:
+    case GenericNetworkManager::PluginNetworkType::AtlasCloud:
+    case GenericNetworkManager::PluginNetworkType::OrcaRouterAI:
+        return false;
+    }
+    return false;
+}
+
 bool GenericNetworkServerInfo::hasCustomUrl(GenericNetworkManager::PluginNetworkType type)
 {
     if (type == GenericNetworkManager::PluginNetworkType::OpenAIGeneric) {
@@ -547,6 +581,53 @@ GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(Generic
         return limits;
     }
     return limits;
+}
+
+QList<GenericNetworkServerInfo::ThinkingLevel> GenericNetworkServerInfo::thinkingLevelList(GenericNetworkManager::PluginNetworkType type)
+{
+    return {};
+}
+
+QString GenericNetworkServerInfo::thinkingLevelI18n(GenericNetworkServerInfo::ThinkingLevel level)
+{
+    switch (level) {
+    case GenericNetworkServerInfo::ThinkingLevel::Disabled:
+        return i18nc("@item:inlistbox thinking level", "Disabled");
+    case GenericNetworkServerInfo::ThinkingLevel::Minimal:
+        return i18nc("@item:inlistbox thinking level", "Minimal");
+    case GenericNetworkServerInfo::ThinkingLevel::Low:
+        return i18nc("@item:inlistbox thinking level", "Low");
+    case GenericNetworkServerInfo::ThinkingLevel::Medium:
+        return i18nc("@item:inlistbox thinking level", "Medium");
+    case GenericNetworkServerInfo::ThinkingLevel::High:
+        return i18nc("@item:inlistbox thinking level", "High");
+    case GenericNetworkServerInfo::ThinkingLevel::Xhigh:
+        return i18nc("@item:inlistbox thinking level", "Extra High");
+    case GenericNetworkServerInfo::ThinkingLevel::Unknown:
+        return {};
+    }
+    return {};
+}
+
+QString GenericNetworkServerInfo::thinkingLevel(GenericNetworkServerInfo::ThinkingLevel level)
+{
+    switch (level) {
+    case GenericNetworkServerInfo::ThinkingLevel::Disabled:
+        return u"none"_s;
+    case GenericNetworkServerInfo::ThinkingLevel::Minimal:
+        return u"minimal"_s;
+    case GenericNetworkServerInfo::ThinkingLevel::Low:
+        return u"low"_s;
+    case GenericNetworkServerInfo::ThinkingLevel::Medium:
+        return u"medium"_s;
+    case GenericNetworkServerInfo::ThinkingLevel::High:
+        return u"high"_s;
+    case GenericNetworkServerInfo::ThinkingLevel::Xhigh:
+        return u"xhigh"_s;
+    case GenericNetworkServerInfo::ThinkingLevel::Unknown:
+        return {};
+    }
+    return {};
 }
 
 #include "moc_genericnetworkserverinfo.cpp"

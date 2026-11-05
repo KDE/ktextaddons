@@ -6,6 +6,7 @@
 #pragma once
 #include "genericnetworkmanager.h"
 #include "textautogenerategenericnetwork_export.h"
+#include <QList>
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateTextClient>
 
@@ -13,6 +14,17 @@ class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkServerInfo
 {
     Q_GADGET
 public:
+    enum class ThinkingLevel : uint8_t {
+        Unknown = 0,
+        Disabled,
+        Minimal,
+        Low,
+        Medium,
+        High,
+        Xhigh,
+    };
+    Q_ENUM(ThinkingLevel)
+
     GenericNetworkServerInfo();
     ~GenericNetworkServerInfo();
     [[nodiscard]] static QString translatedName(GenericNetworkManager::PluginNetworkType type);
@@ -31,4 +43,9 @@ public:
     [[nodiscard]] static bool hasCustomUrl(GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static QList<GenericNetworkModelAvailableInfo> defaultModels(GenericNetworkManager::PluginNetworkType type);
     [[nodiscard]] static bool modelSupportsTools(GenericNetworkManager::PluginNetworkType type, const QString &identifier);
+    [[nodiscard]] static bool pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType type);
+    [[nodiscard]] static QString thinkingLevelI18n(ThinkingLevel level);
+    [[nodiscard]] static QString thinkingLevel(ThinkingLevel level);
+
+    [[nodiscard]] static QList<ThinkingLevel> thinkingLevelList(GenericNetworkManager::PluginNetworkType type);
 };

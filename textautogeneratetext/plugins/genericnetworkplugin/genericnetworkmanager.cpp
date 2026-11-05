@@ -247,6 +247,11 @@ QString GenericNetworkManager::chatPath() const
     return mServerInfo->chatCompletionPath(mPluginNetworkType);
 }
 
+bool GenericNetworkManager::pluginHasThinkSupport() const
+{
+    return mServerInfo->pluginHasThinkSupport(mPluginNetworkType);
+}
+
 bool GenericNetworkManager::hasCustomUrl() const
 {
     return mServerInfo->hasCustomUrl(mPluginNetworkType);

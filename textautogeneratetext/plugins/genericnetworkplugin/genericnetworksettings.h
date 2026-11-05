@@ -30,9 +30,13 @@ public:
     [[nodiscard]] QStringList customModels() const;
     void setCustomModels(const QStringList &newCustomModels);
 
+    [[nodiscard]] bool thoughtProcessing() const;
+    void setThoughtProcessing(bool newThoughtProcessing);
+
 private:
     int mMaxTokens = 2048;
     int mSeed = 0;
+    bool mThoughtProcessing = false;
     QString mCustomUrl;
     QStringList mCustomModels;
 };

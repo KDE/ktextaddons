@@ -7,6 +7,7 @@
 #include "textautogeneratenetworkpluginconfigurewidgettest.h"
 #include "widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.h"
 #include <KPasswordLineEdit>
+#include <QCheckBox>
 #include <QDoubleSpinBox>
 #include <QFormLayout>
 #include <QLabel>
@@ -49,6 +50,13 @@ void TextAutoGenerateNetworkPluginConfigureWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mCustomModels);
     QVERIFY(mCustomModels->text().isEmpty());
     QVERIFY(w.customModels().isEmpty());
+
+    auto mThoughtProcessing = w.findChild<QCheckBox *>(u"mThoughtProcessing"_s);
+    QVERIFY(mThoughtProcessing);
+    QVERIFY(!mThoughtProcessing->text().isEmpty());
+    QVERIFY(!mThoughtProcessing->isChecked());
+    QVERIFY(mThoughtProcessing->isHidden());
+    QVERIFY(!w.thoughtProcessing());
 }
 
 void TextAutoGenerateNetworkPluginConfigureWidgetTest::shouldCleanCustomModels()

@@ -91,6 +91,8 @@ public:
 
     [[nodiscard]] bool hasCustomUrl() const;
 
+    [[nodiscard]] bool pluginHasThinkSupport() const;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT QString chatPath() const;
     [[nodiscard]] TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT QList<GenericNetworkModelAvailableInfo> fallbackModels() const;

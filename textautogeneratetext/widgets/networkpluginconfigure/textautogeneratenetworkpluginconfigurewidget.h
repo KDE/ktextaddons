@@ -14,6 +14,7 @@ class QSpinBox;
 class QDoubleSpinBox;
 class QLabel;
 class QFormLayout;
+class QCheckBox;
 namespace TextAutoGenerateText
 {
 /*!
@@ -132,6 +133,22 @@ public:
      */
     [[nodiscard]] QStringList customModels() const;
 
+    /*!
+     * Shows the "Enable thinking" checkbox. Hidden by default.
+     * \param b true if the server supports thinking
+     */
+    void setHasThoughtProcessing(bool b);
+
+    /*!
+     * Sets whether thinking is enabled.
+     * \param b true to enable thinking
+     */
+    void setThoughtProcessing(bool b);
+    /*!
+     * Returns true if thinking is enabled.
+     */
+    [[nodiscard]] bool thoughtProcessing() const;
+
 Q_SIGNALS:
     /*!
      * \brief send true if we need to update button
@@ -150,5 +167,6 @@ private:
     QLabel *const mWebSite;
     QLabel *const mDescription;
     QFormLayout *const mMainLayout;
+    QCheckBox *const mThoughtProcessing;
 };
 }

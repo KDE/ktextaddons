@@ -64,7 +64,7 @@ void GenericNetworkServerInfoTest::shouldCheckApiUrl()
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::NovitaAI), u"https://api.novita.ai/v3/openai/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::DeepInfra), u"https://api.deepinfra.com/v1/openai/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::ChatGPT), u"https://api.openai.com/v1/"_s);
-    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::CompactifAI), u"https://your-compactifai-api-endpoint/v1/"_s);
+    QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::CompactifAI), u"https://api.compactif.ai/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::OpenRouterAI), u"https://openrouter.ai/api/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::SarvamAI), u"https://api.sarvam.ai/v1/"_s);
     QCOMPARE(info.apiUrl(GenericNetworkManager::PluginNetworkType::AtlasCloud), u"https://api.atlascloud.ai/v1/"_s);
@@ -190,6 +190,56 @@ void GenericNetworkServerInfoTest::shouldDefineDefaultModels()
     QVERIFY(info.defaultModels(GenericNetworkManager::PluginNetworkType::OpenAI).isEmpty());
     QVERIFY(info.defaultModels(GenericNetworkManager::PluginNetworkType::OpenAIGeneric).isEmpty());
     QVERIFY(info.defaultModels(GenericNetworkManager::PluginNetworkType::DeepSeek).isEmpty());
+}
+
+void GenericNetworkServerInfoTest::shouldHaveThinkingSupport()
+{
+    const GenericNetworkServerInfo info;
+    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::OpenAI));
+    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::Anthropic));
+    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::ChatGPT));
+    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::DeepSeek));
+    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::Gemini));
+    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::Qwen));
+    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::GrokAI));
+    QVERIFY(!info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::MistralAI));
+    QVERIFY(info.pluginHasThinkSupport(GenericNetworkManager::PluginNetworkType::OpenAIGeneric));
+}
+
+void GenericNetworkServerInfoTest::shouldConvertThinkingLevel()
+{
+    using Level = GenericNetworkServerInfo::ThinkingLevel;
+    QVERIFY(GenericNetworkServerInfo::thinkingLevel(Level::Unknown).isEmpty());
+    QCOMPARE(GenericNetworkServerInfo::thinkingLevel(Level::Disabled), u"none"_s);
+    QCOMPARE(GenericNetworkServerInfo::thinkingLevel(Level::Minimal), u"minimal"_s);
+    QCOMPARE(GenericNetworkServerInfo::thinkingLevel(Level::Low), u"low"_s);
+    QCOMPARE(GenericNetworkServerInfo::thinkingLevel(Level::Medium), u"medium"_s);
+    QCOMPARE(GenericNetworkServerInfo::thinkingLevel(Level::High), u"high"_s);
+    QCOMPARE(GenericNetworkServerInfo::thinkingLevel(Level::Xhigh), u"xhigh"_s);
+}
+
+void GenericNetworkServerInfoTest::shouldTranslateThinkingLevel()
+{
+    using Level = GenericNetworkServerInfo::ThinkingLevel;
+    QVERIFY(GenericNetworkServerInfo::thinkingLevelI18n(Level::Unknown).isEmpty());
+    const QList<Level> levels{Level::Disabled, Level::Minimal, Level::Low, Level::Medium, Level::High, Level::Xhigh};
+    QStringList labels;
+    for (const auto level : levels) {
+        const QString label = GenericNetworkServerInfo::thinkingLevelI18n(level);
+        QVERIFY(!label.isEmpty());
+        QVERIFY(!labels.contains(label));
+        labels.append(label);
+    }
+}
+
+void GenericNetworkServerInfoTest::shouldOrderThinkingLevel()
+{
+    using Level = GenericNetworkServerInfo::ThinkingLevel;
+    QVERIFY(Level::Disabled < Level::Minimal);
+    QVERIFY(Level::Minimal < Level::Low);
+    QVERIFY(Level::Low < Level::Medium);
+    QVERIFY(Level::Medium < Level::High);
+    QVERIFY(Level::High < Level::Xhigh);
 }
 
 void GenericNetworkServerInfoTest::shouldDefineModelSupportsTools()

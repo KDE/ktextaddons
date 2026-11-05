@@ -16,6 +16,7 @@ GenericNetworkNetworkPluginConfigureWidget::GenericNetworkNetworkPluginConfigure
     setWebSiteUrl(mManager->webSite());
     setDescription(mManager->description());
     setHasCustomUrl(mManager->hasCustomUrl());
+    setHasThoughtProcessing(mManager->pluginHasThinkSupport());
 }
 
 GenericNetworkNetworkPluginConfigureWidget::~GenericNetworkNetworkPluginConfigureWidget() = default;
@@ -31,6 +32,9 @@ void GenericNetworkNetworkPluginConfigureWidget::loadSettings()
         setCustomUrl(mManager->genericNetworkSettings()->customUrl());
         setCustomModels(mManager->genericNetworkSettings()->customModels());
     }
+    if (mManager->pluginHasThinkSupport()) {
+        setThoughtProcessing(mManager->genericNetworkSettings()->thoughtProcessing());
+    }
 }
 
 void GenericNetworkNetworkPluginConfigureWidget::saveSettings()
@@ -42,6 +46,9 @@ void GenericNetworkNetworkPluginConfigureWidget::saveSettings()
     if (mManager->hasCustomUrl()) {
         mManager->genericNetworkSettings()->setCustomUrl(customUrl());
         mManager->genericNetworkSettings()->setCustomModels(customModels());
+    }
+    if (mManager->pluginHasThinkSupport()) {
+        mManager->genericNetworkSettings()->setThoughtProcessing(thoughtProcessing());
     }
     mManager->setApiKey(apiKey());
 }
