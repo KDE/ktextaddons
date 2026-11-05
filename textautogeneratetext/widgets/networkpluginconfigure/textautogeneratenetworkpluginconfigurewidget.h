@@ -14,7 +14,7 @@ class QSpinBox;
 class QDoubleSpinBox;
 class QLabel;
 class QFormLayout;
-class QCheckBox;
+class QComboBox;
 namespace TextAutoGenerateText
 {
 /*!
@@ -134,20 +134,21 @@ public:
     [[nodiscard]] QStringList customModels() const;
 
     /*!
-     * Shows the "Enable thinking" checkbox. Hidden by default.
-     * \param b true if the server supports thinking
+     * Sets the thinking levels shown in the "Thinking" combobox.
+     * The combobox is hidden when \a levels is empty (default).
+     * \param levels List of pairs (value sent to the server, translated label)
      */
-    void setHasThoughtProcessing(bool b);
+    void setThinkingLevels(const QList<std::pair<QString, QString>> &levels);
 
     /*!
-     * Sets whether thinking is enabled.
-     * \param b true to enable thinking
+     * Selects the thinking level. Selects the first entry if \a level is unknown.
+     * \param level The value sent to the server
      */
-    void setThoughtProcessing(bool b);
+    void setThinkingLevel(const QString &level);
     /*!
-     * Returns true if thinking is enabled.
+     * Returns the value of the selected thinking level, or an empty string if no level is available.
      */
-    [[nodiscard]] bool thoughtProcessing() const;
+    [[nodiscard]] QString thinkingLevel() const;
 
 Q_SIGNALS:
     /*!
@@ -167,6 +168,6 @@ private:
     QLabel *const mWebSite;
     QLabel *const mDescription;
     QFormLayout *const mMainLayout;
-    QCheckBox *const mThoughtProcessing;
+    QComboBox *const mThinkingLevel;
 };
 }

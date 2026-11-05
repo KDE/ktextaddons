@@ -20,5 +20,6 @@ public:
     void saveSettings();
 
 private:
+    TEXTAUTOGENERATEGENERICNETWORK_NO_EXPORT void updateThinkingLevels();
     GenericNetworkManager *const mManager;
 };

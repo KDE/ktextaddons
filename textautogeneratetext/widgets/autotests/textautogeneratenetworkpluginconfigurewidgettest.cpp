@@ -7,7 +7,7 @@
 #include "textautogeneratenetworkpluginconfigurewidgettest.h"
 #include "widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.h"
 #include <KPasswordLineEdit>
-#include <QCheckBox>
+#include <QComboBox>
 #include <QDoubleSpinBox>
 #include <QFormLayout>
 #include <QLabel>
@@ -51,12 +51,41 @@ void TextAutoGenerateNetworkPluginConfigureWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mCustomModels->text().isEmpty());
     QVERIFY(w.customModels().isEmpty());
 
-    auto mThoughtProcessing = w.findChild<QCheckBox *>(u"mThoughtProcessing"_s);
-    QVERIFY(mThoughtProcessing);
-    QVERIFY(!mThoughtProcessing->text().isEmpty());
-    QVERIFY(!mThoughtProcessing->isChecked());
-    QVERIFY(mThoughtProcessing->isHidden());
-    QVERIFY(!w.thoughtProcessing());
+    auto mThinkingLevel = w.findChild<QComboBox *>(u"mThinkingLevel"_s);
+    QVERIFY(mThinkingLevel);
+    QCOMPARE(mThinkingLevel->count(), 0);
+    QVERIFY(mThinkingLevel->isHidden());
+    QVERIFY(mainLayout->labelForField(mThinkingLevel)->isHidden());
+    QVERIFY(w.thinkingLevel().isEmpty());
+}
+
+void TextAutoGenerateNetworkPluginConfigureWidgetTest::shouldSetThinkingLevels()
+{
+    TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget w;
+    auto mainLayout = w.findChild<QFormLayout *>(u"mainLayout"_s);
+    auto mThinkingLevel = w.findChild<QComboBox *>(u"mThinkingLevel"_s);
+
+    w.setThinkingLevels({{QString(), u"Default"_s}, {u"low"_s, u"Low"_s}, {u"high"_s, u"High"_s}});
+    QCOMPARE(mThinkingLevel->count(), 3);
+    QVERIFY(!mThinkingLevel->isHidden());
+    QVERIFY(!mainLayout->labelForField(mThinkingLevel)->isHidden());
+    QCOMPARE(mThinkingLevel->itemText(1), u"Low"_s);
+    QVERIFY(w.thinkingLevel().isEmpty());
+
+    w.setThinkingLevel(u"high"_s);
+    QCOMPARE(w.thinkingLevel(), u"high"_s);
+    QCOMPARE(mThinkingLevel->currentText(), u"High"_s);
+
+    // Unknown level: fallback to the first entry
+    w.setThinkingLevel(u"xhigh"_s);
+    QCOMPARE(mThinkingLevel->currentIndex(), 0);
+    QVERIFY(w.thinkingLevel().isEmpty());
+
+    w.setThinkingLevels({});
+    QCOMPARE(mThinkingLevel->count(), 0);
+    QVERIFY(mThinkingLevel->isHidden());
+    QVERIFY(mainLayout->labelForField(mThinkingLevel)->isHidden());
+    QVERIFY(w.thinkingLevel().isEmpty());
 }
 
 void TextAutoGenerateNetworkPluginConfigureWidgetTest::shouldCleanCustomModels()

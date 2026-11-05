@@ -37,7 +37,7 @@ void GenericNetworkSettings::load(const KConfigGroup &config)
     setSeed(config.readEntry(u"Seed"_s, 0));
     setCustomUrl(config.readEntry(u"CustomUrl"_s, QString()));
     setCustomModels(config.readEntry(u"CustomModels"_s, QStringList()));
-    setThoughtProcessing(config.readEntry(u"ThoughtProcessing"_s, false));
+    setThinkingLevel(config.readEntry(u"ThinkingLevel"_s, QString()));
 }
 
 void GenericNetworkSettings::save(KConfigGroup &config)
@@ -45,7 +45,6 @@ void GenericNetworkSettings::save(KConfigGroup &config)
     PluginCommonSettings::save(config);
     config.writeEntry(u"MaxToken"_s, maxTokens());
     config.writeEntry(u"Seed"_s, seed());
-    config.writeEntry(u"ThoughtProcessing"_s, thoughtProcessing());
     if (const auto value = customUrl(); !value.isEmpty()) {
         config.writeEntry(u"CustomUrl"_s, value);
     } else {
@@ -55,6 +54,11 @@ void GenericNetworkSettings::save(KConfigGroup &config)
         config.writeEntry(u"CustomModels"_s, value);
     } else {
         config.deleteEntry(u"CustomModels"_s);
+    }
+    if (const auto value = thinkingLevel(); !value.isEmpty()) {
+        config.writeEntry(u"ThinkingLevel"_s, value);
+    } else {
+        config.deleteEntry(u"ThinkingLevel"_s);
     }
 }
 
@@ -78,12 +82,12 @@ void GenericNetworkSettings::setCustomModels(const QStringList &newCustomModels)
     mCustomModels = newCustomModels;
 }
 
-bool GenericNetworkSettings::thoughtProcessing() const
+QString GenericNetworkSettings::thinkingLevel() const
 {
-    return mThoughtProcessing;
+    return mThinkingLevel;
 }
 
-void GenericNetworkSettings::setThoughtProcessing(bool newThoughtProcessing)
+void GenericNetworkSettings::setThinkingLevel(const QString &newThinkingLevel)
 {
-    mThoughtProcessing = newThoughtProcessing;
+    mThinkingLevel = newThinkingLevel;
 }

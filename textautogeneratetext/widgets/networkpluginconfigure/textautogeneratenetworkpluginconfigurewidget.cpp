@@ -10,7 +10,7 @@
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <KPasswordLineEdit>
-#include <QCheckBox>
+#include <QComboBox>
 #include <QDoubleSpinBox>
 #include <QFormLayout>
 #include <QLabel>
@@ -30,7 +30,7 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     , mWebSite(new QLabel(this))
     , mDescription(new QLabel(this))
     , mMainLayout(new QFormLayout(this))
-    , mThoughtProcessing(new QCheckBox(i18nc("@option:check", "Enable thinking"), this))
+    , mThinkingLevel(new QComboBox(this))
 {
     mMainLayout->setObjectName(u"mainLayout"_s);
     mMainLayout->setContentsMargins({});
@@ -45,9 +45,7 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     mTemperature->setSingleStep(0.1);
     mSeed->setMaximum(9999);
     mSeed->setObjectName(u"mSeed"_s);
-
-    mThoughtProcessing->setObjectName(u"mThoughtProcessing"_s);
-    mThoughtProcessing->setVisible(false);
+    mThinkingLevel->setObjectName(u"mThinkingLevel"_s);
 
     mCustomUrl->setObjectName(u"mCustomUrl"_s);
     mCustomModels->setObjectName(u"mCustomModels"_s);
@@ -64,8 +62,8 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     mMainLayout->addRow(i18n("Max Tokens:"), mMaxToken);
     mMainLayout->addRow(i18n("Temperature:"), mTemperature);
     mMainLayout->addRow(i18n("Seed:"), mSeed);
-
-    mMainLayout->addRow(mThoughtProcessing);
+    mMainLayout->addRow(i18n("Thinking:"), mThinkingLevel);
+    setThinkingLevels({});
 
     KLineEditEventHandler::catchReturnKey(mApiKey->lineEdit());
     KLineEditEventHandler::catchReturnKey(mInstanceName);
@@ -88,19 +86,25 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
 
 TextAutoGenerateNetworkPluginConfigureWidget::~TextAutoGenerateNetworkPluginConfigureWidget() = default;
 
-void TextAutoGenerateNetworkPluginConfigureWidget::setHasThoughtProcessing(bool b)
+void TextAutoGenerateNetworkPluginConfigureWidget::setThinkingLevels(const QList<std::pair<QString, QString>> &levels)
 {
-    mThoughtProcessing->setVisible(b);
+    mThinkingLevel->clear();
+    for (const auto &[value, label] : levels) {
+        mThinkingLevel->addItem(label, value);
+    }
+    const bool visible = !levels.isEmpty();
+    mMainLayout->labelForField(mThinkingLevel)->setVisible(visible);
+    mThinkingLevel->setVisible(visible);
 }
 
-void TextAutoGenerateNetworkPluginConfigureWidget::setThoughtProcessing(bool b)
+void TextAutoGenerateNetworkPluginConfigureWidget::setThinkingLevel(const QString &level)
 {
-    mThoughtProcessing->setChecked(b);
+    mThinkingLevel->setCurrentIndex(std::max(0, mThinkingLevel->findData(level)));
 }
 
-bool TextAutoGenerateNetworkPluginConfigureWidget::thoughtProcessing() const
+QString TextAutoGenerateNetworkPluginConfigureWidget::thinkingLevel() const
 {
-    return mThoughtProcessing->isChecked();
+    return mThinkingLevel->currentData().toString();
 }
 
 void TextAutoGenerateNetworkPluginConfigureWidget::setHasCustomUrl(bool b)

@@ -5,21 +5,41 @@
 */
 #include "genericnetworknetworkpluginconfigurewidget.h"
 #include "genericnetworkmanager.h"
+#include "genericnetworkserverinfo.h"
 #include "genericnetworksettings.h"
+#include <KLocalizedString>
+
+using namespace Qt::Literals::StringLiterals;
 
 GenericNetworkNetworkPluginConfigureWidget::GenericNetworkNetworkPluginConfigureWidget(GenericNetworkManager *manager, QWidget *parent)
     : TextAutoGenerateText::TextAutoGenerateNetworkPluginConfigureWidget(parent)
     , mManager(manager)
 {
+    updateThinkingLevels();
     loadSettings();
     mManager->loadModels();
     setWebSiteUrl(mManager->webSite());
     setDescription(mManager->description());
     setHasCustomUrl(mManager->hasCustomUrl());
-    setHasThoughtProcessing(mManager->pluginHasThinkSupport());
 }
 
 GenericNetworkNetworkPluginConfigureWidget::~GenericNetworkNetworkPluginConfigureWidget() = default;
+
+void GenericNetworkNetworkPluginConfigureWidget::updateThinkingLevels()
+{
+    const QList<GenericNetworkServerInfo::ThinkingLevel> levels =
+        GenericNetworkServerInfo::thinkingLevelList(mManager->pluginNetworkType(), mManager->genericNetworkSettings()->currentModel());
+    QList<std::pair<QString, QString>> items;
+    if (!levels.isEmpty()) {
+        items.reserve(levels.count() + 1);
+        // Empty value: don't send any level, the server uses its default
+        items.append({QString(), i18nc("@item:inlistbox thinking level", "Default")});
+        for (const auto level : levels) {
+            items.append({GenericNetworkServerInfo::thinkingLevel(level), GenericNetworkServerInfo::thinkingLevelI18n(level)});
+        }
+    }
+    setThinkingLevels(items);
+}
 
 void GenericNetworkNetworkPluginConfigureWidget::loadSettings()
 {
@@ -32,9 +52,7 @@ void GenericNetworkNetworkPluginConfigureWidget::loadSettings()
         setCustomUrl(mManager->genericNetworkSettings()->customUrl());
         setCustomModels(mManager->genericNetworkSettings()->customModels());
     }
-    if (mManager->pluginHasThinkSupport()) {
-        setThoughtProcessing(mManager->genericNetworkSettings()->thoughtProcessing());
-    }
+    setThinkingLevel(mManager->genericNetworkSettings()->thinkingLevel());
 }
 
 void GenericNetworkNetworkPluginConfigureWidget::saveSettings()
@@ -47,9 +65,7 @@ void GenericNetworkNetworkPluginConfigureWidget::saveSettings()
         mManager->genericNetworkSettings()->setCustomUrl(customUrl());
         mManager->genericNetworkSettings()->setCustomModels(customModels());
     }
-    if (mManager->pluginHasThinkSupport()) {
-        mManager->genericNetworkSettings()->setThoughtProcessing(thoughtProcessing());
-    }
+    mManager->genericNetworkSettings()->setThinkingLevel(thinkingLevel());
     mManager->setApiKey(apiKey());
 }
 
