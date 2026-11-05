@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:01+0000\n"
+"POT-Creation-Date: 2026-11-05 00:54+0000\n"
 "PO-Revision-Date: 2026-11-02 09:01+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -274,12 +274,12 @@ msgstr ""
 "Ви є штучним інтелектом — помічником. Будьте корисним, професійним і "
 "люб'язним. Не надавайте неперевірених відомостей."
 
-#: core/textautogeneratetextplugin.cpp:388
+#: core/textautogeneratetextplugin.cpp:399
 #, kde-format
 msgid "Local"
 msgstr "Локальний"
 
-#: core/textautogeneratetextplugin.cpp:390
+#: core/textautogeneratetextplugin.cpp:401
 #, kde-format
 msgid "Network"
 msgstr "Мережевий"

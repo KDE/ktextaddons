@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-30 00:52+0000\n"
+"POT-Creation-Date: 2026-11-05 00:54+0000\n"
 "PO-Revision-Date: 2026-10-30 07:45+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -459,29 +459,42 @@ msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "Удаление сервера"
 
-#: widgets/client/mcpserverwidget.cpp:44
+#: widgets/client/mcpserverwidget.cpp:45
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Поиск…"
 
-#: widgets/client/mcpserverwidget.cpp:51
+#: widgets/client/mcpserverwidget.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Добавить сервер…"
 
-#: widgets/client/mcpserverwidget.cpp:56
+#: widgets/client/mcpserverwidget.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "Server"
 msgstr "Сервер"
 
-#: widgets/client/mcpserverwidget.cpp:58
+#: widgets/client/mcpserverwidget.cpp:59
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
 msgstr "Из реестра MCP…"
+
+#: widgets/client/mcpserverwidget.cpp:170
+#, kde-format
+msgid "This server does not provide a supported transport (remote or package)."
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:170
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
+msgctxt "@title:window"
+msgid "Add MCP Server"
+msgstr "Добавление сервера"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

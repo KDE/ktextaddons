@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:01+0000\n"
+"POT-Creation-Date: 2026-11-05 00:54+0000\n"
 "PO-Revision-Date: 2026-08-25 15:36+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -276,12 +276,12 @@ msgstr ""
 "Vous êtes un assistant IA. Soyez serviable, professionnel et courtois. Ne "
 "donnez aucune information inexacte."
 
-#: core/textautogeneratetextplugin.cpp:388
+#: core/textautogeneratetextplugin.cpp:399
 #, kde-format
 msgid "Local"
 msgstr "Local"
 
-#: core/textautogeneratetextplugin.cpp:390
+#: core/textautogeneratetextplugin.cpp:401
 #, kde-format
 msgid "Network"
 msgstr "Réseau"
