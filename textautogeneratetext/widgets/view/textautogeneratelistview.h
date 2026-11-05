@@ -53,7 +53,6 @@ Q_SIGNALS:
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void handleMouseEvent(QMouseEvent *event) override;
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemoveMessage(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void addSelectedMessageBackgroundAnimation(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequested(const QModelIndex &index);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index);

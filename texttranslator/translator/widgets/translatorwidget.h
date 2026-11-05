@@ -100,7 +100,6 @@ Q_SIGNALS:
 
 private:
     TEXTTRANSLATOR_NO_EXPORT void init();
-    TEXTTRANSLATOR_NO_EXPORT void initLanguage();
     TEXTTRANSLATOR_NO_EXPORT void switchEngine();
     TEXTTRANSLATOR_NO_EXPORT void loadEngineSettings();
     TEXTTRANSLATOR_NO_EXPORT void updatePlaceHolder();

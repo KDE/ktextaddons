@@ -34,7 +34,6 @@ Q_SIGNALS:
 private:
     TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void slotLMSStarted();
     TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void fillModels();
-    TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void slotStartLMStudio();
     TEXTAUTOGENERATELMSTUDIO_NO_EXPORT void displayModelInfo(const QString &modelStr);
     QLineEdit *const mName;
     QLineEdit *const mUrl;

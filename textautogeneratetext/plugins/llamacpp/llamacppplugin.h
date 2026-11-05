@@ -62,8 +62,6 @@ private:
     void removeApiKey();
     void loadApiKey();
     void slotLMStudioRequested();
-    void slotLMStudioFailed(const QString &errorStr);
-    void slotLMStudioStarted();
     void slotDownloadLMStudio();
     LLamaCppSettings *const mLLamaCppSettings;
     // LMStudioManager *const mLMStudioManager;

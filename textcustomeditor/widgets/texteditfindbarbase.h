@@ -87,8 +87,6 @@ protected:
     /*! Searches for text with the given options. */
     bool searchText(bool backward, bool isAutoSearch);
 
-    /*! Updates the visual indication of whether a match was found. */
-    void setFoundMatch(bool match);
     /*! Displays a message about the search result. */
     void messageInfo(bool backward, bool isAutoSearch, bool found);
 
