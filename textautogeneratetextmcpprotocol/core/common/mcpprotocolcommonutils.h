@@ -57,6 +57,7 @@ addToolMeta(TextAutoGenerateTextMcpProtocolCore::McpProtocolMeta &meta, const QS
  * \param groupName
  * \param groupTitle
  */
-void addToolMeta(TextAutoGenerateTextMcpProtocolCore::McpProtocolTool &tool, const QString &groupName, const QString &groupTitle);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void
+addToolMeta(TextAutoGenerateTextMcpProtocolCore::McpProtocolTool &tool, const QString &groupName, const QString &groupTitle);
 }
 }
