@@ -209,6 +209,7 @@ void TextAutoGenerateTextLineEditWidget::setChatId(const QByteArray &newChatId)
 void TextAutoGenerateTextLineEditWidget::setActivatedTools(const QList<QByteArray> &lst)
 {
     mTextAutoGenerateToolsWidget->setActivatedTools(lst);
+    mConfigureTools->setChecked(mTextAutoGenerateToolsWidget->isVisible());
 }
 
 void TextAutoGenerateTextLineEditWidget::setDefaultActivatedTools()
