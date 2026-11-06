@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"POT-Creation-Date: 2026-11-06 00:49+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -328,7 +328,7 @@ msgctxt "@title:window"
 msgid "Bergamot Plugin Settings"
 msgstr "Bergamot 插件设置"
 
-#: translator/plugins/bergamot/bergamotengineclient.cpp:34
+#: translator/plugins/bergamot/bergamotengineclient.cpp:32
 #: translator/plugins/bergamot/bergamotenginelanguagewidget.cpp:178
 #, kde-format
 msgid "Bergamot"
@@ -580,12 +580,12 @@ msgstr "服务器 URL："
 msgid "Server url is not defined."
 msgstr "服务器 URL 未定义。"
 
-#: translator/plugins/lingva/lingvaengineclient.cpp:33
+#: translator/plugins/lingva/lingvaengineclient.cpp:32
 #, kde-format
 msgid "Lingva"
 msgstr "Lingva"
 
-#: translator/plugins/yandex/yandexengineclient.cpp:28
+#: translator/plugins/yandex/yandexengineclient.cpp:27
 #, kde-format
 msgid "Yandex"
 msgstr "Yandex"
@@ -632,7 +632,7 @@ msgid "To:"
 msgstr "目标："
 
 #: translator/widgets/translatorconfigurelistswidget.cpp:51
-#: translator/widgets/translatorconfigurewidget.cpp:41
+#: translator/widgets/translatorconfigurewidget.cpp:40
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
@@ -674,70 +674,70 @@ msgstr "所有文件 (*)"
 msgid "Translate…"
 msgstr "翻译…"
 
-#: translator/widgets/translatorwidget.cpp:210
+#: translator/widgets/translatorwidget.cpp:209
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "关闭"
 
-#: translator/widgets/translatorwidget.cpp:213
+#: translator/widgets/translatorwidget.cpp:212
 #, kde-format
 msgid "Close"
 msgstr "关闭"
 
-#: translator/widgets/translatorwidget.cpp:219
+#: translator/widgets/translatorwidget.cpp:218
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "原始："
 
-#: translator/widgets/translatorwidget.cpp:227
+#: translator/widgets/translatorwidget.cpp:226
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "目标："
 
-#: translator/widgets/translatorwidget.cpp:240
+#: translator/widgets/translatorwidget.cpp:239
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "对调"
 
-#: translator/widgets/translatorwidget.cpp:245
+#: translator/widgets/translatorwidget.cpp:244
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "清除"
 
-#: translator/widgets/translatorwidget.cpp:248
+#: translator/widgets/translatorwidget.cpp:247
 #, kde-format
 msgid "Clear"
 msgstr "清除"
 
-#: translator/widgets/translatorwidget.cpp:253
+#: translator/widgets/translatorwidget.cpp:252
 #, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "翻译"
 
-#: translator/widgets/translatorwidget.cpp:256
+#: translator/widgets/translatorwidget.cpp:255
 #, kde-format
 msgid "Translate"
 msgstr "翻译"
 
-#: translator/widgets/translatorwidget.cpp:263
+#: translator/widgets/translatorwidget.cpp:262
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "调试"
 
-#: translator/widgets/translatorwidget.cpp:281
+#: translator/widgets/translatorwidget.cpp:280
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "配置"
 
-#: translator/widgets/translatorwidget.cpp:360
+#: translator/widgets/translatorwidget.cpp:359
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -745,24 +745,24 @@ msgid ""
 "external Server)."
 msgstr "拖动选择您想要翻译的文本。(请注意：这些文本将被发送到外部服务器)。"
 
-#: translator/widgets/translatorwidget.cpp:362
+#: translator/widgets/translatorwidget.cpp:361
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "拖动选择您想要翻译的文本。"
 
-#: translator/widgets/translatorwidget.cpp:413
+#: translator/widgets/translatorwidget.cpp:412
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "没有检测到网络连接，无法翻译文本。"
 
-#: translator/widgets/translatorwidget.cpp:413
+#: translator/widgets/translatorwidget.cpp:412
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "没有网络"
 
-#: translator/widgets/translatorwidget.cpp:450
+#: translator/widgets/translatorwidget.cpp:449
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:43+0000\n"
+"POT-Creation-Date: 2026-11-06 00:49+0000\n"
 "PO-Revision-Date: 2026-10-03 23:27+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -330,7 +330,7 @@ msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "새로 고침"
 
-#: languagetool/languagetoolgetlistoflanguagejob.cpp:35
+#: languagetool/languagetoolgetlistoflanguagejob.cpp:36
 #, kde-format
 msgid "Url is empty."
 msgstr "URL이 비어 있습니다."

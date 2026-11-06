@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextspeechtotext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:46+0000\n"
+"POT-Creation-Date: 2026-11-06 00:49+0000\n"
 "PO-Revision-Date: 2026-10-07 17:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -30,7 +30,7 @@ msgid "Impossible to store language info."
 msgstr "No se puede guardar la información sobre el idioma."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -40,22 +40,22 @@ msgstr ""
 "red de equipos. Vuelva a realizar su petición más tarde."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:52
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:53
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "No se puede acceder a la URL: %1"
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:38
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:39
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "No se puede abrir el archivo para la descarga."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:63
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:64
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "La suma de verificación no es correcta."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:73
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:74
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Ha ocurrido un error al escribir en disco: %1"
@@ -78,40 +78,40 @@ msgctxt "@action"
 msgid "Download"
 msgstr "Descargar"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:51
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:50
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Buscar…"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:84
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:83
 #, kde-format
 msgid "Download"
 msgstr "Descargar"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:91
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
 #, kde-format
 msgid "Delete"
 msgstr "Borrar"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:95
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Actualizar lista"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:96
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Actualizar la lista de idiomas de la red"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:193
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:193
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:30
 #, kde-format
 msgid "Vosk"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"POT-Creation-Date: 2026-11-06 00:49+0000\n"
 "PO-Revision-Date: 2026-09-30 08:30+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -19,37 +19,37 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 25.12.1\n"
 
-#: kokoro/texttospeechkokoro.cpp:124
+#: kokoro/texttospeechkokoro.cpp:125
 #, kde-format
 msgid "Kokoro is not installed. Please install it first."
 msgstr "Kokoro не установлен. Сначала установите его."
 
-#: kokoro/texttospeechkokoro.cpp:146
+#: kokoro/texttospeechkokoro.cpp:147
 #, kde-format
 msgid "The Kokoro backend stopped unexpectedly."
 msgstr "Модуль Kokoro неожиданно завершил работу."
 
-#: kokoro/texttospeechkokoro.cpp:156
+#: kokoro/texttospeechkokoro.cpp:157
 #, kde-format
 msgid "Unable to start the Kokoro backend."
 msgstr "Не удалось запустить модуль Kokoro."
 
-#: kokoro/texttospeechkokoro.cpp:257
+#: kokoro/texttospeechkokoro.cpp:258
 #, kde-format
 msgid "Kokoro was unable to synthesize the text: %1"
 msgstr "Kokoro не удалось синтезировать текст: %1"
 
-#: kokoro/texttospeechkokoro.cpp:272
+#: kokoro/texttospeechkokoro.cpp:273
 #, kde-format
 msgid "Kokoro reported an unusable audio format."
 msgstr "Kokoro сообщил о неподдерживаемом формате звука."
 
-#: kokoro/texttospeechkokoro.cpp:329
+#: kokoro/texttospeechkokoro.cpp:330
 #, kde-format
 msgid "Unable to open the audio device."
 msgstr "Не удалось открыть звуковое устройство."
 
-#: kokoro/texttospeechkokoro.cpp:344
+#: kokoro/texttospeechkokoro.cpp:345
 #, kde-format
 msgid "The audio device stopped working."
 msgstr "Звуковое устройство прекратило работу."
@@ -60,7 +60,7 @@ msgid "Kokoro is not usable. Please reinstall it."
 msgstr "Kokoro неработоспособен. Переустановите его."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:54
-#: texttospeechconfigwidget.cpp:318
+#: texttospeechconfigwidget.cpp:319
 #, kde-format
 msgid "Kokoro is not installed. Missing: %1"
 msgstr "Kokoro не установлен. Отсутствует: %1"
@@ -223,52 +223,52 @@ msgstr "Настройка преобразования текста в речь
 msgid "Morning, this is the test for testing settings."
 msgstr "Это тест для проверки параметров."
 
-#: texttospeechconfigwidget.cpp:42
+#: texttospeechconfigwidget.cpp:43
 #, kde-format
 msgid "Test"
 msgstr "Проверить"
 
-#: texttospeechconfigwidget.cpp:45
+#: texttospeechconfigwidget.cpp:46
 #, kde-format
 msgid "Configure…"
 msgstr "Настроить…"
 
-#: texttospeechconfigwidget.cpp:62
+#: texttospeechconfigwidget.cpp:63
 #, kde-format
 msgid "Volume:"
 msgstr "Громкость:"
 
-#: texttospeechconfigwidget.cpp:66
+#: texttospeechconfigwidget.cpp:67
 #, kde-format
 msgid "Rate:"
 msgstr "Скорость:"
 
-#: texttospeechconfigwidget.cpp:72
+#: texttospeechconfigwidget.cpp:73
 #, kde-format
 msgid "Pitch:"
 msgstr "Тон:"
 
-#: texttospeechconfigwidget.cpp:90
+#: texttospeechconfigwidget.cpp:91
 #, kde-format
 msgid "Engine:"
 msgstr "Модуль:"
 
-#: texttospeechconfigwidget.cpp:94
+#: texttospeechconfigwidget.cpp:95
 #, kde-format
 msgid "Language:"
 msgstr "Язык:"
 
-#: texttospeechconfigwidget.cpp:98
+#: texttospeechconfigwidget.cpp:99
 #, kde-format
 msgid "Voice:"
 msgstr "Голос:"
 
-#: texttospeechconfigwidget.cpp:118
+#: texttospeechconfigwidget.cpp:119
 #, kde-format
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: texttospeechconfigwidget.cpp:323
+#: texttospeechconfigwidget.cpp:324
 #, kde-format
 msgid "Kokoro installation is broken. Please verify with your sysadmin."
 msgstr "Установка Kokoro повреждена. Обратитесь к системному администратору."

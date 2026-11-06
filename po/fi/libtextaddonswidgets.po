@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:44+0000\n"
+"POT-Creation-Date: 2026-11-06 00:49+0000\n"
 "PO-Revision-Date: 2026-09-16 19:44+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -69,19 +69,19 @@ msgctxt "@title:window"
 msgid "Save File"
 msgstr "Tallenna tiedosto"
 
-#: misc/savefileutils.cpp:71
+#: misc/savefileutils.cpp:73
 #, kde-format
 msgid "Source file no longer exists"
 msgstr "Lähdetiedostoa ei enää ole"
 
-#: misc/savefileutils.cpp:71 misc/savefileutils.cpp:77
-#: misc/savefileutils.cpp:82
+#: misc/savefileutils.cpp:73 misc/savefileutils.cpp:79
+#: misc/savefileutils.cpp:84
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving file"
 msgstr "Virhe tallennettaessa tiedostoa"
 
-#: misc/savefileutils.cpp:77
+#: misc/savefileutils.cpp:79
 #, kde-format
 msgid "Cannot overwrite existing file"
 msgstr "Ei voi korvata olemassa olevaa tiedostoa"
@@ -296,7 +296,7 @@ msgstr "Joitakin vikoja on korjattu:"
 #: whatsnew/whatsnewwidget.cpp:146
 #, kde-format
 msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-msgstr ""
+msgstr "<h1><i> Versio %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
 #, kde-format

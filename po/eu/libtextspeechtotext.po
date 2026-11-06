@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:46+0000\n"
+"POT-Creation-Date: 2026-11-06 00:49+0000\n"
 "PO-Revision-Date: 2026-09-28 22:17+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -38,7 +38,7 @@ msgid "Impossible to store language info."
 msgstr "Ezin da hizkuntzaren informazioa gorde."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -48,22 +48,22 @@ msgstr ""
 "susmagarria hauteman dute. Saiatu eskaera geroago berriro egiten."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:52
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:53
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Ezin da URLa atzitu: %1"
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:38
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:39
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "Ezin da fitxategia ireki zama-jaisteko."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:63
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:64
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Egiaztapen-batura ez da zuzena."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:73
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:74
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Errorea diskoan idaztean: %1"
@@ -86,40 +86,40 @@ msgctxt "@action"
 msgid "Download"
 msgstr "Zama-jaitsi"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:51
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:50
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Bilatu…"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:84
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:83
 #, kde-format
 msgid "Download"
 msgstr "Zama-jaitsi"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:91
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
 #, kde-format
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:95
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "Eguneratu zerrenda"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:96
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "Hizkuntzen zerrenda saretik eguneratu"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:193
 #, kde-format
 msgid "Error: %1"
 msgstr "Errorea: %1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:193
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:30
 #, kde-format
 msgid "Vosk"

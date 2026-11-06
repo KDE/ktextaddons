@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:43+0000\n"
+"POT-Creation-Date: 2026-11-06 00:49+0000\n"
 "PO-Revision-Date: 2026-09-29 09:15+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -335,7 +335,7 @@ msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Actualitza"
 
-#: languagetool/languagetoolgetlistoflanguagejob.cpp:35
+#: languagetool/languagetoolgetlistoflanguagejob.cpp:36
 #, kde-format
 msgid "Url is empty."
 msgstr "L'URL està buit."

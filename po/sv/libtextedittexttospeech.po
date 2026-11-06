@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 17:39+0000\n"
+"POT-Creation-Date: 2026-11-06 00:49+0000\n"
 "PO-Revision-Date: 2026-09-30 21:14+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.08.1\n"
 
-#: kokoro/texttospeechkokoro.cpp:124
+#: kokoro/texttospeechkokoro.cpp:125
 #, kde-format
 msgid "Kokoro is not installed. Please install it first."
 msgstr "Kokoro är inte installerat. Installera det först."
 
-#: kokoro/texttospeechkokoro.cpp:146
+#: kokoro/texttospeechkokoro.cpp:147
 #, kde-format
 msgid "The Kokoro backend stopped unexpectedly."
 msgstr "Kokoro-gränssnittet stoppades oväntat."
 
-#: kokoro/texttospeechkokoro.cpp:156
+#: kokoro/texttospeechkokoro.cpp:157
 #, kde-format
 msgid "Unable to start the Kokoro backend."
 msgstr "Kan inte starta Kokoro-gränssnittet."
 
-#: kokoro/texttospeechkokoro.cpp:257
+#: kokoro/texttospeechkokoro.cpp:258
 #, kde-format
 msgid "Kokoro was unable to synthesize the text: %1"
 msgstr "Kokoro kunde inte syntetisera texten: %1"
 
-#: kokoro/texttospeechkokoro.cpp:272
+#: kokoro/texttospeechkokoro.cpp:273
 #, kde-format
 msgid "Kokoro reported an unusable audio format."
 msgstr "Kokoro rapporterade ett oanvändbart ljudformat."
 
-#: kokoro/texttospeechkokoro.cpp:329
+#: kokoro/texttospeechkokoro.cpp:330
 #, kde-format
 msgid "Unable to open the audio device."
 msgstr "Kan inte öppna ljudenheten."
 
-#: kokoro/texttospeechkokoro.cpp:344
+#: kokoro/texttospeechkokoro.cpp:345
 #, kde-format
 msgid "The audio device stopped working."
 msgstr "Ljudenheten slutade fungera."
@@ -58,7 +58,7 @@ msgid "Kokoro is not usable. Please reinstall it."
 msgstr "Kokoro är inte användbart. Installera om det."
 
 #: kokoroinstall/texttospeechkokorocheckjob.cpp:54
-#: texttospeechconfigwidget.cpp:318
+#: texttospeechconfigwidget.cpp:319
 #, kde-format
 msgid "Kokoro is not installed. Missing: %1"
 msgstr "Kokoro är inte installerat. Saknar: %1"
@@ -220,52 +220,52 @@ msgstr "Anpassa text-till-tal"
 msgid "Morning, this is the test for testing settings."
 msgstr "God morgon, det här är testen för att verifiera inställningarna."
 
-#: texttospeechconfigwidget.cpp:42
+#: texttospeechconfigwidget.cpp:43
 #, kde-format
 msgid "Test"
 msgstr "Prova"
 
-#: texttospeechconfigwidget.cpp:45
+#: texttospeechconfigwidget.cpp:46
 #, kde-format
 msgid "Configure…"
 msgstr "Anpassa…"
 
-#: texttospeechconfigwidget.cpp:62
+#: texttospeechconfigwidget.cpp:63
 #, kde-format
 msgid "Volume:"
 msgstr "Volym:"
 
-#: texttospeechconfigwidget.cpp:66
+#: texttospeechconfigwidget.cpp:67
 #, kde-format
 msgid "Rate:"
 msgstr "Hastighet:"
 
-#: texttospeechconfigwidget.cpp:72
+#: texttospeechconfigwidget.cpp:73
 #, kde-format
 msgid "Pitch:"
 msgstr "Tonhöjd:"
 
-#: texttospeechconfigwidget.cpp:90
+#: texttospeechconfigwidget.cpp:91
 #, kde-format
 msgid "Engine:"
 msgstr "Gränssnitt:"
 
-#: texttospeechconfigwidget.cpp:94
+#: texttospeechconfigwidget.cpp:95
 #, kde-format
 msgid "Language:"
 msgstr "Språk:"
 
-#: texttospeechconfigwidget.cpp:98
+#: texttospeechconfigwidget.cpp:99
 #, kde-format
 msgid "Voice:"
 msgstr "Röst:"
 
-#: texttospeechconfigwidget.cpp:118
+#: texttospeechconfigwidget.cpp:119
 #, kde-format
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: texttospeechconfigwidget.cpp:323
+#: texttospeechconfigwidget.cpp:324
 #, kde-format
 msgid "Kokoro installation is broken. Please verify with your sysadmin."
 msgstr ""

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:46+0000\n"
-"PO-Revision-Date: 2026-10-01 04:48+0900\n"
+"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"PO-Revision-Date: 2026-11-05 23:11+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -28,7 +28,7 @@ msgid "Impossible to store language info."
 msgstr "無法儲存語言資訊。"
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -36,22 +36,22 @@ msgid ""
 msgstr "錯誤：引擎系統認為來自您的電腦的存取是可疑的。請稍作等候之後再試。"
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:52
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:53
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "無法存取 URL：%1"
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:38
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:39
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "無法開啟檔案以下載。"
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:63
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:64
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "檢查碼不正確。"
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:73
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:74
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "寫入磁碟時發生錯誤：%1"
@@ -74,40 +74,40 @@ msgctxt "@action"
 msgid "Download"
 msgstr "下載"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:51
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:50
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "搜尋…"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:84
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:83
 #, kde-format
 msgid "Download"
 msgstr "下載"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:91
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:90
 #, kde-format
 msgid "Delete"
 msgstr "刪除"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:95
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:94
 #, kde-format
 msgctxt "@action:button"
 msgid "Update List"
 msgstr "更新列表"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:96
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:95
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Update list of languages from network"
 msgstr "從網路更新語言列表"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:193
 #, kde-format
 msgid "Error: %1"
 msgstr "錯誤：%1"
 
-#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:194
+#: speechtotext/plugins/vosk/voskenginelanguagewidget.cpp:193
 #: speechtotext/plugins/vosk/voskspeechtotextclient.cpp:30
 #, kde-format
 msgid "Vosk"
@@ -224,54 +224,53 @@ msgstr "下載模型"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Model used for dictation:"
-msgstr ""
+msgstr "語音輸入模型："
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:98
 #, kde-format
 msgid "Nothing to install."
-msgstr ""
+msgstr "無可安裝。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:105
 #, kde-format
 msgid "Creating the python virtual environment…"
-msgstr ""
+msgstr "正在建立 Python 虛擬環境…"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:108
 #, kde-format
 msgid "Python virtual environment created."
-msgstr ""
+msgstr "已建立 Python 虛擬環境。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:112
 #, kde-format
 msgid "Unable to create the python virtual environment."
-msgstr ""
+msgstr "無法建立 Python 虛擬環境。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:130
 #, kde-format
 msgid "Installing modules in %1: %2"
-msgstr ""
+msgstr "正在安裝模組於 %1：%2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:135
 #, kde-format
 msgid "Installation done."
-msgstr ""
+msgstr "安裝完成。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgid "Installation failed."
-msgstr "已安裝"
+msgstr "安裝失敗。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:161
 #, kde-format
 msgctxt "@info:progress <downloaded> of <size of the model>"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 / %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:171
 #, kde-format
 msgid "Unable to download the %1 model."
-msgstr ""
+msgstr "無法下載 %1 模型。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:187
 #, kde-format
@@ -279,6 +278,8 @@ msgid ""
 "The %1 model is not on disk: it is downloaded the first time it is used, "
 "which makes that dictation a long one. The Download Model button does it now."
 msgstr ""
+"%1 模型不在磁碟上：它會在第一次使用時下載，使得該次語音輸入花費極長。您可以用"
+"「下載模型」按鈕來現在進行下載。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:30
 #, kde-format
@@ -286,37 +287,37 @@ msgctxt ""
 "@item:inlistbox <model name> (<size on disk>), the model is already "
 "downloaded"
 msgid "%1 (%2, downloaded)"
-msgstr ""
+msgstr "%1（%2，已下載）"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:34
 #, kde-format
 msgctxt "@item:inlistbox <model name> (<size on disk>)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1（%2）"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Transcribes every language whisper knows."
-msgstr ""
+msgstr "轉寫 Whisper 知道的所有語言。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Transcribes english only, but about twice as fast."
-msgstr ""
+msgstr "只轉寫英文，但大概快兩倍。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Takes %1 on disk, downloaded the first time it is used."
-msgstr ""
+msgstr "磁碟上會佔用 %1，第一次使用時下載。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Used when no model was chosen."
-msgstr ""
+msgstr "未選取模型時使用。"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
 #, kde-format
@@ -327,12 +328,12 @@ msgstr "設定語音轉文字"
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
 #, kde-format
 msgid "Test:"
-msgstr ""
+msgstr "測試："
 
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:109
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
-msgstr ""
+msgstr "Whisper 安裝已毀損。請重新安裝它。"
 
 #: speechtotext/widgets/speechtotextenginecomboboxwidget.cpp:28
 #, kde-format

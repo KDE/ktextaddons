@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2023, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2023, 2024, 2026 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:43+0000\n"
-"PO-Revision-Date: 2024-10-16 20:54+0300\n"
+"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"PO-Revision-Date: 2026-10-29 18:31+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: common/grammarresulttextedit.cpp:37
 #, kde-format
@@ -331,10 +331,10 @@ msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Virkistä"
 
-#: languagetool/languagetoolgetlistoflanguagejob.cpp:35
+#: languagetool/languagetoolgetlistoflanguagejob.cpp:36
 #, kde-format
 msgid "Url is empty."
-msgstr ""
+msgstr "Verkko-osoite on tyhjä."
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format

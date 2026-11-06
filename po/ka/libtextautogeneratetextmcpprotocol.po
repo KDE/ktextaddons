@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-05 00:54+0000\n"
-"PO-Revision-Date: 2026-10-30 04:32+0100\n"
+"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"PO-Revision-Date: 2026-11-05 05:27+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -108,12 +108,12 @@ msgstr "კლიენტის გაშვება შეუძლებე�
 msgid "Impossible to start client. Arguments are invalid."
 msgstr "კლიენტის გაშვება შეუძლებელია. არგუმენტები არასწორია."
 
-#: plugins/client/stdio/mcpclientstdio.cpp:110
+#: plugins/client/stdio/mcpclientstdio.cpp:114
 #, kde-format
 msgid "Impossible to send message. Client is not running."
 msgstr "შეტყობინების გაგზავნა შეუძლებელია. კლიენტი გაშვებული არაა."
 
-#: plugins/client/stdio/mcpclientstdio.cpp:129
+#: plugins/client/stdio/mcpclientstdio.cpp:133
 #, kde-format
 msgid "Message received from server is too big."
 msgstr "სერვერიდან მიღებული შეტყობინება მეტისმეტად დიდია."
@@ -130,14 +130,14 @@ msgstr "კავშირი დაიკარგა პასუხის მ
 msgid "Session expired. Client must be restarted."
 msgstr "სესიის ვადა ამოიწურა. კლიენტი უნდა გადაიტვირთოს."
 
-#: plugins/server/sse/mcpserversse.cpp:38
+#: plugins/server/sse/mcpserversse.cpp:39
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:112
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:122
 #, kde-format
 msgid "Impossible to start server. URL is invalid."
 msgstr "სერვერის გაშვება შეუძლებელია. ბმული არასწორია."
 
-#: plugins/server/sse/mcpserversse.cpp:89
+#: plugins/server/sse/mcpserversse.cpp:90
 #, kde-format
 msgid "Sending message is not implemented yet."
 msgstr "შეტყობინების გაგზავნა ჯერ განხორციელებული არაა."
@@ -295,17 +295,60 @@ msgctxt "@label:textbox"
 msgid "Authentication token:"
 msgstr "ავტორიზაციის ტოკენი:"
 
-#: widgets/client/addmcpstdioserverwidget.cpp:24
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:19
+#: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:43
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove"
+msgstr "წაშლა"
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Name:"
+msgctxt "@title:column"
+msgid "Name"
+msgstr "სახელი:"
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Name: Value"
+msgctxt "@title:column"
+msgid "Value"
+msgstr "სახელი: მნიშვნელობა"
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "An empty value keeps the variable from the user environment."
+msgstr ""
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:38
+#: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:33
+#, kde-format
+msgctxt "@action:button"
+msgid "Add"
+msgstr "დამატება"
+
+#: widgets/client/addmcpstdioserverwidget.cpp:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Command:"
 msgstr "ბრძანება:"
 
-#: widgets/client/addmcpstdioserverwidget.cpp:29
+#: widgets/client/addmcpstdioserverwidget.cpp:31
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
 msgstr "არგუმენტები:"
+
+#: widgets/client/addmcpstdioserverwidget.cpp:36
+#, fuzzy, kde-format
+#| msgid "Environment variables:"
+msgctxt "@label"
+msgid "Environment:"
+msgstr "გარემოს ცვლადები:"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfiguredialog.cpp:25
 #, kde-format
@@ -331,23 +374,11 @@ msgctxt "@info:placeholder"
 msgid "Name: Value"
 msgstr "სახელი: მნიშვნელობა"
 
-#: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:33
-#, kde-format
-msgctxt "@action:button"
-msgid "Add"
-msgstr "დამატება"
-
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
 msgstr "ჩასწორება"
-
-#: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:43
-#, kde-format
-msgctxt "@action:button"
-msgid "Remove"
-msgstr "წაშლა"
 
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:71
 #, kde-format
@@ -482,18 +513,17 @@ msgctxt "@action"
 msgid "From MCP Registry…"
 msgstr "MCP რეესტრიდან…"
 
-#: widgets/client/mcpserverwidget.cpp:170
+#: widgets/client/mcpserverwidget.cpp:172
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr ""
+"ეს სერვერი მხარდაჭერილ ტრანსპორტს (დაშორებულს, ან პაკეტს) არ მოგაწვდით."
 
-#: widgets/client/mcpserverwidget.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#: widgets/client/mcpserverwidget.cpp:172
+#, kde-format
 msgctxt "@title:window"
 msgid "Add MCP Server"
-msgstr "სერვერის დამატება"
+msgstr "MCP სერვერის დამატება"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
@@ -501,24 +531,24 @@ msgctxt "@title:window"
 msgid "Server Configuration"
 msgstr "სერვერის კონფიგურაცია"
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:22
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:23
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy"
 msgstr "კოპირება"
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:28
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:29
 #, kde-format
 msgid "Token:"
 msgstr "ტოკენი:"
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:41
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy token to clipboard"
 msgstr "ტოკენის კოპირება ბუფერში"
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:71
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:72
 #, kde-format
 msgid ""
 "Clients which use the current token will not be able to connect until they "
@@ -527,20 +557,20 @@ msgstr ""
 "კლიენტები, რომლებიც მიმდინარე ტოკენს იყენებენ, დაკავშირებას ვერ შეძლებენ "
 "მანამდე, სანამ ტოკენს არ განაახლებენ."
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:72
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Regenerate Token"
 msgstr "ტოკენის თავიდან გენერაცია"
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:73
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:74
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Regenerate"
 msgstr "თავიდან გენერაცია"
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Generate"

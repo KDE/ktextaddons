@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-05 00:54+0000\n"
-"PO-Revision-Date: 2026-05-21 22:30+0900\n"
+"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"PO-Revision-Date: 2026-11-05 23:22+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,44 +15,42 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.07.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:436
 #, kde-format
 msgid "Initialize request timed out."
-msgstr ""
+msgstr "初始化請求逾時了。"
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:611
 #, kde-format
 msgid "Invalid server settings."
-msgstr ""
+msgstr "無效的伺服器設定。"
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:631
 #, kde-format
 msgid "Impossible to start client."
-msgstr ""
+msgstr "無法啟動用戶端。"
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:884
 #, kde-format
 msgid "Unsupported protocol version: %1"
-msgstr ""
+msgstr "不支援的協定版本：%1"
 
 #: core/client/mcpserver.cpp:115
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "SSE"
-msgstr ""
+msgstr "SSE"
 
 #: core/client/mcpserver.cpp:117
-#, fuzzy, kde-format
-#| msgid "Standard IO"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Standard IO"
 msgstr "標準輸入輸出"
 
 #: core/client/mcpserver.cpp:119
-#, fuzzy, kde-format
-#| msgid "Streamable HTTP"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "可串流 HTTP"
@@ -60,151 +58,149 @@ msgstr "可串流 HTTP"
 #: core/server/mcpprotocolserverprotocolmanager.cpp:128
 #, kde-format
 msgid "Starting server"
-msgstr ""
+msgstr "正在啟動伺服器"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:130
 #, kde-format
 msgid "Starting server on %1"
-msgstr ""
+msgstr "正在於 %1 啟動伺服器"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:845
 #, kde-format
 msgid "Request %1 cancelled by client"
-msgstr ""
+msgstr "請求 %1 由用戶端取消"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:862
 #, kde-format
 msgid "Error: %1"
-msgstr ""
+msgstr "錯誤：%1"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:868
 #, kde-format
 msgid "Server started"
-msgstr ""
+msgstr "伺服器已啟動"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:880
 #, kde-format
 msgid "Server stopped"
-msgstr ""
+msgstr "伺服器已終止"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
 #, kde-format
 msgid "Impossible to start client. URL is invalid."
-msgstr ""
+msgstr "無法啟動用戶端。網址是無效的。"
 
 #: plugins/client/sse/mcpclientsse.cpp:90
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:95
 #, kde-format
 msgid "Server is not ready."
-msgstr ""
+msgstr "伺服器尚未就緒。"
 
 #: plugins/client/stdio/mcpclientstdio.cpp:79
 #, kde-format
 msgid "Impossible to start client. Command is empty."
-msgstr ""
+msgstr "無法啟動用戶端。指令是空的。"
 
 #: plugins/client/stdio/mcpclientstdio.cpp:87
 #, kde-format
 msgid "Impossible to start client. Arguments are invalid."
-msgstr ""
+msgstr "無法啟動用戶端。參數是無效的。"
 
-#: plugins/client/stdio/mcpclientstdio.cpp:110
+#: plugins/client/stdio/mcpclientstdio.cpp:114
 #, kde-format
 msgid "Impossible to send message. Client is not running."
-msgstr ""
+msgstr "無法傳送訊息。用戶端並非執行中。"
 
-#: plugins/client/stdio/mcpclientstdio.cpp:129
+#: plugins/client/stdio/mcpclientstdio.cpp:133
 #, kde-format
 msgid "Message received from server is too big."
-msgstr ""
+msgstr "從伺服器收到的訊息太大了。"
 
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:173
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:178
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:224
 #, kde-format
 msgid "Connection lost before receiving answer."
-msgstr ""
+msgstr "收到回覆前連線就中斷了。"
 
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:400
 #, kde-format
 msgid "Session expired. Client must be restarted."
-msgstr ""
+msgstr "工作階段已過期。用戶端必須重新啟動。"
 
-#: plugins/server/sse/mcpserversse.cpp:38
+#: plugins/server/sse/mcpserversse.cpp:39
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:112
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:122
 #, kde-format
 msgid "Impossible to start server. URL is invalid."
-msgstr ""
+msgstr "無法啟動伺服器。網址是無效的。"
 
-#: plugins/server/sse/mcpserversse.cpp:89
+#: plugins/server/sse/mcpserversse.cpp:90
 #, kde-format
 msgid "Sending message is not implemented yet."
-msgstr ""
+msgstr "尚未實作傳送訊息的功能。"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:54
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:128
 #, kde-format
 msgid "Impossible to start server: %1"
-msgstr ""
+msgstr "無法啟動伺服器：%1"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
 msgid "Stdio server is not supported on this platform."
-msgstr ""
+msgstr "Stdio（標準輸入輸出）伺服器在此平台上不支援。"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:462
 #, kde-format
 msgid "Server is not started."
-msgstr ""
+msgstr "伺服器尚未啟動。"
 
 #: plugins/server/stdio/mcpserverstdio.cpp:154
 #, kde-format
 msgid "Message received from client is too big."
-msgstr ""
+msgstr "從用戶端收到的訊息太大了。"
 
 #: widgets/client/addmcpregistryserverdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server from MCP Registry"
-msgstr ""
+msgstr "從 MCP Registry 新增伺服器"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Load More"
-msgstr ""
+msgstr "載入更多"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search in MCP registry…"
-msgstr ""
+msgstr "在 MCP Registry 搜尋…"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:137
 #, kde-format
 msgid "Loading…"
-msgstr ""
+msgstr "載入中…"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:154
 #, kde-format
 msgid "Impossible to load servers: %1"
-msgstr ""
+msgstr "無法載入伺服器：%1"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:162
 #, kde-format
 msgid "Invalid answer from MCP registry."
-msgstr ""
+msgstr "MCP Registry 回傳無效答覆。"
 
 #: widgets/client/addmcpregistryserverwidget.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgid "1 server"
 msgid_plural "%1 servers"
-msgstr[0] "新增伺服器…"
+msgstr[0] "%1 個伺服器"
 
 #: widgets/client/addmcpserverdialog.cpp:26
 #, kde-format
@@ -213,36 +209,34 @@ msgid "Add Server"
 msgstr "新增伺服器"
 
 #: widgets/client/addmcpserverdialog.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Server"
-msgstr "新增伺服器"
+msgstr "修改伺服器"
 
 #: widgets/client/addmcpserverrootswidget.cpp:35
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Folder…"
-msgstr ""
+msgstr "資料夾…"
 
 #: widgets/client/addmcpserverrootswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Folder"
-msgstr ""
+msgstr "選取資料夾"
 
 #: widgets/client/addmcpserverrootswidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Folders that server is allowed to access"
-msgstr ""
+msgstr "伺服器允許存取的資料夾"
 
 #: widgets/client/addmcpserverrootswidget.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder"
-msgstr ""
+msgstr "選取資料夾"
 
 #: widgets/client/addmcpserverwidget.cpp:38
 #, kde-format
@@ -254,12 +248,10 @@ msgstr "名稱："
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon:"
-msgstr ""
+msgstr "圖示："
 
 #: widgets/client/addmcpserverwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Type:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Type:"
 msgstr "類型："
@@ -268,7 +260,7 @@ msgstr "類型："
 #, kde-format
 msgctxt "@label"
 msgid "Allowed folders:"
-msgstr ""
+msgstr "允許的資料夾："
 
 #: widgets/client/addmcpsseserverwidget.cpp:28
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:28
@@ -276,170 +268,189 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
-msgstr ""
+msgstr "網址："
 
 #: widgets/client/addmcpsseserverwidget.cpp:31
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:32
 #, kde-format
 msgctxt "@label"
 msgid "Headers:"
-msgstr ""
+msgstr "標頭："
 
 #: widgets/client/addmcpsseserverwidget.cpp:33
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sent as \"Authorization: Bearer\" header. Stored in the system wallet."
-msgstr ""
+msgstr "已作為 \"Authorization: Bearer\" 標頭送出。權杖儲存於系統錢包內。"
 
 #: widgets/client/addmcpsseserverwidget.cpp:34
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:35
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Authentication token:"
+msgstr "認證權杖："
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:19
+#: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:43
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove"
+msgstr "移除"
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Name:"
+msgctxt "@title:column"
+msgid "Name"
+msgstr "名稱："
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Name: Value"
+msgctxt "@title:column"
+msgid "Value"
+msgstr "名稱: 值"
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "An empty value keeps the variable from the user environment."
 msgstr ""
 
-#: widgets/client/addmcpstdioserverwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Command:"
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:38
+#: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:33
+#, kde-format
+msgctxt "@action:button"
+msgid "Add"
+msgstr "新增"
+
+#: widgets/client/addmcpstdioserverwidget.cpp:26
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Command:"
 msgstr "指令："
 
-#: widgets/client/addmcpstdioserverwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Arguments:"
+#: widgets/client/addmcpstdioserverwidget.cpp:31
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Arguments:"
 msgstr "參數："
+
+#: widgets/client/addmcpstdioserverwidget.cpp:36
+#, fuzzy, kde-format
+#| msgid "Environment variables:"
+msgctxt "@label"
+msgid "Environment:"
+msgstr "環境變數："
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr ""
+msgstr "新增自訂標頭"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfiguredialog.cpp:51
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Custom Header"
-msgstr ""
+msgstr "修改自訂標頭"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfigurewidget.cpp:23
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
-msgstr ""
+msgstr "標頭："
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfigurewidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name: Value"
-msgstr "名稱："
-
-#: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:33
-#, kde-format
-msgctxt "@action:button"
-msgid "Add"
-msgstr ""
+msgstr "名稱: 值"
 
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
-msgstr ""
-
-#: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
-msgctxt "@action:button"
-msgid "Remove"
-msgstr "移除伺服器"
+msgstr "修改"
 
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:71
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure that you want to delete this header?"
-msgstr ""
+msgstr "您確定要刪除這個標頭嗎？"
 
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Header"
-msgstr "移除伺服器"
+msgstr "移除標頭"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:24
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Select a server to see its information."
-msgstr ""
+msgstr "選取伺服器來查看它的資訊。"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:58
 #, kde-format
 msgid "<b>Version:</b> %1"
-msgstr ""
+msgstr "<b>版本</b>：%1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:61
 #, kde-format
 msgid "<b>Repository:</b> %1"
-msgstr ""
+msgstr "<b>儲存庫</b>：%1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:64
 #, kde-format
 msgid "<b>Website:</b> %1"
-msgstr ""
+msgstr "<b>網站</b>：%1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgid "Remotes"
-msgstr "移除伺服器"
+msgstr "遠端"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:79
 #, kde-format
 msgid "Packages"
-msgstr ""
+msgstr "套件"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:85
 #, kde-format
 msgid "Registry: %1"
-msgstr ""
+msgstr "Registry：%1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:87
 #, kde-format
 msgid "Transport: %1"
-msgstr ""
+msgstr "傳輸：%1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:90
 #, kde-format
 msgid "Runtime: %1"
-msgstr ""
+msgstr "執行環境：%1"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:94
 #, kde-format
 msgid "Environment variables:"
-msgstr ""
+msgstr "環境變數："
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:98
 #, kde-format
 msgid "(required)"
-msgstr ""
+msgstr "（必要）"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:101
 #, kde-format
 msgid "(secret)"
-msgstr ""
+msgstr "（祕密）"
 
 #: widgets/client/mcpserverlistview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Server…"
 msgstr "新增伺服器…"
@@ -454,7 +465,7 @@ msgstr "編輯…"
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
-msgstr ""
+msgstr "設定工具…"
 
 #: widgets/client/mcpserverlistview.cpp:81
 #, kde-format
@@ -463,16 +474,13 @@ msgid "Remove Server"
 msgstr "移除伺服器"
 
 #: widgets/client/mcpserverlistview.cpp:88
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this server (%1)?"
+#, kde-format
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "您確定要移除此伺服器 (%1) 嗎？"
 
 #: widgets/client/mcpserverlistview.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "移除伺服器"
@@ -484,101 +492,95 @@ msgid "Search…"
 msgstr "搜尋…"
 
 #: widgets/client/mcpserverwidget.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "新增伺服器…"
 
 #: widgets/client/mcpserverwidget.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#, kde-format
 msgctxt "@action"
 msgid "Server"
-msgstr "新增伺服器"
+msgstr "伺服器"
 
 #: widgets/client/mcpserverwidget.cpp:59
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
-msgstr ""
+msgstr "從 MCP Registry…"
 
-#: widgets/client/mcpserverwidget.cpp:170
+#: widgets/client/mcpserverwidget.cpp:172
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
-msgstr ""
+msgstr "這個伺服器沒有提供支援的傳輸（遠端或套件）。"
 
-#: widgets/client/mcpserverwidget.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#: widgets/client/mcpserverwidget.cpp:172
+#, kde-format
 msgctxt "@title:window"
 msgid "Add MCP Server"
-msgstr "新增伺服器"
+msgstr "新增 MCP 伺服器"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Server Configuration"
-msgstr ""
+msgstr "伺服器設定"
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:22
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:23
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy"
-msgstr ""
+msgstr "複製"
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:28
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:29
 #, kde-format
 msgid "Token:"
-msgstr ""
+msgstr "權杖："
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:41
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy token to clipboard"
-msgstr ""
+msgstr "複製權杖到剪貼簿"
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:71
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:72
 #, kde-format
 msgid ""
 "Clients which use the current token will not be able to connect until they "
 "are updated with the new one."
-msgstr ""
+msgstr "使用目前權杖的用戶端將無法連線，直到它們改為使用新權杖。"
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:72
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Regenerate Token"
-msgstr ""
+msgstr "重新產生權杖"
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:73
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:74
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Regenerate"
-msgstr ""
+msgstr "重新產生"
 
-#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:83
+#: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Generate"
-msgstr ""
+msgstr "產生"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:19
 #, kde-format
 msgctxt "@option:check"
 msgid "Require authentication token"
-msgstr ""
+msgstr "需要認證權杖"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:29
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Server listens only on a local IP address, e.g. http://127.0.0.1:8765/mcp"
-msgstr ""
+msgstr "伺服器僅監聽一個本地 IP 位址，例如 http://127.0.0.1:8765/mcp"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:35
 #, kde-format
@@ -587,6 +589,8 @@ msgid ""
 "Clients must send this token as \"Authorization: Bearer\" header. Token is "
 "stored in the system wallet."
 msgstr ""
+"用戶端必須將此權杖作為 \"Authorization: Bearer\" 標頭送出。權杖儲存於系統錢包"
+"內。"
 
 #, fuzzy
 #~| msgid "Url:"
