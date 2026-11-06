@@ -69,6 +69,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "arguments" << (t.arguments().isEmpty() ? QString() : u"***"_s);
     d.space() << "command" << t.command();
     d.space() << "roots" << t.roots().join(u", "_s);
+    d.space() << "useGlobalRoots" << t.useGlobalRoots();
     d.space() << "mAuthToken is empty " << t.authToken().isEmpty();
     return d;
 }
@@ -80,6 +81,7 @@ void McpProtocolSettings::load(const KConfigGroup &config)
     mArguments = config.readEntry("Arguments", QString());
     mHeaders = config.readEntry("Headers", QStringList());
     mRoots = config.readEntry("Roots", QStringList());
+    mUseGlobalRoots = config.readEntry("UseGlobalRoots", true);
     mEnvironments.clear();
     const QStringList environments = config.readEntry("Environments", QStringList());
     for (const QString &environment : environments) {
@@ -118,6 +120,11 @@ void McpProtocolSettings::save(KConfigGroup &config) const
         config.writeEntry(u"Roots"_s, mRoots);
     } else {
         config.deleteEntry(u"Roots"_s);
+    }
+    if (!mUseGlobalRoots) {
+        config.writeEntry(u"UseGlobalRoots"_s, false);
+    } else {
+        config.deleteEntry(u"UseGlobalRoots"_s);
     }
     if (!mEnvironments.isEmpty()) {
         QStringList environments;
@@ -164,6 +171,16 @@ QStringList McpProtocolSettings::roots() const
 void McpProtocolSettings::setRoots(const QStringList &newRoots)
 {
     mRoots = newRoots;
+}
+
+bool McpProtocolSettings::useGlobalRoots() const
+{
+    return mUseGlobalRoots;
+}
+
+void McpProtocolSettings::setUseGlobalRoots(bool useGlobalRoots)
+{
+    mUseGlobalRoots = useGlobalRoots;
 }
 
 QByteArray McpProtocolSettings::authToken() const

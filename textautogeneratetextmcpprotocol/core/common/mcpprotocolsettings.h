@@ -119,6 +119,18 @@ public:
     void setRoots(const QStringList &newRoots);
 
     /*!
+     * Returns true when the application-wide default roots should be used
+     * while roots() is empty. False means that an empty roots() list is
+     * intentional and no root must be sent to the server.
+     */
+    [[nodiscard]] bool useGlobalRoots() const;
+    /*!
+     * \brief setUseGlobalRoots
+     * \param useGlobalRoots
+     */
+    void setUseGlobalRoots(bool useGlobalRoots);
+
+    /*!
      * \brief authToken
      * \return
      */
@@ -137,6 +149,7 @@ private:
     QStringList mHeaders;
     QStringList mRoots;
     QByteArray mAuthToken;
+    bool mUseGlobalRoots = true;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings, Q_RELOCATABLE_TYPE);

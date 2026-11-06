@@ -18,4 +18,5 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldLoadSaveSettings();
     void shouldRemoveClearedEntries();
+    void shouldLoadSaveUseGlobalRoots();
 };

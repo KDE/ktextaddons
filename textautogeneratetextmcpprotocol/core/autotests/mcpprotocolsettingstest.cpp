@@ -28,6 +28,7 @@ void McpProtocolSettingsTest::shouldHaveDefaultValues()
     QVERIFY(w.serverUrl().isEmpty());
     QVERIFY(w.headers().isEmpty());
     QVERIFY(w.roots().isEmpty());
+    QVERIFY(w.useGlobalRoots());
     QVERIFY(w.authToken().isEmpty());
 }
 
@@ -46,6 +47,24 @@ void McpProtocolSettingsTest::shouldLoadSaveSettings()
     loaded.load(group);
     QCOMPARE(loaded, settings);
     QCOMPARE(loaded.roots(), QStringList({u"/home/user/project"_s, u"/tmp"_s}));
+    QVERIFY(loaded.useGlobalRoots());
+}
+
+void McpProtocolSettingsTest::shouldLoadSaveUseGlobalRoots()
+{
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setCommand(u"command"_s);
+    settings.setUseGlobalRoots(false);
+    // In-memory config
+    KConfig config(QString(), KConfig::SimpleConfig);
+    KConfigGroup group = config.group(u"Server"_s);
+    settings.save(group);
+
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings loaded;
+    loaded.load(group);
+    QCOMPARE(loaded, settings);
+    QVERIFY(!loaded.useGlobalRoots());
+    QVERIFY(loaded.roots().isEmpty());
 }
 
 void McpProtocolSettingsTest::shouldRemoveClearedEntries()
@@ -56,6 +75,7 @@ void McpProtocolSettingsTest::shouldRemoveClearedEntries()
     settings.setServerUrl(QUrl(u"https://www.kde.org"_s));
     settings.setHeaders({u"Authorization: Bearer foo"_s});
     settings.setRoots({u"/tmp"_s});
+    settings.setUseGlobalRoots(false);
     settings.setEnvironments({{u"KEY"_s, u"VALUE"_s}});
     // In-memory config
     KConfig config(QString(), KConfig::SimpleConfig);
