@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-05-21 22:30+0900\n"
+"PO-Revision-Date: 2026-11-05 22:59+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,50 +15,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.07.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
-msgstr ""
+msgstr "無法啟動工作，因為管理器是 null 或是文字是空的。"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
 #, kde-format
 msgid "Failed to open file for writing: %1"
-msgstr ""
+msgstr "無法開啟檔案供寫入：%1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
 #, kde-format
 msgid "Failed to write to file: %1"
-msgstr ""
+msgstr "寫入檔案失敗：%1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:76
 #, kde-format
 msgid "Json File"
-msgstr ""
+msgstr "JSON 檔案"
 
 #: core/jobs/textautogenerateexportchatbasejob.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to export file."
-msgstr "無法啟動 Ollama。"
+msgstr "無法匯出檔案。"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
 #, kde-format
 msgid "Failed to parse JSon file: %1"
-msgstr ""
+msgstr "剖析 JSON 檔案失敗：%1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
 msgid "Failed to open file for reading: %1"
-msgstr ""
+msgstr "無法開啟檔案供讀取：%1"
 
 #: core/jobs/textautogenerateimportchatbasejob.cpp:37
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to import file."
-msgstr "無法啟動 Ollama。"
+msgstr "無法匯入檔案。"
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -66,11 +64,9 @@ msgid "New Chat..."
 msgstr "新聊天…"
 
 #: core/models/textautogeneratechatsmodel.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Ephemeral"
-msgstr "一般"
+msgstr "暫時性"
 
 #: core/models/textautogeneratechatsmodel.cpp:240
 #, kde-format
@@ -176,7 +172,7 @@ msgstr "雲端"
 #: core/textautogeneratemanager.cpp:189
 #, kde-format
 msgid "Thinking"
-msgstr ""
+msgstr "思考"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -206,46 +202,39 @@ msgid "Network"
 msgstr "網路"
 
 #: core/textautogeneratetextreplyinfo.cpp:53
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
-msgstr "<br><b>工具</b>：%1"
+msgstr "<br><b>總時間</b>：%1"
 
 #: core/textautogeneratetextreplyinfo.cpp:54
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
-msgstr "<br><b>工具</b>：%1"
+msgstr "<br><b>提示 Token</b>：%1"
 
 #: core/textautogeneratetextreplyinfo.cpp:55
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Tokens:</b> %1"
-msgstr "<br><b>工具</b>：%1"
+msgstr "<br><b>Token</b>：%1"
 
 #: core/textautogeneratetextreplyinfo.cpp:61
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Token Count:</b> %1"
-msgstr "<br><b>工具</b>：%1"
+msgstr "<br><b>Token 數</b>：%1"
 
 #: core/textautogeneratetextreplyinfo.cpp:62
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
-msgstr "<br><b>工具</b>：%1"
+msgstr "<br><b>提示 Token</b>：%1"
 
 #: core/textautogeneratetextreplyinfo.cpp:63
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Completion Token:</b> %1"
-msgstr "<br><b>工具</b>：%1"
+msgstr "<br><b>補全 Token</b>：%1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins:"
-msgstr "工具外掛程式"
+msgstr "工具外掛程式："
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #, kde-format
@@ -392,32 +381,30 @@ msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#, fuzzy, kde-format
-#| msgid "OpenRouter AI"
+#, kde-format
 msgid "OrcaRouter AI"
-msgstr "OpenRouter AI"
+msgstr "OrcaRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
 msgid "Sarvam AI"
-msgstr ""
+msgstr "Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:60
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:275
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
-msgstr ""
+msgstr "AtlasCloud OpenAI-相容 API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:62
 #, kde-format
 msgid "Google Gemini"
-msgstr ""
+msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI API"
-msgstr "OpenAI"
+msgstr "OpenAI API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -472,70 +459,60 @@ msgstr "Sarvam AI 實體"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
 #, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr ""
+msgstr "OrcaRouter OpenAI-相容 API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "OpenAI API (custom)"
-msgstr ""
+msgstr "OpenAI API（自訂）"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
 #, kde-format
 msgid "LLamaCpp"
-msgstr ""
+msgstr "LLamaCpp"
 
 #: plugins/llamacpp/llamacppplugin.cpp:225
 #: plugins/lmstudio/lmstudioplugin.cpp:208
-#, fuzzy, kde-format
-#| msgid ""
-#| "Ollama not found on system. Ask to your administrator system to install "
-#| "it."
+#, kde-format
 msgid ""
 "LMStudio not found on system. Ask to your administrator system to install it."
-msgstr "系統上沒有找到 Ollama。請向您的管理員請求安裝它。"
+msgstr "系統上沒有找到 LMStudio。請向您的管理員請求安裝它。"
 
 #: plugins/llamacpp/llamacppplugin.cpp:227
 #: plugins/lmstudio/lmstudioplugin.cpp:210
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#, kde-format
 msgid "LMStudio not found on system. Please install it."
-msgstr "系統上沒有找到 Ollama。請安裝它。"
+msgstr "系統上沒有找到 LMStudio。請安裝它。"
 
 #: plugins/llamacpp/llamacppplugin.cpp:228
 #: plugins/lmstudio/lmstudioplugin.cpp:211
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
-msgstr "下載模型"
+msgstr "下載 LMStudio"
 
 #: plugins/llamacpp/llamacppplugin.cpp:234
 #: plugins/lmstudio/lmstudioplugin.cpp:217
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
-msgstr ""
+msgstr "啟動 LMStudio"
 
 #: plugins/lmstudio/lmstudioclient.cpp:27
 #: plugins/lmstudio/lmstudioplugin.cpp:88
 #, kde-format
 msgid "LMStudio"
-msgstr ""
+msgstr "LMStudio"
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure LMStudio"
-msgstr "設定 %1"
+msgstr "設定 LMStudio"
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed model"
 msgstr "已安裝的模型"
@@ -556,30 +533,25 @@ msgid "Name:"
 msgstr "名稱："
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Url:"
+#, kde-format
 msgid "Url:"
 msgstr "網址："
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Api Key:"
+#, kde-format
 msgid "Api token:"
-msgstr "API 金鑰："
+msgstr "API 權杖："
 
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:35
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system."
+#, kde-format
 msgid "LMStudio not found on system."
-msgstr "系統上沒有找到 Ollama。"
+msgstr "系統上沒有找到 LMStudio。"
 
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:41
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:56
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to start LMStudio."
-msgstr "無法啟動 Ollama。"
+msgstr "無法啟動 LMStudio。"
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:24
 #, kde-format
@@ -2351,12 +2323,12 @@ msgstr ""
 #, kde-format
 msgid ""
 "The most powerful vision-language model in the Qwen model family to date."
-msgstr ""
+msgstr "Qwen 模型家族目前為止最強大的視覺語言模型。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:290
 #, kde-format
 msgid "Advanced agentic, reasoning and coding capabilities.."
-msgstr ""
+msgstr "具備進階的代理、推理與程式設計能力。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:292
 #, kde-format
@@ -2365,19 +2337,21 @@ msgid ""
 "Instruct-0905 demonstrates significant improvements in performance on public "
 "benchmarks and real-world coding agent tasks."
 msgstr ""
+"最先進的專家混合（MoE）語言模型。Kimi K2-Instruct-0905 在公開基準測試與真實世"
+"界的程式設計代理任務上，表現均有顯著提升。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:294
 #, kde-format
 msgid ""
 "MiniMax M2 is a high-efficiency large language model built for coding and "
 "agentic workflows."
-msgstr ""
+msgstr "MiniMax M2 是專為程式設計與代理式工作流程打造的高效率大型語言模型。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:295
 #, kde-format
 msgid ""
 "DeepSeek-OCR is a vision-language model that can perform token-efficient OCR."
-msgstr ""
+msgstr "DeepSeek-OCR 是一款視覺語言模型，能以更節省 token 的方式執行 OCR。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:296
 #, kde-format
@@ -2385,6 +2359,8 @@ msgid ""
 "gpt-oss-safeguard-20b and gpt-oss-safeguard-120b are safety reasoning models "
 "built-upon gpt-oss."
 msgstr ""
+"gpt-oss-safeguard-20b 與 gpt-oss-safeguard-120b 是基於 gpt-oss 打造的安全性推"
+"理模型。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:298
 #, kde-format
@@ -2392,11 +2368,13 @@ msgid ""
 "Google's most intelligent model with SOTA reasoning and multimodal "
 "understanding, and powerful agentic and vibe coding capabilities."
 msgstr ""
+"Google 目前為止最智慧的模型，具備最先進的推理與多模態理解能力，以及強大的代理"
+"與 vibe coding 能力。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:299
 #, kde-format
 msgid "Kimi K2 Thinking, Moonshot AI's best open-source thinking model."
-msgstr ""
+msgstr "Kimi K2 Thinking 是 Moonshot AI 最強的開源思考模型。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:300
 #, kde-format
@@ -2404,13 +2382,15 @@ msgid ""
 "The Cogito v2.1 LLMs are instruction tuned generative models. All models are "
 "released under MIT license for commercial use."
 msgstr ""
+"Cogito v2.1 大型語言模型為經過指令微調的生成式模型。所有模型皆以 MIT 授權條款"
+"釋出，可供商業使用。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:301
 #, kde-format
 msgid ""
 "The Ministral 3 family is designed for edge deployment, capable of running "
 "on a wide range of hardware."
-msgstr ""
+msgstr "Ministral 3 系列專為邊緣部署而設計，可在各種硬體上運行。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:303
 #, kde-format
@@ -2419,27 +2399,29 @@ msgid ""
 "scratch by Essential AI, optimized for code and STEM with capabilities on "
 "par with SOTA open-weight models."
 msgstr ""
+"Rnj-1 是由 Essential AI 從零開始訓練的 8B 參數開放權重密集模型系列，適合程式"
+"碼與 STEM 領域，能力可媲美最先進的開放權重模型。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:306
 #, kde-format
 msgid ""
 "The first installment in the Qwen3-Next series with strong performance in "
 "terms of both parameter efficiency and inference speed."
-msgstr ""
+msgstr "Qwen3-Next 系列的首款模型，在參數效率與推論速度方面皆有出色表現。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:307
 #, kde-format
 msgid ""
 "Nemotron 3 Nano - A new Standard for Efficient, Open, and Intelligent "
 "Agentic Models."
-msgstr ""
+msgstr "Nemotron 3 Nano - 高效、開放且智慧的代理式模型新標準。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:309
 #, kde-format
 msgid ""
 "24B model that excels at using tools to explore codebases, editing multiple "
 "files and power software engineering agents."
-msgstr ""
+msgstr "24B 模型，擅長使用工具探索程式碼、編輯多個檔案，並驅動軟體工程代理。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:311
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:318
@@ -2449,6 +2431,8 @@ msgid ""
 "language models. These models are pre-trained on the Dolma 3 dataset and "
 "post-trained on the Dolci datasets."
 msgstr ""
+"Olmo 是一系列開放語言模型，旨在推動語言模型的科學研究。這些模型以 Dolma 3 資"
+"料集進行預訓練，並以 Dolci 資料集進行後訓練。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:313
 #, kde-format
@@ -2456,6 +2440,7 @@ msgid ""
 "A new collection of open translation models built on Gemma 3, helping people "
 "communicate across 55 languages."
 msgstr ""
+"建構於 Gemma 3 之上的全新開放翻譯模型系列，協助人們跨越 55 種語言溝通交流。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:315
 #, kde-format
@@ -2463,13 +2448,14 @@ msgid ""
 "As the strongest model in the 30B class, GLM-4.7-Flash offers a new option "
 "for lightweight deployment that balances performance and efficiency."
 msgstr ""
+"GLM-4.7-Flash 是 30B 級別中最強的模型，為輕量部署提供兼顧效能與效率的新選擇。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:320
 #, kde-format
 msgid ""
 "123B model that excels at using tools to explore codebases, editing multiple "
 "files and power software engineering agents."
-msgstr ""
+msgstr "123B 模型，擅長使用工具探索程式碼、編輯多個檔案，並驅動軟體工程代理。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:321
 #, kde-format
@@ -2477,50 +2463,51 @@ msgid ""
 "FunctionGemma is a specialized version of Google's Gemma 3 270M model fine-"
 "tuned explicitly for function calling."
 msgstr ""
+"FunctionGemma 是 Google Gemma 3 270M 模型的特化版本，專為函式呼叫而微調。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:322
 #, kde-format
 msgid ""
 "Gemini 3 Flash offers frontier intelligence built for speed at a fraction of "
 "the cost."
-msgstr ""
+msgstr "Gemini 3 Flash 以極低的成本，提供專為速度打造的前沿智慧。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:323
 #, kde-format
 msgid ""
 "nomic-embed-text-v2-moe is a multilingual MoE text embedding model that "
 "excels at multilingual retrieval."
-msgstr ""
+msgstr "nomic-embed-text-v2-moe 是多語言 MoE 文字嵌入模型，擅長多語言檢索。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:324
 #, kde-format
 msgid "Advancing the Coding Capability"
-msgstr ""
+msgstr "持續提升程式設計能力"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:325
 #, kde-format
 msgid ""
 "DeepSeek-V3.2, a model that harmonizes high computational efficiency with "
 "superior reasoning and agent performance."
-msgstr ""
+msgstr "DeepSeek-V3.2 兼顧高運算效率與卓越的推理及代理表現。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:326
 #, kde-format
 msgid ""
 "A general-purpose multimodal mixture-of-experts model for production-grade "
 "tasks and enterprise workloads."
-msgstr ""
+msgstr "通用多模態專家混合模型，適用於生產環境任務與企業工作。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:327
 #, kde-format
 msgid "Exceptional multilingual capabilities to elevate code engineering"
-msgstr ""
+msgstr "卓越的多語言能力，全面提升程式碼工程表現"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:328
 #, kde-format
 msgid ""
 "LFM2.5 is a new family of hybrid models designed for on-device deployment."
-msgstr ""
+msgstr "LFM2.5 是專為裝置端部署設計的全新混合模型系列。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:330
 #, kde-format
@@ -2530,6 +2517,8 @@ msgid ""
 "capabilities, instant and thinking modes, as well as conversational and "
 "agentic paradigms."
 msgstr ""
+"Kimi K2.5 是開源的原生多模態代理式模型，無縫整合視覺與語言理解，並具備進階代"
+"理能力，支援即時與思考兩種模式，以及對話與代理兩種範式。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:333
 #, kde-format
@@ -2537,6 +2526,8 @@ msgid ""
 "A strong reasoning and agentic model from Z.ai with 744B total parameters "
 "(40B active), built for complex systems engineering and long-horizon tasks."
 msgstr ""
+"Z.ai 推出的強大推理與代理式模型，總參數量 744B（作用 40B），專為複雜系統工程"
+"與長程任務打造。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:335
 #, kde-format
@@ -2544,6 +2535,8 @@ msgid ""
 "MiniMax-M2.5 is a state-of-the-art large language model designed for real-"
 "world productivity and coding tasks."
 msgstr ""
+"MiniMax-M2.5 是最先進的大型語言模型，專為真實世界的生產力與程式設計任務而設"
+"計。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:337
 #, kde-format
@@ -2552,13 +2545,15 @@ msgid ""
 "size. They are well-suited for reasoning, agentic workflows, coding, and "
 "multimodal understanding."
 msgstr ""
+"Gemma 4 模型旨在讓每種規模都具備前沿等級的效能，適合推理、代理式工作流程、程"
+"式設計與多模態理解。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:339
 #, kde-format
 msgid ""
 "Qwen 3.5 is a family of open-source multimodal models that delivers "
 "exceptional utility and performance."
-msgstr ""
+msgstr "Qwen 3.5 是開源多模態模型系列，提供卓越的實用性與效能。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:341
 #, kde-format
@@ -2567,6 +2562,8 @@ msgid ""
 "LFM2-24B-A2B is the largest model in the family, scaling the architecture to "
 "24 billion parameters while keeping inference efficient."
 msgstr ""
+"LFM2 是專為裝置端部署設計的混合模型系列。LFM2-24B-A2B 是該系列中最大的模型，"
+"將架構擴展至 24B 參數，同時維持高效率的推論。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:344
 #, kde-format
@@ -2575,6 +2572,8 @@ msgid ""
 "parameters to deliver maximum compute efficiency and accuracy for complex "
 "multi-agent applications."
 msgstr ""
+"NVIDIA Nemotron 3 Super 是 120B 開放 MoE 模型，僅啟用 12B 參數，為複雜的多代"
+"理應用提供最高的運算效率與準確度。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:347
 #, kde-format
@@ -2582,13 +2581,14 @@ msgid ""
 "An open 30B MoE model from NVIDIA with 3B activated parameters that delivers "
 "strong reasoning and agentic capabilities."
 msgstr ""
+"NVIDIA 推出的開放式 30B MoE 模型，啟用 3B 參數，具備強大的推理與代理能力。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:348
 #, kde-format
 msgid ""
 "MiniMax's M2-series model for coding, agentic workflows, and professional "
 "productivity."
-msgstr ""
+msgstr "MiniMax M2 系列模型，適用於程式設計、代理式工作流程與專業生產力。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:349
 #, kde-format
@@ -2596,6 +2596,7 @@ msgid ""
 "Qwen3.6 delivers substantial upgrades in agentic coding and thinking "
 "preservation than previous Qwen models."
 msgstr ""
+"Qwen3.6 在代理式程式設計與思考保留方面，相較先前的 Qwen 模型有大幅升級。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:390
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:394
@@ -2613,7 +2614,7 @@ msgstr "開啟網址「%1」"
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:17
 #, kde-format
 msgid "Expose Ollama to Network"
-msgstr ""
+msgstr "將 Ollama 暴露於網路"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:18
 #, kde-format
@@ -2629,7 +2630,7 @@ msgstr "選項"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
-msgstr ""
+msgstr "讓區域網路上的其他裝置或軟體能夠使用 Ollama。"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:42
 #, kde-format
@@ -2637,7 +2638,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "Have compatible reasoning models think about their response before "
 "generating a message."
-msgstr ""
+msgstr "要求支援的推理模型在生成訊息前先對回應進行思考。"
 
 #: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
 #, kde-format
@@ -2831,17 +2832,17 @@ msgstr "附加檔案"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Image file %1"
-msgstr ""
+msgstr "影像檔 %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio file %1"
-msgstr ""
+msgstr "音效檔 %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Text file %1"
-msgstr ""
+msgstr "文字檔案 %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -2883,15 +2884,14 @@ msgid "Text Plugins"
 msgstr "文字外掛程式"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins"
 msgstr "工具外掛程式"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
 msgid "Prompt"
-msgstr "Prompt"
+msgstr "提示詞"
 
 #: widgets/configuretoolsplugin/textautogeneratetoolpluginconfigurewidget.cpp:26
 #, kde-format
@@ -3050,11 +3050,9 @@ msgid "Configure…"
 msgstr "設定…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy URL"
+#, kde-format
 msgid "Custom URL:"
-msgstr "複製 URL"
+msgstr "自訂網址："
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:53
 #, kde-format
@@ -3062,46 +3060,38 @@ msgid "Max Tokens:"
 msgstr "最大 token 數："
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Text Plugins:"
-msgstr "文字外掛程式"
+msgstr "文字外掛程式："
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Tool identifier: %1"
+#, kde-format
 msgid "Text identifier: %1"
-msgstr "工具識別子：%1"
+msgstr "文字識別子：%1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Projects"
-msgstr ""
+msgstr "管理專案"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Project…"
-msgstr "新增伺服器…"
+msgstr "新增專案…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Project…"
-msgstr "變更…"
+msgstr "修改專案…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Project"
-msgstr "移除模型"
+msgstr "移除專案"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
 #, kde-format
@@ -3109,129 +3099,115 @@ msgid ""
 "Do you want to remove this project (%1)? Its chats will be kept, outside of "
 "any project."
 msgstr ""
+"您確定要移除這個專案（%1）嗎？在它之下的聊天會被保留並變為不屬於任何專案。"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Project"
-msgstr "移除模型"
+msgstr "移除專案"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Project"
-msgstr ""
+msgstr "新增專案"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Project"
-msgstr ""
+msgstr "修改專案"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:24
 #, kde-format
 msgctxt "@title:menu"
 msgid "Project"
-msgstr ""
+msgstr "專案"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:51
 #, kde-format
 msgctxt "@action"
 msgid "No Project"
-msgstr ""
+msgstr "沒有專案"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Manage Projects…"
-msgstr ""
+msgstr "管理專案…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Project name…"
-msgstr ""
+msgstr "專案名稱："
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
 msgid "Icon:"
-msgstr ""
+msgstr "圖示："
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "雜項"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
 #, kde-format
 msgid "Travel"
-msgstr ""
+msgstr "旅行"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
-msgstr "Prompt"
+msgstr "提示詞"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
-#, fuzzy, kde-format
-#| msgid "Categories"
+#, kde-format
 msgid "Category:"
-msgstr "分類"
+msgstr "分類："
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Description:"
+#, kde-format
 msgid "Description:"
 msgstr "描述："
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add server…"
+#, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr "新增伺服器…"
+msgstr "新增提示詞…"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "移除模型"
+msgstr "移除提示詞"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this prompt (%1)?"
-msgstr "您確定要移除這個模型（%1）嗎？"
+msgstr "您確定要移除這個提示詞（%1）嗎？"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Prompt"
-msgstr "移除模型"
+msgstr "移除提示詞"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Skill"
-msgstr ""
+msgstr "Skill"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#, kde-format
 msgid "Instructions:"
-msgstr "資訊："
+msgstr "指示："
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:25
 #, kde-format
@@ -3275,88 +3251,77 @@ msgstr "將討論儲存到資料庫"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Tags"
-msgstr ""
+msgstr "管理標籤"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Instance…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Tag…"
-msgstr "新增實體…"
+msgstr "新增標籤…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Tag…"
-msgstr "變更…"
+msgstr "修改標籤…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Tag"
-msgstr "移除"
+msgstr "移除標籤"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance (%1)?"
+#, kde-format
 msgid "Do you want to remove this tag (%1)?"
-msgstr "您確定要移除這個實體 (%1) 嗎？"
+msgstr "您確定要移除這個標籤（%1）嗎？"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Tag"
-msgstr "移除"
+msgstr "移除標籤"
 
 #: widgets/tags/textautogenerateselecttagscombobox.cpp:118
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag selected"
-msgstr ""
+msgstr "未選取標籤"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Tag"
-msgstr ""
+msgstr "新增標籤"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Tag"
-msgstr "變更…"
+msgstr "修改標籤"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:35
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tags"
-msgstr ""
+msgstr "標籤"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Manage Tags…"
-msgstr ""
+msgstr "管理標籤…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr ""
+msgstr "標籤名稱…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:35
 #, kde-format
 msgid "Color:"
-msgstr ""
+msgstr "顏色："
 
 #: widgets/textautogeneratedialog.cpp:32
 #, kde-format
@@ -3371,12 +3336,10 @@ msgid "New Chat"
 msgstr "新聊天"
 
 #: widgets/textautogenerateheaderwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Discussion"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Ephemeral Discussion"
-msgstr "移除討論"
+msgstr "暫時性討論"
 
 #: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format
@@ -3394,15 +3357,13 @@ msgstr "搜尋… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr ""
+msgstr "只顯示含有所選標籤之一的聊天"
 
 #: widgets/textautogeneratehistorywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Search Channels"
+#, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "搜尋頻道"
+msgstr "搜尋聊天"
 
 #: widgets/textautogeneratehistorywidget.cpp:86
 #, kde-format
@@ -3430,13 +3391,13 @@ msgstr "找不到外掛程式。"
 #: widgets/textautogeneratewidget.cpp:244
 #, kde-format
 msgid "Error reported: %1"
-msgstr ""
+msgstr "已回報錯誤：%1"
 
 #: widgets/textautogeneratewidget.cpp:244
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
-msgstr ""
+msgstr "錯誤"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, kde-format
@@ -3479,7 +3440,7 @@ msgstr "重新整理"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
-msgstr ""
+msgstr "分支"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:658
 #, kde-format

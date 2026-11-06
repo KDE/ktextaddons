@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-05-21 22:31+0900\n"
+"PO-Revision-Date: 2026-11-05 21:59+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,17 +15,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.07.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Kisaragi Hiu"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "mail@kisaragi-hiu.com"
 
 #: misc/openfilejob.cpp:60
 #, kde-format
@@ -107,39 +107,37 @@ msgstr "您的版本已釋出超過 1 年，我們強烈建議您更新。"
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "開啟儲存附件的資料夾"
 
 #: opensavedfilefolderwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save File"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "儲存檔案"
+msgstr "開啟檔案"
 
 #: opensavedfilefolderwidget.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
+msgstr[0] "開啟儲存附件的資料夾"
 
 #: opensavedfilefolderwidget.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "開啟儲存 PDF 檔的資料夾"
 
 #: opensavedfilefolderwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where file was saved"
-msgstr ""
+msgstr "開啟儲存檔案的資料夾"
 
 #: opensavedfilefolderwidget.cpp:85
 #, kde-format
 msgid "Unable to open the attachment."
-msgstr ""
+msgstr "無法開啟附件。"
 
 #: plugins/configurepluginswidget.cpp:24
 #, kde-format
@@ -300,32 +298,29 @@ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "What's new in %2. %1"
+#, kde-format
 msgid "What's new in %1. %2"
-msgstr "%2 的新功能。%1"
+msgstr "%1 的新功能。%2"
 
 #: whatsnewng/whatsnewngutils.cpp:24
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
-msgstr ""
+msgstr "<b><i><a href=\"%1\">發行註記</a></i></b>"
 
 #: whatsnewng/whatsnewngutils.cpp:32
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+#, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"
+msgstr "<h3><i>%1 版的新功能（發佈於 %2）</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:34
-#, fuzzy, kde-format
-#| msgid "<h1><i> Version %1 </i></h1><hr/><br>"
+#, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"
+msgstr "<h3><i>%1 版的新功能（尚未發佈）</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:50
 #, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr ""
+msgstr "<h1>新功能歷史</h1>"
 
 #~ msgid "..."
 #~ msgstr "..."

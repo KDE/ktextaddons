@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2024-2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-29 02:52+0000\n"
-"PO-Revision-Date: 2025-07-03 23:26+0900\n"
+"PO-Revision-Date: 2026-11-05 23:05+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #: common/grammarresulttextedit.cpp:37
 #, kde-format
@@ -333,7 +333,7 @@ msgstr "重新整理"
 #: languagetool/languagetoolgetlistoflanguagejob.cpp:35
 #, kde-format
 msgid "Url is empty."
-msgstr ""
+msgstr "網址是空的。"
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format

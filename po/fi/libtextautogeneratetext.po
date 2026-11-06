@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 20:13+0000\n"
-"PO-Revision-Date: 2026-03-11 20:26+0200\n"
+"PO-Revision-Date: 2026-10-29 18:31+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -20,45 +20,43 @@ msgstr ""
 #: core/jobs/textautogenerateaskjob.cpp:39
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
-msgstr ""
+msgstr "Työtä on mahdotonta käynnistää. Hallinnointi tai teksti on tyhjä."
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:40
 #, kde-format
 msgid "Failed to open file for writing: %1"
-msgstr ""
+msgstr "Tiedostoa avaaminen kirjoitettavaksi epäonnistui: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:47
 #, kde-format
 msgid "Failed to write to file: %1"
-msgstr ""
+msgstr "Tiedostoon kirjoittaminen epäonnistui: %1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:58
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:76
 #, kde-format
 msgid "Json File"
-msgstr ""
+msgstr "JSON-tiedosto"
 
 #: core/jobs/textautogenerateexportchatbasejob.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to export file."
-msgstr "Ollamaa on mahdotonta käynnistää."
+msgstr "Tiedostoa on mahdotonta viedä."
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:40
 #, kde-format
 msgid "Failed to parse JSon file: %1"
-msgstr ""
+msgstr "JSON-tiedoston jäsentäminen epäonnistui: %1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:68
 #, kde-format
 msgid "Failed to open file for reading: %1"
-msgstr ""
+msgstr "Tiedoston avaaminen luettavaksi epäonnistui: %1"
 
 #: core/jobs/textautogenerateimportchatbasejob.cpp:37
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to import file."
-msgstr "Ollamaa on mahdotonta käynnistää."
+msgstr "Tiedostoa on mahdotonta tuoda."
 
 #: core/models/textautogeneratechatsmodel.cpp:98
 #, kde-format
@@ -66,11 +64,9 @@ msgid "New Chat..."
 msgstr "Uusi keskustelu…"
 
 #: core/models/textautogeneratechatsmodel.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Ephemeral"
-msgstr "Perusasetukset"
+msgstr "Lyhytaikainen"
 
 #: core/models/textautogeneratechatsmodel.cpp:240
 #, kde-format
@@ -176,7 +172,7 @@ msgstr "Pilvi"
 #: core/textautogeneratemanager.cpp:189
 #, kde-format
 msgid "Thinking"
-msgstr ""
+msgstr "Ajatellaan"
 
 #: core/textautogeneratesearchmessageutils.cpp:35
 #, kde-format
@@ -203,46 +199,39 @@ msgid "Network"
 msgstr "Verkko"
 
 #: core/textautogeneratetextreplyinfo.cpp:53
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Total Duration:</b> %1 seconds"
-msgstr "<br><b>Työkalut:</b> %1"
+msgstr "<br><b>Kokonaiskesto:</b> %1 sekuntia"
 
 #: core/textautogeneratetextreplyinfo.cpp:54
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
-msgstr "<br><b>Työkalut:</b> %1"
+msgstr "<br><b>Kehotemerkkejä:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:55
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Tokens:</b> %1"
-msgstr "<br><b>Työkalut:</b> %1"
+msgstr "<br><b>Merkkejä:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:61
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Token Count:</b> %1"
-msgstr "<br><b>Työkalut:</b> %1"
+msgstr "<br><b>Merkkimäärä:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:62
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Prompt Token:</b> %1"
-msgstr "<br><b>Työkalut:</b> %1"
+msgstr "<br><b>Kehotemerkki:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:63
-#, fuzzy, kde-format
-#| msgid "<br><b>Tools:</b> %1"
+#, kde-format
 msgid "<br><b>Completion Token:</b> %1"
-msgstr "<br><b>Työkalut:</b> %1"
+msgstr "<br><b>Valmistumismerkki:</b> %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins:"
-msgstr "Työkaluliitännäiset"
+msgstr "Työkaluliitännäiset:"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:233
 #, kde-format
@@ -314,7 +303,7 @@ msgstr "Mistral-tekoäly"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:26
 #, kde-format
 msgid "Novita AI"
-msgstr ""
+msgstr "Novita AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:28
 #, kde-format
@@ -364,59 +353,55 @@ msgstr "Grok (X.ai)"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:46
 #, kde-format
 msgid "Qwen (DashScope)"
-msgstr ""
+msgstr "Qwen (DashScope)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:48
 #, kde-format
 msgid "DeepInfra"
-msgstr ""
+msgstr "DeepInfra"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:50
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI ChatGPT"
-msgstr "OpenAI"
+msgstr "OpenAI ChatGPT"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:52
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:269
 #, kde-format
 msgid "CompactifAI"
-msgstr ""
+msgstr "CompactifAI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:54
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:271
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenRouter AI"
-msgstr "OpenAI"
+msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:56
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OrcaRouter AI"
-msgstr "OpenAI"
+msgstr "OrcaRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:58
 #, kde-format
 msgid "Sarvam AI"
-msgstr ""
+msgstr "Sarvam AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:60
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:275
 #, kde-format
 msgid "AtlasCloud OpenAI-compatible API"
-msgstr ""
+msgstr "AtlasCloudin OpenAI-yhteensopiva API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:62
 #, kde-format
 msgid "Google Gemini"
-msgstr ""
+msgstr "Google Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:64
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI API"
-msgstr "OpenAI"
+msgstr "OpenAI API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:244
 #, kde-format
@@ -455,96 +440,82 @@ msgid "Alibaba Cloud Qwen large language models via DashScope"
 msgstr "Mistral AI:n suuret kielimallit"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:265
-#, fuzzy, kde-format
-#| msgid "Kluster AI cloud inference API"
+#, kde-format
 msgid "Novita AI cloud inference API"
-msgstr "Kluster AI:n pilvipäättely-API"
+msgstr "Novita AI -pilvipäättely-API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:267
-#, fuzzy, kde-format
-#| msgid "Cerebras AI cloud inference API"
+#, kde-format
 msgid "DeepInfra cloud inference API"
-msgstr "Cerebras AI:n pilvipäättely-API"
+msgstr "DeepInfra-pilvipäättely-API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Add instance…"
+#, kde-format
 msgid "Sarvam AI instance"
-msgstr "Lisää ilmentymä…"
+msgstr "Sarvam AI -ilmentymä"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:277
 #, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr ""
+msgstr "OrcaRouterin OpenAI-yhteensopiva API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:279
 #, kde-format
 msgid "OpenAI API (custom)"
-msgstr ""
+msgstr "OpenAI API (mukautettu)"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:95
 #, kde-format
 msgid "LLamaCpp"
-msgstr ""
+msgstr "LLamaCpp"
 
 #: plugins/llamacpp/llamacppplugin.cpp:225
 #: plugins/lmstudio/lmstudioplugin.cpp:208
-#, fuzzy, kde-format
-#| msgid ""
-#| "Ollama not found on system. Ask to your administrator system to install "
-#| "it."
+#, kde-format
 msgid ""
 "LMStudio not found on system. Ask to your administrator system to install it."
 msgstr ""
-"Ollamaa ei löytynyt järjestelmästä. Pyydä järjestelmän ylläpitäjää "
+"LMStudiota ei löytynyt järjestelmästä. Pyydä järjestelmän ylläpitäjää "
 "asentamaan se."
 
 #: plugins/llamacpp/llamacppplugin.cpp:227
 #: plugins/lmstudio/lmstudioplugin.cpp:210
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system. Please install it."
+#, kde-format
 msgid "LMStudio not found on system. Please install it."
-msgstr "Ollamaa ei löytynyt järjestelmästä. Asenna se."
+msgstr "LMStudiota ei löytynyt järjestelmästä. Asenna se."
 
 #: plugins/llamacpp/llamacppplugin.cpp:228
 #: plugins/lmstudio/lmstudioplugin.cpp:211
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Model"
+#, kde-format
 msgctxt "@action"
 msgid "Download LMStudio"
-msgstr "Lataa malli"
+msgstr "Lataa LMStudio"
 
 #: plugins/llamacpp/llamacppplugin.cpp:234
 #: plugins/lmstudio/lmstudioplugin.cpp:217
 #, kde-format
 msgctxt "@action"
 msgid "Start LMStudio"
-msgstr ""
+msgstr "Käynnistä LMStudio"
 
 #: plugins/lmstudio/lmstudioclient.cpp:27
 #: plugins/lmstudio/lmstudioplugin.cpp:88
 #, kde-format
 msgid "LMStudio"
-msgstr ""
+msgstr "LMStudio"
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure LMStudio"
-msgstr "%1 – asetukset"
+msgstr "LMStudion asetukset"
 
 #: plugins/lmstudio/lmstudioconfiguredialog.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "Installed Models"
+#, kde-format
 msgctxt "@title Preferences page name"
 msgid "Installed model"
-msgstr "Asennetut mallit"
+msgstr "Asennettu malli"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:67
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
@@ -564,26 +535,23 @@ msgstr "Nimi:"
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:71
 #, kde-format
 msgid "Url:"
-msgstr ""
+msgstr "Verkko-osoite:"
 
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Api Key:"
+#, kde-format
 msgid "Api token:"
-msgstr "API-avain:"
+msgstr "API-merkki:"
 
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:35
-#, fuzzy, kde-format
-#| msgid "Ollama not found on system."
+#, kde-format
 msgid "LMStudio not found on system."
-msgstr "Ollamaa ei löytynyt järjestelmästä."
+msgstr "LMStudiota ei löytynyt järjestelmästä."
 
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:41
 #: plugins/lmstudio/lmstudiostartprocessjob.cpp:56
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to start LMStudio."
-msgstr "Ollamaa on mahdotonta käynnistää."
+msgstr "LMStudiota on mahdotonta käynnistää."
 
 #: plugins/ollama/modelsmanager/ollamamodelavailabledialog.cpp:24
 #, kde-format
@@ -753,12 +721,13 @@ msgid ""
 "Use Vulkan for hardware acceleration. May improve performance on some GPUs, "
 "but use with caution as it may be unstable."
 msgstr ""
+"Käytä laitekiihdytykseen Vulkania. Voi parantaa suorituskykyä joillakin "
+"näytönohjaimilla, mutta epävakauden vuoksi käytä varoen."
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:34
-#, fuzzy, kde-format
-#| msgid "Vulkan GPU Support:"
+#, kde-format
 msgid "Vulkan GPU Support (Experimental):"
-msgstr "Vulkan-näytönohjaintuki:"
+msgstr "Vulkan-näytönohjaintuki (kokeellinen):"
 
 #: plugins/ollama/ollamaconfigurecustomizewidget.cpp:39
 #, kde-format
@@ -2764,12 +2733,10 @@ msgid "Configure…"
 msgstr "Asetukset…"
 
 #: widgets/common/textautogeneratenotworkingwidget.cpp:36
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Instances"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure Instance"
-msgstr "Ilmentymien asetukset"
+msgstr "Ilmentymän asetukset"
 
 #: widgets/common/textautogeneratepowersavermessagewidget.cpp:15
 #, kde-format
@@ -2804,17 +2771,17 @@ msgstr "Liitä tiedosto"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:62
 #, kde-format
 msgid "Image file %1"
-msgstr ""
+msgstr "Kuvatiedosto %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:65
 #, kde-format
 msgid "Audio file %1"
-msgstr ""
+msgstr "Äänitiedosto %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Text file %1"
-msgstr ""
+msgstr "Tekstitiedosto %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:68
 #, kde-format
@@ -2856,8 +2823,7 @@ msgid "Text Plugins"
 msgstr "Tekstiliitännäiset"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins"
 msgstr "Työkaluliitännäiset"
 
@@ -3023,11 +2989,9 @@ msgid "Configure…"
 msgstr "Asetukset…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy URL"
+#, kde-format
 msgid "Custom URL:"
-msgstr "Kopioi verkko-osoite"
+msgstr "Mukautettu verkko-osoite:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:53
 #, kde-format
@@ -3035,46 +2999,38 @@ msgid "Max Tokens:"
 msgstr "Merkkejä enintään:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Text Plugins:"
-msgstr "Tekstiliitännäiset"
+msgstr "Tekstiliitännäiset:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Tool identifier: %1"
+#, kde-format
 msgid "Text identifier: %1"
-msgstr "Työkalun tunniste: %1"
+msgstr "Tekstitunniste: %1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Projects"
-msgstr ""
+msgstr "Hallinnoi projekteja"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add instance…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Project…"
-msgstr "Lisää ilmentymä…"
+msgstr "Lisää projekti…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Project…"
-msgstr "Muuta…"
+msgstr "Muuta projektia…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Project"
-msgstr "Poista malli"
+msgstr "Poista projekti"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
 #, kde-format
@@ -3082,129 +3038,116 @@ msgid ""
 "Do you want to remove this project (%1)? Its chats will be kept, outside of "
 "any project."
 msgstr ""
+"Haluatko poistaa tämän projektin (%1)? Sen keskustelut säästetään projektien "
+"ulkopuolella."
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Project"
-msgstr "Poista malli"
+msgstr "Poista projekti"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Project"
-msgstr ""
+msgstr "Lisää projekti"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Project"
-msgstr ""
+msgstr "Muuta projektia"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:24
 #, kde-format
 msgctxt "@title:menu"
 msgid "Project"
-msgstr ""
+msgstr "Projekti"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:51
 #, kde-format
 msgctxt "@action"
 msgid "No Project"
-msgstr ""
+msgstr "Ei projektia"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Manage Projects…"
-msgstr ""
+msgstr "Hallinnoi projekteja…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Project name…"
-msgstr ""
+msgstr "Projektin nimi…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
 msgid "Icon:"
-msgstr ""
+msgstr "Kuvake:"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "Sekalaista"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
 #, kde-format
 msgid "Travel"
-msgstr ""
+msgstr "Matkailu"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "Kehote"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:37
-#, fuzzy, kde-format
-#| msgid "Categories"
+#, kde-format
 msgid "Category:"
-msgstr "Luokat"
+msgstr "Luokka:"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:38
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Description:"
+#, kde-format
 msgid "Description:"
 msgstr "Kuvaus:"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add instance…"
+#, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr "Lisää ilmentymä…"
+msgstr "Lisää kehote…"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "Poista malli"
+msgstr "Poista kehote"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this prompt (%1)?"
-msgstr "Haluatko poistaa tämän mallin (%1)?"
+msgstr "Haluatko poistaa tämän kehotteen (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Prompt"
-msgstr "Poista malli"
+msgstr "Poista kehote"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Skill"
-msgstr ""
+msgstr "Kyky"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Information:"
+#, kde-format
 msgid "Instructions:"
-msgstr "Tietoa:"
+msgstr "Ohjeet:"
 
 #: widgets/quickask/textautogeneratequickaskdialog.cpp:25
 #, kde-format
@@ -3223,7 +3166,7 @@ msgstr "Etsi…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show internal tools…"
-msgstr ""
+msgstr "Näytä sisäiset työkalut…"
 
 #: widgets/quickask/textautogeneratequickaskheaderwidget.cpp:55
 #, kde-format
@@ -3248,88 +3191,77 @@ msgstr "Tallenna keskustelu tietokantaan"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Tags"
-msgstr ""
+msgstr "Hallinnoi luokituksia"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Instance…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Tag…"
-msgstr "Lisää ilmentymä…"
+msgstr "Lisää luokitus…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Tag…"
-msgstr "Muuta…"
+msgstr "Muuta luokitusta…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Tag"
-msgstr "Poista"
+msgstr "Poista luokitus"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance (%1)?"
+#, kde-format
 msgid "Do you want to remove this tag (%1)?"
-msgstr "Haluatko poistaa tämän ilmentymän (%1)?"
+msgstr "Haluatko poistaa tämän luokituksen (%1)?"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Tag"
-msgstr "Poista"
+msgstr "Poista luokitus"
 
 #: widgets/tags/textautogenerateselecttagscombobox.cpp:118
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag selected"
-msgstr ""
+msgstr "Luokitusta ei ole valittu"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Tag"
-msgstr ""
+msgstr "Lisää luokitus"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Tag"
-msgstr "Muuta…"
+msgstr "Muuta luokitusta"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:35
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tags"
-msgstr ""
+msgstr "Luokitukset"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Manage Tags…"
-msgstr ""
+msgstr "Hallinnoi luokituksia…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr ""
+msgstr "Luokituksen nimi…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:35
 #, kde-format
 msgid "Color:"
-msgstr ""
+msgstr "Väri:"
 
 #: widgets/textautogeneratedialog.cpp:32
 #, kde-format
@@ -3344,12 +3276,10 @@ msgid "New Chat"
 msgstr "Uusi keskustelu"
 
 #: widgets/textautogenerateheaderwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Discussion"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Ephemeral Discussion"
-msgstr "Poista keskustelu"
+msgstr "Lyhytaikainen keskustelu"
 
 #: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format
@@ -3367,15 +3297,13 @@ msgstr "Etsi… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr ""
+msgstr "Näytä vain keskustelut, joilla on yksi valituista luokituksista"
 
 #: widgets/textautogeneratehistorywidget.cpp:79
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Search Channels"
+#, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "Etsi kanavia"
+msgstr "Etsi keskustelua"
 
 #: widgets/textautogeneratehistorywidget.cpp:86
 #, kde-format
@@ -3403,13 +3331,13 @@ msgstr "Liitännäistä ei löytynyt."
 #: widgets/textautogeneratewidget.cpp:244
 #, kde-format
 msgid "Error reported: %1"
-msgstr ""
+msgstr "Ilmoitettiin virhe: %1"
 
 #: widgets/textautogeneratewidget.cpp:244
 #, kde-format
 msgctxt "@title:window"
 msgid "Error"
-msgstr ""
+msgstr "Virhe"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:27
 #, kde-format
@@ -3537,7 +3465,7 @@ msgstr "Valitse kaikki"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Insert Text"
-msgstr ""
+msgstr "Lisää tekstiä"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:136
 #, kde-format
