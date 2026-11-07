@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:49+0000\n"
-"PO-Revision-Date: 2026-11-03 10:12+0100\n"
+"PO-Revision-Date: 2026-11-06 11:30+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -295,7 +295,7 @@ msgstr "<br><b>Durada total:</b> %1 segons"
 #: core/textautogeneratetextreplyinfo.cpp:54
 #, kde-format
 msgid "<br><b>Prompt Tokens:</b> %1"
-msgstr "<br><b>Segments textual de petició:</b> %1"
+msgstr "<br><b>Segments textuals de petició:</b> %1"
 
 #: core/textautogeneratetextreplyinfo.cpp:55
 #, kde-format
@@ -400,11 +400,10 @@ msgid "Failed to connect to interface at %1: %2"
 msgstr "Ha fallat en connectar amb la interfície a %1: %2"
 
 #: plugins/genericnetworkplugin/genericnetworknetworkpluginconfigurewidget.cpp:37
-#, fuzzy, kde-format
-#| msgid "Modelfile"
+#, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Model default"
-msgstr "Fitxer de model"
+msgstr "Model predeterminat"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:27
 #, kde-format
@@ -589,29 +588,28 @@ msgstr "Models de llenguatge grans de DeepSeek"
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Disabled"
-msgstr ""
+msgstr "Desactivat"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:643
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Enabled"
-msgstr ""
+msgstr "Activat"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:645
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Minimal"
-msgstr ""
+msgstr "Mínim"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:647
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Low"
-msgstr ""
+msgstr "Baix"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:649
-#, fuzzy, kde-format
-#| msgid "Medium"
+#, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Medium"
 msgstr "Mitjà"
@@ -620,13 +618,13 @@ msgstr "Mitjà"
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "High"
-msgstr ""
+msgstr "Alt"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:653
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Extra High"
-msgstr ""
+msgstr "Extra alt"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:91
@@ -3713,6 +3711,8 @@ msgid ""
 "How much the model reasons before answering. A higher level gives better "
 "answers to complex questions, but is slower and uses more tokens."
 msgstr ""
+"Quant raona el model abans de respondre. Un nivell més alt dona respostes "
+"millors a preguntes complexes, però és més lent i utilitza més segments."
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:57
 #, kde-format
@@ -3737,10 +3737,9 @@ msgid "Max Tokens:"
 msgstr "Màxim de segments textuals:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Thinking"
+#, kde-format
 msgid "Thinking:"
-msgstr "Pensament"
+msgstr "Pensament:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
 #, kde-format

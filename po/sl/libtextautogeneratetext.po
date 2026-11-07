@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:49+0000\n"
-"PO-Revision-Date: 2026-11-02 11:58+0100\n"
+"PO-Revision-Date: 2026-11-06 06:42+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -398,11 +398,10 @@ msgid "Failed to connect to interface at %1: %2"
 msgstr "Povezava z vmesnikom ni uspela na %1: %2"
 
 #: plugins/genericnetworkplugin/genericnetworknetworkpluginconfigurewidget.cpp:37
-#, fuzzy, kde-format
-#| msgid "Modelfile"
+#, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Model default"
-msgstr "Model datoteke"
+msgstr "Privzeti model"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:27
 #, kde-format
@@ -586,29 +585,28 @@ msgstr "Veliki jezikovni modeli DeepSeek"
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Disabled"
-msgstr ""
+msgstr "Onemogočen"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:643
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Enabled"
-msgstr ""
+msgstr "Omogočen"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:645
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Minimal"
-msgstr ""
+msgstr "Minimalni"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:647
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Low"
-msgstr ""
+msgstr "Nizki"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:649
-#, fuzzy, kde-format
-#| msgid "Medium"
+#, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Medium"
 msgstr "Srednji"
@@ -617,13 +615,13 @@ msgstr "Srednji"
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "High"
-msgstr ""
+msgstr "Visoki"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:653
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Extra High"
-msgstr ""
+msgstr "Posebej visoki"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:91
@@ -3681,6 +3679,8 @@ msgid ""
 "How much the model reasons before answering. A higher level gives better "
 "answers to complex questions, but is slower and uses more tokens."
 msgstr ""
+"Koliko model premisli, preden odgovori. Višja raven daje boljše odgovore na "
+"kompleksna vprašanja, vendar je počasnejša in uporablja več žetonov."
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:57
 #, kde-format
@@ -3704,10 +3704,9 @@ msgid "Max Tokens:"
 msgstr "Maks. žetonov:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Thinking"
+#, kde-format
 msgid "Thinking:"
-msgstr "Razmišljanje"
+msgstr "Razmišljanje:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
 #, kde-format
