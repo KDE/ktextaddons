@@ -22,11 +22,11 @@ repos:
     - id: check-executables-have-shebangs
     - id: check-toml
  - repo: https://github.com/fsfe/reuse-tool
-   rev: v6.2.0
+   rev: v6.3.0
    hooks:
     - id: reuse-lint-file
  - repo: https://github.com/pre-commit/mirrors-clang-format
-   rev: v22.1.8
+   rev: v23.1.5
    hooks:
     - id: clang-format
     # force using this project's configuration rather
@@ -35,7 +35,7 @@ repos:
       exclude: (textutils/cmark-rc)
  - repo: https://github.com/astral-sh/ruff-pre-commit
   # Ruff version.
-   rev: v0.15.22
+   rev: v0.17.4
    hooks:
     # Run the linter.
     - id: ruff
@@ -51,17 +51,17 @@ repos:
    hooks:
     - id: gersemi
  - repo: https://github.com/DavidAnson/markdownlint-cli2
-   rev: v0.23.1
+   rev: v0.24.0
    hooks:
     - id: markdownlint-cli2
       files: \.(md|mdown|markdown)$
       exclude: (textautogeneratetextmcpprotocol/tests/README.md)
       language_version: lts
  - repo: https://github.com/scop/pre-commit-shfmt
-   rev: v3.13.1-1
+   rev: v3.14.1-1
    hooks:
     - id: shfmt
  - repo: https://github.com/shellcheck-py/shellcheck-py
-   rev: v0.11.0.1
+   rev: v0.11.0.1-1
    hooks:
     - id: shellcheck
