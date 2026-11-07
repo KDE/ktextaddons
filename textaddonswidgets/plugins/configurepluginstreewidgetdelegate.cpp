@@ -15,17 +15,6 @@ ConfigurePluginsTreeWidgetDelegate::ConfigurePluginsTreeWidgetDelegate(QObject *
 }
 
 ConfigurePluginsTreeWidgetDelegate::~ConfigurePluginsTreeWidgetDelegate() = default;
-namespace
-{
-void setTextPen(QPainter *painter, const QStyleOptionViewItem &option)
-{
-    QPalette::ColorGroup cg = (option.state & QStyle::State_Enabled) ? QPalette::Normal : QPalette::Disabled;
-    if (cg == QPalette::Normal && !(option.state & QStyle::State_Active)) {
-        cg = QPalette::Inactive;
-    }
-    painter->setPen(option.palette.color(cg, (option.state & QStyle::State_Selected) ? QPalette::HighlightedText : QPalette::Text));
-}
-}
 
 void ConfigurePluginsTreeWidgetDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
@@ -47,53 +36,48 @@ void ConfigurePluginsTreeWidgetDelegate::paint(QPainter *painter, const QStyleOp
 
     QStyleOptionViewItem opt(option);
     opt.showDecorationSelected = true;
-    QApplication::style()->drawPrimitive(QStyle::PE_PanelItemViewItem, &opt, painter);
+    initStyleOption(&opt, index);
+    opt.text.clear();
+    QApplication::style()->drawControl(QStyle::CE_ItemViewItem, &opt, painter, opt.widget);
 
     painter->save();
-
-    // Check if the item has a CheckStateRole
-    if (const QVariant checkStateData = index.data(Qt::CheckStateRole); checkStateData.isValid()) {
-        // Get the checkbox state
-        const Qt::CheckState checkState = static_cast<Qt::CheckState>(checkStateData.toInt());
-
-        // Get the checkbox style options
-        QStyleOptionButton checkboxOption;
-        checkboxOption.state = QStyle::State_Enabled;
-        if (checkState == Qt::Checked) {
-            checkboxOption.state |= QStyle::State_On;
-        } else if (checkState == Qt::Unchecked) {
-            checkboxOption.state |= QStyle::State_Off;
-        } else {
-            checkboxOption.state |= QStyle::State_NoChange;
-        }
-
-        // Center the checkbox in the item's rect
-        checkboxOption.rect = QApplication::style()->subElementRect(QStyle::SE_ItemViewItemCheckIndicator, &option);
-        checkboxOption.rect.moveCenter(QPoint(option.rect.left(), option.rect.center().y()));
-
-        // Draw the checkbox
-        QApplication::style()->drawControl(QStyle::CE_CheckBox, &checkboxOption, painter);
-    }
 
     // Set the painter font
     painter->setFont(option.font);
 
     // Calculate the text rectangles
     const QFontMetrics fontMetrics(option.font);
-    const QRect rect = option.rect;
-
-    const QSize checkboxSize = QApplication::style()->sizeFromContents(QStyle::CT_CheckBox, nullptr, QSize(), nullptr);
+    const QRect rect = QApplication::style()->subElementRect(QStyle::SE_ItemViewItemText, &opt, opt.widget);
 
     // Draw the two lines
-    setTextPen(painter, option);
-    const QRect line1Rect(rect.left() + 5 + checkboxSize.width(), rect.top(), rect.width(), fontMetrics.height());
-    painter->drawText(line1Rect, Qt::AlignLeft | Qt::AlignVCenter, text);
-    QFont f = option.font;
+    const int alignment = Qt::AlignLeft | Qt::AlignVCenter;
+    const bool enabled = opt.state & QStyle::State_Enabled;
+
+    QPalette::ColorGroup colorGroup;
+    if (enabled) {
+        if (!(opt.state & QStyle::State_Active)) {
+            colorGroup = QPalette::Inactive;
+        } else {
+            colorGroup = QPalette::Normal;
+        }
+    } else {
+        colorGroup = QPalette::Disabled;
+    }
+    opt.palette.setCurrentColorGroup(colorGroup);
+
+    const QPalette::ColorRole colorRole = opt.state & QStyle::State_Selected ? QPalette::HighlightedText : QPalette::Text;
+
+    const QRect line1Rect(rect.left(), rect.top(), rect.width(), fontMetrics.height());
+    QApplication::style()->drawItemText(painter, line1Rect, alignment, opt.palette, enabled, text, colorRole);
+
+    QFont f = opt.font;
     f.setItalic(true);
     f.setPointSize(f.pointSize() - 2);
     painter->setFont(f);
-    const QRect line2Rect(rect.left() + 5 + checkboxSize.width(), rect.top() + fontMetrics.height(), rect.width(), fontMetrics.height());
-    painter->drawText(line2Rect, Qt::AlignLeft | Qt::AlignVCenter, description);
+
+    const QRect line2Rect(rect.left(), rect.top() + fontMetrics.height(), rect.width(), fontMetrics.height());
+    QApplication::style()->drawItemText(painter, line2Rect, alignment, opt.palette, enabled, description, colorRole);
+
     painter->restore();
 }
 
