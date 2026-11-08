@@ -509,7 +509,6 @@ bool GenericNetworkServerInfo::modelSupportsTools(GenericNetworkManager::PluginN
 GenericNetworkManager::Limitations GenericNetworkServerInfo::limitations(GenericNetworkManager::PluginNetworkType type)
 {
     GenericNetworkManager::Limitations limits;
-    limits |= GenericNetworkManager::Limitation::None;
     switch (type) {
     case GenericNetworkManager::PluginNetworkType::Unknown:
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "PluginNetworkType is unknown. It's a bug";

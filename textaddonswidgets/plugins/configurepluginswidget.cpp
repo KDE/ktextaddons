@@ -159,7 +159,6 @@ void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginU
                 but->setFixedWidth(28);
                 but->setToolTip(i18nc("@info:tooltip", "Configure"));
                 but->setAutoFillBackground(true);
-                but->setEnabled(true);
                 mTreePluginWidget->setItemWidget(subItem, 1, but);
                 connect(but, &QToolButton::triggered, this, &ConfigurePluginsWidget::slotConfigureButtonClicked);
             }

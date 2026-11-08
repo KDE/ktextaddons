@@ -31,7 +31,6 @@ OllamaConfigureCustomizeWidget::OllamaConfigureCustomizeWidget(QWidget *parent)
     mVulkanSupportCheckBox->setToolTip(
         i18nc("@info:tooltip", "Use Vulkan for hardware acceleration. May improve performance on some GPUs, but use with caution as it may be unstable."));
     mainLayout->addRow(i18n("Vulkan GPU Support (Experimental):"), mVulkanSupportCheckBox);
-    KLineEditEventHandler::catchReturnKey(mVulkanSupportCheckBox);
 
     mCudaVisibleDeviceLineEdit->setObjectName(u"mCudaVisibleDeviceLineEdit"_s);
     mCudaVisibleDeviceLineEdit->setClearButtonEnabled(true);
