@@ -66,6 +66,7 @@ void OllamaCommonManager::showModelInfo(const QString &modelName)
         // qDebug() << " readResponse : " << readResponse;
         Q_EMIT finished(readResponse);
         Q_EMIT showModelInfoDone(readResponse.response);
+        reply->deleteLater();
     });
 }
 
