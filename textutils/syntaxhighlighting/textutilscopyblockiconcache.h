@@ -50,7 +50,7 @@ public:
     [[nodiscard]] QString iconUrl(TextUtilsCopyBlockIconCache::IconType type);
 
 private:
-    TextUtilsCopyBlockIconCache() = default;
+    TEXTUTILS_NO_EXPORT TextUtilsCopyBlockIconCache() = default;
     TEXTUTILS_NO_EXPORT ~TextUtilsCopyBlockIconCache();
 
     [[nodiscard]] TEXTUTILS_NO_EXPORT QString saveIconToTempFile(TextUtilsCopyBlockIconCache::IconType type);
