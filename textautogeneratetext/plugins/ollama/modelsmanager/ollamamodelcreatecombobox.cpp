@@ -25,6 +25,7 @@ void OllamaModelCreateComboBox::fillEngine()
 {
     if (mOllamaManager) {
         connect(mOllamaManager, &OllamaManager::modelsLoadDone, this, [this]() {
+            clear();
             const QList<OllamaModelInstalledInfo> infos = mOllamaManager->installedInfos();
             for (const auto &info : infos) {
                 addItem(info.generateModelName(), info.model());
