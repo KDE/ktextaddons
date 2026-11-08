@@ -260,12 +260,13 @@ def serve(repo_id=DEFAULT_REPO_ID):
             voice = request.get("voice") or "af_heart"
             sample_format = request.get("sampleFormat") or "int16"
             try:
-                index = 0
-                for graphemes, phonemes, audio in synthesizer.chunks(
-                    request.get("text", ""),
-                    voice,
-                    float(request.get("speed", 1.0)),
-                    request.get("splitPattern", r"\n+"),
+                for index, (graphemes, phonemes, audio) in enumerate(
+                    synthesizer.chunks(
+                        request.get("text", ""),
+                        voice,
+                        float(request.get("speed", 1.0)),
+                        request.get("splitPattern", r"\n+"),
+                    )
                 ):
                     if is_cancelled(job_id):
                         break
@@ -292,7 +293,6 @@ def serve(repo_id=DEFAULT_REPO_ID):
                         },
                         to_pcm(audio, sample_format),
                     )
-                    index += 1
                 out.send(
                     {"type": "end", "id": job_id, "cancelled": is_cancelled(job_id)}
                 )

@@ -258,8 +258,8 @@ def download(args):
     # Asking model by model would be one interpreter start per model, and the
     # engine wants the state of the whole table to show it in one list.
     if args.all:
-        ok = all([report_model_state(name) for name, _, _ in MODELS])
-        return 0 if ok else 1
+        states = [report_model_state(name) for name, _, _ in MODELS]
+        return 0 if all(states) else 1
 
     repo_id = model_repository(args.model)
     if repo_id is None:
@@ -269,10 +269,9 @@ def download(args):
             message=f"unknown model: {args.model!r}",
         )
         return 1
-    if not args.force:
-        if (path := cached_model_path(repo_id)) is not None:
-            report(type="cached", model=args.model, repo=repo_id, path=path)
-            return 0
+    if not args.force and (path := cached_model_path(repo_id)) is not None:
+        report(type="cached", model=args.model, repo=repo_id, path=path)
+        return 0
     if args.dry_run:
         sizes = {name: size for name, size, _ in MODELS}
         report(
@@ -657,18 +656,21 @@ def serve():
             current["sincePartial"] += len(audio) / SAMPLE_RATE
             # A partial costs a full decoding, so it is only computed when the
             # model is idle: a final result must never wait behind one.
-            if current["sincePartial"] >= PARTIAL_INTERVAL and jobs.empty():
-                if (pending := current["endpointer"].pending_audio()) is not None:
-                    current["sincePartial"] = 0.0
-                    jobs.put(
-                        {
-                            "kind": "partial",
-                            "id": current["id"],
-                            "audio": pending,
-                            "language": current["language"],
-                            "prompt": current["prompt"],
-                        }
-                    )
+            if (
+                current["sincePartial"] >= PARTIAL_INTERVAL
+                and jobs.empty()
+                and (pending := current["endpointer"].pending_audio()) is not None
+            ):
+                current["sincePartial"] = 0.0
+                jobs.put(
+                    {
+                        "kind": "partial",
+                        "id": current["id"],
+                        "audio": pending,
+                        "language": current["language"],
+                        "prompt": current["prompt"],
+                    }
+                )
         elif command == "stop":
             job_id = request.get("id", 0)
             if current is not None and job_id == current["id"]:

@@ -71,7 +71,7 @@ def unqualify(codepoints):
 
 def load_json(path_or_url):
     if path_or_url.startswith("https://"):
-        with urllib.request.urlopen(path_or_url) as response:  # noqa: S310
+        with urllib.request.urlopen(path_or_url) as response:
             return json.load(response)
     return json.loads(pathlib.Path(path_or_url).read_text(encoding="utf-8"))
 
