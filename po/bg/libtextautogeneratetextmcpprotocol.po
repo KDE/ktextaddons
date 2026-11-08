@@ -308,7 +308,7 @@ msgstr "Премахване"
 #| msgid "Name:"
 msgctxt "@title:column"
 msgid "Name"
-msgstr "Име:"
+msgstr "Име"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
 #, fuzzy, kde-format
@@ -316,13 +316,13 @@ msgstr "Име:"
 #| msgid "Name: Value"
 msgctxt "@title:column"
 msgid "Value"
-msgstr "Име: Стойност"
+msgstr "Стойност"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "An empty value keeps the variable from the user environment."
-msgstr ""
+msgstr "Празната стойност запазва променливата от потребителската среда."
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:38
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:33
@@ -348,7 +348,7 @@ msgstr "Аргументи:"
 #| msgid "Environment variables:"
 msgctxt "@label"
 msgid "Environment:"
-msgstr "Променливи на средата:"
+msgstr "Среда:"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfiguredialog.cpp:25
 #, kde-format
@@ -466,10 +466,10 @@ msgid "Edit…"
 msgstr "Редактиране…"
 
 #: widgets/client/mcpserverlistview.cpp:70
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
-msgstr ""
+msgstr "Конфигурация на инструментите…"
 
 #: widgets/client/mcpserverlistview.cpp:81
 #, kde-format
@@ -514,9 +514,10 @@ msgid "From MCP Registry…"
 msgstr "От MCP регистъра…"
 
 #: widgets/client/mcpserverwidget.cpp:172
-#, kde-format
+#, fuzzy, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr ""
+"Този сървър не предоставя поддържан транспорт (дистанционен или пакетен)."
 
 #: widgets/client/mcpserverwidget.cpp:172
 #, fuzzy, kde-format
@@ -524,7 +525,7 @@ msgstr ""
 #| msgid "Add Server"
 msgctxt "@title:window"
 msgid "Add MCP Server"
-msgstr "Добавяне на сървър"
+msgstr "Добавяне на MCP сървър"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

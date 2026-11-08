@@ -400,7 +400,7 @@ msgstr "Неуспешно свързване с интерфейс в %1: %2"
 #| msgid "Modelfile"
 msgctxt "@item:inlistbox thinking level"
 msgid "Model default"
-msgstr "Modelfile"
+msgstr "Модел по подразбиране"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:27
 #, kde-format
@@ -581,47 +581,47 @@ msgid "DeepSeek large language models"
 msgstr "Езикови модели с голям обем на DeepSeek"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:641
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Disabled"
-msgstr ""
+msgstr "Изключено"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:643
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Enabled"
-msgstr ""
+msgstr "Активирано"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:645
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Minimal"
-msgstr ""
+msgstr "Минимално"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:647
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Low"
-msgstr ""
+msgstr "Ниско"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:649
 #, fuzzy, kde-format
 #| msgid "Medium"
 msgctxt "@item:inlistbox thinking level"
 msgid "Medium"
-msgstr "Среден"
+msgstr "Средно"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:651
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "High"
-msgstr ""
+msgstr "Високо"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:653
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Extra High"
-msgstr ""
+msgstr "Свръхвисоко"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:91
@@ -3446,7 +3446,7 @@ msgstr "%1:"
 #| msgid "Configure %1"
 msgctxt "@title:window"
 msgid "Configure Tools"
-msgstr "Настройване на %1"
+msgstr "Конфигурация на инструментите"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:43
 #, fuzzy, kde-format
@@ -3454,7 +3454,7 @@ msgstr "Настройване на %1"
 #| msgid "Configure %1"
 msgctxt "@title:window"
 msgid "Configure Tools of %1"
-msgstr "Настройване на %1"
+msgstr "Конфигурация на инструментите на %1"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:34
 #, fuzzy, kde-format
@@ -3462,22 +3462,24 @@ msgstr "Настройване на %1"
 #| msgid "Allow to select tools"
 msgctxt "@option:check"
 msgid "Only allow selected tools"
-msgstr "Разрешаване на избиране на инструменти"
+msgstr "Допускане само на избрани инструменти"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Tools which are not selected are not sent to LLM. New tools of server are "
 "not allowed."
 msgstr ""
+"Неизбраните инструменти не се изпращат към LLM. Нови инструменти на сървъра "
+"не са разрешени."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:60
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@item:inlistbox"
 msgid "All Tools"
-msgstr "Инструменти"
+msgstr "Всички инструменти"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
 #, fuzzy, kde-format
@@ -3485,7 +3487,7 @@ msgstr "Инструменти"
 #| msgid "Select All"
 msgctxt "@action:button"
 msgid "Select All"
-msgstr "Избиране на всичко"
+msgstr "Избор на всички"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
 #, fuzzy, kde-format
@@ -3493,17 +3495,18 @@ msgstr "Избиране на всичко"
 #| msgid "Select All"
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr "Избиране на всичко"
+msgstr "Отмаркиране на всички"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
-#, kde-format
+#, fuzzy, kde-format
 msgid "Apply changes to load the list of tools of this server."
 msgstr ""
+"Прилагане на промените за зареждане на списъка с инструменти на този сървър."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:170
-#, kde-format
+#, fuzzy, kde-format
 msgid "Enable this server to load the list of its tools."
-msgstr ""
+msgstr "Разрешаване на този сървър за зареждане на списъка с инструментите му."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:177
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:183
@@ -3689,12 +3692,14 @@ msgid "Configure…"
 msgstr "Конфигуриране…"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "How much the model reasons before answering. A higher level gives better "
 "answers to complex questions, but is slower and uses more tokens."
 msgstr ""
+"Степен на разсъждение на модела преди отговор. По-високото ниво осигурява по-"
+"добри отговори на сложни въпроси, но е по-бавно и консумира повече токени."
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:57
 #, kde-format
@@ -3721,7 +3726,7 @@ msgstr "Макс токени:"
 #, fuzzy, kde-format
 #| msgid "Thinking"
 msgid "Thinking:"
-msgstr "Разсъждаване"
+msgstr "Мислене:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
 #, kde-format
@@ -4143,14 +4148,14 @@ msgstr "Инструменти:"
 #, fuzzy, kde-format
 #| msgid "No plugin found."
 msgid "No tools found"
-msgstr "Не е намерен плъгин."
+msgstr "Няма намерени инструменти"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Allow to select tools"
 msgid "No allowed tools"
-msgstr "Разрешаване на избиране на инструменти"
+msgstr "Няма разрешени инструменти"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:194
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:49+0000\n"
-"PO-Revision-Date: 2026-11-03 22:51+0300\n"
+"PO-Revision-Date: 2026-11-07 19:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:436
 #, kde-format
@@ -302,26 +302,22 @@ msgid "Remove"
 msgstr "Kaldır"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@title:column"
 msgid "Name"
-msgstr "Ad:"
+msgstr "Ad"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Name: Value"
+#, kde-format
 msgctxt "@title:column"
 msgid "Value"
-msgstr "Ad: Değer"
+msgstr "Değer"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "An empty value keeps the variable from the user environment."
-msgstr ""
+msgstr "Boş bir değer, kullanıcı ortamındaki değişkenin değerini korur."
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:38
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:33
@@ -343,11 +339,10 @@ msgid "Arguments:"
 msgstr "Argümanlar:"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Environment variables:"
+#, kde-format
 msgctxt "@label"
 msgid "Environment:"
-msgstr "Çevre değişkenleri:"
+msgstr "Ortam:"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfiguredialog.cpp:25
 #, kde-format
@@ -515,15 +510,13 @@ msgstr "MCP Kayıt Defterinden…"
 #: widgets/client/mcpserverwidget.cpp:172
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
-msgstr ""
+msgstr "Bu sunucu, desteklenen bir taşıma sağlamıyor (uzak veya paket)."
 
 #: widgets/client/mcpserverwidget.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add MCP Server"
-msgstr "Sunucu Ekle"
+msgstr "MCP Sunucusu Ekle"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

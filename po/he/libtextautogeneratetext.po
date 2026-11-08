@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-06 00:49+0000\n"
-"PO-Revision-Date: 2026-11-05 13:52+0200\n"
+"PO-Revision-Date: 2026-11-07 21:59+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -131,15 +131,14 @@ msgid "Read-only"
 msgstr "לקריאה בלבד"
 
 #: core/mcp/textautogeneratemcptoolsutils.cpp:87
-#, fuzzy, kde-format
-#| msgid "Modified At:"
+#, kde-format
 msgid "Modifies data"
-msgstr "מועד עריכה:"
+msgstr "עורך נתונים"
 
 #: core/mcp/textautogeneratemcptoolsutils.cpp:89
 #, kde-format
 msgid "May delete or overwrite data"
-msgstr ""
+msgstr "עלול למחוק או לדרוס נתונים"
 
 #: core/models/textautogeneratechatsmodel.cpp:97
 #, kde-format
@@ -313,7 +312,7 @@ msgstr "<br><b>אסימון השלמה:</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
 msgid "MCP tool: %1 (%2)"
-msgstr ""
+msgstr "כלי MCP‏: %1 (%2)"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
@@ -393,11 +392,10 @@ msgid "Failed to connect to interface at %1: %2"
 msgstr "ההתחברות לממשק ב־%1 נכשלה: %2"
 
 #: plugins/genericnetworkplugin/genericnetworknetworkpluginconfigurewidget.cpp:37
-#, fuzzy, kde-format
-#| msgid "Modelfile"
+#, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Model default"
-msgstr "קובץ מודל"
+msgstr "ברירת מחדל של המודל"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:27
 #, kde-format
@@ -573,53 +571,51 @@ msgid "OpenAI API (custom)"
 msgstr "ה־API של Open AI (מותאם אישית)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:292
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "DeepSeek large language models"
-msgstr "מודלי שפה גדולים מבית Mistral AI"
+msgstr "מודלי שפה גדולים מבית DeepSeek"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:641
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Disabled"
-msgstr ""
+msgstr "מושבתת"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:643
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Enabled"
-msgstr ""
+msgstr "פעילה"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:645
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Minimal"
-msgstr ""
+msgstr "מזערית"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:647
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Low"
-msgstr ""
+msgstr "נמוכה"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:649
-#, fuzzy, kde-format
-#| msgid "Medium"
+#, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Medium"
-msgstr "בינוני"
+msgstr "בינונית"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:651
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "High"
-msgstr ""
+msgstr "גבוהה"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:653
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Extra High"
-msgstr ""
+msgstr "גבוהה במיוחד"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:91
@@ -3149,7 +3145,7 @@ msgstr "פרטי נתוני־על"
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"
-msgstr ""
+msgstr "הרצת כלים ללא אישור:"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:51
 #, kde-format
@@ -3294,7 +3290,7 @@ msgstr "דחייה"
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from %1"
-msgstr ""
+msgstr "בקשה מ־%1"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:217
 #, kde-format
@@ -3305,37 +3301,31 @@ msgstr "כתובת:"
 #, kde-format
 msgctxt "Label of required field"
 msgid "%1 (required):"
-msgstr ""
+msgstr "%1 (נחוצה):"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:248
 #, kde-format
 msgctxt "Label of field"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools"
-msgstr "הגדרה"
+msgstr "הגדרת כלים"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools of %1"
-msgstr "הגדרת %1"
+msgstr "הגדרת כלים של %1"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Allow to select tools"
+#, kde-format
 msgctxt "@option:check"
 msgid "Only allow selected tools"
-msgstr "לאפשר לבחור כלים"
+msgstr "לאפשר לכלים נבחרים בלבד"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:45
 #, kde-format
@@ -3346,27 +3336,22 @@ msgid ""
 msgstr ""
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "All Tools"
-msgstr "כלים"
+msgstr "כל הכלים"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "בחירה בהכול"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr "בחירה בהכול"
+msgstr "ביטול בחירה בהכול"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
 #, kde-format
@@ -3392,11 +3377,9 @@ msgstr "בהתחברות…"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:186
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Show internal tools…"
+#, kde-format
 msgid "Loading tools…"
-msgstr "הצגת כלים פנימיים…"
+msgstr "הכלים נטענים…"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
@@ -3439,28 +3422,28 @@ msgstr "לסרב"
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:29
 #, kde-format
 msgid "[Image]"
-msgstr ""
+msgstr "[תמונה]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:32
 #, kde-format
 msgid "[Audio]"
-msgstr ""
+msgstr "[שמע]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:35
 #, kde-format
 msgid "[Tool call]"
-msgstr ""
+msgstr "[קריאה לכלי]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:38
 #, kde-format
 msgid "[Tool result]"
-msgstr ""
+msgstr "[תוצאה מכלי]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Sampling Request from MCP Server"
-msgstr ""
+msgstr "בקשת דגימה משרת MCP"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:75
 #, kde-format
@@ -3469,12 +3452,10 @@ msgid "Send to LLM"
 msgstr ""
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Project"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reject"
-msgstr "מיזם"
+msgstr "דחייה"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:89
 #, kde-format
@@ -3484,12 +3465,13 @@ msgid ""
 msgstr ""
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:102
-#, fuzzy, kde-format
-#| msgid "No system prompt"
+#, kde-format
 msgid ""
 "System prompt:\n"
 "%1"
-msgstr "אין הנחיית מערכת"
+msgstr ""
+"הנחיית מערכת:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3578,10 +3560,9 @@ msgid "Custom URL:"
 msgstr "כתובת מותאמת אישית:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:63
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Models:"
-msgstr "מודלים"
+msgstr "מודלים:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:66
 #, kde-format
@@ -3589,10 +3570,9 @@ msgid "Max Tokens:"
 msgstr "כמות אסימונים מרבית:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Thinking"
+#, kde-format
 msgid "Thinking:"
-msgstr "חשיבה"
+msgstr "חשיבה:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
 #, kde-format
@@ -3686,7 +3666,7 @@ msgstr "סמל:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Agent"
-msgstr ""
+msgstr "סוכן"
 
 #: widgets/promptswidget/textautogenerateagentwidget.cpp:30
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
@@ -3708,7 +3688,7 @@ msgstr "טיול"
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:23
 #, kde-format
 msgid "Undefined"
-msgstr ""
+msgstr "לא מוגדר"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, kde-format
@@ -3724,37 +3704,30 @@ msgstr "קטגוריה:"
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
 #, kde-format
 msgid "Command Completion:"
-msgstr ""
+msgstr "השלמת פקודות:"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Tag…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Agent…"
-msgstr "הוספת תגית…"
+msgstr "הוספת סוכן…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Agent"
-msgstr "הסרת תגית"
+msgstr "הסרת סוכן"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this tag (%1)?"
+#, kde-format
 msgid "Do you want to remove this agent (%1)?"
-msgstr "להסיר את התגית הזאת (%1)?"
+msgstr "להסיר את הסוכן הזה (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Agent"
-msgstr "הסרת תגית"
+msgstr "הסרת סוכן"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
 #, kde-format
@@ -3780,34 +3753,27 @@ msgid "Remove Prompt"
 msgstr "הסרת בקשה"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Tag…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Skill…"
-msgstr "הוספת תגית…"
+msgstr "הוספת מיומנות…"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Skill"
-msgstr "הסרת מודל"
+msgstr "הסרת מיומנות"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this skill (%1)?"
-msgstr "להסיר את המודל הזה (%1)?"
+msgstr "להסיר את המיומנות הזאת (%1)?"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Skill"
-msgstr "הסרת מודל"
+msgstr "הסרת מיומנות"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
@@ -3971,12 +3937,10 @@ msgid "Only show the chats which have one of the selected tags"
 msgstr "להציג רק את השיחות שיש להן את אחת מהתגיות הנבחרות"
 
 #: widgets/textautogeneratehistorywidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Clear"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear tags"
-msgstr "פינוי"
+msgstr "פינוי תגיות"
 
 #: widgets/textautogeneratehistorywidget.cpp:80
 #, kde-format
@@ -4025,17 +3989,14 @@ msgid "Tools:"
 msgstr "כלים:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgid "No plugin found."
+#, kde-format
 msgid "No tools found"
-msgstr "לא נמצא תוסף."
+msgstr "לא נמצאו כלים"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Allow to select tools"
+#, kde-format
 msgid "No allowed tools"
-msgstr "לאפשר לבחור כלים"
+msgstr "אין כלים מורשים"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:194
 #, kde-format
