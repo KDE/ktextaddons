@@ -20,6 +20,8 @@ public:
 
     [[nodiscard]] QByteArray processOutputData() const;
 
+    [[nodiscard]] bool isRunning() const;
+
 Q_SIGNALS:
     void ollamaStarted();
     void ollamaFailed(const QString &errorStr);

@@ -333,6 +333,11 @@ bool OllamaManager::hasCategorySupport(const QString &modelName, TextAutoGenerat
 
 void OllamaManager::startOllama()
 {
+    if (isOllamaStarted()) {
+        return;
+    }
+    delete mOllamaStartProcessJob;
+    mOllamaStartProcessJob = nullptr;
     auto job = new OllamaStartProcessJob(this, this);
     connect(job, &OllamaStartProcessJob::ollamaStarted, this, [this]() {
         Q_EMIT ollamaStarted();
@@ -347,7 +352,7 @@ void OllamaManager::startOllama()
 
 bool OllamaManager::isOllamaStarted() const
 {
-    return mOllamaStartProcessJob != nullptr;
+    return mOllamaStartProcessJob && mOllamaStartProcessJob->isRunning();
 }
 
 QByteArray OllamaManager::ollamaOutputData() const

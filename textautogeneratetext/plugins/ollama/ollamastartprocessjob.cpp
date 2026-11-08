@@ -80,4 +80,9 @@ QByteArray OllamaStartProcessJob::processOutputData() const
     return mProcessOutputData;
 }
 
+bool OllamaStartProcessJob::isRunning() const
+{
+    return mProcess && mProcess->state() != QProcess::NotRunning;
+}
+
 #include "moc_ollamastartprocessjob.cpp"
