@@ -8,6 +8,7 @@
 #include "core/tools/textautogeneratetexttoolpluginmanager.h"
 #include "textautogeneratetextwidget_debug.h"
 #include "widgets/plugintext/textautogenerateplugintextmanager.h"
+#include <KLocalizedString>
 #include <TextAutoGenerateText/TextAutoGeneratePluginText>
 
 using namespace Qt::Literals::StringLiterals;

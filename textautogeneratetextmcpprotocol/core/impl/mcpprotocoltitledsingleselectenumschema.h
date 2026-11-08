@@ -8,7 +8,6 @@
 #include <QByteArray>
 #include <QList>
 #include <QString>
-#include <QStringList>
 #include <optional>
 class QDebug;
 class QJsonObject;

@@ -6,8 +6,8 @@
 
 #pragma once
 #include "textautogeneratetext_private_export.h"
-#include <QLabel>
 #include <QWidget>
+class QLabel;
 namespace TextAutoGenerateText
 {
 

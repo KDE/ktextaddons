@@ -14,7 +14,6 @@
 #include "ollamacommonutils.h"
 
 #include <KLocalizedString>
-#include <TextAutoGenerateText/TextAutoGenerateTextToolPluginManager>
 
 #include <QJsonDocument>
 #include <QJsonObject>

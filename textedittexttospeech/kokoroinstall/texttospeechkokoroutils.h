@@ -6,10 +6,10 @@
 
 #pragma once
 #include "kokoroinstalltexttospeech_export.h"
-#include <QIcon>
 #include <QLocale>
 #include <QStringList>
 #include <QVoice>
+class QIcon;
 
 namespace TextEditTextToSpeech
 {

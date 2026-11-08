@@ -10,6 +10,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QDialogButtonBox>
+#include <QFile>
 #include <QFileDialog>
 #include <QPointer>
 #include <QPushButton>

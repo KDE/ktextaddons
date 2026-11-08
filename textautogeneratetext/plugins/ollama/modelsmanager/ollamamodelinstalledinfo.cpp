@@ -5,6 +5,7 @@
 */
 #include "ollamamodelinstalledinfo.h"
 #include <QDateTime>
+#include <QDebug>
 #include <QJsonObject>
 #include <QLocale>
 

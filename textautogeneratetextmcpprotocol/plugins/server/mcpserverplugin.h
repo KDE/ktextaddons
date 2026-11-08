@@ -6,6 +6,8 @@
 #pragma once
 
 #include "common/mcpprotocolplugin.h"
+#include <QList>
+#include <QVariant>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolPluginInterface;

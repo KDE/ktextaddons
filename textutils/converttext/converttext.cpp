@@ -7,6 +7,7 @@
 #include "converttext.h"
 #include <QChar>
 #include <QString>
+#include <QTextCursor>
 
 using namespace TextUtils;
 

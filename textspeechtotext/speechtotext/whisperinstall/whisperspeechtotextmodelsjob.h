@@ -10,9 +10,9 @@
 #include <QList>
 #include <QObject>
 #include <QPointer>
-#include <QProcess>
 #include <QString>
 class QDebug;
+class QProcess;
 
 /*!
  * \brief Asks whisper_helper.py which models can be transcribed with.

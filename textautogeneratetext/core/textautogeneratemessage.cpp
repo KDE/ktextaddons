@@ -8,6 +8,7 @@
 #include "textautogenerateanswerinfo.h"
 #include "textautogeneratemessageutils.h"
 
+#include <QCborValue>
 #include <QDateTime>
 #include <QJsonArray>
 #include <QJsonDocument>

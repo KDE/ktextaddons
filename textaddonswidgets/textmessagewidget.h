@@ -7,7 +7,6 @@
 #pragma once
 #include "textaddonswidgets_export.h"
 #include <KMessageWidget>
-#include <QWidget>
 class QTimer;
 namespace TextAddonsWidgets
 {

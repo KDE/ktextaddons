@@ -7,7 +7,6 @@
 
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QByteArray>
-#include <QJsonObject>
 #include <QMap>
 #include <QString>
 #include <QStringList>
@@ -25,6 +24,7 @@
 #include <optional>
 
 class QDebug;
+class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolElicitRequestFormParams

@@ -6,7 +6,6 @@
 
 #include "textmessagewidget.h"
 
-#include <KMessageWidget>
 #include <QTimer>
 #include <QVBoxLayout>
 

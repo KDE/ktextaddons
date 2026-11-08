@@ -10,7 +10,9 @@
 #include "textspeechtotext_debug.h"
 #include <QCoreApplication>
 #include <QDir>
+#include <QHash>
 #include <QPluginLoader>
+#include <QSet>
 using namespace TextSpeechToText;
 using namespace Qt::Literals::StringLiterals;
 class TextSpeechToText::SpeechToTextEngineLoaderPrivate

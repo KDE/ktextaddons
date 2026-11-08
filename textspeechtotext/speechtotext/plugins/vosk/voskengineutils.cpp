@@ -10,6 +10,7 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QDir>
+#include <QFile>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QStandardPaths>

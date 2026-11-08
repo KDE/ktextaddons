@@ -7,6 +7,8 @@
 #include "core/textautogenerateengineaccessmanager.h"
 #include "ollamacommonreply.h"
 #include "ollamacommonutils.h"
+#include <QJsonArray>
+#include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkReply>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolPluginManager>

@@ -7,7 +7,7 @@
 #include "ollamacommonmodelavailableinfo.h"
 #include "textautogenerateollamacommon_export.h"
 #include <QWidget>
-#include <TextAutoGenerateText/TextAutoGenerateManager>
+class QModelIndex;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateModelSearchLineEdit;

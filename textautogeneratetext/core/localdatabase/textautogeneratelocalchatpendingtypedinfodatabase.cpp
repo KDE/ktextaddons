@@ -8,6 +8,7 @@
 #include "textautogeneratelocaldatabaseutils.h"
 #include "textautogeneratetextcore_database_debug.h"
 #include <QFileInfo>
+#include <QJsonDocument>
 #include <QJsonObject>
 #include <QSqlDatabase>
 #include <QSqlError>

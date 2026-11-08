@@ -6,6 +6,7 @@
 #pragma once
 
 #include <QDialog>
+class QUrl;
 
 namespace TextAddonsWidgets
 {

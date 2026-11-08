@@ -6,6 +6,7 @@
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <QString>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolMeta>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptMessage>
 #include <optional>
 class QDebug;

@@ -10,6 +10,7 @@ SPDX-FileCopyrightText: 2020-2026 Laurent Montel <montel@kde.org>
 #include "textemoticonscore_export.h"
 #include "unicodeemoticon.h"
 #include <QObject>
+#include <memory>
 
 class UnicodeEmoticonManagerTest;
 

@@ -7,7 +7,6 @@
 #include "textemoticonswidgets_export.h"
 #include <QWidgetAction>
 
-class QHBoxLayout;
 namespace TextEmoticonsWidgets
 {
 class EmoticonWidgetActionWidget;

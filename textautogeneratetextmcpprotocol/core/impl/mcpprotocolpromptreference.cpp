@@ -6,6 +6,7 @@
 
 #include "mcpprotocolpromptreference.h"
 #include "textautogeneratetextmcpprotocol_core_debug.h"
+#include <QDebug>
 #include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;

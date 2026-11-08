@@ -5,7 +5,6 @@
 */
 #include "textautogeneratetexttoolpluginproperty.h"
 #include "textautogeneratetextcore_debug.h"
-#include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;

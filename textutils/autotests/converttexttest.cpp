@@ -8,6 +8,7 @@
 
 #include "converttext/converttext.h"
 #include <QTest>
+#include <QTextCursor>
 #include <QTextDocument>
 
 using namespace Qt::Literals::StringLiterals;

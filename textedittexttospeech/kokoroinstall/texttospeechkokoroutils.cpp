@@ -8,6 +8,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QFontMetrics>
+#include <QIcon>
 #include <QPainter>
 #include <QPixmap>
 #include <QStandardPaths>

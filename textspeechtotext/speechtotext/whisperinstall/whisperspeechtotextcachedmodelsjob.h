@@ -9,8 +9,8 @@
 #include "speechtotextwhisperinstall_export.h"
 #include <QObject>
 #include <QPointer>
-#include <QProcess>
 #include <QStringList>
+class QProcess;
 
 /*!
  * \brief Tells which models are already on disk, so the user knows what a

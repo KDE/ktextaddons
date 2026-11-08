@@ -9,6 +9,7 @@
 #include <QSharedPointer>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 class QDebug;
+class QJsonObject;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateMessagesModel;

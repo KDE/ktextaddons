@@ -9,7 +9,7 @@
 #include "textutils_export.h"
 #include <QList>
 #include <QStringView>
-#include <QTextCursor>
+class QTextCursor;
 
 namespace TextUtils
 {

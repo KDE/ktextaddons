@@ -1,3 +1,4 @@
+#pragma once
 #include "chunk.h"
 #include "cmark-rc.h"
 

@@ -11,6 +11,7 @@
 #include <KLocalizedString>
 #include <QFileInfo>
 #include <QHBoxLayout>
+#include <QLabel>
 #include <QMimeDatabase>
 #include <QToolButton>
 

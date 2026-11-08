@@ -7,6 +7,7 @@
 #pragma once
 
 #include "textspeechtotext_export.h"
+#include <QMap>
 #include <QObject>
 #include <memory>
 namespace TextSpeechToText

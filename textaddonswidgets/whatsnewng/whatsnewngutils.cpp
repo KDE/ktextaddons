@@ -8,6 +8,7 @@
 #include <KLocalizedString>
 #include <QCryptographicHash>
 #include <QDate>
+#include <QLocale>
 
 using namespace Qt::Literals::StringLiterals;
 

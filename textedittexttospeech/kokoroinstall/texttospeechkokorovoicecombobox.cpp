@@ -7,6 +7,7 @@
 #include "texttospeechkokoroutils.h"
 #include <KLocalizedString>
 #include <QAbstractItemView>
+#include <QIcon>
 #include <QKeyEvent>
 #include <QLineEdit>
 #include <QMouseEvent>

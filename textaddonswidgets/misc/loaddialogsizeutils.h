@@ -5,8 +5,10 @@
 */
 #pragma once
 #include "textaddonswidgets_export.h"
-#include <QWidget>
+#include <QSize>
+#include <QString>
 class QDialog;
+class QWidget;
 namespace TextAddonsWidgets::LoadDialogSizeUtils
 {
 void TEXTADDONSWIDGETS_EXPORT loadDialogSizeScaled(QWidget *w, const QString &key, int width, int height);

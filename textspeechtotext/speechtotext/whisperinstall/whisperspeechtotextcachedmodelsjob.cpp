@@ -8,6 +8,7 @@
 #include "speechtotextwhisperinstall_lib_debug.h"
 #include "whisperspeechtotextdownloadmodeljob.h"
 #include "whisperspeechtotextutils.h"
+#include <QProcess>
 
 using namespace Qt::Literals::StringLiterals;
 

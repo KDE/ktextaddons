@@ -10,7 +10,6 @@
 #include "ollamacommonmodelavailablelistview.h"
 #include "ollamacommonmodelsinfoscategoriescombobox.h"
 #include "plugincommonmodelinstalledinfossortproxymodel.h"
-#include "widgets/availablemodel/textautogeneratemodelavailablelistview.h"
 #include "widgets/common/textautogeneratemodelsearchlineedit.h"
 #include <QScrollArea>
 #include <QSplitter>

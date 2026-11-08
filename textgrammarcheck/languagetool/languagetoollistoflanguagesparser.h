@@ -9,6 +9,7 @@
 #include "languageinfo.h"
 #include "textgrammarcheckprivate_export.h"
 #include <QList>
+class QJsonArray;
 namespace TextGrammarCheck
 {
 class TEXTGRAMMARCHECK_TESTS_EXPORT LanguageToolListOfLanguagesParser

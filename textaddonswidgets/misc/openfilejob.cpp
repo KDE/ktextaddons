@@ -8,7 +8,6 @@
 #include "textaddonswidgets_debug.h"
 #include <KApplicationTrader>
 #include <KLocalizedString>
-#include <KService>
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QMimeDatabase>
