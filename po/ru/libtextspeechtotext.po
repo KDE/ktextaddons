@@ -339,7 +339,7 @@ msgstr "Установка Whisper повреждена. Переустанов�
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Engine:"
-msgstr "Используемая библиотека:"
+msgstr "Модуль:"
 
 #: speechtotext/widgets/speechtotextmenu.cpp:19
 #, kde-format
