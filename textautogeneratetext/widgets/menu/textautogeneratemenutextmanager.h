@@ -49,7 +49,7 @@ Q_SIGNALS:
     void textInfoChanged();
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config) const;
+    [[nodiscard]] static TEXTAUTOGENERATETEXT_NO_EXPORT QStringList keyRecorderList(KSharedConfig::Ptr &config);
     QList<TextAutoGenerateMenuTextInfo> mTextInfos;
 };
 }

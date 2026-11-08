@@ -73,7 +73,7 @@ void TextAutoGenerateMenuTextManager::save()
     config->sync();
 }
 
-QStringList TextAutoGenerateMenuTextManager::keyRecorderList(KSharedConfig::Ptr &config) const
+QStringList TextAutoGenerateMenuTextManager::keyRecorderList(KSharedConfig::Ptr &config)
 {
     config = KSharedConfig::openConfig();
     const static QRegularExpression keyGroupRegularExpression(u"AskIA #\\d+"_s);
