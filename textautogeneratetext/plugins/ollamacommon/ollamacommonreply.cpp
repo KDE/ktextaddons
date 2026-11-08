@@ -191,9 +191,9 @@ QString OllamaCommonReply::generateModelInfo() const
         if (const QString parameters = doc["parameters"_L1].toString(); !parameters.isEmpty()) {
             mardown += u"## %1: \n```\n"_s.arg(i18n("Parameters")) + parameters + u"\n```\n\n\n"_s;
         }
-        mardown += u"## %1: \n```\n"_s.arg(i18n("Details")) + QString::fromLatin1(QJsonDocument::fromVariant(doc["details"_L1].toVariant()).toJson())
-            + u"\n```\n\n\n"_s;
-        mardown += u"## %1: \n```\n"_s.arg(i18n("Model Info")) + QString::fromLatin1(QJsonDocument::fromVariant(doc["model_info"_L1].toVariant()).toJson())
+        mardown +=
+            u"## %1: \n```\n"_s.arg(i18n("Details")) + QString::fromUtf8(QJsonDocument::fromVariant(doc["details"_L1].toVariant()).toJson()) + u"\n```\n\n\n"_s;
+        mardown += u"## %1: \n```\n"_s.arg(i18n("Model Info")) + QString::fromUtf8(QJsonDocument::fromVariant(doc["model_info"_L1].toVariant()).toJson())
             + u"\n```\n\n\n"_s;
         // qDebug() << " mTokens " << doc;
     }
