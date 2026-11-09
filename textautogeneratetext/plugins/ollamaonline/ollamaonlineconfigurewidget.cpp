@@ -59,7 +59,7 @@ OllamaOnlineConfigureWidget::OllamaOnlineConfigureWidget(OllamaOnlineManager *ma
     mainLayout->setContentsMargins({});
 
     auto formLayout = new QFormLayout;
-    formLayout->setObjectName(u"mainLayout"_s);
+    formLayout->setObjectName(u"formLayout"_s);
     formLayout->setContentsMargins({});
     mainLayout->addLayout(formLayout);
 
