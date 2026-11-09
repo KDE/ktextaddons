@@ -37,7 +37,6 @@ TextToSpeechKokoroInstallPythonDialog::TextToSpeechKokoroInstallPythonDialog(QWi
     box->addButton(mCloseButton, QDialogButtonBox::RejectRole);
     KGuiItem::assign(mCloseButton, KStandardGuiItem::close());
     mainLayout->addWidget(box);
-    connect(box, &QDialogButtonBox::accepted, this, &TextToSpeechKokoroInstallPythonDialog::accept);
     connect(box, &QDialogButtonBox::rejected, this, &TextToSpeechKokoroInstallPythonDialog::reject);
     // Closing the dialog would kill pip in the middle of the installation.
     connect(mKokoroInstallPythonWidget, &TextToSpeechKokoroInstallPythonWidget::installDone, mCloseButton, [this]() {
