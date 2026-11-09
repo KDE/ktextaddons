@@ -61,8 +61,8 @@ private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotRemoveServer(const QByteArray &identifier);
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotEditServer(const QByteArray &identifier);
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotAddServerFromRegistry();
-    [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT TextAutoGenerateTextMcpProtocolCore::McpServer
-    convertMcpRegistryServerInfoToMcpServer(const TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo &serverInfo) const;
+    [[nodiscard]] static TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT TextAutoGenerateTextMcpProtocolCore::McpServer
+    convertMcpRegistryServerInfoToMcpServer(const TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo &serverInfo);
     QLineEdit *const mSearchLineEdit;
     McpServerListView *const mMcpServerListView;
     TextAutoGenerateTextMcpProtocolCore::McpServerModel *const mModel;

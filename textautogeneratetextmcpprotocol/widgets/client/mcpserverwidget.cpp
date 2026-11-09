@@ -87,7 +87,7 @@ void McpServerWidget::setConfigureToolsSupported(bool supported)
 }
 
 TextAutoGenerateTextMcpProtocolCore::McpServer
-McpServerWidget::convertMcpRegistryServerInfoToMcpServer(const TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo &serverInfo) const
+McpServerWidget::convertMcpRegistryServerInfoToMcpServer(const TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo &serverInfo)
 {
     TextAutoGenerateTextMcpProtocolCore::McpServer server;
     server.createUniqueIdentifier();
