@@ -92,6 +92,10 @@ void OllamaManager::createModel(const CreateModelInfo &info)
     connect(reply, &OllamaCommonReply::finished, this, [this, reply] {
         Q_EMIT finished(reply->readResponse());
         Q_EMIT refreshInstalledModels();
+        reply->deleteLater();
+    });
+    connect(reply, &OllamaCommonReply::canceled, this, [reply] {
+        reply->deleteLater();
     });
 }
 
@@ -122,16 +126,19 @@ OllamaCommonReply *OllamaManager::downloadModel(const QString &modelName)
         Q_EMIT finished(reply->readResponse());
         Q_EMIT downloadDone(modelName);
         Q_EMIT refreshInstalledModels();
+        reply->deleteLater();
     });
-    connect(reply, &OllamaCommonReply::canceled, this, [this, modelName] {
+    connect(reply, &OllamaCommonReply::canceled, this, [this, modelName, reply] {
         Q_EMIT canceled(modelName);
+        reply->deleteLater();
     });
 
     connect(reply, &OllamaCommonReply::downloadInProgress, this, [this, modelName](const TextAutoGenerateText::TextAutoGenerateReply::DownloadModelInfo &info) {
         Q_EMIT downloadInProgress(modelName, info);
     });
-    connect(reply, &OllamaCommonReply::downloadError, this, [this, modelName](const QString &errorStr) {
+    connect(reply, &OllamaCommonReply::downloadError, this, [this, modelName, reply](const QString &errorStr) {
         Q_EMIT downloadError(modelName, errorStr);
+        reply->deleteLater();
     });
     return reply;
 }
