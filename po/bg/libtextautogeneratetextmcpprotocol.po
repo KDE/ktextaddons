@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 15:37+0000\n"
 "PO-Revision-Date: 2026-10-28 16:55+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -130,14 +130,14 @@ msgstr "Връзката е прекъсната преди получаване
 msgid "Session expired. Client must be restarted."
 msgstr "Сесията изтече. Необходимо е рестартиране на клиента."
 
-#: plugins/server/sse/mcpserversse.cpp:39
+#: plugins/server/sse/mcpserversse.cpp:40
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:112
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:122
 #, kde-format
 msgid "Impossible to start server. URL is invalid."
 msgstr "Невъзможно е стартирането на сървъра. URL адресът е невалиден."
 
-#: plugins/server/sse/mcpserversse.cpp:90
+#: plugins/server/sse/mcpserversse.cpp:91
 #, kde-format
 msgid "Sending message is not implemented yet."
 msgstr "Изпращането на съобщения все още не е внедрено."

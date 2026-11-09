@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 15:37+0000\n"
 "PO-Revision-Date: 2026-08-27 20:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -640,18 +640,18 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "İşletke:"
 
-#: translator/widgets/translatordebugdialog.cpp:31
+#: translator/widgets/translatordebugdialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "Çevirmen Hata Ayıklaması"
 
-#: translator/widgets/translatordebugdialog.cpp:38
+#: translator/widgets/translatordebugdialog.cpp:39
 #, kde-format
 msgid "Save As…"
 msgstr "Farklı Kaydet…"
 
-#: translator/widgets/translatordebugdialog.cpp:67
+#: translator/widgets/translatordebugdialog.cpp:68
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -660,13 +660,13 @@ msgstr ""
 "%1 dosyası yazılamadı:\n"
 "Ayrıntılı hata açıklaması için: “%2”."
 
-#: translator/widgets/translatordebugdialog.cpp:71
+#: translator/widgets/translatordebugdialog.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Dosya Kaydetme Hatası"
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:93
 #, kde-format
 msgid "All Files (*)"
 msgstr "Tüm Dosyalar (*)"

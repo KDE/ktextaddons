@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 15:37+0000\n"
 "PO-Revision-Date: 2026-07-22 14:41+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -147,43 +147,43 @@ msgstr ""
 msgid "Installation failed."
 msgstr ""
 
-#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:24
+#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:25
 #, kde-format
 msgctxt "@item:intext gender of a voice"
 msgid "Female"
 msgstr ""
 
-#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:26
+#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:27
 #, kde-format
 msgctxt "@item:intext gender of a voice"
 msgid "Male"
 msgstr ""
 
-#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:30
+#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:31
 #, kde-format
 msgctxt "@item:intext gender of a voice"
 msgid "Unknown"
 msgstr ""
 
-#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:38
+#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:39
 #, kde-format
 msgctxt "@item:intext <language> (<country>)"
 msgid "%1 (%2)"
 msgstr ""
 
-#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:78
+#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:79
 #, kde-format
 msgctxt "@item:inlistbox <voice name> (<gender>)"
 msgid "%1 (%2)"
 msgstr ""
 
-#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:80
+#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:81
 #, kde-format
 msgctxt "@info:tooltip <voice name> (<language>, <gender>)"
 msgid "%1 (%2, %3)"
 msgstr ""
 
-#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:129
+#: kokoroinstall/texttospeechkokorovoicecombobox.cpp:130
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No voice selected"

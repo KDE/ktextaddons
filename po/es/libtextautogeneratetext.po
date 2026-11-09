@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 21:28+0000\n"
 "PO-Revision-Date: 2026-11-07 01:32+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -392,7 +392,7 @@ msgstr "Modelos disponibles"
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:61
 #: plugins/lmstudio/lmstudiomanager.cpp:126
 #: plugins/ollama/ollamamanager.cpp:154
-#: plugins/ollamacloud/ollamacloudmanager.cpp:62
+#: plugins/ollamacloud/ollamacloudmanager.cpp:61
 #: plugins/ollamaonline/ollamaonlinemanager.cpp:63
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
@@ -583,43 +583,43 @@ msgstr "API de OpenAI (personalizada)"
 msgid "DeepSeek large language models"
 msgstr "Modelos de lenguaje extensos de DeepSeek"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:641
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:640
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Disabled"
 msgstr "Desactivado"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:643
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:642
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Enabled"
 msgstr "Activado"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:645
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:644
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Minimal"
 msgstr "Mínimo"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:647
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:646
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Low"
 msgstr "Bajo"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:649
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:648
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Medium"
 msgstr "Medio"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:651
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:650
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "High"
 msgstr "Alto"
 
-#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:653
+#: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:652
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Extra High"
@@ -891,27 +891,27 @@ msgstr ""
 msgid "Vulkan GPU Support (Experimental):"
 msgstr "Compatibilidad con GPU Vulkan (experimental):"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:38
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:37
 #, kde-format
 msgid "NVIDIA GPU Selection:"
 msgstr "Selección de GPU NVIDIA:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:43
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:42
 #, kde-format
 msgid "AMD GPU Selection:"
 msgstr "Selección de GPU AMD:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:48
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:47
 #, kde-format
 msgid "Hip Visible Device:"
 msgstr "Dispositivo visible HIP:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:53
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:52
 #, kde-format
 msgid "Override GFX version:"
 msgstr "Anular versión GFX:"
 
-#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:57
+#: plugins/ollama/ollamaconfigurecustomizewidget.cpp:56
 #, kde-format
 msgid "Default Model Path:"
 msgstr "Ruta del modelo predeterminado:"
@@ -3022,7 +3022,6 @@ msgid "The user is called %1"
 msgstr "El usuario se llama %1"
 
 #: plugins/ollamacommon/ollamacommonnetworkurlbutton.cpp:35
-#: plugins/ollamacommon/ollamanetworkurlbutton.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open Url \"%1\""
@@ -3140,7 +3139,7 @@ msgstr "Archivo de modelo"
 msgid "Parameters"
 msgstr "Parámetros"
 
-#: plugins/ollamacommon/ollamacommonreply.cpp:194
+#: plugins/ollamacommon/ollamacommonreply.cpp:195
 #, kde-format
 msgid "Details"
 msgstr "Detalles"
@@ -3244,7 +3243,7 @@ msgctxt "@info:placeholder"
 msgid "Enter a message"
 msgstr "Introduzca un mensaje"
 
-#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:81
+#: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:82
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:503
 #, kde-format
 msgctxt "@info:tooltip"
@@ -3312,12 +3311,12 @@ msgctxt "@label"
 msgid "Run tools without confirmation:"
 msgstr "Ejecutar herramientas sin confirmación:"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:51
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
 msgid "Text Plugins"
 msgstr "Complementos de texto"
 
-#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:58
+#: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
 #, kde-format
 msgid "Tool Plugins"
 msgstr "Complementos de herramientas"

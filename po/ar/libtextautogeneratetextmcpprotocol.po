@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 15:37+0000\n"
 "PO-Revision-Date: 2026-10-31 21:01+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -130,14 +130,14 @@ msgstr "انقطع الاتصال قبل تلقي الرد."
 msgid "Session expired. Client must be restarted."
 msgstr "انتهت الجلسة. يجب إعادة تشغيل العميل."
 
-#: plugins/server/sse/mcpserversse.cpp:39
+#: plugins/server/sse/mcpserversse.cpp:40
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:112
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:122
 #, kde-format
 msgid "Impossible to start server. URL is invalid."
 msgstr "تعذّر بدء الخادم. المسار غير صالح."
 
-#: plugins/server/sse/mcpserversse.cpp:90
+#: plugins/server/sse/mcpserversse.cpp:91
 #, kde-format
 msgid "Sending message is not implemented yet."
 msgstr "إرسال الرسالة لم يُنفَّذ بعد."

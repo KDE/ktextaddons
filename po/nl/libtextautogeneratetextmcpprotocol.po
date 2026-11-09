@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 15:37+0000\n"
 "PO-Revision-Date: 2026-11-06 11:47+0100\n"
 "Last-Translator: freek <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -129,14 +129,14 @@ msgstr "Verbinding verbroken voordat het antwoord werd ontvangen."
 msgid "Session expired. Client must be restarted."
 msgstr "Sessie is verlopen. Client moet opnieuw worden gestart."
 
-#: plugins/server/sse/mcpserversse.cpp:39
+#: plugins/server/sse/mcpserversse.cpp:40
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:112
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:122
 #, kde-format
 msgid "Impossible to start server. URL is invalid."
 msgstr "Onmogelijk de server te starten. De URL is ongeldig."
 
-#: plugins/server/sse/mcpserversse.cpp:90
+#: plugins/server/sse/mcpserversse.cpp:91
 #, kde-format
 msgid "Sending message is not implemented yet."
 msgstr "Het versturen van berichten is nog niet geïmplementeerd."

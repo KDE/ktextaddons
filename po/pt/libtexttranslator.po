@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 15:37+0000\n"
 "PO-Revision-Date: 2023-01-09 18:52+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -654,19 +654,19 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Motor:"
 
-#: translator/widgets/translatordebugdialog.cpp:31
+#: translator/widgets/translatordebugdialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "Depuração do Tradutor"
 
-#: translator/widgets/translatordebugdialog.cpp:38
+#: translator/widgets/translatordebugdialog.cpp:39
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As…"
 msgstr "Gravar Como..."
 
-#: translator/widgets/translatordebugdialog.cpp:67
+#: translator/widgets/translatordebugdialog.cpp:68
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -675,14 +675,14 @@ msgstr ""
 "Não foi possível gravar o ficheiro %1:\n"
 "A \"%2\" é a descrição detalhada do erro."
 
-#: translator/widgets/translatordebugdialog.cpp:71
+#: translator/widgets/translatordebugdialog.cpp:72
 #, fuzzy, kde-format
 #| msgid "Save File Error"
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Erro de Gravação do Ficheiro"
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:93
 #, kde-format
 msgid "All Files (*)"
 msgstr "Todos os Ficheiros (*)"

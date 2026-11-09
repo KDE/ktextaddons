@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 15:37+0000\n"
 "PO-Revision-Date: 2023-01-15 21:24-0800\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -635,31 +635,31 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr ""
 
-#: translator/widgets/translatordebugdialog.cpp:31
+#: translator/widgets/translatordebugdialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr ""
 
-#: translator/widgets/translatordebugdialog.cpp:38
+#: translator/widgets/translatordebugdialog.cpp:39
 #, kde-format
 msgid "Save As…"
 msgstr ""
 
-#: translator/widgets/translatordebugdialog.cpp:67
+#: translator/widgets/translatordebugdialog.cpp:68
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
 "\"%2\" is the detailed error description."
 msgstr ""
 
-#: translator/widgets/translatordebugdialog.cpp:71
+#: translator/widgets/translatordebugdialog.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr ""
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:93
 #, kde-format
 msgid "All Files (*)"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 15:37+0000\n"
 "PO-Revision-Date: 2026-11-03 20:24+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -638,18 +638,18 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "引擎："
 
-#: translator/widgets/translatordebugdialog.cpp:31
+#: translator/widgets/translatordebugdialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "翻譯程式除錯"
 
-#: translator/widgets/translatordebugdialog.cpp:38
+#: translator/widgets/translatordebugdialog.cpp:39
 #, kde-format
 msgid "Save As…"
 msgstr "另存為…"
 
-#: translator/widgets/translatordebugdialog.cpp:67
+#: translator/widgets/translatordebugdialog.cpp:68
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -658,13 +658,13 @@ msgstr ""
 "無法寫入檔案 %1：\n"
 "詳細錯誤描述為「%2」。"
 
-#: translator/widgets/translatordebugdialog.cpp:71
+#: translator/widgets/translatordebugdialog.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "儲存檔案時出錯"
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:93
 #, kde-format
 msgid "All Files (*)"
 msgstr "所有檔案 (*)"

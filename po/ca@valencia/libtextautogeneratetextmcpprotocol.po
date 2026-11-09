@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 15:37+0000\n"
 "PO-Revision-Date: 2026-11-06 11:27+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -131,14 +131,14 @@ msgstr "S'ha perdut la connexió abans de rebre la resposta."
 msgid "Session expired. Client must be restarted."
 msgstr "La sessió ha caducat. Cal tornar a iniciar el client."
 
-#: plugins/server/sse/mcpserversse.cpp:39
+#: plugins/server/sse/mcpserversse.cpp:40
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:112
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:122
 #, kde-format
 msgid "Impossible to start server. URL is invalid."
 msgstr "Impossible iniciar el servidor. L'URL no és vàlid."
 
-#: plugins/server/sse/mcpserversse.cpp:90
+#: plugins/server/sse/mcpserversse.cpp:91
 #, kde-format
 msgid "Sending message is not implemented yet."
 msgstr "L'enviament de missatges encara no està implementat."

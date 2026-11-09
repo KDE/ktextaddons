@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 15:37+0000\n"
 "PO-Revision-Date: 2026-08-27 18:24+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -641,18 +641,18 @@ msgctxt "@label:textbox"
 msgid "Engine:"
 msgstr "Рушій:"
 
-#: translator/widgets/translatordebugdialog.cpp:31
+#: translator/widgets/translatordebugdialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Translator Debug"
 msgstr "Діагностика перекладача"
 
-#: translator/widgets/translatordebugdialog.cpp:38
+#: translator/widgets/translatordebugdialog.cpp:39
 #, kde-format
 msgid "Save As…"
 msgstr "Зберегти як…"
 
-#: translator/widgets/translatordebugdialog.cpp:67
+#: translator/widgets/translatordebugdialog.cpp:68
 #, kde-format
 msgid ""
 "Could not write the file %1:\n"
@@ -661,13 +661,13 @@ msgstr ""
 "Не вдалося виконати запис до файла %1.\n"
 "Докладний опис помилки: «%2»."
 
-#: translator/widgets/translatordebugdialog.cpp:71
+#: translator/widgets/translatordebugdialog.cpp:72
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File Error"
 msgstr "Помилка під час збереження файла"
 
-#: translator/widgets/translatordebugdialog.cpp:92
+#: translator/widgets/translatordebugdialog.cpp:93
 #, kde-format
 msgid "All Files (*)"
 msgstr "усі файли (*)"

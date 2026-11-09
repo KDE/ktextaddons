@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-09 00:54+0000\n"
 "PO-Revision-Date: 2026-08-23 06:44+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,43 +28,43 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "temuri.doghonadze@gmail.com"
 
-#: misc/openfilejob.cpp:60
+#: misc/openfilejob.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "გავხსნა მიმაგრებული ფაილი?"
 
-#: misc/openfilejob.cpp:61
+#: misc/openfilejob.cpp:60
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
 msgstr "გავხსნა მიმარებული ფაილი <filename>%1</filename>?<nl/>"
 
-#: misc/openfilejob.cpp:65
+#: misc/openfilejob.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "გახსნა"
 
-#: misc/openfilejob.cpp:68
+#: misc/openfilejob.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
 msgstr "'%1'-ით &გახსნა"
 
-#: misc/openfilejob.cpp:71
+#: misc/openfilejob.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
 msgstr "&გამხსნელი პროგრამა…"
 
-#: misc/openfilejob.cpp:73
+#: misc/openfilejob.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "შენახვა &როგორც…"
 
-#: misc/openfilejob.cpp:99
+#: misc/openfilejob.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
@@ -306,22 +306,22 @@ msgstr "<h1><i> ვერსია %1 </i></h1><hr/><br>"
 msgid "What's new in %1. %2"
 msgstr "რა არის ახალი %1-ში. %2"
 
-#: whatsnewng/whatsnewngutils.cpp:24
+#: whatsnewng/whatsnewngutils.cpp:25
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">გამოშვების შენიშვნები</a></i></b>"
 
-#: whatsnewng/whatsnewngutils.cpp:32
+#: whatsnewng/whatsnewngutils.cpp:33
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h3><i>რა არის ახალი ისტორიაში %1 (გამოსვლის დრო: %2)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:34
+#: whatsnewng/whatsnewngutils.cpp:35
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>რა არის ახალი ისტორიაში %1 (ჯერ არ გამოსულა)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:50
+#: whatsnewng/whatsnewngutils.cpp:51
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>სიახლეების ისტორია</h1>"

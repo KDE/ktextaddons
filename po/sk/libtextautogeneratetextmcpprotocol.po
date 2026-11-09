@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-08 15:37+0000\n"
 "PO-Revision-Date: 2026-05-04 12:00+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -126,14 +126,14 @@ msgstr "Pripojenie sa stratilo pred prijatím odpovede."
 msgid "Session expired. Client must be restarted."
 msgstr "Platnosť sedenia vypršala. Klienta treba reštartovať."
 
-#: plugins/server/sse/mcpserversse.cpp:39
+#: plugins/server/sse/mcpserversse.cpp:40
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:112
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:122
 #, kde-format
 msgid "Impossible to start server. URL is invalid."
 msgstr "Server nie je možné spustiť. URL je neplatná."
 
-#: plugins/server/sse/mcpserversse.cpp:90
+#: plugins/server/sse/mcpserversse.cpp:91
 #, kde-format
 msgid "Sending message is not implemented yet."
 msgstr "Posielanie správ zatiaľ nie je implementované."

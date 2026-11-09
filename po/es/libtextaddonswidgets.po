@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextaddonswidgets\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-09 00:54+0000\n"
 "PO-Revision-Date: 2026-08-23 16:14+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -29,43 +29,43 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ecuadra@eloihr.net"
 
-#: misc/openfilejob.cpp:60
+#: misc/openfilejob.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "¿Abrir adjunto?"
 
-#: misc/openfilejob.cpp:61
+#: misc/openfilejob.cpp:60
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Open attachment <filename>%1</filename>?<nl/>"
 msgstr "¿Abrir adjunto <filename>%1</filename>?<nl/>"
 
-#: misc/openfilejob.cpp:65
+#: misc/openfilejob.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Open"
 msgstr "Abrir"
 
-#: misc/openfilejob.cpp:68
+#: misc/openfilejob.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "&Open With '%1'"
 msgstr "&Abrir con «%1»"
 
-#: misc/openfilejob.cpp:71
+#: misc/openfilejob.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Open &With…"
 msgstr "Abrir &con…"
 
-#: misc/openfilejob.cpp:73
+#: misc/openfilejob.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Save &As…"
 msgstr "Gu&ardar como…"
 
-#: misc/openfilejob.cpp:99
+#: misc/openfilejob.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
@@ -312,22 +312,22 @@ msgstr "<h1><i> Versión %1 </i></h1><hr/><br>"
 msgid "What's new in %1. %2"
 msgstr "Novedades de %1. %2"
 
-#: whatsnewng/whatsnewngutils.cpp:24
+#: whatsnewng/whatsnewngutils.cpp:25
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">Nota de lanzamiento</a></i></b>"
 
-#: whatsnewng/whatsnewngutils.cpp:32
+#: whatsnewng/whatsnewngutils.cpp:33
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
 msgstr "<h3><i>Novedades de la versión %1 (Publicada: %2)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:34
+#: whatsnewng/whatsnewngutils.cpp:35
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
 msgstr "<h3><i>Novedades de la versión %1 (no publicada)</i></h3>"
 
-#: whatsnewng/whatsnewngutils.cpp:50
+#: whatsnewng/whatsnewngutils.cpp:51
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>Historial de novedades</h1>"
