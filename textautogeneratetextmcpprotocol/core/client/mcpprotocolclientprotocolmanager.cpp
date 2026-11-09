@@ -915,7 +915,7 @@ void McpProtocolClientProtocolManager::initialize()
     auto clientInfo = params.clientInfo();
     clientInfo.setName(mClientName.isEmpty() ? QCoreApplication::applicationName() : mClientName);
     clientInfo.setVersion(QStringLiteral(TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_VERSION_STRING));
-    params.setClientInfo(clientInfo);
+    params.setClientInfo(std::move(clientInfo));
     McpProtocolClientCapabilities capabilities;
     if (mElicitationSupported || mUrlElicitationSupported) {
         // Announce supported modes: "elicitation": { "form": {}, "url": {} }

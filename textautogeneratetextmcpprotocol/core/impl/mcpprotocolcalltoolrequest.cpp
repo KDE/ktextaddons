@@ -50,12 +50,12 @@ McpProtocolCallToolRequest McpProtocolCallToolRequest::fromJson(const QJsonObjec
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCallToolRequest: missing required field 'params'";
         return {};
     }
-    const McpProtocolCallToolRequestParams params = McpProtocolCallToolRequestParams::fromJson(paramsValue.toObject());
+    McpProtocolCallToolRequestParams params = McpProtocolCallToolRequestParams::fromJson(paramsValue.toObject());
     if (!params.isValid()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCallToolRequest: invalid field 'params'";
         return {};
     }
-    request.setParams(params);
+    request.setParams(std::move(params));
     return request;
 }
 

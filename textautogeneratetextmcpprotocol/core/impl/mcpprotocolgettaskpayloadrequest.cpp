@@ -81,12 +81,12 @@ McpProtocolGetTaskPayloadRequest McpProtocolGetTaskPayloadRequest::fromJson(cons
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskPayloadRequest: missing required field 'params'";
         return {};
     }
-    const McpProtocolGetTaskPayloadRequest::Params params = McpProtocolGetTaskPayloadRequest::Params::fromJson(paramsValue.toObject());
+    McpProtocolGetTaskPayloadRequest::Params params = McpProtocolGetTaskPayloadRequest::Params::fromJson(paramsValue.toObject());
     if (!params.isValid()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskPayloadRequest: invalid field 'params'";
         return {};
     }
-    request.setParams(params);
+    request.setParams(std::move(params));
     return request;
 }
 

@@ -21,17 +21,17 @@ RunningAnimatedImage::~RunningAnimatedImage()
 }
 
 RunningAnimatedImage::RunningAnimatedImage(RunningAnimatedImage &&other) noexcept
-    : index(other.index)
-    , movie(other.movie)
+    : index(std::move(other.index))
+    , movie(std::exchange(other.movie, nullptr))
 {
-    other.movie = nullptr;
 }
 
-RunningAnimatedImage &RunningAnimatedImage::operator=(RunningAnimatedImage &&other)
+RunningAnimatedImage &RunningAnimatedImage::operator=(RunningAnimatedImage &&other) noexcept
 {
-    delete movie;
-    index = other.index;
-    movie = other.movie;
-    other.movie = nullptr;
+    if (this != &other) {
+        delete movie;
+        index = std::move(other.index);
+        movie = std::exchange(other.movie, nullptr);
+    }
     return *this;
 }

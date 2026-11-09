@@ -22,7 +22,7 @@ McpProtocolServerTool::createTool(const QString &name, const QString &descriptio
     McpProtocolTool tool;
     tool.setName(name);
     tool.setDescription(description);
-    tool.setInputSchema(schema);
+    tool.setInputSchema(std::move(schema));
     return tool;
 }
 

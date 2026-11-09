@@ -34,8 +34,8 @@ TextAddonsWidgets::PluginUtil::loadPluginSetting(const QString &configFileName, 
         disabledPlugins = grp.readEntry(u"%1Disabled"_s.arg(prefixSettingKey), QStringList());
     }
 
-    pair.enabledPluginList = enabledPlugins;
-    pair.disabledPluginList = disabledPlugins;
+    pair.enabledPluginList = std::move(enabledPlugins);
+    pair.disabledPluginList = std::move(disabledPlugins);
     return pair;
 }
 

@@ -38,8 +38,8 @@ McpProtocolListResourcesResult McpProtocolListResourcesResult::fromJson(const QJ
         QList<McpProtocolResource> res;
         res.reserve(arr.count());
         for (const auto &v : arr) {
-            if (const McpProtocolResource item = McpProtocolResource::fromJson(v.toObject()); item.isValid()) {
-                res.append(item);
+            if (McpProtocolResource item = McpProtocolResource::fromJson(v.toObject()); item.isValid()) {
+                res.append(std::move(item));
             }
         }
         result.setResources(std::move(res));

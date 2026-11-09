@@ -45,7 +45,7 @@ public:
     [[nodiscard]] QStringList supportedVersions() const;
     /*!
      */
-    void setSupportedVersions(const QStringList &newSupportedVersions);
+    void setSupportedVersions(QStringList newSupportedVersions);
 
     /*!
      */

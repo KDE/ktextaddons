@@ -31,12 +31,12 @@ McpProtocolJSONRPCErrorResponse McpProtocolJSONRPCErrorResponse::fromJson(const 
         return {};
     }
     if (const QJsonValue errorValue = obj.value("error"_L1); errorValue.isObject()) {
-        const McpProtocolError error = McpProtocolError::fromJson(errorValue.toObject());
+        McpProtocolError error = McpProtocolError::fromJson(errorValue.toObject());
         if (!error.isValid()) {
             qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolJSONRPCErrorResponse: invalid field 'error'";
             return {};
         }
-        response.setError(error);
+        response.setError(std::move(error));
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolJSONRPCErrorResponse: missing required field 'error'";
         return {};

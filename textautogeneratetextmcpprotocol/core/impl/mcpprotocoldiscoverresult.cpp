@@ -40,7 +40,7 @@ McpProtocolDiscoverResult McpProtocolDiscoverResult::fromJson(const QJsonObject 
             }
             supportedVersions.append(version.toString());
         }
-        result.setSupportedVersions(supportedVersions);
+        result.setSupportedVersions(std::move(supportedVersions));
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolDiscoverResult: missing required field 'supportedVersions'";
         return {};
@@ -110,9 +110,9 @@ QStringList McpProtocolDiscoverResult::supportedVersions() const
     return mSupportedVersions;
 }
 
-void McpProtocolDiscoverResult::setSupportedVersions(const QStringList &newSupportedVersions)
+void McpProtocolDiscoverResult::setSupportedVersions(QStringList newSupportedVersions)
 {
-    mSupportedVersions = newSupportedVersions;
+    mSupportedVersions = std::move(newSupportedVersions);
 }
 
 McpProtocolServerCapabilities McpProtocolDiscoverResult::capabilities() const

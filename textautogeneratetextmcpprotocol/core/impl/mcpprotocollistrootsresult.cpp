@@ -34,8 +34,8 @@ McpProtocolListRootsResult McpProtocolListRootsResult::fromJson(const QJsonObjec
         QList<McpProtocolRoot> roots;
         roots.reserve(arr.count());
         for (const QJsonValue &v : arr) {
-            if (const McpProtocolRoot item = McpProtocolRoot::fromJson(v.toObject()); item.isValid()) {
-                roots.append(item);
+            if (McpProtocolRoot item = McpProtocolRoot::fromJson(v.toObject()); item.isValid()) {
+                roots.append(std::move(item));
             }
         }
         result.setRoots(std::move(roots));

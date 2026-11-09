@@ -12,8 +12,6 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
 McpProtocolModelHint::McpProtocolModelHint() = default;
 
-McpProtocolModelHint::~McpProtocolModelHint() = default;
-
 bool McpProtocolModelHint::operator==(const McpProtocolModelHint &other) const = default;
 
 QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolModelHint &t)

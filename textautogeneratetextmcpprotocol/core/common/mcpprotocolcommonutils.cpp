@@ -55,12 +55,12 @@ void McpProtocolCommonUtils::addToolMeta(TextAutoGenerateTextMcpProtocolCore::Mc
     auto newMeta = meta.meta().value_or(QMap<QString, QJsonValue>{});
     newMeta.insert(metaGroupName(), groupName);
     newMeta.insert(metaGroupTitle(), groupTitle);
-    meta.setMeta(newMeta);
+    meta.setMeta(std::move(newMeta));
 }
 
 void McpProtocolCommonUtils::addToolMeta(TextAutoGenerateTextMcpProtocolCore::McpProtocolTool &tool, const QString &groupName, const QString &groupTitle)
 {
     TextAutoGenerateTextMcpProtocolCore::McpProtocolMeta meta = tool.meta().value_or(TextAutoGenerateTextMcpProtocolCore::McpProtocolMeta{});
     TextAutoGenerateTextMcpProtocolCore::McpProtocolCommonUtils::addToolMeta(meta, groupName, groupTitle);
-    tool.setMeta(meta);
+    tool.setMeta(std::move(meta));
 }

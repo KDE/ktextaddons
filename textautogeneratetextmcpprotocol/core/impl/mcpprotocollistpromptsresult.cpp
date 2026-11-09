@@ -39,8 +39,8 @@ McpProtocolListPromptsResult McpProtocolListPromptsResult::fromJson(const QJsonO
         QList<McpProtocolPrompt> lst;
         lst.reserve(arr.count());
         for (const auto &v : arr) {
-            if (const McpProtocolPrompt item = McpProtocolPrompt::fromJson(v.toObject()); item.isValid()) {
-                lst.append(item);
+            if (McpProtocolPrompt item = McpProtocolPrompt::fromJson(v.toObject()); item.isValid()) {
+                lst.append(std::move(item));
             }
         }
         result.setPrompts(std::move(lst));

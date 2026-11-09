@@ -34,7 +34,7 @@ McpProtocolCreateMessageResult McpProtocolCreateMessageResult::fromJson(const QJ
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageResult: missing required field 'content'";
         return {};
     }
-    const McpProtocolUtils::CreateMessageResultContent content = McpProtocolUtils::createMessageResultContentFromJson(contentValue);
+    McpProtocolUtils::CreateMessageResultContent content = McpProtocolUtils::createMessageResultContentFromJson(contentValue);
     if (contentValue.isObject()) {
         // A rejected content block is default-constructed
         const bool contentIsValid = std::visit(
@@ -67,7 +67,7 @@ McpProtocolCreateMessageResult McpProtocolCreateMessageResult::fromJson(const QJ
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    result.setContent(content);
+    result.setContent(std::move(content));
     result.setModel(modelValue.toString());
     result.setRole(role);
     if (obj.contains("stopReason"_L1)) {

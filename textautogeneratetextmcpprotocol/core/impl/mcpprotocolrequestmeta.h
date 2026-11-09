@@ -51,7 +51,7 @@ public:
     [[nodiscard]] QJsonObject additionalProperties() const;
     /*!
      */
-    void setAdditionalProperties(const QJsonObject &newAdditionalProperties);
+    void setAdditionalProperties(QJsonObject newAdditionalProperties);
 
 private:
     std::optional<McpProtocolUtils::ProgressToken> mProgressToken;

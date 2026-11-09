@@ -83,12 +83,12 @@ McpProtocolCancelTaskRequest McpProtocolCancelTaskRequest::fromJson(const QJsonO
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelTaskRequest: missing required field 'params'";
         return {};
     }
-    const McpProtocolCancelTaskRequest::Params params = McpProtocolCancelTaskRequest::Params::fromJson(paramsValue.toObject());
+    McpProtocolCancelTaskRequest::Params params = McpProtocolCancelTaskRequest::Params::fromJson(paramsValue.toObject());
     if (!params.isValid()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCancelTaskRequest: invalid field 'params'";
         return {};
     }
-    request.setParams(params);
+    request.setParams(std::move(params));
     return request;
 }
 

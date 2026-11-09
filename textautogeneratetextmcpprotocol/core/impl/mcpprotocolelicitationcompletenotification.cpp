@@ -69,12 +69,12 @@ McpProtocolElicitationCompleteNotification McpProtocolElicitationCompleteNotific
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitationCompleteNotification: missing required field 'params'";
         return {};
     }
-    const McpProtocolElicitationCompleteNotification::Params params = McpProtocolElicitationCompleteNotification::Params::fromJson(paramsValue.toObject());
+    McpProtocolElicitationCompleteNotification::Params params = McpProtocolElicitationCompleteNotification::Params::fromJson(paramsValue.toObject());
     if (!params.isValid()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitationCompleteNotification: invalid field 'params'";
         return {};
     }
-    notification.setParams(params);
+    notification.setParams(std::move(params));
 
     return notification;
 }

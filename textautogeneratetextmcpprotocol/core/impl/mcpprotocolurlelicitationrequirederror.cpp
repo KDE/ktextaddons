@@ -84,8 +84,8 @@ QList<McpProtocolElicitRequestURLParams> McpProtocolURLElicitationRequiredError:
     const QJsonArray array = mError.data().value_or(QJsonValue()).toObject().value("elicitations"_L1).toArray();
     list.reserve(array.count());
     for (const QJsonValue &value : array) {
-        if (const McpProtocolElicitRequestURLParams params = McpProtocolElicitRequestURLParams::fromJson(value.toObject()); params.isValid()) {
-            list.append(params);
+        if (McpProtocolElicitRequestURLParams params = McpProtocolElicitRequestURLParams::fromJson(value.toObject()); params.isValid()) {
+            list.append(std::move(params));
         } else {
             qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolURLElicitationRequiredError: invalid elicitation" << value;
         }

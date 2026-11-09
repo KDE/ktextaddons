@@ -43,12 +43,12 @@ McpProtocolInitializeRequestParams McpProtocolInitializeRequestParams::fromJson(
         return {};
     }
     if (const QJsonValue clientInfoValue = obj.value("clientInfo"_L1); clientInfoValue.isObject()) {
-        const McpProtocolImplementation clientInfo = McpProtocolImplementation::fromJson(clientInfoValue.toObject());
+        McpProtocolImplementation clientInfo = McpProtocolImplementation::fromJson(clientInfoValue.toObject());
         if (!clientInfo.isValid()) {
             qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolInitializeRequestParams: invalid field 'clientInfo'";
             return {};
         }
-        params.setClientInfo(clientInfo);
+        params.setClientInfo(std::move(clientInfo));
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolInitializeRequestParams: missing required field 'clientInfo'";
         return {};

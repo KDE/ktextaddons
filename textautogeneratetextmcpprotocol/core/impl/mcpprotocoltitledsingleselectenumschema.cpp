@@ -112,8 +112,8 @@ McpProtocolTitledSingleSelectEnumSchema McpProtocolTitledSingleSelectEnumSchema:
         oneOf.reserve(arr.count());
         for (const QJsonValue &v : arr) {
             // Skip invalid items
-            if (const OneOfItem item = McpProtocolTitledSingleSelectEnumSchema::OneOfItem::fromJson(v.toObject()); item.isValid()) {
-                oneOf.append(item);
+            if (OneOfItem item = McpProtocolTitledSingleSelectEnumSchema::OneOfItem::fromJson(v.toObject()); item.isValid()) {
+                oneOf.append(std::move(item));
             }
         }
         prompt.setOneOf(std::move(oneOf));

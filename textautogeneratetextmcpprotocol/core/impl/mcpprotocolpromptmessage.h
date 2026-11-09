@@ -45,7 +45,7 @@ public:
     [[nodiscard]] McpProtocolUtils::ContentBlock content() const;
     /*!
      */
-    void setContent(const McpProtocolUtils::ContentBlock &newContent);
+    void setContent(McpProtocolUtils::ContentBlock newContent);
 
     /*!
      */

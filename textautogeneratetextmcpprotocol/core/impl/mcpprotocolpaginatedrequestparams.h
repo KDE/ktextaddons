@@ -45,7 +45,7 @@ public:
     [[nodiscard]] std::optional<QString> cursor() const;
     /*!
      */
-    void setCursor(const std::optional<QString> &newCursor);
+    void setCursor(std::optional<QString> newCursor);
 
 private:
     std::optional<Meta> mMeta;

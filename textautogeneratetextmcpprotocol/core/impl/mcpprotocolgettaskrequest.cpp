@@ -72,12 +72,12 @@ McpProtocolGetTaskRequest McpProtocolGetTaskRequest::fromJson(const QJsonObject 
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        const McpProtocolGetTaskRequest::Params params = McpProtocolGetTaskRequest::Params::fromJson(paramsValue.toObject());
+        McpProtocolGetTaskRequest::Params params = McpProtocolGetTaskRequest::Params::fromJson(paramsValue.toObject());
         if (params == McpProtocolGetTaskRequest::Params()) {
             qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskRequest: invalid field 'params'";
             return {};
         }
-        request.setParams(params);
+        request.setParams(std::move(params));
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetTaskRequest: missing required field 'params'";
         return {};

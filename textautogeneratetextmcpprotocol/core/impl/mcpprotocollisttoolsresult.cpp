@@ -39,8 +39,8 @@ McpProtocolListToolsResult McpProtocolListToolsResult::fromJson(const QJsonObjec
         QList<McpProtocolTool> lst;
         lst.reserve(arr.count());
         for (const auto &v : arr) {
-            if (const McpProtocolTool item = McpProtocolTool::fromJson(v.toObject()); item.isValid()) {
-                lst.append(item);
+            if (McpProtocolTool item = McpProtocolTool::fromJson(v.toObject()); item.isValid()) {
+                lst.append(std::move(item));
             }
         }
         result.setTools(std::move(lst));

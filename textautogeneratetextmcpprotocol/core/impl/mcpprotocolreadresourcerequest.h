@@ -46,7 +46,7 @@ public:
     [[nodiscard]] McpProtocolReadResourceRequestParams params() const;
     /*!
      */
-    void setParams(const McpProtocolReadResourceRequestParams &newParams);
+    void setParams(McpProtocolReadResourceRequestParams newParams);
 
 private:
     McpProtocolUtils::RequestId mId;

@@ -56,9 +56,9 @@ McpProtocolImplementation McpProtocolImplementation::fromJson(const QJsonObject 
         QList<McpProtocolIcon> icons;
         icons.reserve(arr.count());
         for (const auto &v : arr) {
-            const McpProtocolIcon icon = McpProtocolIcon::fromJson(v.toObject());
+            McpProtocolIcon icon = McpProtocolIcon::fromJson(v.toObject());
             if (icon.isValid()) {
-                icons.append(icon);
+                icons.append(std::move(icon));
             }
         }
         impl.setIcons(std::move(icons));

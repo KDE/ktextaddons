@@ -64,9 +64,9 @@ McpProtocolUtils::ContentBlock McpProtocolPromptMessage::content() const
     return mContent;
 }
 
-void McpProtocolPromptMessage::setContent(const McpProtocolUtils::ContentBlock &newContent)
+void McpProtocolPromptMessage::setContent(McpProtocolUtils::ContentBlock newContent)
 {
-    mContent = newContent;
+    mContent = std::move(newContent);
 }
 
 McpProtocolUtils::Role McpProtocolPromptMessage::role() const

@@ -52,12 +52,12 @@ McpProtocolCreateMessageRequest McpProtocolCreateMessageRequest::fromJson(const 
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageRequest: missing required field 'params'";
         return {};
     }
-    const McpProtocolCreateMessageRequestParams params = McpProtocolCreateMessageRequestParams::fromJson(paramsValue.toObject());
+    McpProtocolCreateMessageRequestParams params = McpProtocolCreateMessageRequestParams::fromJson(paramsValue.toObject());
     if (!params.isValid()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateMessageRequest: invalid field 'params'";
         return {};
     }
-    request.setParams(params);
+    request.setParams(std::move(params));
     return request;
 }
 

@@ -41,12 +41,12 @@ McpProtocolInitializeResult McpProtocolInitializeResult::fromJson(const QJsonObj
         return {};
     }
     if (const QJsonValue serverInfoValue = obj.value("serverInfo"_L1); serverInfoValue.isObject()) {
-        const McpProtocolImplementation serverInfo = McpProtocolImplementation::fromJson(serverInfoValue.toObject());
+        McpProtocolImplementation serverInfo = McpProtocolImplementation::fromJson(serverInfoValue.toObject());
         if (!serverInfo.isValid()) {
             qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolInitializeResult: invalid field 'serverInfo'";
             return {};
         }
-        result.setServerInfo(serverInfo);
+        result.setServerInfo(std::move(serverInfo));
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolInitializeResult: missing required field 'serverInfo'";
         return {};

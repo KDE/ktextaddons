@@ -39,12 +39,12 @@ McpProtocolProgressNotification McpProtocolProgressNotification::fromJson(const 
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        const McpProtocolProgressNotificationParams params = McpProtocolProgressNotificationParams::fromJson(paramsValue.toObject());
+        McpProtocolProgressNotificationParams params = McpProtocolProgressNotificationParams::fromJson(paramsValue.toObject());
         if (!params.isValid()) {
             qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolProgressNotification: invalid field 'params'";
             return {};
         }
-        prompt.setParams(params);
+        prompt.setParams(std::move(params));
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolProgressNotification: missing required field 'params'";
         return {};
@@ -66,7 +66,7 @@ McpProtocolProgressNotificationParams McpProtocolProgressNotification::params() 
     return mParams;
 }
 
-void McpProtocolProgressNotification::setParams(const McpProtocolProgressNotificationParams &newParams)
+void McpProtocolProgressNotification::setParams(McpProtocolProgressNotificationParams newParams)
 {
-    mParams = newParams;
+    mParams = std::move(newParams);
 }

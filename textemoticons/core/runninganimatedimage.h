@@ -40,7 +40,7 @@ struct TEXTEMOTICONSCORE_EXPORT RunningAnimatedImage {
      * \param other The RunningAnimatedImage to move from
      * \return A reference to this RunningAnimatedImage
      */
-    RunningAnimatedImage &operator=(RunningAnimatedImage &&other);
+    RunningAnimatedImage &operator=(RunningAnimatedImage &&other) noexcept;
 
     QPersistentModelIndex index; /*!< The persistent model index for the animated image */
     QMovie *movie = nullptr; /*!< The QMovie instance for the animation */

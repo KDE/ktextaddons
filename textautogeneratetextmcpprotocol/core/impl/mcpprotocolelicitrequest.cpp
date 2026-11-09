@@ -53,7 +53,7 @@ McpProtocolElicitRequest McpProtocolElicitRequest::fromJson(const QJsonObject &o
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequest: missing required field 'params'";
         return {};
     }
-    const McpProtocolUtils::ElicitRequestParams params = McpProtocolUtils::elicitRequestParamsFromJson(paramsValue);
+    McpProtocolUtils::ElicitRequestParams params = McpProtocolUtils::elicitRequestParamsFromJson(paramsValue);
     const bool paramsIsValid = std::visit(
         [](const auto &p) -> bool {
             return p.isValid();
@@ -63,7 +63,7 @@ McpProtocolElicitRequest McpProtocolElicitRequest::fromJson(const QJsonObject &o
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolElicitRequest: invalid field 'params'";
         return {};
     }
-    request.setParams(params);
+    request.setParams(std::move(params));
     return request;
 }
 

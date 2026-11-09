@@ -60,7 +60,7 @@ std::optional<QString> McpProtocolPaginatedRequestParams::cursor() const
     return mCursor;
 }
 
-void McpProtocolPaginatedRequestParams::setCursor(const std::optional<QString> &newCursor)
+void McpProtocolPaginatedRequestParams::setCursor(std::optional<QString> newCursor)
 {
-    mCursor = newCursor;
+    mCursor = std::move(newCursor);
 }

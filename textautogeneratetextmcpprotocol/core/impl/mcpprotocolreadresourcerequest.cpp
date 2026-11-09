@@ -41,12 +41,12 @@ McpProtocolReadResourceRequest McpProtocolReadResourceRequest::fromJson(const QJ
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        const McpProtocolReadResourceRequestParams params = McpProtocolReadResourceRequestParams::fromJson(paramsValue.toObject());
+        McpProtocolReadResourceRequestParams params = McpProtocolReadResourceRequestParams::fromJson(paramsValue.toObject());
         if (!params.isValid()) {
             qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolReadResourceRequest: invalid field 'params'";
             return {};
         }
-        prompt.setParams(params);
+        prompt.setParams(std::move(params));
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolReadResourceRequest: missing required field 'params'";
         return {};
@@ -85,7 +85,7 @@ McpProtocolReadResourceRequestParams McpProtocolReadResourceRequest::params() co
     return mParams;
 }
 
-void McpProtocolReadResourceRequest::setParams(const McpProtocolReadResourceRequestParams &newParams)
+void McpProtocolReadResourceRequest::setParams(McpProtocolReadResourceRequestParams newParams)
 {
-    mParams = newParams;
+    mParams = std::move(newParams);
 }

@@ -32,7 +32,7 @@ McpProtocolRequestMeta McpProtocolRequestMeta::fromJson(const QJsonObject &obj)
         // Keep invalid value as is: it's saved again by toJson()
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolRequestMeta: invalid field 'progressToken'" << progressTokenValue;
     }
-    meta.setAdditionalProperties(additionalProperties);
+    meta.setAdditionalProperties(std::move(additionalProperties));
     return meta;
 }
 
@@ -60,7 +60,7 @@ QJsonObject McpProtocolRequestMeta::additionalProperties() const
     return mAdditionalProperties;
 }
 
-void McpProtocolRequestMeta::setAdditionalProperties(const QJsonObject &newAdditionalProperties)
+void McpProtocolRequestMeta::setAdditionalProperties(QJsonObject newAdditionalProperties)
 {
-    mAdditionalProperties = newAdditionalProperties;
+    mAdditionalProperties = std::move(newAdditionalProperties);
 }

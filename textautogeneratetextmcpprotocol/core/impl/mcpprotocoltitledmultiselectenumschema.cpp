@@ -119,8 +119,8 @@ McpProtocolTitledMultiSelectEnumSchema::Items McpProtocolTitledMultiSelectEnumSc
         anyOf.reserve(arr.size());
         for (const QJsonValue &v : arr) {
             // Skip invalid items
-            if (const AnyOfItem item = McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::fromJson(v.toObject()); item.isValid()) {
-                anyOf.append(item);
+            if (AnyOfItem item = McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem::fromJson(v.toObject()); item.isValid()) {
+                anyOf.append(std::move(item));
             }
         }
         result.setAnyOf(std::move(anyOf));

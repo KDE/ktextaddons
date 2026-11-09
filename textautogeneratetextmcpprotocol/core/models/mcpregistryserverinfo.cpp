@@ -72,9 +72,9 @@ QList<McpRegistryServerInfo> McpRegistryServerInfo::parseServerList(const QJsonO
     const QJsonArray serversArray = obj["servers"_L1].toArray();
     list.reserve(serversArray.count());
     for (const auto &value : serversArray) {
-        const McpRegistryServerInfo info = fromJson(value.toObject()["server"_L1].toObject());
+        McpRegistryServerInfo info = fromJson(value.toObject()["server"_L1].toObject());
         if (info.isValid()) {
-            list.append(info);
+            list.append(std::move(info));
         }
     }
     nextCursor = obj["metadata"_L1].toObject()["nextCursor"_L1].toString();

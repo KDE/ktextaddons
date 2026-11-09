@@ -41,12 +41,12 @@ McpProtocolLoggingMessageNotification McpProtocolLoggingMessageNotification::fro
         return {};
     }
     if (const QJsonValue paramsValue = obj.value("params"_L1); paramsValue.isObject()) {
-        const McpProtocolLoggingMessageNotificationParams params = McpProtocolLoggingMessageNotificationParams::fromJson(paramsValue.toObject());
+        McpProtocolLoggingMessageNotificationParams params = McpProtocolLoggingMessageNotificationParams::fromJson(paramsValue.toObject());
         if (!params.isValid()) {
             qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolLoggingMessageNotification: invalid field 'params'";
             return {};
         }
-        notification.setParams(params);
+        notification.setParams(std::move(params));
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolLoggingMessageNotification: missing required field 'params'";
         return {};

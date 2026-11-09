@@ -157,7 +157,7 @@ McpProtocolCompleteRequestParams McpProtocolCompleteRequestParams::fromJson(cons
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteRequestParams: missing required field 'argument'";
         return {};
     }
-    const McpProtocolCompleteRequestParams::Argument argument = McpProtocolCompleteRequestParams::Argument::fromJson(argumentValue.toObject());
+    McpProtocolCompleteRequestParams::Argument argument = McpProtocolCompleteRequestParams::Argument::fromJson(argumentValue.toObject());
     if (!argument.isValid()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteRequestParams: invalid field 'argument'";
         return {};
@@ -167,7 +167,7 @@ McpProtocolCompleteRequestParams McpProtocolCompleteRequestParams::fromJson(cons
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteRequestParams: missing required field 'ref'";
         return {};
     }
-    const McpProtocolUtils::CompleteRequestParamsRef ref = McpProtocolUtils::completeRequestParamsRefFromJson(refValue);
+    McpProtocolUtils::CompleteRequestParamsRef ref = McpProtocolUtils::completeRequestParamsRefFromJson(refValue);
     if (!isRefValid(ref)) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCompleteRequestParams: invalid field 'ref'";
         return {};
@@ -176,11 +176,11 @@ McpProtocolCompleteRequestParams McpProtocolCompleteRequestParams::fromJson(cons
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         params.setMeta(McpProtocolCompleteRequestParams::Meta::fromJson(metaValue.toObject()));
     }
-    params.setArgument(argument);
+    params.setArgument(std::move(argument));
     if (const QJsonValue contextValue = obj.value("context"_L1); contextValue.isObject()) {
         params.setContext(McpProtocolCompleteRequestParams::Context::fromJson(contextValue.toObject()));
     }
-    params.setRef(ref);
+    params.setRef(std::move(ref));
     return params;
 }
 

@@ -38,7 +38,7 @@ public:
     [[nodiscard]] McpProtocolProgressNotificationParams params() const;
     /*!
      */
-    void setParams(const McpProtocolProgressNotificationParams &newParams);
+    void setParams(McpProtocolProgressNotificationParams newParams);
 
 private:
     McpProtocolProgressNotificationParams mParams;

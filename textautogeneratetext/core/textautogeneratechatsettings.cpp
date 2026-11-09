@@ -108,12 +108,11 @@ TextAutoGenerateChatSettings::PendingTypedInfo TextAutoGenerateChatSettings::Pen
     for (const auto &val : toolsArray) {
         tools.append(val.toString().toLatin1());
     }
-    const TextAutoGenerateChatSettings::PendingTypedInfo pendingTypedInfo{
+    return TextAutoGenerateChatSettings::PendingTypedInfo{
         .text = o.value("text"_L1).toString(),
         .scrollbarPosition = o.value("scrollbarPosition"_L1).toInt(-1),
-        .tools = tools,
+        .tools = std::move(tools),
     };
-    return pendingTypedInfo;
 }
 
 void TextAutoGenerateChatSettings::loadChatPendingTypedInfo()

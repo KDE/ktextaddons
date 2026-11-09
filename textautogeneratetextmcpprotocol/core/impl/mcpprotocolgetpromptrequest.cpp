@@ -52,12 +52,12 @@ McpProtocolGetPromptRequest McpProtocolGetPromptRequest::fromJson(const QJsonObj
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetPromptRequest: missing required field 'params'";
         return {};
     }
-    const McpProtocolGetPromptRequestParams params = McpProtocolGetPromptRequestParams::fromJson(paramsValue.toObject());
+    McpProtocolGetPromptRequestParams params = McpProtocolGetPromptRequestParams::fromJson(paramsValue.toObject());
     if (!params.isValid()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolGetPromptRequest: invalid field 'params'";
         return {};
     }
-    request.setParams(params);
+    request.setParams(std::move(params));
     return request;
 }
 

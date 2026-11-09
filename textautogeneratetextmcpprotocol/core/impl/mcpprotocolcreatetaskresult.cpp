@@ -30,7 +30,7 @@ McpProtocolCreateTaskResult McpProtocolCreateTaskResult::fromJson(const QJsonObj
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateTaskResult: missing required field 'task'";
         return {};
     }
-    const McpProtocolTask task = McpProtocolTask::fromJson(taskValue.toObject());
+    McpProtocolTask task = McpProtocolTask::fromJson(taskValue.toObject());
     if (task == McpProtocolTask()) {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "McpProtocolCreateTaskResult: invalid field 'task'";
         return {};
@@ -39,7 +39,7 @@ McpProtocolCreateTaskResult McpProtocolCreateTaskResult::fromJson(const QJsonObj
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    result.setTask(task);
+    result.setTask(std::move(task));
     return result;
 }
 
