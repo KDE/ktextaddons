@@ -30,8 +30,6 @@ OllamaCommonOverrideParametersWidget::OllamaCommonOverrideParametersWidget(QWidg
     auto groupCustomizeGroupboxLayout = new QFormLayout(groupCustomizeGroupbox);
     groupCustomizeGroupboxLayout->setObjectName(u"groupCustomizeGroupboxLayout"_s);
 
-    mainLayout->addWidget(groupCustomizeGroupbox);
-
     mTemperature->setObjectName(u"mTemperature"_s);
     mTemperature->setRange(0.0, 10.0);
     mTemperature->setSingleStep(0.01);

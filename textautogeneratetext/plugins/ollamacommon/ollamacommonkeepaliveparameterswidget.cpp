@@ -27,7 +27,6 @@ OllamaCommonKeepAliveParametersWidget::OllamaCommonKeepAliveParametersWidget(QWi
 
     auto groupCustomizeGroupboxLayout = new QFormLayout(groupCustomizeGroupbox);
     groupCustomizeGroupboxLayout->setObjectName(u"groupCustomizeGroupboxLayout"_s);
-    mainLayout->addWidget(groupCustomizeGroupbox);
 
     mOllamaCommonKeepAliveParametersComboBox->setObjectName(u"mOllamaCommonKeepAliveParametersComboBox"_s);
     mOllamaCommonKeepAliveParametersComboBox->setToolTip(i18nc("@info:tooltip", "How the instance should handle idle models"));
