@@ -26,8 +26,8 @@ McpProtocolPaginatedResult McpProtocolPaginatedResult::fromJson(const QJsonObjec
     if (const QJsonValue metaValue = obj.value("_meta"_L1); metaValue.isObject()) {
         prompt.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
-    if (obj.contains("nextCursor"_L1)) {
-        prompt.setNextCursor(obj.value("nextCursor"_L1).toString());
+    if (const QJsonValue v = obj.value("nextCursor"_L1); v.isString()) {
+        prompt.setNextCursor(v.toString());
     }
     return prompt;
 }
