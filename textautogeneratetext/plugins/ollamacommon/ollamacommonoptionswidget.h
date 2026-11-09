@@ -36,7 +36,6 @@ public:
 private:
     QCheckBox *const mExpose;
     QCheckBox *const mThoughtProcessing;
-    const ExtraOptions mExtraOptions = ExtraOptions(ExtraOption::None);
     OllamaCommonShareNameComboBox *const mOllamaCommonShareNameComboBox;
 };
 Q_DECLARE_TYPEINFO(OllamaCommonOptionsWidget::OllamaCommonOptionsInfo, Q_RELOCATABLE_TYPE);

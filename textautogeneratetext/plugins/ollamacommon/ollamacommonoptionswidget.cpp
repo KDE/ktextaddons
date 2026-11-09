@@ -16,7 +16,6 @@ OllamaCommonOptionsWidget::OllamaCommonOptionsWidget(ExtraOptions options, QWidg
     : QWidget{parent}
     , mExpose(new QCheckBox(i18n("Expose Ollama to Network"), this))
     , mThoughtProcessing(new QCheckBox(i18n("Thought Processing"), this))
-    , mExtraOptions(options)
     , mOllamaCommonShareNameComboBox(new OllamaCommonShareNameComboBox(this))
 {
     auto mainLayout = new QVBoxLayout(this);
