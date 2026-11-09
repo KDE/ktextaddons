@@ -46,13 +46,17 @@ bool OllamaCommonManager::hasThinkSupport(const QString &modelName) const
     return hasCategorySupport(modelName, TextAutoGenerateText::TextAutoGenerateManager::Category::Reasoning);
 }
 
+void OllamaCommonManager::prepareRequest(QNetworkRequest &req)
+{
+    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
+}
+
 void OllamaCommonManager::showModelInfo(const QString &modelName)
 {
     QUrl url = instanceUrl();
     url.setPath(OllamaCommonUtils::modelInfoPath());
     QNetworkRequest req{url};
-
-    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
+    prepareRequest(req);
 
     QJsonObject data;
     data["model"_L1] = modelName;
@@ -75,7 +79,7 @@ void OllamaCommonManager::getVersion()
     QUrl url = instanceUrl();
     url.setPath(OllamaCommonUtils::versionPath());
     QNetworkRequest req{url};
-    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
+    prepareRequest(req);
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     // The caller owns a reply returned by QNetworkAccessManager. This connection is kept out of
     // mCheckConnect on purpose: a later call disconnects that one, and the reply still in flight

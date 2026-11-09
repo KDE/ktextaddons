@@ -35,6 +35,16 @@ QUrl OllamaCloudManager::instanceUrl()
     return QUrl(u"https://ollama.com"_s);
 }
 
+void OllamaCloudManager::prepareRequest(QNetworkRequest &req)
+{
+    OllamaCommonManager::prepareRequest(req);
+    if (mApiKey.isEmpty()) {
+        qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
+    } else {
+        req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
+    }
+}
+
 void OllamaCloudManager::loadModels()
 {
     if (mCheckConnect) {
@@ -43,12 +53,7 @@ void OllamaCloudManager::loadModels()
     QUrl url = instanceUrl();
     url.setPath(OllamaCommonUtils::tagsPath());
     QNetworkRequest req{url};
-    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
-    if (mApiKey.isEmpty()) {
-        qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
-    } else {
-        req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
-    }
+    prepareRequest(req);
 
     auto rep = TextAutoGenerateText::TextAutoGenerateEngineAccessManager::self()->networkManager()->get(req);
     // The caller owns a reply returned by QNetworkAccessManager. This connection is kept out of
@@ -91,12 +96,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getCompletion(c
     QUrl url = instanceUrl();
     url.setPath(OllamaCommonUtils::completionPath());
     QNetworkRequest req{url};
-    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
-    if (mApiKey.isEmpty()) {
-        qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
-    } else {
-        req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
-    }
+    prepareRequest(req);
 
     QJsonObject data;
     data["prompt"_L1] = request.message();
@@ -120,12 +120,7 @@ TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudManager::getChatCompleti
     QUrl url = instanceUrl();
     url.setPath(OllamaCommonUtils::chatPath());
     QNetworkRequest req{url};
-    req.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
-    if (mApiKey.isEmpty()) {
-        qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "Api key is missing";
-    } else {
-        req.setRawHeader("Authorization"_ba, "Bearer "_ba + mApiKey.toLatin1());
-    }
+    prepareRequest(req);
 
     QJsonObject data;
     data["model"_L1] = request.model();

@@ -35,6 +35,9 @@ public:
 
     [[nodiscard]] QUrl instanceUrl() override;
 
+protected:
+    void prepareRequest(QNetworkRequest &) override;
+
 private:
     [[nodiscard]] TEXTAUTOGENERATEOLLAMACLOUD_NO_EXPORT bool hasCategorySupport(const QString &modelName,
                                                                                 TextAutoGenerateText::TextAutoGenerateManager::Category cat) const override;

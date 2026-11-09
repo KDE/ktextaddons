@@ -35,8 +35,8 @@ public:
     void setAvailableInfos(const QList<OllamaCommonModelAvailableInfo> &newAvailableInfos);
     [[nodiscard]] QUrl instanceUrl() override;
 
-Q_SIGNALS:
-    void errorOccurred(QNetworkReply::NetworkError e, const QString &errorString);
+protected:
+    void prepareRequest(QNetworkRequest &req) override;
 
 private:
     [[nodiscard]] TEXTAUTOGENERATEOLLAMAONLINE_NO_EXPORT bool hasCategorySupport(const QString &modelName,
