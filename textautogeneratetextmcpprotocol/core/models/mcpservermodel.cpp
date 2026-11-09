@@ -91,13 +91,16 @@ void McpServerModel::editMcpServer(const McpServer &server)
         const QModelIndex index = createIndex(static_cast<int>(i), 0);
         Q_EMIT dataChanged(index,
                            index,
-                           {Qt::DisplayRole,
-                            Qt::CheckStateRole,
-                            MCPServerRoles::ServerType,
-                            MCPServerRoles::Name,
-                            MCPServerRoles::Enabled,
-                            MCPServerRoles::Identifier,
-                            MCPServerRoles::IconName});
+                           {
+                               Qt::DisplayRole,
+                               Qt::CheckStateRole,
+                               MCPServerRoles::ServerType,
+                               MCPServerRoles::Name,
+                               MCPServerRoles::Enabled,
+                               MCPServerRoles::Identifier,
+                               MCPServerRoles::IconName,
+                               MCPServerRoles::Icon,
+                           });
     } else {
         qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Server not found for identifier:" << server.identifier();
     }
