@@ -110,10 +110,11 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
     });
 
     connect(mSendMessage, &QToolButton::clicked, this, [this]() {
-        if (const QString str = mTextAutoGenerateTextLineEdit->text().trimmed(); str.isEmpty()) {
+        const QString str = mTextAutoGenerateTextLineEdit->text().trimmed();
+        if (str.isEmpty()) {
             return;
         }
-        Q_EMIT editingFinished(mTextAutoGenerateTextLineEdit->text(),
+        Q_EMIT editingFinished(str,
                                mUuid,
                                mTextAutoGenerateToolsWidget->generateListOfActiveTools(),
                                mTextLineEditAttachmentWidget->attachmentElementInfoList());
