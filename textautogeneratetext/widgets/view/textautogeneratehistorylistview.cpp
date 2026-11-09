@@ -195,22 +195,22 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
             });
             menu.addAction(archivedAction);
 
-            menu.addSeparator();
-
-            auto removeHistory = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove…"), &menu);
-            connect(removeHistory, &QAction::triggered, this, [index, this]() {
-                if (KMessageBox::ButtonCode::PrimaryAction
-                    == KMessageBox::questionTwoActions(this,
-                                                       i18n("Do you want to remove this discussion?"),
-                                                       i18nc("@title:window", "Remove Discussion"),
-                                                       KStandardGuiItem::remove(),
-                                                       KStandardGuiItem::cancel())) {
-                    if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
+            const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
+            if (!uuid.isEmpty()) {
+                menu.addSeparator();
+                auto removeHistory = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove…"), &menu);
+                connect(removeHistory, &QAction::triggered, this, [uuid, this]() {
+                    if (KMessageBox::ButtonCode::PrimaryAction
+                        == KMessageBox::questionTwoActions(this,
+                                                           i18n("Do you want to remove this discussion?"),
+                                                           i18nc("@title:window", "Remove Discussion"),
+                                                           KStandardGuiItem::remove(),
+                                                           KStandardGuiItem::cancel())) {
                         mManager->removeDiscussion(uuid);
                     }
-                }
-            });
-            menu.addAction(removeHistory);
+                });
+                menu.addAction(removeHistory);
+            }
         }
     } else {
         menu.addMenu(projectsMenu);
