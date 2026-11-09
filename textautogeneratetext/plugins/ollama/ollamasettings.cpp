@@ -132,6 +132,7 @@ void OllamaSettings::load(const KConfigGroup &config)
     setRocrVisibleDevice(config.readEntry(u"RocrVisibleDevice"_s));
     setCudaVisibleDevice(config.readEntry(u"CudaVisibleDevice"_s));
     setHipVisibleDevice(config.readEntry(u"HipVisibleDevice"_s));
+    setDefaultModelPath(config.readEntry(u"DefaultModelPath"_s));
     setExpose(config.readEntry(u"Expose"_s, false));
 }
 
@@ -144,6 +145,11 @@ void OllamaSettings::save(KConfigGroup &config)
     config.writeEntry(u"RocrVisibleDevice"_s, rocrVisibleDevice());
     config.writeEntry(u"CudaVisibleDevice"_s, cudaVisibleDevice());
     config.writeEntry(u"HipVisibleDevice"_s, hipVisibleDevice());
+    if (defaultModelPath().isEmpty()) {
+        config.deleteEntry(u"DefaultModelPath"_s);
+    } else {
+        config.writeEntry(u"DefaultModelPath"_s, defaultModelPath());
+    }
     config.writeEntry(u"Expose"_s, expose());
 }
 
