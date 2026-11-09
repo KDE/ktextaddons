@@ -104,3 +104,5 @@ void GoogleEnginePlugin::slotTranslateFinished(QNetworkReply *reply)
     }
     Q_EMIT translateDone();
 }
+
+#include "moc_googleengineplugin.cpp"

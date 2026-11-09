@@ -11,6 +11,7 @@
 class QNetworkReply;
 class GoogleEnginePlugin : public TextTranslator::TranslatorEnginePlugin
 {
+    Q_OBJECT
 public:
     explicit GoogleEnginePlugin(QObject *parent = nullptr);
     ~GoogleEnginePlugin() override;
