@@ -37,7 +37,7 @@ LMStudioConfigureDialog::LMStudioConfigureDialog(LMStudioManager *manager, LMStu
 
     const QString modelInstalledPageName = i18nc("@title Preferences page name", "Installed model");
     auto configureInstalledModelWidgetPage = new KPageWidgetItem(mModelInstalledWidget, modelInstalledPageName);
-    configureInstalledModelWidgetPage->setIcon(QIcon::fromTheme(u"://general-model"_s));
+    configureInstalledModelWidgetPage->setIcon(QIcon::fromTheme(u"://installed-models"_s));
     mModelInstalledWidget->setObjectName(u"mLMStudioModelInstalledWidget"_s);
     addPage(configureInstalledModelWidgetPage);
 
