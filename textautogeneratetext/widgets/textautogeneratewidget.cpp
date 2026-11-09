@@ -276,7 +276,10 @@ void TextAutoGenerateWidget::slotCancelRequest(const QByteArray &uuid)
     mManager->textAutoGeneratePlugin()->cancelRequest(uuid);
 }
 
-void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &indexAnswer, const QList<QByteArray> &tools)
+void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId,
+                                               const QModelIndex &indexAnswer,
+                                               const QList<QByteArray> &tools,
+                                               const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &att)
 {
     const QByteArray uuid = indexAnswer.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = indexAnswer.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
@@ -284,7 +287,7 @@ void TextAutoGenerateWidget::slotRefreshAnswer(const QByteArray &chatId, const Q
                                                                                  .messageUuid = uuid,
                                                                                  .chatId = chatId,
                                                                                  .tools = tools,
-                                                                                 .attachmentInfoList = {}};
+                                                                                 .attachmentInfoList = att};
 
     mManager->textAutoGeneratePlugin()->editMessage(info);
 }

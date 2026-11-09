@@ -41,7 +41,10 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotInitializeDone();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotNeedToAddInstances();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequest(const QByteArray &uuid);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QByteArray &chatId,
+                                                          const QModelIndex &index,
+                                                          const QList<QByteArray> &tools,
+                                                          const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &att);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureInstances();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateCurrentPage();

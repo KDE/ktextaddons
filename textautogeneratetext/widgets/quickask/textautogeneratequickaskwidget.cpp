@@ -151,15 +151,18 @@ void TextAutoGenerateQuickAskWidget::slotCancelRequest(const QByteArray &uuid)
     mManager->textAutoGeneratePlugin()->cancelRequest(uuid);
 }
 
-void TextAutoGenerateQuickAskWidget::slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index)
+void TextAutoGenerateQuickAskWidget::slotRefreshAnswer(const QByteArray &chatId,
+                                                       const QModelIndex &index,
+                                                       const QList<QByteArray> &tools,
+                                                       const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &att)
 {
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
     const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo info = {.message = messageStr,
                                                                                  .messageUuid = uuid,
                                                                                  .chatId = chatId,
-                                                                                 .tools = {},
-                                                                                 .attachmentInfoList = {}};
+                                                                                 .tools = tools,
+                                                                                 .attachmentInfoList = att};
     mManager->textAutoGeneratePlugin()->editMessage(info);
 }
 

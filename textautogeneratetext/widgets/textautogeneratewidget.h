@@ -94,7 +94,10 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index, const QList<QByteArray> &tools);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCancelRequest(const QByteArray &uuid);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QByteArray &chatId, const QModelIndex &index, const QList<QByteArray> &tools);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotRefreshAnswer(const QByteArray &chatId,
+                                                          const QModelIndex &index,
+                                                          const QList<QByteArray> &tools,
+                                                          const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &att);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool lineEditWidgetEnabledState() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotQuickSearchText(bool enabled);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotErrorOccurred(QNetworkReply::NetworkError e, const QString &errorString);
