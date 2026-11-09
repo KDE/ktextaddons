@@ -55,11 +55,15 @@ void OllamaManager::deleteModel(const QString &modelName)
                                            QJsonDocument(data).toJson(QJsonDocument::Compact)),
                                        OllamaCommonReply::RequestTypes::DeleteModel,
                                        this};
-    connect(reply, &OllamaCommonReply::finished, this, [this] {
+    connect(reply, &OllamaCommonReply::finished, this, [reply, this] {
         // TODO verify it.
         // if (reply->error() == QNetworkReply::NoError) {
         Q_EMIT refreshInstalledModels();
+        reply->deleteLater();
         //}
+    });
+    connect(reply, &OllamaCommonReply::canceled, this, [reply] {
+        reply->deleteLater();
     });
 }
 
