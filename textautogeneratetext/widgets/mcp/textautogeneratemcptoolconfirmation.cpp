@@ -27,7 +27,9 @@ void TextAutoGenerateMcpToolConfirmation::installConfirmationHandler(TextAutoGen
                                                                   i18nc("@title:window", "Run Tool"),
                                                                   KGuiItem(i18nc("@action:button", "Allow"), u"dialog-ok"_s),
                                                                   KGuiItem(i18nc("@action:button", "Always Allow This Server"), u"security-medium"_s),
-                                                                  KGuiItem(i18nc("@action:button", "Deny"), u"dialog-cancel"_s));
+                                                                  KGuiItem(i18nc("@action:button", "Deny"), u"dialog-cancel"_s),
+                                                                  QString(),
+                                                                  KMessageBox::Notify | KMessageBox::PlainText);
         switch (result) {
         case KMessageBox::PrimaryAction:
             answer(TextAutoGenerateMcpToolsManager::ToolConfirmation::Allow);
