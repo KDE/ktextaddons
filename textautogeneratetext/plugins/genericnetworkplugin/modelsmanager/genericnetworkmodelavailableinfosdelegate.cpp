@@ -244,7 +244,7 @@ QTextDocument *GenericNetworkModelAvailableInfosDelegate::documentForIndex(const
     //     return nullptr;
     // }
 
-    auto doc = createTextDocument(u"<b>%1</b><br/>"_s.arg(QString::fromLatin1(identifier)) + description, width);
+    auto doc = createTextDocument(u"<b>%1</b><br/>"_s.arg(QString::fromLatin1(identifier)) + description.toHtmlEscaped(), width);
     auto ret = doc.get();
     mDocumentCache.insert(identifier, std::move(doc));
     return ret;
