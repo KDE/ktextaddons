@@ -172,7 +172,9 @@ void OllamaManager::loadModels()
 
             QString installedName = installed.model();
             const int position = installedName.indexOf(u':');
-            installedName = installedName.first(position);
+            if (position > -1) {
+                installedName = installedName.first(position);
+            }
             auto matchesModelName = [&installedName](const OllamaCommonModelAvailableInfo &availableInfo) {
                 return availableInfo.name() == installedName;
             };
