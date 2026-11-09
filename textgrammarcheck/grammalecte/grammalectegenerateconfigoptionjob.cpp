@@ -57,7 +57,7 @@ void GrammalecteGenerateConfigOptionJob::receivedError()
 
 void GrammalecteGenerateConfigOptionJob::receivedStdErr()
 {
-    mLastError += QLatin1StringView(mProcess->readAllStandardError());
+    mLastError += QString::fromUtf8(mProcess->readAllStandardError());
 }
 
 QString GrammalecteGenerateConfigOptionJob::pythonPath() const
