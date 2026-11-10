@@ -50,7 +50,6 @@ int TextUtilsBlockCMarkSupport::findNewLineOrEndLine(const QString &str, const Q
     } else {
         return index;
     }
-    Q_UNREACHABLE();
 }
 
 QString TextUtilsBlockCMarkSupport::markdownToRichTextCMark(const QString &markDown)
