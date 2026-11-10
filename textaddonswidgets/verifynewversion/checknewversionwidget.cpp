@@ -26,7 +26,6 @@ CheckNewVersionWidget::CheckNewVersionWidget(QWidget *parent)
 
     mCheckVersionResultLabel->setObjectName(u"mCheckVersionResultLabel"_s);
     mCheckVersionResultLabel->setWordWrap(true);
-    mCheckVersionResultLabel->setOpenExternalLinks(true);
     mCheckVersionResultLabel->setTextFormat(Qt::RichText);
     mainLayout->addWidget(mCheckVersionResultLabel);
 
