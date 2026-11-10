@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 21:28+0000\n"
-"PO-Revision-Date: 2026-10-26 08:13+0100\n"
+"POT-Creation-Date: 2026-11-09 19:28+0000\n"
+"PO-Revision-Date: 2026-11-06 14:16+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.10\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: core/jobs/textautogenerateaskjob.cpp:40
 #, kde-format
@@ -388,19 +388,18 @@ msgstr "Modelli disponibili"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:61
 #: plugins/lmstudio/lmstudiomanager.cpp:126
-#: plugins/ollama/ollamamanager.cpp:154
-#: plugins/ollamacloud/ollamacloudmanager.cpp:61
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:63
+#: plugins/ollama/ollamamanager.cpp:165
+#: plugins/ollamacloud/ollamacloudmanager.cpp:66
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:67
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Connessione all'interfaccia al %1 non riuscita: %2"
 
 #: plugins/genericnetworkplugin/genericnetworknetworkpluginconfigurewidget.cpp:37
-#, fuzzy, kde-format
-#| msgid "Modelfile"
+#, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Model default"
-msgstr "File del modello"
+msgstr "Predefinito del modello"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:27
 #, kde-format
@@ -586,44 +585,43 @@ msgstr "Modelli linguistici di grandi dimensioni di DeepSeek"
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Disabled"
-msgstr ""
+msgstr "Disabilitato"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:642
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Enabled"
-msgstr ""
+msgstr "Abilitato"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:644
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Minimal"
-msgstr ""
+msgstr "Minimo"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:646
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Low"
-msgstr ""
+msgstr "Basso"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:648
-#, fuzzy, kde-format
-#| msgid "Medium"
+#, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Medium"
-msgstr "Media"
+msgstr "Medio"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:650
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "High"
-msgstr ""
+msgstr "Alto"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:652
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Extra High"
-msgstr ""
+msgstr "Molto alto"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:91
@@ -1067,13 +1065,13 @@ msgstr "Scarica dopo l'utilizzo"
 msgid "Keep Alive"
 msgstr "Keep Alive"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
 msgstr "Come l'istanza dovrebbe gestire i modelli inattivi"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1082,12 +1080,12 @@ msgstr ""
 "La quantità di tempo per cui l'istanza deve mantenere caricati i modelli "
 "dopo che sono diventati inattivi."
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:37
 #, kde-format
 msgid "Presets:"
 msgstr "Preimpostazioni:"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Minutes:"
 msgstr "Minuti:"
@@ -3035,19 +3033,19 @@ msgstr "Esponi Ollama alla rete"
 msgid "Thought Processing"
 msgstr "Elaborazione del pensiero"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:25
 #, kde-format
 msgid "Options"
 msgstr "Opzioni"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
 msgstr ""
 "Rendi Ollama disponibile per altri dispositivi e software nella rete locale."
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:42
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3057,7 +3055,7 @@ msgstr ""
 "Fai in modo che modelli di ragionamento compatibili riflettano sulla loro "
 "risposta prima di generare un messaggio."
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:45
 #, kde-format
 msgid "Share Name:"
 msgstr "Nome condivisione:"
@@ -3067,7 +3065,7 @@ msgstr "Nome condivisione:"
 msgid "Override Parameters"
 msgstr "Parametri di override"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3077,13 +3075,13 @@ msgstr ""
 "La temperatura del modello. Aumentando la temperatura, il modello risponderà "
 "in modo più creativo."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:39
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:37
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:67
 #, kde-format
 msgid "Temperature:"
 msgstr "Temperatura:"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:43
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3095,13 +3093,13 @@ msgstr ""
 "Impostando questo valore su un numero specifico, il modello genererà lo "
 "stesso testo per lo stesso prompt. (Predefinito: 0)"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:68
 #, kde-format
 msgid "Seed:"
 msgstr "Seme:"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:50
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3111,7 +3109,7 @@ msgstr ""
 "Controlla quanti token (pezzi di testo) il modello può elaborare e ricordare "
 "contemporaneamente."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:51
 #, kde-format
 msgid "Context Window Size:"
 msgstr "Dimensione finestra di contesto:"
@@ -3280,7 +3278,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Invia"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:142
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:143
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -3471,28 +3469,22 @@ msgid "%1:"
 msgstr "%1:"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Configure"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools"
-msgstr "Configura"
+msgstr "Configura gli strumenti"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools of %1"
-msgstr "Configura %1"
+msgstr "Configura gli strumenti di %1"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Allow to select tools"
+#, kde-format
 msgctxt "@option:check"
 msgid "Only allow selected tools"
-msgstr "Consenti di selezionare gli strumenti"
+msgstr "Consenti solo gli strumenti selezionati"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:45
 #, kde-format
@@ -3501,39 +3493,37 @@ msgid ""
 "Tools which are not selected are not sent to LLM. New tools of server are "
 "not allowed."
 msgstr ""
+"Gli strumenti non selezionati non vengono inviati all'LLM. Non è consentito "
+"aggiungere nuovi strumenti lato server."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "All Tools"
-msgstr "Strumenti"
+msgstr "Tutti gli strumenti"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Seleziona tutto"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr "Seleziona tutto"
+msgstr "Deseleziona tutto"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
 #, kde-format
 msgid "Apply changes to load the list of tools of this server."
 msgstr ""
+"Applica le modifiche per caricare l'elenco degli strumenti di questo server."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:170
 #, kde-format
 msgid "Enable this server to load the list of its tools."
-msgstr ""
+msgstr "Consenti a questo server di caricare l'elenco dei suoi strumenti."
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:177
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:183
@@ -3690,7 +3680,7 @@ msgid "Modify…"
 msgstr "Modifica…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:200
+#: widgets/view/textautogeneratehistorylistview.cpp:201
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3725,6 +3715,9 @@ msgid ""
 "How much the model reasons before answering. A higher level gives better "
 "answers to complex questions, but is slower and uses more tokens."
 msgstr ""
+"Quanto il modello ragiona prima di rispondere. Un livello più elevato "
+"fornisce risposte migliori a domande complesse, ma è più lento e utilizza "
+"più token."
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:57
 #, kde-format
@@ -3749,10 +3742,9 @@ msgid "Max Tokens:"
 msgstr "Numero massimo di token:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Thinking"
+#, kde-format
 msgid "Thinking:"
-msgstr "Analisi"
+msgstr "Analisi:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
 #, kde-format
@@ -4171,17 +4163,14 @@ msgid "Tools:"
 msgstr "Strumenti:"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgid "No plugin found."
+#, kde-format
 msgid "No tools found"
-msgstr "Nessuna estensione trovata."
+msgstr "Nessuno strumento trovato"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Allow to select tools"
+#, kde-format
 msgid "No allowed tools"
-msgstr "Consenti di selezionare gli strumenti"
+msgstr "Nessuno strumento consentito"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:194
 #, kde-format
@@ -4347,12 +4336,12 @@ msgctxt "@action"
 msgid "Archive"
 msgstr "Archivia"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:204
+#: widgets/view/textautogeneratehistorylistview.cpp:205
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Vuoi rimuovere questa discussione?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:205
+#: widgets/view/textautogeneratehistorylistview.cpp:206
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"

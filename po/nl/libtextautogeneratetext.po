@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 21:28+0000\n"
+"POT-Creation-Date: 2026-11-09 19:28+0000\n"
 "PO-Revision-Date: 2026-11-06 11:46+0100\n"
 "Last-Translator: freek <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -388,9 +388,9 @@ msgstr "Beschikbare modellen"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:61
 #: plugins/lmstudio/lmstudiomanager.cpp:126
-#: plugins/ollama/ollamamanager.cpp:154
-#: plugins/ollamacloud/ollamacloudmanager.cpp:61
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:63
+#: plugins/ollama/ollamamanager.cpp:165
+#: plugins/ollamacloud/ollamacloudmanager.cpp:66
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:67
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Verbinden is mislukt met interface op %1: %2"
@@ -1062,13 +1062,13 @@ msgstr "Na gebruik ontladen"
 msgid "Keep Alive"
 msgstr "Levend houden"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
 msgstr "Hoe het exemplaar lege modellen moet behandelen"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1077,12 +1077,12 @@ msgstr ""
 "De hoeveelheid tijd die het exemplaar modellen geladen zou moeten houden "
 "nadat ze idle gaan."
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:37
 #, kde-format
 msgid "Presets:"
 msgstr "Voorinstellingen:"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Minutes:"
 msgstr "Minuten:"
@@ -3007,12 +3007,12 @@ msgstr "Stel Ollama bloot in het netwerk"
 msgid "Thought Processing"
 msgstr "Verwerking van denken"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:25
 #, kde-format
 msgid "Options"
 msgstr "Opties"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
@@ -3020,7 +3020,7 @@ msgstr ""
 "Zorg ervoor dat Ollama beschikbaar is voor andere apparaten en software in "
 "het lokale netwerk."
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:42
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3030,7 +3030,7 @@ msgstr ""
 "Laat compatibele redeneringsmodellen nadenken over hun antwoord alvorens een "
 "bericht te genereren."
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:45
 #, kde-format
 msgid "Share Name:"
 msgstr "Naam van share:"
@@ -3040,7 +3040,7 @@ msgstr "Naam van share:"
 msgid "Override Parameters"
 msgstr "Parameters overschrijven"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3050,13 +3050,13 @@ msgstr ""
 "De temperatuur van het model. De temperatuur verhogen maakt dat het model "
 "creatiever zal antwoorden."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:39
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:37
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:67
 #, kde-format
 msgid "Temperature:"
 msgstr "Temperatuur:"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:43
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3068,13 +3068,13 @@ msgstr ""
 "instellen op een specifiek getal zal het model dezelfde tekst laten "
 "genereren voor dezelfde prompt. (Standaard: 0)"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:68
 #, kde-format
 msgid "Seed:"
 msgstr "Startgetal:"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:50
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3084,7 +3084,7 @@ msgstr ""
 "Hiermee wordt bepaald hoeveel tokens (tekstfragmenten) het model tegelijk "
 "kan verwerken en onthouden."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:51
 #, kde-format
 msgid "Context Window Size:"
 msgstr "Contextvenstergrootte:"
@@ -3253,7 +3253,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Verzenden"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:142
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:143
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -3655,7 +3655,7 @@ msgid "Modify…"
 msgstr "Wijzigen…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:200
+#: widgets/view/textautogeneratehistorylistview.cpp:201
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -4312,12 +4312,12 @@ msgctxt "@action"
 msgid "Archive"
 msgstr "Archiveren"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:204
+#: widgets/view/textautogeneratehistorylistview.cpp:205
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Wilt u deze discussie verwijderen?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:205
+#: widgets/view/textautogeneratehistorylistview.cpp:206
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"

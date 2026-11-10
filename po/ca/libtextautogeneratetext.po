@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 21:28+0000\n"
+"POT-Creation-Date: 2026-11-09 19:28+0000\n"
 "PO-Revision-Date: 2026-11-06 11:30+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -392,9 +392,9 @@ msgstr "Models disponibles"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:61
 #: plugins/lmstudio/lmstudiomanager.cpp:126
-#: plugins/ollama/ollamamanager.cpp:154
-#: plugins/ollamacloud/ollamacloudmanager.cpp:61
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:63
+#: plugins/ollama/ollamamanager.cpp:165
+#: plugins/ollamacloud/ollamacloudmanager.cpp:66
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:67
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Ha fallat en connectar amb la interfície a %1: %2"
@@ -1069,13 +1069,13 @@ msgstr "Descarrega després de l'ús"
 msgid "Keep Alive"
 msgstr "«Keep Alive»"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
 msgstr "Com la instància gestionarà els models inactius"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1084,12 +1084,12 @@ msgstr ""
 "La quantitat de temps que la instància ha de mantenir els models carregats "
 "després d'estar inactius."
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:37
 #, kde-format
 msgid "Presets:"
 msgstr "Valors predefinits:"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Minutes:"
 msgstr "Minuts:"
@@ -3028,12 +3028,12 @@ msgstr "Exposa l'Ollama a la xarxa"
 msgid "Thought Processing"
 msgstr "Procés de pensament"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:25
 #, kde-format
 msgid "Options"
 msgstr "Opcions"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
@@ -3041,7 +3041,7 @@ msgstr ""
 "Fa que l'Ollama estigui disponible per a altres dispositius i programari a "
 "la xarxa local."
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:42
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3051,7 +3051,7 @@ msgstr ""
 "Tenir models de raonament compatibles fa que pensi la seva resposta abans de "
 "generar un missatge."
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:45
 #, kde-format
 msgid "Share Name:"
 msgstr "Comparteix el nom:"
@@ -3061,7 +3061,7 @@ msgstr "Comparteix el nom:"
 msgid "Override Parameters"
 msgstr "Sobreescriptura de paràmetres"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3071,13 +3071,13 @@ msgstr ""
 "La temperatura del model. L'augment de la temperatura farà que la resposta "
 "del model sigui més creativa."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:39
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:37
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:67
 #, kde-format
 msgid "Temperature:"
 msgstr "Temperatura:"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:43
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3089,13 +3089,13 @@ msgstr ""
 "això a un nombre específic farà que el model generi el mateix text per a la "
 "mateixa petició. (Predeterminat: 0)"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:68
 #, kde-format
 msgid "Seed:"
 msgstr "Llavor:"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:50
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3105,7 +3105,7 @@ msgstr ""
 "Controla el nombre de segments textuals (peça de text) que el model pot "
 "processar i recordar alhora."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:51
 #, kde-format
 msgid "Context Window Size:"
 msgstr "Mida de la finestra de context:"
@@ -3274,7 +3274,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Envia"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:142
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:143
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -3675,7 +3675,7 @@ msgid "Modify…"
 msgstr "Modifica…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:200
+#: widgets/view/textautogeneratehistorylistview.cpp:201
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -4330,12 +4330,12 @@ msgctxt "@action"
 msgid "Archive"
 msgstr "Arxiva"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:204
+#: widgets/view/textautogeneratehistorylistview.cpp:205
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Voleu eliminar aquest debat?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:205
+#: widgets/view/textautogeneratehistorylistview.cpp:206
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"

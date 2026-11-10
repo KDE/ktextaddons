@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 21:28+0000\n"
+"POT-Creation-Date: 2026-11-09 19:28+0000\n"
 "PO-Revision-Date: 2026-09-14 20:10+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@kde.org>\n"
@@ -387,9 +387,9 @@ msgstr "Dostupné modely"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:61
 #: plugins/lmstudio/lmstudiomanager.cpp:126
-#: plugins/ollama/ollamamanager.cpp:154
-#: plugins/ollamacloud/ollamacloudmanager.cpp:61
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:63
+#: plugins/ollama/ollamamanager.cpp:165
+#: plugins/ollamacloud/ollamacloudmanager.cpp:66
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:67
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "Nepodarilo sa pripojiť k rozhraniu na %1: %2"
@@ -1061,13 +1061,13 @@ msgstr "Uvoľniť po použití"
 msgid "Keep Alive"
 msgstr "Udržiavanie"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
 msgstr "Ako má inštancia nakladať s neaktívnymi modelmi"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -1075,12 +1075,12 @@ msgid ""
 msgstr ""
 "Doba, po ktorú má inštancia udržiavať načítané modely po ich nečinnosti."
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:37
 #, kde-format
 msgid "Presets:"
 msgstr "Predvoľby:"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Minutes:"
 msgstr "Minúty:"
@@ -2971,18 +2971,18 @@ msgstr "Sprístupniť Ollama v sieti"
 msgid "Thought Processing"
 msgstr "Spracovanie myšlienok"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:25
 #, kde-format
 msgid "Options"
 msgstr "Možnosti"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
 msgstr "Sprístupniť Ollama pre iné zariadenia a softvér v lokálnej sieti."
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:42
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2992,7 +2992,7 @@ msgstr ""
 "Nechať kompatibilné modely uvažovania premýšľať o svojej odpovedi pred "
 "generovaním správy."
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:45
 #, kde-format
 msgid "Share Name:"
 msgstr "Meno na zdieľanie:"
@@ -3002,7 +3002,7 @@ msgstr "Meno na zdieľanie:"
 msgid "Override Parameters"
 msgstr "Prepísať parametre"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3012,13 +3012,13 @@ msgstr ""
 "Teplota modelu. Zvýšenie teploty spôsobí, že model bude odpovedať "
 "kreatívnejšie."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:39
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:37
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:67
 #, kde-format
 msgid "Temperature:"
 msgstr "Teplota:"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:43
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3029,13 +3029,13 @@ msgstr ""
 "Nastaví základ pre generátor náhodných čísel. Nastavenie na konkrétne číslo "
 "spôsobí, že model vygeneruje rovnaký text pre rovnakú výzvu. (Predvolené: 0)"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:68
 #, kde-format
 msgid "Seed:"
 msgstr "Základ:"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:50
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -3044,7 +3044,7 @@ msgid ""
 msgstr ""
 "Ovláda, koľko tokenov (častí textu) môže model naraz spracovať a zapamätať."
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:51
 #, kde-format
 msgid "Context Window Size:"
 msgstr "Veľkosť kontextového okna:"
@@ -3211,7 +3211,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "Odoslať"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:142
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:143
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -3621,7 +3621,7 @@ msgid "Modify…"
 msgstr "Zmeniť…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:200
+#: widgets/view/textautogeneratehistorylistview.cpp:201
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -4278,12 +4278,12 @@ msgctxt "@action"
 msgid "Archive"
 msgstr "Archivovať"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:204
+#: widgets/view/textautogeneratehistorylistview.cpp:205
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "Chcete odstrániť túto diskusiu?"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:205
+#: widgets/view/textautogeneratehistorylistview.cpp:206
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"

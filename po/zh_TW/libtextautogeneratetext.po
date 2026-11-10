@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 21:28+0000\n"
+"POT-Creation-Date: 2026-11-09 19:28+0000\n"
 "PO-Revision-Date: 2026-11-05 22:59+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -389,9 +389,9 @@ msgstr "可用模型"
 
 #: plugins/genericnetworkplugin/genericnetworkmanager.cpp:61
 #: plugins/lmstudio/lmstudiomanager.cpp:126
-#: plugins/ollama/ollamamanager.cpp:154
-#: plugins/ollamacloud/ollamacloudmanager.cpp:61
-#: plugins/ollamaonline/ollamaonlinemanager.cpp:63
+#: plugins/ollama/ollamamanager.cpp:165
+#: plugins/ollamacloud/ollamacloudmanager.cpp:66
+#: plugins/ollamaonline/ollamaonlinemanager.cpp:67
 #, kde-format
 msgid "Failed to connect to interface at %1: %2"
 msgstr "無法連線到在 %1 的介面：%2"
@@ -1061,25 +1061,25 @@ msgstr "使用後解除載入"
 msgid "Keep Alive"
 msgstr "維持可用 (Keep Alive)"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:33
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "How the instance should handle idle models"
 msgstr "實體應該怎麽處理閒置的模型"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:36
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "The amount of time the instance should keep models loaded after they go idle."
 msgstr "實體應該在模型閒置之後維持模型載入多久。"
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:37
 #, kde-format
 msgid "Presets:"
 msgstr "預設檔："
 
-#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:39
+#: plugins/ollamacommon/ollamacommonkeepaliveparameterswidget.cpp:38
 #, kde-format
 msgid "Minutes:"
 msgstr "分鐘："
@@ -2779,18 +2779,18 @@ msgstr "將 Ollama 暴露於網路"
 msgid "Thought Processing"
 msgstr "思考處理"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:26
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:25
 #, kde-format
 msgid "Options"
 msgstr "選項"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:35
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Make Ollama available for other devices and software in local network."
 msgstr "讓區域網路上的其他裝置或軟體能夠使用 Ollama。"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:42
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2798,7 +2798,7 @@ msgid ""
 "generating a message."
 msgstr "要求支援的推理模型在生成訊息前先對回應進行思考。"
 
-#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:46
+#: plugins/ollamacommon/ollamacommonoptionswidget.cpp:45
 #, kde-format
 msgid "Share Name:"
 msgstr "共享名稱："
@@ -2808,7 +2808,7 @@ msgstr "共享名稱："
 msgid "Override Parameters"
 msgstr "覆寫參數"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:38
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2816,13 +2816,13 @@ msgid ""
 "answer more creatively."
 msgstr "模型的「溫度」。提高溫度會讓模型回答更有創意。"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:39
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:37
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:67
 #, kde-format
 msgid "Temperature:"
 msgstr "溫度："
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:43
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2833,13 +2833,13 @@ msgstr ""
 "設定生成用的隨機數字種子。將此設為特定數字會讓模型對於同一個 prompt 生成固定"
 "的文字。（預設：0）"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:47
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:45
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:68
 #, kde-format
 msgid "Seed:"
 msgstr "種子："
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:50
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2847,7 +2847,7 @@ msgid ""
 "at once."
 msgstr "控制模型能同時記住並處理多少 token（詞元）。"
 
-#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:53
+#: plugins/ollamacommon/ollamacommonoverrideparameterswidget.cpp:51
 #, kde-format
 msgid "Context Window Size:"
 msgstr "前後文窗口大小："
@@ -3014,7 +3014,7 @@ msgctxt "@info:tooltip"
 msgid "Send"
 msgstr "傳送"
 
-#: widgets/common/textautogeneratetextlineeditwidget.cpp:142
+#: widgets/common/textautogeneratetextlineeditwidget.cpp:143
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Allow to select tools"
@@ -3411,7 +3411,7 @@ msgid "Modify…"
 msgstr "變更…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:200
+#: widgets/view/textautogeneratehistorylistview.cpp:201
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -4062,12 +4062,12 @@ msgctxt "@action"
 msgid "Archive"
 msgstr "封存"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:204
+#: widgets/view/textautogeneratehistorylistview.cpp:205
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "您確定要移除這個討論嗎？"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:205
+#: widgets/view/textautogeneratehistorylistview.cpp:206
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
