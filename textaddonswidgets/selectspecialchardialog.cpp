@@ -105,7 +105,7 @@ QChar SelectSpecialCharDialog::currentChar() const
 
 void SelectSpecialCharDialog::autoInsertChar()
 {
-    connect(d->mCharSelect, &KCharSelect::charSelected, this, &SelectSpecialCharDialog::accept);
+    connect(d->mCharSelect, &KCharSelect::charSelected, this, &SelectSpecialCharDialog::accept, Qt::UniqueConnection);
 }
 
 void SelectSpecialCharDialog::setOkButtonText(const QString &text)
