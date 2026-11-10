@@ -26,7 +26,7 @@ public:
     explicit TextAutoGenerateEngineAccessManager(QObject *parent = nullptr);
     /*!
      */
-    ~TextAutoGenerateEngineAccessManager();
+    ~TextAutoGenerateEngineAccessManager() override;
 
     /*!
      */
