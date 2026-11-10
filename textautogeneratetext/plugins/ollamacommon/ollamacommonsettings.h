@@ -22,7 +22,7 @@ public:
     };
     Q_ENUM(KeepAliveType)
     OllamaCommonSettings();
-    virtual ~OllamaCommonSettings();
+    ~OllamaCommonSettings() override;
 
     [[nodiscard]] int seed() const;
     void setSeed(int newSeed);

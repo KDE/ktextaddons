@@ -25,7 +25,7 @@ public:
     explicit TranslatorEngineAccessManager(QObject *parent = nullptr);
     /*!
      */
-    ~TranslatorEngineAccessManager();
+    ~TranslatorEngineAccessManager() override;
 
     /*!
      */

@@ -21,7 +21,7 @@ public:
     explicit TextAutoGenerateTextToolInternalInterface(QObject *parent = nullptr);
     /*!
      */
-    virtual ~TextAutoGenerateTextToolInternalInterface();
+    ~TextAutoGenerateTextToolInternalInterface() override;
 
     /*!
      */

@@ -14,7 +14,7 @@ class TEXTAUTOGENERATELLAMACPP_EXPORT LLamaCppSettings : public PluginCommonSett
     Q_GADGET
 public:
     LLamaCppSettings();
-    virtual ~LLamaCppSettings();
+    ~LLamaCppSettings() override;
 
     void load(const KConfigGroup &config) override;
     void save(KConfigGroup &config) override;

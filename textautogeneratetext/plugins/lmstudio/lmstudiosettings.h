@@ -18,7 +18,7 @@ class TEXTAUTOGENERATELMSTUDIO_EXPORT LMStudioSettings : public PluginCommonSett
     Q_GADGET
 public:
     LMStudioSettings();
-    virtual ~LMStudioSettings();
+    ~LMStudioSettings() override;
 
     void load(const KConfigGroup &config) override;
     void save(KConfigGroup &config) override;
