@@ -68,6 +68,7 @@ void GrammalecteConfigWidget::slotGetSettingsError()
 void GrammalecteConfigWidget::slotGetSettingsFinished(const QList<GrammalecteGenerateConfigOptionJob::Option> &result)
 {
     mStackedWidget->setCurrentWidget(mScrollArea);
+    qDeleteAll(mListOptions);
     mListOptions.clear();
     mListOptions.reserve(result.count());
     delete mGrammarTabWidget->layout();
