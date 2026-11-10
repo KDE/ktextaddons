@@ -181,7 +181,7 @@ QString TextAutoGenerateBlockCMarkSupport::addHighlighter(const QString &str,
     }
     auto highlight = [&](const QString &codeBlock) {
         if (!useHighlighter) {
-            return codeBlock;
+            return codeBlock.toHtmlEscaped();
         }
         stream.reset();
         stream.seek(0);
