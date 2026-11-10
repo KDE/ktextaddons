@@ -222,7 +222,7 @@ option(SPEAK_TO_TEXT_VOSK_PLUGIN "Build vosk speak to text support" OFF)
 add_feature_info(
     SPEAK_TO_TEXT_VOSK_PLUGIN
     ${SPEAK_TO_TEXT_VOSK_PLUGIN}
-    "Vosk speak to text plugin (local text to speak) (Experimental)"
+    "Vosk speak to text plugin (local text to speak)"
 )
 
 option(DISABLE_AUTOTEST_BROKEN_CI "Disable autotest broken on CI (work locally)" OFF)
