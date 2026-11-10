@@ -83,7 +83,9 @@ void TextMessageWidget::showMessage(const QString &message, const QString &detai
     mMessageWidget->animatedShow();
     show();
     adjustSize();
-    move(parentWidget()->width() - width() - 10, 10);
+    if (parentWidget()) {
+        move(parentWidget()->width() - width() - 10, 10);
+    }
     if (durationMs > 0) {
         mAutoHideTimer->start(durationMs);
     }
