@@ -15,6 +15,6 @@ class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateFileCache
 public:
     TextAutoGenerateFileCache();
     ~TextAutoGenerateFileCache();
-    [[nodiscard]] QString cacheFilePath(const QByteArray &attachmentId);
+    [[nodiscard]] static QString cacheFilePath(const QByteArray &attachmentId);
 };
 }
