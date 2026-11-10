@@ -265,6 +265,7 @@ void TranslatorWidget::init()
     }
 
     d->progressIndicator = new KBusyIndicatorWidget(this);
+    d->progressIndicator->hide();
     hboxLayout->addWidget(d->progressIndicator);
     d->progressIndicator->setFixedHeight(d->toCombobox->height());
 
