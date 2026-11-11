@@ -16,8 +16,6 @@
 
 #include <vector>
 
-Q_DECLARE_METATYPE(QTextBlock)
-
 using namespace TextCustomEditor;
 
 namespace TextCustomEditor
@@ -69,7 +67,6 @@ PlainTextSyntaxSpellCheckingHighlighter::PlainTextSyntaxSpellCheckingHighlighter
     : Sonnet::Highlighter(plainText)
     , d(new PlainTextSyntaxSpellCheckingHighlighterPrivate(plainText))
 {
-    qRegisterMetaType<QTextBlock>();
     d->misspelledColor = misspelledColor;
     setMisspelledColor(d->misspelledColor);
     setAutomatic(false);

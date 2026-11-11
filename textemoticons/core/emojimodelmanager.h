@@ -103,10 +103,6 @@ Q_SIGNALS:
      */
     void usedIdentifierChanged(const QStringList &lst);
     /*!
-     * \brief Emitted when the list of excluded emoticons changes
-     */
-    void excludeEmoticonsChanged();
-    /*!
      * \brief Emitted when the emoji tone changes
      */
     void emojiToneChanged();
