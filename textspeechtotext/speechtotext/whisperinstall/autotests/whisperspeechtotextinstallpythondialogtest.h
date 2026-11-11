@@ -18,4 +18,5 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldForwardModulesToWidget();
     void shouldDisableCloseButtonWhileInstalling();
+    void shouldNotCloseWhileInstalling();
 };

@@ -64,4 +64,12 @@ void TextToSpeechKokoroInstallPythonDialog::startInstall()
     mKokoroInstallPythonWidget->startInstall();
 }
 
+void TextToSpeechKokoroInstallPythonDialog::reject()
+{
+    if (!mCloseButton->isEnabled()) {
+        return;
+    }
+    QDialog::reject();
+}
+
 #include "moc_texttospeechkokoroinstallpythondialog.cpp"
