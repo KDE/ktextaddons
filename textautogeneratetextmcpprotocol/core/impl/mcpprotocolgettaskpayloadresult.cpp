@@ -6,7 +6,6 @@
 
 #include "mcpprotocolgettaskpayloadresult.h"
 #include <QDebug>
-#include <QSet>
 #include <utility>
 
 using namespace Qt::Literals::StringLiterals;
@@ -29,13 +28,8 @@ McpProtocolGetTaskPayloadResult McpProtocolGetTaskPayloadResult::fromJson(const 
         result.setMeta(McpProtocolMeta::fromJson(metaValue.toObject()));
     }
     {
-        const QSet<QString> knownKeys{"_meta"_L1};
-        QJsonObject additionalObjs;
-        for (auto it = obj.constBegin(); it != obj.constEnd(); ++it) {
-            if (!knownKeys.contains(it.key())) {
-                additionalObjs.insert(it.key(), it.value());
-            }
-        }
+        QJsonObject additionalObjs = obj;
+        additionalObjs.remove("_meta"_L1);
         result.setAdditionalProperties(std::move(additionalObjs));
     }
     return result;

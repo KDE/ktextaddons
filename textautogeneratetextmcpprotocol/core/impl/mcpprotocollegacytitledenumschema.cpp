@@ -85,7 +85,8 @@ QJsonObject McpProtocolLegacyTitledEnumSchema::toJson(const McpProtocolLegacyTit
         obj.insert("description"_L1, *schema.description());
     }
     QJsonArray arr_enum_;
-    for (const auto &v : schema.enums()) {
+    const auto enumsList = schema.enums();
+    for (const auto &v : enumsList) {
         arr_enum_.append(v);
     }
     obj.insert("enum"_L1, arr_enum_);

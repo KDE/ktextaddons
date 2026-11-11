@@ -7,6 +7,7 @@
 #pragma once
 
 #include "core/textautogeneratetextplugin.h"
+#include <memory>
 
 class OllamaOnlineSettings;
 class OllamaOnlineManager;
@@ -56,6 +57,6 @@ protected:
 private:
     void removeApiKey();
     void loadApiKey();
-    OllamaOnlineSettings *const mOllamaOnlineSettings;
+    const std::unique_ptr<OllamaOnlineSettings> mOllamaOnlineSettings;
     OllamaOnlineManager *const mOllamaOnlineManager;
 };

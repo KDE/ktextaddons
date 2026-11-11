@@ -24,6 +24,10 @@ public:
     /*!
      */
     ~McpProtocolPromptMessage();
+    McpProtocolPromptMessage(const McpProtocolPromptMessage &) = default;
+    McpProtocolPromptMessage(McpProtocolPromptMessage &&) noexcept = default;
+    McpProtocolPromptMessage &operator=(const McpProtocolPromptMessage &) = default;
+    McpProtocolPromptMessage &operator=(McpProtocolPromptMessage &&) noexcept = default;
 
     /*!
      */

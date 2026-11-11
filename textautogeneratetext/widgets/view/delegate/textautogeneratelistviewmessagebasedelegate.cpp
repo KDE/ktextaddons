@@ -24,9 +24,9 @@ TextAutoGenerateListViewMessageBaseDelegate::attachmentsHelper(const TextAutoGen
 {
     switch (att.attachmentType()) {
     case TextAutoGenerateAttachment::AttachmentType::File:
-        return mHelperFile.get();
+        return mHelperFile;
     case TextAutoGenerateAttachment::AttachmentType::Image:
-        return mHelperImage.get();
+        return mHelperImage;
     case TextAutoGenerateAttachment::AttachmentType::Audio:
     case TextAutoGenerateAttachment::AttachmentType::Video:
         qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "not implemented type " << att.attachmentType() << " yet.";

@@ -21,8 +21,8 @@ OllamaOnlinePlugin::OllamaOnlinePlugin(TextAutoGenerateText::TextAutoGenerateMan
                                        TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
                                        QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, instance, parent}
-    , mOllamaOnlineSettings(new OllamaOnlineSettings)
-    , mOllamaOnlineManager(new OllamaOnlineManager(mOllamaOnlineSettings, this))
+    , mOllamaOnlineSettings(std::make_unique<OllamaOnlineSettings>())
+    , mOllamaOnlineManager(new OllamaOnlineManager(mOllamaOnlineSettings.get(), this))
 {
     connect(this, &OllamaOnlinePlugin::loadApiKeyDone, this, [this]() {
         if (this->manager()->textAutoGenerateTextInstancesManager()->isCurrentInstance(instanceUuid())) {
@@ -44,10 +44,7 @@ OllamaOnlinePlugin::OllamaOnlinePlugin(TextAutoGenerateText::TextAutoGenerateMan
     });
 }
 
-OllamaOnlinePlugin::~OllamaOnlinePlugin()
-{
-    delete mOllamaOnlineSettings;
-}
+OllamaOnlinePlugin::~OllamaOnlinePlugin() = default;
 
 void OllamaOnlinePlugin::load(const KConfigGroup &config)
 {

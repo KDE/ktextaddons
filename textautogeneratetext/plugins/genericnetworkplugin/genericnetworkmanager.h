@@ -11,7 +11,6 @@
 #include <TextAutoGenerateText/TextAutoGenerateManagerBase>
 class GenericNetworkSettings;
 class QJsonObject;
-class GenericNetworkServerInfo;
 class TEXTAUTOGENERATEGENERICNETWORK_EXPORT GenericNetworkManager : public TextAutoGenerateText::TextAutoGenerateManagerBase
 {
     Q_OBJECT
@@ -108,7 +107,6 @@ private:
     PluginNetworkType mPluginNetworkType = PluginNetworkType::Unknown;
     QString mApiKey;
     GenericNetworkSettings *const mGenericNetworkSettings;
-    GenericNetworkServerInfo *const mServerInfo;
 
     QList<GenericNetworkModelAvailableInfo> mAvailableModelsInfos;
 };

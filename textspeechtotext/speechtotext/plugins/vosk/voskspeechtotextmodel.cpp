@@ -189,12 +189,13 @@ void VoskSpeechToTextModel::removeLanguage(const QString &name)
             qCDebug(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to delete " << absoluteLanguageModelPath;
             return;
         }
-        mLanguageInstalled.removeAll(*index);
         if (mActiveLanguage == name) {
             setActiveLanguage({});
         }
         beginResetModel();
+        updateInstalledLanguage();
         endResetModel();
+        return;
     }
     updateInstalledLanguage();
 }

@@ -133,10 +133,11 @@ void McpClientStdio::slotReadStandardOutput()
         Q_EMIT error(i18n("Message received from server is too big."));
         return;
     }
+    qsizetype from = 0;
     qsizetype index = -1;
-    while ((index = mBuffer.indexOf('\n')) != -1) {
-        const QByteArray line = mBuffer.left(index).trimmed();
-        mBuffer.remove(0, index + 1);
+    while ((index = mBuffer.indexOf('\n', from)) != -1) {
+        const QByteArray line = mBuffer.sliced(from, index - from).trimmed();
+        from = index + 1;
         if (line.isEmpty()) {
             continue;
         }
@@ -149,6 +150,7 @@ void McpClientStdio::slotReadStandardOutput()
         qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << " received " << doc;
         Q_EMIT received(doc.object());
     }
+    mBuffer.remove(0, from);
 }
 
 void McpClientStdio::slotReadStandardError()

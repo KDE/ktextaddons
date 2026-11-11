@@ -76,10 +76,9 @@ void TranslatorWidget::TranslatorWidgetPrivate::fillToCombobox(const QString &la
 {
     toCombobox->clear();
 
-    TranslatorUtil translatorUtil;
     for (const auto &[key, value] : translatorClient->supportedToLanguages().asKeyValueRange()) {
         if (const QString languageCode = TranslatorUtil::languageCode(key); (key != TranslatorUtil::automatic) && languageCode != lang) {
-            translatorUtil.addItemToFromComboBox(toCombobox, languageCode, value);
+            TranslatorUtil::addItemToFromComboBox(toCombobox, languageCode, value);
         }
     }
 }
@@ -92,10 +91,9 @@ void TranslatorWidget::TranslatorWidgetPrivate::initLanguage()
     toCombobox->clear();
     fromCombobox->clear();
 
-    TranslatorUtil translatorUtil;
     for (const auto &[key, value] : translatorClient->supportedFromLanguages().asKeyValueRange()) {
         const QString languageCode = TranslatorUtil::languageCode(key);
-        translatorUtil.addItemToFromComboBox(fromCombobox, languageCode, value);
+        TranslatorUtil::addItemToFromComboBox(fromCombobox, languageCode, value);
     }
 }
 
@@ -311,7 +309,6 @@ void TranslatorWidget::init()
 
     d->fromCombobox->setCurrentIndex(0); // Fill "to" combobox
     loadEngineSettings();
-    switchEngine();
     slotFromLanguageChanged(0, true);
     slotTextChanged();
     readConfig();

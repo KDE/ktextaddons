@@ -26,9 +26,6 @@ QTextDocument *OllamaModelInstalledInfosDelegate::documentForIndex(const QModelI
         }
         return ret;
     }
-    if (const QString text = index.data(OllamaModelInstalledInfosModel::ModelGeneratedName).toString(); text.isEmpty()) {
-        return nullptr;
-    }
     const QString name = index.data(OllamaModelInstalledInfosModel::Name).toString();
     auto doc = createTextDocument(u"<b>%1</b><br/>"_s.arg(QString::fromLatin1(modelName)) + name, width);
     auto ret = doc.get();

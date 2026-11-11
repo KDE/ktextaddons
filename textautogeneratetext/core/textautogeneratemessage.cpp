@@ -235,11 +235,7 @@ QString TextAutoGenerateMessage::engineName() const
 
 void TextAutoGenerateMessage::setMessageInfo(const TextAutoGenerateAnswerInfo &messageInfo)
 {
-    if (!mMessageInfo) {
-        mMessageInfo = new TextAutoGenerateAnswerInfo(messageInfo);
-    } else {
-        mMessageInfo.reset(new TextAutoGenerateAnswerInfo(messageInfo));
-    }
+    mMessageInfo = new TextAutoGenerateAnswerInfo(messageInfo);
 }
 
 QString TextAutoGenerateMessage::senderToString() const
@@ -274,7 +270,7 @@ TextAutoGenerateMessage::Sender TextAutoGenerateMessage::senderFromString(const 
     }
 }
 
-QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg, bool toBinary)
+QJsonObject TextAutoGenerateMessage::serializeToJson(const TextAutoGenerateMessage &msg)
 {
     QJsonObject o;
     o["identifier"_L1] = QString::fromLatin1(msg.mUuid);
@@ -300,7 +296,12 @@ QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg
     if (!msg.mToolExchange.isEmpty()) {
         o["toolExchange"_L1] = msg.mToolExchange;
     }
+    return o;
+}
 
+QByteArray TextAutoGenerateMessage::serialize(const TextAutoGenerateMessage &msg, bool toBinary)
+{
+    const QJsonObject o = serializeToJson(msg);
     if (toBinary) {
         return QCborValue::fromJsonValue(o).toCbor();
     }
@@ -512,11 +513,7 @@ const TextAutoGenerateAttachments *TextAutoGenerateMessage::messageAttachments()
 
 void TextAutoGenerateMessage::setMessageAttachments(const TextAutoGenerateAttachments &newMessageAttachment)
 {
-    if (!mMessageAttachments) {
-        mMessageAttachments = new TextAutoGenerateAttachments(newMessageAttachment);
-    } else {
-        mMessageAttachments.reset(new TextAutoGenerateAttachments(newMessageAttachment));
-    }
+    mMessageAttachments = new TextAutoGenerateAttachments(newMessageAttachment);
 }
 
 TextAutoGenerateMessage::MessageStates TextAutoGenerateMessage::messageStates() const

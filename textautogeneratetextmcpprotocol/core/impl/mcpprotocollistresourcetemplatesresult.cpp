@@ -61,7 +61,8 @@ QJsonObject McpProtocolListResourceTemplatesResult::toJson(const McpProtocolList
         obj["nextCursor"_L1] = *result.nextCursor();
     }
     QJsonArray arr_resourceTemplates;
-    for (const auto &v : result.resourceTemplates()) {
+    const auto resourceTemplatesList = result.resourceTemplates();
+    for (const auto &v : resourceTemplatesList) {
         arr_resourceTemplates.append(McpProtocolResourceTemplate::toJson(v));
     }
     obj["resourceTemplates"_L1] = arr_resourceTemplates;

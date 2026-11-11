@@ -22,10 +22,7 @@ VoskDownloadLanguageJob::VoskDownloadLanguageJob(QObject *parent)
 {
 }
 
-VoskDownloadLanguageJob::~VoskDownloadLanguageJob()
-{
-    delete mHash;
-}
+VoskDownloadLanguageJob::~VoskDownloadLanguageJob() = default;
 
 void VoskDownloadLanguageJob::start()
 {
@@ -41,7 +38,7 @@ void VoskDownloadLanguageJob::start()
         return;
     }
 
-    mHash = new QCryptographicHash(QCryptographicHash::Md5);
+    mHash = std::make_unique<QCryptographicHash>(QCryptographicHash::Md5);
 
     const QNetworkRequest request(mInfo.url);
     // qDebug() << " mInfo.url " << mInfo.url;

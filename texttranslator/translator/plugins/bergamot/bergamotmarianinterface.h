@@ -32,7 +32,7 @@ public:
     void setModel(const QString &pathModelDir, const BergamotEngineUtils::SettingsInfo &settings);
 
 Q_SIGNALS:
-    void translationReady(Translation translation);
+    void translationReady(const Translation &translation);
     void pendingChanged(bool isBusy); // Disables issuing another translation while we are busy.
     void errorText(const QString &message);
 

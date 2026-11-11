@@ -212,6 +212,12 @@ public:
      */
     [[nodiscard]] static QByteArray serialize(const TextAutoGenerateMessage &msg, bool toBinary = true);
     /*!
+     * Serializes the given TextAutoGenerateMessage object to a JSON object.
+     * \param msg The TextAutoGenerateMessage to serialize
+     * \return The JSON object
+     */
+    [[nodiscard]] static QJsonObject serializeToJson(const TextAutoGenerateMessage &msg);
+    /*!
      * Deserializes a TextAutoGenerateMessage object from JSON.
      * \param o The JSON object to deserialize from
      * \return The deserialized TextAutoGenerateMessage

@@ -13,6 +13,8 @@ TextAutoGenerateSearchLineEdit::TextAutoGenerateSearchLineEdit(QWidget *parent)
     : QLineEdit(parent)
     , mSearchTimer(new QTimer(this))
 {
+    mSearchTimer->setSingleShot(true);
+    mSearchTimer->setInterval(500ms);
     connect(mSearchTimer, &QTimer::timeout, this, &TextAutoGenerateSearchLineEdit::slotSearchTimerFired);
     connect(this, &QLineEdit::textChanged, this, &TextAutoGenerateSearchLineEdit::slotSearchTextEdited);
 }
@@ -21,18 +23,12 @@ TextAutoGenerateSearchLineEdit::~TextAutoGenerateSearchLineEdit() = default;
 
 void TextAutoGenerateSearchLineEdit::slotSearchTimerFired()
 {
-    mSearchTimer->stop();
     slotTextChanged(text());
 }
 
 void TextAutoGenerateSearchLineEdit::slotSearchTextEdited()
 {
-    if (mSearchTimer->isActive()) {
-        mSearchTimer->stop(); // eventually
-    }
-
-    mSearchTimer->setSingleShot(true);
-    mSearchTimer->start(500ms);
+    mSearchTimer->start();
 }
 
 void TextAutoGenerateSearchLineEdit::slotTextChanged(const QString &text)

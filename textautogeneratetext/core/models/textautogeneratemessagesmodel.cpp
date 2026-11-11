@@ -160,7 +160,7 @@ QByteArray TextAutoGenerateMessagesModel::lastMessageUuid() const
     if (mMessages.isEmpty()) {
         return {};
     }
-    if (const auto lastMessage = mMessages.constLast(); lastMessage.isValid()) {
+    if (const auto &lastMessage = mMessages.constLast(); lastMessage.isValid()) {
         return lastMessage.uuid();
     }
     return {};

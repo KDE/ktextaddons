@@ -91,12 +91,11 @@ void AutoCorrection::selectPreviousWord(QTextCursor &cursor, int cursorPosition)
     const QTextBlock block = cursor.block();
     cursor.setPosition(block.position());
     cursorPosition -= block.position();
-    QString string = block.text();
+    const QString string = block.text();
     int pos = 0;
     bool space = false;
-    QString::Iterator iter = string.begin();
-    while (iter != string.end()) {
-        if (iter->isSpace()) {
+    for (const QChar c : string) {
+        if (c.isSpace()) {
             if (space) {
                 // double spaces belong to the previous word
             } else if (pos < cursorPosition) {
@@ -108,7 +107,6 @@ void AutoCorrection::selectPreviousWord(QTextCursor &cursor, int cursorPosition)
             break;
         }
         ++pos;
-        ++iter;
     }
     cursor.setPosition(pos + block.position(), QTextCursor::KeepAnchor);
 }
@@ -709,7 +707,7 @@ int AutoCorrection::advancedAutocorrect()
     }
 
     qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " key " << key << "actual" << actualWord;
-    if (actualWord.endsWith(key) || actualWord.endsWith(key, Qt::CaseInsensitive) || actualWordWithFirstUpperCase.endsWith(key)) {
+    if (actualWord.endsWith(key, Qt::CaseInsensitive) || actualWordWithFirstUpperCase.endsWith(key)) {
         int pos = d->mWord.lastIndexOf(key);
         qCDebug(TEXTAUTOCORRECTION_AUTOCORRECT_LOG) << " pos 1 " << pos << " d->mWord " << d->mWord;
         if (pos == -1) {

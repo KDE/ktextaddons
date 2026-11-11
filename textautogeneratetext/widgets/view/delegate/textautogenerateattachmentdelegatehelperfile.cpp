@@ -102,18 +102,16 @@ TextAutoGenerateAttachmentDelegateHelperFile::doLayout(const TextAutoGenerateTex
     FileLayout layout;
     layout.mimetype = msgAttach.mimeType();
     layout.name = msgAttach.name();
-    // TODO cache it.
-    const QMimeDatabase db;
-    const QMimeType mimeType = db.mimeTypeForName(QString::fromLatin1(layout.mimetype));
-    const QString mimeTypeIconName = mimeType.iconName();
-    // qDebug() << " mimeTypeIconName " << mimeTypeIconName;
-    // qDebug() << " layout.name " << layout.name;
-    const QString mimeTypeIconPath = KIconLoader::global()->iconPath(mimeTypeIconName, KIconLoader::Small);
-    const QPixmap pix(mimeTypeIconPath);
-
-    // qDebug() << " mimeTypeIconPath " << mimeTypeIconPath;
-    const QPixmap scaledPixmap = pix.scaled(18, 18, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    layout.pixmap = scaledPixmap;
+    if (const auto it = mIconCache.constFind(layout.mimetype); it != mIconCache.cend()) {
+        layout.pixmap = *it;
+    } else {
+        const QMimeDatabase db;
+        const QMimeType mimeType = db.mimeTypeForName(QString::fromLatin1(layout.mimetype));
+        const QString mimeTypeIconPath = KIconLoader::global()->iconPath(mimeType.iconName(), KIconLoader::Small);
+        const QPixmap pix(mimeTypeIconPath);
+        layout.pixmap = pix.scaled(18, 18, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        mIconCache.insert(layout.mimetype, layout.pixmap);
+    }
 
     layout.nameSize = option.fontMetrics.size(Qt::TextSingleLine, layout.name);
     return layout;

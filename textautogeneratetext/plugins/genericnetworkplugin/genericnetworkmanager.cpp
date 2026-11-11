@@ -21,13 +21,11 @@ using namespace Qt::Literals::StringLiterals;
 GenericNetworkManager::GenericNetworkManager(GenericNetworkSettings *settings, QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateManagerBase{parent}
     , mGenericNetworkSettings(settings)
-    , mServerInfo(new GenericNetworkServerInfo)
 {
 }
 
 GenericNetworkManager::~GenericNetworkManager()
 {
-    delete mServerInfo;
 }
 
 void GenericNetworkManager::loadModels()
@@ -53,9 +51,11 @@ void GenericNetworkManager::loadModels()
             // Some servers don't implement the "models" endpoint
             const bool noModelsEndpoint = rep->error() == QNetworkReply::ContentNotFoundError
                 || rep->error() == QNetworkReply::ContentOperationNotPermittedError || rep->error() == QNetworkReply::OperationNotImplementedError;
-            if (noModelsEndpoint && !fallbackModels().isEmpty()) {
-                applyModelsInfos(fallbackModels());
-                return;
+            if (noModelsEndpoint) {
+                if (const auto models = fallbackModels(); !models.isEmpty()) {
+                    applyModelsInfos(models);
+                    return;
+                }
             }
             ModelsInfo info;
             info.errorOccured = i18n("Failed to connect to interface at %1: %2", apiUrl(), rep->errorString());
@@ -79,7 +79,7 @@ void GenericNetworkManager::loadModels()
 
 QList<GenericNetworkModelAvailableInfo> GenericNetworkManager::fallbackModels() const
 {
-    QList<GenericNetworkModelAvailableInfo> models = mServerInfo->defaultModels(mPluginNetworkType);
+    QList<GenericNetworkModelAvailableInfo> models = GenericNetworkServerInfo::defaultModels(mPluginNetworkType);
     const QStringList customModels = mGenericNetworkSettings->customModels();
     for (const QString &identifier : customModels) {
         const bool alreadyExists = std::any_of(models.cbegin(), models.cend(), [&identifier](const GenericNetworkModelAvailableInfo &model) {
@@ -98,7 +98,7 @@ void GenericNetworkManager::applyModelsInfos(const QList<GenericNetworkModelAvai
 {
     mAvailableModelsInfos = modelsInfos;
     for (auto &modelInfo : mAvailableModelsInfos) {
-        if (mServerInfo->modelSupportsTools(mPluginNetworkType, modelInfo.identifier())) {
+        if (GenericNetworkServerInfo::modelSupportsTools(mPluginNetworkType, modelInfo.identifier())) {
             modelInfo.setCapabilities(modelInfo.capabilities() | GenericNetworkModelAvailableInfo::Capability::Tools);
         }
     }
@@ -241,23 +241,23 @@ void GenericNetworkManager::setPluginNetworkType(PluginNetworkType newPluginNetw
 
 QString GenericNetworkManager::webSite() const
 {
-    return mServerInfo->webSite(mPluginNetworkType);
+    return GenericNetworkServerInfo::webSite(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::chatPath() const
 {
-    return mServerInfo->chatCompletionPath(mPluginNetworkType);
+    return GenericNetworkServerInfo::chatCompletionPath(mPluginNetworkType);
 }
 
 bool GenericNetworkManager::hasCustomUrl() const
 {
-    return mServerInfo->hasCustomUrl(mPluginNetworkType);
+    return GenericNetworkServerInfo::hasCustomUrl(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::apiUrl() const
 {
-    if (!mServerInfo->hasCustomUrl(mPluginNetworkType)) {
-        return mServerInfo->apiUrl(mPluginNetworkType);
+    if (!GenericNetworkServerInfo::hasCustomUrl(mPluginNetworkType)) {
+        return GenericNetworkServerInfo::apiUrl(mPluginNetworkType);
     }
     // Paths ("models", "chat/completions") are appended to the url
     QString url = mGenericNetworkSettings->customUrl().trimmed();
@@ -269,17 +269,17 @@ QString GenericNetworkManager::apiUrl() const
 
 QString GenericNetworkManager::description() const
 {
-    return mServerInfo->description(mPluginNetworkType);
+    return GenericNetworkServerInfo::description(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::pluginName() const
 {
-    return mServerInfo->pluginName(mPluginNetworkType);
+    return GenericNetworkServerInfo::pluginName(mPluginNetworkType);
 }
 
 QString GenericNetworkManager::translatedPluginName() const
 {
-    return mServerInfo->translatedName(mPluginNetworkType);
+    return GenericNetworkServerInfo::translatedName(mPluginNetworkType);
 }
 
 GenericNetworkSettings *GenericNetworkManager::genericNetworkSettings() const
@@ -345,7 +345,7 @@ bool GenericNetworkManager::hasThinkSupport(const QString &currentModel) const
 
 GenericNetworkManager::Limitations GenericNetworkManager::limitations(GenericNetworkManager::PluginNetworkType type) const
 {
-    return mServerInfo->limitations(type);
+    return GenericNetworkServerInfo::limitations(type);
 }
 
 bool GenericNetworkManager::hasSystemMessageSupport() const
@@ -370,11 +370,11 @@ void GenericNetworkManager::addThinking(QJsonObject &data, const QString &model,
     if (level.isEmpty()) {
         return;
     }
-    if (!mServerInfo->isThinkingLevelSupported(mPluginNetworkType, model, level)) {
+    if (!GenericNetworkServerInfo::isThinkingLevelSupported(mPluginNetworkType, model, level)) {
         qCWarning(AUTOGENERATETEXT_GENERICNETWORK_LOG) << "Thinking level" << level << "not supported by model" << model;
         return;
     }
-    mServerInfo->thinkingJson(data, level, mPluginNetworkType, api);
+    GenericNetworkServerInfo::thinkingJson(data, level, mPluginNetworkType, api);
 }
 
 #include "moc_genericnetworkmanager.cpp"

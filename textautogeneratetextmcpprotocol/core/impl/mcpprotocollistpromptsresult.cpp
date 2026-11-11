@@ -61,7 +61,8 @@ QJsonObject McpProtocolListPromptsResult::toJson(const McpProtocolListPromptsRes
         obj["nextCursor"_L1] = *result.nextCursor();
     }
     QJsonArray promptsArray;
-    for (const auto &v : result.prompts()) {
+    const auto promptsList = result.prompts();
+    for (const auto &v : promptsList) {
         promptsArray.append(McpProtocolPrompt::toJson(v));
     }
     obj["prompts"_L1] = promptsArray;

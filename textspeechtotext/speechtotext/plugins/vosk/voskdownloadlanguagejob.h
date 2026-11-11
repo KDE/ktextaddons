@@ -8,6 +8,7 @@
 #include "libvoskspeechtotext_private_export.h"
 #include <QObject>
 #include <QUrl>
+#include <memory>
 class QCryptographicHash;
 class QTemporaryFile;
 class LIBVOSKSPEECHTOTEXT_TESTS_EXPORT VoskDownloadLanguageJob : public QObject
@@ -40,7 +41,7 @@ private:
     LIBVOSKSPEECHTOTEXT_NO_EXPORT void extractLanguage();
     LIBVOSKSPEECHTOTEXT_NO_EXPORT void slotGenerateInstalledLanguageInfoDone();
     DownloadLanguageInfo mInfo;
-    QCryptographicHash *mHash = nullptr;
+    std::unique_ptr<QCryptographicHash> mHash;
     QTemporaryFile *mDestination = nullptr;
 };
 Q_DECLARE_TYPEINFO(VoskDownloadLanguageJob::DownloadLanguageInfo, Q_RELOCATABLE_TYPE);

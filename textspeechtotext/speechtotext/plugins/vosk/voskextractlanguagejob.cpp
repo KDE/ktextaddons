@@ -30,19 +30,21 @@ void VoskExtractLanguageJob::extractRecursive(const KArchiveDirectory *dir, cons
     // qDebug() << " path " << path;
     const QStringList lst = dir->entries();
     // qDebug() << " list entries : " << lst;
+    const QString storeDirectory{VoskEngineUtils::storageLanguagePath() + u'/' + path};
+    bool storeDirectoryCreated = false;
     for (const QString &it : lst) {
         const KArchiveEntry *entry = dir->entry(it);
         if (entry && entry->isDirectory()) {
             // qDebug() << " directory ********" << it << "sss " << (path + it + u'/');
             extractRecursive(static_cast<const KArchiveDirectory *>(entry), path + it + u'/');
         } else if (entry && entry->isFile()) {
-            const KArchiveEntry *filePathEntry = dir->entry(it);
-            const auto filePath = static_cast<const KArchiveFile *>(filePathEntry);
-            const QString storeDirectory{VoskEngineUtils::storageLanguagePath() + u'/' + path};
-            // qDebug() << "storeDirectory  " << storeDirectory << " ddd " << it;
-            if (!QDir().mkpath(storeDirectory)) {
-                qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to create :" << storeDirectory;
-                continue;
+            const auto filePath = static_cast<const KArchiveFile *>(entry);
+            if (!storeDirectoryCreated) {
+                if (!QDir().mkpath(storeDirectory)) {
+                    qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to create :" << storeDirectory;
+                    continue;
+                }
+                storeDirectoryCreated = true;
             }
             if (!filePath->copyTo(storeDirectory)) {
                 qCWarning(LIBVOSKSPEECHTOTEXT_LOG) << "Impossible to copy to " << storeDirectory;

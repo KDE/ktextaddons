@@ -21,8 +21,8 @@ OllamaCloudPlugin::OllamaCloudPlugin(TextAutoGenerateText::TextAutoGenerateManag
                                      TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
                                      QObject *parent)
     : TextAutoGenerateText::TextAutoGenerateTextPlugin{manager, instance, parent}
-    , mOllamaCloudSettings(new OllamaCloudSettings)
-    , mOllamaCloudManager(new OllamaCloudManager(mOllamaCloudSettings, this))
+    , mOllamaCloudSettings(std::make_unique<OllamaCloudSettings>())
+    , mOllamaCloudManager(new OllamaCloudManager(mOllamaCloudSettings.get(), this))
 {
     connect(this, &OllamaCloudPlugin::loadApiKeyDone, this, [this]() {
         if (this->manager()->textAutoGenerateTextInstancesManager()->isCurrentInstance(instanceUuid())) {
@@ -44,10 +44,7 @@ OllamaCloudPlugin::OllamaCloudPlugin(TextAutoGenerateText::TextAutoGenerateManag
     });
 }
 
-OllamaCloudPlugin::~OllamaCloudPlugin()
-{
-    delete mOllamaCloudSettings;
-}
+OllamaCloudPlugin::~OllamaCloudPlugin() = default;
 
 void OllamaCloudPlugin::load(const KConfigGroup &config)
 {

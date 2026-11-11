@@ -64,7 +64,8 @@ QJsonObject McpProtocolGetPromptResult::toJson(const McpProtocolGetPromptResult 
         obj["description"_L1] = *result.description();
     }
     QJsonArray messages;
-    for (const auto &v : result.messages()) {
+    const auto messagesList = result.messages();
+    for (const auto &v : messagesList) {
         messages.append(McpProtocolPromptMessage::toJson(v));
     }
     obj.insert("messages"_L1, messages);

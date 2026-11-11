@@ -8,7 +8,6 @@
 #include <TextAutoGenerateText/TextAutoGenerateAttachment>
 #include <TextAutoGenerateText/TextAutoGenerateListViewBaseDelegate>
 
-#include <QScopedPointer>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateAttachmentDelegateHelperImage;
@@ -26,7 +25,7 @@ public:
     [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperBase *attachmentsHelper(const TextAutoGenerateAttachment &att) const;
 
 protected:
-    QScopedPointer<TextAutoGenerateAttachmentDelegateHelperImage> mHelperImage;
-    QScopedPointer<TextAutoGenerateAttachmentDelegateHelperFile> mHelperFile;
+    TextAutoGenerateAttachmentDelegateHelperImage *const mHelperImage;
+    TextAutoGenerateAttachmentDelegateHelperFile *const mHelperFile;
 };
 }
