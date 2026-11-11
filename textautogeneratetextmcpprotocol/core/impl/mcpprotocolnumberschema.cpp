@@ -114,9 +114,11 @@ McpProtocolNumberSchema McpProtocolNumberSchema::fromJson(const QJsonObject &obj
 {
     McpProtocolNumberSchema schema;
     // "type" is required: "number" or "integer"
-    if (convertNumberSchemaTypeFromString(obj.value("type"_L1).toString()) == Type::Unknown) {
+    const Type type = convertNumberSchemaTypeFromString(obj.value("type"_L1).toString());
+    if (type == Type::Unknown) {
         return {};
     }
+    schema.setType(type);
     if (const QJsonValue defaultValue = obj.value("default"_L1); defaultValue.isDouble()) {
         schema.setDefaultValue(defaultValue.toDouble());
     }
@@ -131,9 +133,6 @@ McpProtocolNumberSchema McpProtocolNumberSchema::fromJson(const QJsonObject &obj
     }
     if (obj.contains("title"_L1)) {
         schema.setTitle(obj.value("title"_L1).toString());
-    }
-    if (const QJsonValue typeValue = obj.value("type"_L1); typeValue.isString()) {
-        schema.setType(convertNumberSchemaTypeFromString(typeValue.toString()));
     }
     return schema;
 }

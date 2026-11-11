@@ -37,8 +37,7 @@ GenericNetworkClient::createTextAutoGeneratePlugin(TextAutoGenerateText::TextAut
 
 QList<TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer> GenericNetworkClient::supportedServers() const
 {
-    const GenericNetworkServerInfo info;
-    return info.supportedServers(name());
+    return GenericNetworkServerInfo::supportedServers(name());
 }
 
 #include "moc_genericnetworkclient.cpp"

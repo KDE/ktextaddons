@@ -10,8 +10,10 @@
 #include "ollamacommonmodelavailableinfosmanager.h"
 #include <KLocalizedString>
 #include <KUser>
+#include <QHash>
 #include <QMap>
 #include <QRegularExpression>
+#include <QSet>
 
 using namespace Qt::Literals::StringLiterals;
 QString OllamaCommonModelUtils::description(const QString &modelName)
@@ -360,22 +362,27 @@ QList<OllamaCommonModelAvailableInfo>
 OllamaCommonModelUtils::extractAvailableModel(const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &modelinfo)
 {
     const static QRegularExpression reg(u":.*"_s);
-    QList<OllamaCommonModelAvailableInfo> displayAvailablesModels;
-    OllamaCommonModelAvailableInfosManager managerModelInfosManager;
-    if (managerModelInfosManager.loadAvailableModels()) {
-        const QList<OllamaCommonModelAvailableInfo> listAvailableModels = managerModelInfosManager.modelInfos();
-        for (const auto &m : modelinfo.models) {
-            QString newName = m.modelName;
-            newName.remove(reg);
+    // Available models are stored in a resource file: parse it only once
+    static const QHash<QString, OllamaCommonModelAvailableInfo> availableModels = []() {
+        QHash<QString, OllamaCommonModelAvailableInfo> models;
+        OllamaCommonModelAvailableInfosManager managerModelInfosManager;
+        if (managerModelInfosManager.loadAvailableModels()) {
+            const QList<OllamaCommonModelAvailableInfo> listAvailableModels = managerModelInfosManager.modelInfos();
             for (const auto &availableModel : listAvailableModels) {
-                // qDebug() << " m " << m << " availableModel.name() " << availableModel.name();
-                if (availableModel.name() == newName) {
-                    if (!displayAvailablesModels.contains(availableModel)) {
-                        displayAvailablesModels.append(availableModel);
-                    }
-                    break;
-                }
+                // Keep first model when name is duplicated
+                models.try_emplace(availableModel.name(), availableModel);
             }
+        }
+        return models;
+    }();
+    QList<OllamaCommonModelAvailableInfo> displayAvailablesModels;
+    QSet<QString> alreadyAdded;
+    for (const auto &m : modelinfo.models) {
+        QString newName = m.modelName;
+        newName.remove(reg);
+        if (const auto it = availableModels.constFind(newName); it != availableModels.cend() && !alreadyAdded.contains(newName)) {
+            alreadyAdded.insert(newName);
+            displayAvailablesModels.append(*it);
         }
     }
     return displayAvailablesModels;

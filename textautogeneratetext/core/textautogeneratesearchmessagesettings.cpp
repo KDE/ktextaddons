@@ -84,7 +84,8 @@ void TextAutoGenerateSearchMessageSettings::next()
     const auto hasSearchedString = [](const TextAutoGenerateMessage &msg) {
         return msg.numberOfTextSearched() > 0;
     };
-    if (mCurrentSearchIndex >= mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched()) {
+    const int numberOfTextSearched = mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched();
+    if (mCurrentSearchIndex >= numberOfTextSearched) {
         mCurrentSearchIndex = 0;
         auto msg = mMessageModel->findNextMessageAfter(mCurrentMessageIdentifier, hasSearchedString);
         if (msg.isValid()) {
@@ -98,8 +99,7 @@ void TextAutoGenerateSearchMessageSettings::next()
         }
         Q_EMIT updateNextPreviousButtons((msg.numberOfTextSearched() > 0), mFoundSearchCount < 2 ? false : true);
     } else {
-        Q_EMIT updateNextPreviousButtons(((mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched() > 0)
-                                          && (mCurrentSearchIndex < mMessageModel->message(mCurrentMessageIdentifier).numberOfTextSearched() - 1))
+        Q_EMIT updateNextPreviousButtons(((numberOfTextSearched > 0) && (mCurrentSearchIndex < numberOfTextSearched - 1))
                                              || mMessageModel->findNextMessageAfter(mCurrentMessageIdentifier, hasSearchedString).isValid(),
                                          true);
     }

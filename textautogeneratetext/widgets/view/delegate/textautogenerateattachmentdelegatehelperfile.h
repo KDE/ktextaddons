@@ -6,7 +6,9 @@
 #pragma once
 #include "textautogenerateattachmentdelegatehelperbase.h"
 
+#include <QHash>
 #include <QObject>
+#include <QPixmap>
 #include <QStyleOptionViewItem>
 class QPainter;
 namespace TextAutoGenerateText
@@ -52,5 +54,7 @@ private:
     [[nodiscard]] TextAutoGenerateAttachmentDelegateHelperFile::FileLayout
     doLayout(const TextAutoGenerateText::TextAutoGenerateAttachment &msgAttach, const QStyleOptionViewItem &option, int attachmentsWidth) const;
     void handleDownloadClicked(QWidget *widget, const QByteArray &attachmentId);
+    // Scaled mimetype icons, loading them from disk at each paint is slow
+    mutable QHash<QByteArray, QPixmap> mIconCache;
 };
 }

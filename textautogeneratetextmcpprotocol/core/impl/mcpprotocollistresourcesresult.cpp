@@ -60,7 +60,8 @@ QJsonObject McpProtocolListResourcesResult::toJson(const McpProtocolListResource
         obj.insert("nextCursor"_L1, *result.nextCursor());
     }
     QJsonArray arr_resources;
-    for (const auto &v : result.resources()) {
+    const auto resourcesList = result.resources();
+    for (const auto &v : resourcesList) {
         arr_resources.append(McpProtocolResource::toJson(v));
     }
     obj.insert("resources"_L1, arr_resources);

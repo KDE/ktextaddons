@@ -280,8 +280,8 @@ void TextAutoGenerateMcpToolsManager::slotReceived(const QByteArray &identifier,
     const auto result = TextAutoGenerateTextMcpProtocolCore::McpProtocolListToolsResult::fromJson(obj.value("result"_L1).toObject());
     // Remove current tools first: their names must not be used to create new names
     it->tools.clear();
-    QList<McpTool> tools;
     const auto mcpTools = result.tools();
+    it->tools.reserve(mcpTools.size());
     for (const auto &mcpTool : mcpTools) {
         McpTool tool;
         tool.serverIdentifier = identifier;
@@ -298,15 +298,14 @@ void TextAutoGenerateMcpToolsManager::slotReceived(const QByteArray &identifier,
             tool.groupName = values.value(TextAutoGenerateTextMcpProtocolCore::McpProtocolCommonUtils::metaGroupName()).toString();
             tool.groupTitle = values.value(TextAutoGenerateTextMcpProtocolCore::McpProtocolCommonUtils::metaGroupTitle()).toString();
         }
-        tools.append(std::move(tool));
         // Next tools of this server must not use same name
-        it->tools = tools;
+        it->tools.append(std::move(tool));
     }
     // Descriptions refer to other tools of server: use names which LLM can call
-    for (auto &tool : tools) {
+    const QList<McpTool> tools = it->tools;
+    for (auto &tool : it->tools) {
         tool.description = replaceToolNames(tool.description, tools);
     }
-    it->tools = std::move(tools);
     qCDebug(TEXTAUTOGENERATETEXT_CORE_LOG) << "MCP server" << identifier << "has" << it->tools.count() << "tools";
     Q_EMIT toolsChanged(identifier);
 }

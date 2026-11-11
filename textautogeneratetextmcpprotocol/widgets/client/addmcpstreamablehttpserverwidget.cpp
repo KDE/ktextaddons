@@ -65,9 +65,10 @@ void AddMcpStreamableHttpServerWidget::saveSettings(TextAutoGenerateTextMcpProto
 
 void AddMcpStreamableHttpServerWidget::loadSettings(const TextAutoGenerateTextMcpProtocolCore::McpServer &server)
 {
-    mServerUrlLineEdit->setText(server.settings().serverUrl().toString());
-    mHttpServerHeaderWidget->setHeaders(server.settings().headers());
-    mAuthTokenLineEdit->setPassword(QString::fromUtf8(server.settings().authToken()));
+    const auto settings = server.settings();
+    mServerUrlLineEdit->setText(settings.serverUrl().toString());
+    mHttpServerHeaderWidget->setHeaders(settings.headers());
+    mAuthTokenLineEdit->setPassword(QString::fromUtf8(settings.authToken()));
 }
 
 #include "moc_addmcpstreamablehttpserverwidget.cpp"

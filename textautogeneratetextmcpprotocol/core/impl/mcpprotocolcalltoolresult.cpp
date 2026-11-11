@@ -23,7 +23,8 @@ QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtoc
     d.space() << "isError:" << t.isError();
     d.space() << "structuredContent:" << t.structuredContent();
     QJsonArray arr_content;
-    for (const auto &v : t.content()) {
+    const auto contentList = t.content();
+    for (const auto &v : contentList) {
         arr_content.append(McpProtocolUtils::contentBlocktoJson(v));
     }
     d.space() << "content:" << arr_content;
@@ -85,7 +86,8 @@ QJsonObject McpProtocolCallToolResult::toJson(const McpProtocolCallToolResult &r
         obj["structuredContent"_L1] = map_structuredContent;
     }
     QJsonArray arr_content;
-    for (const auto &v : result.content()) {
+    const auto contentList = result.content();
+    for (const auto &v : contentList) {
         arr_content.append(McpProtocolUtils::contentBlocktoJson(v));
     }
     obj["content"_L1] = arr_content;

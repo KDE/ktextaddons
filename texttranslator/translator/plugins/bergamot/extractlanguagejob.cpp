@@ -12,8 +12,6 @@
 #include <KTar>
 #include <QDir>
 
-using namespace Qt::Literals::StringLiterals;
-
 ExtractLanguageJob::ExtractLanguageJob(QObject *parent)
     : QObject{parent}
 {
@@ -35,22 +33,21 @@ void ExtractLanguageJob::start()
         deleteLater();
         return;
     }
-    auto tar = new KTar(mSource);
-    if (!tar->open(QIODevice::ReadOnly)) {
+    KTar tar(mSource);
+    if (!tar.open(QIODevice::ReadOnly)) {
         qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to open temporary file" << mSource;
+        Q_EMIT errorText(i18n("Impossible to extract language"));
         Q_EMIT finished();
-        delete tar;
         deleteLater();
         return;
     }
     if (!QDir().mkpath(BergamotEngineUtils::storageLanguagePath())) {
         qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to create path" << BergamotEngineUtils::storageLanguagePath();
         Q_EMIT finished();
-        delete tar;
         deleteLater();
         return;
     }
-    const KArchiveDirectory *zipDir = tar->directory();
+    const KArchiveDirectory *zipDir = tar.directory();
     const QStringList lst = zipDir->entries();
     // qDebug() << " list of files " << lst;
     for (const QString &name : lst) {
@@ -65,7 +62,7 @@ void ExtractLanguageJob::start()
             const QStringList entries = configDirectory->entries();
             // qDebug() << " list of files entries " << entries;
             for (const QString &file : entries) {
-                const KArchiveEntry *filePathEntry = zipDir->entry(name + u"/%1"_s.arg(file));
+                const KArchiveEntry *filePathEntry = configDirectory->entry(file);
                 if (filePathEntry && filePathEntry->isFile()) {
                     if (const auto filePath = static_cast<const KArchiveFile *>(filePathEntry); !filePath->copyTo(storeDirectory)) {
                         qCWarning(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to copy to " << storeDirectory;
@@ -76,7 +73,6 @@ void ExtractLanguageJob::start()
             }
         }
     }
-    delete tar;
     Q_EMIT finished();
     deleteLater();
 }

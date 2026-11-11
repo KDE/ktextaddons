@@ -55,7 +55,7 @@ void TextAutoGenerateListViewBaseDelegate::removeMessageCache(const QByteArray &
 
 std::unique_ptr<QTextDocument> TextAutoGenerateListViewBaseDelegate::createTextDocument(const QString &text, int width) const
 {
-    std::unique_ptr<QTextDocument> doc(new QTextDocument);
+    auto doc = std::make_unique<QTextDocument>();
     doc->setHtml(text);
     doc->setTextWidth(width);
     QTextFrame *frame = doc->frameAt(0);

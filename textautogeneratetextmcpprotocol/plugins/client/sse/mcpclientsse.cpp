@@ -48,8 +48,8 @@ void McpClientSse::connection()
     QNetworkRequest request(url);
     request.setRawHeader("Accept"_ba, "text/event-stream"_ba);
     request.setRawHeader("Cache-Control"_ba, "no-cache"_ba);
-    McpClientUtils::addHeaders(request, mInterface->protocolSettings().headers());
-    McpClientUtils::addBearer(request, mInterface->protocolSettings().authToken());
+    McpClientUtils::addHeaders(request, settings.headers());
+    McpClientUtils::addBearer(request, settings.authToken());
 
     QNetworkReply *reply = mNetworkAccessManager->get(request);
     mReply = reply;
@@ -92,8 +92,9 @@ void McpClientSse::send(const QJsonObject &obj)
     }
     QNetworkRequest request(mPostUrl);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json"_ba);
-    McpClientUtils::addHeaders(request, mInterface->protocolSettings().headers());
-    McpClientUtils::addBearer(request, mInterface->protocolSettings().authToken());
+    const auto settings = mInterface->protocolSettings();
+    McpClientUtils::addHeaders(request, settings.headers());
+    McpClientUtils::addBearer(request, settings.authToken());
     // Answer is sent in sse stream, post reply contains only status.
     QNetworkReply *reply = mNetworkAccessManager->post(request, QJsonDocument(obj).toJson(QJsonDocument::Compact));
     // Undefined when we post a notification or a response

@@ -131,7 +131,8 @@ QJsonObject McpProtocolCreateMessageRequestParams::toJson(const McpProtocolCreat
     }
     obj["maxTokens"_L1] = params.maxTokens();
     QJsonArray arr_messages;
-    for (const auto &v : params.messages()) {
+    const auto messagesList = params.messages();
+    for (const auto &v : messagesList) {
         arr_messages.append(McpProtocolSamplingMessage::toJson(v));
     }
     obj["messages"_L1] = arr_messages;

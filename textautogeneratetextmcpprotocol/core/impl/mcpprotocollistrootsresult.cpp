@@ -53,7 +53,8 @@ QJsonObject McpProtocolListRootsResult::toJson(const McpProtocolListRootsResult 
         obj["_meta"_L1] = McpProtocolMeta::toJson(*result.meta());
     }
     QJsonArray arr_roots;
-    for (const auto &v : result.roots()) {
+    const auto rootsList = result.roots();
+    for (const auto &v : rootsList) {
         arr_roots.append(McpProtocolRoot::toJson(v));
     }
     obj.insert("roots"_L1, arr_roots);

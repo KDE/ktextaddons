@@ -89,7 +89,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] bool contains(const QByteArray &toolNameId);
+    [[nodiscard]] bool contains(const QByteArray &toolNameId) const;
 
     /*!
      */

@@ -26,8 +26,7 @@ GenericNetworkPlugin::GenericNetworkPlugin(TextAutoGenerateText::TextAutoGenerat
     , mSettings(new GenericNetworkSettings)
     , mGenericManager(new GenericNetworkManager(mSettings, this))
 {
-    const GenericNetworkServerInfo info;
-    mGenericManager->setPluginNetworkType(info.pluginNetworkTypeFromString(instance->pluginIdentifier()));
+    mGenericManager->setPluginNetworkType(GenericNetworkServerInfo::pluginNetworkTypeFromString(instance->pluginIdentifier()));
     connect(mGenericManager,
             &GenericNetworkManager::modelsLoadDone,
             this,
@@ -168,8 +167,7 @@ TextAutoGenerateText::TextAutoGenerateReply *GenericNetworkPlugin::chatCompletio
 
 QString GenericNetworkPlugin::name() const
 {
-    const GenericNetworkServerInfo info;
-    return info.pluginName(mGenericManager->pluginNetworkType());
+    return GenericNetworkServerInfo::pluginName(mGenericManager->pluginNetworkType());
 }
 
 QString GenericNetworkPlugin::translatedPluginName() const

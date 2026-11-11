@@ -40,8 +40,8 @@ bool TranslatorMenu::isEmpty() const
 void TranslatorMenu::updateMenu()
 {
     mMenu->clear();
-    KConfigGroup groupTranslate(KSharedConfig::openConfig(), u"Translate"_s);
-    const QString engine = groupTranslate.readEntry(u"engine"_s, u"google"_s); // Google by default
+    KConfigGroup groupTranslate(KSharedConfig::openConfig(), TextTranslator::TranslatorUtil::groupTranslateName());
+    const QString engine = groupTranslate.readEntry(TextTranslator::TranslatorUtil::engineTranslateName(), TextTranslator::TranslatorUtil::defaultEngineName());
     // qDebug() << " engine " << engine;
     QString actionText;
     if (const QString currentPluginName = TextTranslator::TranslatorEngineLoader::self()->currentPluginName(engine); !currentPluginName.isEmpty()) {

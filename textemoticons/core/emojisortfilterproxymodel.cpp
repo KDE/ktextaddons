@@ -18,11 +18,6 @@ public:
         : q(qq)
     {
     }
-    void clearSearch()
-    {
-        q->setSearchIdentifier(QString());
-    }
-
     [[nodiscard]] QLatin1StringView emojiToneSuffix() const
     {
         switch (tone) {
@@ -177,10 +172,8 @@ QString EmojiSortFilterProxyModel::category() const
 void EmojiSortFilterProxyModel::setCategory(const QString &newCategorie)
 {
     if (d->category != newCategorie) {
-        if (!d->searchIdentifier.isEmpty()) {
-            d->clearSearch();
-        }
         beginFilterChange();
+        d->searchIdentifier.clear();
         d->category = newCategorie;
         endFilterChange(QSortFilterProxyModel::Direction::Rows);
         if ((TextEmoticonsCore::EmoticonUnicodeUtils::recentIdentifier() == d->category)

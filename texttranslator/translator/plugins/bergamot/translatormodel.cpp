@@ -21,17 +21,10 @@ TranslatorModel::~TranslatorModel() = default;
 
 void TranslatorModel::insertTranslators(const QVector<Translator> &translators)
 {
-    if (rowCount() != 0) {
-        beginResetModel();
-        mTranslators.clear();
-        endResetModel();
-    }
-    if (!translators.isEmpty()) {
-        beginInsertRows(QModelIndex(), 0, translators.count() - 1);
-        mTranslators = translators;
-        endInsertRows();
-    }
-    updateInstalledLanguage();
+    beginResetModel();
+    mTranslators = translators;
+    mLanguageInstalled = BergamotEngineUtils::languageLocallyStored();
+    endResetModel();
 }
 
 void TranslatorModel::updateInstalledLanguage()
@@ -195,9 +188,6 @@ void TranslatorModel::removeLanguage(const QString &identifier)
             qCDebug(TRANSLATOR_LIBBERGAMOT_LOG) << "Impossible to delete " << absoluteLanguageModelPath;
             return;
         }
-        mLanguageInstalled.removeAll(*index);
-        beginResetModel();
-        endResetModel();
     }
     updateInstalledLanguage();
 }

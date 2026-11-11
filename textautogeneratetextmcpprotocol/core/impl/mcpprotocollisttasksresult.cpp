@@ -60,7 +60,8 @@ QJsonObject McpProtocolListTasksResult::toJson(const McpProtocolListTasksResult 
         obj["nextCursor"_L1] = *result.nextCursor();
     }
     QJsonArray arr_tasks;
-    for (const auto &v : result.tasks()) {
+    const auto tasksList = result.tasks();
+    for (const auto &v : tasksList) {
         arr_tasks.append(McpProtocolTask::toJson(v));
     }
     obj["tasks"_L1] = arr_tasks;

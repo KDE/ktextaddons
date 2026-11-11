@@ -64,7 +64,8 @@ QJsonObject McpProtocolCompleteResult::Completion::toJson(const McpProtocolCompl
 {
     QJsonObject obj;
     QJsonArray arr_values;
-    for (const auto &v : completion.values()) {
+    const auto valuesList = completion.values();
+    for (const auto &v : valuesList) {
         arr_values.append(v);
     }
     obj["values"_L1] = arr_values;

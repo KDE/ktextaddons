@@ -26,10 +26,7 @@ void TextAutoGenerateExportChatAsJsonJob::exportChat()
     QJsonObject obj;
     QJsonArray messages;
     for (const auto &message : std::as_const(mInfo.listMessages)) {
-        const QByteArray ba = TextAutoGenerateText::TextAutoGenerateMessage::serialize(message, false);
-        const QJsonDocument d = QJsonDocument::fromJson(ba);
-        messages.append(d.object());
-        // qDebug() << " ba " << ba;
+        messages.append(TextAutoGenerateText::TextAutoGenerateMessage::serializeToJson(message));
     }
     obj[u"messages"_s] = messages;
     obj[u"title"_s] = mInfo.chatTitle;
@@ -39,10 +36,8 @@ void TextAutoGenerateExportChatAsJsonJob::exportChat()
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Failed to open file for writing:" << mInfo.filename << "error:" << data.errorString();
         Q_EMIT exportFailed(i18n("Failed to open file for writing: %1", mInfo.filename));
     } else {
-        QTextStream out(&data);
-        out << QJsonDocument(obj).toJson();
-        out.flush();
-        if ((out.status() != QTextStream::Ok) || (data.error() != QFile::NoError)) {
+        const QByteArray ba = QJsonDocument(obj).toJson();
+        if (data.write(ba) != ba.size() || !data.flush()) {
             qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Failed to write to file:" << mInfo.filename;
             Q_EMIT exportFailed(i18n("Failed to write to file: %1", mInfo.filename));
         } else {
