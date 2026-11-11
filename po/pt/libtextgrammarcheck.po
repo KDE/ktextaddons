@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-10 06:31+0000\n"
 "PO-Revision-Date: 2023-01-13 09:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -89,38 +89,38 @@ msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "Erro durante a Extracção de Opções"
 
-#: grammalecte/grammalecteconfigwidget.cpp:113
+#: grammalecte/grammalecteconfigwidget.cpp:114
 #, fuzzy, kde-format
 #| msgid "Press Button for Reloading Settings"
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Carregar no Botão para Actualizar a Configuração"
 
-#: grammalecte/grammalecteconfigwidget.cpp:121
+#: grammalecte/grammalecteconfigwidget.cpp:122
 #, fuzzy, kde-format
 #| msgid "Reload Settings"
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Actualizar a Configuração"
 
-#: grammalecte/grammalecteconfigwidget.cpp:138
+#: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgid "Python Path:"
 msgstr "Localização do Python:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:142
+#: grammalecte/grammalecteconfigwidget.cpp:143
 #, fuzzy, kde-format
 #| msgid "Add full 'grammalecte-cli.py' path"
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Adicione a localização completa do 'grammalecte-cli.py'"
 
-#: grammalecte/grammalecteconfigwidget.cpp:144
+#: grammalecte/grammalecteconfigwidget.cpp:145
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Localização do Grammalecte:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:150
+#: grammalecte/grammalecteconfigwidget.cpp:151
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"

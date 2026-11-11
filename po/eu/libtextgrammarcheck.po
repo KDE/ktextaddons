@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-10 06:31+0000\n"
 "PO-Revision-Date: 2026-07-30 23:13+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -91,35 +91,35 @@ msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "Errorea aukerak erauztean"
 
-#: grammalecte/grammalecteconfigwidget.cpp:113
+#: grammalecte/grammalecteconfigwidget.cpp:114
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Sakatu botoia ezarpenak birzamatzeko"
 
-#: grammalecte/grammalecteconfigwidget.cpp:121
+#: grammalecte/grammalecteconfigwidget.cpp:122
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Ezarpenak birzamatu"
 
-#: grammalecte/grammalecteconfigwidget.cpp:138
+#: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgid "Python Path:"
 msgstr "Python-en bide-izena:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:142
+#: grammalecte/grammalecteconfigwidget.cpp:143
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Gehitu 'grammalecte-cli.py' fitxategiaren bide-izen osoa"
 
-#: grammalecte/grammalecteconfigwidget.cpp:144
+#: grammalecte/grammalecteconfigwidget.cpp:145
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "«Grammalecte»ren bide-izena:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:150
+#: grammalecte/grammalecteconfigwidget.cpp:151
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"

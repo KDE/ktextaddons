@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
+"POT-Creation-Date: 2026-11-10 06:49+0000\n"
 "PO-Revision-Date: 2026-09-27 23:42+0200\n"
 "Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -734,13 +734,13 @@ msgctxt "@action:button"
 msgid "Debug"
 msgstr "Ladění"
 
-#: translator/widgets/translatorwidget.cpp:280
+#: translator/widgets/translatorwidget.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Nastavit"
 
-#: translator/widgets/translatorwidget.cpp:359
+#: translator/widgets/translatorwidget.cpp:360
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -750,24 +750,24 @@ msgstr ""
 "Přetáhněte text, jenž chcete přeložit. (Pamatujte, že text bude poslán na "
 "externí server)."
 
-#: translator/widgets/translatorwidget.cpp:361
+#: translator/widgets/translatorwidget.cpp:362
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Přetáhněte text, jenž chcete přeložit."
 
-#: translator/widgets/translatorwidget.cpp:412
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Není dostupné internetové připojení. text nelze přeložit."
 
-#: translator/widgets/translatorwidget.cpp:412
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Není síť"
 
-#: translator/widgets/translatorwidget.cpp:449
+#: translator/widgets/translatorwidget.cpp:450
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-10 06:31+0000\n"
 "PO-Revision-Date: 2026-10-08 16:36+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -86,35 +86,35 @@ msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "Грешка при екстрахиране на опциите"
 
-#: grammalecte/grammalecteconfigwidget.cpp:113
+#: grammalecte/grammalecteconfigwidget.cpp:114
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Натиснете бутона за презареждане на настройките"
 
-#: grammalecte/grammalecteconfigwidget.cpp:121
+#: grammalecte/grammalecteconfigwidget.cpp:122
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Презареждане на настройките"
 
-#: grammalecte/grammalecteconfigwidget.cpp:138
+#: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgid "Python Path:"
 msgstr "Път до Python:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:142
+#: grammalecte/grammalecteconfigwidget.cpp:143
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Добавяне на пълния път до  'grammalecte-cli.py'"
 
-#: grammalecte/grammalecteconfigwidget.cpp:144
+#: grammalecte/grammalecteconfigwidget.cpp:145
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Път до Grammalecte:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:150
+#: grammalecte/grammalecteconfigwidget.cpp:151
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-10 06:31+0000\n"
 "PO-Revision-Date: 2024-12-20 21:52+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -84,35 +84,35 @@ msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "विकल्पान् निष्कासयितुं समये त्रुटिः"
 
-#: grammalecte/grammalecteconfigwidget.cpp:113
+#: grammalecte/grammalecteconfigwidget.cpp:114
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "सेटिङ्ग्स् पुनः लोड् कर्तुं बटन् नुदन्तु"
 
-#: grammalecte/grammalecteconfigwidget.cpp:121
+#: grammalecte/grammalecteconfigwidget.cpp:122
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "सेटिंग्स् पुनः लोड् कुर्वन्तु"
 
-#: grammalecte/grammalecteconfigwidget.cpp:138
+#: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgid "Python Path:"
 msgstr "पायथन मार्गः :"
 
-#: grammalecte/grammalecteconfigwidget.cpp:142
+#: grammalecte/grammalecteconfigwidget.cpp:143
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "पूर्णं 'grammalecte-cli.py' मार्गं योजयन्तु"
 
-#: grammalecte/grammalecteconfigwidget.cpp:144
+#: grammalecte/grammalecteconfigwidget.cpp:145
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "व्याकरणलेक्टे पथः"
 
-#: grammalecte/grammalecteconfigwidget.cpp:150
+#: grammalecte/grammalecteconfigwidget.cpp:151
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 00:54+0000\n"
+"POT-Creation-Date: 2026-11-11 00:59+0000\n"
 "PO-Revision-Date: 2026-08-23 09:01+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -238,14 +238,14 @@ msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "Comprovació de versió nova"
 
-#: verifynewversion/checknewversionwidget.cpp:63
+#: verifynewversion/checknewversionwidget.cpp:62
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 "S'ha trobat una versió nova. Feu clic a <a href=\"%1\">aquí</a> per a baixar-"
 "la."
 
-#: verifynewversion/checknewversionwidget.cpp:65
+#: verifynewversion/checknewversionwidget.cpp:64
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""

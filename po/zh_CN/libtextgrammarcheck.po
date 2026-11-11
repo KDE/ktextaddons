@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-10 06:31+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -82,35 +82,35 @@ msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "提取选项时出错"
 
-#: grammalecte/grammalecteconfigwidget.cpp:113
+#: grammalecte/grammalecteconfigwidget.cpp:114
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "请按下按钮来重新加载设置"
 
-#: grammalecte/grammalecteconfigwidget.cpp:121
+#: grammalecte/grammalecteconfigwidget.cpp:122
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "重新加载设置"
 
-#: grammalecte/grammalecteconfigwidget.cpp:138
+#: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgid "Python Path:"
 msgstr "Python 路径："
 
-#: grammalecte/grammalecteconfigwidget.cpp:142
+#: grammalecte/grammalecteconfigwidget.cpp:143
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "添加完整的“grammalecte-cli.py”的路径"
 
-#: grammalecte/grammalecteconfigwidget.cpp:144
+#: grammalecte/grammalecteconfigwidget.cpp:145
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Grammalecte 路径："
 
-#: grammalecte/grammalecteconfigwidget.cpp:150
+#: grammalecte/grammalecteconfigwidget.cpp:151
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"

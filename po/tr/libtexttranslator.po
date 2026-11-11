@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
+"POT-Creation-Date: 2026-11-10 06:49+0000\n"
 "PO-Revision-Date: 2026-08-27 20:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -733,13 +733,13 @@ msgctxt "@action:button"
 msgid "Debug"
 msgstr "Hata Ayıkla"
 
-#: translator/widgets/translatorwidget.cpp:280
+#: translator/widgets/translatorwidget.cpp:281
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Yapılandır"
 
-#: translator/widgets/translatorwidget.cpp:359
+#: translator/widgets/translatorwidget.cpp:360
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -749,24 +749,24 @@ msgstr ""
 "Çevirmek istediğiniz metni sürükleyin (Metnin dış sunuculara gönderileceğini "
 "not edin)."
 
-#: translator/widgets/translatorwidget.cpp:361
+#: translator/widgets/translatorwidget.cpp:362
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Çevirmek istediğiniz metni sürükleyin."
 
-#: translator/widgets/translatorwidget.cpp:412
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Bir ağ bağlantısı algılanmadı, metni çeviremiyoruz."
 
-#: translator/widgets/translatorwidget.cpp:412
+#: translator/widgets/translatorwidget.cpp:413
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Ağ Yok"
 
-#: translator/widgets/translatorwidget.cpp:449
+#: translator/widgets/translatorwidget.cpp:450
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
