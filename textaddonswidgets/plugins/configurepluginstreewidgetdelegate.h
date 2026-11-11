@@ -14,6 +14,8 @@ public:
     explicit ConfigurePluginsTreeWidgetDelegate(QObject *parent = nullptr);
     ~ConfigurePluginsTreeWidgetDelegate() override;
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
-    [[nodiscard]] QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+
+protected:
+    void initStyleOption(QStyleOptionViewItem *option, const QModelIndex &index) const override;
 };
 }

@@ -33,7 +33,7 @@ ConfigurePluginsWidget::ConfigurePluginsWidget(QWidget *parent)
     mMessageWidget->setVisible(false);
     mMessageWidget->setPosition(KMessageWidget::Header);
 
-    mTreePluginWidget->setItemDelegate(new ConfigurePluginsTreeWidgetDelegate(this));
+    mTreePluginWidget->setItemDelegate(new ConfigurePluginsTreeWidgetDelegate(mTreePluginWidget));
     mTreePluginWidget->setObjectName(u"mTreePluginWidget"_s);
     mTreePluginWidget->setSortingEnabled(true);
     mTreePluginWidget->sortItems(0, Qt::AscendingOrder);
@@ -135,6 +135,7 @@ void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginU
         itemsList.reserve(lst.count());
         auto topLevel = new QTreeWidgetItem(mTreePluginWidget, {topLevelItemName});
         topLevel->setFlags(topLevel->flags() & ~Qt::ItemIsSelectable);
+        topLevel->setFirstColumnSpanned(true);
         const TextAddonsWidgets::PluginUtil::PluginsStateList pair = TextAddonsWidgets::PluginUtil::loadPluginSetting(fileName, groupName, prefixKey);
         for (const TextAddonsWidgets::PluginUtilData &data : lst) {
             auto subItem = new PluginItem(topLevel);
@@ -149,17 +150,19 @@ void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginU
                 subItem->mEnableFromUserSettings = isPluginActivated;
                 subItem->setCheckState(0, isPluginActivated ? Qt::Checked : Qt::Unchecked);
             }
+            subItem->setFirstColumnSpanned(!data.mHasConfigureDialog);
             if (data.mHasConfigureDialog) {
-                auto but = new QToolButton(mTreePluginWidget);
-                auto act = new QAction(but);
+                auto widget = new QWidget(mTreePluginWidget);
+                auto layout = new QHBoxLayout(widget);
+                auto but = new QToolButton(widget);
+                auto act = new QAction(QIcon::fromTheme(u"configure"_s), i18nc("@info:tooltip", "Configure"), but);
                 act->setData(QStringList{configureGroupName, data.mIdentifier});
                 but->setDefaultAction(act);
-                but->setIcon(QIcon::fromTheme(u"configure"_s));
-                but->setText(u"..."_s);
-                but->setFixedWidth(28);
-                but->setToolTip(i18nc("@info:tooltip", "Configure"));
-                but->setAutoFillBackground(true);
-                mTreePluginWidget->setItemWidget(subItem, 1, but);
+                but->setToolButtonStyle(Qt::ToolButtonIconOnly);
+                but->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+                widget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+                layout->addWidget(but, 0, Qt::AlignCenter);
+                mTreePluginWidget->setItemWidget(subItem, 1, widget);
                 connect(but, &QToolButton::triggered, this, &ConfigurePluginsWidget::slotConfigureButtonClicked);
             }
             itemsList.append(subItem);
