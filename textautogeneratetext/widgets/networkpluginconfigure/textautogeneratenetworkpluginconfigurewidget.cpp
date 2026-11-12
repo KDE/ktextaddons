@@ -39,7 +39,7 @@ TextAutoGenerateNetworkPluginConfigureWidget::TextAutoGenerateNetworkPluginConfi
     mApiKey->setObjectName(u"mApiKey"_s);
     mInstanceName->setObjectName(u"mInstanceName"_s);
     mInstanceName->setClearButtonEnabled(true);
-    mMaxToken->setMaximum(9999);
+    mMaxToken->setMaximum(std::numeric_limits<int>::max());
     mMaxToken->setObjectName(u"mMaxToken"_s);
     mTemperature->setObjectName(u"mTemperature"_s);
     mTemperature->setMaximum(10.0);
