@@ -58,4 +58,9 @@ void TextAutoGenerateSelectPromptWidget::slotRemovePrompt(const QByteArray &iden
     mPromptModel->removePrompt(identifier);
 }
 
+QList<TextAutoGeneratePrompt> TextAutoGenerateSelectPromptWidget::prompts() const
+{
+    return mPromptModel->prompts();
+}
+
 #include "moc_textautogenerateselectpromptwidget.cpp"
