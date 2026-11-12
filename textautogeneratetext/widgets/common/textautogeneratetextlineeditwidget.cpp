@@ -231,6 +231,8 @@ void TextAutoGenerateTextLineEditWidget::slotCurrentModelChanged()
         mConfigureTools->setChecked(false);
         mTextAutoGenerateToolsWidget->setHidden(true);
     }
+    updateAttachmentButton(mManager->textAutoGeneratePlugin()->hasVisionSupport() || mManager->textAutoGeneratePlugin()->hasOcrSupport()
+                           || mManager->textAutoGeneratePlugin()->hasAudioSupport());
 }
 
 #include "moc_textautogeneratetextlineeditwidget.cpp"
