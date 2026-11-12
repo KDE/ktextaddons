@@ -82,13 +82,11 @@ void TextAutoGenerateTextInstancesManagerListViewDelegate::paint(QPainter *paint
     painter->setPen((option.state & QStyle::State_Selected) ? option.palette.highlightedText().color() : option.palette.text().color());
     const QRect line1Rect(rect.left() + 5 + checkboxSize.width(), rect.top(), rect.width(), fontMetrics.height());
     painter->drawText(line1Rect, Qt::AlignLeft | Qt::AlignVCenter, text);
-    if (!translatedPluginName.isEmpty()) {
-        f.setItalic(true);
-        f.setPointSize(f.pointSize() - 2);
-        painter->setFont(f);
-        const QRect line2Rect(rect.left() + 5 + checkboxSize.width(), rect.top() + fontMetrics.height(), rect.width(), fontMetrics.height());
-        painter->drawText(line2Rect, Qt::AlignLeft | Qt::AlignVCenter, translatedPluginName);
-    }
+    f.setItalic(true);
+    f.setPointSize(f.pointSize() - 2);
+    painter->setFont(f);
+    const QRect line2Rect(rect.left() + 5 + checkboxSize.width(), rect.top() + fontMetrics.height(), rect.width(), fontMetrics.height());
+    painter->drawText(line2Rect, Qt::AlignLeft | Qt::AlignVCenter, translatedPluginName);
     painter->restore();
 }
 
