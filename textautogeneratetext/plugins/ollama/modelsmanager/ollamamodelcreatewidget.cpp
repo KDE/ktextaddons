@@ -16,7 +16,6 @@
 using namespace Qt::Literals::StringLiterals;
 OllamaModelCreateWidget::OllamaModelCreateWidget(OllamaManager *manager, QWidget *parent)
     : QWidget{parent}
-    , mManager(manager)
     , mStackWidget(new QStackedWidget(this))
     , mOllamaModelCreateFromExistingModelWidget(new OllamaModelCreateFromExistingModelWidget(manager, this))
     , mSelectModeWidget(new QWidget(this))

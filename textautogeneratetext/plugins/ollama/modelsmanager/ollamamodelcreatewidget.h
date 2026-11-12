@@ -21,7 +21,6 @@ Q_SIGNALS:
     void createModelDone();
 
 private:
-    OllamaManager *const mManager;
     QStackedWidget *const mStackWidget;
     OllamaModelCreateFromExistingModelWidget *const mOllamaModelCreateFromExistingModelWidget;
     QWidget *const mSelectModeWidget;

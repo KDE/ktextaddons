@@ -82,7 +82,6 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     mTextAutoGenerateProjectsManager->setProjects(mDatabaseManager->loadProjects());
 
     // Load TextAutoGenerateTextToolPluginManager
-    (void)TextAutoGenerateTextToolPluginManager::self();
     TextAutoGenerateTextToolPluginManager::self()->setManager(this);
 
     mDebug = !qEnvironmentVariableIsEmpty("TEXTAUTOGENERATE_DEBUGGING");
