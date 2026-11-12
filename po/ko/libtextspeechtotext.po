@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-11 13:41+0000\n"
 "PO-Revision-Date: 2026-10-03 23:28+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28,7 +28,7 @@ msgid "Impossible to store language info."
 msgstr "언어 정보를 저장할 수 없습니다."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:48
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -38,22 +38,22 @@ msgstr ""
 "다. 나중에 다시 시도하십시오."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:53
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "URL에 접근할 수 없음: %1"
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:39
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:36
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "다운로드할 파일을 열 수 없습니다."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:64
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:61
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "체크섬이 일치하지 않습니다."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:74
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:71
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "디스크에 쓰는 중 오류 발생: %1"
@@ -115,7 +115,7 @@ msgstr "오류: %1"
 msgid "Vosk"
 msgstr "Vosk"
 
-#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:58
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:60
 #, kde-format
 msgid "Impossible to extract language"
 msgstr "언어를 감지할 수 없음"

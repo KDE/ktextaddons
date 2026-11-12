@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-11 13:41+0000\n"
 "PO-Revision-Date: 2024-07-12 22:08+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -28,7 +28,7 @@ msgid "Impossible to store language info."
 msgstr "Ne eblas konservi lingvo-informon."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:48
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -38,22 +38,22 @@ msgstr ""
 "reto. Bonvolu provi vian peton denove poste."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:53
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Ne eblas aliri al url: %1"
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:39
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:36
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "Ne eblas malfermi dosieron por alŝutado."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:64
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:61
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Kontrolsumo estas nekorekta."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:74
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:71
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Eraro dum skribo al disko: %1"
@@ -116,7 +116,7 @@ msgstr "Eraro: %1"
 msgid "Vosk"
 msgstr "Vosk"
 
-#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:58
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:60
 #, kde-format
 msgid "Impossible to extract language"
 msgstr "Ne eblas eltiri lingvon"

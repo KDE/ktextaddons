@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextspeechtotext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-11 13:41+0000\n"
 "PO-Revision-Date: 2026-10-07 17:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -30,7 +30,7 @@ msgid "Impossible to store language info."
 msgstr "No se puede guardar la información sobre el idioma."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:48
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -40,22 +40,22 @@ msgstr ""
 "red de equipos. Vuelva a realizar su petición más tarde."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:53
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "No se puede acceder a la URL: %1"
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:39
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:36
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "No se puede abrir el archivo para la descarga."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:64
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:61
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "La suma de verificación no es correcta."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:74
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:71
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Ha ocurrido un error al escribir en disco: %1"
@@ -117,7 +117,7 @@ msgstr "Error: %1"
 msgid "Vosk"
 msgstr "Vosk"
 
-#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:58
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:60
 #, kde-format
 msgid "Impossible to extract language"
 msgstr "No se puede extraer el idioma"

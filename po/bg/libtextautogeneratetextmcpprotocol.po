@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 15:37+0000\n"
-"PO-Revision-Date: 2026-10-28 16:55+0200\n"
+"PO-Revision-Date: 2026-11-11 18:31+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:436
 #, kde-format
@@ -303,23 +303,19 @@ msgid "Remove"
 msgstr "Премахване"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Име"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Name: Value"
+#, kde-format
 msgctxt "@title:column"
 msgid "Value"
 msgstr "Стойност"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "An empty value keeps the variable from the user environment."
 msgstr "Празната стойност запазва променливата от потребителската среда."
@@ -344,8 +340,7 @@ msgid "Arguments:"
 msgstr "Аргументи:"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Environment variables:"
+#, kde-format
 msgctxt "@label"
 msgid "Environment:"
 msgstr "Среда:"
@@ -466,7 +461,7 @@ msgid "Edit…"
 msgstr "Редактиране…"
 
 #: widgets/client/mcpserverlistview.cpp:70
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
 msgstr "Конфигурация на инструментите…"
@@ -514,15 +509,12 @@ msgid "From MCP Registry…"
 msgstr "От MCP регистъра…"
 
 #: widgets/client/mcpserverwidget.cpp:172
-#, fuzzy, kde-format
+#, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
-msgstr ""
-"Този сървър не предоставя поддържан транспорт (дистанционен или пакетен)."
+msgstr "Този сървър не предоставя поддържан транспорт (отдалечен или пакетен)."
 
 #: widgets/client/mcpserverwidget.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add MCP Server"
 msgstr "Добавяне на MCP сървър"

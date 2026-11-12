@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
+"POT-Creation-Date: 2026-11-11 13:41+0000\n"
 "PO-Revision-Date: 2026-10-08 16:36+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -28,7 +28,7 @@ msgid "Impossible to store language info."
 msgstr "Невъзможно запазване на информация за език."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:48
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -38,22 +38,22 @@ msgstr ""
 "компютърна мрежа. Моля, опитайте заявката си отново по-късно."
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:53
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr "Невъзможен достъп до url: %1"
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:39
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:36
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr "Не може да се отвори файл за изтегляне."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:64
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:61
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr "Контролната сума е не е правилна."
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:74
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:71
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr "Грешка по време на запис на диск: %1"
@@ -115,7 +115,7 @@ msgstr "Грешка: %1"
 msgid "Vosk"
 msgstr "Vosk"
 
-#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:58
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:60
 #, kde-format
 msgid "Impossible to extract language"
 msgstr "Невъзможно извличане на език"
