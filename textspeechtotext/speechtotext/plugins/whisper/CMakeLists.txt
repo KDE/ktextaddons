@@ -13,8 +13,6 @@ ecm_qt_declare_logging_category(speechtotextwhisper
 target_sources(
     speechtotextwhisper
     PRIVATE
-        whisperspeechtotextpluginjob.h
-        whisperspeechtotextpluginjob.cpp
         whisperspeechtotextdevice.h
         whisperspeechtotextdevice.cpp
 )
