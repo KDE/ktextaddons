@@ -28,6 +28,9 @@ public:
     void setModules(const QStringList &modules);
     void startInstall();
 
+public Q_SLOTS:
+    void reject() override;
+
 Q_SIGNALS:
     /*! Relayed from the widget, so the caller knows whether anything was installed. */
     void installDone();

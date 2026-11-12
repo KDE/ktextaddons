@@ -38,8 +38,8 @@ McpProtocolListTasksResult McpProtocolListTasksResult::fromJson(const QJsonObjec
         QList<McpProtocolTask> tasks;
         tasks.reserve(arr.count());
         for (const auto &v : arr) {
-            if (const McpProtocolTask item = McpProtocolTask::fromJson(v.toObject()); item.isValid()) {
-                tasks.append(item);
+            if (McpProtocolTask item = McpProtocolTask::fromJson(v.toObject()); item.isValid()) {
+                tasks.append(std::move(item));
             }
         }
         result.setTasks(std::move(tasks));

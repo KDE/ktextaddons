@@ -73,8 +73,8 @@ McpProtocolTool McpProtocolTool::fromJson(const QJsonObject &obj)
         list_icons.reserve(arr.count());
         for (const auto &v : arr) {
             // Skip invalid icons
-            if (const McpProtocolIcon icon = McpProtocolIcon::fromJson(v.toObject()); icon.isValid()) {
-                list_icons.append(icon);
+            if (McpProtocolIcon icon = McpProtocolIcon::fromJson(v.toObject()); icon.isValid()) {
+                list_icons.append(std::move(icon));
             }
         }
         tool.setIcons(std::move(list_icons));

@@ -145,72 +145,70 @@ void TextAutoGenerateHistoryListView::contextMenuEvent(QContextMenuEvent *event)
     auto tagsMenu = new TextAutoGenerateTagsMenu(mManager, &menu);
 
     if (const QModelIndex index = indexAt(event->pos()); index.parent().isValid()) {
-        if (index.isValid()) {
-            auto renameHistoryAction = new QAction(QIcon::fromTheme(u"document-edit"_s), i18nc("@action", "Modify…"), &menu);
-            connect(renameHistoryAction, &QAction::triggered, this, [index, this]() {
-                if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
-                    edit(index);
-                }
-            });
-            menu.addAction(renameHistoryAction);
-
-            menu.addSeparator();
-            auto duplicateChatAction = new QAction(QIcon::fromTheme(u"edit-duplicate"_s), i18nc("@action", "Duplicate…"), &menu);
-            connect(duplicateChatAction, &QAction::triggered, this, [index, this]() {
-                if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
-                    mManager->duplicateChat(uuid);
-                }
-            });
-            menu.addAction(duplicateChatAction);
-
-            menu.addSeparator();
-
-            const bool isFavorite = index.data(TextAutoGenerateChatsModel::Favorite).toBool();
-            auto changeFavoriteHistory =
-                new QAction(QIcon::fromTheme(u"favorite"_s), isFavorite ? i18nc("@action", "Remove as Favorite") : i18nc("@action", "Set as Favorite"), &menu);
-            connect(changeFavoriteHistory, &QAction::triggered, this, [index, isFavorite, this]() {
-                if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
-                    mManager->changeFavoriteHistory(uuid, !isFavorite);
-                }
-            });
-            menu.addAction(changeFavoriteHistory);
-            menu.addSeparator();
-
-            projectsMenu->setChatId(index.data(TextAutoGenerateChatsModel::Identifier).toByteArray());
-            menu.addMenu(projectsMenu);
-
-            menu.addSeparator();
-
-            tagsMenu->setChatId(index.data(TextAutoGenerateChatsModel::Identifier).toByteArray());
-            menu.addMenu(tagsMenu);
-
-            menu.addSeparator();
-
-            const bool archived = index.data(TextAutoGenerateChatsModel::Archived).toBool();
-            auto archivedAction = new QAction(archived ? i18nc("@action", "Restore") : i18nc("@action", "Archive"), &menu);
-            connect(archivedAction, &QAction::triggered, this, [index, archived, this]() {
-                if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
-                    mManager->archiveDiscussion(uuid, !archived);
-                }
-            });
-            menu.addAction(archivedAction);
-
-            const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
-            if (!uuid.isEmpty()) {
-                menu.addSeparator();
-                auto removeHistory = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove…"), &menu);
-                connect(removeHistory, &QAction::triggered, this, [uuid, this]() {
-                    if (KMessageBox::ButtonCode::PrimaryAction
-                        == KMessageBox::questionTwoActions(this,
-                                                           i18n("Do you want to remove this discussion?"),
-                                                           i18nc("@title:window", "Remove Discussion"),
-                                                           KStandardGuiItem::remove(),
-                                                           KStandardGuiItem::cancel())) {
-                        mManager->removeDiscussion(uuid);
-                    }
-                });
-                menu.addAction(removeHistory);
+        auto renameHistoryAction = new QAction(QIcon::fromTheme(u"document-edit"_s), i18nc("@action", "Modify…"), &menu);
+        connect(renameHistoryAction, &QAction::triggered, this, [index, this]() {
+            if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
+                edit(index);
             }
+        });
+        menu.addAction(renameHistoryAction);
+
+        menu.addSeparator();
+        auto duplicateChatAction = new QAction(QIcon::fromTheme(u"edit-duplicate"_s), i18nc("@action", "Duplicate…"), &menu);
+        connect(duplicateChatAction, &QAction::triggered, this, [index, this]() {
+            if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
+                mManager->duplicateChat(uuid);
+            }
+        });
+        menu.addAction(duplicateChatAction);
+
+        menu.addSeparator();
+
+        const bool isFavorite = index.data(TextAutoGenerateChatsModel::Favorite).toBool();
+        auto changeFavoriteHistory =
+            new QAction(QIcon::fromTheme(u"favorite"_s), isFavorite ? i18nc("@action", "Remove as Favorite") : i18nc("@action", "Set as Favorite"), &menu);
+        connect(changeFavoriteHistory, &QAction::triggered, this, [index, isFavorite, this]() {
+            if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
+                mManager->changeFavoriteHistory(uuid, !isFavorite);
+            }
+        });
+        menu.addAction(changeFavoriteHistory);
+        menu.addSeparator();
+
+        projectsMenu->setChatId(index.data(TextAutoGenerateChatsModel::Identifier).toByteArray());
+        menu.addMenu(projectsMenu);
+
+        menu.addSeparator();
+
+        tagsMenu->setChatId(index.data(TextAutoGenerateChatsModel::Identifier).toByteArray());
+        menu.addMenu(tagsMenu);
+
+        menu.addSeparator();
+
+        const bool archived = index.data(TextAutoGenerateChatsModel::Archived).toBool();
+        auto archivedAction = new QAction(archived ? i18nc("@action", "Restore") : i18nc("@action", "Archive"), &menu);
+        connect(archivedAction, &QAction::triggered, this, [index, archived, this]() {
+            if (const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray(); !uuid.isEmpty()) {
+                mManager->archiveDiscussion(uuid, !archived);
+            }
+        });
+        menu.addAction(archivedAction);
+
+        const QByteArray uuid = index.data(TextAutoGenerateChatsModel::Identifier).toByteArray();
+        if (!uuid.isEmpty()) {
+            menu.addSeparator();
+            auto removeHistory = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove…"), &menu);
+            connect(removeHistory, &QAction::triggered, this, [uuid, this]() {
+                if (KMessageBox::ButtonCode::PrimaryAction
+                    == KMessageBox::questionTwoActions(this,
+                                                       i18n("Do you want to remove this discussion?"),
+                                                       i18nc("@title:window", "Remove Discussion"),
+                                                       KStandardGuiItem::remove(),
+                                                       KStandardGuiItem::cancel())) {
+                    mManager->removeDiscussion(uuid);
+                }
+            });
+            menu.addAction(removeHistory);
         }
     } else {
         menu.addMenu(projectsMenu);

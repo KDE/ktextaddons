@@ -19,17 +19,17 @@ int TextAutoGenerateTextPromptModel::rowCount(const QModelIndex &parent) const
     if (parent.isValid()) {
         return 0; // flat model
     }
-    return mPrompt.count();
+    return mPrompts.count();
 }
 
 QVariant TextAutoGenerateTextPromptModel::data(const QModelIndex &index, int role) const
 {
     const int row = index.row();
-    if (row < 0 || row >= mPrompt.count()) {
+    if (row < 0 || row >= mPrompts.count()) {
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Invalid index:" << row;
         return {};
     }
-    const auto &prompt = mPrompt[row];
+    const auto &prompt = mPrompts[row];
     switch (role) {
     case Qt::DisplayRole:
     case Name:
@@ -52,15 +52,15 @@ QVariant TextAutoGenerateTextPromptModel::data(const QModelIndex &index, int rol
     return {};
 }
 
-QList<TextAutoGeneratePrompt> TextAutoGenerateTextPromptModel::prompt() const
+QList<TextAutoGeneratePrompt> TextAutoGenerateTextPromptModel::prompts() const
 {
-    return mPrompt;
+    return mPrompts;
 }
 
 void TextAutoGenerateTextPromptModel::setPrompt(const QList<TextAutoGeneratePrompt> &newPrompt)
 {
     beginResetModel();
-    mPrompt = newPrompt;
+    mPrompts = newPrompt;
     endResetModel();
 }
 
@@ -72,11 +72,11 @@ int TextAutoGenerateTextPromptModel::indexFromIdentifier(const QByteArray &ident
     const auto matchesIdentifier = [&](const TextAutoGeneratePrompt &prompt) {
         return prompt.identifier() == identifier;
     };
-    const auto promptIt = std::find_if(mPrompt.constBegin(), mPrompt.constEnd(), matchesIdentifier);
-    if (promptIt == mPrompt.constEnd()) {
+    const auto promptIt = std::find_if(mPrompts.constBegin(), mPrompts.constEnd(), matchesIdentifier);
+    if (promptIt == mPrompts.constEnd()) {
         return -1;
     }
-    return std::distance(mPrompt.constBegin(), promptIt);
+    return std::distance(mPrompts.constBegin(), promptIt);
 }
 
 void TextAutoGenerateTextPromptModel::updatePrompt(const TextAutoGeneratePrompt &prompt)
@@ -86,15 +86,15 @@ void TextAutoGenerateTextPromptModel::updatePrompt(const TextAutoGeneratePrompt 
         qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Unable to find prompt with identifier:" << prompt.identifier();
         return;
     }
-    mPrompt[i] = prompt;
+    mPrompts[i] = prompt;
     const QModelIndex idx = index(i, 0);
     Q_EMIT dataChanged(idx, idx);
 }
 
 void TextAutoGenerateTextPromptModel::addPrompt(const TextAutoGeneratePrompt &newPrompt)
 {
-    beginInsertRows(QModelIndex(), mPrompt.count(), mPrompt.count());
-    mPrompt.append(newPrompt);
+    beginInsertRows(QModelIndex(), mPrompts.count(), mPrompts.count());
+    mPrompts.append(newPrompt);
     endInsertRows();
 }
 
@@ -103,7 +103,7 @@ void TextAutoGenerateTextPromptModel::removePrompt(const QByteArray &uuid)
     const int i = indexFromIdentifier(uuid);
     if (i != -1) {
         beginRemoveRows(QModelIndex(), i, i);
-        mPrompt.removeAt(i);
+        mPrompts.removeAt(i);
         endRemoveRows();
     }
 }

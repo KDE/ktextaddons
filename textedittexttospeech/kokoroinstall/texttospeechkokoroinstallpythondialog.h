@@ -22,6 +22,9 @@ public:
     void setModules(const QStringList &modules);
     void startInstall();
 
+public Q_SLOTS:
+    void reject() override;
+
 private:
     TextToSpeechKokoroInstallPythonWidget *const mKokoroInstallPythonWidget;
     QPushButton *const mCloseButton;

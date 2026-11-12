@@ -18,6 +18,7 @@ TextAutoGenerateSelectPromptListWidget::TextAutoGenerateSelectPromptListWidget(Q
     : QListView(parent)
 {
     setItemDelegate(new TextAutoGenerateSelectPromptDelegate(this));
+    connect(this, &QListView::doubleClicked, this, &TextAutoGenerateSelectPromptListWidget::slotEditPrompt);
 }
 
 TextAutoGenerateSelectPromptListWidget::~TextAutoGenerateSelectPromptListWidget() = default;

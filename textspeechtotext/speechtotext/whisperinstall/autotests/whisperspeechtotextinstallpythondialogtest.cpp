@@ -77,4 +77,26 @@ void WhisperSpeechToTextInstallPythonDialogTest::shouldDisableCloseButtonWhileIn
     QVERIFY(closeButton->isEnabled());
 }
 
+void WhisperSpeechToTextInstallPythonDialogTest::shouldNotCloseWhileInstalling()
+{
+    WhisperSpeechToTextInstallPythonDialog d;
+    auto widget = d.findChild<WhisperSpeechToTextInstallPythonWidget *>(u"mWhisperInstallPythonWidget"_s);
+    QVERIFY(widget);
+    d.show();
+    QVERIFY(QTest::qWaitForWindowExposed(&d));
+
+    // Escape, the window close button and reject() must all be refused while pip runs.
+    Q_EMIT widget->installInProgress(true);
+    QTest::keyClick(&d, Qt::Key_Escape);
+    QVERIFY(d.isVisible());
+    QVERIFY(!d.close());
+    QVERIFY(d.isVisible());
+    d.reject();
+    QVERIFY(d.isVisible());
+
+    Q_EMIT widget->installInProgress(false);
+    QVERIFY(d.close());
+    QVERIFY(!d.isVisible());
+}
+
 #include "moc_whisperspeechtotextinstallpythondialogtest.cpp"

@@ -22,6 +22,8 @@ public:
     explicit TextAutoGenerateSelectPromptWidget(TextAutoGenerateManager *manager, QWidget *parent = nullptr);
     ~TextAutoGenerateSelectPromptWidget() override;
 
+    [[nodiscard]] QList<TextAutoGeneratePrompt> prompts() const;
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt);

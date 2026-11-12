@@ -49,7 +49,7 @@ OllamaModelDownloadProgressWidget::OllamaModelDownloadProgressWidget(OllamaManag
     mCancelDownloadButton->setFocusPolicy(Qt::NoFocus);
     hboxLayout->addWidget(mCancelDownloadButton);
     connect(mCancelDownloadButton, &QToolButton::clicked, this, [this]() {
-        if (OllamaCommonReply *value = mDownloadReply.take(mModelNameLabel->text()); value) {
+        if (OllamaCommonReply *value = mDownloadReply.take(mModelName); value) {
             value->cancel();
         }
     });

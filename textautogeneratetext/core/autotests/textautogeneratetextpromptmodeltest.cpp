@@ -26,7 +26,7 @@ TextAutoGenerateTextPromptModelTest::TextAutoGenerateTextPromptModelTest(QObject
 void TextAutoGenerateTextPromptModelTest::shouldHaveDefaultValues()
 {
     const TextAutoGenerateText::TextAutoGenerateTextPromptModel model;
-    QVERIFY(model.prompt().isEmpty());
+    QVERIFY(model.prompts().isEmpty());
     QCOMPARE(model.rowCount(), 0);
 }
 
@@ -37,7 +37,7 @@ void TextAutoGenerateTextPromptModelTest::shouldSetPrompt()
     model.setPrompt({createPrompt("foo"_ba, u"bla"_s), createPrompt("foo1"_ba, u"bla1"_s)});
     QCOMPARE(resetSpy.count(), 1);
     QCOMPARE(model.rowCount(), 2);
-    QCOMPARE(model.prompt().at(1).identifier(), "foo1"_ba);
+    QCOMPARE(model.prompts().at(1).identifier(), "foo1"_ba);
 
     model.setPrompt({});
     QCOMPARE(resetSpy.count(), 2);
@@ -72,7 +72,7 @@ void TextAutoGenerateTextPromptModelTest::shouldAddPrompt()
     model.addPrompt(createPrompt("foo1"_ba, u"bla1"_s));
     QCOMPARE(rowsInsertedSpy.count(), 2);
     QCOMPARE(model.rowCount(), 2);
-    QCOMPARE(model.prompt().at(1).identifier(), "foo1"_ba);
+    QCOMPARE(model.prompts().at(1).identifier(), "foo1"_ba);
 }
 
 void TextAutoGenerateTextPromptModelTest::shouldRemovePrompt()
@@ -94,7 +94,7 @@ void TextAutoGenerateTextPromptModelTest::shouldRemovePrompt()
     model.removePrompt("foo"_ba);
     QCOMPARE(rowsRemovedSpy.count(), 1);
     QCOMPARE(model.rowCount(), 1);
-    QCOMPARE(model.prompt().at(0).identifier(), "foo1"_ba);
+    QCOMPARE(model.prompts().at(0).identifier(), "foo1"_ba);
 }
 
 void TextAutoGenerateTextPromptModelTest::shouldUpdatePrompt()
@@ -109,10 +109,10 @@ void TextAutoGenerateTextPromptModelTest::shouldUpdatePrompt()
     QCOMPARE(dataChangedSpy.count(), 1);
     QCOMPARE(dataChangedSpy.at(0).at(0).toModelIndex(), model.index(1, 0));
     QCOMPARE(dataChangedSpy.at(0).at(1).toModelIndex(), model.index(1, 0));
-    QCOMPARE(model.prompt().at(1).name(), u"newname"_s);
-    QVERIFY(!model.prompt().at(1).enabled());
+    QCOMPARE(model.prompts().at(1).name(), u"newname"_s);
+    QVERIFY(!model.prompts().at(1).enabled());
     // Other prompt untouched
-    QCOMPARE(model.prompt().at(0).name(), u"bla"_s);
+    QCOMPARE(model.prompts().at(0).name(), u"bla"_s);
 
     // Unknown identifier => nothing changed
     model.updatePrompt(createPrompt("unknown"_ba, u"foobla"_s));

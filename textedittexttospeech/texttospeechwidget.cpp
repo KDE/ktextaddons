@@ -96,12 +96,20 @@ TextToSpeechWidget::~TextToSpeechWidget() = default;
 
 void TextToSpeechWidget::slotCloseTextToSpeechWidget()
 {
+    if (!d->mTextToSpeechInterface) {
+        return;
+    }
+
     d->mTextToSpeechActions->slotStop();
     hideWidget();
 }
 
 void TextToSpeechWidget::slotConfigure()
 {
+    if (!d->mTextToSpeechInterface) {
+        return;
+    }
+
     if (!d->mConfigDialog.data()) {
         d->mNeedToHide = false;
         d->mConfigDialog = new TextToSpeechConfigDialog(this);
@@ -119,16 +127,27 @@ void TextToSpeechWidget::slotConfigure()
 
 void TextToSpeechWidget::slotVolumeChanged(int value)
 {
+    if (!d->mTextToSpeechInterface) {
+        return;
+    }
+
     d->mTextToSpeechInterface->setVolume(value / 100.0);
 }
 
 bool TextToSpeechWidget::isReady() const
 {
+    if (!d->mTextToSpeechInterface) {
+        return false;
+    }
     return d->mTextToSpeechInterface->isReady();
 }
 
 void TextToSpeechWidget::say(const QString &text)
 {
+    if (!d->mTextToSpeechInterface) {
+        return;
+    }
+
     if (!text.isEmpty()) {
         if (d->mTextToSpeechInterface->isReady()) {
             d->mTextToSpeechInterface->say(text);
@@ -141,6 +160,9 @@ void TextToSpeechWidget::say(const QString &text)
 qsizetype TextToSpeechWidget::enqueue(const QString &text)
 {
     qsizetype index = -1;
+    if (!d->mTextToSpeechInterface) {
+        return index;
+    }
     if (!text.isEmpty()) {
         if (d->mTextToSpeechInterface->isReady()) {
             index = d->mTextToSpeechInterface->enqueue(text);
@@ -158,6 +180,9 @@ TextToSpeechWidget::State TextToSpeechWidget::state() const
 
 void TextToSpeechWidget::slotStateChanged(TextEditTextToSpeech::TextToSpeech::State state)
 {
+    if (!d->mTextToSpeechInterface) {
+        return;
+    }
     switch (state) {
     case TextEditTextToSpeech::TextToSpeech::Ready:
         d->mTextToSpeechActions->setState(TextToSpeechWidget::Stop);
@@ -187,6 +212,9 @@ void TextToSpeechWidget::hideWidget()
 
 void TextToSpeechWidget::setState(TextToSpeechWidget::State state)
 {
+    if (!d->mTextToSpeechInterface) {
+        return;
+    }
     d->mTextToSpeechActions->setState(state);
 }
 
@@ -203,6 +231,9 @@ void TextToSpeechWidget::setTextToSpeechInterface(TextToSpeechInterface *interfa
 
 void TextToSpeechWidget::applyVolume()
 {
+    if (!d->mTextToSpeechInterface) {
+        return;
+    }
     // Api return volume between 0.0 -> 1.0
     // We want display between 0 -> 100
     d->mVolume->setValue(d->mTextToSpeechInterface->volume() * 100);

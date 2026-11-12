@@ -38,8 +38,8 @@ McpProtocolListResourceTemplatesResult McpProtocolListResourceTemplatesResult::f
         QList<McpProtocolResourceTemplate> lst;
         lst.reserve(arr.count());
         for (const auto &v : arr) {
-            if (const McpProtocolResourceTemplate item = McpProtocolResourceTemplate::fromJson(v.toObject()); item.isValid()) {
-                lst.append(item);
+            if (McpProtocolResourceTemplate item = McpProtocolResourceTemplate::fromJson(v.toObject()); item.isValid()) {
+                lst.append(std::move(item));
             }
         }
         result.setResourceTemplates(std::move(lst));

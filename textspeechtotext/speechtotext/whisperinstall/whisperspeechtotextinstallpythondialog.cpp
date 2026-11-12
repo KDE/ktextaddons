@@ -40,7 +40,6 @@ WhisperSpeechToTextInstallPythonDialog::WhisperSpeechToTextInstallPythonDialog(Q
     mainLayout->addWidget(box);
     connect(box, &QDialogButtonBox::accepted, this, &WhisperSpeechToTextInstallPythonDialog::accept);
     connect(box, &QDialogButtonBox::rejected, this, &WhisperSpeechToTextInstallPythonDialog::reject);
-    // Closing the dialog would kill pip in the middle of the installation.
     connect(mWhisperInstallPythonWidget, &WhisperSpeechToTextInstallPythonWidget::installInProgress, mCloseButton, [this](bool status) {
         mCloseButton->setEnabled(!status);
     });
@@ -60,6 +59,14 @@ void WhisperSpeechToTextInstallPythonDialog::startInstall()
 {
     mCloseButton->setEnabled(false);
     mWhisperInstallPythonWidget->startInstall();
+}
+
+void WhisperSpeechToTextInstallPythonDialog::reject()
+{
+    if (!mCloseButton->isEnabled()) {
+        return;
+    }
+    QDialog::reject();
 }
 
 #include "moc_whisperspeechtotextinstallpythondialog.cpp"

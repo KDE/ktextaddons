@@ -57,10 +57,10 @@ public:
     [[nodiscard]] QVariant data(const QModelIndex &index, int role) const override;
 
     /*!
-     * \brief prompt
+     * \brief prompts
      * \return
      */
-    [[nodiscard]] QList<TextAutoGeneratePrompt> prompt() const;
+    [[nodiscard]] QList<TextAutoGeneratePrompt> prompts() const;
     /*!
      * \brief setPrompt
      * \param newPrompt
@@ -87,6 +87,6 @@ public:
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int indexFromIdentifier(const QByteArray &identifier) const;
-    QList<TextAutoGeneratePrompt> mPrompt;
+    QList<TextAutoGeneratePrompt> mPrompts;
 };
 }
