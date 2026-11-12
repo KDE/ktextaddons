@@ -26,5 +26,4 @@ private:
     void translateText();
     void parseTranslation(QNetworkReply *reply);
     QString mServerUrl;
-    QString mResult;
 };
