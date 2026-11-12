@@ -116,6 +116,9 @@ void SpeechToTextConfigureWidget::checkWhisperEngine()
 void SpeechToTextConfigureWidget::slotInstallWhisper(const QStringList &modules)
 {
     QPointer<WhisperSpeechToTextInstallPythonDialog> dlg = new WhisperSpeechToTextInstallPythonDialog(this);
+    connect(dlg, &WhisperSpeechToTextInstallPythonDialog::installDone, this, [this]() {
+        checkWhisperEngine();
+    });
     dlg->setAttribute(Qt::WA_DeleteOnClose);
     dlg->setModules(modules);
     dlg->show();
