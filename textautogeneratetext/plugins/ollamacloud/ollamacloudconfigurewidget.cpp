@@ -38,7 +38,9 @@ OllamaCloudConfigureWidget::OllamaCloudConfigureWidget(OllamaCloudManager *manag
         if (modelinfo.hasError) {
             qCWarning(AUTOGENERATETEXT_OLLAMACLOUD_LOG) << "load model failed";
         } else {
+            const QString current = mOllamaComboBoxWidget->currentModel();
             mOllamaComboBoxWidget->setModels(modelinfo.models);
+            mOllamaComboBoxWidget->setCurrentModel(current.isEmpty() ? mManager->ollamaCloudSettings()->currentModel() : current);
         }
     });
 
@@ -165,20 +167,25 @@ void OllamaCloudConfigureWidget::loadSettings()
 
 void OllamaCloudConfigureWidget::saveSettings()
 {
-    mManager->ollamaCloudSettings()->setDisplayName(mName->text());
+    auto *settings = mManager->ollamaCloudSettings();
+    settings->setDisplayName(mName->text());
     mManager->setApiKey(mApiKey->password());
     const auto parametersInfo = mOllamaCommonOverrideParametersWidget->parametersInfo();
-    mManager->ollamaCloudSettings()->setTemperature(parametersInfo.temperature);
-    mManager->ollamaCloudSettings()->setSeed(parametersInfo.seed);
-    mManager->ollamaCloudSettings()->setContextWindowSize(parametersInfo.contextWindowSize);
+    settings->setTemperature(parametersInfo.temperature);
+    settings->setSeed(parametersInfo.seed);
+    settings->setContextWindowSize(parametersInfo.contextWindowSize);
 
     const auto keepAliveInfo = mOllamaCommonKeepAliveParametersWidget->keepAliveInfo();
-    mManager->ollamaCloudSettings()->setKeepAliveMinutes(keepAliveInfo.minutes);
-    mManager->ollamaCloudSettings()->setKeepAliveType(keepAliveInfo.keepAliveType);
+    settings->setKeepAliveMinutes(keepAliveInfo.minutes);
+    settings->setKeepAliveType(keepAliveInfo.keepAliveType);
 
     const auto optionsInfo = mOllamaCommonOptionsWidget->optionsInfo();
-    mManager->ollamaCloudSettings()->setThoughtProcessing(optionsInfo.thoughtProcessing);
-    mManager->ollamaCloudSettings()->setShareNameType(optionsInfo.shareNameType);
+    settings->setThoughtProcessing(optionsInfo.thoughtProcessing);
+    settings->setShareNameType(optionsInfo.shareNameType);
+
+    if (const QString model = mOllamaComboBoxWidget->currentModel(); !model.isEmpty()) {
+        settings->setCurrentModel(model);
+    }
 }
 
 #include "moc_ollamacloudconfigurewidget.cpp"
