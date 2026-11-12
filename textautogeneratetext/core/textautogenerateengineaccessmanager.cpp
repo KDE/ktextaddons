@@ -7,7 +7,6 @@
 
 #include <QNetworkAccessManager>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 TextAutoGenerateEngineAccessManager::TextAutoGenerateEngineAccessManager(QObject *parent)
     : QObject(parent)
