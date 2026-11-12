@@ -327,6 +327,9 @@ void TextAutoGenerateWidget::slotSearchText()
         mSearchDialog = new TextAutoGenerateSearchDialog(mManager, this);
         mSearchDialog->setAttribute(Qt::WA_DeleteOnClose, true);
         mSearchDialog->show();
+    } else {
+        mSearchDialog->raise();
+        mSearchDialog->activateWindow();
     }
 }
 
