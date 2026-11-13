@@ -76,6 +76,13 @@ void TextToSpeechKokoroCheckJob::start()
         deleteLater();
         return;
     }
+    const QString pythonScript = TextToSpeechKokoroUtils::venvPython();
+    // Without the venv there is nothing to check: the packages live in it.
+    if (pythonScript.isEmpty()) {
+        Q_EMIT needToInstallPackages(TextToSpeechKokoroUtils::requiredModules());
+        deleteLater();
+        return;
+    }
     auto process = new QProcess(this);
     connect(process, &QProcess::finished, this, [this, process](int, QProcess::ExitStatus) {
         process->deleteLater();
@@ -89,13 +96,13 @@ void TextToSpeechKokoroCheckJob::start()
         }
         deleteLater();
     });
-    const QString pythonScript = TextToSpeechKokoroUtils::venvPython();
-    // Without the venv there is nothing to check: the packages live in it.
-    if (pythonScript.isEmpty()) {
-        Q_EMIT needToInstallPackages(TextToSpeechKokoroUtils::requiredModules());
-        deleteLater();
-        return;
-    }
+    connect(process, &QProcess::errorOccurred, this, [this](QProcess::ProcessError error) {
+        if (error == QProcess::FailedToStart) {
+            Q_EMIT needToReinstall();
+            deleteLater();
+        }
+    });
+
     process->start(pythonScript, {TextToSpeechKokoroUtils::pythonScriptPath(), u"check"_s});
 }
 
