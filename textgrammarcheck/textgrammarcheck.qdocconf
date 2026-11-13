@@ -9,6 +9,13 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    common/autotests \
+    grammalecte/autotests \
+    grammalecte/tests \
+    languagetool/autotests \
+    languagetool/tests
+
 outputformats = HTML
 
 depends += \

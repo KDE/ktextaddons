@@ -9,6 +9,15 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    plaintexteditor/autotests \
+    plaintexteditor/tests \
+    richtextbrowser/autotests \
+    richtextbrowser/tests \
+    richtexteditor/autotests \
+    richtexteditor/tests \
+    widgets/autotests
+
 outputformats = HTML
 
 depends += \

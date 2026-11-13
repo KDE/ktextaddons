@@ -9,10 +9,14 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    autotests
+
 outputformats = HTML
 
 depends += \
-    qtcore
+    qtcore \
+    textautocorrectionwidgets
 
 navigation.landingpage = "TextAutoCorrectionCore"
 
