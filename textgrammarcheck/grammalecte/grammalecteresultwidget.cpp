@@ -64,7 +64,7 @@ void GrammalecteResultWidget::slotError(GrammalecteResultJob::ErrorType error)
         break;
     case GrammalecteResultJob::ErrorType::PythonPathNotExist:
         qCWarning(TEXTGRAMMARCHECK_LOG) << "An error found during executing GrammalecteResultJob: python exec doesn't exist";
-        str = i18n("Grammalecte program file not found.");
+        str = i18n("Python program file not found.");
         break;
     case GrammalecteResultJob::ErrorType::GrammarlectCliNotExist:
         qCWarning(TEXTGRAMMARCHECK_LOG) << "An error found during executing GrammalecteResultJob: grammalecte cli not found.";
