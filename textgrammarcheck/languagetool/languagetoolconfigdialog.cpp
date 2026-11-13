@@ -32,12 +32,18 @@ LanguageToolConfigDialog::LanguageToolConfigDialog(QWidget *parent)
     auto box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Reset, this);
     box->setObjectName(u"box"_s);
     mainLayout->addWidget(box);
-    connect(box, &QDialogButtonBox::accepted, this, &LanguageToolConfigDialog::accept);
+    connect(box, &QDialogButtonBox::accepted, this, &LanguageToolConfigDialog::slotAccepted);
     connect(box, &QDialogButtonBox::rejected, this, &LanguageToolConfigDialog::reject);
     connect(box->button(QDialogButtonBox::Reset), &QPushButton::clicked, mConfigWidget, &LanguageToolConfigWidget::resetValue);
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myConfigGroupName), QSize(500, 300));
 }
 
 LanguageToolConfigDialog::~LanguageToolConfigDialog() = default;
+
+void LanguageToolConfigDialog::slotAccepted()
+{
+    mConfigWidget->saveSettings();
+    accept();
+}
 
 #include "moc_languagetoolconfigdialog.cpp"
