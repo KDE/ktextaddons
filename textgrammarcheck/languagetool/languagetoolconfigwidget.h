@@ -40,7 +40,6 @@ Q_SIGNALS:
     void resetValue();
 
 private:
-    Q_DISABLE_COPY(LanguageToolConfigWidget)
     TEXTGRAMMARCHECK_NO_EXPORT void updateWidgets(bool enabled);
     TEXTGRAMMARCHECK_NO_EXPORT void slotResetValue();
     QCheckBox *const mUseLocalInstance;

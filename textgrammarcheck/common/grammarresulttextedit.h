@@ -51,7 +51,6 @@ Q_SIGNALS:
     void configure();
 
 private:
-    Q_DISABLE_COPY(GrammarResultTextEdit)
     TEXTGRAMMARCHECK_NO_EXPORT void slotReplaceWord(const TextGrammarCheck::GrammarAction &act, const QString &replacementWord);
     TEXTGRAMMARCHECK_NO_EXPORT void slotOpenGrammarUrlInfo(const QString &url);
     TEXTGRAMMARCHECK_NO_EXPORT void generalPaletteChanged();

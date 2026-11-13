@@ -36,7 +36,6 @@ public:
     void saveSettings();
 
 private:
-    Q_DISABLE_COPY(GrammalecteConfigWidget)
     TEXTGRAMMARCHECK_NO_EXPORT void loadGrammarSettings();
     TEXTGRAMMARCHECK_NO_EXPORT void slotGetSettingsFinished(const QList<GrammalecteGenerateConfigOptionJob::Option> &result);
     TEXTGRAMMARCHECK_NO_EXPORT void slotGetSettingsError();

@@ -37,6 +37,5 @@ public:
 
 private:
     TEXTGRAMMARCHECK_NO_EXPORT void fillComboBox();
-    Q_DISABLE_COPY(LanguageToolComboBox)
 };
 }

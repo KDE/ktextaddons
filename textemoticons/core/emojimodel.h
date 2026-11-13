@@ -97,7 +97,6 @@ public:
     void setCustomEmojiIconManager(TextEmoticonsCore::CustomEmojiIconManager *newCustomEmojiIconManager);
 
 private:
-    Q_DISABLE_COPY(EmojiModel)
     QList<TextEmoticonsCore::UnicodeEmoticon> mEmoticonList;
     QList<TextEmoticonsCore::CustomEmoji> mCustomEmojiList;
     TextEmoticonsCore::CustomEmojiIconManager *mCustomEmojiIconManager = nullptr;

@@ -70,7 +70,6 @@ public:
     [[nodiscard]] bool allowToGetListOfLanguages() const;
 
 private:
-    Q_DISABLE_COPY(LanguageToolManager)
     QHash<QString, QColor> mGrammarColor;
     QString mLanguage;
     QString mLanguageToolPath;

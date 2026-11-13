@@ -56,7 +56,6 @@ Q_SIGNALS:
     void error(const QString &errorStr);
 
 private:
-    Q_DISABLE_COPY(LanguageToolGetListOfLanguageJob)
     TEXTGRAMMARCHECK_NO_EXPORT void addRequestAttribute(QNetworkRequest &request) const;
     TEXTGRAMMARCHECK_NO_EXPORT void slotCheckListOfLanguagesFinished();
     TEXTGRAMMARCHECK_NO_EXPORT void slotFinish(QNetworkReply *reply);

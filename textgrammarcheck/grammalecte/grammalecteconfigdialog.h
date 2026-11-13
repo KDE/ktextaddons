@@ -27,7 +27,6 @@ public:
     ~GrammalecteConfigDialog() override;
 
 private:
-    Q_DISABLE_COPY(GrammalecteConfigDialog)
     GrammalecteConfigWidget *const mConfigWidget;
 };
 }

@@ -28,7 +28,6 @@ public:
 
 private:
     TEXTGRAMMARCHECK_NO_EXPORT void slotAccepted();
-    Q_DISABLE_COPY(LanguageToolConfigDialog)
     LanguageToolConfigWidget *const mConfigWidget;
 };
 }
