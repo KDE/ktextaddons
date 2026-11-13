@@ -76,6 +76,11 @@ public:
      */
     void load(const KConfigGroup &grp);
 
+    /*!
+     * \brief createUniqueIdentifier
+     */
+    void createUniqueIdentifier();
+
 private:
     QString mName;
     QString mDescription;

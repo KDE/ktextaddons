@@ -10,10 +10,7 @@
 #include <QUuid>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateSkill::TextAutoGenerateSkill()
-    : mIdentifier(QUuid::createUuid().toByteArray(QUuid::Id128))
-{
-}
+TextAutoGenerateSkill::TextAutoGenerateSkill() = default;
 
 bool TextAutoGenerateSkill::operator==(const TextAutoGenerateSkill &other) const = default;
 
@@ -83,6 +80,11 @@ void TextAutoGenerateSkill::load(const KConfigGroup &grp)
 {
     setName(grp.readEntry("name"));
     setDescription(grp.readEntry("description"));
-    setIdentifier(grp.readEntry("identifier").toLatin1());
+    setIdentifier(grp.readEntry("identifier", QString::fromLatin1(mIdentifier)).toLatin1());
     setInstructions(grp.readEntry("instructions"));
+}
+
+void TextAutoGenerateSkill::createUniqueIdentifier()
+{
+    mIdentifier = QUuid::createUuid().toByteArray(QUuid::Id128);
 }

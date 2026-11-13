@@ -13,7 +13,7 @@ ecm_qt_declare_logging_category(textautogeneratellamacpp
 
 ecm_qt_declare_logging_category(textautogeneratellamacpp
     HEADER autogeneratetext_llamacpp_generate_json_debug.h
-    IDENTIFIER AUTOGENERATETEXT_LMSTUDIO_GENERATE_JSON_LOG
+    IDENTIFIER AUTOGENERATETEXT_LLAMACPP_GENERATE_JSON_LOG
     CATEGORY_NAME org.kde.kf.autogeneratetext.llamacpp_json
     DESCRIPTION "autogenerate text llamacpp (json info)"
     EXPORT KTEXTADDONS

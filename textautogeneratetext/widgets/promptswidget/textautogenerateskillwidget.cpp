@@ -47,6 +47,9 @@ void TextAutoGenerateSkillWidget::setSkill(const TextAutoGenerateText::TextAutoG
 TextAutoGenerateText::TextAutoGenerateSkill TextAutoGenerateSkillWidget::skill() const
 {
     TextAutoGenerateText::TextAutoGenerateSkill skill = mCurrentSkill;
+    if (!skill.isValid()) {
+        skill.createUniqueIdentifier();
+    }
     skill.setDescription(mDescription->text());
     skill.setInstructions(mInstructions->toPlainText());
     skill.setName(mName->text());

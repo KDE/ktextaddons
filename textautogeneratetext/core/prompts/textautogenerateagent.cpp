@@ -10,10 +10,7 @@
 #include <QUuid>
 
 using namespace TextAutoGenerateText;
-TextAutoGenerateAgent::TextAutoGenerateAgent()
-    : mIdentifier(QUuid::createUuid().toByteArray(QUuid::Id128))
-{
-}
+TextAutoGenerateAgent::TextAutoGenerateAgent() = default;
 
 bool TextAutoGenerateAgent::operator==(const TextAutoGenerateAgent &other) const = default;
 
@@ -71,5 +68,10 @@ void TextAutoGenerateAgent::load(const KConfigGroup &grp)
 {
     setName(grp.readEntry("name"));
     setDescription(grp.readEntry("description"));
-    setIdentifier(grp.readEntry("identifier").toLatin1());
+    setIdentifier(grp.readEntry("identifier", QString::fromLatin1(mIdentifier)).toLatin1());
+}
+
+void TextAutoGenerateAgent::createUniqueIdentifier()
+{
+    mIdentifier = QUuid::createUuid().toByteArray(QUuid::Id128);
 }

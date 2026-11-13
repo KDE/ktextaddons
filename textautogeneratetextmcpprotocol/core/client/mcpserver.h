@@ -35,11 +35,11 @@ public:
     /*!
      * \brief createUniqueIdentifier
      */
+    void createUniqueIdentifier();
+
     /*!
      */
     [[nodiscard]] bool operator==(const McpServer &other) const;
-
-    void createUniqueIdentifier();
 
     /*!
      * \brief enabled

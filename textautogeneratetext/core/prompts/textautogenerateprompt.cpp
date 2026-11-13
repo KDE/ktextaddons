@@ -10,10 +10,7 @@
 #include <QUuid>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
-TextAutoGeneratePrompt::TextAutoGeneratePrompt()
-    : mIdentifier(QUuid::createUuid().toByteArray(QUuid::Id128))
-{
-}
+TextAutoGeneratePrompt::TextAutoGeneratePrompt() = default;
 
 bool TextAutoGeneratePrompt::operator==(const TextAutoGeneratePrompt &other) const = default;
 
@@ -141,7 +138,7 @@ void TextAutoGeneratePrompt::load(const KConfigGroup &grp)
     setName(grp.readEntry("name"));
     setDescription(grp.readEntry("description"));
     setEnabled(grp.readEntry("enabled", true));
-    setIdentifier(grp.readEntry("identifier").toLatin1());
+    setIdentifier(grp.readEntry("identifier", QString::fromLatin1(mIdentifier)).toLatin1());
     setCommandCompletion(grp.readEntry("command"));
     setCategory(TextAutoGeneratePrompt::convertStringToCategory(grp.readEntry("category")));
 }
@@ -154,6 +151,11 @@ QString TextAutoGeneratePrompt::commandCompletion() const
 void TextAutoGeneratePrompt::setCommandCompletion(const QString &newCommandCompletion)
 {
     mCommandCompletion = newCommandCompletion;
+}
+
+void TextAutoGeneratePrompt::createUniqueIdentifier()
+{
+    mIdentifier = QUuid::createUuid().toByteArray(QUuid::Id128);
 }
 
 #include "moc_textautogenerateprompt.cpp"

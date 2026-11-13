@@ -10,7 +10,6 @@
 #include "textautogeneratelmstudio_export.h"
 #include <QString>
 #include <QUrl>
-using namespace Qt::StringLiterals;
 class QDebug;
 class KConfigGroup;
 class TEXTAUTOGENERATELMSTUDIO_EXPORT LMStudioSettings : public PluginCommonSettings
@@ -32,6 +31,6 @@ public:
     [[nodiscard]] bool operator==(const LMStudioSettings &other) const;
 
 private:
-    QUrl mServerUrl = QUrl(u"http://127.0.0.1:1234"_s);
+    QUrl mServerUrl = QUrl(QStringLiteral("http://127.0.0.1:1234"));
 };
 TEXTAUTOGENERATELMSTUDIO_EXPORT QDebug operator<<(QDebug d, const LMStudioSettings &t);

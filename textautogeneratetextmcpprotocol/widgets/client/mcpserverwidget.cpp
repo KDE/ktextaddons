@@ -54,9 +54,16 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
     addMcpServerButton->setPopupMode(QToolButton::InstantPopup);
     hboxLayout->addWidget(addMcpServerButton);
     auto addServerMenu = new QMenu(addMcpServerButton);
-    auto addServerAction = addServerMenu->addAction(i18nc("@action", "Server"));
+
+    auto addServerAction = addServerMenu->addAction(i18nc("@action", "Add Server…"));
+
     addServerMenu->addSeparator();
     auto addFromRegistryAction = addServerMenu->addAction(QIcon::fromTheme(u"network-server"_s), i18nc("@action", "From MCP Registry…"));
+
+    addServerMenu->addSeparator();
+    auto importAction = addServerMenu->addAction(i18nc("@action", "Import…"));
+    connect(importAction, &QAction::triggered, this, &McpServerWidget::slotImport);
+
     addMcpServerButton->setMenu(addServerMenu);
 
     connect(addServerAction, &QAction::triggered, this, &McpServerWidget::slotAddServer);
@@ -69,6 +76,7 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
     connect(mMcpServerListView, &McpServerListView::removeServer, this, &McpServerWidget::slotRemoveServer);
     connect(mMcpServerListView, &McpServerListView::editServer, this, &McpServerWidget::slotEditServer);
     connect(mMcpServerListView, &McpServerListView::configureTools, this, &McpServerWidget::configureToolsRequested);
+    connect(mMcpServerListView, &McpServerListView::importServer, this, &McpServerWidget::slotImport);
     if (mModel) {
         // Server was enabled/disabled from checkbox
         connect(mModel, &QAbstractItemModel::dataChanged, this, [this](const QModelIndex &, const QModelIndex &, const QList<int> &roles) {
@@ -214,6 +222,11 @@ void McpServerWidget::slotEditServer(const QByteArray &identifier)
         Q_EMIT settingsChanged();
     }
     delete dlg;
+}
+
+void McpServerWidget::slotImport()
+{
+    // TODO
 }
 
 #include "moc_mcpserverwidget.cpp"

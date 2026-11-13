@@ -32,6 +32,7 @@ TextAutoGenerateToolCallJob::~TextAutoGenerateToolCallJob() = default;
 void TextAutoGenerateToolCallJob::start()
 {
     if (!canStart()) {
+        emitFinished();
         deleteLater();
         return;
     }

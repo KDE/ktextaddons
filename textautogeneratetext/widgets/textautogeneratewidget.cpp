@@ -258,7 +258,7 @@ void TextAutoGenerateWidget::slotErrorOccurred(QNetworkReply::NetworkError e, co
 
 void TextAutoGenerateWidget::slotAutogenerateFailed(const QString &errorMessage)
 {
-    qDebug() << " TextAutoGenerateWidget::slotAutogenerateFailed " << errorMessage;
+    // qDebug() << " TextAutoGenerateWidget::slotAutogenerateFailed " << errorMessage;
     Q_EMIT pluginBroken(errorMessage);
 }
 

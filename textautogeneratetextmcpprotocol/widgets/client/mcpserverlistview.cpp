@@ -58,6 +58,11 @@ void McpServerListView::contextMenuEvent(QContextMenuEvent *event)
     menu.addAction(addServerAction);
     connect(addServerAction, &QAction::triggered, this, &McpServerListView::addServer);
 
+    menu.addSeparator();
+    auto importAction = new QAction(i18nc("@action", "Import Server…"), &menu);
+    menu.addAction(importAction);
+    connect(importAction, &QAction::triggered, this, &McpServerListView::importServer);
+
     if (const QModelIndex index = indexAt(event->pos()); index.isValid()) {
         menu.addSeparator();
         auto editAction = new QAction(QIcon::fromTheme(u"edit-rename"_s), i18nc("@action", "Edit…"), &menu);

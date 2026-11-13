@@ -59,6 +59,10 @@ Q_SIGNALS:
      * \param id
      */
     void configureTools(const QByteArray &id);
+    /*!
+     * \brief addServer
+     */
+    void importServer();
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
