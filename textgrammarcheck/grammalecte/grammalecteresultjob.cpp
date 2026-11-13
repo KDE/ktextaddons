@@ -27,6 +27,7 @@ void GrammalecteResultJob::start()
         auto file = new QTemporaryFile(this);
         if (!file->open()) {
             qCWarning(TEXTGRAMMARCHECK_LOG) << "Impossible to create temporary file";
+            Q_EMIT error(ErrorType::Unknown);
             deleteLater();
             return;
         }
