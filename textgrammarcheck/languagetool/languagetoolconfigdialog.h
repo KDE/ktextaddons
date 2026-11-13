@@ -27,6 +27,7 @@ public:
     ~LanguageToolConfigDialog() override;
 
 private:
+    TEXTGRAMMARCHECK_NO_EXPORT void slotAccepted();
     LanguageToolConfigWidget *const mConfigWidget;
 };
 }

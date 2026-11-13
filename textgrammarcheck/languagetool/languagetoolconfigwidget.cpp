@@ -86,10 +86,7 @@ LanguageToolConfigWidget::LanguageToolConfigWidget(QWidget *parent)
     connect(this, &LanguageToolConfigWidget::resetValue, this, &LanguageToolConfigWidget::slotResetValue);
 }
 
-LanguageToolConfigWidget::~LanguageToolConfigWidget()
-{
-    saveSettings();
-}
+LanguageToolConfigWidget::~LanguageToolConfigWidget() = default;
 
 void LanguageToolConfigWidget::slotResetValue()
 {
