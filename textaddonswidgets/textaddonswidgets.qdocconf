@@ -9,6 +9,17 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    autotests \
+    misc/autotests \
+    needupdateversion/autotests \
+    needupdateversion/tests \
+    quicksearchbar/autotests \
+    tests \
+    whatsnew/autotests \
+    whatsnewng/autotests \
+    whatsnewng/tests
+
 outputformats = HTML
 
 depends += \

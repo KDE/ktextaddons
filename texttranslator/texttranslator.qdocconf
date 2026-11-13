@@ -9,6 +9,20 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    translator/autotests \
+    translator/plugins/bergamot/autotests \
+    translator/plugins/bergamot/tests \
+    translator/plugins/bing/autotests \
+    translator/plugins/deepl/autotests \
+    translator/plugins/google/autotests \
+    translator/plugins/libretranslate/autotests \
+    translator/plugins/lingva/autotests \
+    translator/plugins/llm/autotests \
+    translator/plugins/yandex/autotests \
+    translator/tests \
+    translator/widgets/autotests
+
 outputformats = HTML
 
 depends += \

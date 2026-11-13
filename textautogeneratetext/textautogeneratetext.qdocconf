@@ -9,6 +9,26 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    core/autotests \
+    plugins/genericnetworkplugin/autotests \
+    plugins/llamacpp/autotests \
+    plugins/lmstudio/autotests \
+    plugins/ollama/autotests \
+    plugins/ollama/tests \
+    plugins/ollamacloud/autotests \
+    plugins/ollamacommon/autotests \
+    plugins/ollamaonline/autotests \
+    plugins/plugincommon/autotests \
+    tests \
+    widgets/autotests \
+    widgets/availablemodel/autotests \
+    widgets/mcp/autotests \
+    widgets/menu/autotests \
+    widgets/projects/autotests \
+    widgets/promptswidget/autotests \
+    widgets/tags/autotests
+
 outputformats = HTML
 
 depends += \

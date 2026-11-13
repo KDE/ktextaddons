@@ -9,6 +9,12 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    autotests \
+    kokoro/autotests \
+    kokoroinstall/autotests \
+    tests
+
 outputformats = HTML
 
 depends += \
