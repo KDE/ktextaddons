@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 15:37+0000\n"
-"PO-Revision-Date: 2026-10-31 21:01+0400\n"
+"PO-Revision-Date: 2026-11-12 09:00+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -305,26 +305,22 @@ msgid "Remove"
 msgstr "أزِل"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@title:column"
 msgid "Name"
-msgstr "الاسم:"
+msgstr "الاسم"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Name: Value"
+#, kde-format
 msgctxt "@title:column"
 msgid "Value"
-msgstr "الاسم: القيمة"
+msgstr "القيمة"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "An empty value keeps the variable from the user environment."
-msgstr ""
+msgstr "تبقي القيمة الفارغة المتغير من بيئة المستخدم."
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:38
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:33
@@ -346,11 +342,10 @@ msgid "Arguments:"
 msgstr "المعاملات:"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Environment variables:"
+#, kde-format
 msgctxt "@label"
 msgid "Environment:"
-msgstr "المتغيرات البيئية:"
+msgstr "البيئة:"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfiguredialog.cpp:25
 #, kde-format
@@ -518,15 +513,13 @@ msgstr "من سجل MCP…"
 #: widgets/client/mcpserverwidget.cpp:172
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
-msgstr ""
+msgstr "لا يوفر هذا الخادم نقلًا مدعومًا (عن بعد أو حزمة)."
 
 #: widgets/client/mcpserverwidget.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add MCP Server"
-msgstr "أضف خادمًا"
+msgstr "أضف خادم MCP"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

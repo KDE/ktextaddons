@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
+"POT-Creation-Date: 2026-11-12 12:39+0000\n"
 "PO-Revision-Date: 2024-12-15 17:36+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -290,12 +290,12 @@ msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "कॉन्फ़िगर करें…"
 
-#: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
+#: texttospeechwidget.cpp:155 texttospeechwidget.cpp:170
 #, kde-format
 msgid "Engine has a problem."
 msgstr "इंजन में समस्या है."
 
-#: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
+#: texttospeechwidget.cpp:155 texttospeechwidget.cpp:170
 #, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"

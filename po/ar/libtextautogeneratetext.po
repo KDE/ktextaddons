@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-11 13:41+0000\n"
-"PO-Revision-Date: 2026-11-05 08:53+0400\n"
+"POT-Creation-Date: 2026-11-12 19:13+0000\n"
+"PO-Revision-Date: 2026-11-12 09:00+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -192,68 +192,68 @@ msgstr "<b>المحرك:</b> %1<br><b>النموذج:</b> %2<br><b>اسم الن
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>أدوات:</b> %1"
 
-#: core/textautogeneratemanager.cpp:172
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Tools"
 msgstr "أدوات"
 
-#: core/textautogeneratemanager.cpp:174
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Small"
 msgstr "صغير"
 
-#: core/textautogeneratemanager.cpp:176
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Medium"
 msgstr "متوسط"
 
-#: core/textautogeneratemanager.cpp:178
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Big"
 msgstr "كبير"
 
-#: core/textautogeneratemanager.cpp:180
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Huge"
 msgstr "ضخمة"
 
-#: core/textautogeneratemanager.cpp:182
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Multilingual"
 msgstr "متعدد اللغات"
 
-#: core/textautogeneratemanager.cpp:184
+#: core/textautogeneratemanager.cpp:183
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "شفرة"
 
-#: core/textautogeneratemanager.cpp:186
+#: core/textautogeneratemanager.cpp:185
 #, kde-format
 msgid "Math"
 msgstr "رياضيات"
 
-#: core/textautogeneratemanager.cpp:188
+#: core/textautogeneratemanager.cpp:187
 #, kde-format
 msgid "Vision"
 msgstr "رؤية"
 
-#: core/textautogeneratemanager.cpp:190
+#: core/textautogeneratemanager.cpp:189
 #, kde-format
 msgid "Embedding"
 msgstr "تضمين"
 
-#: core/textautogeneratemanager.cpp:192
+#: core/textautogeneratemanager.cpp:191
 #, kde-format
 msgid "Reasoning"
 msgstr "تفكير"
 
-#: core/textautogeneratemanager.cpp:194
+#: core/textautogeneratemanager.cpp:193
 #, kde-format
 msgid "Cloud"
 msgstr "سحابة"
 
-#: core/textautogeneratemanager.cpp:196
+#: core/textautogeneratemanager.cpp:195
 #, kde-format
 msgid "Thinking"
 msgstr "تفكير"
@@ -394,11 +394,10 @@ msgid "Failed to connect to interface at %1: %2"
 msgstr "فشل الاتصال بالواجهة في %1: %2"
 
 #: plugins/genericnetworkplugin/genericnetworknetworkpluginconfigurewidget.cpp:37
-#, fuzzy, kde-format
-#| msgid "Modelfile"
+#, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Model default"
-msgstr "ملف النمط"
+msgstr "مبدئي النموذج"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:27
 #, kde-format
@@ -582,29 +581,28 @@ msgstr "نماذج DeepSeek اللغوية الكبيرة"
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Disabled"
-msgstr ""
+msgstr "معطّل"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:642
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Enabled"
-msgstr ""
+msgstr "ممكّن"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:644
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Minimal"
-msgstr ""
+msgstr "أدنى"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:646
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Low"
-msgstr ""
+msgstr "منخفض"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:648
-#, fuzzy, kde-format
-#| msgid "Medium"
+#, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Medium"
 msgstr "متوسط"
@@ -613,13 +611,13 @@ msgstr "متوسط"
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "High"
-msgstr ""
+msgstr "مرتفع"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:652
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Extra High"
-msgstr ""
+msgstr "مرتفع جدًا"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:91
@@ -765,19 +763,19 @@ msgctxt "@action:button"
 msgid "Create"
 msgstr "أنشئ"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
 msgstr "حمّل ملف GGUF…"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:45
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GGUF File"
 msgstr "حدّد ملف GGUF"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:50
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Model"
@@ -3260,7 +3258,7 @@ msgstr "علّمه مبدئي"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:33
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:33
 #, kde-format
 msgctxt "@action"
@@ -3543,14 +3541,14 @@ msgid "Ask to AI"
 msgstr "اسأل الذكاء الاصطناعي"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:149
+#: widgets/view/textautogeneratehistorylistview.cpp:148
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "عدّل…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:201
+#: widgets/view/textautogeneratehistorylistview.cpp:200
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3585,6 +3583,8 @@ msgid ""
 "How much the model reasons before answering. A higher level gives better "
 "answers to complex questions, but is slower and uses more tokens."
 msgstr ""
+"مقدار استدلال النموذج قبل الإجابة. يعطي المستوى الأعلى إجابات أفضل للأسئلة "
+"المعقدة، لكنه أبطأ ويستهلك رموزًا أكثر."
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:57
 #, kde-format
@@ -3608,10 +3608,9 @@ msgid "Max Tokens:"
 msgstr "الرموز المميزة القصوى:"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Thinking"
+#, kde-format
 msgid "Thinking:"
-msgstr "تفكير"
+msgstr "التفكير:"
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
 #, kde-format
@@ -3768,24 +3767,24 @@ msgctxt "@title"
 msgid "Remove Agent"
 msgstr "أزِل الوكيل"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
 msgstr "أضف طلب…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:43
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:44
 #, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
 msgstr "أزل الطلب"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:46
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:47
 #, kde-format
 msgid "Do you want to remove this prompt (%1)?"
 msgstr "هل تريد إزالة هذا المطالبة (%1)؟"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:47
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, kde-format
 msgctxt "@title"
 msgid "Remove Prompt"
@@ -4175,48 +4174,48 @@ msgctxt "@action"
 msgid "New Chat"
 msgstr "محادثة جديدة"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:158
+#: widgets/view/textautogeneratehistorylistview.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "كرّر…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:170
+#: widgets/view/textautogeneratehistorylistview.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "أزِل من المفضّلة"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:170
+#: widgets/view/textautogeneratehistorylistview.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "فضّله"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:190
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "استعد"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:190
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "أرشف"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:205
+#: widgets/view/textautogeneratehistorylistview.cpp:204
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "أتريد إزالة هذه المناقشة؟"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:206
+#: widgets/view/textautogeneratehistorylistview.cpp:205
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "أزل المناقة"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:294
+#: widgets/view/textautogeneratehistorylistview.cpp:292
 #, kde-format
 msgid "No Archive Found."
 msgstr "لم يعثر على أرشيف."

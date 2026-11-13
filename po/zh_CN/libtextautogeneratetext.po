@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-11 13:41+0000\n"
+"POT-Creation-Date: 2026-11-12 19:13+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -197,68 +197,68 @@ msgstr "<b>引擎：</b> %1<br><b>模型：</b> %2<br><b>实例名称：</b> %3"
 msgid "<br><b>Tools:</b> %1"
 msgstr "<br><b>工具：</b> %1"
 
-#: core/textautogeneratemanager.cpp:172
+#: core/textautogeneratemanager.cpp:171
 #, kde-format
 msgid "Tools"
 msgstr "工具"
 
-#: core/textautogeneratemanager.cpp:174
+#: core/textautogeneratemanager.cpp:173
 #, kde-format
 msgid "Small"
 msgstr "小"
 
-#: core/textautogeneratemanager.cpp:176
+#: core/textautogeneratemanager.cpp:175
 #, kde-format
 msgid "Medium"
 msgstr "中"
 
-#: core/textautogeneratemanager.cpp:178
+#: core/textautogeneratemanager.cpp:177
 #, kde-format
 msgid "Big"
 msgstr "大"
 
-#: core/textautogeneratemanager.cpp:180
+#: core/textautogeneratemanager.cpp:179
 #, kde-format
 msgid "Huge"
 msgstr "超大"
 
-#: core/textautogeneratemanager.cpp:182
+#: core/textautogeneratemanager.cpp:181
 #, kde-format
 msgid "Multilingual"
 msgstr "多语言"
 
-#: core/textautogeneratemanager.cpp:184
+#: core/textautogeneratemanager.cpp:183
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:20
 #, kde-format
 msgid "Code"
 msgstr "代码"
 
-#: core/textautogeneratemanager.cpp:186
+#: core/textautogeneratemanager.cpp:185
 #, kde-format
 msgid "Math"
 msgstr "数学"
 
-#: core/textautogeneratemanager.cpp:188
+#: core/textautogeneratemanager.cpp:187
 #, kde-format
 msgid "Vision"
 msgstr "视觉"
 
-#: core/textautogeneratemanager.cpp:190
+#: core/textautogeneratemanager.cpp:189
 #, kde-format
 msgid "Embedding"
 msgstr "嵌入"
 
-#: core/textautogeneratemanager.cpp:192
+#: core/textautogeneratemanager.cpp:191
 #, kde-format
 msgid "Reasoning"
 msgstr "推理"
 
-#: core/textautogeneratemanager.cpp:194
+#: core/textautogeneratemanager.cpp:193
 #, kde-format
 msgid "Cloud"
 msgstr "云"
 
-#: core/textautogeneratemanager.cpp:196
+#: core/textautogeneratemanager.cpp:195
 #, kde-format
 msgid "Thinking"
 msgstr "思考"
@@ -771,19 +771,19 @@ msgctxt "@action:button"
 msgid "Create"
 msgstr "创建"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:41
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:40
 #, kde-format
 msgctxt "@action:button"
 msgid "Load GGUF File…"
 msgstr "加载 GGUF 文件…"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:45
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GGUF File"
 msgstr "选择 GGUF 文件"
 
-#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:50
+#: plugins/ollama/modelsmanager/ollamamodelcreatewidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Model"
@@ -3189,7 +3189,7 @@ msgstr "标记为默认"
 
 #: widgets/instancesmanager/textautogeneratetextinstancesmanagerlistview.cpp:78
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:33
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:34
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:35
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:33
 #, kde-format
 msgctxt "@action"
@@ -3478,14 +3478,14 @@ msgid "Ask to AI"
 msgstr "Ask 到 AI"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:50
-#: widgets/view/textautogeneratehistorylistview.cpp:149
+#: widgets/view/textautogeneratehistorylistview.cpp:148
 #, kde-format
 msgctxt "@action"
 msgid "Modify…"
 msgstr "修改…"
 
 #: widgets/menu/textautogeneratemenulistview.cpp:57
-#: widgets/view/textautogeneratehistorylistview.cpp:201
+#: widgets/view/textautogeneratehistorylistview.cpp:200
 #, kde-format
 msgctxt "@action"
 msgid "Remove…"
@@ -3726,25 +3726,25 @@ msgctxt "@title"
 msgid "Remove Agent"
 msgstr "移除"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:28
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
 msgstr "添加提示词…"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:43
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:44
 #, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
 msgstr "移除提示词"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:46
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:47
 #, fuzzy, kde-format
 #| msgid "Do you want to remove this model (%1)?"
 msgid "Do you want to remove this prompt (%1)?"
 msgstr "您想要移除此模型 (%1) 吗？"
 
-#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:47
+#: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Remove Prompt"
@@ -4156,48 +4156,48 @@ msgctxt "@action"
 msgid "New Chat"
 msgstr "新聊天"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:158
+#: widgets/view/textautogeneratehistorylistview.cpp:157
 #, kde-format
 msgctxt "@action"
 msgid "Duplicate…"
 msgstr "创建副本…"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:170
+#: widgets/view/textautogeneratehistorylistview.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Remove as Favorite"
 msgstr "取消设为常用"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:170
+#: widgets/view/textautogeneratehistorylistview.cpp:169
 #, kde-format
 msgctxt "@action"
 msgid "Set as Favorite"
 msgstr "设为常用"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:190
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Restore"
 msgstr "恢复"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:190
+#: widgets/view/textautogeneratehistorylistview.cpp:189
 #, kde-format
 msgctxt "@action"
 msgid "Archive"
 msgstr "存档"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:205
+#: widgets/view/textautogeneratehistorylistview.cpp:204
 #, kde-format
 msgid "Do you want to remove this discussion?"
 msgstr "您想要移除此讨论吗？"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:206
+#: widgets/view/textautogeneratehistorylistview.cpp:205
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Discussion"
 msgstr "移除讨论"
 
-#: widgets/view/textautogeneratehistorylistview.cpp:294
+#: widgets/view/textautogeneratehistorylistview.cpp:292
 #, kde-format
 msgid "No Archive Found."
 msgstr "没有找到归档。"

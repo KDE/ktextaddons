@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
+"POT-Creation-Date: 2026-11-12 12:39+0000\n"
 "PO-Revision-Date: 2026-09-28 21:52+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -301,12 +301,12 @@ msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Konfiguratu…"
 
-#: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
+#: texttospeechwidget.cpp:155 texttospeechwidget.cpp:170
 #, kde-format
 msgid "Engine has a problem."
 msgstr "Motorrak arazo bat du."
 
-#: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
+#: texttospeechwidget.cpp:155 texttospeechwidget.cpp:170
 #, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"
