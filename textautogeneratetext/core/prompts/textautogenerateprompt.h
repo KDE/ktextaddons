@@ -130,6 +130,11 @@ public:
      */
     [[nodiscard]] bool operator==(const TextAutoGeneratePrompt &other) const;
 
+    /*!
+     * \brief createUniqueIdentifier
+     */
+    void createUniqueIdentifier();
+
 private:
     Category mCategory = Category::Unknown;
     QString mName;

@@ -42,6 +42,9 @@ void TextAutoGenerateAgentWidget::setAgent(const TextAutoGenerateText::TextAutoG
 TextAutoGenerateText::TextAutoGenerateAgent TextAutoGenerateAgentWidget::agent() const
 {
     TextAutoGenerateText::TextAutoGenerateAgent agent = mCurrentAgent;
+    if (!agent.isValid()) {
+        agent.createUniqueIdentifier();
+    }
     agent.setDescription(mDescription->toPlainText());
     agent.setName(mName->text());
     return agent;

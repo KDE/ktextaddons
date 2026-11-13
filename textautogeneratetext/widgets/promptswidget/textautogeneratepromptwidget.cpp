@@ -58,6 +58,9 @@ void TextAutoGeneratePromptWidget::setPrompt(const TextAutoGenerateText::TextAut
 TextAutoGenerateText::TextAutoGeneratePrompt TextAutoGeneratePromptWidget::prompt() const
 {
     TextAutoGenerateText::TextAutoGeneratePrompt prompt = mCurrentPrompt;
+    if (!prompt.isValid()) {
+        prompt.createUniqueIdentifier();
+    }
     prompt.setDescription(mDescription->toPlainText());
     prompt.setText(mPrompt->toPlainText());
     prompt.setName(mName->text());
