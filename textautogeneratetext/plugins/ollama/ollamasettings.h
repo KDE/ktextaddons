@@ -11,7 +11,6 @@
 #include <QUrl>
 class QDebug;
 class QProcessEnvironment;
-using namespace Qt::Literals::StringLiterals;
 class TEXTAUTOGENERATEOLLAMA_EXPORT OllamaSettings : public OllamaCommonSettings
 {
 public:
@@ -55,8 +54,7 @@ private:
     QString mRocrVisibleDevice;
     QString mCudaVisibleDevice;
     QString mHipVisibleDevice;
-    QString mDisplayName;
-    QUrl mServerUrl = QUrl(u"http://127.0.0.1:11434"_s);
+    QUrl mServerUrl = QUrl(QStringLiteral(u"http://127.0.0.1:11434"));
     QString mDefaultModelPath;
     bool mExpose = false;
 };

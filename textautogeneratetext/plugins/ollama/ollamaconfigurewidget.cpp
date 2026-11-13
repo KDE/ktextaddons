@@ -300,11 +300,6 @@ void OllamaConfigureWidget::fillModels()
     mManager->loadModels();
 }
 
-void OllamaConfigureWidget::showOllamaVersion()
-{
-    mManager->getVersion();
-}
-
 void OllamaConfigureWidget::slotShowOllamaLog()
 {
     OllamaLogDialog dlg(this);

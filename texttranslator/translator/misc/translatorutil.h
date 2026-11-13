@@ -25,12 +25,6 @@ class TEXTTRANSLATOR_EXPORT TranslatorUtil
 public:
     TranslatorUtil();
 
-    struct TranslatorSettings {
-        QString engine;
-        QString from;
-        QString to;
-    };
-
     enum Language : int {
         automatic = 0,
         en,
