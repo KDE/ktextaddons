@@ -63,4 +63,4 @@ Q_SIGNALS:
     void configureChanged();
 };
 }
-Q_DECLARE_INTERFACE(TextSpeechToText::SpeechToTextClient, "org.kde.texttospeech.Client")
+Q_DECLARE_INTERFACE(TextSpeechToText::SpeechToTextClient, "org.kde.speechtotext.Client")
