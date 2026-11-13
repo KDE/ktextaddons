@@ -35,7 +35,6 @@ protected:
     void addExtraWidget() override;
 
 private:
-    Q_DISABLE_COPY(LanguageToolResultWidget)
     TEXTGRAMMARCHECK_NO_EXPORT void slotCheckGrammarFinished(const QString &result);
     TEXTGRAMMARCHECK_NO_EXPORT void slotError(const QString &str);
     LanguageToolComboBox *mLanguageToolComboBox = nullptr;

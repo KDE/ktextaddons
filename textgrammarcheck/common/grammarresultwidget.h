@@ -50,8 +50,5 @@ protected:
     virtual void addExtraWidget();
     GrammarResultTextEdit *const mResult;
     QHBoxLayout *mExtraWidgetLayout = nullptr;
-
-private:
-    Q_DISABLE_COPY(GrammarResultWidget)
 };
 }

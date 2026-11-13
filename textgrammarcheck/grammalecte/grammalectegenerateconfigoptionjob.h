@@ -58,7 +58,6 @@ Q_SIGNALS:
     void finished(const QList<TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option> &result);
 
 private:
-    Q_DISABLE_COPY(GrammalecteGenerateConfigOptionJob)
     TEXTGRAMMARCHECK_NO_EXPORT void receivedStandardOutput();
     TEXTGRAMMARCHECK_NO_EXPORT void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
     TEXTGRAMMARCHECK_NO_EXPORT void receivedError();

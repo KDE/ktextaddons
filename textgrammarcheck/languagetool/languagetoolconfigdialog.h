@@ -27,7 +27,6 @@ public:
     ~LanguageToolConfigDialog() override;
 
 private:
-    Q_DISABLE_COPY(LanguageToolConfigDialog)
     LanguageToolConfigWidget *const mConfigWidget;
 };
 }
