@@ -66,7 +66,7 @@ void GenericNetworkManager::loadModels()
 
         GenericNetworkModelAvailableInfos infos;
         const auto json = QJsonDocument::fromJson(rep->readAll());
-        qDebug() << "********************json  " << json;
+        // qDebug() << "********************json  " << json;
         const auto models = json["data"_L1].toArray();
         infos.parseModelsInfo(models);
         if (infos.infos().isEmpty()) {
