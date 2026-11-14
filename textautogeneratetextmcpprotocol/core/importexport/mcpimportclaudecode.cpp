@@ -11,3 +11,19 @@ using namespace TextAutoGenerateTextMcpProtocolCore;
 McpImportClaudeCode::McpImportClaudeCode() = default;
 
 McpImportClaudeCode::~McpImportClaudeCode() = default;
+
+QString McpImportClaudeCode::path() const
+{
+    return mPath;
+}
+
+void McpImportClaudeCode::setPath(const QString &newPath)
+{
+    mPath = newPath;
+}
+
+bool McpImportClaudeCode::importServer() const
+{
+    // TODO
+    return false;
+}

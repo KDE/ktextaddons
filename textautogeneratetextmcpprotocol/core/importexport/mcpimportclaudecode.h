@@ -13,5 +13,13 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpImportClaudeCode
 public:
     McpImportClaudeCode();
     ~McpImportClaudeCode();
+
+    [[nodiscard]] QString path() const;
+    void setPath(const QString &newPath);
+
+    [[nodiscard]] bool importServer() const;
+
+private:
+    QString mPath;
 };
 }
