@@ -216,6 +216,54 @@ void McpClientStreamableHttpTest::shouldCreateErrorResponseWhenPostFailed()
     QCOMPARE(response.value("error"_L1).toObject().value("code"_L1).toInt(), -32000);
 }
 
+void McpClientStreamableHttpTest::shouldReportAuthorizationError_data()
+{
+    QTest::addColumn<int>("status");
+    QTest::addColumn<QByteArray>("wwwAuthenticate");
+    QTest::addColumn<QByteArray>("authToken");
+    QTest::addColumn<QString>("expectedMessage");
+    QTest::newRow("401-no-token") << 401 << "Bearer"_ba << QByteArray() << u"Authentication required: set an access token in the server settings."_s;
+    QTest::newRow("401-oauth")
+        << 401 << "Bearer resource_metadata=\"http://127.0.0.1/.well-known/oauth-protected-resource\""_ba << QByteArray()
+        << u"Authentication required. The server uses OAuth authorization, which is not supported: set an access token in the server settings."_s;
+    QTest::newRow("401-token") << 401 << "Bearer error=\"invalid_token\", error_description=\"Token expired\""_ba << "secret"_ba
+                               << u"Authentication failed: the server rejected the access token. Server message: Token expired"_s;
+    QTest::newRow("403-scope") << 403 << "Bearer error=\"insufficient_scope\", scope=\"tools:call\""_ba << "secret"_ba
+                               << u"Access denied: the access token does not grant the required permissions (tools:call)."_s;
+    QTest::newRow("403") << 403 << QByteArray() << "secret"_ba << u"Access denied by the server."_s;
+}
+
+void McpClientStreamableHttpTest::shouldReportAuthorizationError()
+{
+    QFETCH(int, status);
+    QFETCH(QByteArray, wwwAuthenticate);
+    QFETCH(QByteArray, authToken);
+    QFETCH(QString, expectedMessage);
+    FakeMcpHttpServer server;
+    server.setHandler([status, wwwAuthenticate](const FakeMcpHttpServer::Request &request, QTcpSocket *socket) {
+        QList<std::pair<QByteArray, QByteArray>> headers;
+        if (!wwwAuthenticate.isEmpty()) {
+            headers.append({"WWW-Authenticate"_ba, wwwAuthenticate});
+        }
+        FakeMcpHttpServer::sendResponse(socket, request.method == "DELETE" ? 200 : status, {}, {}, headers);
+    });
+    McpClientStreamableHttpPluginInterface client;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(server.url(u"/mcp"_s));
+    settings.setAuthToken(authToken);
+    client.setSettings(settings);
+    QSignalSpy errorSpy(&client, &McpClientStreamableHttpPluginInterface::error);
+    QSignalSpy receivedSpy(&client, &McpClientStreamableHttpPluginInterface::received);
+    client.start();
+    client.send(jsonRequest(u"initialize"_s, 1));
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    const QJsonObject response = receivedSpy.at(0).at(0).toJsonObject();
+    QCOMPARE(response.value("id"_L1).toInt(), 1);
+    QCOMPARE(response.value("error"_L1).toObject().value("message"_L1).toString(), expectedMessage);
+    QCOMPARE(errorSpy.count(), 1);
+    QCOMPARE(errorSpy.at(0).at(0).toString(), expectedMessage);
+}
+
 void McpClientStreamableHttpTest::shouldFinishWhenSessionExpired()
 {
     FakeMcpHttpServer server;

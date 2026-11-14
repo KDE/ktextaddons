@@ -124,4 +124,49 @@ void McpClientSseTest::shouldCreateErrorResponseWhenPostFailed()
     QCOMPARE(response.value("error"_L1).toObject().value("code"_L1).toInt(), -32000);
 }
 
+void McpClientSseTest::shouldReportAuthorizationErrorWhenConnecting()
+{
+    FakeMcpHttpServer server;
+    server.setHandler([](const FakeMcpHttpServer::Request &, QTcpSocket *socket) {
+        FakeMcpHttpServer::sendResponse(socket, 401, {}, {}, {{"WWW-Authenticate"_ba, "Bearer"_ba}});
+    });
+    McpClientSsePluginInterface client;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(server.url(u"/sse"_s));
+    client.setSettings(settings);
+    QSignalSpy errorSpy(&client, &McpClientSsePluginInterface::error);
+    QSignalSpy finishedSpy(&client, &McpClientSsePluginInterface::finished);
+    client.start();
+    QTRY_COMPARE(finishedSpy.count(), 1);
+    QCOMPARE(errorSpy.count(), 1);
+    QCOMPARE(errorSpy.at(0).at(0).toString(), u"Authentication required: set an access token in the server settings."_s);
+}
+
+void McpClientSseTest::shouldReportAuthorizationErrorWhenPosting()
+{
+    FakeMcpHttpServer server;
+    server.setHandler([](const FakeMcpHttpServer::Request &request, QTcpSocket *socket) {
+        if (request.method == "GET") {
+            FakeMcpHttpServer::sendEventStream(socket, "event: endpoint\ndata: /messages\n\n", false);
+            return;
+        }
+        FakeMcpHttpServer::sendResponse(socket, 403, {}, {}, {{"WWW-Authenticate"_ba, "Bearer error=\"insufficient_scope\""_ba}});
+    });
+    McpClientSsePluginInterface client;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(server.url(u"/sse"_s));
+    settings.setAuthToken("secret"_ba);
+    client.setSettings(settings);
+    QSignalSpy startedSpy(&client, &McpClientSsePluginInterface::started);
+    QSignalSpy receivedSpy(&client, &McpClientSsePluginInterface::received);
+    client.start();
+    QTRY_COMPARE(startedSpy.count(), 1);
+    client.send(jsonRequest(u"ping"_s, 7));
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    const QJsonObject response = receivedSpy.at(0).at(0).toJsonObject();
+    QCOMPARE(response.value("id"_L1).toInt(), 7);
+    QCOMPARE(response.value("error"_L1).toObject().value("message"_L1).toString(),
+             u"Access denied: the access token does not grant the required permissions."_s);
+}
+
 #include "moc_mcpclientssetest.cpp"

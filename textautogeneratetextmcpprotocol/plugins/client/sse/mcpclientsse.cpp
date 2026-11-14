@@ -66,7 +66,8 @@ void McpClientSse::connection()
         }
     });
     connect(reply, &QNetworkReply::errorOccurred, this, [this, reply]() {
-        Q_EMIT error(reply->errorString());
+        const QString message = McpClientUtils::authorizationErrorMessage(reply);
+        Q_EMIT error(message.isEmpty() ? reply->errorString() : message);
     });
 
     connect(reply, &QNetworkReply::readyRead, this, [this, reply]() {
@@ -102,10 +103,12 @@ void McpClientSse::send(const QJsonObject &obj)
     connect(reply, &QNetworkReply::finished, this, [this, reply, requestId]() {
         if (reply->error() != QNetworkReply::NoError) {
             qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Post failed:" << reply->errorString();
-            Q_EMIT error(reply->errorString());
+            const QString authorizationMessage = McpClientUtils::authorizationErrorMessage(reply);
+            const QString message = authorizationMessage.isEmpty() ? reply->errorString() : authorizationMessage;
+            Q_EMIT error(message);
             if (!requestId.isUndefined()) {
                 // Server didn't get request, it will never answer
-                Q_EMIT received(McpClientUtils::createConnectionErrorResponse(requestId, reply->errorString()));
+                Q_EMIT received(McpClientUtils::createConnectionErrorResponse(requestId, message));
             }
         }
         reply->deleteLater();

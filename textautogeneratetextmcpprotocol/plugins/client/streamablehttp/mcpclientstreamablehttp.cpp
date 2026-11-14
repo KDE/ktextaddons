@@ -135,6 +135,11 @@ void McpClientStreamableHttp::postFinished(QNetworkReply *reply, const RequestSt
             sessionExpired();
             return;
         }
+        if (const QString message = McpClientUtils::authorizationErrorMessage(reply); !message.isEmpty()) {
+            qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Post not authorized:" << statusCode << reply->rawHeader("WWW-Authenticate"_ba);
+            requestFailed(stream.get(), message);
+            return;
+        }
         if (statusCode == 200 && isEventStream(reply)) {
             // SSE stream was cut, try to resume it
             qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Stream interrupted:" << reply->errorString();
@@ -217,6 +222,12 @@ void McpClientStreamableHttp::resumeRequestStream(const RequestStreamPtr &stream
         const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
         if (statusCode == 404 && !mSessionId.isEmpty()) {
             sessionExpired();
+            return;
+        }
+        if (const QString message = McpClientUtils::authorizationErrorMessage(reply); !message.isEmpty()) {
+            qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG)
+                << "Resume stream not authorized:" << statusCode << reply->rawHeader("WWW-Authenticate"_ba);
+            requestFailed(stream.get(), message);
             return;
         }
         if (statusCode == 405) {
@@ -363,6 +374,11 @@ void McpClientStreamableHttp::eventStreamFinished(QNetworkReply *reply)
     }
     if (statusCode == 404 && !mSessionId.isEmpty()) {
         sessionExpired();
+        return;
+    }
+    if (statusCode == 401 || statusCode == 403) {
+        // Don't retry: it will fail again. Error is reported by POST requests.
+        qCWarning(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Event stream not authorized:" << statusCode << reply->rawHeader("WWW-Authenticate"_ba);
         return;
     }
     qCDebug(AUTOGENERATETEXT_MCPPROTOCOLCLIENT_PLUGIN_LIB_LOG) << "Event stream closed:" << statusCode << reply->errorString();

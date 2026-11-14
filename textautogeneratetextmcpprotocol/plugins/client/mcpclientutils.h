@@ -9,9 +9,31 @@
 #include <QJsonObject>
 #include <QJsonValue>
 #include <QStringList>
+#include <QUrl>
+class QNetworkReply;
 class QNetworkRequest;
 namespace McpClientUtils
 {
+/*!
+ * Parameters of the "Bearer" challenge of a WWW-Authenticate header (RFC 6750, RFC 9728)
+ */
+struct BearerChallenge {
+    QByteArray error;
+    QString errorDescription;
+    QString scope;
+    // Protected resource metadata, used by OAuth discovery
+    QUrl resourceMetadata;
+    bool isValid = false;
+};
+
+/*!
+ * Parse the "Bearer" challenge of WWW-Authenticate header \a header
+ */
+[[nodiscard]] MCPPROTOCOLCLIENTPLUGIN_EXPORT BearerChallenge parseBearerChallenge(const QByteArray &header);
+/*!
+ * Return a user readable message when \a reply was rejected because of authorization (401/403), an empty string otherwise.
+ */
+[[nodiscard]] MCPPROTOCOLCLIENTPLUGIN_EXPORT QString authorizationErrorMessage(const QNetworkReply *reply);
 /*!
  * Add user headers ("Name: Value") to \a request
  */

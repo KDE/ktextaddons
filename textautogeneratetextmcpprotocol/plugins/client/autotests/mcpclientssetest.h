@@ -18,4 +18,6 @@ private Q_SLOTS:
     void shouldPostMessagesToEndpoint();
     void shouldSendAuthToken();
     void shouldCreateErrorResponseWhenPostFailed();
+    void shouldReportAuthorizationErrorWhenConnecting();
+    void shouldReportAuthorizationErrorWhenPosting();
 };
