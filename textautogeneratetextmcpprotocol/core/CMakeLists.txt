@@ -333,6 +333,8 @@ target_sources(
         models/mcpregistryservermodel.cpp
         importexport/mcpexportclaudecode.h
         importexport/mcpexportclaudecode.cpp
+        importexport/mcpimportclaudecode.h
+        importexport/mcpimportclaudecode.cpp
 )
 generate_export_header(KF6TextAutoGenerateTextMcpProtocolCore BASE_NAME textautogeneratetextmcpprotocolcore)
 
