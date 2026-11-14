@@ -5,6 +5,7 @@
 */
 #pragma once
 #include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QList>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 namespace TextAutoGenerateTextMcpProtocolCore
 {
@@ -17,9 +18,12 @@ public:
     [[nodiscard]] QString path() const;
     void setPath(const QString &newPath);
 
-    [[nodiscard]] bool importServer() const;
+    [[nodiscard]] bool importServer();
+
+    [[nodiscard]] QList<McpServer> mcpServers() const;
 
 private:
     QString mPath;
+    QList<McpServer> mMcpServers;
 };
 }

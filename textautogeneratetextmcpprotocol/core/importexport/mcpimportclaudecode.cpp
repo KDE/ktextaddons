@@ -5,6 +5,10 @@
 */
 
 #include "mcpimportclaudecode.h"
+#include "textautogeneratetextmcpprotocol_core_debug.h"
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -22,8 +26,18 @@ void McpImportClaudeCode::setPath(const QString &newPath)
     mPath = newPath;
 }
 
-bool McpImportClaudeCode::importServer() const
+bool McpImportClaudeCode::importServer()
 {
+    mMcpServers.clear();
+    if (mPath.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "mPath is empty";
+        return false;
+    }
     // TODO
     return false;
+}
+
+QList<McpServer> McpImportClaudeCode::mcpServers() const
+{
+    return mMcpServers;
 }
