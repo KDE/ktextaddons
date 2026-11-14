@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-10 06:31+0000\n"
+"POT-Creation-Date: 2026-11-13 12:22+0000\n"
 "PO-Revision-Date: 2024-12-20 21:52+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -132,8 +132,9 @@ msgid "Grammalecte path not found."
 msgstr "व्याकरणलेक्टे पथः न लब्धः।"
 
 #: grammalecte/grammalecteresultwidget.cpp:67
-#, kde-format
-msgid "Grammalecte program file not found."
+#, fuzzy, kde-format
+#| msgid "Grammalecte program file not found."
+msgid "Python program file not found."
 msgstr "Grammalecte कार्यक्रमसञ्चिका न प्राप्ता।"
 
 #: grammalecte/grammalecteresultwidget.cpp:71

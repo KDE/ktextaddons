@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail_editorgrammar_plugins\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-10 06:31+0000\n"
+"POT-Creation-Date: 2026-11-13 12:22+0000\n"
 "PO-Revision-Date: 2023-02-11 18:35+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -132,8 +132,9 @@ msgid "Grammalecte path not found."
 msgstr "Nenašla sa cesta ku Grammalecte."
 
 #: grammalecte/grammalecteresultwidget.cpp:67
-#, kde-format
-msgid "Grammalecte program file not found."
+#, fuzzy, kde-format
+#| msgid "Grammalecte program file not found."
+msgid "Python program file not found."
 msgstr "Súbor programu Grammalecte nebol nájdený."
 
 #: grammalecte/grammalecteresultwidget.cpp:71

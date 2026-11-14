@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
+"POT-Creation-Date: 2026-11-13 12:57+0000\n"
 "PO-Revision-Date: 2026-11-06 06:39+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -449,36 +449,45 @@ msgid "(secret)"
 msgstr "(სადუმლოა)"
 
 #: widgets/client/mcpserverlistview.cpp:57
+#: widgets/client/mcpserverwidget.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Add Server…"
 msgstr "სერვერის დამატება…"
 
-#: widgets/client/mcpserverlistview.cpp:63
+#: widgets/client/mcpserverlistview.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add Server…"
+msgctxt "@action"
+msgid "Import Server…"
+msgstr "სერვერის დამატება…"
+
+#: widgets/client/mcpserverlistview.cpp:68
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "ჩასწორება…"
 
-#: widgets/client/mcpserverlistview.cpp:70
+#: widgets/client/mcpserverlistview.cpp:75
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
 msgstr "ხელსაწყოების მორგება…"
 
-#: widgets/client/mcpserverlistview.cpp:81
+#: widgets/client/mcpserverlistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "სერვერის წაშლა"
 
-#: widgets/client/mcpserverlistview.cpp:88
+#: widgets/client/mcpserverlistview.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "მართლა გნებავთ, წაშალოთ ეს სერვერი (%1)?"
 
-#: widgets/client/mcpserverlistview.cpp:89
+#: widgets/client/mcpserverlistview.cpp:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Server"
@@ -496,25 +505,25 @@ msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "სერვერის დამატება…"
 
-#: widgets/client/mcpserverwidget.cpp:57
-#, kde-format
-msgctxt "@action"
-msgid "Server"
-msgstr "სერვერი"
-
-#: widgets/client/mcpserverwidget.cpp:59
+#: widgets/client/mcpserverwidget.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
 msgstr "MCP რეესტრიდან…"
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:64
+#, kde-format
+msgctxt "@action"
+msgid "Import…"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:180
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr ""
 "ეს სერვერი მხარდაჭერილ ტრანსპორტს (დაშორებულს, ან პაკეტს) არ მოგაწვდით."
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:180
 #, kde-format
 msgctxt "@title:window"
 msgid "Add MCP Server"
@@ -594,6 +603,10 @@ msgid ""
 msgstr ""
 "კლიენტებმა ეს ტოკენი \"Authorization: Bearer\" თავსართის სახით უნდა "
 "გააგზავნონ. ტოკენი სისტემურ საფულეში იქნება შენახული."
+
+#~ msgctxt "@action"
+#~ msgid "Server"
+#~ msgstr "სერვერი"
 
 #~ msgid "Impossible to start server. Command is empty."
 #~ msgstr "სერვერის გაშვება შეუძლებელია. ბრძანება ცარიელია."

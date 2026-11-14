@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
+"POT-Creation-Date: 2026-11-13 12:57+0000\n"
 "PO-Revision-Date: 2026-11-05 23:22+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -450,36 +450,45 @@ msgid "(secret)"
 msgstr "（祕密）"
 
 #: widgets/client/mcpserverlistview.cpp:57
+#: widgets/client/mcpserverwidget.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Add Server…"
 msgstr "新增伺服器…"
 
-#: widgets/client/mcpserverlistview.cpp:63
+#: widgets/client/mcpserverlistview.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add Server…"
+msgctxt "@action"
+msgid "Import Server…"
+msgstr "新增伺服器…"
+
+#: widgets/client/mcpserverlistview.cpp:68
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "編輯…"
 
-#: widgets/client/mcpserverlistview.cpp:70
+#: widgets/client/mcpserverlistview.cpp:75
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
 msgstr "設定工具…"
 
-#: widgets/client/mcpserverlistview.cpp:81
+#: widgets/client/mcpserverlistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "移除伺服器"
 
-#: widgets/client/mcpserverlistview.cpp:88
+#: widgets/client/mcpserverlistview.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "您確定要移除此伺服器 (%1) 嗎？"
 
-#: widgets/client/mcpserverlistview.cpp:89
+#: widgets/client/mcpserverlistview.cpp:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Server"
@@ -497,24 +506,24 @@ msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "新增伺服器…"
 
-#: widgets/client/mcpserverwidget.cpp:57
-#, kde-format
-msgctxt "@action"
-msgid "Server"
-msgstr "伺服器"
-
-#: widgets/client/mcpserverwidget.cpp:59
+#: widgets/client/mcpserverwidget.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
 msgstr "從 MCP Registry…"
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:64
+#, kde-format
+msgctxt "@action"
+msgid "Import…"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:180
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr "這個伺服器沒有提供支援的傳輸（遠端或套件）。"
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:180
 #, kde-format
 msgctxt "@title:window"
 msgid "Add MCP Server"
@@ -591,6 +600,10 @@ msgid ""
 msgstr ""
 "用戶端必須將此權杖作為 \"Authorization: Bearer\" 標頭送出。權杖儲存於系統錢包"
 "內。"
+
+#~ msgctxt "@action"
+#~ msgid "Server"
+#~ msgstr "伺服器"
 
 #, fuzzy
 #~| msgid "Url:"

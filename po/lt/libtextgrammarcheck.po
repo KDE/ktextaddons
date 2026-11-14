@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-10 06:31+0000\n"
+"POT-Creation-Date: 2026-11-13 12:22+0000\n"
 "PO-Revision-Date: 2026-08-19 14:04+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -133,8 +133,9 @@ msgid "Grammalecte path not found."
 msgstr "Nerastas Grammalecte kelias."
 
 #: grammalecte/grammalecteresultwidget.cpp:67
-#, kde-format
-msgid "Grammalecte program file not found."
+#, fuzzy, kde-format
+#| msgid "Grammalecte program file not found."
+msgid "Python program file not found."
 msgstr "Nerastas Grammalecte programos failas."
 
 #: grammalecte/grammalecteresultwidget.cpp:71

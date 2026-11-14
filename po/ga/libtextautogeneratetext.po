@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-12 19:13+0000\n"
+"POT-Creation-Date: 2026-11-13 12:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
@@ -346,7 +346,7 @@ msgstr ""
 msgid "Activate: %1"
 msgstr ""
 
-#: core/tools/textautogeneratetoolcalljob.cpp:48
+#: core/tools/textautogeneratetoolcalljob.cpp:49
 #, kde-format
 msgid "Tool \"%1\" not found."
 msgstr ""
@@ -670,7 +670,7 @@ msgstr ""
 #: plugins/lmstudio/lmstudioconfigurewidget.cpp:62
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:38
 #: plugins/ollama/ollamaconfigurewidget.cpp:78
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:68
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:70
 #: plugins/ollamacommon/ollamacommonmodelavailableinfowidget.cpp:28
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:68
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:61
@@ -932,7 +932,7 @@ msgid "Show Ollama Log"
 msgstr ""
 
 #: plugins/ollama/ollamaconfigurewidget.cpp:99
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:76
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:78
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:81
 #, kde-format
 msgid "Model:"
@@ -1011,7 +1011,7 @@ msgctxt "@title:window"
 msgid "Configure Ollama Cloud"
 msgstr ""
 
-#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:73
+#: plugins/ollamacloud/ollamacloudconfigurewidget.cpp:75
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:78
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:65
 #, kde-format

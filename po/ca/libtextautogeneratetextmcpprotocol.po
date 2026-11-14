@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
+"POT-Creation-Date: 2026-11-13 12:57+0000\n"
 "PO-Revision-Date: 2026-11-06 11:27+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -450,36 +450,45 @@ msgid "(secret)"
 msgstr "(secret)"
 
 #: widgets/client/mcpserverlistview.cpp:57
+#: widgets/client/mcpserverwidget.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Add Server…"
 msgstr "Afegeix un servidor…"
 
-#: widgets/client/mcpserverlistview.cpp:63
+#: widgets/client/mcpserverlistview.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add Server…"
+msgctxt "@action"
+msgid "Import Server…"
+msgstr "Afegeix un servidor…"
+
+#: widgets/client/mcpserverlistview.cpp:68
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Edita…"
 
-#: widgets/client/mcpserverlistview.cpp:70
+#: widgets/client/mcpserverlistview.cpp:75
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
 msgstr "Configura les eines…"
 
-#: widgets/client/mcpserverlistview.cpp:81
+#: widgets/client/mcpserverlistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "Elimina el servidor"
 
-#: widgets/client/mcpserverlistview.cpp:88
+#: widgets/client/mcpserverlistview.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "Voleu eliminar aquest servidor (%1)?"
 
-#: widgets/client/mcpserverlistview.cpp:89
+#: widgets/client/mcpserverlistview.cpp:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Server"
@@ -497,25 +506,25 @@ msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Afegeix un servidor…"
 
-#: widgets/client/mcpserverwidget.cpp:57
-#, kde-format
-msgctxt "@action"
-msgid "Server"
-msgstr "Servidor"
-
-#: widgets/client/mcpserverwidget.cpp:59
+#: widgets/client/mcpserverwidget.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
 msgstr "Des del registre del MCP…"
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:64
+#, kde-format
+msgctxt "@action"
+msgid "Import…"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:180
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr ""
 "Aquest servidor no proporciona un transport compatible (remot o paquet)."
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:180
 #, kde-format
 msgctxt "@title:window"
 msgid "Add MCP Server"
@@ -596,6 +605,10 @@ msgid ""
 msgstr ""
 "Cal que els clients enviïn aquest testimoni com a capçalera «Authorization: "
 "Bearer». S'emmagatzema a la cartera del sistema."
+
+#~ msgctxt "@action"
+#~ msgid "Server"
+#~ msgstr "Servidor"
 
 #~ msgid "Impossible to start server. Command is empty."
 #~ msgstr "Impossible iniciar el servidor. L'ordre està buida."

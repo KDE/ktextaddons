@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
+"POT-Creation-Date: 2026-11-13 12:57+0000\n"
 "PO-Revision-Date: 2026-11-07 19:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -448,36 +448,45 @@ msgid "(secret)"
 msgstr "(gizli)"
 
 #: widgets/client/mcpserverlistview.cpp:57
+#: widgets/client/mcpserverwidget.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Add Server…"
 msgstr "Sunucu Ekle…"
 
-#: widgets/client/mcpserverlistview.cpp:63
+#: widgets/client/mcpserverlistview.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add Server…"
+msgctxt "@action"
+msgid "Import Server…"
+msgstr "Sunucu Ekle…"
+
+#: widgets/client/mcpserverlistview.cpp:68
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Düzenle…"
 
-#: widgets/client/mcpserverlistview.cpp:70
+#: widgets/client/mcpserverlistview.cpp:75
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
 msgstr "Araçları Yapılandır…"
 
-#: widgets/client/mcpserverlistview.cpp:81
+#: widgets/client/mcpserverlistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "Sunucuyu Kaldır"
 
-#: widgets/client/mcpserverlistview.cpp:88
+#: widgets/client/mcpserverlistview.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "Bu sunucuyu (%1) kaldırmak istiyor musunuz?"
 
-#: widgets/client/mcpserverlistview.cpp:89
+#: widgets/client/mcpserverlistview.cpp:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Server"
@@ -495,24 +504,24 @@ msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Sunucu Ekle…"
 
-#: widgets/client/mcpserverwidget.cpp:57
-#, kde-format
-msgctxt "@action"
-msgid "Server"
-msgstr "Sunucu"
-
-#: widgets/client/mcpserverwidget.cpp:59
+#: widgets/client/mcpserverwidget.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
 msgstr "MCP Kayıt Defterinden…"
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:64
+#, kde-format
+msgctxt "@action"
+msgid "Import…"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:180
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr "Bu sunucu, desteklenen bir taşıma sağlamıyor (uzak veya paket)."
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:180
 #, kde-format
 msgctxt "@title:window"
 msgid "Add MCP Server"
@@ -593,6 +602,10 @@ msgid ""
 msgstr ""
 "İstemciler, bu jetonu “Authorization: Bearer” üst bilgisi olarak "
 "göndermelidirler. Jeton, sistem cüzdanında depolanır."
+
+#~ msgctxt "@action"
+#~ msgid "Server"
+#~ msgstr "Sunucu"
 
 #~ msgid "Impossible to start server. Command is empty."
 #~ msgstr "Sunucuyu başlatmak olanaksız; komut boş."

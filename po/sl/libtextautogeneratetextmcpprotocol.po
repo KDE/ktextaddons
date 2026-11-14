@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
+"POT-Creation-Date: 2026-11-13 12:57+0000\n"
 "PO-Revision-Date: 2026-11-06 06:40+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -450,36 +450,45 @@ msgid "(secret)"
 msgstr "(tajno)"
 
 #: widgets/client/mcpserverlistview.cpp:57
+#: widgets/client/mcpserverwidget.cpp:58
 #, kde-format
 msgctxt "@action"
 msgid "Add Server…"
 msgstr "Dodaj strežnik…"
 
-#: widgets/client/mcpserverlistview.cpp:63
+#: widgets/client/mcpserverlistview.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add Server…"
+msgctxt "@action"
+msgid "Import Server…"
+msgstr "Dodaj strežnik…"
+
+#: widgets/client/mcpserverlistview.cpp:68
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Uredi…"
 
-#: widgets/client/mcpserverlistview.cpp:70
+#: widgets/client/mcpserverlistview.cpp:75
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
 msgstr "Konfiguriraj orodja…"
 
-#: widgets/client/mcpserverlistview.cpp:81
+#: widgets/client/mcpserverlistview.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "Oddaljeni strežnik"
 
-#: widgets/client/mcpserverlistview.cpp:88
+#: widgets/client/mcpserverlistview.cpp:93
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "Ali želite odstraniti ta strežnik (%1)?"
 
-#: widgets/client/mcpserverlistview.cpp:89
+#: widgets/client/mcpserverlistview.cpp:94
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Server"
@@ -497,25 +506,25 @@ msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Dodaj strežnik…"
 
-#: widgets/client/mcpserverwidget.cpp:57
-#, kde-format
-msgctxt "@action"
-msgid "Server"
-msgstr "Strežnik"
-
-#: widgets/client/mcpserverwidget.cpp:59
+#: widgets/client/mcpserverwidget.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
 msgstr "Iz registra MCP…"
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:64
+#, kde-format
+msgctxt "@action"
+msgid "Import…"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:180
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr ""
 "Ta strežnik ne zagotavlja podprtega prenosa (oddaljenega ali paketnega)."
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:180
 #, kde-format
 msgctxt "@title:window"
 msgid "Add MCP Server"
@@ -595,6 +604,10 @@ msgid ""
 msgstr ""
 "Odjemalci morajo ta žeton poslati kot glavo \"Authorization: Bearer\". Žeton "
 "je shranjen v sistemski listnici."
+
+#~ msgctxt "@action"
+#~ msgid "Server"
+#~ msgstr "Strežnik"
 
 #~ msgid "Impossible to start server. Command is empty."
 #~ msgstr "Strežnika ni mogoče zagnati. Ukaz je prazen."
