@@ -51,6 +51,15 @@ void McpServerListView::slotEditMcpServer(const QModelIndex &index)
     }
 }
 
+void McpServerListView::slotExportMcpServer(const QModelIndex &index)
+{
+    if (const QByteArray uuid = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::Identifier).toByteArray(); uuid.isEmpty()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "invalid mcp instance uuid";
+    } else {
+        Q_EMIT exportServer(uuid);
+    }
+}
+
 void McpServerListView::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
@@ -82,6 +91,14 @@ void McpServerListView::contextMenuEvent(QContextMenuEvent *event)
             });
             menu.addAction(configureToolsAction);
         }
+
+        menu.addSeparator();
+        auto exportAction = new QAction(i18nc("@action", "Export…"), &menu);
+        connect(exportAction, &QAction::triggered, this, [index, this]() {
+            slotExportMcpServer(index);
+        });
+        menu.addAction(exportAction);
+
         menu.addSeparator();
         auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Server"), &menu);
         connect(removeAction, &QAction::triggered, this, [index, this]() {
