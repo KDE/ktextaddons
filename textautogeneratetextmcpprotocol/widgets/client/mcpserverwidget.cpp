@@ -230,6 +230,15 @@ void McpServerWidget::slotEditServer(const QByteArray &identifier)
 
 void McpServerWidget::slotImport()
 {
+    if (!mModel) {
+        return;
+    }
+    const QString filePath =
+        QFileDialog::getOpenFileName(this, i18nc("@title:window", "Import Servers"), QDir::homePath() + u"/.mcp.json"_s, i18n("JSON Files (*.json)"));
+    if (filePath.isEmpty()) {
+        return;
+    }
+
     // TODO
 }
 
