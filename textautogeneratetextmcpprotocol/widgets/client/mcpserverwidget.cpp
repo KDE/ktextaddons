@@ -14,6 +14,8 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KShell>
+#include <QDir>
+#include <QFileDialog>
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QMenu>
@@ -233,7 +235,30 @@ void McpServerWidget::slotImport()
 
 void McpServerWidget::slotExportServer(const QByteArray &identifier)
 {
-    // TODO
+    if (!mModel) {
+        return;
+    }
+    const TextAutoGenerateTextMcpProtocolCore::McpServer mcpServer = mModel->mcpServer(identifier);
+    if (!mcpServer.isValid()) {
+        qCWarning(TEXTAUTOGENERATEMCPPROTOCOLWIDGETS_LOG) << "Invalid server for identifier:" << identifier;
+        return;
+    }
+    // The server is merged into an existing file, so don't ask to overwrite it
+    const QString filePath = QFileDialog::getSaveFileName(this,
+                                                          i18nc("@title:window", "Export Server"),
+                                                          QDir::homePath() + u"/.mcp.json"_s,
+                                                          i18n("JSON Files (*.json)"),
+                                                          nullptr,
+                                                          QFileDialog::DontConfirmOverwrite);
+    if (filePath.isEmpty()) {
+        return;
+    }
+    TextAutoGenerateTextMcpProtocolCore::McpExportClaudeCode exportClaudeCode;
+    exportClaudeCode.setPath(filePath);
+    exportClaudeCode.setServer(mcpServer);
+    if (!exportClaudeCode.exportServer()) {
+        KMessageBox::error(this, i18n("An error occurred when exporting server."), i18nc("@title:window", "Export Server"));
+    }
 }
 
 #include "moc_mcpserverwidget.cpp"

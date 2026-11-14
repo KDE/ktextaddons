@@ -97,6 +97,7 @@ void McpServerListView::contextMenuEvent(QContextMenuEvent *event)
         connect(exportAction, &QAction::triggered, this, [index, this]() {
             slotExportMcpServer(index);
         });
+        menu.addAction(exportAction);
 
         menu.addSeparator();
         auto removeAction = new QAction(QIcon::fromTheme(u"list-remove"_s), i18nc("@action", "Remove Server"), &menu);
