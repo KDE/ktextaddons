@@ -7,6 +7,7 @@
 #include "addmcpregistryserverdialog.h"
 #include "addmcpserverdialog.h"
 #include "importexport/mcpexportclaudecode.h"
+#include "importexport/mcpimportclaudecode.h"
 #include "mcpserverlistview.h"
 #include "models/mcpservermodel.h"
 #include "textautogeneratetextmcpprotocol_widgets_debug.h"
@@ -238,8 +239,17 @@ void McpServerWidget::slotImport()
     if (filePath.isEmpty()) {
         return;
     }
-
-    // TODO
+    TextAutoGenerateTextMcpProtocolCore::McpImportClaudeCode importClaudeCode;
+    importClaudeCode.setPath(filePath);
+    if (!importClaudeCode.importServer()) {
+        KMessageBox::error(this, i18n("An error occurred when importing server."), i18nc("@title:window", "Import Server"));
+        return;
+    }
+    const QList<TextAutoGenerateTextMcpProtocolCore::McpServer> mcpServers = importClaudeCode.mcpServers();
+    for (const auto &server : mcpServers) {
+        mModel->addMcpServer(server);
+    }
+    Q_EMIT settingsChanged();
 }
 
 void McpServerWidget::slotExportServer(const QByteArray &identifier)
