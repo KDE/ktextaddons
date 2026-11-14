@@ -68,7 +68,7 @@ void McpServerListView::contextMenuEvent(QContextMenuEvent *event)
     connect(addServerAction, &QAction::triggered, this, &McpServerListView::addServer);
 
     menu.addSeparator();
-    auto importAction = new QAction(i18nc("@action", "Import Server…"), &menu);
+    auto importAction = new QAction(QIcon::fromTheme(u"document-import"_s), i18nc("@action", "Import Server…"), &menu);
     menu.addAction(importAction);
     connect(importAction, &QAction::triggered, this, &McpServerListView::importServer);
 
@@ -93,7 +93,7 @@ void McpServerListView::contextMenuEvent(QContextMenuEvent *event)
         }
 
         menu.addSeparator();
-        auto exportAction = new QAction(i18nc("@action", "Export…"), &menu);
+        auto exportAction = new QAction(QIcon::fromTheme(u"document-export"_s), i18nc("@action", "Export…"), &menu);
         connect(exportAction, &QAction::triggered, this, [index, this]() {
             slotExportMcpServer(index);
         });
