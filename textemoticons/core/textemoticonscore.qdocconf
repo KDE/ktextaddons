@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = TextEmoticonsCore
+moduleheader = textemoticonscore_qdocmoduleheader.h
 description = TextEmoticonsCore provides emoticon core lib.
 
 

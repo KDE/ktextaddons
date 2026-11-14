@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = TextCustomEditor
+moduleheader = textcustomeditor_qdocmoduleheader.h
 description = TextCustomEditor provides custom editor.
 
 

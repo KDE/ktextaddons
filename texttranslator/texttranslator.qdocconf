@@ -1,6 +1,7 @@
  include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = TextTranslator
+moduleheader = texttranslator_qdocmoduleheader.h
 description = TextTranslator provides translator class.
 
 

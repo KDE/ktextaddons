@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = TextAutoGenerateTextMcpProtocolCore
+moduleheader = textautogeneratetextmcpprotocolcore_qdocmoduleheader.h
 description = TextAutoGenerateTextMcpProtocolCore provides mcp protocol support core lib.
 
 

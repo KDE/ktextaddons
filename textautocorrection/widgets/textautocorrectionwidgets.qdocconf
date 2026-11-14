@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = TextAutoCorrectionWidgets
+moduleheader = textautocorrectionwidgets_qdocmoduleheader.h
 description = TextAutoCorrection Widgets provides some autocorrection widgets lib.
 
 

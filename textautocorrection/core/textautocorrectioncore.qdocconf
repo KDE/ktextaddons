@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = TextAutoCorrectionCore
+moduleheader = textautocorrectioncore_qdocmoduleheader.h
 description = TextAutoCorrection Core provides some autocorrection core lib.
 
 

@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = TextUtils
+moduleheader = textutils_qdocmoduleheader.h
 description = TextUtils provides some text utils class.
 
 

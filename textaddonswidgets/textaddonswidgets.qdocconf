@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = TextAddonsWidgets
+moduleheader = textaddonswidgets_qdocmoduleheader.h
 description = TextAddonsWidgets provides some addons widgets.
 
 

@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = TextEditTextToSpeech
+moduleheader = textedittexttospeech_qdocmoduleheader.h
 description = TextEditTextToSpeech provides text to speech api.
 
 

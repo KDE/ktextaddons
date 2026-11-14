@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = TextGrammarCheck
+moduleheader = textgrammarcheck_qdocmoduleheader.h
 description = TextGrammarCheck provides grammar check support.
 
 
