@@ -7,6 +7,7 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <TextAutoGenerateTextMcpProtocolCore/McpServer>
 
+class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpExportClaudeCode
@@ -23,6 +24,11 @@ public:
     [[nodiscard]] bool exportServer() const;
 
 private:
+    [[nodiscard]] QJsonObject exportSseSettings() const;
+    [[nodiscard]] QJsonObject exportStdioSettings() const;
+    [[nodiscard]] QJsonObject exportStreamableHttpSettings() const;
+    [[nodiscard]] QJsonObject exportUrlSettings(const QString &type) const;
+
     QString mPath;
     TextAutoGenerateTextMcpProtocolCore::McpServer mServer;
 };
