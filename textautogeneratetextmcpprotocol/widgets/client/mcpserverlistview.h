@@ -63,12 +63,17 @@ Q_SIGNALS:
      * \brief addServer
      */
     void importServer();
+    /*!
+     * \brief exportServer
+     */
+    void exportServer(const QByteArray &id);
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 
 private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotEditMcpServer(const QModelIndex &index);
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void slotExportMcpServer(const QModelIndex &index);
     McpServerSortFilterProxyModel *const mSortFilterProxyModel;
     bool mConfigureToolsSupported = false;
 };

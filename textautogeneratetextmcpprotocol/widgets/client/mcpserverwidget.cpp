@@ -6,6 +6,7 @@
 #include "mcpserverwidget.h"
 #include "addmcpregistryserverdialog.h"
 #include "addmcpserverdialog.h"
+#include "importexport/mcpexportclaudecode.h"
 #include "mcpserverlistview.h"
 #include "models/mcpservermodel.h"
 #include "textautogeneratetextmcpprotocol_widgets_debug.h"
@@ -75,6 +76,7 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
     connect(mMcpServerListView, &McpServerListView::addServer, this, &McpServerWidget::slotAddServer);
     connect(mMcpServerListView, &McpServerListView::removeServer, this, &McpServerWidget::slotRemoveServer);
     connect(mMcpServerListView, &McpServerListView::editServer, this, &McpServerWidget::slotEditServer);
+    connect(mMcpServerListView, &McpServerListView::exportServer, this, &McpServerWidget::slotExportServer);
     connect(mMcpServerListView, &McpServerListView::configureTools, this, &McpServerWidget::configureToolsRequested);
     connect(mMcpServerListView, &McpServerListView::importServer, this, &McpServerWidget::slotImport);
     if (mModel) {
@@ -225,6 +227,11 @@ void McpServerWidget::slotEditServer(const QByteArray &identifier)
 }
 
 void McpServerWidget::slotImport()
+{
+    // TODO
+}
+
+void McpServerWidget::slotExportServer(const QByteArray &identifier)
 {
     // TODO
 }
