@@ -119,7 +119,7 @@ void LMStudioConfigureWidget::saveSettings()
 
 void LMStudioConfigureWidget::restoreToDefaults()
 {
-    mManager->lmStudioSettings()->setServerUrl(mManager->lmStudioSettings()->defaultServerUrl());
+    mUrl->setText(mManager->lmStudioSettings()->defaultServerUrl().url());
 }
 
 void LMStudioConfigureWidget::slotLMSStarted()
