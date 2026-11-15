@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kdepim-addons package.
 #
-# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024, 2026 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
-"PO-Revision-Date: 2024-08-02 09:24+0200\n"
+"POT-Creation-Date: 2026-11-13 12:22+0000\n"
+"PO-Revision-Date: 2026-10-09 11:30+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: common/grammarresulttextedit.cpp:37
 #, kde-format
@@ -84,35 +84,35 @@ msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "Error quando on extraheva optiones"
 
-#: grammalecte/grammalecteconfigwidget.cpp:113
+#: grammalecte/grammalecteconfigwidget.cpp:114
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Pressa button pe preferentias de recargar"
 
-#: grammalecte/grammalecteconfigwidget.cpp:121
+#: grammalecte/grammalecteconfigwidget.cpp:122
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Recarga preferentias"
 
-#: grammalecte/grammalecteconfigwidget.cpp:138
+#: grammalecte/grammalecteconfigwidget.cpp:139
 #, kde-format
 msgid "Python Path:"
 msgstr "Percurso de Python"
 
-#: grammalecte/grammalecteconfigwidget.cpp:142
+#: grammalecte/grammalecteconfigwidget.cpp:143
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Adde complete percurso de 'grammalecte-cli.py'"
 
-#: grammalecte/grammalecteconfigwidget.cpp:144
+#: grammalecte/grammalecteconfigwidget.cpp:145
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Percurso de Grammalecte:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:150
+#: grammalecte/grammalecteconfigwidget.cpp:151
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
@@ -132,8 +132,9 @@ msgid "Grammalecte path not found."
 msgstr "Percurso de Grammalecte non trovate."
 
 #: grammalecte/grammalecteresultwidget.cpp:67
-#, kde-format
-msgid "Grammalecte program file not found."
+#, fuzzy, kde-format
+#| msgid "Grammalecte program file not found."
+msgid "Python program file not found."
 msgstr "File de programma de Grammalecte non trovate."
 
 #: grammalecte/grammalecteresultwidget.cpp:71
@@ -335,7 +336,7 @@ msgstr "Refresca"
 #: languagetool/languagetoolgetlistoflanguagejob.cpp:36
 #, kde-format
 msgid "Url is empty."
-msgstr ""
+msgstr "Url es vacue."
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format

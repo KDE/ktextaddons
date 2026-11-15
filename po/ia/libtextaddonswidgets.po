@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 00:54+0000\n"
-"PO-Revision-Date: 2026-09-14 17:29+0200\n"
+"POT-Creation-Date: 2026-11-15 03:14+0000\n"
+"PO-Revision-Date: 2026-09-23 10:25+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -147,7 +147,7 @@ msgstr "Incapace a aperir le attachamento."
 msgid "Restart is necessary for applying the changes."
 msgstr "Reinitiar si necessari per applicar le modificationes."
 
-#: plugins/configurepluginswidget.cpp:160
+#: plugins/configurepluginswidget.cpp:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -237,13 +237,13 @@ msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "Verifica nove version"
 
-#: verifynewversion/checknewversionwidget.cpp:63
+#: verifynewversion/checknewversionwidget.cpp:62
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 "Un nove version trovate. Clicca <a href=\"%1\">hic</a> per discargar lo."
 
-#: verifynewversion/checknewversionwidget.cpp:65
+#: verifynewversion/checknewversionwidget.cpp:64
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""

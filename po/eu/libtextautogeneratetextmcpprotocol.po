@@ -8,7 +8,7 @@
 #
 # Egoera:
 # Proiektu osoaren berrikuspen integrala: 2026-08-01.
-# Azken berrikuspena: 2026-08-11 — egoera ondua mantendu da.
+# Azken berrikuspena: 2026-09-28 — egoera ondua mantendu da.
 # Terminologia, estiloa, ortotipografia, koherentzia eta kohesioa berrikusi dira.
 # Erreferentzia-gida: kde-aa-eta-hizkuntza-ereduen_eu_itzulpen_gida.md
 # Ikus, halaber: KDE-eu-berrikuspen-integralen-erregistroa.md
@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
-"PO-Revision-Date: 2026-08-11 13:04+0200\n"
+"POT-Creation-Date: 2026-11-14 15:12+0000\n"
+"PO-Revision-Date: 2026-09-28 21:21+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:436
 #, kde-format
@@ -328,12 +328,10 @@ msgid "Name"
 msgstr "Izena:"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@title:column"
 msgid "Value"
-msgstr "Izena:"
+msgstr ""
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
 #, kde-format
@@ -479,7 +477,8 @@ msgstr ""
 msgid "(secret)"
 msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:57
+#: widgets/client/mcpserverlistview.cpp:66
+#: widgets/client/mcpserverwidget.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Add server…"
@@ -487,32 +486,46 @@ msgctxt "@action"
 msgid "Add Server…"
 msgstr "Zerbitzaria gehitu…"
 
-#: widgets/client/mcpserverlistview.cpp:63
+#: widgets/client/mcpserverlistview.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add server…"
+msgctxt "@action"
+msgid "Import Server…"
+msgstr "Zerbitzaria gehitu…"
+
+#: widgets/client/mcpserverlistview.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Editatu…"
 
-#: widgets/client/mcpserverlistview.cpp:70
+#: widgets/client/mcpserverlistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
 msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:81
+#: widgets/client/mcpserverlistview.cpp:96
+#, kde-format
+msgctxt "@action"
+msgid "Export…"
+msgstr ""
+
+#: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "Zerbitzaria kendu"
 
-#: widgets/client/mcpserverlistview.cpp:88
+#: widgets/client/mcpserverlistview.cpp:110
 #, fuzzy, kde-format
 #| msgid "Do you want to remove this server (%1)?"
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "Zerbitzari hau kendu nahi duzu (%1)?"
 
-#: widgets/client/mcpserverlistview.cpp:89
+#: widgets/client/mcpserverlistview.cpp:111
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Remove Server"
@@ -520,13 +533,13 @@ msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "Zerbitzaria kendu"
 
-#: widgets/client/mcpserverwidget.cpp:45
+#: widgets/client/mcpserverwidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Bilatu…"
 
-#: widgets/client/mcpserverwidget.cpp:52
+#: widgets/client/mcpserverwidget.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Add server…"
@@ -534,32 +547,71 @@ msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Zerbitzaria gehitu…"
 
-#: widgets/client/mcpserverwidget.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
-msgctxt "@action"
-msgid "Server"
-msgstr "Zerbitzaria gehitu"
-
-#: widgets/client/mcpserverwidget.cpp:59
+#: widgets/client/mcpserverwidget.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
 msgstr ""
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:68
+#, kde-format
+msgctxt "@action"
+msgid "Import…"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr ""
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add Server"
 msgctxt "@title:window"
 msgid "Add MCP Server"
 msgstr "Zerbitzaria gehitu"
+
+#: widgets/client/mcpserverwidget.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Import Servers"
+msgstr "Zerbitzaria kendu"
+
+#: widgets/client/mcpserverwidget.cpp:238
+#: widgets/client/mcpserverwidget.cpp:269
+#, kde-format
+msgid "JSON Files (*.json)"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:245
+#, kde-format
+msgid "An error occurred when importing server."
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:245
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Import Server"
+msgstr "Zerbitzaria kendu"
+
+#: widgets/client/mcpserverwidget.cpp:267
+#: widgets/client/mcpserverwidget.cpp:279
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Export Server"
+msgstr "Zerbitzaria kendu"
+
+#: widgets/client/mcpserverwidget.cpp:279
+#, kde-format
+msgid "An error occurred when exporting server."
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
@@ -637,13 +689,13 @@ msgstr ""
 #~ msgid "Url:"
 #~ msgstr "URL:"
 
-#~ msgctxt "@title"
-#~ msgid "Remove Server"
-#~ msgstr "Zerbitzaria kendu"
-
 #~ msgctxt "@info:placeholder"
 #~ msgid "Define Header…"
 #~ msgstr "Goiburua definitu…"
+
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "Zerbitzaria kendu"
 
 # SSE transport: SSE garraioa
 # MCPko SSE garraioa (Server-Sent Events)

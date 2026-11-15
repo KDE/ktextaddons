@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
+"POT-Creation-Date: 2026-11-14 15:12+0000\n"
 "PO-Revision-Date: 2026-10-04 12:40+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -369,10 +369,12 @@ msgid "Header:"
 msgstr ""
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfigurewidget.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Name:"
 msgctxt "@info:placeholder"
 msgid "Name: Value"
-msgstr ""
+msgstr "பெயர்:"
 
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:38
 #, kde-format
@@ -453,7 +455,8 @@ msgstr ""
 msgid "(secret)"
 msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:57
+#: widgets/client/mcpserverlistview.cpp:66
+#: widgets/client/mcpserverwidget.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add Server"
@@ -461,31 +464,43 @@ msgctxt "@action"
 msgid "Add Server…"
 msgstr "சேவையகத்தை சேர்"
 
-#: widgets/client/mcpserverlistview.cpp:63
+#: widgets/client/mcpserverlistview.cpp:71
+#, kde-format
+msgctxt "@action"
+msgid "Import Server…"
+msgstr ""
+
+#: widgets/client/mcpserverlistview.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:70
+#: widgets/client/mcpserverlistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
 msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:81
+#: widgets/client/mcpserverlistview.cpp:96
+#, kde-format
+msgctxt "@action"
+msgid "Export…"
+msgstr ""
+
+#: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:88
+#: widgets/client/mcpserverlistview.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:89
+#: widgets/client/mcpserverlistview.cpp:111
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add Server"
@@ -493,44 +508,81 @@ msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "சேவையகத்தை சேர்"
 
-#: widgets/client/mcpserverwidget.cpp:45
+#: widgets/client/mcpserverwidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr ""
 
-#: widgets/client/mcpserverwidget.cpp:52
+#: widgets/client/mcpserverwidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr ""
 
-#: widgets/client/mcpserverwidget.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
-msgctxt "@action"
-msgid "Server"
-msgstr "சேவையகத்தை சேர்"
-
-#: widgets/client/mcpserverwidget.cpp:59
+#: widgets/client/mcpserverwidget.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
 msgstr ""
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:68
+#, kde-format
+msgctxt "@action"
+msgid "Import…"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr ""
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add Server"
 msgctxt "@title:window"
 msgid "Add MCP Server"
 msgstr "சேவையகத்தை சேர்"
+
+#: widgets/client/mcpserverwidget.cpp:238
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Servers"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:238
+#: widgets/client/mcpserverwidget.cpp:269
+#, kde-format
+msgid "JSON Files (*.json)"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:245
+#, kde-format
+msgid "An error occurred when importing server."
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:245
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
+msgctxt "@title:window"
+msgid "Import Server"
+msgstr "சேவையகத்தை சேர்"
+
+#: widgets/client/mcpserverwidget.cpp:267
+#: widgets/client/mcpserverwidget.cpp:279
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
+msgctxt "@title:window"
+msgid "Export Server"
+msgstr "சேவையகத்தை சேர்"
+
+#: widgets/client/mcpserverwidget.cpp:279
+#, kde-format
+msgid "An error occurred when exporting server."
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

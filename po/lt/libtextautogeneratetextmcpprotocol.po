@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
+"POT-Creation-Date: 2026-11-14 15:12+0000\n"
 "PO-Revision-Date: 2026-08-19 02:48+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -285,11 +285,10 @@ msgstr ""
 
 #: widgets/client/addmcpsseserverwidget.cpp:31
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:32
-#, fuzzy, kde-format
-#| msgid "Headers:"
+#, kde-format
 msgctxt "@label"
 msgid "Headers:"
-msgstr "Antraštės:"
+msgstr ""
 
 #: widgets/client/addmcpsseserverwidget.cpp:33
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:34
@@ -307,10 +306,12 @@ msgstr ""
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:19
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
 msgctxt "@action:button"
 msgid "Remove"
-msgstr "Šalinti"
+msgstr "Šalinti serverį"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
 #, fuzzy, kde-format
@@ -321,12 +322,10 @@ msgid "Name"
 msgstr "Pavadinimas:"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@title:column"
 msgid "Value"
-msgstr "Pavadinimas:"
+msgstr ""
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
 #, kde-format
@@ -339,7 +338,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
-msgstr "Pridėti"
+msgstr ""
 
 #: widgets/client/addmcpstdioserverwidget.cpp:26
 #, fuzzy, kde-format
@@ -365,22 +364,19 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Custom Header"
-msgstr "Pridėti tinkintą antraštę"
+msgstr ""
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfiguredialog.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Custom Header"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Custom Header"
-msgstr "Pridėti tinkintą antraštę"
+msgstr ""
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfigurewidget.cpp:23
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
-msgstr "Antraštė:"
+msgstr ""
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfigurewidget.cpp:28
 #, fuzzy, kde-format
@@ -394,20 +390,21 @@ msgstr "Pavadinimas:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Modify"
-msgstr "Modifikuoti"
+msgstr ""
 
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:71
-#, fuzzy, kde-format
-#| msgid "Are you sure that you want to delete this header?"
+#, kde-format
 msgctxt "@info"
 msgid "Are you sure that you want to delete this header?"
-msgstr "Ar tikrai norite ištrinti šią antraštę?"
+msgstr ""
 
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
 msgctxt "@title:window"
 msgid "Remove Header"
-msgstr "Šalinti antraštę"
+msgstr "Šalinti serverį"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:24
 #, kde-format
@@ -432,10 +429,10 @@ msgstr ""
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:70
 #, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Remove"
+#| msgctxt "@action"
+#| msgid "Remove Server"
 msgid "Remotes"
-msgstr "Šalinti"
+msgstr "Šalinti serverį"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:79
 #, kde-format
@@ -472,7 +469,8 @@ msgstr ""
 msgid "(secret)"
 msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:57
+#: widgets/client/mcpserverlistview.cpp:66
+#: widgets/client/mcpserverwidget.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Add server…"
@@ -480,32 +478,46 @@ msgctxt "@action"
 msgid "Add Server…"
 msgstr "Pridėti serverį…"
 
-#: widgets/client/mcpserverlistview.cpp:63
+#: widgets/client/mcpserverlistview.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add server…"
+msgctxt "@action"
+msgid "Import Server…"
+msgstr "Pridėti serverį…"
+
+#: widgets/client/mcpserverlistview.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Taisyti…"
 
-#: widgets/client/mcpserverlistview.cpp:70
+#: widgets/client/mcpserverlistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
 msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:81
+#: widgets/client/mcpserverlistview.cpp:96
+#, kde-format
+msgctxt "@action"
+msgid "Export…"
+msgstr ""
+
+#: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "Šalinti serverį"
 
-#: widgets/client/mcpserverlistview.cpp:88
+#: widgets/client/mcpserverlistview.cpp:110
 #, fuzzy, kde-format
 #| msgid "Do you want to remove this server (%1)?"
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "Ar tikrai norite pašalinti šį serverį (%1)?"
 
-#: widgets/client/mcpserverlistview.cpp:89
+#: widgets/client/mcpserverlistview.cpp:111
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Remove Server"
@@ -513,13 +525,13 @@ msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "Šalinti serverį"
 
-#: widgets/client/mcpserverwidget.cpp:45
+#: widgets/client/mcpserverwidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Ieškoti…"
 
-#: widgets/client/mcpserverwidget.cpp:52
+#: widgets/client/mcpserverwidget.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Add server…"
@@ -527,32 +539,71 @@ msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Pridėti serverį…"
 
-#: widgets/client/mcpserverwidget.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
-msgctxt "@action"
-msgid "Server"
-msgstr "Pridėti serverį"
-
-#: widgets/client/mcpserverwidget.cpp:59
+#: widgets/client/mcpserverwidget.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
 msgstr ""
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:68
+#, kde-format
+msgctxt "@action"
+msgid "Import…"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr ""
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add Server"
 msgctxt "@title:window"
 msgid "Add MCP Server"
 msgstr "Pridėti serverį"
+
+#: widgets/client/mcpserverwidget.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Import Servers"
+msgstr "Šalinti serverį"
+
+#: widgets/client/mcpserverwidget.cpp:238
+#: widgets/client/mcpserverwidget.cpp:269
+#, kde-format
+msgid "JSON Files (*.json)"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:245
+#, kde-format
+msgid "An error occurred when importing server."
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:245
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Import Server"
+msgstr "Šalinti serverį"
+
+#: widgets/client/mcpserverwidget.cpp:267
+#: widgets/client/mcpserverwidget.cpp:279
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Export Server"
+msgstr "Šalinti serverį"
+
+#: widgets/client/mcpserverwidget.cpp:279
+#, kde-format
+msgid "An error occurred when exporting server."
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
@@ -633,10 +684,6 @@ msgstr ""
 #~ msgctxt "@title"
 #~ msgid "Remove Server"
 #~ msgstr "Šalinti serverį"
-
-#~ msgctxt "@info:placeholder"
-#~ msgid "Define Header…"
-#~ msgstr "Apibrėžti antraštę…"
 
 #~ msgid "Sse"
 #~ msgstr "Sse"

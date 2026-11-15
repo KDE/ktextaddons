@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
-"PO-Revision-Date: 2026-09-14 20:10+0200\n"
-"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"POT-Creation-Date: 2026-11-13 06:36+0000\n"
+"PO-Revision-Date: 2023-02-11 18:52+0100\n"
+"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -118,17 +118,17 @@ msgstr "Nie je čo inštalovať."
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:101
 #, kde-format
 msgid "Creating the python virtual environment…"
-msgstr "Vytvára sa virtuálne prostredie Pythonu…"
+msgstr "Vytvára sa virtuálne prostredie pythonu…"
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:104
 #, kde-format
 msgid "Python virtual environment created."
-msgstr "Virtuálne prostredie Pythonu bolo vytvorené."
+msgstr "Virtuálne prostredie pythonu bolo vytvorené."
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:108
 #, kde-format
 msgid "Unable to create the python virtual environment."
-msgstr "Nedá sa vytvoriť virtuálne prostredie Pythonu."
+msgstr "Virtuálne prostredie pythonu nie je možné vytvoriť."
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:125
 #, kde-format
@@ -138,7 +138,7 @@ msgstr "Inštalujú sa moduly: %1"
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:130
 #, kde-format
 msgid "Installation done."
-msgstr "Inštalácia dokončená."
+msgstr "Inštalácia je hotová."
 
 #: kokoroinstall/texttospeechkokoroinstallpythonwidget.cpp:134
 #, kde-format
@@ -289,12 +289,12 @@ msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Nastaviť..."
 
-#: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
+#: texttospeechwidget.cpp:155 texttospeechwidget.cpp:170
 #, kde-format
 msgid "Engine has a problem."
 msgstr "Nástroj má problém."
 
-#: texttospeechwidget.cpp:136 texttospeechwidget.cpp:148
+#: texttospeechwidget.cpp:155 texttospeechwidget.cpp:170
 #, kde-format
 msgctxt "@title:window"
 msgid "Text To Speech"

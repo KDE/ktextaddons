@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 00:54+0000\n"
+"POT-Creation-Date: 2026-11-15 03:14+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/ktextaddons/libtextaddonswidgets.pot\n"
-"X-Crowdin-File-ID: 49514\n"
+"X-Crowdin-File: /kf6-stable/messages/ktextaddons/libtextaddonswidgets.pot\n"
+"X-Crowdin-File-ID: 57622\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -144,7 +144,7 @@ msgstr "无法打开附件。"
 msgid "Restart is necessary for applying the changes."
 msgstr "应用更改需要重新启动。"
 
-#: plugins/configurepluginswidget.cpp:160
+#: plugins/configurepluginswidget.cpp:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -234,12 +234,12 @@ msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "检查新版本"
 
-#: verifynewversion/checknewversionwidget.cpp:63
+#: verifynewversion/checknewversionwidget.cpp:62
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr "发现新版本。请点击<a href=\"%1\">此处</a>下载。"
 
-#: verifynewversion/checknewversionwidget.cpp:65
+#: verifynewversion/checknewversionwidget.cpp:64
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr "没有发现新版本。可在<a href=\"%1\">此处</a>找到构建版本。"
@@ -298,9 +298,10 @@ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
 msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewmessagengwidget.cpp:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "What's new in %2. %1"
 msgid "What's new in %1. %2"
-msgstr "%1. %2 的新功能"
+msgstr "%2. %1 的新功能"
 
 #: whatsnewng/whatsnewngutils.cpp:25
 #, kde-format
@@ -308,19 +309,21 @@ msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
 msgstr "<b><i><a href=\"%1\">版本说明</a></i></b>"
 
 #: whatsnewng/whatsnewngutils.cpp:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 (Released: %2)</i></h1><hr/><br>"
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr "<h3><i>版本 %1 的更新 (发布于：%2)</i></h3>"
+msgstr "<h1><i> 版本 %1 (发布日期：%2)</i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngutils.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "<h1><i> Version %1 (Unreleased yet)</i></h1><hr/><br>"
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr "<h3><i>版本 %1 的更新 (未发布)</i></h3>"
+msgstr "<h1><i> 版本 %1 (尚未发布)</i></h1><hr/><br>"
 
 #: whatsnewng/whatsnewngutils.cpp:51
 #, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr "<h1>版本更新历史</h1>"
+msgstr ""
 
 #~ msgid "..."
 #~ msgstr "..."

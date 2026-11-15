@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 00:54+0000\n"
-"PO-Revision-Date: 2026-09-07 10:34+0200\n"
+"POT-Creation-Date: 2026-11-15 03:14+0000\n"
+"PO-Revision-Date: 2026-09-23 11:37+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -152,7 +152,7 @@ msgstr "Ni mogoče odpreti priloge."
 msgid "Restart is necessary for applying the changes."
 msgstr "Za uveljavitev sprememb je potreben ponovni zagon."
 
-#: plugins/configurepluginswidget.cpp:160
+#: plugins/configurepluginswidget.cpp:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -242,13 +242,13 @@ msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "Preveri novo različico"
 
-#: verifynewversion/checknewversionwidget.cpp:63
+#: verifynewversion/checknewversionwidget.cpp:62
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 "Najdena je bila nova različica. Kliknite <a href=\"%1\">tukaj</a> za prenos."
 
-#: verifynewversion/checknewversionwidget.cpp:65
+#: verifynewversion/checknewversionwidget.cpp:64
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr "Ni najdene nove različice. Gradnjo najdete <a href=\"%1\">tukaj</a>."
@@ -319,17 +319,17 @@ msgstr "<b><i><a href=\"%1\">Opomba ob izdaji</a></i></b>"
 #: whatsnewng/whatsnewngutils.cpp:33
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr "<h3><i>Kaj je novega v različici %1 (izdana: %2)</i></h3>"
+msgstr "<h3><i>Kaj je novega v različici %1 (izdani: %2)</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:35
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr "<h3><i>Kaj je novega v različici %1 (neizdana)</i></h3>"
+msgstr "<h3><i>Kaj je novega v različici %1 (Še ne izdani)</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:51
 #, kde-format
 msgid "<h1>What's New History</h1>"
-msgstr "<h1>Zgodovina kaj je novega</h1>"
+msgstr "<h1>Zgodovina novosti</h1>"
 
 #~ msgid "..."
 #~ msgstr "..."

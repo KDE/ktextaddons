@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 00:54+0000\n"
-"PO-Revision-Date: 2026-08-23 09:01+0200\n"
+"POT-Creation-Date: 2026-11-15 03:14+0000\n"
+"PO-Revision-Date: 2026-09-23 12:44+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -148,7 +148,7 @@ msgstr "No s'ha pogut obrir l'adjunt."
 msgid "Restart is necessary for applying the changes."
 msgstr "Cal reiniciar per a aplicar els canvis."
 
-#: plugins/configurepluginswidget.cpp:160
+#: plugins/configurepluginswidget.cpp:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -238,14 +238,14 @@ msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "Comprovació de versió nova"
 
-#: verifynewversion/checknewversionwidget.cpp:63
+#: verifynewversion/checknewversionwidget.cpp:62
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 "S'ha trobat una versió nova. Feu clic a <a href=\"%1\">aquí</a> per a baixar-"
 "la."
 
-#: verifynewversion/checknewversionwidget.cpp:65
+#: verifynewversion/checknewversionwidget.cpp:64
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""
@@ -329,9 +329,3 @@ msgstr "<h3><i>Què hi ha de nou a la versió %1 (No publicada)</i></h3>"
 #, kde-format
 msgid "<h1>What's New History</h1>"
 msgstr "<h1>Historial de Què hi ha de nou</h1>"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "Version %1"
-#~ msgstr "Versió %1"

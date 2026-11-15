@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
-"PO-Revision-Date: 2026-09-23 06:56+0900\n"
+"POT-Creation-Date: 2026-11-15 03:14+0000\n"
+"PO-Revision-Date: 2026-05-31 19:48-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -444,7 +444,7 @@ msgstr ""
 #: widgets/ui/autocorrectionwidget.ui:806
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: widgets/ui/autocorrectionwidget.ui:794

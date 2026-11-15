@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
-"PO-Revision-Date: 2026-10-05 22:32+0200\n"
+"POT-Creation-Date: 2026-11-14 15:12+0000\n"
+"PO-Revision-Date: 2026-10-05 00:46+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -29,7 +29,7 @@ msgstr ""
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:631
 #, fuzzy, kde-format
-#| msgid "Impossible to start client. URL is invalid."
+#| msgid "Impossible to start client. Url is invalid."
 msgid "Impossible to start client."
 msgstr "클라이언트를 시작할 수 없습니다. URL이 잘못되었습니다."
 
@@ -77,20 +77,19 @@ msgid "Error: %1"
 msgstr ""
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:868
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server started"
-msgstr "서버가 준비되지 않았습니다."
+msgstr ""
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:880
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server stopped"
-msgstr "서버가 준비되지 않았습니다."
+msgstr ""
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Impossible to start client. Url is invalid."
 msgid "Impossible to start client. URL is invalid."
 msgstr "클라이언트를 시작할 수 없습니다. URL이 잘못되었습니다."
 
@@ -98,7 +97,7 @@ msgstr "클라이언트를 시작할 수 없습니다. URL이 잘못되었습니
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:95
 #, kde-format
 msgid "Server is not ready."
-msgstr "서버가 준비되지 않았습니다."
+msgstr ""
 
 #: plugins/client/stdio/mcpclientstdio.cpp:79
 #, kde-format
@@ -106,9 +105,10 @@ msgid "Impossible to start client. Command is empty."
 msgstr "클라이언트를 시작할 수 없습니다. 명령이 비어 있습니다."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Impossible to start client. Url is invalid."
 msgid "Impossible to start client. Arguments are invalid."
-msgstr "클라이언트를 시작할 수 없습니다. 인자가 잘못되었습니다."
+msgstr "클라이언트를 시작할 수 없습니다. URL이 잘못되었습니다."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:114
 #, kde-format
@@ -118,24 +118,25 @@ msgstr "메시지를 전송할 수 없습니다. 클라이언트가 실행 중�
 #: plugins/client/stdio/mcpclientstdio.cpp:133
 #, kde-format
 msgid "Message received from server is too big."
-msgstr "서버에서 수신한 메시지가 너무 큽니다."
+msgstr ""
 
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:173
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:178
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:224
 #, kde-format
 msgid "Connection lost before receiving answer."
-msgstr "응답을 받기 전에 연결이 중단되었습니다."
+msgstr ""
 
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:400
 #, kde-format
 msgid "Session expired. Client must be restarted."
-msgstr "세션이 만료되었습니다. 클라이언트를 다시 시작해야 합니다."
+msgstr ""
 
 #: plugins/server/sse/mcpserversse.cpp:40
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:112
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:122
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Impossible to start server. Url is invalid."
 msgid "Impossible to start server. URL is invalid."
 msgstr "서버를 시작할 수 없습니다. URL이 잘못되었습니다."
 
@@ -147,7 +148,7 @@ msgstr "메시지 전송은 구현되지 않았습니다."
 #: plugins/server/stdio/mcpserverstdio.cpp:54
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:128
 #, fuzzy, kde-format
-#| msgid "Impossible to start server. URL is invalid."
+#| msgid "Impossible to start server. Url is invalid."
 msgid "Impossible to start server: %1"
 msgstr "서버를 시작할 수 없습니다. URL이 잘못되었습니다."
 
@@ -158,16 +159,14 @@ msgstr ""
 
 #: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:462
-#, fuzzy, kde-format
-#| msgid "Server is not ready."
+#, kde-format
 msgid "Server is not started."
-msgstr "서버가 준비되지 않았습니다."
+msgstr ""
 
 #: plugins/server/stdio/mcpserverstdio.cpp:154
-#, fuzzy, kde-format
-#| msgid "Message received from server is too big."
+#, kde-format
 msgid "Message received from client is too big."
-msgstr "서버에서 수신한 메시지가 너무 큽니다."
+msgstr ""
 
 #: widgets/client/addmcpregistryserverdialog.cpp:25
 #, kde-format
@@ -194,7 +193,7 @@ msgstr ""
 
 #: widgets/client/addmcpregistryserverwidget.cpp:154
 #, fuzzy, kde-format
-#| msgid "Impossible to start server. URL is invalid."
+#| msgid "Impossible to start server. Url is invalid."
 msgid "Impossible to load servers: %1"
 msgstr "서버를 시작할 수 없습니다. URL이 잘못되었습니다."
 
@@ -218,10 +217,12 @@ msgid "Add Server"
 msgstr "서버 추가"
 
 #: widgets/client/addmcpserverdialog.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
 msgctxt "@title:window"
 msgid "Modify Server"
-msgstr "서버 수정"
+msgstr "서버 추가"
 
 #: widgets/client/addmcpserverrootswidget.cpp:35
 #, kde-format
@@ -260,7 +261,9 @@ msgid "Icon:"
 msgstr ""
 
 #: widgets/client/addmcpserverwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Type:"
 msgctxt "@label:listbox"
 msgid "Type:"
 msgstr "종류:"
@@ -277,7 +280,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
-msgstr "URL:"
+msgstr ""
 
 #: widgets/client/addmcpsseserverwidget.cpp:31
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:32
@@ -316,12 +319,10 @@ msgid "Name"
 msgstr "이름:"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Name: Value"
+#, kde-format
 msgctxt "@title:column"
 msgid "Value"
-msgstr "이름: 값"
+msgstr ""
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
 #, kde-format
@@ -361,10 +362,12 @@ msgid "Add Custom Header"
 msgstr "사용자 정의 헤더 추가"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfiguredialog.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Custom Header"
 msgctxt "@title:window"
 msgid "Modify Custom Header"
-msgstr "사용자 정의 헤더 수정"
+msgstr "사용자 정의 헤더 추가"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfigurewidget.cpp:23
 #, kde-format
@@ -373,10 +376,12 @@ msgid "Header:"
 msgstr "헤더:"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfigurewidget.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Name:"
 msgctxt "@info:placeholder"
 msgid "Name: Value"
-msgstr "이름: 값"
+msgstr "이름:"
 
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:38
 #, kde-format
@@ -385,7 +390,8 @@ msgid "Modify"
 msgstr "수정"
 
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Are you sure that you want to delete this header?"
 msgctxt "@info"
 msgid "Are you sure that you want to delete this header?"
 msgstr "이 헤더를 삭제하시겠습니까?"
@@ -459,80 +465,139 @@ msgstr ""
 msgid "(secret)"
 msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:57
-#, kde-format
+#: widgets/client/mcpserverlistview.cpp:66
+#: widgets/client/mcpserverwidget.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Server…"
 msgctxt "@action"
 msgid "Add Server…"
 msgstr "서버 추가…"
 
-#: widgets/client/mcpserverlistview.cpp:63
+#: widgets/client/mcpserverlistview.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Server…"
+msgctxt "@action"
+msgid "Import Server…"
+msgstr "서버 추가…"
+
+#: widgets/client/mcpserverlistview.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "편집…"
 
-#: widgets/client/mcpserverlistview.cpp:70
+#: widgets/client/mcpserverlistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
 msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:81
+#: widgets/client/mcpserverlistview.cpp:96
+#, kde-format
+msgctxt "@action"
+msgid "Export…"
+msgstr ""
+
+#: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "서버 삭제"
 
-#: widgets/client/mcpserverlistview.cpp:88
-#, kde-format
+#: widgets/client/mcpserverlistview.cpp:110
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this server (%1)?"
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "이 서버(%1)를 삭제하시겠습니까?"
 
-#: widgets/client/mcpserverlistview.cpp:89
-#, kde-format
+#: widgets/client/mcpserverlistview.cpp:111
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
 msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "서버 삭제"
 
-#: widgets/client/mcpserverwidget.cpp:45
+#: widgets/client/mcpserverwidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "검색…"
 
-#: widgets/client/mcpserverwidget.cpp:52
+#: widgets/client/mcpserverwidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "서버 추가…"
 
-#: widgets/client/mcpserverwidget.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
-msgctxt "@action"
-msgid "Server"
-msgstr "서버 추가"
-
-#: widgets/client/mcpserverwidget.cpp:59
+#: widgets/client/mcpserverwidget.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
 msgstr ""
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:68
+#, kde-format
+msgctxt "@action"
+msgid "Import…"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr ""
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add Server"
 msgctxt "@title:window"
 msgid "Add MCP Server"
 msgstr "서버 추가"
+
+#: widgets/client/mcpserverwidget.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Import Servers"
+msgstr "서버 삭제"
+
+#: widgets/client/mcpserverwidget.cpp:238
+#: widgets/client/mcpserverwidget.cpp:269
+#, kde-format
+msgid "JSON Files (*.json)"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:245
+#, kde-format
+msgid "An error occurred when importing server."
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:245
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Import Server"
+msgstr "서버 삭제"
+
+#: widgets/client/mcpserverwidget.cpp:267
+#: widgets/client/mcpserverwidget.cpp:279
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Export Server"
+msgstr "서버 삭제"
+
+#: widgets/client/mcpserverwidget.cpp:279
+#, kde-format
+msgid "An error occurred when exporting server."
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
@@ -607,26 +672,20 @@ msgstr ""
 #~ msgid "Impossible to start server. Command is empty."
 #~ msgstr "서버를 시작할 수 없습니다. 명령이 비어 있습니다."
 
-#~ msgid "Impossible to start server. Arguments are invalid."
-#~ msgstr "서버를 시작할 수 없습니다. 인자가 잘못되었습니다."
-
 #~ msgid "Impossible to send message. Server is not running."
 #~ msgstr "메시지를 전송할 수 없습니다. 서버가 실행 중이 아닙니다."
-
-#~ msgid "Streamable HTTP transport is not implemented yet."
-#~ msgstr "스트림 가는한 HTTP 전송은 구현되지 않았습니다."
 
 #~ msgctxt "@label:textbox"
 #~ msgid "Url:"
 #~ msgstr "URL:"
 
-#~ msgctxt "@title"
-#~ msgid "Remove Server"
-#~ msgstr "서버 삭제"
-
 #~ msgctxt "@info:placeholder"
 #~ msgid "Define Header…"
 #~ msgstr "헤더 정의…"
+
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "서버 삭제"
 
 #~ msgid "Sse"
 #~ msgstr "SSE"

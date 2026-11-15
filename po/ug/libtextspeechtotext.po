@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-06 00:49+0000\n"
-"PO-Revision-Date: 2026-09-23 06:56+0900\n"
+"POT-Creation-Date: 2026-11-13 12:20+0000\n"
+"PO-Revision-Date: 2026-05-31 19:49-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: speechtotext/plugins/vosk/generateinstalledlanguageinfojob.cpp:23
 #, kde-format
@@ -29,7 +29,7 @@ msgid "Impossible to store language info."
 msgstr ""
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:51
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:51
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:48
 #, kde-format
 msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
@@ -37,22 +37,22 @@ msgid ""
 msgstr ""
 
 #: speechtotext/plugins/vosk/managermodelvoskspeechtotext.cpp:53
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:53
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:50
 #, kde-format
 msgid "Impossible to access to url: %1"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:39
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:36
 #, kde-format
 msgid "Cannot open file for downloading."
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:64
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:61
 #, kde-format
 msgid "CheckSum is not correct."
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:74
+#: speechtotext/plugins/vosk/voskdownloadlanguagejob.cpp:71
 #, kde-format
 msgid "Error during writing on disk: %1"
 msgstr ""
@@ -70,7 +70,8 @@ msgid "Mark as Active"
 msgstr ""
 
 #: speechtotext/plugins/vosk/voskenginelanguagetreeview.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Download"
 msgctxt "@action"
 msgid "Download"
 msgstr "چۈشۈرۈش"
@@ -114,7 +115,7 @@ msgstr "خاتالىق: %1"
 msgid "Vosk"
 msgstr ""
 
-#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:58
+#: speechtotext/plugins/vosk/voskextractlanguagejob.cpp:60
 #, kde-format
 msgid "Impossible to extract language"
 msgstr ""
@@ -149,7 +150,7 @@ msgstr "چوڭلۇقى"
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:126
 #, kde-format
 msgid "Active"
-msgstr "ئاكتىپ"
+msgstr ""
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:30
 #, kde-format
@@ -204,10 +205,11 @@ msgid "Unable to install module. Exit code: %1"
 msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
 msgctxt "@action"
 msgid "Install"
-msgstr "ئورنات"
+msgstr "ئورنىتىلغان"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythondialog.cpp:28
 #, kde-format
@@ -216,10 +218,11 @@ msgid "Install Whisper Package"
 msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Download"
 msgctxt "@action:button"
 msgid "Download Model"
-msgstr ""
+msgstr "چۈشۈرۈش"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:52
 #, kde-format
@@ -258,15 +261,16 @@ msgid "Installation done."
 msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Installed"
 msgid "Installation failed."
-msgstr ""
+msgstr "ئورنىتىلغان"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:161
 #, kde-format
 msgctxt "@info:progress <downloaded> of <size of the model>"
 msgid "%1 of %2"
-msgstr "%1 / %2"
+msgstr ""
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:171
 #, kde-format
@@ -356,5 +360,7 @@ msgstr "كىرگۈزۈش:"
 msgid "Default"
 msgstr "كۆڭۈلدىكى"
 
+#, fuzzy
+#~| msgid "Language"
 #~ msgid "Language:"
-#~ msgstr "تىل:"
+#~ msgstr "تىل"

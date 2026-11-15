@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 00:54+0000\n"
-"PO-Revision-Date: 2026-10-11 00:03+0300\n"
+"POT-Creation-Date: 2026-11-15 03:14+0000\n"
+"PO-Revision-Date: 2026-10-11 00:04+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -152,7 +152,7 @@ msgstr "Nepavyko atverti priedą."
 msgid "Restart is necessary for applying the changes."
 msgstr "Pakeitimų pritaikymui reikia paleisti programą iš naujo."
 
-#: plugins/configurepluginswidget.cpp:160
+#: plugins/configurepluginswidget.cpp:158
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
@@ -198,7 +198,7 @@ msgstr "Perbrauktas"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Underline"
-msgstr "Pabrauktas"
+msgstr "Pabraukimas"
 
 #: richtextquicktextformat.cpp:124
 #, kde-format
@@ -242,14 +242,14 @@ msgctxt "@title:window"
 msgid "Check New Version"
 msgstr "Tikrinti, ar yra nauja versija"
 
-#: verifynewversion/checknewversionwidget.cpp:63
+#: verifynewversion/checknewversionwidget.cpp:62
 #, kde-format
 msgid "A new version found. Click <a href=\"%1\">here</a> for downloading it."
 msgstr ""
 "Rasta nauja versija. Spustelėkite <a href=\"%1\">čia</a> norėdami ją "
 "atsisiųsti."
 
-#: verifynewversion/checknewversionwidget.cpp:65
+#: verifynewversion/checknewversionwidget.cpp:64
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""
@@ -321,12 +321,12 @@ msgstr "<b><i><a href=\"%1\">Laidos informacija</a></i></b>"
 #: whatsnewng/whatsnewngutils.cpp:33
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Released: %2)</i></h3>"
-msgstr "<h3><i>Kas naujo versijoje %1 (Išleista: %2)</i></h3>"
+msgstr "<h3><i>Kas naujo %1 versijoje (Išleista: %2)</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:35
 #, kde-format
 msgid "<h3><i>What's New in Version %1 (Unreleased)</i></h3>"
-msgstr "<h3><i>Kas naujo versijoje %1 (Neišleista)</i></h3>"
+msgstr "<h3><i>Kas naujo %1 versijoje (Neišleista)</i></h3>"
 
 #: whatsnewng/whatsnewngutils.cpp:51
 #, kde-format

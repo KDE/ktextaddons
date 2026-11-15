@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
-"PO-Revision-Date: 2026-11-07 01:33+0100\n"
+"POT-Creation-Date: 2026-11-14 15:12+0000\n"
+"PO-Revision-Date: 2026-10-02 01:45+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,27 +17,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:436
 #, kde-format
 msgid "Initialize request timed out."
-msgstr "La petición de inicialización ha agotado el tiempo de espera."
+msgstr ""
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:611
 #, kde-format
 msgid "Invalid server settings."
-msgstr "Ajustes no válidos del servidor."
+msgstr ""
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:631
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Impossible to start client. Url is invalid."
 msgid "Impossible to start client."
-msgstr "No se ha podido iniciar el cliente."
+msgstr "No se ha podido iniciar el cliente. La URL no es válida."
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:884
 #, kde-format
 msgid "Unsupported protocol version: %1"
-msgstr "Versión incompatible de protocolo: %1"
+msgstr ""
 
 #: core/client/mcpserver.cpp:115
 #, kde-format
@@ -60,36 +61,37 @@ msgstr "HTTP transmisible"
 #: core/server/mcpprotocolserverprotocolmanager.cpp:128
 #, kde-format
 msgid "Starting server"
-msgstr "Iniciando el servidor"
+msgstr ""
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:130
 #, kde-format
 msgid "Starting server on %1"
-msgstr "Iniciando el servidor en %1"
+msgstr ""
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:845
 #, kde-format
 msgid "Request %1 cancelled by client"
-msgstr "Petición %1 cancelada por el cliente"
+msgstr ""
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:862
 #, kde-format
 msgid "Error: %1"
-msgstr "Error: %1"
+msgstr ""
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:868
 #, kde-format
 msgid "Server started"
-msgstr "Servidor iniciado"
+msgstr ""
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:880
 #, kde-format
 msgid "Server stopped"
-msgstr "Servidor detenido"
+msgstr ""
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Impossible to start client. Url is invalid."
 msgid "Impossible to start client. URL is invalid."
 msgstr "No se ha podido iniciar el cliente. La URL no es válida."
 
@@ -97,7 +99,7 @@ msgstr "No se ha podido iniciar el cliente. La URL no es válida."
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:95
 #, kde-format
 msgid "Server is not ready."
-msgstr "El servidor no está preparado."
+msgstr ""
 
 #: plugins/client/stdio/mcpclientstdio.cpp:79
 #, kde-format
@@ -105,9 +107,10 @@ msgid "Impossible to start client. Command is empty."
 msgstr "No se ha podido iniciar el cliente. La orden está vacía."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:87
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Impossible to start client. Url is invalid."
 msgid "Impossible to start client. Arguments are invalid."
-msgstr "No se ha podido iniciar el cliente. Los argumentos no son válidos."
+msgstr "No se ha podido iniciar el cliente. La URL no es válida."
 
 #: plugins/client/stdio/mcpclientstdio.cpp:114
 #, kde-format
@@ -117,24 +120,25 @@ msgstr "No se ha podido enviar el mensaje. No se está ejecutando el cliente."
 #: plugins/client/stdio/mcpclientstdio.cpp:133
 #, kde-format
 msgid "Message received from server is too big."
-msgstr "El mensaje recibido del servidor es demasiado grande."
+msgstr ""
 
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:173
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:178
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:224
 #, kde-format
 msgid "Connection lost before receiving answer."
-msgstr "Se ha perdido la conexión antes de recibir respuesta."
+msgstr ""
 
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:400
 #, kde-format
 msgid "Session expired. Client must be restarted."
-msgstr "La sesión ha expirado. Se debe reiniciar el cliente."
+msgstr ""
 
 #: plugins/server/sse/mcpserversse.cpp:40
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:112
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:122
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Impossible to start server. Url is invalid."
 msgid "Impossible to start server. URL is invalid."
 msgstr "No se ha podido iniciar el servidor. La URL no es válida."
 
@@ -145,65 +149,69 @@ msgstr "Todavía no se ha implementado el envío de mensajes."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:54
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:128
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Impossible to start server. Url is invalid."
 msgid "Impossible to start server: %1"
-msgstr "No se ha podido iniciar el servidor: %1"
+msgstr "No se ha podido iniciar el servidor. La URL no es válida."
 
 #: plugins/server/stdio/mcpserverstdio.cpp:70
 #, kde-format
 msgid "Stdio server is not supported on this platform."
-msgstr "El servidor stdio no está admitido en esta plataforma."
+msgstr ""
 
 #: plugins/server/stdio/mcpserverstdio.cpp:90
 #: plugins/server/streamablehttp/mcpserverstreamablehttp.cpp:462
 #, kde-format
 msgid "Server is not started."
-msgstr "No se ha iniciado el servidor."
+msgstr ""
 
 #: plugins/server/stdio/mcpserverstdio.cpp:154
 #, kde-format
 msgid "Message received from client is too big."
-msgstr "El mensaje recibido del cliente es demasiado grande."
+msgstr ""
 
 #: widgets/client/addmcpregistryserverdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Server from MCP Registry"
-msgstr "Añadir servidor desde el registro MCP"
+msgstr ""
 
 #: widgets/client/addmcpregistryserverwidget.cpp:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Load More"
-msgstr "Cargar más"
+msgstr ""
 
 #: widgets/client/addmcpregistryserverwidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search in MCP registry…"
-msgstr "Buscar en el registro MCP…"
+msgstr ""
 
 #: widgets/client/addmcpregistryserverwidget.cpp:137
 #, kde-format
 msgid "Loading…"
-msgstr "Cargando…"
+msgstr ""
 
 #: widgets/client/addmcpregistryserverwidget.cpp:154
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Impossible to start server. Url is invalid."
 msgid "Impossible to load servers: %1"
-msgstr "No se han podido cargar los servidores: %1"
+msgstr "No se ha podido iniciar el servidor. La URL no es válida."
 
 #: widgets/client/addmcpregistryserverwidget.cpp:162
 #, kde-format
 msgid "Invalid answer from MCP registry."
-msgstr "Respuesta no válida del registro MCP."
+msgstr ""
 
 #: widgets/client/addmcpregistryserverwidget.cpp:172
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Add server…"
 msgid "1 server"
 msgid_plural "%1 servers"
-msgstr[0] "1 servidor"
-msgstr[1] "%1 servidores"
+msgstr[0] "Añadir servidor…"
+msgstr[1] "Añadir servidor…"
 
 #: widgets/client/addmcpserverdialog.cpp:26
 #, kde-format
@@ -212,34 +220,36 @@ msgid "Add Server"
 msgstr "Añadir servidor"
 
 #: widgets/client/addmcpserverdialog.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
 msgctxt "@title:window"
 msgid "Modify Server"
-msgstr "Modificar servidor"
+msgstr "Añadir servidor"
 
 #: widgets/client/addmcpserverrootswidget.cpp:35
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Folder…"
-msgstr "Carpeta…"
+msgstr ""
 
 #: widgets/client/addmcpserverrootswidget.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Folder"
-msgstr "Seleccionar carpeta"
+msgstr ""
 
 #: widgets/client/addmcpserverrootswidget.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Folders that server is allowed to access"
-msgstr "Carpetas a las que puede acceder ese servidor"
+msgstr ""
 
 #: widgets/client/addmcpserverrootswidget.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder"
-msgstr "Seleccionar carpeta"
+msgstr ""
 
 #: widgets/client/addmcpserverwidget.cpp:38
 #, kde-format
@@ -251,10 +261,12 @@ msgstr "Nombre:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon:"
-msgstr "Icono:"
+msgstr ""
 
 #: widgets/client/addmcpserverwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Type:"
 msgctxt "@label:listbox"
 msgid "Type:"
 msgstr "Tipo:"
@@ -263,7 +275,7 @@ msgstr "Tipo:"
 #, kde-format
 msgctxt "@label"
 msgid "Allowed folders:"
-msgstr "Carpetas permitidas:"
+msgstr ""
 
 #: widgets/client/addmcpsseserverwidget.cpp:28
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:28
@@ -271,7 +283,7 @@ msgstr "Carpetas permitidas:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "URL:"
-msgstr "URL:"
+msgstr ""
 
 #: widgets/client/addmcpsseserverwidget.cpp:31
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:32
@@ -286,15 +298,13 @@ msgstr "Cabeceras:"
 msgctxt "@info:tooltip"
 msgid "Sent as \"Authorization: Bearer\" header. Stored in the system wallet."
 msgstr ""
-"Enviar como cabecera «Authorization: Bearer». Guardado en la cartera del "
-"sistema."
 
 #: widgets/client/addmcpsseserverwidget.cpp:34
 #: widgets/client/addmcpstreamablehttpserverwidget.cpp:35
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Authentication token:"
-msgstr "Token de autenticación:"
+msgstr ""
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:19
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:43
@@ -304,22 +314,24 @@ msgid "Remove"
 msgstr "Eliminar"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Name:"
 msgctxt "@title:column"
 msgid "Name"
-msgstr "Nombre"
+msgstr "Nombre:"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
 #, kde-format
 msgctxt "@title:column"
 msgid "Value"
-msgstr "Valor"
+msgstr ""
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "An empty value keeps the variable from the user environment."
-msgstr "Un valor vacío mantiene la variable del entorno del usuario."
+msgstr ""
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:38
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:33
@@ -344,7 +356,7 @@ msgstr "Argumentos:"
 #, kde-format
 msgctxt "@label"
 msgid "Environment:"
-msgstr "Entorno:"
+msgstr ""
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfiguredialog.cpp:25
 #, kde-format
@@ -353,10 +365,12 @@ msgid "Add Custom Header"
 msgstr "Añadir cabecera personalizada"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfiguredialog.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Custom Header"
 msgctxt "@title:window"
 msgid "Modify Custom Header"
-msgstr "Modificar cabecera personalizada"
+msgstr "Añadir cabecera personalizada"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfigurewidget.cpp:23
 #, kde-format
@@ -365,10 +379,12 @@ msgid "Header:"
 msgstr "Cabecera:"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfigurewidget.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Name:"
 msgctxt "@info:placeholder"
 msgid "Name: Value"
-msgstr "Nombre: Valor"
+msgstr "Nombre:"
 
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:38
 #, kde-format
@@ -377,7 +393,8 @@ msgid "Modify"
 msgstr "Modificar"
 
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Are you sure that you want to delete this header?"
 msgctxt "@info"
 msgid "Are you sure that you want to delete this header?"
 msgstr "¿Seguro que quiere borrar esta cabecera?"
@@ -392,157 +409,221 @@ msgstr "Eliminar cabecera"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Select a server to see its information."
-msgstr "Seleccione un servidor para ver su información."
+msgstr ""
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:58
 #, kde-format
 msgid "<b>Version:</b> %1"
-msgstr "<b>Versión:</b> %1"
+msgstr ""
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:61
 #, kde-format
 msgid "<b>Repository:</b> %1"
-msgstr "<b>Repositorio:</b> %1"
+msgstr ""
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:64
 #, kde-format
 msgid "<b>Website:</b> %1"
-msgstr "<b>Sitio web:</b> %1"
+msgstr ""
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Remove"
 msgid "Remotes"
-msgstr "Remotos"
+msgstr "Eliminar"
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:79
 #, kde-format
 msgid "Packages"
-msgstr "Paquetes"
+msgstr ""
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:85
 #, kde-format
 msgid "Registry: %1"
-msgstr "Registro: %1"
+msgstr ""
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:87
 #, kde-format
 msgid "Transport: %1"
-msgstr "Transporte: %1"
+msgstr ""
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:90
 #, kde-format
 msgid "Runtime: %1"
-msgstr "Tiempo de ejecución: %1"
+msgstr ""
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:94
 #, kde-format
 msgid "Environment variables:"
-msgstr "Variables de entorno:"
+msgstr ""
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:98
 #, kde-format
 msgid "(required)"
-msgstr "(requerido)"
+msgstr ""
 
 #: widgets/client/mcpregistryserverinfowidget.cpp:101
 #, kde-format
 msgid "(secret)"
-msgstr "(secreto)"
+msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:57
-#, kde-format
+#: widgets/client/mcpserverlistview.cpp:66
+#: widgets/client/mcpserverwidget.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Server…"
 msgctxt "@action"
 msgid "Add Server…"
 msgstr "Añadir servidor…"
 
-#: widgets/client/mcpserverlistview.cpp:63
+#: widgets/client/mcpserverlistview.cpp:71
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Add Server…"
+msgctxt "@action"
+msgid "Import Server…"
+msgstr "Añadir servidor…"
+
+#: widgets/client/mcpserverlistview.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Editar…"
 
-#: widgets/client/mcpserverlistview.cpp:70
+#: widgets/client/mcpserverlistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
-msgstr "Configurar herramientas…"
+msgstr ""
 
-#: widgets/client/mcpserverlistview.cpp:81
+#: widgets/client/mcpserverlistview.cpp:96
+#, kde-format
+msgctxt "@action"
+msgid "Export…"
+msgstr ""
+
+#: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "Eliminar servidor"
 
-#: widgets/client/mcpserverlistview.cpp:88
-#, kde-format
+#: widgets/client/mcpserverlistview.cpp:110
+#, fuzzy, kde-format
+#| msgid "Do you want to remove this server (%1)?"
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "¿Desea eliminar este servidor (%1?"
 
-#: widgets/client/mcpserverlistview.cpp:89
-#, kde-format
+#: widgets/client/mcpserverlistview.cpp:111
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
 msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "Eliminar servidor"
 
-#: widgets/client/mcpserverwidget.cpp:45
+#: widgets/client/mcpserverwidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Buscar…"
 
-#: widgets/client/mcpserverwidget.cpp:52
+#: widgets/client/mcpserverwidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Añadir servidor…"
 
-#: widgets/client/mcpserverwidget.cpp:57
-#, kde-format
-msgctxt "@action"
-msgid "Server"
-msgstr "Servidor"
-
-#: widgets/client/mcpserverwidget.cpp:59
+#: widgets/client/mcpserverwidget.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
-msgstr "Desde el registro MCP…"
+msgstr ""
 
-#: widgets/client/mcpserverwidget.cpp:172
+#: widgets/client/mcpserverwidget.cpp:68
+#, kde-format
+msgctxt "@action"
+msgid "Import…"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr ""
-"Este servidor no proporciona un transporte compatible (remoto o paquete)."
 
-#: widgets/client/mcpserverwidget.cpp:172
-#, kde-format
+#: widgets/client/mcpserverwidget.cpp:185
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Add Server"
 msgctxt "@title:window"
 msgid "Add MCP Server"
-msgstr "Añadir servidor MCP"
+msgstr "Añadir servidor"
+
+#: widgets/client/mcpserverwidget.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Import Servers"
+msgstr "Eliminar servidor"
+
+#: widgets/client/mcpserverwidget.cpp:238
+#: widgets/client/mcpserverwidget.cpp:269
+#, kde-format
+msgid "JSON Files (*.json)"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:245
+#, kde-format
+msgid "An error occurred when importing server."
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:245
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Import Server"
+msgstr "Eliminar servidor"
+
+#: widgets/client/mcpserverwidget.cpp:267
+#: widgets/client/mcpserverwidget.cpp:279
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Remove Server"
+msgctxt "@title:window"
+msgid "Export Server"
+msgstr "Eliminar servidor"
+
+#: widgets/client/mcpserverwidget.cpp:279
+#, kde-format
+msgid "An error occurred when exporting server."
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Server Configuration"
-msgstr "Configuración del servidor"
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:23
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy"
-msgstr "Copiar"
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:29
 #, kde-format
 msgid "Token:"
-msgstr "Token:"
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy token to clipboard"
-msgstr "Copiar el token al portapapeles"
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:72
 #, kde-format
@@ -550,33 +631,31 @@ msgid ""
 "Clients which use the current token will not be able to connect until they "
 "are updated with the new one."
 msgstr ""
-"Los clientes que usen el token actual no podrán conectarse hasta que se "
-"actualicen con el nuevo."
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Regenerate Token"
-msgstr "Regenerar token"
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:74
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Regenerate"
-msgstr "Regenerar"
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguretokenwidget.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Generate"
-msgstr "Generar"
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:19
 #, kde-format
 msgctxt "@option:check"
 msgid "Require authentication token"
-msgstr "Requiere token de autenticación"
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:29
 #, kde-format
@@ -584,8 +663,6 @@ msgctxt "@info:tooltip"
 msgid ""
 "Server listens only on a local IP address, e.g. http://127.0.0.1:8765/mcp"
 msgstr ""
-"El servidor escucha solo en una dirección IP local, como "
-"http://127.0.0.1:8765/mcp"
 
 #: widgets/server/mcpprotocolserverconfigurewidget.cpp:35
 #, kde-format
@@ -594,5 +671,22 @@ msgid ""
 "Clients must send this token as \"Authorization: Bearer\" header. Token is "
 "stored in the system wallet."
 msgstr ""
-"Los clientes deben enviar este token como cabecera «Authorization: Bearer». "
-"El token se guarda en la cartera del sistema."
+
+#~ msgid "Impossible to start server. Command is empty."
+#~ msgstr "No se ha podido iniciar el servidor. La orden está vacía."
+
+#~ msgid "Impossible to send message. Server is not running."
+#~ msgstr ""
+#~ "No se ha podido enviar el mensaje. No se está ejecutando el servidor."
+
+#~ msgctxt "@label:textbox"
+#~ msgid "Url:"
+#~ msgstr "URL:"
+
+#~ msgctxt "@info:placeholder"
+#~ msgid "Define Header…"
+#~ msgstr "Definir cabecera…"
+
+#~ msgctxt "@title"
+#~ msgid "Remove Server"
+#~ msgstr "Eliminar servidor"

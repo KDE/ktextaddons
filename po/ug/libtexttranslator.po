@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 15:37+0000\n"
-"PO-Revision-Date: 2026-09-23 06:56+0900\n"
+"POT-Creation-Date: 2026-11-13 12:20+0000\n"
+"PO-Revision-Date: 2026-05-31 19:49-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -401,9 +401,10 @@ msgid "Settings"
 msgstr "تەڭشەك"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Translate"
 msgid "Translation failed."
-msgstr ""
+msgstr "تەرجىمە"
 
 #: translator/plugins/bergamot/bergamotmarianinterface.cpp:107
 #, kde-format
@@ -451,43 +452,44 @@ msgstr ""
 msgid "Error during writing on disk: %1"
 msgstr ""
 
-#: translator/plugins/bergamot/extractlanguagejob.cpp:33
+#: translator/plugins/bergamot/extractlanguagejob.cpp:31
+#: translator/plugins/bergamot/extractlanguagejob.cpp:39
 #, kde-format
 msgid "Impossible to extract language"
 msgstr ""
 
-#: translator/plugins/bergamot/translatormodel.cpp:50
+#: translator/plugins/bergamot/translatormodel.cpp:43
 #, kde-format
 msgid "Source"
 msgstr "مەنبە"
 
-#: translator/plugins/bergamot/translatormodel.cpp:52
+#: translator/plugins/bergamot/translatormodel.cpp:45
 #, kde-format
 msgid "Target"
 msgstr "نىشان"
 
-#: translator/plugins/bergamot/translatormodel.cpp:54
+#: translator/plugins/bergamot/translatormodel.cpp:47
 #, kde-format
 msgid "Type"
 msgstr "تۈرى"
 
-#: translator/plugins/bergamot/translatormodel.cpp:56
+#: translator/plugins/bergamot/translatormodel.cpp:49
 #, kde-format
 msgid "Repository"
 msgstr "خەزىنە"
 
-#: translator/plugins/bergamot/translatormodel.cpp:58
+#: translator/plugins/bergamot/translatormodel.cpp:51
 #, kde-format
 msgid "Installed Version"
 msgstr ""
 
-#: translator/plugins/bergamot/translatormodel.cpp:60
+#: translator/plugins/bergamot/translatormodel.cpp:53
 #, kde-format
 msgid "Available Version"
 msgstr ""
 
-#: translator/plugins/bergamot/translatormodel.cpp:62
-#: translator/plugins/bergamot/translatormodel.cpp:132
+#: translator/plugins/bergamot/translatormodel.cpp:55
+#: translator/plugins/bergamot/translatormodel.cpp:125
 #, kde-format
 msgid "Installed"
 msgstr "ئورنىتىلغان"
@@ -495,7 +497,7 @@ msgstr "ئورنىتىلغان"
 #: translator/plugins/bing/bingengineclient.cpp:28
 #, kde-format
 msgid "Bing"
-msgstr ""
+msgstr "Bing"
 
 #: translator/plugins/bing/bingengineplugin.cpp:59
 #, kde-format
@@ -521,7 +523,7 @@ msgstr ""
 #: translator/plugins/deepl/deeplengineclient.cpp:35
 #, kde-format
 msgid "DeepL"
-msgstr ""
+msgstr "DeepL"
 
 #: translator/plugins/deepl/deeplengineconfiguredialog.cpp:19
 #: translator/plugins/libretranslate/libretranslateengineconfiguredialog.cpp:19
@@ -552,7 +554,7 @@ msgstr ""
 #: translator/plugins/google/googleengineclient.cpp:27
 #, kde-format
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: translator/plugins/google/googleengineplugin.cpp:85
 #, kde-format
@@ -589,7 +591,7 @@ msgstr ""
 #: translator/plugins/yandex/yandexengineclient.cpp:27
 #, kde-format
 msgid "Yandex"
-msgstr ""
+msgstr "Yandex"
 
 #: translator/plugins/yandex/yandexengineplugin.cpp:64
 #, kde-format
@@ -675,70 +677,70 @@ msgstr "ھەممە ھۆججەت(*)"
 msgid "Translate…"
 msgstr "تەرجىمە…"
 
-#: translator/widgets/translatorwidget.cpp:209
+#: translator/widgets/translatorwidget.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "ياپ"
 
-#: translator/widgets/translatorwidget.cpp:212
+#: translator/widgets/translatorwidget.cpp:210
 #, kde-format
 msgid "Close"
 msgstr "ياپ"
 
-#: translator/widgets/translatorwidget.cpp:218
+#: translator/widgets/translatorwidget.cpp:216
 #, kde-format
 msgctxt "Translate from language"
 msgid "From:"
 msgstr "كىمدىن:"
 
-#: translator/widgets/translatorwidget.cpp:226
+#: translator/widgets/translatorwidget.cpp:224
 #, kde-format
 msgctxt "Translate to language"
 msgid "To:"
 msgstr "كىمگە:"
 
-#: translator/widgets/translatorwidget.cpp:239
+#: translator/widgets/translatorwidget.cpp:237
 #, kde-format
 msgctxt "Invert language choices so that from becomes to and to becomes from"
 msgid "Invert"
 msgstr "ئەكسى رەڭگە ئالماشتۇر"
 
-#: translator/widgets/translatorwidget.cpp:244
+#: translator/widgets/translatorwidget.cpp:242
 #, kde-format
 msgctxt "@action:button"
 msgid "Clear"
 msgstr "تازىلا"
 
-#: translator/widgets/translatorwidget.cpp:247
+#: translator/widgets/translatorwidget.cpp:245
 #, kde-format
 msgid "Clear"
 msgstr "تازىلا"
 
-#: translator/widgets/translatorwidget.cpp:252
+#: translator/widgets/translatorwidget.cpp:250
 #, kde-format
 msgctxt "@action:button"
 msgid "Translate"
 msgstr "تەرجىمە"
 
-#: translator/widgets/translatorwidget.cpp:255
+#: translator/widgets/translatorwidget.cpp:253
 #, kde-format
 msgid "Translate"
 msgstr "تەرجىمە"
 
-#: translator/widgets/translatorwidget.cpp:262
+#: translator/widgets/translatorwidget.cpp:260
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "سازلا"
 
-#: translator/widgets/translatorwidget.cpp:280
+#: translator/widgets/translatorwidget.cpp:279
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "سەپلە"
 
-#: translator/widgets/translatorwidget.cpp:359
+#: translator/widgets/translatorwidget.cpp:357
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -746,24 +748,24 @@ msgid ""
 "external Server)."
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:361
+#: translator/widgets/translatorwidget.cpp:359
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:412
+#: translator/widgets/translatorwidget.cpp:410
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:412
+#: translator/widgets/translatorwidget.cpp:410
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:449
+#: translator/widgets/translatorwidget.cpp:447
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"
