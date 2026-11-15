@@ -27,6 +27,7 @@ public:
     ~GrammalecteConfigDialog() override;
 
 private:
+    TEXTGRAMMARCHECK_NO_EXPORT void slotAccepted();
     GrammalecteConfigWidget *const mConfigWidget;
 };
 }

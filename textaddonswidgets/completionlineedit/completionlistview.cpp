@@ -89,6 +89,10 @@ bool CompletionListView::event(QEvent *event)
 
 void CompletionListView::slotCompletionAvailable()
 {
+    if (!mTextWidget) {
+        hide();
+        return;
+    }
     const int rowCount = model()->rowCount();
     if (rowCount == 0) {
         hide();

@@ -1059,8 +1059,7 @@ void RichTextEditor::moveLineUpDown(bool moveUp)
         move.movePosition(QTextCursor::StartOfBlock);
         move.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
     }
-    const QString text = move.selectedText();
-
+    const QTextDocumentFragment frag = move.selection();
     move.movePosition(QTextCursor::Right, QTextCursor::KeepAnchor);
     move.removeSelectedText();
 
@@ -1081,7 +1080,7 @@ void RichTextEditor::moveLineUpDown(bool moveUp)
 
     int start = move.position();
     move.clearSelection();
-    move.insertText(text);
+    move.insertFragment(frag);
     if (hasSelection) {
         int end = move.position();
         move.setPosition(end);

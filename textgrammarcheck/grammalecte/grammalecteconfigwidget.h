@@ -51,5 +51,6 @@ private:
     GrammalecteUrlRequesterWidget *mPythonPath = nullptr;
     GrammalecteUrlRequesterWidget *mGrammalectePath = nullptr;
     const bool mDisableDialogBox = false;
+    bool mOptionLoaded = false;
 };
 }

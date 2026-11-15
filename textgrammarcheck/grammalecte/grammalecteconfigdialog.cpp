@@ -31,11 +31,17 @@ GrammalecteConfigDialog::GrammalecteConfigDialog(QWidget *parent, bool disableMe
     auto box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     box->setObjectName(u"box"_s);
     mainLayout->addWidget(box);
-    connect(box, &QDialogButtonBox::accepted, this, &GrammalecteConfigDialog::accept);
+    connect(box, &QDialogButtonBox::accepted, this, &GrammalecteConfigDialog::slotAccepted);
     connect(box, &QDialogButtonBox::rejected, this, &GrammalecteConfigDialog::reject);
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myConfigGrammalecteConfigDialog), QSize(500, 300));
 }
 
 GrammalecteConfigDialog::~GrammalecteConfigDialog() = default;
+
+void GrammalecteConfigDialog::slotAccepted()
+{
+    mConfigWidget->saveSettings();
+    accept();
+}
 
 #include "moc_grammalecteconfigdialog.cpp"
