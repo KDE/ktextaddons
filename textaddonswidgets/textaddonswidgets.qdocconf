@@ -17,7 +17,6 @@ excludedirs += \
     needupdateversion/tests \
     quicksearchbar/autotests \
     tests \
-    whatsnew/autotests \
     whatsnewng/autotests \
     whatsnewng/tests
 
