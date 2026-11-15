@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-13 12:57+0000\n"
-"PO-Revision-Date: 2026-11-06 08:29-0300\n"
+"POT-Creation-Date: 2026-11-14 19:25+0000\n"
+"PO-Revision-Date: 2026-11-14 06:24-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -85,13 +85,53 @@ msgstr "Servidor iniciado"
 msgid "Server stopped"
 msgstr "Servidor parou"
 
+#: plugins/client/mcpclientutils.cpp:130
+#, kde-format
+msgid "Authentication failed: the server rejected the access token."
+msgstr ""
+
+#: plugins/client/mcpclientutils.cpp:132
+#, kde-format
+msgid ""
+"Authentication required. The server uses OAuth authorization, which is not "
+"supported: set an access token in the server settings."
+msgstr ""
+
+#: plugins/client/mcpclientutils.cpp:134
+#, kde-format
+msgid "Authentication required: set an access token in the server settings."
+msgstr ""
+
+#: plugins/client/mcpclientutils.cpp:137
+#, kde-format
+msgid ""
+"Access denied: the access token does not grant the required permissions."
+msgstr ""
+
+#: plugins/client/mcpclientutils.cpp:138
+#, kde-format
+msgid ""
+"Access denied: the access token does not grant the required permissions (%1)."
+msgstr ""
+
+#: plugins/client/mcpclientutils.cpp:140
+#, kde-format
+msgid "Access denied by the server."
+msgstr ""
+
+#: plugins/client/mcpclientutils.cpp:143
+#, fuzzy, kde-format
+#| msgid "Server started"
+msgid "Server message: %1"
+msgstr "Servidor iniciado"
+
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
 #, kde-format
 msgid "Impossible to start client. URL is invalid."
 msgstr "Não é possível iniciar o cliente. A URL é inválida."
 
-#: plugins/client/sse/mcpclientsse.cpp:90
+#: plugins/client/sse/mcpclientsse.cpp:91
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:95
 #, kde-format
 msgid "Server is not ready."
@@ -117,14 +157,14 @@ msgstr "Não é possível enviar a mensagem. O cliente não está em execução.
 msgid "Message received from server is too big."
 msgstr "A mensagem recebida do servidor é muito grande."
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:173
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:178
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:224
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:183
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:235
 #, kde-format
 msgid "Connection lost before receiving answer."
 msgstr "Conexão perdida antes de receber a resposta."
 
-#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:400
+#: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:416
 #, kde-format
 msgid "Session expired. Client must be restarted."
 msgstr "Sessão expirada. O cliente deve ser reiniciado."
@@ -447,87 +487,134 @@ msgstr "(necessário)"
 msgid "(secret)"
 msgstr "(secreto)"
 
-#: widgets/client/mcpserverlistview.cpp:57
-#: widgets/client/mcpserverwidget.cpp:58
+#: widgets/client/mcpserverlistview.cpp:66
+#: widgets/client/mcpserverwidget.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Add Server…"
 msgstr "Adicionar servidor…"
 
-#: widgets/client/mcpserverlistview.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#: widgets/client/mcpserverlistview.cpp:71
+#, kde-format
 msgctxt "@action"
 msgid "Import Server…"
-msgstr "Adicionar servidor…"
+msgstr "Importar servidor…"
 
-#: widgets/client/mcpserverlistview.cpp:68
+#: widgets/client/mcpserverlistview.cpp:77
 #, kde-format
 msgctxt "@action"
 msgid "Edit…"
 msgstr "Editar…"
 
-#: widgets/client/mcpserverlistview.cpp:75
+#: widgets/client/mcpserverlistview.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
 msgstr "Configurar ferramentas…"
 
-#: widgets/client/mcpserverlistview.cpp:86
+#: widgets/client/mcpserverlistview.cpp:96
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Import…"
+msgctxt "@action"
+msgid "Export…"
+msgstr "Importar…"
+
+#: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Remove Server"
 msgstr "Remover servidor"
 
-#: widgets/client/mcpserverlistview.cpp:93
+#: widgets/client/mcpserverlistview.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove this server (%1)?"
 msgstr "Deseja remover este servidor (%1)?"
 
-#: widgets/client/mcpserverlistview.cpp:94
+#: widgets/client/mcpserverlistview.cpp:111
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Server"
 msgstr "Remover servidor"
 
-#: widgets/client/mcpserverwidget.cpp:45
+#: widgets/client/mcpserverwidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr "Pesquisar…"
 
-#: widgets/client/mcpserverwidget.cpp:52
+#: widgets/client/mcpserverwidget.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Server…"
 msgstr "Adicionar servidor…"
 
-#: widgets/client/mcpserverwidget.cpp:61
+#: widgets/client/mcpserverwidget.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "From MCP Registry…"
 msgstr "A partir do registro MCP…"
 
-#: widgets/client/mcpserverwidget.cpp:64
+#: widgets/client/mcpserverwidget.cpp:68
 #, kde-format
 msgctxt "@action"
 msgid "Import…"
-msgstr ""
+msgstr "Importar…"
 
-#: widgets/client/mcpserverwidget.cpp:180
+#: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr ""
 "Este servidor não oferece um mecanismo de transporte (remoto ou de pacote) "
 "compatível."
 
-#: widgets/client/mcpserverwidget.cpp:180
+#: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
 msgctxt "@title:window"
 msgid "Add MCP Server"
 msgstr "Adicionar servidor MCP"
+
+#: widgets/client/mcpserverwidget.cpp:238
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Import Server…"
+msgctxt "@title:window"
+msgid "Import Servers"
+msgstr "Importar servidor…"
+
+#: widgets/client/mcpserverwidget.cpp:238
+#: widgets/client/mcpserverwidget.cpp:269
+#, kde-format
+msgid "JSON Files (*.json)"
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:245
+#, kde-format
+msgid "An error occurred when importing server."
+msgstr ""
+
+#: widgets/client/mcpserverwidget.cpp:245
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Import Server…"
+msgctxt "@title:window"
+msgid "Import Server"
+msgstr "Importar servidor…"
+
+#: widgets/client/mcpserverwidget.cpp:267
+#: widgets/client/mcpserverwidget.cpp:279
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Import Server…"
+msgctxt "@title:window"
+msgid "Export Server"
+msgstr "Importar servidor…"
+
+#: widgets/client/mcpserverwidget.cpp:279
+#, kde-format
+msgid "An error occurred when exporting server."
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 12:22+0000\n"
-"PO-Revision-Date: 2026-09-29 19:41+0300\n"
+"PO-Revision-Date: 2026-11-14 18:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: common/grammarresulttextedit.cpp:37
 #, kde-format
@@ -30,7 +30,7 @@ msgstr "Değişiklik"
 #: common/grammarresulttextedit.cpp:95
 #, kde-format
 msgid "Online Grammar Information"
-msgstr "Çevrim İçi Dilbilgisi"
+msgstr "Çevrim İçi Dil Bilgisi"
 
 #: common/grammarresulttextedit.cpp:108
 #, kde-format
@@ -67,7 +67,7 @@ msgstr "Genel"
 #: grammalecte/grammalecteconfigwidget.cpp:38
 #, kde-format
 msgid "Grammar Settings"
-msgstr "Dilbilgisi Ayarları"
+msgstr "Dil Bilgisi Ayarları"
 
 #: grammalecte/grammalecteconfigwidget.cpp:63
 #, kde-format
@@ -130,10 +130,9 @@ msgid "Grammalecte path not found."
 msgstr "Grammalecte yolu bulunamadı."
 
 #: grammalecte/grammalecteresultwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Grammalecte program file not found."
+#, kde-format
 msgid "Python program file not found."
-msgstr "Grammalecte programı bulunamadı."
+msgstr "Python programı bulunamadı."
 
 #: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format
@@ -345,7 +344,7 @@ msgstr "Bir hata bildirildi: %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to check grammar."
-msgstr "Dilbilgisi denetlenemedi."
+msgstr "Dil bilgisi denetlenemedi."
 
 #: languagetool/languagetoolresultwidget.cpp:80
 #, kde-format

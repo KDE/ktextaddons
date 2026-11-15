@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 12:22+0000\n"
-"PO-Revision-Date: 2026-09-29 07:32+0200\n"
+"PO-Revision-Date: 2026-11-14 07:16+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: common/grammarresulttextedit.cpp:37
 #, kde-format
@@ -132,10 +132,9 @@ msgid "Grammalecte path not found."
 msgstr "Poti za Grammalecte ni mogoče najti."
 
 #: grammalecte/grammalecteresultwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Grammalecte program file not found."
+#, kde-format
 msgid "Python program file not found."
-msgstr "Programa Grammalecte ni mogoče najti."
+msgstr "Pythonovega programa ni bilo mogoče najti."
 
 #: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format
