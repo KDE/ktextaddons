@@ -73,9 +73,7 @@ public:
      * \return VerifyNewVersionInfo containing the generated information
      */
     [[nodiscard]] VerifyNewVersionInfo generateVerifyNewVersionInfo(const QString &stableBranchVersion, const QString &url, bool stable) const;
-#if TEXTADDONSWIDGETS_ENABLE_DEPRECATED_SINCE(1, 9)
-    [[deprecated("use generateUrlInfo")]] void addOsUrlInfo(VerifyNewVersionWidget::OsVersion os, const QString &url);
-#endif
+
 private:
     TEXTADDONSWIDGETS_NO_EXPORT void slotVerifyNewVersion();
     QMap<VerifyNewVersionWidget::OsVersion, QString> mUrls;

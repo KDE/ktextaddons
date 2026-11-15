@@ -40,7 +40,7 @@ void VerifyNewVersionWidget::generateUrlInfo([[maybe_unused]] const QString &sta
 {
 #if defined(Q_OS_WIN) || defined(Q_OS_MACOS)
     const VerifyNewVersionWidget::VerifyNewVersionInfo info = generateVerifyNewVersionInfo(stableBranchVersion, url, stable);
-    addOsUrlInfo(info.osVersion, info.generatedUrl);
+    mUrls.insert(info.osVersion, info.generatedUrl);
 #endif
 }
 
@@ -81,13 +81,6 @@ VerifyNewVersionWidget::VerifyNewVersionInfo VerifyNewVersionWidget::generateVer
 #endif
     return info;
 }
-
-#if TEXTADDONSWIDGETS_ENABLE_DEPRECATED_SINCE(1, 9)
-void VerifyNewVersionWidget::addOsUrlInfo(OsVersion os, const QString &url)
-{
-    mUrls.insert(os, url);
-}
-#endif
 
 void VerifyNewVersionWidget::slotVerifyNewVersion()
 {
