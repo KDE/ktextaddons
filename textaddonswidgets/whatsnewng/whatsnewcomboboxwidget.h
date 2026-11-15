@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "textaddonswidgets_export.h"
+#include "textaddonswidgets_private_export.h"
 #include <QWidget>
 class QComboBox;
 namespace TextAddonsWidgets
@@ -19,7 +19,7 @@ namespace TextAddonsWidgets
  * \brief The WhatsNewComboBoxWidget class
  * \author Laurent Montel <montel@kde.org>
  */
-class TEXTADDONSWIDGETS_EXPORT WhatsNewComboBoxWidget : public QWidget
+class TEXTADDONSWIDGETS_TESTS_EXPORT WhatsNewComboBoxWidget : public QWidget
 {
     Q_OBJECT
 public:

@@ -221,7 +221,6 @@ ecm_generate_headers(TextAddonsWidgets_Camelcasewhatsnewng_HEADERS
         WhatsNewNgDialog
         WhatsNewMessageNgWidget
         WhatsNewNgUtils
-        WhatsNewComboBoxWidget
         REQUIRED_HEADERS TextAddonsWidgets_whatsnewng_HEADERS
         PREFIX TextAddonsWidgets
         RELATIVE whatsnewng
