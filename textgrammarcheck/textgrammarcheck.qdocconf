@@ -7,7 +7,25 @@ description = TextGrammarCheck provides grammar check support.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    common/grammaraction.h \
+    common/grammarerror.h \
+    common/grammarresulttextedit.h \
+    common/grammarresultwidget.h \
+    grammalecte/grammalecteconfigdialog.h \
+    grammalecte/grammalecteconfigwidget.h \
+    grammalecte/grammalectegenerateconfigoptionjob.h \
+    grammalecte/grammalectemanager.h \
+    grammalecte/grammalecteresultjob.h \
+    grammalecte/grammalecteresultwidget.h \
+    languagetool/languageinfo.h \
+    languagetool/languagetoolcombobox.h \
+    languagetool/languagetoolconfigdialog.h \
+    languagetool/languagetoolconfigwidget.h \
+    languagetool/languagetoolgetlistoflanguagejob.h \
+    languagetool/languagetoolmanager.h \
+    languagetool/languagetoolresultwidget.h \
+    textgrammarcheck_qdocmoduleheader.h
 sourcedirs += .
 
 excludedirs += \

@@ -7,7 +7,15 @@ description = TextAutoCorrection Core provides some autocorrection core lib.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    autocorrection.h \
+    autocorrectionsettings.h \
+    autocorrectionutils.h \
+    import/importabstractautocorrection.h \
+    import/importkmailautocorrection.h \
+    import/importlibreofficeautocorrection.h \
+    settings/textautocorrectionsettings.h \
+    textautocorrectioncore_qdocmoduleheader.h
 sourcedirs += .
 
 excludedirs += \

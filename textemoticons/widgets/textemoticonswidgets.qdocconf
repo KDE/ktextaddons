@@ -7,7 +7,12 @@ description = TextEmoticonsWidgets provides emoticon widget lib.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    emoticontexteditaction.h \
+    emoticontexteditselector.h \
+    emoticonwidgetaction.h \
+    emoticonwidgetactionwidget.h \
+    textemoticonswidgets_qdocmoduleheader.h
 sourcedirs += .
 
 excludedirs += \

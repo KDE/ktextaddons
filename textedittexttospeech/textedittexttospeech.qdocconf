@@ -7,7 +7,16 @@ description = TextEditTextToSpeech provides text to speech api.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    textedittexttospeech_qdocmoduleheader.h \
+    texttospeech.h \
+    texttospeechactions.h \
+    texttospeechconfigdialog.h \
+    texttospeechconfiginterface.h \
+    texttospeechconfigwidget.h \
+    texttospeechcontainerwidget.h \
+    texttospeechinterface.h \
+    texttospeechwidget.h
 sourcedirs += .
 
 excludedirs += \

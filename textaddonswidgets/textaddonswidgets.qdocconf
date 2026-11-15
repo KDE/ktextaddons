@@ -7,7 +7,39 @@ description = TextAddonsWidgets provides some addons widgets.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    completionlineedit/completionlineedit.h \
+    completionlineedit/completionlistview.h \
+    layout/textaddonswidgetflowlayout.h \
+    misc/executableutils.h \
+    misc/loaddialogsizeutils.h \
+    misc/openfilejob.h \
+    misc/savefileutils.h \
+    model/sortfilterproxymodelbase.h \
+    needupdateversion/needupdatecheckexistingnewversionjob.h \
+    needupdateversion/needupdateparsehtmljob.h \
+    needupdateversion/needupdateparsehtmlutil.h \
+    needupdateversion/needupdateversionutils.h \
+    needupdateversion/needupdateversionwidget.h \
+    opensavedfilefolderwidget.h \
+    plugins/configurepluginswidget.h \
+    plugins/pluginutil.h \
+    quicksearchbar/quicksearchbar.h \
+    quicksearchbar/quicksearchbarwidget.h \
+    richtextquicktextformat.h \
+    selectspecialchardialog.h \
+    slidecontainer.h \
+    textaddonswidgets_qdocmoduleheader.h \
+    textmessagewidget.h \
+    verifynewversion/verifynewversionwidget.h \
+    whatsnew/whatsnewcomboboxwidget.h \
+    whatsnew/whatsnewdialog.h \
+    whatsnew/whatsnewinfo.h \
+    whatsnew/whatsnewmessagewidget.h \
+    whatsnew/whatsnewtranslationsbase.h \
+    whatsnewng/whatsnewmessagengwidget.h \
+    whatsnewng/whatsnewngdialog.h \
+    whatsnewng/whatsnewngutils.h
 sourcedirs += .
 
 excludedirs += \

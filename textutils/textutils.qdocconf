@@ -7,7 +7,17 @@ description = TextUtils provides some text utils class.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    cmark/textutilsblockcmarksupport.h \
+    colors/textutilscolorsandmessageviewstyle.h \
+    converttext/converttext.h \
+    syntaxhighlighting/textutilsblockcodemanager.h \
+    syntaxhighlighting/textutilscopyblockiconcache.h \
+    syntaxhighlighting/textutilsiconnamecache.h \
+    syntaxhighlighting/textutilssyntaxhighlighter.h \
+    syntaxhighlighting/textutilssyntaxhighlightingmanager.h \
+    texttohtml/textutilstexttohtml.h \
+    textutils_qdocmoduleheader.h
 sourcedirs += .
 
 excludedirs += \

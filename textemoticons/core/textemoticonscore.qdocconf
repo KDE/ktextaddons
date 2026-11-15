@@ -7,7 +7,19 @@ description = TextEmoticonsCore provides emoticon core lib.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    customemoji.h \
+    customemojiiconmanager.h \
+    emojimodel.h \
+    emojimodelmanager.h \
+    emojisortfilterproxymodel.h \
+    emoticoncategory.h \
+    emoticonunicodeutils.h \
+    runninganimatedimage.h \
+    textemoticonscore_qdocmoduleheader.h \
+    unicodeemoticon.h \
+    unicodeemoticonmanager.h \
+    unicodeemoticonparser.h
 sourcedirs += .
 
 excludedirs += \

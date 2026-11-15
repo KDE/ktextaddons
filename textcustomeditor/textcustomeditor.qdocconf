@@ -7,7 +7,21 @@ description = TextCustomEditor provides custom editor.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    core/texteditorcompleter.h \
+    plaintexteditor/plaintexteditfindbar.h \
+    plaintexteditor/plaintexteditor.h \
+    plaintexteditor/plaintexteditorwidget.h \
+    plaintexteditor/plaintextsyntaxspellcheckinghighlighter.h \
+    richtextbrowser/richtextbrowser.h \
+    richtextbrowser/richtextbrowserfindbar.h \
+    richtextbrowser/richtextbrowserwidget.h \
+    richtexteditor/richtexteditfindbar.h \
+    richtexteditor/richtexteditor.h \
+    richtexteditor/richtexteditorwidget.h \
+    textcustomeditor_qdocmoduleheader.h \
+    widgets/texteditfindbarbase.h \
+    widgets/textgotolinewidget.h
 sourcedirs += .
 
 excludedirs += \

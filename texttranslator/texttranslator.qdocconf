@@ -7,7 +7,18 @@ description = TextTranslator provides translator class.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    texttranslator_qdocmoduleheader.h \
+    translator/misc/translatorutil.h \
+    translator/translatorengineaccessmanager.h \
+    translator/translatorengineclient.h \
+    translator/translatorengineloader.h \
+    translator/translatorengineplugin.h \
+    translator/widgets/translatorconfiguredialog.h \
+    translator/widgets/translatorconfigurelanguagelistwidget.h \
+    translator/widgets/translatorconfigurelistswidget.h \
+    translator/widgets/translatormenu.h \
+    translator/widgets/translatorwidget.h
 sourcedirs += .
 
 excludedirs += \
