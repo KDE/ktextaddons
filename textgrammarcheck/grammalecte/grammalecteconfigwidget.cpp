@@ -40,10 +40,7 @@ GrammalecteConfigWidget::GrammalecteConfigWidget(QWidget *parent, bool disableMe
     loadGrammarSettings();
 }
 
-GrammalecteConfigWidget::~GrammalecteConfigWidget()
-{
-    saveSettings();
-}
+GrammalecteConfigWidget::~GrammalecteConfigWidget() = default;
 
 void GrammalecteConfigWidget::loadGrammarSettings()
 {
@@ -86,6 +83,7 @@ void GrammalecteConfigWidget::slotGetSettingsFinished(const QList<GrammalecteGen
         mGrammarTabWidget->layout()->addWidget(box);
         mListOptions.append(box);
     }
+    mOptionLoaded = true;
 }
 
 QWidget *GrammalecteConfigWidget::addGrammarTab()
@@ -163,15 +161,17 @@ void GrammalecteConfigWidget::loadSettings()
 
 void GrammalecteConfigWidget::saveSettings()
 {
-    QStringList result;
-    for (const auto checkBox : std::as_const(mListOptions)) {
-        if (checkBox->isChecked()) {
-            result += checkBox->property("optionname").toString();
+    if (mOptionLoaded) {
+        QStringList result;
+        for (const auto checkBox : std::as_const(mListOptions)) {
+            if (checkBox->isChecked()) {
+                result += checkBox->property("optionname").toString();
+            }
         }
+        GrammalecteManager::self()->setOptions(result);
     }
     GrammalecteManager::self()->setPythonPath(mPythonPath->path());
     GrammalecteManager::self()->setGrammalectePath(mGrammalectePath->path());
-    GrammalecteManager::self()->setOptions(result);
     GrammalecteManager::self()->saveSettings();
 }
 
