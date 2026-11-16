@@ -29,7 +29,7 @@ Q_SIGNALS:
     void changeFavoriteRequested(bool f);
     void searchText(bool checked);
     void addNewEphemeralChat();
-    void saveInDataseRequested();
+    void saveInDatabaseRequested();
 
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotCurrentChatIdChanged();

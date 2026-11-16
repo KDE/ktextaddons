@@ -78,7 +78,7 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
         connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::addNewEphemeralChat, this, [this]() {
             mManager->createNewChat({}, TextAutoGenerateChat::Persistence::Ephemeral);
         });
-        connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::saveInDataseRequested, this, [this]() {
+        connect(mHeaderWidget, &TextAutoGenerateHeaderWidget::saveInDatabaseRequested, this, [this]() {
             mManager->saveCurrentChatInDataBase(mManager->currentChatId());
         });
         connect(mManager, &TextAutoGenerateManager::sendMessageRequested, this, [this](const QString &str) {
