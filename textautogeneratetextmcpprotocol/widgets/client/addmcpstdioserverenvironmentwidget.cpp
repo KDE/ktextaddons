@@ -5,6 +5,7 @@
 */
 #include "addmcpstdioserverenvironmentwidget.h"
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QPushButton>
@@ -79,8 +80,15 @@ void AddMcpStdioServerEnvironmentWidget::slotRemoveEnvironment()
     if (row < 0) {
         return;
     }
-    mTableWidget->removeRow(row);
-    updateButtons();
+    if (KMessageBox::questionTwoActions(this,
+                                        i18n("Do you want to remove this variable."),
+                                        i18nc("@title:window", "Remove Variable"),
+                                        KStandardGuiItem::remove(),
+                                        KStandardGuiItem::cancel())
+        == KMessageBox::PrimaryAction) {
+        mTableWidget->removeRow(row);
+        updateButtons();
+    }
 }
 
 QMap<QString, QString> AddMcpStdioServerEnvironmentWidget::environments() const
