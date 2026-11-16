@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-13 12:22+0000\n"
-"PO-Revision-Date: 2026-09-29 08:34+0200\n"
-"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"POT-Creation-Date: 2026-11-15 11:53+0000\n"
+"PO-Revision-Date: 2026-11-15 09:49+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -71,7 +71,7 @@ msgstr "Общие"
 msgid "Grammar Settings"
 msgstr "Настройка грамматики"
 
-#: grammalecte/grammalecteconfigwidget.cpp:63
+#: grammalecte/grammalecteconfigwidget.cpp:60
 #, kde-format
 msgid ""
 "Impossible to get options. Please verify that you have grammalected "
@@ -80,41 +80,41 @@ msgstr ""
 "Невозможно получить параметры. Убедитесь в наличии установленного модуля "
 "grammalecte."
 
-#: grammalecte/grammalecteconfigwidget.cpp:64
+#: grammalecte/grammalecteconfigwidget.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "Ошибка получения параметров"
 
-#: grammalecte/grammalecteconfigwidget.cpp:114
+#: grammalecte/grammalecteconfigwidget.cpp:112
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "Нажмите кнопку для повторного чтения параметров"
 
-#: grammalecte/grammalecteconfigwidget.cpp:122
+#: grammalecte/grammalecteconfigwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "Перечитать параметры"
 
-#: grammalecte/grammalecteconfigwidget.cpp:139
+#: grammalecte/grammalecteconfigwidget.cpp:137
 #, kde-format
 msgid "Python Path:"
 msgstr "Путь к Python:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:143
+#: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "Добавить полный путь «grammalecte-cli.py»"
 
-#: grammalecte/grammalecteconfigwidget.cpp:145
+#: grammalecte/grammalecteconfigwidget.cpp:143
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Путь к Grammalecte:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:151
+#: grammalecte/grammalecteconfigwidget.cpp:149
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
@@ -134,10 +134,9 @@ msgid "Grammalecte path not found."
 msgstr "Не найден путь к Grammalecte."
 
 #: grammalecte/grammalecteresultwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Grammalecte program file not found."
+#, kde-format
 msgid "Python program file not found."
-msgstr "Не найден файл программы Grammalecte."
+msgstr "Не найден файл программы Python."
 
 #: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format

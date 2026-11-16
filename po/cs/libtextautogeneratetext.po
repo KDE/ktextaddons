@@ -82,7 +82,7 @@ msgstr ""
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:35
 #, kde-format
 msgid "Tool \"%1\" is not available."
-msgstr ""
+msgstr "Nástroj \"%1\" není k dispozici."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:57
 #, kde-format
@@ -95,42 +95,40 @@ msgstr ""
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:174
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:190
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "Chyba"
+msgstr "Chyba: %1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:68
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:80
 #, kde-format
 msgid "Error: server was stopped."
-msgstr ""
+msgstr "Chyba: server byl zastaven."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:76
 #, kde-format
 msgid "User refused to run tool \"%1\"."
-msgstr ""
+msgstr "Uživatel odmítl spustit nástroj \"%1\"."
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:83
 #, kde-format
 msgid "Calling tool \"%1\"…"
-msgstr ""
+msgstr "Spouštění nástroje \"%1\"…"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:86
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
-msgstr ""
+msgstr "Chyba: Nelze spustit nástroj \"%1\"."
 
 #: core/mcp/textautogeneratemcptoolsmanager.cpp:109
 #, kde-format
 msgid "Server is invalid or disabled."
-msgstr ""
+msgstr "Server je neplatný nebo deaktivovaný."
 
 #: core/mcp/textautogeneratemcptoolsutils.cpp:85
 #, kde-format
 msgid "Read-only"
-msgstr ""
+msgstr "Pouze čtení"
 
 #: core/mcp/textautogeneratemcptoolsutils.cpp:87
 #, fuzzy, kde-format
@@ -321,7 +319,7 @@ msgstr ""
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
 msgid "MCP server: %1"
-msgstr ""
+msgstr "MCP server: %1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:252
 #, kde-format
@@ -354,7 +352,7 @@ msgstr "Aktivovat: %1"
 #: core/tools/textautogeneratetoolcalljob.cpp:49
 #, kde-format
 msgid "Tool \"%1\" not found."
-msgstr ""
+msgstr "Nástroj \"%1\" nenalezen."
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:27
 #, kde-format
@@ -2976,30 +2974,30 @@ msgstr "Přidat instanci…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from MCP Server"
-msgstr ""
+msgstr "Požadavek ze serveru MCP"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Accept"
-msgstr ""
+msgstr "Přijmout"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Decline"
-msgstr ""
+msgstr "Odmítnout"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from %1"
-msgstr ""
+msgstr "Požadavek od %1"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:217
 #, kde-format
 msgid "URL:"
-msgstr ""
+msgstr "URL:"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:246
 #, kde-format
@@ -3053,20 +3051,16 @@ msgid "All Tools"
 msgstr "Nástroje"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Vybrat vše"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr "Vybrat vše"
+msgstr "Zrušit výběr všeho"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
 #, kde-format
@@ -3080,17 +3074,15 @@ msgstr ""
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:177
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "No tag selected"
+#, kde-format
 msgid "Not connected"
-msgstr "Nebyly vybrány žádné značky."
+msgstr "Nepřipojen"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:180
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:186
 #, kde-format
 msgid "Connecting…"
-msgstr ""
+msgstr "Navazuji spojení…"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:186
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:197
@@ -3103,41 +3095,40 @@ msgstr "Zobrazit interní nástroje…"
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
 msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
-msgstr ""
+msgstr "MCP server \"%1\" chce spustit nástroj \"%2\"."
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Arguments:"
+#, kde-format
 msgid ""
 "Arguments:\n"
 "%1"
-msgstr "Argumenty:"
+msgstr ""
+"Argumenty:\n"
+"%1"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:27
-#, fuzzy, kde-format
-#| msgid "Plugins Tool:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Run Tool"
-msgstr "Nástroj pro moduly:"
+msgstr "Spustit nástroj"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Allow"
-msgstr ""
+msgstr "Povolit"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Always Allow This Server"
-msgstr ""
+msgstr "Vždy povolit tento server"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Deny"
-msgstr ""
+msgstr "Zakázat"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:29
 #, kde-format
@@ -3172,12 +3163,10 @@ msgid "Send to LLM"
 msgstr ""
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Project"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reject"
-msgstr "Projekt"
+msgstr "Odmítnout"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:89
 #, kde-format
@@ -3412,7 +3401,7 @@ msgstr "Cestování"
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:23
 #, kde-format
 msgid "Undefined"
-msgstr ""
+msgstr "Nedefinovaný"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
 #, kde-format
@@ -3743,14 +3732,14 @@ msgstr ""
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "1 nástroj"
+msgstr[1] "%1 nástroje"
+msgstr[2] "%1 nástrojů"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:204
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
-msgstr ""
+msgstr "Nástroje MCP serveru \"%1\" (%2)"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:499
 #, kde-format

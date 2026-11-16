@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-13 12:22+0000\n"
+"POT-Creation-Date: 2026-11-15 11:53+0000\n"
 "PO-Revision-Date: 2026-10-03 23:27+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -69,48 +69,48 @@ msgstr "일반"
 msgid "Grammar Settings"
 msgstr "문법 설정"
 
-#: grammalecte/grammalecteconfigwidget.cpp:63
+#: grammalecte/grammalecteconfigwidget.cpp:60
 #, kde-format
 msgid ""
 "Impossible to get options. Please verify that you have grammalected "
 "installed."
 msgstr "옵션을 가져올 수 없습니다. grammalected 설치 상태를 확인하십시오."
 
-#: grammalecte/grammalecteconfigwidget.cpp:64
+#: grammalecte/grammalecteconfigwidget.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "옵션 가져오기 오류"
 
-#: grammalecte/grammalecteconfigwidget.cpp:114
+#: grammalecte/grammalecteconfigwidget.cpp:112
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "설정을 다시 읽으려면 누르십시오"
 
-#: grammalecte/grammalecteconfigwidget.cpp:122
+#: grammalecte/grammalecteconfigwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "설정 다시 읽기"
 
-#: grammalecte/grammalecteconfigwidget.cpp:139
+#: grammalecte/grammalecteconfigwidget.cpp:137
 #, kde-format
 msgid "Python Path:"
 msgstr "Python 경로:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:143
+#: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "전체 'grammalecte-cli.py' 경로 추가"
 
-#: grammalecte/grammalecteconfigwidget.cpp:145
+#: grammalecte/grammalecteconfigwidget.cpp:143
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Grammalecte 경로:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:151
+#: grammalecte/grammalecteconfigwidget.cpp:149
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"
