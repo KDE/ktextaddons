@@ -8,6 +8,7 @@
 
 OllamaModelInstalledListView::OllamaModelInstalledListView(QWidget *parent)
     : QListView(parent)
+    , mAvailableInfosDelegate(new OllamaModelInstalledInfosDelegate(this))
 {
     setVerticalScrollMode(QAbstractItemView::ScrollPerPixel); // nicer in case of huge messages
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -17,9 +18,14 @@ OllamaModelInstalledListView::OllamaModelInstalledListView(QWidget *parent)
     scrollToBottom();
     setMouseTracking(true);
 
-    setItemDelegate(new OllamaModelInstalledInfosDelegate(this));
+    setItemDelegate(mAvailableInfosDelegate);
 }
 
 OllamaModelInstalledListView::~OllamaModelInstalledListView() = default;
 
+void OllamaModelInstalledListView::resizeEvent(QResizeEvent *ev)
+{
+    QListView::resizeEvent(ev);
+    mAvailableInfosDelegate->clearSizeHintCache();
+}
 #include "moc_ollamamodelinstalledlistview.cpp"

@@ -6,11 +6,17 @@
 #pragma once
 #include "textautogenerateollama_private_export.h"
 #include <QListView>
-
+class OllamaModelInstalledInfosDelegate;
 class TEXTAUTOGENERATEOLLAMA_TESTS_EXPORT OllamaModelInstalledListView : public QListView
 {
     Q_OBJECT
 public:
     explicit OllamaModelInstalledListView(QWidget *parent = nullptr);
     ~OllamaModelInstalledListView() override;
+
+protected:
+    void resizeEvent(QResizeEvent *ev) override;
+
+private:
+    OllamaModelInstalledInfosDelegate *const mAvailableInfosDelegate;
 };
