@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-13 12:22+0000\n"
+"POT-Creation-Date: 2026-11-15 12:36+0000\n"
 "PO-Revision-Date: 2026-09-29 05:48+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -70,7 +70,7 @@ msgstr "ზოგადი"
 msgid "Grammar Settings"
 msgstr "გრამატიკის მორგება"
 
-#: grammalecte/grammalecteconfigwidget.cpp:63
+#: grammalecte/grammalecteconfigwidget.cpp:60
 #, kde-format
 msgid ""
 "Impossible to get options. Please verify that you have grammalected "
@@ -78,41 +78,41 @@ msgid ""
 msgstr ""
 "პარამეტრების მიღების პრობლემა. დარწმუნდით, რომ grammalected დაყენებულია."
 
-#: grammalecte/grammalecteconfigwidget.cpp:64
+#: grammalecte/grammalecteconfigwidget.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Error during Extracting Options"
 msgstr "შეცდომა პარამეტრების გამოტანისას"
 
-#: grammalecte/grammalecteconfigwidget.cpp:114
+#: grammalecte/grammalecteconfigwidget.cpp:112
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Press Button for Reloading Settings"
 msgstr "პარამეტრების თავიდან ჩასატვირთად დააწექით ღლაკს"
 
-#: grammalecte/grammalecteconfigwidget.cpp:122
+#: grammalecte/grammalecteconfigwidget.cpp:120
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reload Settings"
 msgstr "პარამეტრების თავიდან ჩატვირთვა"
 
-#: grammalecte/grammalecteconfigwidget.cpp:139
+#: grammalecte/grammalecteconfigwidget.cpp:137
 #, kde-format
 msgid "Python Path:"
 msgstr "პითონის ბილიკი:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:143
+#: grammalecte/grammalecteconfigwidget.cpp:141
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Add full 'grammalecte-cli.py' path"
 msgstr "სრული ბილიკი ფაილამდე 'grammalecte-cli.py'"
 
-#: grammalecte/grammalecteconfigwidget.cpp:145
+#: grammalecte/grammalecteconfigwidget.cpp:143
 #, kde-format
 msgid "Grammalecte Path:"
 msgstr "Grammalecte-ის ბილიკი:"
 
-#: grammalecte/grammalecteconfigwidget.cpp:151
+#: grammalecte/grammalecteconfigwidget.cpp:149
 #, kde-format
 msgid ""
 "Grammalecte can be found <a href=\"https://grammalecte.net/#download\">here</"

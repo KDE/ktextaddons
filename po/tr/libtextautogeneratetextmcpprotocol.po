@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-14 19:25+0000\n"
-"PO-Revision-Date: 2026-11-14 18:25+0300\n"
+"PO-Revision-Date: 2026-11-15 17:29+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -88,7 +88,7 @@ msgstr "Sunucu durduruldu."
 #: plugins/client/mcpclientutils.cpp:130
 #, kde-format
 msgid "Authentication failed: the server rejected the access token."
-msgstr ""
+msgstr "Kimlik doğrulanamadı: Sunucu, erişim jetonunu reddetti."
 
 #: plugins/client/mcpclientutils.cpp:132
 #, kde-format
@@ -96,34 +96,36 @@ msgid ""
 "Authentication required. The server uses OAuth authorization, which is not "
 "supported: set an access token in the server settings."
 msgstr ""
+"Kimlik doğrulama gerekiyor. Sunucu, OAuth yetkilendirmesi kullanıyor; ancak "
+"bu desteklenmiyor: Sunucu ayarlarından bir erişim jetonu ayarlayın."
 
 #: plugins/client/mcpclientutils.cpp:134
 #, kde-format
 msgid "Authentication required: set an access token in the server settings."
 msgstr ""
+"Kimlik doğrulama gerekiyor: Sunucu ayarlarından bir erişim jetonu ayarlayın."
 
 #: plugins/client/mcpclientutils.cpp:137
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions."
-msgstr ""
+msgstr "Erişim reddedildi: Erişim jetonu, gereken izinleri sağlamıyor."
 
 #: plugins/client/mcpclientutils.cpp:138
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions (%1)."
-msgstr ""
+msgstr "Erişim reddedildi: Erişim jetonu, gereken izinleri sağlamıyor (%1)."
 
 #: plugins/client/mcpclientutils.cpp:140
 #, kde-format
 msgid "Access denied by the server."
-msgstr ""
+msgstr "Erişim, sunucu tarafından reddedildi."
 
 #: plugins/client/mcpclientutils.cpp:143
-#, fuzzy, kde-format
-#| msgid "Server started"
+#, kde-format
 msgid "Server message: %1"
-msgstr "Sunucu başlatıldı."
+msgstr "Sunucu iletisi: %1"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
@@ -513,12 +515,10 @@ msgid "Configure Tools…"
 msgstr "Araçları Yapılandır…"
 
 #: widgets/client/mcpserverlistview.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import…"
+#, kde-format
 msgctxt "@action"
 msgid "Export…"
-msgstr "İçe Aktar…"
+msgstr "Dışa Aktar…"
 
 #: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
@@ -574,45 +574,39 @@ msgid "Add MCP Server"
 msgstr "MCP Sunucusu Ekle"
 
 #: widgets/client/mcpserverwidget.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Servers"
-msgstr "Sunucu İçe Aktar…"
+msgstr "Sunucular İçe Aktar"
 
 #: widgets/client/mcpserverwidget.cpp:238
 #: widgets/client/mcpserverwidget.cpp:269
 #, kde-format
 msgid "JSON Files (*.json)"
-msgstr ""
+msgstr "JSON dosyaları (*.json)"
 
 #: widgets/client/mcpserverwidget.cpp:245
 #, kde-format
 msgid "An error occurred when importing server."
-msgstr ""
+msgstr "Sunucu içe aktarılırken bir hata oluştu."
 
 #: widgets/client/mcpserverwidget.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Server"
-msgstr "Sunucu İçe Aktar…"
+msgstr "Sunucu İçe Aktar"
 
 #: widgets/client/mcpserverwidget.cpp:267
 #: widgets/client/mcpserverwidget.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Server"
-msgstr "Sunucu İçe Aktar…"
+msgstr "Sunucuyu Dışa Aktar"
 
 #: widgets/client/mcpserverwidget.cpp:279
 #, kde-format
 msgid "An error occurred when exporting server."
-msgstr ""
+msgstr "Sunucu dışa aktarılırken bir hata oluştu."
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

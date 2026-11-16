@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-14 19:25+0000\n"
-"PO-Revision-Date: 2026-11-06 07:49+0200\n"
+"PO-Revision-Date: 2026-11-15 09:47+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -88,7 +88,7 @@ msgstr "Сервер остановлен"
 #: plugins/client/mcpclientutils.cpp:130
 #, kde-format
 msgid "Authentication failed: the server rejected the access token."
-msgstr ""
+msgstr "Ошибка аутентификации: сервер отклонил токен доступа."
 
 #: plugins/client/mcpclientutils.cpp:132
 #, kde-format
@@ -96,34 +96,35 @@ msgid ""
 "Authentication required. The server uses OAuth authorization, which is not "
 "supported: set an access token in the server settings."
 msgstr ""
+"Требуется аутентификация. Сервер использует авторизацию OAuth, которая не "
+"поддерживается: задайте токен доступа в параметрах сервера."
 
 #: plugins/client/mcpclientutils.cpp:134
 #, kde-format
 msgid "Authentication required: set an access token in the server settings."
-msgstr ""
+msgstr "Требуется аутентификация: задайте токен доступа в параметрах сервера."
 
 #: plugins/client/mcpclientutils.cpp:137
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions."
-msgstr ""
+msgstr "Доступ запрещён: токен доступа не даёт необходимых разрешений."
 
 #: plugins/client/mcpclientutils.cpp:138
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions (%1)."
-msgstr ""
+msgstr "Доступ запрещён: токен доступа не даёт необходимых разрешений (%1)."
 
 #: plugins/client/mcpclientutils.cpp:140
 #, kde-format
 msgid "Access denied by the server."
-msgstr ""
+msgstr "Доступ запрещён сервером."
 
 #: plugins/client/mcpclientutils.cpp:143
-#, fuzzy, kde-format
-#| msgid "Server started"
+#, kde-format
 msgid "Server message: %1"
-msgstr "Сервер запущен"
+msgstr "Сообщение сервера: %1"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
@@ -497,12 +498,10 @@ msgid "Add Server…"
 msgstr "Добавить сервер…"
 
 #: widgets/client/mcpserverlistview.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@action"
 msgid "Import Server…"
-msgstr "Добавить сервер…"
+msgstr "Импортировать сервер…"
 
 #: widgets/client/mcpserverlistview.cpp:77
 #, kde-format
@@ -520,7 +519,7 @@ msgstr "Настроить инструменты…"
 #, kde-format
 msgctxt "@action"
 msgid "Export…"
-msgstr ""
+msgstr "Экспорт…"
 
 #: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
@@ -562,7 +561,7 @@ msgstr "Из реестра MCP…"
 #, kde-format
 msgctxt "@action"
 msgid "Import…"
-msgstr ""
+msgstr "Импортировать…"
 
 #: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
@@ -578,45 +577,39 @@ msgid "Add MCP Server"
 msgstr "Добавление сервера MCP"
 
 #: widgets/client/mcpserverwidget.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Servers"
-msgstr "Добавить сервер…"
+msgstr "Импорт серверов"
 
 #: widgets/client/mcpserverwidget.cpp:238
 #: widgets/client/mcpserverwidget.cpp:269
 #, kde-format
 msgid "JSON Files (*.json)"
-msgstr ""
+msgstr "Файлы JSON (*.json)"
 
 #: widgets/client/mcpserverwidget.cpp:245
 #, kde-format
 msgid "An error occurred when importing server."
-msgstr ""
+msgstr "При импорте сервера произошла ошибка."
 
 #: widgets/client/mcpserverwidget.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Server"
-msgstr "Добавить сервер…"
+msgstr "Импорт сервера"
 
 #: widgets/client/mcpserverwidget.cpp:267
 #: widgets/client/mcpserverwidget.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Server"
-msgstr "Добавить сервер…"
+msgstr "Экспорт сервера"
 
 #: widgets/client/mcpserverwidget.cpp:279
 #, kde-format
 msgid "An error occurred when exporting server."
-msgstr ""
+msgstr "При экспорте сервера произошла ошибка."
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

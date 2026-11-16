@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-14 19:25+0000\n"
-"PO-Revision-Date: 2026-11-14 10:44+0100\n"
+"PO-Revision-Date: 2026-11-15 09:48+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -91,6 +91,8 @@ msgstr "El servidor s'ha parat"
 #, kde-format
 msgid "Authentication failed: the server rejected the access token."
 msgstr ""
+"No s'ha pogut fer l'autenticació.: el servidor ha rebutjat el testimoni "
+"d'accés."
 
 #: plugins/client/mcpclientutils.cpp:132
 #, kde-format
@@ -98,34 +100,41 @@ msgid ""
 "Authentication required. The server uses OAuth authorization, which is not "
 "supported: set an access token in the server settings."
 msgstr ""
+"Es requerix autenticació. El servidor utilitza l'autorització OAuth, que no "
+"és compatible: establiu un testimoni d'accés a la configuració del servidor."
 
 #: plugins/client/mcpclientutils.cpp:134
 #, kde-format
 msgid "Authentication required: set an access token in the server settings."
 msgstr ""
+"Es requerix autenticació: establiu un testimoni d'accés a la configuració "
+"del servidor."
 
 #: plugins/client/mcpclientutils.cpp:137
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions."
 msgstr ""
+"S'ha denegat l'accés: el testimoni d'accés no concedix els permisos "
+"requerits."
 
 #: plugins/client/mcpclientutils.cpp:138
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions (%1)."
 msgstr ""
+"S'ha denegat l'accés: el testimoni d'accés no concedix els permisos "
+"requerits (%1)."
 
 #: plugins/client/mcpclientutils.cpp:140
 #, kde-format
 msgid "Access denied by the server."
-msgstr ""
+msgstr "El servidor ha denegat l'accés."
 
 #: plugins/client/mcpclientutils.cpp:143
-#, fuzzy, kde-format
-#| msgid "Server started"
+#, kde-format
 msgid "Server message: %1"
-msgstr "El servidor s'ha iniciat"
+msgstr "Missatge del servidor: %1"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
@@ -515,12 +524,10 @@ msgid "Configure Tools…"
 msgstr "Configura les eines…"
 
 #: widgets/client/mcpserverlistview.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import…"
+#, kde-format
 msgctxt "@action"
 msgid "Export…"
-msgstr "Importa…"
+msgstr "Exporta…"
 
 #: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
@@ -576,45 +583,39 @@ msgid "Add MCP Server"
 msgstr "Addició de servidor MCP"
 
 #: widgets/client/mcpserverwidget.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Servers"
-msgstr "Importa un servidor…"
+msgstr "Importa servidors"
 
 #: widgets/client/mcpserverwidget.cpp:238
 #: widgets/client/mcpserverwidget.cpp:269
 #, kde-format
 msgid "JSON Files (*.json)"
-msgstr ""
+msgstr "Fitxers JSON (*.json)"
 
 #: widgets/client/mcpserverwidget.cpp:245
 #, kde-format
 msgid "An error occurred when importing server."
-msgstr ""
+msgstr "S'ha produït un error mentre s'importava un servidor."
 
 #: widgets/client/mcpserverwidget.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Server"
-msgstr "Importa un servidor…"
+msgstr "Importació de servidor"
 
 #: widgets/client/mcpserverwidget.cpp:267
 #: widgets/client/mcpserverwidget.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Server"
-msgstr "Importa un servidor…"
+msgstr "Exportació de servidor"
 
 #: widgets/client/mcpserverwidget.cpp:279
 #, kde-format
 msgid "An error occurred when exporting server."
-msgstr ""
+msgstr "S'ha produït un error mentre s'exportava un servidor."
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

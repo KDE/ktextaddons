@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-14 19:25+0000\n"
-"PO-Revision-Date: 2026-11-14 21:07+0200\n"
+"PO-Revision-Date: 2026-11-15 14:40+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -90,6 +90,8 @@ msgstr "Роботу сервера зупинено"
 #, kde-format
 msgid "Authentication failed: the server rejected the access token."
 msgstr ""
+"Не вдалося пройти розпізнавання: сервером відмовлено у прийнятті жетону "
+"доступу."
 
 #: plugins/client/mcpclientutils.cpp:132
 #, kde-format
@@ -97,34 +99,37 @@ msgid ""
 "Authentication required. The server uses OAuth authorization, which is not "
 "supported: set an access token in the server settings."
 msgstr ""
+"Слід пройти розпізнавання. Сервер використовує розпізнавання за OAuth, "
+"підтримки якого не передбачено: вкажіть жетон доступу у параметрах сервера."
 
 #: plugins/client/mcpclientutils.cpp:134
 #, kde-format
 msgid "Authentication required: set an access token in the server settings."
 msgstr ""
+"Слід пройти розпізнавання: встановіть жетон доступу у параметрах сервера."
 
 #: plugins/client/mcpclientutils.cpp:137
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions."
-msgstr ""
+msgstr "Відмовлено у доступі: жетон доступу не надає потрібних прав доступу."
 
 #: plugins/client/mcpclientutils.cpp:138
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions (%1)."
 msgstr ""
+"Відмовлено у доступі: жетон доступу не надає потрібних прав доступу (%1)."
 
 #: plugins/client/mcpclientutils.cpp:140
 #, kde-format
 msgid "Access denied by the server."
-msgstr ""
+msgstr "Сервером відмовлено у доступі."
 
 #: plugins/client/mcpclientutils.cpp:143
-#, fuzzy, kde-format
-#| msgid "Server started"
+#, kde-format
 msgid "Server message: %1"
-msgstr "Сервер запущено"
+msgstr "Повідомлення сервера: %1"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
@@ -517,12 +522,10 @@ msgid "Configure Tools…"
 msgstr "Налаштувати інструменти…"
 
 #: widgets/client/mcpserverlistview.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import…"
+#, kde-format
 msgctxt "@action"
 msgid "Export…"
-msgstr "Імпортувати…"
+msgstr "Експортувати…"
 
 #: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
@@ -580,45 +583,39 @@ msgid "Add MCP Server"
 msgstr "Додавання сервера MCP"
 
 #: widgets/client/mcpserverwidget.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Servers"
-msgstr "Імпортувати сервер…"
+msgstr "Імпортування серверів"
 
 #: widgets/client/mcpserverwidget.cpp:238
 #: widgets/client/mcpserverwidget.cpp:269
 #, kde-format
 msgid "JSON Files (*.json)"
-msgstr ""
+msgstr "файли JSON (*.json)"
 
 #: widgets/client/mcpserverwidget.cpp:245
 #, kde-format
 msgid "An error occurred when importing server."
-msgstr ""
+msgstr "Під час спроби імпортувати дані сервера сталася помилка."
 
 #: widgets/client/mcpserverwidget.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Server"
-msgstr "Імпортувати сервер…"
+msgstr "Імпортування сервера"
 
 #: widgets/client/mcpserverwidget.cpp:267
 #: widgets/client/mcpserverwidget.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Server"
-msgstr "Імпортувати сервер…"
+msgstr "Експортування сервера"
 
 #: widgets/client/mcpserverwidget.cpp:279
 #, kde-format
 msgid "An error occurred when exporting server."
-msgstr ""
+msgstr "Під час спроби експортувати дані сервера сталася помилка."
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
