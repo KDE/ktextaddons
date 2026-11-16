@@ -320,8 +320,6 @@ public:
     [[nodiscard]] static QJsonObject convertToolExchangeToChatJson(const QJsonObject &obj, ToolCallFormat format);
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage::MessageStates messageStates() const;
-    TEXTAUTOGENERATETEXT_NO_EXPORT void setMessageStates(MessageStates newMessageStates);
     TEXTAUTOGENERATETEXT_NO_EXPORT void assignMessageStateValue(MessageState type, bool status);
     TEXTAUTOGENERATETEXT_NO_EXPORT bool messageStateValue(MessageState type) const;
     QSharedDataPointer<TextAutoGenerateAnswerInfo> mMessageInfo;
