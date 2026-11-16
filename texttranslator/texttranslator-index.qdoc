@@ -10,7 +10,7 @@
 
     \section2 Building with CMake
 
-    \include {module-use.qdocinc} {building with cmake} {KF6} {TextTranslator} {KF6::TextTranslator}
+    \include {module-use.qdocinc} {building with cmake nomodule} {KF6TextTranslator} {KF6::TextTranslator}
 
     \section1 API Reference
 

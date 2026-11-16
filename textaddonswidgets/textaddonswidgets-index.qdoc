@@ -10,7 +10,7 @@
 
     \section2 Building with CMake
 
-    \include {module-use.qdocinc} {building with cmake} {KF6} {TextAddonsWidgets} {KF6::TextAddonsWidgets}
+    \include {module-use.qdocinc} {building with cmake nomodule} {KF6TextAddonsWidgets} {KF6::TextAddonsWidgets}
 
     \section1 API Reference
 

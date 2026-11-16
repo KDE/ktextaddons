@@ -10,7 +10,7 @@
 
     \section2 Building with CMake
 
-    \include {module-use.qdocinc} {building with cmake} {KF6} {TextEditTextToSpeech} {KF6::TextEditTextToSpeech}
+    \include {module-use.qdocinc} {building with cmake nomodule} {KF6TextEditTextToSpeech} {KF6::TextEditTextToSpeech}
 
     \section1 API Reference
 

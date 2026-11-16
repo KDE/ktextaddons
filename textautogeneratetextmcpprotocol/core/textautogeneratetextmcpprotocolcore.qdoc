@@ -2,8 +2,8 @@
     \module TextAutoGenerateTextMcpProtocolCore
     \title TextAutoGenerateTextMcpProtocolCore C++ Classes
     \ingroup modules
-    \cmakepackage KF6
-    \cmakecomponent TextAutoGenerateTextMcpProtocolCore
+    \cmakepackage KF6TextAutoGenerateTextMcpProtocolCore
+    \cmaketargetitem KF6::TextAutoGenerateTextMcpProtocolCore
 
     \brief TextAutoGenerateTextMcpProtocolCore provides mcp protocol support core lib.
 */

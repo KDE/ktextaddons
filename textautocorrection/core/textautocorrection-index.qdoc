@@ -10,7 +10,7 @@
 
     \section2 Building with CMake
 
-    \include {module-use.qdocinc} {building with cmake} {KF6} {TextAutoCorrectionCore} {KF6::TextAutoCorrectionCore}
+    \include {module-use.qdocinc} {building with cmake nomodule} {KF6TextAutoCorrectionCore} {KF6::TextAutoCorrectionCore}
 
     \section1 API Reference
 

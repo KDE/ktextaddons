@@ -10,7 +10,7 @@
 
     \section2 Building with CMake
 
-    \include {module-use.qdocinc} {building with cmake} {KF6} {TextCustomEditor} {KF6::TextCustomEditor}
+    \include {module-use.qdocinc} {building with cmake nomodule} {KF6TextCustomEditor} {KF6::TextCustomEditor}
 
     \section1 API Reference
 

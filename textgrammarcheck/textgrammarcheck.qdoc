@@ -2,8 +2,8 @@
     \module TextGrammarCheck
     \title TextGrammarCheck C++ Classes
     \ingroup modules
-    \cmakepackage KF6
-    \cmakecomponent TextGrammarCheck
+    \cmakepackage KF6TextGrammarCheck
+    \cmaketargetitem KF6::TextGrammarCheck
 
     \brief TextGrammarCheck provides grammar check support.
 */

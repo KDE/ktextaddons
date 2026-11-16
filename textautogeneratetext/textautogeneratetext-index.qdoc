@@ -10,7 +10,7 @@
 
     \section2 Building with CMake
 
-    \include {module-use.qdocinc} {building with cmake} {KF6} {TextAutoGenerateText} {KF6::TextAutoGenerateText}
+    \include {module-use.qdocinc} {building with cmake nomodule} {KF6TextAutoGenerateText} {KF6::TextAutoGenerateText}
 
     \section1 API Reference
 

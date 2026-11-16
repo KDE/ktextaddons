@@ -2,8 +2,8 @@
     \module TextAddonsWidgets
     \title TextAddonsWidgets C++ Classes
     \ingroup modules
-    \cmakepackage KF6
-    \cmakecomponent TextAddonsWidgets
+    \cmakepackage KF6TextAddonsWidgets
+    \cmaketargetitem KF6::TextAddonsWidgets
 
     \brief TextAddonsWidgets provides some addons widgets.
 */

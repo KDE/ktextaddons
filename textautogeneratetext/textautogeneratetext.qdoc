@@ -2,8 +2,8 @@
     \module TextAutoGenerateText
     \title TextAutoGenerateText C++ Classes
     \ingroup modules
-    \cmakepackage KF6
-    \cmakecomponent TextAutoGenerateText
+    \cmakepackage KF6TextAutoGenerateText
+    \cmaketargetitem KF6::TextAutoGenerateText
 
     \brief TextAutoGenerateText provides AI support.
 */

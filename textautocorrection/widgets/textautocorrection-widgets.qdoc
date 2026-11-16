@@ -2,8 +2,8 @@
     \module TextAutoCorrectionWidgets
     \title TextAutoCorrection Widgets C++ Classes
     \ingroup modules
-    \cmakepackage KF6
-    \cmakecomponent TextAutoCorrectionWidgets
+    \cmakepackage KF6TextAutoCorrectionWidgets
+    \cmaketargetitem KF6::TextAutoCorrectionWidgets
 
     \brief TextAutoCorrection Widgets provides some autocorrection widgets lib.
 */

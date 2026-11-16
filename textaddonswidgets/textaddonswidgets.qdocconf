@@ -55,7 +55,18 @@ excludedirs += \
 outputformats = HTML
 
 depends += \
-    qtcore
+    qtcore \
+    textautocorrectioncore \
+    textautocorrectionwidgets \
+    textautogeneratetext \
+    textautogeneratetextmcpprotocolcore \
+    textcustomeditor \
+    textedittexttospeech \
+    textemoticonscore \
+    textemoticonswidgets \
+    textgrammarcheck \
+    texttranslator \
+    textutils
 
 navigation.landingpage = "TextAddonsWidgets"
 

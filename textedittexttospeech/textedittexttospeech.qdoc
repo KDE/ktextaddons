@@ -2,8 +2,8 @@
     \module TextEditTextToSpeech
     \title TextEditTextToSpeech C++ Classes
     \ingroup modules
-    \cmakepackage KF6
-    \cmakecomponent TextEditTextToSpeech
+    \cmakepackage KF6TextEditTextToSpeech
+    \cmaketargetitem KF6::TextEditTextToSpeech
 
     \brief TextEditTextToSpeech provides text to speech api.
 */

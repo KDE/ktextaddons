@@ -2,8 +2,8 @@
     \module TextAutoCorrectionCore
     \title TextAutoCorrection Core C++ Classes
     \ingroup modules
-    \cmakepackage KF6
-    \cmakecomponent TextAutoCorrectionCore
+    \cmakepackage KF6TextAutoCorrectionCore
+    \cmaketargetitem KF6::TextAutoCorrectionCore
 
     \brief TextAutoCorrection Core provides some autocorrection core lib.
 */

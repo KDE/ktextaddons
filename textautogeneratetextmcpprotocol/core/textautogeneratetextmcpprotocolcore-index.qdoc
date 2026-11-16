@@ -10,7 +10,7 @@
 
     \section2 Building with CMake
 
-    \include {module-use.qdocinc} {building with cmake} {KF6} {TextAutoGenerateTextMcpProtocolCore} {KF6::TextAutoGenerateTextMcpProtocolCore}
+    \include {module-use.qdocinc} {building with cmake nomodule} {KF6TextAutoGenerateTextMcpProtocolCore} {KF6::TextAutoGenerateTextMcpProtocolCore}
 
     \section1 API Reference
 

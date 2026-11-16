@@ -2,8 +2,8 @@
     \module TextCustomEditor
     \title TextCustomEditor C++ Classes
     \ingroup modules
-    \cmakepackage KF6
-    \cmakecomponent TextCustomEditor
+    \cmakepackage KF6TextCustomEditor
+    \cmaketargetitem KF6::TextCustomEditor
 
     \brief TextCustomEditor provides custom editor.
 */
