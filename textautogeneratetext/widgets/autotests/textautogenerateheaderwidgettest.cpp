@@ -89,7 +89,7 @@ void TextAutoGenerateHeaderWidgetTest::shouldEmitSaveInDatabase()
     const TextAutoGenerateText::TextAutoGenerateHeaderWidget w(nullptr);
     auto mSaveQuickAskButton = w.findChild<QToolButton *>(u"mSaveQuickAskButton"_s);
 
-    const QSignalSpy saveInDatabaseChanged(&w, &TextAutoGenerateText::TextAutoGenerateHeaderWidget::saveInDataseRequested);
+    const QSignalSpy saveInDatabaseChanged(&w, &TextAutoGenerateText::TextAutoGenerateHeaderWidget::saveInDatabaseRequested);
     QTest::mouseClick(mSaveQuickAskButton, Qt::LeftButton);
     QCOMPARE(saveInDatabaseChanged.count(), 1);
 }

@@ -6,17 +6,6 @@
 
 #include "ollamacloudsettings.h"
 
-using namespace Qt::Literals::StringLiterals;
 OllamaCloudSettings::OllamaCloudSettings() = default;
 
 OllamaCloudSettings::~OllamaCloudSettings() = default;
-
-void OllamaCloudSettings::load(const KConfigGroup &config)
-{
-    OllamaCommonSettings::load(config);
-}
-
-void OllamaCloudSettings::save(KConfigGroup &config)
-{
-    OllamaCommonSettings::save(config);
-}

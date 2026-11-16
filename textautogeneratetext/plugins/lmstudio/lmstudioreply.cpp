@@ -112,7 +112,7 @@ void LMStudioReply::accumulateStreamedToken(const QJsonDocument &tok)
         }
         if (const QJsonValue toolCallsValue = deltaObject.value("tool_calls"_L1); !toolCallsValue.isUndefined()) {
             const QJsonArray toolCallResponse = toolCallsValue.toArray();
-            qDebug() << " tool_calls: " << toolCallResponse;
+            qCDebug(AUTOGENERATETEXT_LMSTUDIO_LOG) << " tool_calls: " << toolCallResponse;
             mStreamedResponse.info = accumulateToolCallsOpenAI(toolCallResponse);
         }
     }

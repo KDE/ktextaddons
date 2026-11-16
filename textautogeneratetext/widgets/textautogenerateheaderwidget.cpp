@@ -76,7 +76,7 @@ TextAutoGenerateHeaderWidget::TextAutoGenerateHeaderWidget(TextAutoGenerateText:
     mSaveQuickAskButton->setIcon(QIcon::fromTheme(u"document-import"_s));
     mSaveQuickAskButton->setToolTip(i18nc("@info:tooltip", "Save Discussion in Database"));
     mainLayout->addWidget(mSaveQuickAskButton);
-    connect(mSaveQuickAskButton, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::saveInDataseRequested);
+    connect(mSaveQuickAskButton, &QToolButton::clicked, this, &TextAutoGenerateHeaderWidget::saveInDatabaseRequested);
 
     if (mManager) {
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::currentChatIdChanged, this, &TextAutoGenerateHeaderWidget::slotCurrentChatIdChanged);

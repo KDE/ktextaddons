@@ -516,16 +516,6 @@ void TextAutoGenerateMessage::setMessageAttachments(const TextAutoGenerateAttach
     mMessageAttachments = new TextAutoGenerateAttachments(newMessageAttachment);
 }
 
-TextAutoGenerateMessage::MessageStates TextAutoGenerateMessage::messageStates() const
-{
-    return mMessageStates;
-}
-
-void TextAutoGenerateMessage::setMessageStates(MessageStates newMessageStates)
-{
-    mMessageStates = newMessageStates;
-}
-
 void TextAutoGenerateMessage::assignMessageStateValue(MessageState type, bool status)
 {
     if (status) {
