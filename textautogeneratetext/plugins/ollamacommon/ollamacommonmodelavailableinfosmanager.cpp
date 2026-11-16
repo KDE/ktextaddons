@@ -29,6 +29,10 @@ bool OllamaCommonModelAvailableInfosManager::loadAvailableModels()
     f.close();
     QJsonParseError error;
     const auto doc = QJsonDocument::fromJson(content, &error);
+    if (error.error != QJsonParseError::NoError) {
+        qCWarning(AUTOGENERATETEXT_OLLAMACOMMON_LOG) << "Impossible to load:" << f.fileName() << " error: " << error.errorString();
+        return false;
+    }
 
     OllamaCommonModelsAvalableInfos info;
     info.parseModelsInfo(doc.object());
