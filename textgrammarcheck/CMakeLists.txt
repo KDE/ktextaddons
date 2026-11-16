@@ -210,12 +210,16 @@ install(
     COMPONENT Devel
 )
 
+set(TEXTGRAMMARCHECK_FILES
+    ${TextGrammarCheck_common_HEADERS}
+    ${TextGrammarCheck_grammalecte_HEADERS}
+    ${TextGrammarCheck_languagetool_HEADERS}
+)
+
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/textgrammarcheck_export.h
-        ${TextGrammarCheck_common_HEADERS}
-        ${TextGrammarCheck_grammalecte_HEADERS}
-        ${TextGrammarCheck_languagetool_HEADERS}
+        ${TEXTGRAMMARCHECK_FILES}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/textgrammarcheck
     COMPONENT Devel
 )
@@ -229,9 +233,7 @@ ecm_add_installed_library_check(KF6TextGrammarCheck
 
 ecm_installed_library_check_include_strings(KF6TextGrammarCheck
     HEADERS
-    ${TextGrammarCheck_common_HEADERS}
-    ${TextGrammarCheck_grammalecte_HEADERS}
-    ${TextGrammarCheck_languagetool_HEADERS}
+    ${TEXTGRAMMARCHECK_FILES}
     PREFIX textgrammarcheck
 )
 

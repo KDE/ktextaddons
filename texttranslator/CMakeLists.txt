@@ -189,12 +189,16 @@ install(
     COMPONENT Devel
 )
 
+set(TEXTTRANSLATOR_FILES
+    ${TextTranslator_translator_HEADERS}
+    ${TextTranslator_translatorwidgets_HEADERS}
+    ${TextTranslator_translatormisc_HEADERS}
+)
+
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_export.h
-        ${TextTranslator_translator_HEADERS}
-        ${TextTranslator_translatorwidgets_HEADERS}
-        ${TextTranslator_translatormisc_HEADERS}
+        ${TEXTTRANSLATOR_FILES}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/texttranslator
     COMPONENT Devel
 )
@@ -214,9 +218,7 @@ ecm_add_installed_library_check(KF6TextTranslator
 
 ecm_installed_library_check_include_strings(KF6TextTranslator
     HEADERS
-    ${TextTranslator_translator_HEADERS}
-    ${TextTranslator_translatorwidgets_HEADERS}
-    ${TextTranslator_translatormisc_HEADERS}
+    ${TEXTTRANSLATOR_FILES}
     PREFIX texttranslator
 )
 
