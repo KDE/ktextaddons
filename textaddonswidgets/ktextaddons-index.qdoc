@@ -1,0 +1,29 @@
+/*!
+    \page ktextaddons-index.html
+    \title KTextAddons
+
+    KTextAddons is a set of libraries providing text-related features for Qt
+    applications: auto-correction, AI text generation, custom editors, text to
+    speech, emoticons, grammar checking, translation and text utilities.
+
+    Each library is provided by its own CMake package. See the page of each
+    library for how to use it in your project.
+
+    \section1 Libraries
+
+    \list
+        \li \l{TextAddonsWidgets}: common widgets used by the text addons
+        \li \l{TextAutoCorrectionCore}: text auto-correction
+            (\l{TextAutoCorrection Widgets C++ Classes}{widgets})
+        \li \l{TextAutoGenerateText}: generate text using AI
+        \li \l{TextAutoGenerateTextMcpProtocolCore}: Model Context Protocol
+            support for text generation
+        \li \l{TextCustomEditor}: custom text editor widgets
+        \li \l{TextEditTextToSpeech}: text to speech support
+        \li \l{TextEmoticonsCore}: emoticon support
+            (\l{TextEmoticons Widgets C++ Classes}{widgets})
+        \li \l{TextGrammarCheck}: grammar checking
+        \li \l{TextTranslator}: text translation
+        \li \l{TextUtils}: text utilities
+    \endlist
+*/
