@@ -43,8 +43,8 @@ include(ECMInstalledLibraryCheck)
 
 file(
     GLOB_RECURSE ALL_SOURCE_FILES
-    textaddonswidgets/*.cpp
-    textaddonswidgets/*.h
+    textaddons/*.cpp
+    textaddons/*.h
     textedittexttospeech/*.cpp
     textedittexttospeech/*.h
     textspeechtotext/*.cpp
@@ -321,7 +321,7 @@ if(TARGET Qt6::TextToSpeech)
     add_subdirectory(textedittexttospeech)
 endif()
 
-add_subdirectory(textaddonswidgets)
+add_subdirectory(textaddons)
 add_subdirectory(textautocorrection)
 add_subdirectory(textgrammarcheck)
 add_subdirectory(texttranslator)
