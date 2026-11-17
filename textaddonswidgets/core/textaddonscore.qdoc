@@ -1,0 +1,15 @@
+/*!
+    \module TextAddonsCore
+    \title TextAddonsCore C++ Classes
+    \ingroup modules
+    \cmakepackage KF6TextAddonsCore
+    \cmaketargetitem KF6::TextAddonsCore
+
+    \brief TextAddonsCore provides some non-widget addons classes.
+*/
+
+/*!
+    \namespace TextAddonsCore
+    \inmodule TextAddonsCore
+    \brief The TextAddonsCore namespace contains the non-widget addons classes.
+*/

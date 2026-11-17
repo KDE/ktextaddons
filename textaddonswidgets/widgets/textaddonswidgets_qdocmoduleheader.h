@@ -12,7 +12,6 @@
 #include "misc/loaddialogsizeutils.h"
 #include "misc/openfilejob.h"
 #include "misc/savefileutils.h"
-#include "model/sortfilterproxymodelbase.h"
 #include "needupdateversion/needupdatecheckexistingnewversionjob.h"
 #include "needupdateversion/needupdateparsehtmljob.h"
 #include "needupdateversion/needupdateparsehtmlutil.h"

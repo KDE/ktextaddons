@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: BSD-3-Clause
+
+@PACKAGE_INIT@
+include(CMakeFindDependencyMacro)
+
+find_dependency(
+    Qt6Core
+    "@QT_REQUIRED_VERSION@"
+)
+
+include("${CMAKE_CURRENT_LIST_DIR}/KF6TextAddonsCoreTargets.cmake")

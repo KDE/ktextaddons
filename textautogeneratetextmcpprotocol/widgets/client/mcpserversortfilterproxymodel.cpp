@@ -9,7 +9,7 @@
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using TextAutoGenerateTextMcpProtocolCore::McpServerModel;
 McpServerSortFilterProxyModel::McpServerSortFilterProxyModel(QObject *parent)
-    : TextAddonsWidgets::SortFilterProxyModelBase{parent}
+    : TextAddonsCore::SortFilterProxyModelBase{parent}
 {
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setFilterCaseSensitivity(Qt::CaseInsensitive);

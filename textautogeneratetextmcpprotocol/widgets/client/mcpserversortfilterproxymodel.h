@@ -6,7 +6,7 @@
 
 #pragma once
 #include "mcpprotocolwidgets_private_export.h"
-#include <TextAddonsWidgets/SortFilterProxyModelBase>
+#include <TextAddonsCore/SortFilterProxyModelBase>
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 /*!
@@ -15,7 +15,7 @@ namespace TextAutoGenerateTextMcpProtocolWidgets
  * \author Laurent Montel <montel@kde.org>
  * \internal
  */
-class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT McpServerSortFilterProxyModel : public TextAddonsWidgets::SortFilterProxyModelBase
+class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_TESTS_EXPORT McpServerSortFilterProxyModel : public TextAddonsCore::SortFilterProxyModelBase
 {
     Q_OBJECT
 public:

@@ -6,7 +6,7 @@
 
 #pragma once
 #include "textautogeneratetext_export.h"
-#include <TextAddonsWidgets/SortFilterProxyModelBase>
+#include <TextAddonsCore/SortFilterProxyModelBase>
 #include <TextAutoGenerateText/TextAutoGenerateTextInstancesManager>
 namespace TextAutoGenerateText
 {
@@ -17,7 +17,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextInstanceSortFilterProxyModel
  */
-class TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateTextInstanceSortFilterProxyModel : public TextAddonsWidgets::SortFilterProxyModelBase
+class TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateTextInstanceSortFilterProxyModel : public TextAddonsCore::SortFilterProxyModelBase
 {
     Q_OBJECT
 public:

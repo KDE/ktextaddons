@@ -141,6 +141,7 @@ target_link_libraries(
         KF6::WidgetsAddons
         KF6::IconWidgets
         KF6::TextAddonsWidgets
+        KF6::TextAddonsCore
 )
 
 set_target_properties(

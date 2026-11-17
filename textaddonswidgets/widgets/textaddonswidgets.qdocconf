@@ -15,7 +15,6 @@ headers += \
     misc/loaddialogsizeutils.h \
     misc/openfilejob.h \
     misc/savefileutils.h \
-    model/sortfilterproxymodelbase.h \
     needupdateversion/needupdatecheckexistingnewversionjob.h \
     needupdateversion/needupdateparsehtmljob.h \
     needupdateversion/needupdateparsehtmlutil.h \
@@ -56,6 +55,7 @@ outputformats = HTML
 
 depends += \
     qtcore \
+    textaddonscore \
     textautocorrectioncore \
     textautocorrectionwidgets \
     textautogeneratetext \

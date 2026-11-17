@@ -1,0 +1,37 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextAddonsCore
+moduleheader = textaddonscore_qdocmoduleheader.h
+description = TextAddonsCore provides some non-widget addons classes.
+
+
+documentationinheaders = true
+
+headers += \
+    model/sortfilterproxymodelbase.h \
+    textaddonscore_qdocmoduleheader.h
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore \
+    textutils
+
+navigation.landingpage = "TextAddonsCore"
+
+qhp.projects            = textaddonscore
+
+qhp.textaddonscore.file                = textaddonscore.qhp
+qhp.textaddonscore.namespace           = org.kde.textaddonscore.$QT_VERSION_TAG
+qhp.textaddonscore.virtualFolder       = textaddonscore
+qhp.textaddonscore.indexTitle          = TextAddonsCore
+qhp.textaddonscore.indexRoot           =
+
+qhp.textaddonscore.subprojects         = classes
+qhp.textaddonscore.subprojects.classes.title = C++ Classes
+qhp.textaddonscore.subprojects.classes.indexTitle = TextAddonsCore C++ Classes
+qhp.textaddonscore.subprojects.classes.selectors = class fake:headerfile
+qhp.textaddonscore.subprojects.classes.sortPages = true
+
+tagfile = textaddonscore.tags

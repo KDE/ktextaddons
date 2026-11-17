@@ -1,0 +1,20 @@
+/*!
+    \page textaddonscore-index.html
+    \title TextAddonsCore
+
+    TextAddonsCore provides some non-widget addons classes.
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    \include {module-use.qdocinc} {building with cmake nomodule} {KF6TextAddonsCore} {KF6::TextAddonsCore}
+
+    \section1 API Reference
+
+    \list
+        \li \l{TextAddonsCore C++ Classes}
+    \endlist
+*/

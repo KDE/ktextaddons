@@ -12,7 +12,8 @@
     \section1 Libraries
 
     \list
-        \li \l{TextAddonsWidgets}: common widgets used by the text addons
+        \li \l{TextAddonsCore}: common non-widget classes used by the text addons
+            (\l{TextAddonsWidgets}{widgets})
         \li \l{TextAutoCorrectionCore}: text auto-correction
             (\l{TextAutoCorrection Widgets C++ Classes}{widgets})
         \li \l{TextAutoGenerateText}: generate text using AI

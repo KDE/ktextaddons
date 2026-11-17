@@ -83,8 +83,6 @@ target_sources(
         completionlineedit/completionlistview.h
         completionlineedit/completionlineedit.h
         completionlineedit/completionlineedit.cpp
-        model/sortfilterproxymodelbase.h
-        model/sortfilterproxymodelbase.cpp
         layout/textaddonswidgetflowlayout.h
         layout/textaddonswidgetflowlayout.cpp
         misc/loaddialogsizeutils.h
@@ -114,6 +112,7 @@ target_link_libraries(
         KF6::Service
         KF6::I18n
         KF6::CoreAddons
+        KF6::TextAddonsCore
     PRIVATE
         KF6::ConfigGui
         KF6::KIOCore

@@ -9,7 +9,7 @@
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateHistorySortFilterProxyModel::TextAutoGenerateHistorySortFilterProxyModel(QObject *parent)
-    : TextAddonsWidgets::SortFilterProxyModelBase{parent}
+    : TextAddonsCore::SortFilterProxyModelBase{parent}
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setSortRole(TextAutoGenerateChatsModel::DateTime);

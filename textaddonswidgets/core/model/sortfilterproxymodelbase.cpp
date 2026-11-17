@@ -7,7 +7,7 @@
 #include "sortfilterproxymodelbase.h"
 
 #include <TextUtils/ConvertText>
-using namespace TextAddonsWidgets;
+using namespace TextAddonsCore;
 SortFilterProxyModelBase::SortFilterProxyModelBase(QObject *parent)
     : QSortFilterProxyModel{parent}
 {

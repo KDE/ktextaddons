@@ -8,7 +8,7 @@
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextInstanceSortFilterProxyModel::TextAutoGenerateTextInstanceSortFilterProxyModel(QObject *parent)
-    : TextAddonsWidgets::SortFilterProxyModelBase{parent}
+    : TextAddonsCore::SortFilterProxyModelBase{parent}
 {
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
