@@ -93,7 +93,7 @@ if(TARGET KF6::KIOWidgets)
 endif()
 
 if(TARGET Qt6::TextToSpeech)
-    target_link_libraries(KF6TextCustomEditor PRIVATE KF6TextEditTextToSpeech)
+    target_link_libraries(KF6TextCustomEditor PRIVATE KF6::TextEditTextToSpeech)
 endif()
 
 ecm_qt_declare_logging_category(KF6TextCustomEditor HEADER textcustomeditor_debug.h

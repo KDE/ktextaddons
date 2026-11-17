@@ -53,7 +53,14 @@ if(ENABLE_PCH)
     )
 endif()
 
-target_link_libraries(KF6TextEmoticonsCore PUBLIC Qt::Gui PRIVATE KF6::ConfigCore)
+target_link_libraries(
+    KF6TextEmoticonsCore
+    PUBLIC
+        Qt::Gui
+    PRIVATE
+        KF6::ConfigCore
+        KF6::I18n
+)
 
 ecm_qt_declare_logging_category(KF6TextEmoticonsCore HEADER textemoticonscore_debug.h
     IDENTIFIER TEXTEMOTICONSCORE_LOG
@@ -81,8 +88,6 @@ target_include_directories(
     INTERFACE
         "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsCore;>"
 )
-
-target_link_libraries(KF6TextEmoticonsCore PRIVATE KF6::I18n)
 
 set_target_properties(
     KF6TextEmoticonsCore

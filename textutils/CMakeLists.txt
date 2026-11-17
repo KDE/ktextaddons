@@ -48,6 +48,7 @@ target_link_libraries(
     PUBLIC
         KF6::SyntaxHighlighting
         KF6::ColorScheme
+        Qt::Gui
     PRIVATE
         Qt::Core
         KF6::IconThemes
@@ -100,8 +101,6 @@ ecm_generate_export_header(KF6TextUtils
 )
 
 target_include_directories(KF6TextUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils;>")
-
-target_link_libraries(KF6TextUtils PUBLIC Qt::Gui)
 
 set_target_properties(
     KF6TextUtils

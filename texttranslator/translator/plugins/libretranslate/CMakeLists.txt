@@ -37,8 +37,8 @@ target_link_libraries(
         KF6::ConfigCore
         KF6::TextAddonsWidgets
         KF6::WidgetsAddons
+        qt6keychain
 )
-target_link_libraries(translator_libretranslate PRIVATE qt6keychain)
 install(TARGETS translator_libretranslate DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/translator/)
 
 if(BUILD_TESTING)

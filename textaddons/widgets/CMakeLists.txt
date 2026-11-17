@@ -149,8 +149,6 @@ target_include_directories(
         "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsWidgets;>"
 )
 
-target_link_libraries(KF6TextAddonsWidgets PRIVATE KF6::I18n)
-
 set_target_properties(
     KF6TextAddonsWidgets
     PROPERTIES

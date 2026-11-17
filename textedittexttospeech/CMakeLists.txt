@@ -99,9 +99,6 @@ target_include_directories(
         "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextEditTextToSpeech;>"
 )
 
-target_link_libraries(KF6TextEditTextToSpeech PRIVATE KF6::I18n)
-target_link_libraries(KF6TextEditTextToSpeech PRIVATE Qt6::Core)
-
 set_target_properties(
     KF6TextEditTextToSpeech
     PROPERTIES

@@ -55,6 +55,7 @@ target_link_libraries(
         KF6::TextEmoticonsCore
     PRIVATE
         Qt::Widgets
+        KF6::I18n
 )
 
 ecm_qt_declare_logging_category(KF6TextEmoticonsWidgets HEADER textemoticonswidgets_debug.h
@@ -83,8 +84,6 @@ target_include_directories(
     INTERFACE
         "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/TextEmoticonsWidgets;>"
 )
-
-target_link_libraries(KF6TextEmoticonsWidgets PRIVATE KF6::I18n)
 
 set_target_properties(
     KF6TextEmoticonsWidgets
