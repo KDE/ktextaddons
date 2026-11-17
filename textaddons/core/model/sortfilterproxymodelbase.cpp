@@ -17,8 +17,9 @@ SortFilterProxyModelBase::~SortFilterProxyModelBase() = default;
 
 void SortFilterProxyModelBase::setFilterString(const QString &string)
 {
+    beginFilterChange();
     mFilterString = TextUtils::ConvertText::normalize(string);
-    invalidate();
+    endFilterChange(Direction::Rows);
 }
 
 bool SortFilterProxyModelBase::contains(const QString &string) const
