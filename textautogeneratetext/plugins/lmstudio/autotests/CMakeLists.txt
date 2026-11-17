@@ -17,7 +17,6 @@ macro(add_lmstudio_plugin_unittest _source)
         ${_name}
         Qt::Test
         KF6::TextAutoGenerateText
-        KF6::KIOWidgets
         textautogeneratelmstudio
     )
     set_target_properties(
