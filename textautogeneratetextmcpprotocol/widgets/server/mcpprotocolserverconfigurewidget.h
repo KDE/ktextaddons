@@ -12,6 +12,13 @@ class QCheckBox;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class McpProtocolServerConfigureTokenWidget;
+/*!
+ * \class TextAutoGenerateTextMcpProtocolWidgets::McpProtocolServerConfigureWidget
+ * \brief The McpProtocolServerConfigureWidget class.
+ * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateTextMcpProtocolWidgets
+ * \inheaderfile TextAutoGenerateTextMcpProtocolWidgets/McpProtocolServerConfigureWidget
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT McpProtocolServerConfigureWidget : public QWidget
 {
     Q_OBJECT

@@ -186,6 +186,7 @@ configure_package_config_file(
 if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
+ecm_generate_qdoc(KF6TextAutoGenerateTextMcpProtocolWidgets textautogeneratetextmcpprotocolwidgets.qdocconf)
 
 ecm_add_installed_library_check(KF6TextAutoGenerateTextMcpProtocolWidgets
     PACKAGE_NAME "KF6TextAutoGenerateTextMcpProtocolWidgets"

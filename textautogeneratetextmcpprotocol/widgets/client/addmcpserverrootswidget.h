@@ -11,7 +11,11 @@ class QLineEdit;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 /*!
- * Edit local directories that server is allowed to access (MCP "roots").
+ * \class TextAutoGenerateTextMcpProtocolWidgets::AddMcpServerRootsWidget
+ * \brief Edit local directories that server is allowed to access (MCP "roots").
+ * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateTextMcpProtocolWidgets
+ * \inheaderfile TextAutoGenerateTextMcpProtocolWidgets/AddMcpServerRootsWidget
  */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpServerRootsWidget : public QWidget
 {

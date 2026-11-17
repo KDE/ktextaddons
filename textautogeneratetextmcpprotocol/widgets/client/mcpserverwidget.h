@@ -19,11 +19,11 @@ namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class McpServerListView;
 /*!
- * \class TextAutoGenerateText::TextAutoGenerateTextInstancesMcpServerWidget
- * \brief The TextAutoGenerateTextInstancesMcpServerWidget class
+ * \class TextAutoGenerateTextMcpProtocolWidgets::McpServerWidget
+ * \brief The McpServerWidget class.
  * \author Laurent Montel <montel@kde.org>
- * \inmodule TextAutoGenerateText
- * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextInstancesMcpServerWidget
+ * \inmodule TextAutoGenerateTextMcpProtocolWidgets
+ * \inheaderfile TextAutoGenerateTextMcpProtocolWidgets/McpServerWidget
  */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT McpServerWidget : public QWidget
 {

@@ -1,0 +1,47 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextAutoGenerateTextMcpProtocolWidgets
+moduleheader = textautogeneratetextmcpprotocolwidgets_qdocmoduleheader.h
+description = TextAutoGenerateTextMcpProtocolWidgets provides mcp protocol support widgets lib.
+
+
+documentationinheaders = true
+
+headers += \
+    client/addmcpserverdialog.h \
+    client/addmcpserverrootswidget.h \
+    client/addmcpserverwidget.h \
+    client/mcpserverlistview.h \
+    client/mcpserverwidget.h \
+    server/mcpprotocolserverconfiguredialog.h \
+    server/mcpprotocolserverconfigurewidget.h \
+    textautogeneratetextmcpprotocolwidgets_qdocmoduleheader.h
+sourcedirs += .
+
+excludedirs += \
+    autotests
+
+outputformats = HTML
+
+depends += \
+    qtcore \
+    qtwidgets \
+    textautogeneratetextmcpprotocolcore
+
+navigation.landingpage = "TextAutoGenerateTextMcpProtocolWidgets"
+
+qhp.projects            = textautogeneratetextmcpprotocolwidgets
+
+qhp.textautogeneratetextmcpprotocolwidgets.file                = textautogeneratetextmcpprotocolwidgets.qhp
+qhp.textautogeneratetextmcpprotocolwidgets.namespace           = org.kde.textautogeneratetextmcpprotocolwidgets.$QT_VERSION_TAG
+qhp.textautogeneratetextmcpprotocolwidgets.virtualFolder       = textautogeneratetextmcpprotocolwidgets
+qhp.textautogeneratetextmcpprotocolwidgets.indexTitle          = TextAutoGenerateTextMcpProtocolWidgets
+qhp.textautogeneratetextmcpprotocolwidgets.indexRoot           =
+
+qhp.textautogeneratetextmcpprotocolwidgets.subprojects         = classes
+qhp.textautogeneratetextmcpprotocolwidgets.subprojects.classes.title = C++ Classes
+qhp.textautogeneratetextmcpprotocolwidgets.subprojects.classes.indexTitle = TextAutoGenerateTextMcpProtocolWidgets C++ Classes
+qhp.textautogeneratetextmcpprotocolwidgets.subprojects.classes.selectors = class fake:headerfile
+qhp.textautogeneratetextmcpprotocolwidgets.subprojects.classes.sortPages = true
+
+tagfile = textautogeneratetextmcpprotocolwidgets.tags

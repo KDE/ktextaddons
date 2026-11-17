@@ -15,6 +15,13 @@ class McpServer;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class AddMcpServerWidget;
+/*!
+ * \class TextAutoGenerateTextMcpProtocolWidgets::AddMcpServerDialog
+ * \brief The AddMcpServerDialog class.
+ * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateTextMcpProtocolWidgets
+ * \inheaderfile TextAutoGenerateTextMcpProtocolWidgets/AddMcpServerDialog
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpServerDialog : public QDialog
 {
     Q_OBJECT

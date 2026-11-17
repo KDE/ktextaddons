@@ -13,6 +13,13 @@ class McpServerModel;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class McpServerSortFilterProxyModel;
+/*!
+ * \class TextAutoGenerateTextMcpProtocolWidgets::McpServerListView
+ * \brief The McpServerListView class.
+ * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateTextMcpProtocolWidgets
+ * \inheaderfile TextAutoGenerateTextMcpProtocolWidgets/McpServerListView
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT McpServerListView : public QListView
 {
     Q_OBJECT

@@ -20,6 +20,7 @@
             (\l{TextAutoGenerateText}{widgets})
         \li \l{TextAutoGenerateTextMcpProtocolCore}: Model Context Protocol
             support for text generation
+            (\l{TextAutoGenerateTextMcpProtocolWidgets}{widgets})
         \li \l{TextCustomEditor}: custom text editor widgets
         \li \l{TextEditTextToSpeech}: text to speech support
         \li \l{TextEmoticonsCore}: emoticon support

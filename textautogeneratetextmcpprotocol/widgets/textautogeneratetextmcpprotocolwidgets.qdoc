@@ -1,0 +1,15 @@
+/*!
+    \module TextAutoGenerateTextMcpProtocolWidgets
+    \title TextAutoGenerateTextMcpProtocolWidgets C++ Classes
+    \ingroup modules
+    \cmakepackage KF6TextAutoGenerateTextMcpProtocolWidgets
+    \cmaketargetitem KF6::TextAutoGenerateTextMcpProtocolWidgets
+
+    \brief TextAutoGenerateTextMcpProtocolWidgets provides some mcp protocol support widgets lib.
+*/
+
+/*!
+    \namespace TextAutoGenerateTextMcpProtocolWidgets
+    \inmodule TextAutoGenerateTextMcpProtocolWidgets
+    \brief TextAutoGenerateTextMcpProtocolWidgets provides mcp protocol support widgets class.
+*/

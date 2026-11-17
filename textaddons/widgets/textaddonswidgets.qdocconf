@@ -60,6 +60,7 @@ depends += \
     textautogeneratetext \
     textautogeneratetextcore \
     textautogeneratetextmcpprotocolcore \
+    textautogeneratetextmcpprotocolwidgets \
     textcustomeditor \
     textedittexttospeech \
     textemoticonscore \

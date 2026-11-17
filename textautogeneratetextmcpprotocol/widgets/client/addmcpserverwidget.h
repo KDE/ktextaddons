@@ -18,6 +18,13 @@ class AddMcpSseServerWidget;
 class AddMcpStdioServerWidget;
 class AddMcpStreamableHttpServerWidget;
 
+/*!
+ * \class TextAutoGenerateTextMcpProtocolWidgets::AddMcpServerWidget
+ * \brief The AddMcpServerWidget class.
+ * \author Laurent Montel <montel@kde.org>
+ * \inmodule TextAutoGenerateTextMcpProtocolWidgets
+ * \inheaderfile TextAutoGenerateTextMcpProtocolWidgets/AddMcpServerWidget
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT AddMcpServerWidget : public QWidget
 {
     Q_OBJECT
