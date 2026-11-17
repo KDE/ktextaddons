@@ -8,7 +8,7 @@
 #include <QList>
 #include <QTreeWidgetItem>
 #include <QWidget>
-#include <TextAddonsWidgets/PluginUtil>
+#include <TextAddonsCore/PluginUtil>
 class QTreeWidget;
 class KMessageWidget;
 namespace TextAddonsWidgets
@@ -99,7 +99,7 @@ protected:
         bool mHasConfigureSupport = false;
         bool mEnableFromUserSettings = false;
     };
-    void fillTopItems(const QList<TextAddonsWidgets::PluginUtilData> &lst,
+    void fillTopItems(const QList<TextAddonsCore::PluginUtilData> &lst,
                       const QString &topLevelItemName,
                       const QString &groupName,
                       const QString &prefixKey,

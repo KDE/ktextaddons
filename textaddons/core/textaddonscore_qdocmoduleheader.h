@@ -6,3 +6,4 @@
 
 // Module header for qdoc PCH
 #include "model/sortfilterproxymodelbase.h"
+#include "plugins/pluginutil.h"

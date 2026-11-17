@@ -118,10 +118,10 @@ void ConfigurePluginsWidget::savePlugins(const QString &groupName,
         }
     }
 
-    TextAddonsWidgets::PluginUtil::savePluginSettings(groupName, prefixSettingKey, enabledPlugins, disabledPlugins, configName);
+    TextAddonsCore::PluginUtil::savePluginSettings(groupName, prefixSettingKey, enabledPlugins, disabledPlugins, configName);
 }
 
-void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginUtilData> &lst,
+void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsCore::PluginUtilData> &lst,
                                           const QString &topLevelItemName,
                                           const QString &groupName,
                                           const QString &prefixKey,
@@ -136,8 +136,8 @@ void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginU
         auto topLevel = new QTreeWidgetItem(mTreePluginWidget, {topLevelItemName});
         topLevel->setFlags(topLevel->flags() & ~Qt::ItemIsSelectable);
         topLevel->setFirstColumnSpanned(true);
-        const TextAddonsWidgets::PluginUtil::PluginsStateList pair = TextAddonsWidgets::PluginUtil::loadPluginSetting(fileName, groupName, prefixKey);
-        for (const TextAddonsWidgets::PluginUtilData &data : lst) {
+        const TextAddonsCore::PluginUtil::PluginsStateList pair = TextAddonsCore::PluginUtil::loadPluginSetting(fileName, groupName, prefixKey);
+        for (const TextAddonsCore::PluginUtilData &data : lst) {
             auto subItem = new PluginItem(topLevel);
             subItem->setData(0, ConfigurePluginsWidget::PluginItemData::Description, data.mDescription);
             subItem->setText(0, data.mName);
@@ -146,7 +146,7 @@ void ConfigurePluginsWidget::fillTopItems(const QList<TextAddonsWidgets::PluginU
             subItem->mHasConfigureSupport = data.mHasConfigureDialog;
             if (checkable) {
                 const bool isPluginActivated =
-                    TextAddonsWidgets::PluginUtil::isPluginActivated(pair.enabledPluginList, pair.disabledPluginList, data.mEnableByDefault, data.mIdentifier);
+                    TextAddonsCore::PluginUtil::isPluginActivated(pair.enabledPluginList, pair.disabledPluginList, data.mEnableByDefault, data.mIdentifier);
                 subItem->mEnableFromUserSettings = isPluginActivated;
                 subItem->setCheckState(0, isPluginActivated ? Qt::Checked : Qt::Unchecked);
             }

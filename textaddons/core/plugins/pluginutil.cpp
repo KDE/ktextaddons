@@ -1,7 +1,7 @@
 /*
   SPDX-FileCopyrightText: 2016-2026 Laurent Montel <montel@kde.org>
 
-  SPDX-License-Identifier: GPL-2.0-or-later
+  SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
 #include "pluginutil.h"
@@ -10,10 +10,10 @@
 
 using namespace Qt::Literals::StringLiterals;
 
-bool TextAddonsWidgets::PluginUtil::isPluginActivated(const QStringList &enabledPluginsList,
-                                                      const QStringList &disabledPluginsList,
-                                                      bool isEnabledByDefault,
-                                                      const QString &pluginId)
+bool TextAddonsCore::PluginUtil::isPluginActivated(const QStringList &enabledPluginsList,
+                                                   const QStringList &disabledPluginsList,
+                                                   bool isEnabledByDefault,
+                                                   const QString &pluginId)
 {
     if (pluginId.isEmpty()) {
         return false;
@@ -21,8 +21,8 @@ bool TextAddonsWidgets::PluginUtil::isPluginActivated(const QStringList &enabled
     return isEnabledByDefault ? !disabledPluginsList.contains(pluginId) : enabledPluginsList.contains(pluginId);
 }
 
-TextAddonsWidgets::PluginUtil::PluginsStateList
-TextAddonsWidgets::PluginUtil::loadPluginSetting(const QString &configFileName, const QString &groupName, const QString &prefixSettingKey)
+TextAddonsCore::PluginUtil::PluginsStateList
+TextAddonsCore::PluginUtil::loadPluginSetting(const QString &configFileName, const QString &groupName, const QString &prefixSettingKey)
 {
     PluginUtil::PluginsStateList pair;
     KSharedConfigPtr config = KSharedConfig::openConfig(configFileName);
@@ -39,14 +39,14 @@ TextAddonsWidgets::PluginUtil::loadPluginSetting(const QString &configFileName, 
     return pair;
 }
 
-void TextAddonsWidgets::PluginUtil::savePluginSettings(const QString &groupName,
-                                                       const QString &prefixSettingKey,
-                                                       const QStringList &enabledPluginsList,
-                                                       const QStringList &disabledPluginsList,
-                                                       const QString &configFileName)
+void TextAddonsCore::PluginUtil::savePluginSettings(const QString &groupName,
+                                                    const QString &prefixSettingKey,
+                                                    const QStringList &enabledPluginsList,
+                                                    const QStringList &disabledPluginsList,
+                                                    const QString &configFileName)
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(configFileName);
-    // qDebug() << " void TextAddonsWidgets::PluginUtil::savePluginSettings(const QString &groupName,  " << configFileName;
+    // qDebug() << " void TextAddonsCore::PluginUtil::savePluginSettings(const QString &groupName,  " << configFileName;
     KConfigGroup grp = config->group(groupName);
     if (enabledPluginsList.isEmpty()) {
         grp.deleteEntry(u"%1Enabled"_s.arg(prefixSettingKey));
@@ -60,7 +60,7 @@ void TextAddonsWidgets::PluginUtil::savePluginSettings(const QString &groupName,
     }
 }
 
-TextAddonsWidgets::PluginUtilData TextAddonsWidgets::PluginUtil::createPluginMetaData(const KPluginMetaData &metaData)
+TextAddonsCore::PluginUtilData TextAddonsCore::PluginUtil::createPluginMetaData(const KPluginMetaData &metaData)
 {
     PluginUtilData pluginData;
     pluginData.mDescription = metaData.description();

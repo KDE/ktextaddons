@@ -5,8 +5,8 @@
 */
 #pragma once
 #include "textautogeneratetext_export.h"
+#include <TextAddonsCore/PluginUtil>
 #include <TextAddonsWidgets/ConfigurePluginsWidget>
-#include <TextAddonsWidgets/PluginUtil>
 namespace TextAutoGenerateText
 {
 /*!

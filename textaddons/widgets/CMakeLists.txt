@@ -59,8 +59,6 @@ target_sources(
         quicksearchbar/quicksearchbarwidget.cpp
         quicksearchbar/quicksearchbar.h
         quicksearchbar/quicksearchbar.cpp
-        plugins/pluginutil.cpp
-        plugins/pluginutil.h
         plugins/configurepluginstreewidgetdelegate.cpp
         plugins/configurepluginstreewidgetdelegate.h
         plugins/configurepluginswidget.cpp

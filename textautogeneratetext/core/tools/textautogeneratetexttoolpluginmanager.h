@@ -11,7 +11,7 @@
 #include <QJsonArray>
 #include <QList>
 #include <QObject>
-#include <TextAddonsWidgets/PluginUtil>
+#include <TextAddonsCore/PluginUtil>
 
 namespace TextAutoGenerateText
 {
@@ -25,7 +25,7 @@ public:
     KPluginMetaData data;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
-    TextAddonsWidgets::PluginUtilData pluginData;
+    TextAddonsCore::PluginUtilData pluginData;
     TextAutoGenerateTextToolPlugin *plugin = nullptr;
     bool isEnabled = true;
 };
@@ -62,7 +62,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<TextAddonsCore::PluginUtilData> pluginDataList() const;
 
     /*!
      */
@@ -107,7 +107,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugin(TextAutoGenerateTextToolPluginManagerInfo *item);
     QList<TextAutoGenerateTextToolPluginManagerInfo> mPluginList;
-    QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
+    QList<TextAddonsCore::PluginUtilData> mPluginDataList;
     TextAutoGenerateManager *mManager = nullptr;
 };
 }

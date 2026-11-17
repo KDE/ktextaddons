@@ -22,7 +22,6 @@ headers += \
     needupdateversion/needupdateversionwidget.h \
     opensavedfilefolderwidget.h \
     plugins/configurepluginswidget.h \
-    plugins/pluginutil.h \
     quicksearchbar/quicksearchbar.h \
     quicksearchbar/quicksearchbarwidget.h \
     richtextquicktextformat.h \

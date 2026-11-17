@@ -30,9 +30,19 @@ target_sources(
     PRIVATE
         model/sortfilterproxymodelbase.h
         model/sortfilterproxymodelbase.cpp
+        plugins/pluginutil.h
+        plugins/pluginutil.cpp
 )
 
-target_link_libraries(KF6TextAddonsCore PUBLIC Qt::Core PRIVATE KF6::TextUtils)
+target_link_libraries(
+    KF6TextAddonsCore
+    PUBLIC
+        Qt::Core
+        KF6::CoreAddons
+    PRIVATE
+        KF6::ConfigCore
+        KF6::TextUtils
+)
 
 ecm_qt_declare_logging_category(KF6TextAddonsCore HEADER textaddonscore_debug.h
     IDENTIFIER TEXTADDONSCORE_LOG
@@ -83,7 +93,18 @@ ecm_generate_headers(TextAddonsCore_Camelcasemodel_HEADERS
     RELATIVE model
 )
 
-set(TEXTADDONSCORE_INCLUDES_FILES ${TextAddonsCore_model_HEADERS})
+ecm_generate_headers(TextAddonsCore_Camelcaseplugins_HEADERS
+    HEADER_NAMES
+        PluginUtil
+    REQUIRED_HEADERS TextAddonsCore_plugins_HEADERS
+    PREFIX TextAddonsCore
+    RELATIVE plugins
+)
+
+set(TEXTADDONSCORE_INCLUDES_FILES
+    ${TextAddonsCore_model_HEADERS}
+    ${TextAddonsCore_plugins_HEADERS}
+)
 
 install(
     FILES
@@ -92,7 +113,10 @@ install(
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAddonsCore/textaddonscore
     COMPONENT Devel
 )
-set(TextAddonsCore_List_CamelCase_HEADERS ${TextAddonsCore_Camelcasemodel_HEADERS})
+set(TextAddonsCore_List_CamelCase_HEADERS
+    ${TextAddonsCore_Camelcasemodel_HEADERS}
+    ${TextAddonsCore_Camelcaseplugins_HEADERS}
+)
 install(
     FILES
         ${TextAddonsCore_List_CamelCase_HEADERS}

@@ -9,6 +9,7 @@ documentationinheaders = true
 
 headers += \
     model/sortfilterproxymodelbase.h \
+    plugins/pluginutil.h \
     textaddonscore_qdocmoduleheader.h
 sourcedirs += .
 

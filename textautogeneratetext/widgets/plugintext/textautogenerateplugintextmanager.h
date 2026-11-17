@@ -9,7 +9,7 @@
 #include <KPluginMetaData>
 #include <QList>
 #include <QObject>
-#include <TextAddonsWidgets/PluginUtil>
+#include <TextAddonsCore/PluginUtil>
 
 namespace TextAutoGenerateText
 {
@@ -22,7 +22,7 @@ public:
     KPluginMetaData data;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
-    TextAddonsWidgets::PluginUtilData pluginData;
+    TextAddonsCore::PluginUtilData pluginData;
     TextAutoGeneratePluginText *plugin = nullptr;
     bool isEnabled = true;
 };
@@ -69,7 +69,7 @@ public:
      * \brief pluginDataList
      * \return
      */
-    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<TextAddonsCore::PluginUtilData> pluginDataList() const;
 
     /*!
      * \brief pluginFromIdentifier
@@ -89,6 +89,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugin(TextAutoGeneratePluginTextManagerInfo *item);
     QList<TextAutoGeneratePluginTextManagerInfo> mPluginList;
-    QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
+    QList<TextAddonsCore::PluginUtilData> mPluginDataList;
 };
 }

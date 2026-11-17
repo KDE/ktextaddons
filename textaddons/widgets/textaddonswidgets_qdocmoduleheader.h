@@ -22,7 +22,6 @@
 #include "plugins/configurepluginstreewidgetsearchline.h"
 #include "plugins/configurepluginstreewidgetsearchlinewidget.h"
 #include "plugins/configurepluginswidget.h"
-#include "plugins/pluginutil.h"
 #include "quicksearchbar/quicksearchbar.h"
 #include "quicksearchbar/quicksearchbarwidget.h"
 #include "richtextquicktextformat.h"
