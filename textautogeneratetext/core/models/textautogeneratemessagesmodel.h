@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QAbstractListModel>
 #include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
@@ -21,7 +21,7 @@ class TextAutoGenerateSearchMessageSettings;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateMessagesModel
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessagesModel : public QAbstractListModel
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateMessagesModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -259,13 +259,13 @@ Q_SIGNALS:
     void conversationCleared();
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QList<TextAutoGenerateMessage>::iterator findMessage(const QByteArray &messageId);
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QList<TextAutoGenerateMessage>::const_iterator findMessage(const QByteArray &messageId) const;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QList<TextAutoGenerateMessage>::const_iterator findMessageByAnswerUuid(const QByteArray &answerUuid) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT QList<TextAutoGenerateMessage>::iterator findMessage(const QByteArray &messageId);
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT QList<TextAutoGenerateMessage>::const_iterator findMessage(const QByteArray &messageId) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT QList<TextAutoGenerateMessage>::const_iterator findMessageByAnswerUuid(const QByteArray &answerUuid) const;
 
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool waitingAnswer(const TextAutoGenerateMessage &message) const;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString generateModelInfo(const TextAutoGenerateMessage &m) const;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int updateAllGeneratedMessages();
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT bool waitingAnswer(const TextAutoGenerateMessage &message) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT QString generateModelInfo(const TextAutoGenerateMessage &m) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT int updateAllGeneratedMessages();
     QList<TextAutoGenerateMessage> mMessages;
     QString mSearchText;
     QByteArray mChatId;

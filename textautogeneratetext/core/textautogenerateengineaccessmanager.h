@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QObject>
 class QNetworkAccessManager;
 namespace TextAutoGenerateText
@@ -17,7 +17,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateEngineAccessManager
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateEngineAccessManager : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateEngineAccessManager : public QObject
 {
     Q_OBJECT
 public:

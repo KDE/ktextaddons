@@ -5,14 +5,14 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QList>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolInternal>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextToolInternalJob;
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolInternalInterface : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolInternalInterface : public QObject
 {
     Q_OBJECT
 public:
@@ -56,6 +56,6 @@ protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> mTools;
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotToolsLoaded(const QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> &list);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void slotToolsLoaded(const QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> &list);
 };
 }

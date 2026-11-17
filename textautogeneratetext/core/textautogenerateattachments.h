@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QList>
 #include <QSharedData>
 #include <TextAutoGenerateText/TextAutoGenerateAttachment>
@@ -19,7 +19,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateAttachments
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAttachments : public QSharedData
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateAttachments : public QSharedData
 {
 public:
     /*!
@@ -79,4 +79,4 @@ private:
 };
 }
 
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachments &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachments &t);

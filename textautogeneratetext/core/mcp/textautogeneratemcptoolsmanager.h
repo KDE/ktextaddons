@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QHash>
 #include <QJsonObject>
 #include <QObject>
@@ -36,7 +36,7 @@ class TextAutoGenerateTextPlugin;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateMcpToolsManager
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMcpToolsManager : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateMcpToolsManager : public QObject
 {
     Q_OBJECT
 public:
@@ -56,7 +56,7 @@ public:
     };
     Q_ENUM(ToolRisk)
 
-    struct TEXTAUTOGENERATETEXT_EXPORT McpTool {
+    struct TEXTAUTOGENERATETEXTCORE_EXPORT McpTool {
         QByteArray serverIdentifier;
         // Name used by MCP server
         QString name;
@@ -80,7 +80,7 @@ public:
     };
     Q_ENUM(ToolConfirmation)
 
-    struct TEXTAUTOGENERATETEXT_EXPORT ToolConfirmationInfo {
+    struct TEXTAUTOGENERATETEXTCORE_EXPORT ToolConfirmationInfo {
         McpTool tool;
         QString serverName;
         QJsonObject arguments;
@@ -92,7 +92,7 @@ public:
      */
     using ConfirmationHandler = std::function<void(const ToolConfirmationInfo &info, const std::function<void(ToolConfirmation)> &answer)>;
 
-    struct TEXTAUTOGENERATETEXT_EXPORT ElicitationInfo {
+    struct TEXTAUTOGENERATETEXTCORE_EXPORT ElicitationInfo {
         QString serverName;
         TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest request;
         // Chat whose tool call led to request, empty when it's unknown (see chatIdOfToolCallInProgress())
@@ -104,7 +104,7 @@ public:
     using ElicitationHandler = std::function<void(const ElicitationInfo &info,
                                                   const std::function<void(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &)> &answer)>;
 
-    struct TEXTAUTOGENERATETEXT_EXPORT SamplingInfo {
+    struct TEXTAUTOGENERATETEXTCORE_EXPORT SamplingInfo {
         QString serverName;
         TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest request;
         // Chat whose tool call led to request, empty when it's unknown (see chatIdOfToolCallInProgress())
@@ -276,16 +276,18 @@ private:
         QList<McpTool> tools;
         qint64 listToolsRequestId = -1;
     };
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotServersChanged();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void setStatus(const QByteArray &identifier, Status status, const QString &errorString = {});
-    TEXTAUTOGENERATETEXT_NO_EXPORT void listTools(const QByteArray &identifier);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotSamplingRequested(const QByteArray &identifier,
-                                                              const QString &serverName,
-                                                              TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager *client,
-                                                              const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
-                                                              const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &request);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotReceived(const QByteArray &identifier, const QJsonObject &obj, qint64 requestId);
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray exposedName(const QByteArray &identifier, const QString &serverName, const QString &toolName) const;
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void slotServersChanged();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void setStatus(const QByteArray &identifier, Status status, const QString &errorString = {});
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void listTools(const QByteArray &identifier);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void slotSamplingRequested(const QByteArray &identifier,
+                                                                  const QString &serverName,
+                                                                  TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager *client,
+                                                                  const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::RequestId &id,
+                                                                  const TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest &request);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void slotReceived(const QByteArray &identifier, const QJsonObject &obj, qint64 requestId);
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT QByteArray exposedName(const QByteArray &identifier,
+                                                                            const QString &serverName,
+                                                                            const QString &toolName) const;
     TextAutoGenerateTextMcpProtocolCore::McpServerManager *const mServerManager;
     QHash<QByteArray, ServerState> mServers;
     // Chat of each tool call in progress, by server

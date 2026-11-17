@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QJsonArray>
 class QDebug;
 namespace TextAutoGenerateText
@@ -17,7 +17,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextRequest
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextRequest
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextRequest
 {
     Q_GADGET
 public:
@@ -111,4 +111,4 @@ private:
     bool mThinking = false;
 };
 }
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextRequest &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextRequest &t);

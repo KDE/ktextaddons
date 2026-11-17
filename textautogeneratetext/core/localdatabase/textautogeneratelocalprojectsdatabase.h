@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <TextAutoGenerateText/TextAutoGenerateLocalDatabaseAbstract>
 #include <TextAutoGenerateText/TextAutoGenerateProject>
 #include <memory>
@@ -19,7 +19,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateLocalProjectsDatabase
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalProjectsDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateLocalProjectsDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
 {
 public:
     TextAutoGenerateLocalProjectsDatabase();
@@ -39,7 +39,7 @@ protected:
     [[nodiscard]] QString schemaDataBase() const override;
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT static QString generateQueryStr();
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateProject convertJsonToProject(const QString &json) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT static QString generateQueryStr();
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT TextAutoGenerateProject convertJsonToProject(const QString &json) const;
 };
 }

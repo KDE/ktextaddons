@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 namespace TextAutoGenerateText
@@ -18,7 +18,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolBaseJob
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolBaseJob : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolBaseJob : public QObject
 {
     Q_OBJECT
 public:
@@ -91,4 +91,4 @@ protected:
     QByteArray mToolIdentifier;
 };
 }
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolBaseJob &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolBaseJob &t);

@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QString>
 class QDebug;
 class QJsonObject;
@@ -20,7 +20,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateProject
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateProject
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateProject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateProject
 {
 public:
     /*!
@@ -89,4 +89,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateProject, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateProject &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateProject &t);

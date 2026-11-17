@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 
 #include <QByteArray>
 #include <QString>
@@ -20,7 +20,7 @@ class TextAutoGenerateTextPlugin;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextInstance
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstance
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextInstance
 {
 public:
     /*!
@@ -126,4 +126,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextInstance, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextInstance &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextInstance &t);

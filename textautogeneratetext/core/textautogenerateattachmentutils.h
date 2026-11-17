@@ -12,7 +12,7 @@ namespace TextAutoGenerateText
 class TextAutoGenerateAttachments;
 namespace TextAutoGenerateAttachmentUtils
 {
-struct TEXTAUTOGENERATETEXT_EXPORT AttachmentElementInfo {
+struct TEXTAUTOGENERATETEXTCORE_EXPORT AttachmentElementInfo {
     QByteArray attachmentId;
     QByteArray mimeType;
     QByteArray content;
@@ -25,21 +25,22 @@ struct TEXTAUTOGENERATETEXT_EXPORT AttachmentElementInfo {
 [[nodiscard]] QByteArray generateUniqueId(const QByteArray &messageId, int index);
 /*!
  */
-[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType generateAttachmentType(const QByteArray &mimetype);
+[[nodiscard]] TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType
+generateAttachmentType(const QByteArray &mimetype);
 
 /*!
  */
-[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo
+[[nodiscard]] TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo
 createAttachmentElementInfoFromFile(const QString &fileName);
 
 /*!
  */
-[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo>
+[[nodiscard]] TEXTAUTOGENERATETEXTCORE_EXPORT QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo>
 createAttachmentElementInfoFromFileList(const QStringList &files);
 
 /*!
  */
-[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateText::TextAutoGenerateAttachment
+[[nodiscard]] TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateText::TextAutoGenerateAttachment
 generateAttachmentFromAttachmentElementInfo(const TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo &info);
 
 [[nodiscard]] QList<TextAutoGenerateAttachment>
@@ -50,4 +51,4 @@ generateAttachmentFromAttachmentElementInfos(const QList<TextAutoGenerateText::T
 }
 /*!
  */
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo &t);

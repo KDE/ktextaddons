@@ -5,7 +5,7 @@
 */
 #pragma once
 #include "config-textautogeneratetext.h"
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateChat>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
@@ -46,7 +46,7 @@ class TextAutoGenerateProjectsManager;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateManager
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateManager : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateManager : public QObject
 {
     Q_OBJECT
 public:
@@ -69,7 +69,7 @@ public:
     Q_DECLARE_FLAGS(Categories, Category)
     Q_FLAG(Categories)
 
-    struct TEXTAUTOGENERATETEXT_EXPORT AskMessageInfo {
+    struct TEXTAUTOGENERATETEXTCORE_EXPORT AskMessageInfo {
         QString message;
         QStringList attachments;
         QList<QByteArray> tools;
@@ -688,17 +688,17 @@ Q_SIGNALS:
     void information(const QString &str);
 
 private Q_SLOTS:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotChatListChanged(const QString &id);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void slotChatListChanged(const QString &id);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void setChatPersistence(const QByteArray &chatId, TextAutoGenerateChat::Persistence persistence);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAboutToSynthesizeChanged(qsizetype previousId, qsizetype currentId);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void checkInitializedMessagesModel();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void initializeMessagesModel(const QByteArray &chatId);
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray addChat(const QString &title, TextAutoGenerateChat::Persistence persistence);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void changeChatInPogressStatus(const QByteArray &chatId, bool inProgress);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void purgeExpiredChats();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotPluginFinished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void setChatPersistence(const QByteArray &chatId, TextAutoGenerateChat::Persistence persistence);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void slotAboutToSynthesizeChanged(qsizetype previousId, qsizetype currentId);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void checkInitializedMessagesModel();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void initializeMessagesModel(const QByteArray &chatId);
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT QByteArray addChat(const QString &title, TextAutoGenerateChat::Persistence persistence);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void changeChatInPogressStatus(const QByteArray &chatId, bool inProgress);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void purgeExpiredChats();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void slotPluginFinished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
     TextAutoGenerateChatsModel *const mTextAutoGenerateChatsModel;
     std::unique_ptr<TextAutoGenerateLocalDatabaseManager> const mDatabaseManager;
     std::unique_ptr<TextAutoGenerateChatSettings> const mTextAutoGenerateChatSettings;
@@ -725,4 +725,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &t);

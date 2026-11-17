@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QColor>
 #include <QString>
 class QDebug;
@@ -19,7 +19,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateTag
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTag
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTag
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTag
 {
 public:
     /*!
@@ -88,4 +88,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTag, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTag &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTag &t);

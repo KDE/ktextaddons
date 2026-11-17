@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateProject>
 namespace TextAutoGenerateText
@@ -18,7 +18,7 @@ class TextAutoGenerateProjectsModel;
  * \inmodule TextAutoGenerateProject
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateProjectsManager
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateProjectsManager : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateProjectsManager : public QObject
 {
     Q_OBJECT
 public:

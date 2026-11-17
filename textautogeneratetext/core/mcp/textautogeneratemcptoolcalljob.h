@@ -7,7 +7,7 @@
 
 #include "core/tools/textautogeneratetexttoolbasejob.h"
 #include "core/tools/textautogeneratetexttoolplugin.h"
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetextcore_private_export.h"
 #include <QJsonObject>
 #include <QPointer>
 
@@ -24,7 +24,7 @@ class TextAutoGenerateMcpToolsManager;
  * \class TextAutoGenerateText::TextAutoGenerateMcpToolCallJob
  * \brief Calls a tool of a MCP server and returns its result as text.
  */
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateMcpToolCallJob : public TextAutoGenerateTextToolBaseJob
+class TEXTAUTOGENERATETEXTCORE_TESTS_EXPORT TextAutoGenerateMcpToolCallJob : public TextAutoGenerateTextToolBaseJob
 {
     Q_OBJECT
 public:
@@ -54,8 +54,8 @@ Q_SIGNALS:
     void finished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void emitFinished(const QString &content);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void removeToolCallInProgress();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void emitFinished(const QString &content);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void removeToolCallInProgress();
     TextAutoGenerateMcpToolsManager *const mToolsManager;
     QJsonObject mArguments;
     QPointer<TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager> mClient;

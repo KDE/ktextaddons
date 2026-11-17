@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
 namespace TextAutoGenerateText
@@ -17,7 +17,7 @@ class TextAutoGenerateManager;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateAskJob
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAskJob : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateAskJob : public QObject
 {
     Q_OBJECT
 public:
@@ -80,9 +80,9 @@ Q_SIGNALS:
     void errorOccured(const QString &str);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAutogenerateFailed(const QString &msg);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotInitializeDone();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskToLlmDone();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void slotAutogenerateFailed(const QString &msg);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void slotInitializeDone();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void slotAskToLlmDone();
     QString mText;
     TextAutoGenerateManager *mManager = nullptr;
 };

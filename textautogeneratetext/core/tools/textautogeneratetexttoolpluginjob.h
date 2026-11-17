@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QByteArray>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
@@ -22,7 +22,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolPluginJob
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginJob : public TextAutoGenerateTextToolBaseJob
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolPluginJob : public TextAutoGenerateTextToolBaseJob
 {
     Q_OBJECT
 public:
@@ -53,4 +53,4 @@ protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> mProperties;
 };
 }
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolPluginJob &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolPluginJob &t);

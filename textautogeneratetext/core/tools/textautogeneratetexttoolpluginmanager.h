@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <KPluginMetaData>
 #include <QJsonArray>
 #include <QList>
@@ -36,7 +36,7 @@ public:
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolPluginManager
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolPluginManager final : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolPluginManager final : public QObject
 {
     Q_OBJECT
 public:
@@ -103,9 +103,9 @@ public:
     [[nodiscard]] QJsonArray internalToolsMetaData() const;
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT explicit TextAutoGenerateTextToolPluginManager(QObject *parent = nullptr);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void initializePluginList();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugin(TextAutoGenerateTextToolPluginManagerInfo *item);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT explicit TextAutoGenerateTextToolPluginManager(QObject *parent = nullptr);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void initializePluginList();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void loadPlugin(TextAutoGenerateTextToolPluginManagerInfo *item);
     QList<TextAutoGenerateTextToolPluginManagerInfo> mPluginList;
     QList<TextAddonsCore::PluginUtilData> mPluginDataList;
     TextAutoGenerateManager *mManager = nullptr;

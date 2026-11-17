@@ -13,7 +13,7 @@ class QSqlTableModel;
 
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalMessagesDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateLocalMessagesDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
 {
 public:
     TextAutoGenerateLocalMessagesDatabase();
@@ -37,7 +37,7 @@ protected:
     [[nodiscard]] QString schemaDataBase() const override;
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateMessage convertJsonToMessage(const QString &json) const;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT static QString generateQueryStr();
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT TextAutoGenerateMessage convertJsonToMessage(const QString &json) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT static QString generateQueryStr();
 };
 }

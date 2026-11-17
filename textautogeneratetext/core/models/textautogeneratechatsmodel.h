@@ -19,7 +19,7 @@ class TextAutoGenerateProjectsManager;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateChatsModel
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatsModel : public QAbstractListModel
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateChatsModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -192,8 +192,8 @@ public:
     [[nodiscard]] bool chatIsPersisted(const QByteArray &chatId) const;
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT QString title(const TextAutoGenerateChat &chat) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT qint64 dateTime(const TextAutoGenerateChat &chat) const;
     QList<TextAutoGenerateChat> mChats;
     TextAutoGenerateChatSettings *mTextAutoGenerateChatSettings = nullptr;
     TextAutoGenerateTagsManager *mTextAutoGenerateTagsManager = nullptr;

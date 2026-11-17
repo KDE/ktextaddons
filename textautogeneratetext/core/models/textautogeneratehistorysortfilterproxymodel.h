@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <TextAddonsCore/SortFilterProxyModelBase>
 namespace TextAutoGenerateText
 {
@@ -15,7 +15,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateHistorySortFilterProxyModel
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateHistorySortFilterProxyModel : public TextAddonsCore::SortFilterProxyModelBase
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateHistorySortFilterProxyModel : public TextAddonsCore::SortFilterProxyModelBase
 {
     Q_OBJECT
 public:

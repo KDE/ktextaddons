@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QSet>
 #include <QString>
 #include <TextAutoGenerateText/TextAutoGenerateChat>
@@ -21,7 +21,7 @@ class TextAutoGenerateLocalMessagesDatabase;
 class TextAutoGenerateLocalChatPendingTypedInfoDatabase;
 class TextAutoGenerateLocalTagsDatabase;
 class TextAutoGenerateLocalProjectsDatabase;
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalDatabaseManager final
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateLocalDatabaseManager final
 {
 public:
     TextAutoGenerateLocalDatabaseManager();

@@ -58,6 +58,7 @@ depends += \
     textautocorrectioncore \
     textautocorrectionwidgets \
     textautogeneratetext \
+    textautogeneratetextcore \
     textautogeneratetextmcpprotocolcore \
     textcustomeditor \
     textedittexttospeech \

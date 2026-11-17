@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QList>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateAgent>
@@ -21,7 +21,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateAgentPrompSkillManager
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAgentPrompSkillManager : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateAgentPrompSkillManager : public QObject
 {
     Q_OBJECT
 public:
@@ -93,12 +93,12 @@ Q_SIGNALS:
     void agentsChanged();
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void loadPrompts();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void loadSkills();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void loadAgents();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void saveAgents() const;
-    TEXTAUTOGENERATETEXT_NO_EXPORT void saveSkills() const;
-    TEXTAUTOGENERATETEXT_NO_EXPORT void savePrompts() const;
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void loadPrompts();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void loadSkills();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void loadAgents();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void saveAgents() const;
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void saveSkills() const;
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void savePrompts() const;
 
     QList<TextAutoGeneratePrompt> mPrompts;
     QList<TextAutoGenerateSkill> mSkills;

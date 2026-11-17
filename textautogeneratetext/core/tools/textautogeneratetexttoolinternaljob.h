@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolBaseJob>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolInternalProperty>
@@ -18,11 +18,11 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolBaseJob
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolInternalJob : public TextAutoGenerateTextToolBaseJob
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolInternalJob : public TextAutoGenerateTextToolBaseJob
 {
     Q_OBJECT
 public:
-    struct TEXTAUTOGENERATETEXT_EXPORT TextToolPluginInfo {
+    struct TEXTAUTOGENERATETEXTCORE_EXPORT TextToolPluginInfo {
         QString content;
         QByteArray messageUuid;
         QByteArray chatId;
@@ -61,4 +61,4 @@ protected:
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> mProperties;
 };
 }
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::TextToolPluginInfo &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::TextToolPluginInfo &t);

@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QByteArray>
 #include <QObject>
 namespace TextAutoGenerateText
@@ -18,7 +18,7 @@ class TextAutoGenerateMessagesModel;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateSearchMessageSettings
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessageSettings : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateSearchMessageSettings : public QObject
 {
     Q_OBJECT
 public:
@@ -96,8 +96,8 @@ Q_SIGNALS:
     void updateNextPreviousButtons(bool nextEnabled, bool previousEnabled);
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool canSearchMessage() const;
-    TEXTAUTOGENERATETEXT_NO_EXPORT void lastMessageUuid();
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT bool canSearchMessage() const;
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void lastMessageUuid();
     TextAutoGenerateMessagesModel *const mMessageModel;
     QByteArray mCurrentMessageIdentifier;
     int mCurrentSearchIndex = -1;

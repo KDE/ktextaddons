@@ -9,7 +9,7 @@
 #include "core/texttospeech/textautogeneratetexttospeechenqueueinfo.h"
 #include "core/texttospeech/textautogeneratetexttospeechenqueuemanager.h"
 #include "delegate/textautogeneratelistviewbasedelegate.h"
-#include "textautogeneratetextcore_debug.h"
+#include "textautogeneratetextwidget_debug.h"
 #include "widgets/debug/textautogenerateshowdebugdialog.h"
 #include <KLocalizedString>
 #include <QApplication>
@@ -153,7 +153,7 @@ void TextAutoGenerateBaseListView::slotDebugMessage(const QModelIndex &index)
         d.setPlainText(QString::fromUtf8(TextAutoGenerateMessage::serialize(*message, false)));
         d.exec();
     } else {
-        qCWarning(TEXTAUTOGENERATETEXT_CORE_LOG) << "Impossible to find message";
+        qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Impossible to find message";
     }
 }
 

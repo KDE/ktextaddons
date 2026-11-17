@@ -5,14 +5,14 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QList>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolInternalProperty>
 class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolInternal
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolInternal
 {
 public:
     /*!
@@ -66,4 +66,4 @@ private:
     QString mDescription;
 };
 }
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolInternal &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolInternal &t);

@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetextcore_private_export.h"
 #include <QHash>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
@@ -24,7 +24,7 @@ class TextAutoGenerateTextToolBaseJob;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateToolCallJob
  */
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateToolCallJob : public QObject
+class TEXTAUTOGENERATETEXTCORE_TESTS_EXPORT TextAutoGenerateToolCallJob : public QObject
 {
     Q_OBJECT
 public:
@@ -93,13 +93,13 @@ Q_SIGNALS:
     void toolResults(const QList<QPair<QByteArray, QString>> &results);
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *
     createJob(const TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo &info);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void jobFinished(TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *job,
-                                                    const QString &content,
-                                                    const QByteArray &toolIdentifier,
-                                                    const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachments);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void emitFinished();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void jobFinished(TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *job,
+                                                        const QString &content,
+                                                        const QByteArray &toolIdentifier,
+                                                        const QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &attachments);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void emitFinished();
     QList<TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *> mListJob;
     const QByteArray mChatId;
     const QByteArray mMessageUuid;

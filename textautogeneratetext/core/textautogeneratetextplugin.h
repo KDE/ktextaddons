@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <KConfigGroup>
 #include <QJsonArray>
 #include <QObject>
@@ -30,7 +30,7 @@ class TextAutoGenerateTextInstance;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextPlugin
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPlugin : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextPlugin : public QObject
 {
     Q_OBJECT
 public:
@@ -44,7 +44,7 @@ public:
     /*!
      * \brief The ModelInfoNameAndIdentifier class
      */
-    struct TEXTAUTOGENERATETEXT_EXPORT ModelInfoNameAndIdentifier {
+    struct TEXTAUTOGENERATETEXTCORE_EXPORT ModelInfoNameAndIdentifier {
         QString modelName;
         QString identifier;
         // Model can answer messages (false for embedding models): only these models are used as fallback model
@@ -55,7 +55,7 @@ public:
     /*!
      * \brief The SendToAssistantInfo class
      */
-    struct TEXTAUTOGENERATETEXT_EXPORT SendToAssistantInfo {
+    struct TEXTAUTOGENERATETEXTCORE_EXPORT SendToAssistantInfo {
         QString message;
         QByteArray messageUuid;
         QByteArray chatId;
@@ -68,7 +68,7 @@ public:
     /*!
      * \brief The EditSendInfo class
      */
-    struct TEXTAUTOGENERATETEXT_EXPORT EditSendInfo {
+    struct TEXTAUTOGENERATETEXTCORE_EXPORT EditSendInfo {
         QString message;
         QByteArray messageUuid;
         QByteArray chatId;
@@ -297,15 +297,15 @@ protected:
     QList<ModelInfoNameAndIdentifier> mModels;
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void initializeProgress(const SendToAssistantInfo &info);
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QJsonObject createPromptMessage() const;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QJsonArray createListMessages(const QList<QJsonObject> &objs) const;
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void initializeProgress(const SendToAssistantInfo &info);
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT QJsonObject createPromptMessage() const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT QJsonArray createListMessages(const QList<QJsonObject> &objs) const;
     std::unique_ptr<TextAutoGenerateTextPluginPrivate> const d;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo, Q_RELOCATABLE_TYPE);
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier, Q_RELOCATABLE_TYPE);
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo &t);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &t);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo &t);

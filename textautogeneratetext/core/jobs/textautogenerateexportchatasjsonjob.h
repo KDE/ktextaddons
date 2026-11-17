@@ -5,7 +5,7 @@
  */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <TextAutoGenerateText/TextAutoGenerateExportChatBaseJob>
 namespace TextAutoGenerateText
 {
@@ -16,7 +16,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateExportChatAsJsonJob
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateExportChatAsJsonJob : public TextAutoGenerateText::TextAutoGenerateExportChatBaseJob
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateExportChatAsJsonJob : public TextAutoGenerateText::TextAutoGenerateExportChatBaseJob
 {
     Q_OBJECT
 public:

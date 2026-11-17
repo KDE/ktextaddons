@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QAbstractListModel>
 #include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
 namespace TextAutoGenerateText
@@ -17,7 +17,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateSearchMessagesModel
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessagesModel : public QAbstractListModel
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateSearchMessagesModel : public QAbstractListModel
 {
     Q_OBJECT
 public:

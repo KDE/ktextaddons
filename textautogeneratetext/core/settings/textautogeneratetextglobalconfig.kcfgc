@@ -6,5 +6,5 @@ NameSpace=TextAutoGenerateText
 Mutators=true
 Singleton=true
 ItemAccessors=true
-Visibility=TEXTAUTOGENERATETEXT_EXPORT
-IncludeFiles=\"textautogeneratetext_export.h\"
+Visibility=TEXTAUTOGENERATETEXTCORE_EXPORT
+IncludeFiles=\"textautogeneratetextcore_export.h\"

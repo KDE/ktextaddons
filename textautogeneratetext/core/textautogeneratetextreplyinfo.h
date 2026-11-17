@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QString>
 #include <chrono>
 class QDebug;
@@ -18,7 +18,7 @@ namespace TextAutoGenerateText
  * duration of the completion, the number of tokens received, and the duration of the prompt evaluation. This struct encapsulates such information.
  * If any one of these fields is not available, it will be set to its default value.
  */
-struct TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextReplyInfo {
+struct TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextReplyInfo {
     enum class ReplyType : uint8_t {
         Unknown = 0,
         Ollama = 1,
@@ -105,4 +105,4 @@ struct TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextReplyInfo {
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateTextReplyInfo, Q_RELOCATABLE_TYPE);
 /*!
  */
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &t);

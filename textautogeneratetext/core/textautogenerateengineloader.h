@@ -7,7 +7,7 @@
 #pragma once
 
 #include "core/textautogeneratetextclient.h"
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QObject>
 #include <memory>
 namespace TextAutoGenerateText
@@ -20,7 +20,7 @@ class TextAutoGenerateEngineLoaderPrivate;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateEngineLoader
  */
-class TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateEngineLoader : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateEngineLoader : public QObject
 {
     Q_OBJECT
 public:
@@ -69,7 +69,7 @@ Q_SIGNALS:
     void noPluginsFound();
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void loadPlugin(const QString &pluginPath);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void loadPlugin(const QString &pluginPath);
     std::unique_ptr<TextAutoGenerateEngineLoaderPrivate> const d;
 };
 }

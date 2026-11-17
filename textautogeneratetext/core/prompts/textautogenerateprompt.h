@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QObject>
 class KConfigGroup;
 class QDebug;
@@ -18,7 +18,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGeneratePrompt
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGeneratePrompt
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGeneratePrompt
 {
     Q_GADGET
 public:
@@ -146,4 +146,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGeneratePrompt, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &t);

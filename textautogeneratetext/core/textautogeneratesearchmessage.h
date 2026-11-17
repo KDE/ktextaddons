@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QByteArray>
 #include <QString>
 class QDebug;
@@ -18,7 +18,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateSearchMessage
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSearchMessage
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateSearchMessage
 {
 public:
     /*!
@@ -84,4 +84,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateSearchMessage, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateSearchMessage &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateSearchMessage &t);

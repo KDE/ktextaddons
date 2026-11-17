@@ -1,0 +1,9 @@
+/*!
+    \module TextAutoGenerateTextCore
+    \title TextAutoGenerateTextCore C++ Classes
+    \ingroup modules
+    \cmakepackage KF6TextAutoGenerateTextCore
+    \cmaketargetitem KF6::TextAutoGenerateTextCore
+
+    \brief TextAutoGenerateTextCore provides the non-widget AI support classes.
+*/

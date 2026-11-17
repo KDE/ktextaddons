@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
 class QDebug;
@@ -17,11 +17,11 @@ class TextAutoGenerateReply;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateManagerBase
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateManagerBase : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateManagerBase : public QObject
 {
     Q_OBJECT
 public:
-    struct TEXTAUTOGENERATETEXT_EXPORT ModelsInfo {
+    struct TEXTAUTOGENERATETEXTCORE_EXPORT ModelsInfo {
         QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> models;
         QString errorOccured;
         bool hasError = false;
@@ -103,4 +103,4 @@ protected:
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo &t);

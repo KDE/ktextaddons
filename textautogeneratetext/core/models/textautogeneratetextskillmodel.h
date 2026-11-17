@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QAbstractListModel>
 #include <TextAutoGenerateText/TextAutoGenerateSkill>
 namespace TextAutoGenerateText
@@ -17,7 +17,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextSkillModel
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextSkillModel : public QAbstractListModel
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextSkillModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -84,7 +84,7 @@ public:
     void updateSkill(const TextAutoGenerateSkill &skill);
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int indexFromIdentifier(const QByteArray &identifier) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT int indexFromIdentifier(const QByteArray &identifier) const;
     QList<TextAutoGenerateSkill> mSkills;
 };
 }

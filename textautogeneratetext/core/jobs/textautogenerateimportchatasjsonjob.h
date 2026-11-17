@@ -15,7 +15,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateImportChatAsJsonJob
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateImportChatAsJsonJob : public TextAutoGenerateText::TextAutoGenerateImportChatBaseJob
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateImportChatAsJsonJob : public TextAutoGenerateText::TextAutoGenerateImportChatBaseJob
 {
     Q_OBJECT
 public:

@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QList>
 #include <QSharedData>
 class QDebug;
@@ -19,7 +19,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateAnswerInfo
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAnswerInfo : public QSharedData
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateAnswerInfo : public QSharedData
 {
 public:
     /*!
@@ -113,4 +113,4 @@ private:
     QString mInstanceName;
 };
 }
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAnswerInfo &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAnswerInfo &t);

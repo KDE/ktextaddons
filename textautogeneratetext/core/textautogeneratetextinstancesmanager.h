@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateTextInstance>
 namespace TextAutoGenerateText
@@ -21,7 +21,7 @@ class TextAutoGenerateTextPlugin;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextInstancesManager
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextInstancesManager : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextInstancesManager : public QObject
 {
     Q_OBJECT
 public:

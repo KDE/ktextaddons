@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QAbstractListModel>
 #include <TextAutoGenerateText/TextAutoGenerateAgent>
 namespace TextAutoGenerateText
@@ -17,7 +17,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextAgentModel
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextAgentModel : public QAbstractListModel
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextAgentModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -83,7 +83,7 @@ public:
     void updateAgent(const TextAutoGenerateAgent &agent);
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int indexFromIdentifier(const QByteArray &identifier) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT int indexFromIdentifier(const QByteArray &identifier) const;
     QList<TextAutoGenerateAgent> mAgents;
 };
 }

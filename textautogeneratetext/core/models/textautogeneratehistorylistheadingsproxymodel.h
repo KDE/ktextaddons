@@ -6,7 +6,7 @@
 
 #pragma once
 #include "core/models/textautogeneratechatsmodel.h"
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QAbstractProxyModel>
 #include <QPointer>
 #include <TextAutoGenerateText/TextAutoGenerateChat>
@@ -19,7 +19,7 @@ class TextAutoGenerateProjectsModel;
  * Groups the chats of a TextAutoGenerateChatsModel in sections: one section per project, followed by
  * the date sections. A chat which belongs to a project is only listed in that project.
  */
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateHistoryListHeadingsProxyModel final : public QAbstractProxyModel
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateHistoryListHeadingsProxyModel final : public QAbstractProxyModel
 {
     Q_OBJECT
 public:
@@ -61,12 +61,12 @@ Q_SIGNALS:
     void moveChatToProjectRequested(const QByteArray &chatId, const QByteArray &projectId);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void onRowsInserted(const QModelIndex &parent, int first, int last);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void onRowsAboutToBeRemoved(const QModelIndex &parent, int first, int last);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void onDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void onProjectsDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void rebuildSections();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void resetSections();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void onRowsInserted(const QModelIndex &parent, int first, int last);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void onRowsAboutToBeRemoved(const QModelIndex &parent, int first, int last);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void onDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void onProjectsDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight, const QList<int> &roles);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void rebuildSections();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void resetSections();
 
     struct Section {
         //! The project this section stands for, empty when it is a date section.
@@ -89,13 +89,13 @@ private:
         Section,
         History,
     };
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT IndexType type(const QModelIndex &index) const;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool isValidSectionRow(int row) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT IndexType type(const QModelIndex &index) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT bool isValidSectionRow(int row) const;
     //! Returns the row of the section the given source index belongs to.
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int sectionId(const QModelIndex &sourceIndex) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT int sectionId(const QModelIndex &sourceIndex) const;
     /*! Returns the project a drop on \a parent would move the chats to, or an empty identifier when
      *  \a parent is not a project. */
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray dropProjectId(const QModelIndex &parent) const;
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateProjectsModel *projectsModel() const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT QByteArray dropProjectId(const QModelIndex &parent) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT TextAutoGenerateProjectsModel *projectsModel() const;
 };
 }

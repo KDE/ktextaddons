@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QMetaType>
 class QJsonObject;
 class QDebug;
@@ -20,7 +20,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateAttachment
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateAttachment
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateAttachment
 {
     Q_GADGET
 public:
@@ -143,4 +143,4 @@ private:
     bool mShowAttachment = true;
 };
 }
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachment &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAttachment &t);

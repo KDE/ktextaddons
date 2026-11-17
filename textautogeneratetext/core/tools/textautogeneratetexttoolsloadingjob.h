@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QList>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateTextToolInternal>
@@ -18,7 +18,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolsLoadingJob
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolsLoadingJob : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolsLoadingJob : public QObject
 {
     Q_OBJECT
 public:
@@ -50,8 +50,8 @@ Q_SIGNALS:
     void tools(const QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> &list);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void parseJsonTools(const QJsonArray &array);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void loadTools();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void parseJsonTools(const QJsonArray &array);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void loadTools();
     QString mFileName;
 };
 }

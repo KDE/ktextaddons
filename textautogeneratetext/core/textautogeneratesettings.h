@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QString>
 namespace TextAutoGenerateText
 {
@@ -17,7 +17,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateSettings
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateSettings
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateSettings
 {
 public:
     /*!
@@ -51,7 +51,7 @@ public:
     [[nodiscard]] static QString defaultPrompt();
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void save();
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void save();
     QString mSystemPrompt;
 };
 

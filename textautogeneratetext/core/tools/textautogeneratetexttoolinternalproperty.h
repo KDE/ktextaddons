@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QMetaType>
 #include <QStringList>
 class QDebug;
@@ -19,7 +19,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolInternalProperty
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextToolInternalProperty
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolInternalProperty
 {
     Q_GADGET
 public:
@@ -94,4 +94,4 @@ private:
     PropertyType mPropertyType = PropertyType::String;
 };
 }
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty &t);

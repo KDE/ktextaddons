@@ -6,12 +6,12 @@
 
 #pragma once
 
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetextcore_private_export.h"
 #include <QObject>
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGeneratePurgeExpiredChatsJob : public QObject
+class TEXTAUTOGENERATETEXTCORE_TESTS_EXPORT TextAutoGeneratePurgeExpiredChatsJob : public QObject
 {
     Q_OBJECT
 public:

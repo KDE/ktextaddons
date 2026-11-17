@@ -1,0 +1,20 @@
+/*!
+    \page textautogeneratetextcore-index.html
+    \title TextAutoGenerateTextCore
+
+    TextAutoGenerateTextCore provides the non-widget AI support classes.
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    \include {module-use.qdocinc} {building with cmake nomodule} {KF6TextAutoGenerateTextCore} {KF6::TextAutoGenerateTextCore}
+
+    \section1 API Reference
+
+    \list
+        \li \l{TextAutoGenerateTextCore C++ Classes}
+    \endlist
+*/

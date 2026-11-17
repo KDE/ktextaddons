@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 class QDebug;
@@ -17,7 +17,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateExportChatBaseJob
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateExportChatBaseJob : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateExportChatBaseJob : public QObject
 {
     Q_OBJECT
 public:
@@ -25,7 +25,7 @@ public:
      * \class TextAutoGenerateExportChatBaseJob::ExportChatInfo
      * \brief Structure containing information for exporting a chat
      */
-    struct TEXTAUTOGENERATETEXT_EXPORT ExportChatInfo {
+    struct TEXTAUTOGENERATETEXTCORE_EXPORT ExportChatInfo {
         QString filename;
         QString chatTitle;
         QList<TextAutoGenerateText::TextAutoGenerateMessage> listMessages;
@@ -83,4 +83,4 @@ protected:
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateExportChatBaseJob::ExportChatInfo, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateExportChatBaseJob::ExportChatInfo &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateExportChatBaseJob::ExportChatInfo &t);

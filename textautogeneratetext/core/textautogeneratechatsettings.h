@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QMap>
 #include <QString>
 class QDebug;
@@ -19,10 +19,10 @@ class TextAutoGenerateManager;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateChatSettings
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChatSettings
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateChatSettings
 {
 public:
-    struct TEXTAUTOGENERATETEXT_EXPORT PendingTypedInfo {
+    struct TEXTAUTOGENERATETEXTCORE_EXPORT PendingTypedInfo {
         QString text;
         int scrollbarPosition = -1;
         QList<QByteArray> tools;
@@ -86,9 +86,9 @@ public:
     void loadChatPendingTypedInfo();
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void setPendingTypedTexts(const QMap<QByteArray, TextAutoGenerateChatSettings::PendingTypedInfo> &newPendingTypedTexts);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void setPendingTypedTexts(const QMap<QByteArray, TextAutoGenerateChatSettings::PendingTypedInfo> &newPendingTypedTexts);
     QMap<QByteArray /*ChatId*/, PendingTypedInfo> mPendingTypedTexts;
     TextAutoGenerateManager *const mManager;
 };
 }
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo &t);

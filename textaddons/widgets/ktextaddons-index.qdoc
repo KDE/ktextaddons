@@ -16,7 +16,8 @@
             (\l{TextAddonsWidgets}{widgets})
         \li \l{TextAutoCorrectionCore}: text auto-correction
             (\l{TextAutoCorrection Widgets C++ Classes}{widgets})
-        \li \l{TextAutoGenerateText}: generate text using AI
+        \li \l{TextAutoGenerateTextCore}: generate text using AI
+            (\l{TextAutoGenerateText}{widgets})
         \li \l{TextAutoGenerateTextMcpProtocolCore}: Model Context Protocol
             support for text generation
         \li \l{TextCustomEditor}: custom text editor widgets

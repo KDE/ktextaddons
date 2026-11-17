@@ -20,6 +20,7 @@ libraries:
     - cmake: "KF6::TextEmoticonsWidgets"
     - cmake: "KF6::TextUtils"
     - cmake: "KF6::TextCustomEditor"
+    - cmake: "KF6::TextAutoGenerateTextCore"
     - cmake: "KF6::TextAutoGenerateText"
 cmakename: KF6TextEditTextToSpeech
 

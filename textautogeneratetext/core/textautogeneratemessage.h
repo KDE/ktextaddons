@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QJsonArray>
 #include <TextAutoGenerateText/TextAutoGenerateAnswerInfo>
 #include <TextAutoGenerateText/TextAutoGenerateAttachments>
@@ -23,7 +23,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateMessage
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessage
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateMessage
 {
     Q_GADGET
 public:
@@ -320,8 +320,8 @@ public:
     [[nodiscard]] static QJsonObject convertToolExchangeToChatJson(const QJsonObject &obj, ToolCallFormat format);
 
 private:
-    TEXTAUTOGENERATETEXT_NO_EXPORT void assignMessageStateValue(MessageState type, bool status);
-    TEXTAUTOGENERATETEXT_NO_EXPORT bool messageStateValue(MessageState type) const;
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void assignMessageStateValue(MessageState type, bool status);
+    TEXTAUTOGENERATETEXTCORE_NO_EXPORT bool messageStateValue(MessageState type) const;
     QSharedDataPointer<TextAutoGenerateAnswerInfo> mMessageInfo;
     QSharedDataPointer<TextAutoGenerateAttachments> mMessageAttachments;
     QByteArray mAnswerUuid;
@@ -340,4 +340,4 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateMessage, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateMessage &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateMessage &t);

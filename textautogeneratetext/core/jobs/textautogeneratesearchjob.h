@@ -10,11 +10,11 @@
 
 #include <TextAutoGenerateText/TextAutoGenerateSearchMessage>
 
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetextcore_export.h"
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
-class TEXTAUTOGENERATETEXT_TESTS_EXPORT TextAutoGenerateSearchJob : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateSearchJob : public QObject
 {
     Q_OBJECT
 public:

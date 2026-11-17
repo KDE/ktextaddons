@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QString>
 namespace TextAutoGenerateText
 {
@@ -14,11 +14,11 @@ namespace TextAutoGenerateMessageUtils
 {
 /*!
  */
-[[nodiscard]] TEXTAUTOGENERATETEXT_EXPORT QString convertTextToHtml(const QString &str,
-                                                                    const QByteArray &uuid,
-                                                                    const QString &searchedText,
-                                                                    int &numberOfTextSearched,
-                                                                    int hightLightStringIndex,
-                                                                    bool allowInsertText);
+[[nodiscard]] TEXTAUTOGENERATETEXTCORE_EXPORT QString convertTextToHtml(const QString &str,
+                                                                        const QByteArray &uuid,
+                                                                        const QString &searchedText,
+                                                                        int &numberOfTextSearched,
+                                                                        int hightLightStringIndex,
+                                                                        bool allowInsertText);
 }
 }

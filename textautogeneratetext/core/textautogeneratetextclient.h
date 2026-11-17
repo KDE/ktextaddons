@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 class QDebug;
 #include <QObject>
 namespace TextAutoGenerateText
@@ -20,7 +20,7 @@ class TextAutoGenerateTextInstance;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextClient
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextClient : public QObject
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextClient : public QObject
 {
     Q_OBJECT
 public:
@@ -96,4 +96,4 @@ Q_DECLARE_METATYPE(TextAutoGenerateText::TextAutoGenerateTextClient::SupportedSe
  * \param t The SupportedServer structure
  * \return The debug stream
  */
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer &t);

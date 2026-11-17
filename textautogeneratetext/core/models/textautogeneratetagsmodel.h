@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QAbstractListModel>
 #include <TextAutoGenerateText/TextAutoGenerateTag>
 namespace TextAutoGenerateText
@@ -17,7 +17,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTagsModel
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTagsModel : public QAbstractListModel
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTagsModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -104,7 +104,7 @@ public:
     [[nodiscard]] QList<QColor> colors(const QList<QByteArray> &identifiers) const;
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int indexFromIdentifier(const QByteArray &identifier) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT int indexFromIdentifier(const QByteArray &identifier) const;
     QList<TextAutoGenerateTag> mTags;
 };
 }

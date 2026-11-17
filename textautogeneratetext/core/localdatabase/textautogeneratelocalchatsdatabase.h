@@ -4,7 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #pragma once
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <TextAutoGenerateText/TextAutoGenerateChat>
 #include <TextAutoGenerateText/TextAutoGenerateLocalDatabaseAbstract>
 #include <memory>
@@ -12,7 +12,7 @@ class QSqlTableModel;
 
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalChatsDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateLocalChatsDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
 {
 public:
     TextAutoGenerateLocalChatsDatabase();
@@ -28,7 +28,7 @@ protected:
     [[nodiscard]] QString schemaDataBase() const override;
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT static QString generateQueryStr();
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChat convertJsonToChat(const QString &json) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT static QString generateQueryStr();
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT TextAutoGenerateChat convertJsonToChat(const QString &json) const;
 };
 }

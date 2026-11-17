@@ -7,7 +7,7 @@ macro(add_textautogenerate_core_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_name}.h TEST_NAME ${_name}
         NAME_PREFIX "textautogenerate-core-"
-        LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateText Qt::Sql KF6::TextUtils
+        LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateTextCore Qt::Sql KF6::TextUtils
     )
 endmacro()
 add_textautogenerate_core_unittest(textautogeneratesearchmessageutilstest.cpp)
@@ -76,7 +76,7 @@ macro(add_textautogenerate_core_mcp_unittest _source)
     ecm_add_test(${_source} ${_name}.h fakemcpserver.h ${_fakemcpserver_dir}/fakemcphttpserver.cpp ${_fakemcpserver_dir}/fakemcphttpserver.h
         TEST_NAME ${_name}
         NAME_PREFIX "textautogenerate-core-"
-        LINK_LIBRARIES Qt::Test Qt::Network KF6::TextAutoGenerateText KF6::TextAutoGenerateTextMcpProtocolCore
+        LINK_LIBRARIES Qt::Test Qt::Network KF6::TextAutoGenerateTextCore KF6::TextAutoGenerateTextMcpProtocolCore
     )
     target_include_directories(${_name} PRIVATE ${_fakemcpserver_dir})
 endmacro()

@@ -5,26 +5,26 @@
 */
 #pragma once
 #include "core/mcp/textautogeneratemcptoolsmanager.h"
-#include "textautogeneratetext_private_export.h"
+#include "textautogeneratetextcore_private_export.h"
 #include <QList>
 #include <QString>
 namespace TextAutoGenerateText
 {
 namespace TextAutoGenerateMcpToolsUtils
 {
-[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT bool isServerAlwaysAllowed(const QString &serverConfigFileName, const QByteArray &serverIdentifier);
-TEXTAUTOGENERATETEXT_TESTS_EXPORT void setServerAlwaysAllowed(const QString &serverConfigFileName, const QByteArray &serverIdentifier, bool allowed);
+[[nodiscard]] TEXTAUTOGENERATETEXTCORE_TESTS_EXPORT bool isServerAlwaysAllowed(const QString &serverConfigFileName, const QByteArray &serverIdentifier);
+TEXTAUTOGENERATETEXTCORE_TESTS_EXPORT void setServerAlwaysAllowed(const QString &serverConfigFileName, const QByteArray &serverIdentifier, bool allowed);
 /*!
  * Servers whose tools are called without confirmation.
  */
-[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QList<QByteArray> alwaysAllowedServers(const QString &serverConfigFileName);
-TEXTAUTOGENERATETEXT_TESTS_EXPORT void setAlwaysAllowedServers(const QString &serverConfigFileName, const QList<QByteArray> &serverIdentifiers);
+[[nodiscard]] TEXTAUTOGENERATETEXTCORE_EXPORT QList<QByteArray> alwaysAllowedServers(const QString &serverConfigFileName);
+TEXTAUTOGENERATETEXTCORE_EXPORT void setAlwaysAllowedServers(const QString &serverConfigFileName, const QList<QByteArray> &serverIdentifiers);
 /*!
  * Servers \a first and \a second are identical except their allowed tools: connection can be kept.
  */
-[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT bool sameConnectionSettings(TextAutoGenerateTextMcpProtocolCore::McpServer first,
-                                                                            TextAutoGenerateTextMcpProtocolCore::McpServer second);
-[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString toolRiskIconName(TextAutoGenerateMcpToolsManager::ToolRisk risk);
-[[nodiscard]] TEXTAUTOGENERATETEXT_TESTS_EXPORT QString toolRiskText(TextAutoGenerateMcpToolsManager::ToolRisk risk);
+[[nodiscard]] TEXTAUTOGENERATETEXTCORE_EXPORT bool sameConnectionSettings(TextAutoGenerateTextMcpProtocolCore::McpServer first,
+                                                                          TextAutoGenerateTextMcpProtocolCore::McpServer second);
+[[nodiscard]] TEXTAUTOGENERATETEXTCORE_EXPORT QString toolRiskIconName(TextAutoGenerateMcpToolsManager::ToolRisk risk);
+[[nodiscard]] TEXTAUTOGENERATETEXTCORE_EXPORT QString toolRiskText(TextAutoGenerateMcpToolsManager::ToolRisk risk);
 }
 }

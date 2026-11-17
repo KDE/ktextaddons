@@ -1,0 +1,99 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TextAutoGenerateTextCore
+moduleheader = textautogeneratetextcore_qdocmoduleheader.h
+description = TextAutoGenerateTextCore provides the non-widget AI support classes.
+
+
+documentationinheaders = true
+
+headers += \
+    jobs/textautogenerateaskjob.h \
+    jobs/textautogenerateexportchatasjsonjob.h \
+    jobs/textautogenerateexportchatbasejob.h \
+    jobs/textautogenerateimportchatasjsonjob.h \
+    jobs/textautogenerateimportchatbasejob.h \
+    localdatabase/textautogeneratelocalchatpendingtypedinfodatabase.h \
+    localdatabase/textautogeneratelocalchatsdatabase.h \
+    localdatabase/textautogeneratelocaldatabaseabstract.h \
+    localdatabase/textautogeneratelocaldatabasemanager.h \
+    localdatabase/textautogeneratelocalmessagesdatabase.h \
+    localdatabase/textautogeneratelocalprojectsdatabase.h \
+    localdatabase/textautogeneratelocaltagsdatabase.h \
+    mcp/textautogeneratemcptoolsmanager.h \
+    models/textautogeneratechatsmodel.h \
+    models/textautogeneratehistorysortfilterproxymodel.h \
+    models/textautogeneratemessagesmodel.h \
+    models/textautogenerateprojectsmodel.h \
+    models/textautogeneratesearchmessagesmodel.h \
+    models/textautogeneratetagsmodel.h \
+    models/textautogeneratetextagentmodel.h \
+    models/textautogeneratetextpromptmodel.h \
+    models/textautogeneratetextpromptsortfilterproxymodel.h \
+    models/textautogeneratetextskillmodel.h \
+    projects/textautogenerateproject.h \
+    prompts/textautogenerateagent.h \
+    prompts/textautogenerateprompt.h \
+    prompts/textautogenerateskill.h \
+    tags/textautogeneratetag.h \
+    textautogenerateagentprompskillmanager.h \
+    textautogenerateanswerinfo.h \
+    textautogenerateattachment.h \
+    textautogenerateattachments.h \
+    textautogenerateattachmentutils.h \
+    textautogeneratechat.h \
+    textautogeneratechatsettings.h \
+    textautogeneratemanager.h \
+    textautogeneratemanagerbase.h \
+    textautogeneratemessage.h \
+    textautogeneratemessageutils.h \
+    textautogenerateprojectsmanager.h \
+    textautogeneratereply.h \
+    textautogeneratesearchmessage.h \
+    textautogeneratesearchmessagesettings.h \
+    textautogeneratesettings.h \
+    textautogeneratetextclient.h \
+    textautogeneratetextcore_qdocmoduleheader.h \
+    textautogeneratetextinstance.h \
+    textautogeneratetextinstancesmanager.h \
+    textautogeneratetextplugin.h \
+    textautogeneratetextreplyinfo.h \
+    textautogeneratetextrequest.h \
+    textautogeneratetextutils.h \
+    tools/textautogeneratetexttoolbasejob.h \
+    tools/textautogeneratetexttoolinternal.h \
+    tools/textautogeneratetexttoolinternalinterface.h \
+    tools/textautogeneratetexttoolinternaljob.h \
+    tools/textautogeneratetexttoolinternalproperty.h \
+    tools/textautogeneratetexttoolplugin.h \
+    tools/textautogeneratetexttoolpluginjob.h \
+    tools/textautogeneratetexttoolpluginmanager.h \
+    tools/textautogeneratetexttoolpluginproperty.h \
+    tools/textautogeneratetexttoolsloadingjob.h
+sourcedirs += .
+
+excludedirs += \
+    autotests
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TextAutoGenerateTextCore"
+
+qhp.projects            = textautogeneratetextcore
+
+qhp.textautogeneratetextcore.file                = textautogeneratetextcore.qhp
+qhp.textautogeneratetextcore.namespace           = org.kde.textautogeneratetextcore.$QT_VERSION_TAG
+qhp.textautogeneratetextcore.virtualFolder       = textautogeneratetextcore
+qhp.textautogeneratetextcore.indexTitle          = TextAutoGenerateTextCore
+qhp.textautogeneratetextcore.indexRoot           =
+
+qhp.textautogeneratetextcore.subprojects         = classes
+qhp.textautogeneratetextcore.subprojects.classes.title = C++ Classes
+qhp.textautogeneratetextcore.subprojects.classes.indexTitle = TextAutoGenerateTextCore C++ Classes
+qhp.textautogeneratetextcore.subprojects.classes.selectors = class fake:headerfile
+qhp.textautogeneratetextcore.subprojects.classes.sortPages = true
+
+tagfile = textautogeneratetextcore.tags

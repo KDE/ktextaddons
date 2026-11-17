@@ -11,7 +11,7 @@
 class QSqlTableModel;
 namespace TextAutoGenerateText
 {
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateLocalChatPendingTypedInfoDatabase : public TextAutoGenerateLocalDatabaseAbstract
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateLocalChatPendingTypedInfoDatabase : public TextAutoGenerateLocalDatabaseAbstract
 {
 public:
     TextAutoGenerateLocalChatPendingTypedInfoDatabase();
@@ -28,6 +28,6 @@ protected:
     [[nodiscard]] QString schemaDataBase() const override;
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChatSettings::PendingTypedInfo convertJsonToChatPendingTypedInfo(const QString &json);
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT TextAutoGenerateChatSettings::PendingTypedInfo convertJsonToChatPendingTypedInfo(const QString &json);
 };
 }

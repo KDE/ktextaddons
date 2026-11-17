@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QSharedPointer>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>
 class QDebug;
@@ -20,7 +20,7 @@ class TextAutoGenerateMessagesModel;
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateChat
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateChat
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateChat
 {
     Q_GADGET
 public:
@@ -225,7 +225,7 @@ public:
     [[nodiscard]] bool isEphemeral() const;
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT TextAutoGenerateChat::SectionHistory sectionMessage(qint64 dt) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT TextAutoGenerateChat::SectionHistory sectionMessage(qint64 dt) const;
 
     QSharedPointer<TextAutoGenerateMessagesModel> mMessageModel;
     QByteArray mIdentifier;
@@ -243,4 +243,4 @@ private:
 
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateChat, Q_RELOCATABLE_TYPE);
-TEXTAUTOGENERATETEXT_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t);
+TEXTAUTOGENERATETEXTCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateChat &t);

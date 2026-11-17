@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "textautogeneratetext_export.h"
+#include "textautogeneratetextcore_export.h"
 #include <QAbstractListModel>
 #include <TextAutoGenerateText/TextAutoGeneratePrompt>
 namespace TextAutoGenerateText
@@ -17,7 +17,7 @@ namespace TextAutoGenerateText
  * \inmodule TextAutoGenerateText
  * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextPromptModel
  */
-class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateTextPromptModel : public QAbstractListModel
+class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextPromptModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
@@ -86,7 +86,7 @@ public:
     void updatePrompt(const TextAutoGeneratePrompt &prompt);
 
 private:
-    [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT int indexFromIdentifier(const QByteArray &identifier) const;
+    [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT int indexFromIdentifier(const QByteArray &identifier) const;
     QList<TextAutoGeneratePrompt> mPrompts;
 };
 }
