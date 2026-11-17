@@ -16,7 +16,6 @@ macro(add_ollamaonline_plugin_unittest _source)
         ${_name}
         Qt::Test
         KF6::TextAutoGenerateText
-        KF6::KIOWidgets
         textautogenerateollamaonline
         textautogenerateollamacommon
     )
