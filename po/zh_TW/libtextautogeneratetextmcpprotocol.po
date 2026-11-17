@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-14 19:25+0000\n"
+"POT-Creation-Date: 2026-11-16 12:19+0000\n"
 "PO-Revision-Date: 2026-11-05 23:22+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -331,14 +331,14 @@ msgctxt "@label:textbox"
 msgid "Authentication token:"
 msgstr "認證權杖："
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:19
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:20
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "移除"
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:27
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox"
 #| msgid "Name:"
@@ -346,7 +346,7 @@ msgctxt "@title:column"
 msgid "Name"
 msgstr "名稱："
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:27
 #, fuzzy, kde-format
 #| msgctxt "@info:placeholder"
 #| msgid "Name: Value"
@@ -354,18 +354,33 @@ msgctxt "@title:column"
 msgid "Value"
 msgstr "名稱: 值"
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "An empty value keeps the variable from the user environment."
 msgstr ""
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:38
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:39
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "新增"
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:84
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Do you want to remove this server (%1)?"
+msgid "Do you want to remove this variable."
+msgstr "您確定要移除此伺服器 (%1) 嗎？"
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Remove Header"
+msgctxt "@title:window"
+msgid "Remove Variable"
+msgstr "移除標頭"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:26
 #, kde-format

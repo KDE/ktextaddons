@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-14 19:25+0000\n"
+"POT-Creation-Date: 2026-11-16 12:19+0000\n"
 "PO-Revision-Date: 2026-05-02 10:59+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -330,36 +330,47 @@ msgctxt "@label:textbox"
 msgid "Authentication token:"
 msgstr ""
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:19
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:20
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr ""
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:27
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr ""
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:27
 #, kde-format
 msgctxt "@title:column"
 msgid "Value"
 msgstr ""
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "An empty value keeps the variable from the user environment."
 msgstr ""
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:38
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:39
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
+msgstr ""
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:84
+#, kde-format
+msgid "Do you want to remove this variable."
+msgstr ""
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:85
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Variable"
 msgstr ""
 
 #: widgets/client/addmcpstdioserverwidget.cpp:26

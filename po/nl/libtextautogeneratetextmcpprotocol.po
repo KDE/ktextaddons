@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-14 19:25+0000\n"
-"PO-Revision-Date: 2026-11-06 11:47+0100\n"
+"POT-Creation-Date: 2026-11-16 12:19+0000\n"
+"PO-Revision-Date: 2026-11-16 15:18+0100\n"
 "Last-Translator: freek <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -88,7 +88,7 @@ msgstr "Server is gestopt."
 #: plugins/client/mcpclientutils.cpp:130
 #, kde-format
 msgid "Authentication failed: the server rejected the access token."
-msgstr ""
+msgstr "Authenticatie is mislukt: de server wees het toegangstoken af."
 
 #: plugins/client/mcpclientutils.cpp:132
 #, kde-format
@@ -96,34 +96,37 @@ msgid ""
 "Authentication required. The server uses OAuth authorization, which is not "
 "supported: set an access token in the server settings."
 msgstr ""
+"Authenticatie vereist. De server maakt gebruik van OAuth-autorisatie, wat "
+"niet wordt ondersteund: stel een toegangstoken in bij de serverinstellingen."
 
 #: plugins/client/mcpclientutils.cpp:134
 #, kde-format
 msgid "Authentication required: set an access token in the server settings."
 msgstr ""
+"Authenticatie vereist: stel een toegangstoken in in de serverinstellingen."
 
 #: plugins/client/mcpclientutils.cpp:137
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions."
-msgstr ""
+msgstr "Toegang geweigerd: het toegangstoken biedt niet de vereiste rechten."
 
 #: plugins/client/mcpclientutils.cpp:138
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions (%1)."
 msgstr ""
+"Toegang geweigerd: het toegangstoken verleent niet de vereiste rechten (%1)."
 
 #: plugins/client/mcpclientutils.cpp:140
 #, kde-format
 msgid "Access denied by the server."
-msgstr ""
+msgstr "Toegang geweigerd door de server."
 
 #: plugins/client/mcpclientutils.cpp:143
-#, fuzzy, kde-format
-#| msgid "Server started"
+#, kde-format
 msgid "Server message: %1"
-msgstr "Server is gestart"
+msgstr "Serverbericht: %1"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
@@ -334,26 +337,26 @@ msgctxt "@label:textbox"
 msgid "Authentication token:"
 msgstr "Authenticatietoken:"
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:19
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:20
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:43
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "Verwijderen"
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:27
 #, kde-format
 msgctxt "@title:column"
 msgid "Name"
 msgstr "Naam"
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:26
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:27
 #, kde-format
 msgctxt "@title:column"
 msgid "Value"
 msgstr "Waarde"
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:31
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "An empty value keeps the variable from the user environment."
@@ -361,12 +364,27 @@ msgstr ""
 "Een lege waarde zorgt ervoor dat de variabele niet in de gebruikersomgeving "
 "terechtkomt."
 
-#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:38
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:39
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Add"
 msgstr "Toevoegen"
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:84
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Do you want to remove this server (%1)?"
+msgid "Do you want to remove this variable."
+msgstr "Wilt u deze server (%1) verwijderen?"
+
+#: widgets/client/addmcpstdioserverenvironmentwidget.cpp:85
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Remove Header"
+msgctxt "@title:window"
+msgid "Remove Variable"
+msgstr "Kop verwijderen"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:26
 #, kde-format
@@ -497,12 +515,10 @@ msgid "Add Server…"
 msgstr "Server toevoegen…"
 
 #: widgets/client/mcpserverlistview.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@action"
 msgid "Import Server…"
-msgstr "Server toevoegen…"
+msgstr "Server importeren…"
 
 #: widgets/client/mcpserverlistview.cpp:77
 #, kde-format
@@ -520,7 +536,7 @@ msgstr "Hulpmiddelen configureren…"
 #, kde-format
 msgctxt "@action"
 msgid "Export…"
-msgstr ""
+msgstr "Exporteren…"
 
 #: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
@@ -562,7 +578,7 @@ msgstr "Uit MCP-register…"
 #, kde-format
 msgctxt "@action"
 msgid "Import…"
-msgstr ""
+msgstr "Importeren…"
 
 #: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
@@ -576,45 +592,39 @@ msgid "Add MCP Server"
 msgstr "MCP-server toevoegen"
 
 #: widgets/client/mcpserverwidget.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Servers"
-msgstr "Server toevoegen…"
+msgstr "Servers voor importeren"
 
 #: widgets/client/mcpserverwidget.cpp:238
 #: widgets/client/mcpserverwidget.cpp:269
 #, kde-format
 msgid "JSON Files (*.json)"
-msgstr ""
+msgstr "JSON-bestanden (*.json)"
 
 #: widgets/client/mcpserverwidget.cpp:245
 #, kde-format
 msgid "An error occurred when importing server."
-msgstr ""
+msgstr "Er is een fout opgetreden bij het importeren van de server."
 
 #: widgets/client/mcpserverwidget.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Server"
-msgstr "Server toevoegen…"
+msgstr "Import-server"
 
 #: widgets/client/mcpserverwidget.cpp:267
 #: widgets/client/mcpserverwidget.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Server"
-msgstr "Server toevoegen…"
+msgstr "Export-server"
 
 #: widgets/client/mcpserverwidget.cpp:279
 #, kde-format
 msgid "An error occurred when exporting server."
-msgstr ""
+msgstr "Er is een fout opgetreden bij de exporterende server."
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
