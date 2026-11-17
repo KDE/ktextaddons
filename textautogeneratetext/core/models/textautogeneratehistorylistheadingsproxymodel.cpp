@@ -9,9 +9,9 @@
 #include "core/models/textautogenerateprojectsmodel.h"
 #include "core/textautogenerateprojectsmanager.h"
 
-#include <QApplication>
 #include <QDataStream>
 #include <QFont>
+#include <QGuiApplication>
 #include <QIODevice>
 #include <QIcon>
 #include <QMimeData>
@@ -74,7 +74,7 @@ QVariant TextAutoGenerateHistoryListHeadingsProxyModel::data(const QModelIndex &
             // Empty for a date section, so that a caller can tell both apart.
             return section.projectId;
         case Qt::BackgroundRole:
-            return QApplication::palette().brush(QPalette::Window);
+            return QGuiApplication::palette().brush(QPalette::Window);
         case Qt::FontRole: {
             auto font = qvariant_cast<QFont>(QAbstractProxyModel::data(index, Qt::FontRole));
             font.setBold(true);
