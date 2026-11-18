@@ -6959,5 +6959,1563 @@
         "languages": [
             "en"
         ]
+    },
+    "autotrust-jev": {
+        "url": "https://ollama.com/library/autotrust-jev",
+        "tags": [
+            [
+                "latest",
+                "11 GB"
+            ],
+            [
+                "9b",
+                "11 GB"
+            ],
+            [
+                "35b",
+                "26 GB"
+            ],
+            [
+                "27b-vl",
+                "21 GB"
+            ]
+        ],
+        "author": "AutoTrust",
+        "categories": [
+            "vision",
+            "medium",
+            "big",
+            "huge"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "beam": {
+        "url": "https://ollama.com/library/beam",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Reflection AI",
+        "categories": [
+            "tools",
+            "reasoning",
+            "cloud",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "bonsai-2": {
+        "url": "https://ollama.com/library/bonsai-2",
+        "tags": [
+            [
+                "latest",
+                "3.2 GB"
+            ],
+            [
+                "2b",
+                "911 MB"
+            ],
+            [
+                "4b",
+                "1.6 GB"
+            ],
+            [
+                "9b",
+                "3.2 GB"
+            ],
+            [
+                "27b",
+                "8.3 GB"
+            ]
+        ],
+        "author": "Prism ML",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "small",
+            "medium",
+            "big",
+            "huge"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "clef": {
+        "url": "https://ollama.com/library/clef",
+        "tags": [
+            [
+                "latest",
+                "20 GB"
+            ],
+            [
+                "27b",
+                "20 GB"
+            ],
+            [
+                "cloud",
+                "cloud"
+            ],
+            [
+                "27b-cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Cloudflare",
+        "categories": [
+            "vision",
+            "big",
+            "huge",
+            "cloud"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "clef-flash": {
+        "url": "https://ollama.com/library/clef-flash",
+        "tags": [
+            [
+                "latest",
+                "12 GB"
+            ],
+            [
+                "9b",
+                "12 GB"
+            ]
+        ],
+        "author": "Cloudflare",
+        "categories": [
+            "vision",
+            "medium"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "d1": {
+        "url": "https://ollama.com/library/d1",
+        "tags": [
+            [
+                "latest",
+                "3.7 GB"
+            ],
+            [
+                "2b",
+                "3.9 GB"
+            ],
+            [
+                "3b",
+                "3.7 GB"
+            ]
+        ],
+        "author": "Liquid",
+        "categories": [
+            "vision",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "d1-omni": {
+        "url": "https://ollama.com/library/d1-omni",
+        "tags": [
+            [
+                "latest",
+                "850 MB"
+            ],
+            [
+                "600m",
+                "850 MB"
+            ],
+            [
+                "2b",
+                "4.4 GB"
+            ]
+        ],
+        "author": "Liquid",
+        "categories": [
+            "vision",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "d3": {
+        "url": "https://ollama.com/library/d3",
+        "tags": [
+            [
+                "latest",
+                "5.8 GB"
+            ],
+            [
+                "2b",
+                "3.2 GB"
+            ],
+            [
+                "4b",
+                "5.8 GB"
+            ],
+            [
+                "9b",
+                "10 GB"
+            ],
+            [
+                "27b",
+                "30 GB"
+            ]
+        ],
+        "author": "Liquid",
+        "categories": [
+            "vision",
+            "small",
+            "medium",
+            "big",
+            "huge"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "deepseek-v4-pro": {
+        "url": "https://ollama.com/library/deepseek-v4-pro",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "DeepSeek Team",
+        "categories": [
+            "tools",
+            "reasoning",
+            "cloud"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "deepseek-v4.1-flash": {
+        "url": "https://ollama.com/library/deepseek-v4.1-flash",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "DeepSeek Team",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "embeddinggemma-2": {
+        "url": "https://ollama.com/library/embeddinggemma-2",
+        "tags": [
+            [
+                "latest",
+                "1.3 GB"
+            ],
+            [
+                "270m",
+                "378 MB"
+            ],
+            [
+                "440m",
+                "714 MB"
+            ],
+            [
+                "570m",
+                "990 MB"
+            ],
+            [
+                "740m",
+                "1.3 GB"
+            ]
+        ],
+        "author": "Google DeepMind",
+        "categories": [
+            "vision",
+            "embedding",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "flint": {
+        "url": "https://ollama.com/library/flint",
+        "tags": [
+            [
+                "latest",
+                "23 GB"
+            ],
+            [
+                "40b",
+                "23 GB"
+            ],
+            [
+                "40b-a2b",
+                "23 GB"
+            ]
+        ],
+        "author": "Recursive",
+        "categories": [
+            "tools",
+            "reasoning",
+            "huge",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "glm-5.2": {
+        "url": "https://ollama.com/library/glm-5.2",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Z.ai",
+        "categories": [
+            "tools",
+            "reasoning",
+            "cloud"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "glm-5.3": {
+        "url": "https://ollama.com/library/glm-5.3",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Z.ai",
+        "categories": [
+            "tools",
+            "reasoning",
+            "cloud",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "glm-5.3-flash": {
+        "url": "https://ollama.com/library/glm-5.3-flash",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Z.ai",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "glm-ocr": {
+        "url": "https://ollama.com/library/glm-ocr",
+        "tags": [
+            [
+                "latest",
+                "2.7 GB"
+            ]
+        ],
+        "author": "Z.ai",
+        "categories": [
+            "vision",
+            "tools",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "granite4.1": {
+        "url": "https://ollama.com/library/granite4.1",
+        "tags": [
+            [
+                "3b",
+                "2.1 GB"
+            ],
+            [
+                "8b",
+                "5.3 GB"
+            ],
+            [
+                "30b",
+                "17 GB"
+            ]
+        ],
+        "author": "IBM Research",
+        "categories": [
+            "tools",
+            "small",
+            "medium",
+            "big",
+            "huge",
+            "code",
+            "multilingual"
+        ],
+        "languages": [
+            "en",
+            "de",
+            "es",
+            "fr",
+            "ja",
+            "pt",
+            "ar",
+            "cs",
+            "it",
+            "ko",
+            "nl",
+            "zh"
+        ]
+    },
+    "granite4.1-guardian": {
+        "url": "https://ollama.com/library/granite4.1-guardian",
+        "tags": [
+            [
+                "8b",
+                "6.9 GB"
+            ]
+        ],
+        "author": "IBM Research",
+        "categories": [
+            "tools",
+            "reasoning",
+            "medium"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "granite4.2": {
+        "url": "https://ollama.com/library/granite4.2",
+        "tags": [
+            [
+                "latest",
+                "5.3 GB"
+            ],
+            [
+                "3b",
+                "2.2 GB"
+            ],
+            [
+                "8b",
+                "5.3 GB"
+            ],
+            [
+                "30b",
+                "18 GB"
+            ]
+        ],
+        "author": "IBM Research",
+        "categories": [
+            "small",
+            "medium",
+            "big",
+            "huge",
+            "code",
+            "multilingual"
+        ],
+        "languages": [
+            "en",
+            "de",
+            "es",
+            "fr",
+            "ja",
+            "pt",
+            "ar",
+            "cs",
+            "it",
+            "ko",
+            "nl",
+            "zh"
+        ]
+    },
+    "inkling-2-small": {
+        "url": "https://ollama.com/library/inkling-2-small",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Inkling",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "kev": {
+        "url": "https://ollama.com/library/kev",
+        "tags": [
+            [
+                "latest",
+                "6.7 GB"
+            ]
+        ],
+        "author": "Kev",
+        "categories": [
+            "medium"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "kimi-k2.6": {
+        "url": "https://ollama.com/library/kimi-k2.6",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Kimi Team",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "kimi-k2.7-code": {
+        "url": "https://ollama.com/library/kimi-k2.7-code",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Kimi Team",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "kimi-k3": {
+        "url": "https://ollama.com/library/kimi-k3",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Kimi Team",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "kimi-k3.1-pro": {
+        "url": "https://ollama.com/library/kimi-k3.1-pro",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Kimi Team",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "laguna-s-2.1": {
+        "url": "https://ollama.com/library/laguna-s-2.1",
+        "tags": [
+            [
+                "latest",
+                "96 GB"
+            ]
+        ],
+        "author": "Poolside",
+        "categories": [
+            "tools",
+            "reasoning",
+            "huge"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "laguna-xs-2.1": {
+        "url": "https://ollama.com/library/laguna-xs-2.1",
+        "tags": [
+            [
+                "latest",
+                "20 GB"
+            ]
+        ],
+        "author": "Poolside",
+        "categories": [
+            "tools",
+            "reasoning",
+            "huge",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "laguna-xs.2": {
+        "url": "https://ollama.com/library/laguna-xs.2",
+        "tags": [
+            [
+                "latest",
+                "23 GB"
+            ]
+        ],
+        "author": "Poolside",
+        "categories": [
+            "tools",
+            "reasoning",
+            "huge",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "laya": {
+        "url": "https://ollama.com/library/laya",
+        "tags": [
+            [
+                "latest",
+                "846 MB"
+            ]
+        ],
+        "author": "Convai Innovations",
+        "categories": [
+            "embedding",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "lfm2.5": {
+        "url": "https://ollama.com/library/lfm2.5",
+        "tags": [
+            [
+                "latest",
+                "5.2 GB"
+            ],
+            [
+                "8b",
+                "5.2 GB"
+            ],
+            [
+                "24b",
+                "15 GB"
+            ]
+        ],
+        "author": "Liquid",
+        "categories": [
+            "tools",
+            "reasoning",
+            "medium",
+            "big",
+            "huge"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "lfm3": {
+        "url": "https://ollama.com/library/lfm3",
+        "tags": [
+            [
+                "latest",
+                "1.7 GB"
+            ],
+            [
+                "1.7b",
+                "1.7 GB"
+            ]
+        ],
+        "author": "Liquid",
+        "categories": [
+            "tools",
+            "reasoning",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "lfm3-audio": {
+        "url": "https://ollama.com/library/lfm3-audio",
+        "tags": [
+            [
+                "latest",
+                "2.1 GB"
+            ],
+            [
+                "2b",
+                "2.1 GB"
+            ]
+        ],
+        "author": "Liquid",
+        "categories": [
+            "vision",
+            "tools",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "lfm3-omni": {
+        "url": "https://ollama.com/library/lfm3-omni",
+        "tags": [
+            [
+                "latest",
+                "2.4 GB"
+            ],
+            [
+                "2b",
+                "2.4 GB"
+            ]
+        ],
+        "author": "Liquid",
+        "categories": [
+            "vision",
+            "tools",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "lfm3-vl": {
+        "url": "https://ollama.com/library/lfm3-vl",
+        "tags": [
+            [
+                "latest",
+                "1.7 GB"
+            ],
+            [
+                "2b",
+                "1.7 GB"
+            ]
+        ],
+        "author": "Liquid",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "medgemma": {
+        "url": "https://ollama.com/library/medgemma",
+        "tags": [
+            [
+                "latest",
+                "3.3 GB"
+            ],
+            [
+                "4b",
+                "3.3 GB"
+            ],
+            [
+                "27b",
+                "17 GB"
+            ]
+        ],
+        "author": "Google DeepMind",
+        "categories": [
+            "vision",
+            "small",
+            "big",
+            "huge"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "medgemma1.5": {
+        "url": "https://ollama.com/library/medgemma1.5",
+        "tags": [
+            [
+                "latest",
+                "3.3 GB"
+            ],
+            [
+                "4b",
+                "3.3 GB"
+            ]
+        ],
+        "author": "Google DeepMind",
+        "categories": [
+            "vision",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "mimo-v2.6": {
+        "url": "https://ollama.com/library/mimo-v2.6",
+        "tags": [
+            [
+                "latest",
+                "8.7 GB"
+            ],
+            [
+                "9b",
+                "8.7 GB"
+            ]
+        ],
+        "author": "Xiaomi",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "medium",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "mimo-v2.6-flash": {
+        "url": "https://ollama.com/library/mimo-v2.6-flash",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Xiaomi",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "mimo-v2.6-pro": {
+        "url": "https://ollama.com/library/mimo-v2.6-pro",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Xiaomi",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "minicpm-v4.5": {
+        "url": "https://ollama.com/library/minicpm-v4.5",
+        "tags": [
+            [
+                "latest",
+                "6.1 GB"
+            ],
+            [
+                "8b",
+                "6.1 GB"
+            ]
+        ],
+        "author": "OpenBMB",
+        "categories": [
+            "vision",
+            "medium"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "minicpm-v4.6": {
+        "url": "https://ollama.com/library/minicpm-v4.6",
+        "tags": [
+            [
+                "latest",
+                "1.6 GB"
+            ],
+            [
+                "1b",
+                "1.6 GB"
+            ]
+        ],
+        "author": "OpenBMB",
+        "categories": [
+            "vision",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "minimax-m3": {
+        "url": "https://ollama.com/library/minimax-m3",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "MiniMax",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "minimax-m3.1-flash": {
+        "url": "https://ollama.com/library/minimax-m3.1-flash",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "MiniMax",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "mistral-large-4": {
+        "url": "https://ollama.com/library/mistral-large-4",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Mistral AI",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "mistral-medium-3.5": {
+        "url": "https://ollama.com/library/mistral-medium-3.5",
+        "tags": [
+            [
+                "latest",
+                "80 GB"
+            ],
+            [
+                "128b",
+                "80 GB"
+            ]
+        ],
+        "author": "Mistral AI",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "huge",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "muse-glimmer": {
+        "url": "https://ollama.com/library/muse-glimmer",
+        "tags": [
+            [
+                "latest",
+                "18 GB"
+            ],
+            [
+                "30b",
+                "18 GB"
+            ]
+        ],
+        "author": "Meta",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "big",
+            "huge"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "muse-spark-open": {
+        "url": "https://ollama.com/library/muse-spark-open",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Meta",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "cloud",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "nemotron-3-ultra": {
+        "url": "https://ollama.com/library/nemotron-3-ultra",
+        "tags": [
+            [
+                "cloud",
+                "cloud"
+            ]
+        ],
+        "author": "Nvidia",
+        "categories": [
+            "tools",
+            "reasoning",
+            "cloud"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "nemotron-3.5-bolt": {
+        "url": "https://ollama.com/library/nemotron-3.5-bolt",
+        "tags": [
+            [
+                "latest",
+                "25 GB"
+            ],
+            [
+                "e4b",
+                "7.9 GB"
+            ],
+            [
+                "74b-a9b",
+                "25 GB"
+            ]
+        ],
+        "author": "Nvidia",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "small",
+            "huge",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "nemotron-3.5-lightning": {
+        "url": "https://ollama.com/library/nemotron-3.5-lightning",
+        "tags": [
+            [
+                "latest",
+                "25 GB"
+            ],
+            [
+                "30b",
+                "25 GB"
+            ],
+            [
+                "30b-a3b",
+                "25 GB"
+            ]
+        ],
+        "author": "Nvidia",
+        "categories": [
+            "tools",
+            "reasoning",
+            "big",
+            "huge"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "nemotron-3.5-super": {
+        "url": "https://ollama.com/library/nemotron-3.5-super",
+        "tags": [
+            [
+                "latest",
+                "90 GB"
+            ],
+            [
+                "120b",
+                "90 GB"
+            ],
+            [
+                "120b-a12b",
+                "90 GB"
+            ]
+        ],
+        "author": "Nvidia",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "huge",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "nemotron3": {
+        "url": "https://ollama.com/library/nemotron3",
+        "tags": [
+            [
+                "latest",
+                "28 GB"
+            ],
+            [
+                "33b",
+                "28 GB"
+            ]
+        ],
+        "author": "Nvidia",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "huge"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "nimble": {
+        "url": "https://ollama.com/library/nimble",
+        "tags": [
+            [
+                "latest",
+                "9.5 GB"
+            ],
+            [
+                "9b",
+                "9.5 GB"
+            ]
+        ],
+        "author": "Bespoke Labs",
+        "categories": [
+            "tools",
+            "reasoning",
+            "medium"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "nimble-v3": {
+        "url": "https://ollama.com/library/nimble-v3",
+        "tags": [
+            [
+                "latest",
+                "9.5 GB"
+            ],
+            [
+                "9b",
+                "9.5 GB"
+            ]
+        ],
+        "author": "Bespoke Labs",
+        "categories": [
+            "tools",
+            "reasoning",
+            "medium"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "north-mini-code-1.0": {
+        "url": "https://ollama.com/library/north-mini-code-1.0",
+        "tags": [
+            [
+                "latest",
+                "19 GB"
+            ]
+        ],
+        "author": "Cohere",
+        "categories": [
+            "tools",
+            "reasoning",
+            "big",
+            "huge",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "ornith": {
+        "url": "https://ollama.com/library/ornith",
+        "tags": [
+            [
+                "latest",
+                "5.6 GB"
+            ],
+            [
+                "9b",
+                "5.6 GB"
+            ],
+            [
+                "35b",
+                "21 GB"
+            ]
+        ],
+        "author": "Ornith",
+        "categories": [
+            "tools",
+            "reasoning",
+            "medium",
+            "huge",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "ornith-1.5": {
+        "url": "https://ollama.com/library/ornith-1.5",
+        "tags": [
+            [
+                "9b",
+                "6.6 GB"
+            ],
+            [
+                "35b",
+                "23 GB"
+            ],
+            [
+                "122b",
+                "77 GB"
+            ],
+            [
+                "397b",
+                "242 GB"
+            ]
+        ],
+        "author": "Ornith",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "medium",
+            "huge"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "phonon": {
+        "url": "https://ollama.com/library/phonon",
+        "tags": [
+            [
+                "latest",
+                "113 MB"
+            ],
+            [
+                "31m-en",
+                "104 MB"
+            ],
+            [
+                "40m-de",
+                "126 MB"
+            ],
+            [
+                "40m-en",
+                "132 MB"
+            ],
+            [
+                "40m-es",
+                "129 MB"
+            ],
+            [
+                "40m-fr",
+                "126 MB"
+            ],
+            [
+                "40m-multilingual",
+                "148 MB"
+            ],
+            [
+                "40m-pt",
+                "125 MB"
+            ]
+        ],
+        "author": "Gradium",
+        "categories": [
+            "small",
+            "multilingual"
+        ],
+        "languages": [
+            "en",
+            "de",
+            "es",
+            "fr",
+            "pt"
+        ]
+    },
+    "pplx-decider": {
+        "url": "https://ollama.com/library/pplx-decider",
+        "tags": [
+            [
+                "latest",
+                "17 GB"
+            ],
+            [
+                "27b",
+                "17 GB"
+            ]
+        ],
+        "author": "Perplexity",
+        "categories": [
+            "vision",
+            "big",
+            "huge"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "pplx-decider-flash": {
+        "url": "https://ollama.com/library/pplx-decider-flash",
+        "tags": [
+            [
+                "latest",
+                "5.6 GB"
+            ],
+            [
+                "4b",
+                "5.6 GB"
+            ]
+        ],
+        "author": "Perplexity",
+        "categories": [
+            "vision",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "qwen3-coder-next": {
+        "url": "https://ollama.com/library/qwen3-coder-next",
+        "tags": [
+            [
+                "latest",
+                "52 GB"
+            ]
+        ],
+        "author": "Alibaba Cloud",
+        "categories": [
+            "tools",
+            "huge",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "qwen3.8": {
+        "url": "https://ollama.com/library/qwen3.8",
+        "tags": [
+            [
+                "latest",
+                "18 GB"
+            ],
+            [
+                "27b",
+                "18 GB"
+            ]
+        ],
+        "author": "Alibaba Cloud",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "big",
+            "huge",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "qwen3.8-flash-next": {
+        "url": "https://ollama.com/library/qwen3.8-flash-next",
+        "tags": [
+            [
+                "125b-a6b-q4_K_M",
+                "120 GB"
+            ]
+        ],
+        "author": "Alibaba Cloud",
+        "categories": [
+            "vision",
+            "tools",
+            "reasoning",
+            "huge"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "ripple-preview": {
+        "url": "https://ollama.com/library/ripple-preview",
+        "tags": [
+            [
+                "latest",
+                "46 GB"
+            ],
+            [
+                "65b",
+                "46 GB"
+            ]
+        ],
+        "author": "Ripple",
+        "categories": [
+            "tools",
+            "reasoning",
+            "huge",
+            "code"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "strands-decider": {
+        "url": "https://ollama.com/library/strands-decider",
+        "tags": [
+            [
+                "latest",
+                "2.0 GB"
+            ],
+            [
+                "2b",
+                "2.0 GB"
+            ]
+        ],
+        "author": "Strands Agents",
+        "categories": [
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
+    },
+    "tev1": {
+        "url": "https://ollama.com/library/tev1",
+        "tags": [
+            [
+                "latest",
+                "4.6 GB"
+            ],
+            [
+                "0.8b",
+                "1.5 GB"
+            ],
+            [
+                "4b",
+                "4.6 GB"
+            ]
+        ],
+        "author": "Together AI",
+        "categories": [
+            "tools",
+            "reasoning",
+            "small"
+        ],
+        "languages": [
+            "en"
+        ]
     }
 }
