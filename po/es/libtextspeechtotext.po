@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextspeechtotext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 12:20+0000\n"
-"PO-Revision-Date: 2026-10-02 01:45+0100\n"
+"PO-Revision-Date: 2026-11-17 19:19+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: speechtotext/plugins/google/googlespeechtotextclient.cpp:26
 #, kde-format
@@ -333,7 +333,7 @@ msgstr "Configurar habla a texto"
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
 #, kde-format
 msgid "Test:"
-msgstr ""
+msgstr "Prueba:"
 
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:109
 #, kde-format
@@ -361,6 +361,3 @@ msgstr "Entrada:"
 #, kde-format
 msgid "Default"
 msgstr "Predeterminado"
-
-#~ msgid "Language:"
-#~ msgstr "Idioma:"
