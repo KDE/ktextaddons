@@ -211,7 +211,7 @@ if(USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
 endif()
 
-option(BERGAMOT_TRANSLATOR_PLUGIN "Build bergamot translator plugin" OFF)
+option(BERGAMOT_TRANSLATOR_PLUGIN "Build bergamot translator plugin" ON)
 add_feature_info(
     BERGAMOT_TRANSLATOR_PLUGIN
     ${BERGAMOT_TRANSLATOR_PLUGIN}
