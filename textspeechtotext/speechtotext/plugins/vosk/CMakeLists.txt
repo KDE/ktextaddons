@@ -75,8 +75,10 @@ install(
         NAMELINK_SKIP
 )
 
-# Improve it. We need to fix on windows too.
-install(FILES "${CMAKE_BINARY_DIR}/vosk/libvosk.so" DESTINATION ${KDE_INSTALL_LIBDIR})
+if(NOT USE_SYSTEM_VOSK)
+    # Improve it. We need to fix on windows too.
+    install(FILES "${CMAKE_BINARY_DIR}/vosk/libvosk.so" DESTINATION ${KDE_INSTALL_LIBDIR})
+endif()
 
 add_library(speechtotext_vosk MODULE)
 

@@ -225,6 +225,8 @@ add_feature_info(
     "Vosk speak to text plugin (local text to speak)"
 )
 
+option(USE_SYSTEM_VOSK "Compile vosk speak to text plugin with system vosk" OFF)
+
 option(DISABLE_AUTOTEST_BROKEN_CI "Disable autotest broken on CI (work locally)" OFF)
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)

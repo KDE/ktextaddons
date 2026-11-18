@@ -4,28 +4,37 @@ if(TARGET Vosk)
     return()
 endif()
 
-include(Dirs)
+if(USE_SYSTEM_VOSK)
+    find_library(
+        VOSK_LIBRARY
+        NAMES
+            vosk
+            libvosk
+    )
+else()
+    include(Dirs)
 
-isfileempty(${VOSK_ZIP} __voskZipIsEmpty)
+    isfileempty(${VOSK_ZIP} __voskZipIsEmpty)
 
-if(${__voskZipIsEmpty})
-    include(DownloadVosk)
-    download_vosk_if_needed()
+    if(${__voskZipIsEmpty})
+        include(DownloadVosk)
+        download_vosk_if_needed()
+    endif()
+
+    if(CMAKE_CROSSCOMPILING)
+        set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY BOTH)
+    endif()
+
+    find_library(
+        VOSK_LIBRARY
+        NAMES
+            vosk
+            libvosk
+        PATHS
+            ${VOSK_DIR}
+        NO_DEFAULT_PATH
+    )
 endif()
-
-if(CMAKE_CROSSCOMPILING)
-    set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY BOTH)
-endif()
-
-find_library(
-    VOSK_LIBRARY
-    NAMES
-        vosk
-        libvosk
-    PATHS
-        ${VOSK_DIR}
-    NO_DEFAULT_PATH
-)
 
 if(VOSK_LIBRARY STREQUAL "VOSK_LIBRARY-NOTFOUND")
     set(Vosk_FOUND OFF)
