@@ -41,7 +41,10 @@ void TextAutoGenerateImportChatAsJsonJob::importChat()
                 Q_EMIT importFailed(i18n("Failed to parse JSon file: %1", mInfo.filename));
             } else {
                 const QJsonObject obj = doc.object();
-                const QString title = obj[u"title"_s].toString();
+                QString title = obj[u"title"_s].toString();
+                if (title.isEmpty()) {
+                    title = mInfo.chatTitle;
+                }
 
                 QMap<QByteArray, QByteArray> convertUuid;
                 QList<TextAutoGenerateText::TextAutoGenerateMessage> msgs;
