@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-13 12:21+0000\n"
+"POT-Creation-Date: 2026-11-17 12:10+0000\n"
 "PO-Revision-Date: 2026-08-25 15:36+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -316,40 +316,40 @@ msgstr "<br><b>Jeton de demande : </b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Jeton de réalisation : </b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "MCP tool: %1 (%2)"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
 #, kde-format
 msgid "MCP server: %1"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:252
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:251
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "Modules externes d'outils :"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:257
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Identifiant de l'outil : %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
 #, kde-format
 msgid "On"
 msgstr "Activé"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
 #, kde-format
 msgid "Off"
 msgstr "Désactivé"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
 #, kde-format
 msgid "Activate: %1"
 msgstr "Activer : %1"
@@ -3779,12 +3779,12 @@ msgstr "Nombre maximal de jetons :"
 msgid "Thinking:"
 msgstr "Pensée"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:119
 #, kde-format
 msgid "Text Plugins:"
 msgstr "Modules externes de texte :"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:125
 #, fuzzy, kde-format
 #| msgid "Tool identifier: %1"
 msgid "Text identifier: %1"

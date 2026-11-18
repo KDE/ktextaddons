@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-13 12:21+0000\n"
+"POT-Creation-Date: 2026-11-17 12:10+0000\n"
 "PO-Revision-Date: 2026-11-06 06:38+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -315,40 +315,40 @@ msgstr "<br><b>მოთხოვნის ტოკენები:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>დასრულების ტოკენი:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "MCP tool: %1 (%2)"
 msgstr "MCP ხელსაწყო: %1 (%2)"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
 #, kde-format
 msgid "MCP server: %1"
 msgstr "MCP სერვერი: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:252
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:251
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "ხელსაწყოს დამატებები:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:257
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "ხელსაწყოს იდენტიფიკატორი: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
 #, kde-format
 msgid "On"
 msgstr "ჩართული"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
 #, kde-format
 msgid "Off"
 msgstr "გამორთული"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
 #, kde-format
 msgid "Activate: %1"
 msgstr "გააქტიურება: %1"
@@ -3711,12 +3711,12 @@ msgstr "მაქს. კოდები:"
 msgid "Thinking:"
 msgstr "ფიქრობს:"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:119
 #, kde-format
 msgid "Text Plugins:"
 msgstr "ტექსტის დამატებები:"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:125
 #, kde-format
 msgid "Text identifier: %1"
 msgstr "ტექსტის იდენტიფიკატორი: %1"

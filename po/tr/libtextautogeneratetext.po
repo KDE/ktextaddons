@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-13 12:21+0000\n"
+"POT-Creation-Date: 2026-11-17 12:10+0000\n"
 "PO-Revision-Date: 2026-11-14 18:35+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -312,40 +312,40 @@ msgstr "<br><b>İstem jetonu:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Tamamlama jetonu:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "MCP tool: %1 (%2)"
 msgstr "MCP aracı: %1 (%2)"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
 #, kde-format
 msgid "MCP server: %1"
 msgstr "MCP sunucusu: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:252
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:251
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "Araç eklentileri:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:257
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Araç tanımlayıcısı: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
 #, kde-format
 msgid "On"
 msgstr "Açık"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
 #, kde-format
 msgid "Off"
 msgstr "Kapalı"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:259
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:127
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
 #, kde-format
 msgid "Activate: %1"
 msgstr "Etkinleştir: %1"
@@ -3712,12 +3712,12 @@ msgstr "En çok jeton sayısı:"
 msgid "Thinking:"
 msgstr "Düşünme:"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:119
 #, kde-format
 msgid "Text Plugins:"
 msgstr "Metin eklentileri:"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:125
 #, kde-format
 msgid "Text identifier: %1"
 msgstr "Metin tanımlayıcısı: %1"

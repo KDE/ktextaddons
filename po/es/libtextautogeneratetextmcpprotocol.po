@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-16 12:19+0000\n"
-"PO-Revision-Date: 2026-11-07 01:33+0100\n"
+"PO-Revision-Date: 2026-11-17 19:48+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: core/client/mcpprotocolclientprotocolmanager.cpp:436
 #, kde-format
@@ -91,6 +91,7 @@ msgstr "Servidor detenido"
 #, kde-format
 msgid "Authentication failed: the server rejected the access token."
 msgstr ""
+"La autenticación ha fallado: el servidor ha rechazado el token de acceso."
 
 #: plugins/client/mcpclientutils.cpp:132
 #, kde-format
@@ -98,34 +99,40 @@ msgid ""
 "Authentication required. The server uses OAuth authorization, which is not "
 "supported: set an access token in the server settings."
 msgstr ""
+"Se requiere autenticación. El servidor usa autorización OAuth, que no está "
+"implementada: defina un token de acceso en los ajustes del servidor."
 
 #: plugins/client/mcpclientutils.cpp:134
 #, kde-format
 msgid "Authentication required: set an access token in the server settings."
 msgstr ""
+"Se requiere autenticación: defina un token de acceso en los ajustes del "
+"servidor."
 
 #: plugins/client/mcpclientutils.cpp:137
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions."
 msgstr ""
+"Acceso denegado: el token de acceso no garantiza los permisos necesarios."
 
 #: plugins/client/mcpclientutils.cpp:138
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions (%1)."
 msgstr ""
+"Acceso denegado: el token de acceso no garantiza los permisos necesarios "
+"(%1)."
 
 #: plugins/client/mcpclientutils.cpp:140
 #, kde-format
 msgid "Access denied by the server."
-msgstr ""
+msgstr "Acceso denegado por el servidor."
 
 #: plugins/client/mcpclientutils.cpp:143
-#, fuzzy, kde-format
-#| msgid "Server started"
+#, kde-format
 msgid "Server message: %1"
-msgstr "Servidor iniciado"
+msgstr "Mensaje del servidor: %1"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
@@ -369,19 +376,15 @@ msgid "Add"
 msgstr "Añadir"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Do you want to remove this server (%1)?"
+#, kde-format
 msgid "Do you want to remove this variable."
-msgstr "¿Desea eliminar este servidor (%1?"
+msgstr "¿Desea eliminar esta variable?"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Header"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Variable"
-msgstr "Eliminar cabecera"
+msgstr "Eliminar variable"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:26
 #, kde-format
@@ -512,12 +515,10 @@ msgid "Add Server…"
 msgstr "Añadir servidor…"
 
 #: widgets/client/mcpserverlistview.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@action"
 msgid "Import Server…"
-msgstr "Añadir servidor…"
+msgstr "Importar servidor…"
 
 #: widgets/client/mcpserverlistview.cpp:77
 #, kde-format
@@ -535,7 +536,7 @@ msgstr "Configurar herramientas…"
 #, kde-format
 msgctxt "@action"
 msgid "Export…"
-msgstr ""
+msgstr "Exportar…"
 
 #: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
@@ -577,7 +578,7 @@ msgstr "Desde el registro MCP…"
 #, kde-format
 msgctxt "@action"
 msgid "Import…"
-msgstr ""
+msgstr "Importar…"
 
 #: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
@@ -592,45 +593,39 @@ msgid "Add MCP Server"
 msgstr "Añadir servidor MCP"
 
 #: widgets/client/mcpserverwidget.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Servers"
-msgstr "Añadir servidor…"
+msgstr "Importar servidores"
 
 #: widgets/client/mcpserverwidget.cpp:238
 #: widgets/client/mcpserverwidget.cpp:269
 #, kde-format
 msgid "JSON Files (*.json)"
-msgstr ""
+msgstr "Archivos JSON (*.json)"
 
 #: widgets/client/mcpserverwidget.cpp:245
 #, kde-format
 msgid "An error occurred when importing server."
-msgstr ""
+msgstr "Ha ocurrido un error al importar el servidor."
 
 #: widgets/client/mcpserverwidget.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Server"
-msgstr "Añadir servidor…"
+msgstr "Importar servidor"
 
 #: widgets/client/mcpserverwidget.cpp:267
 #: widgets/client/mcpserverwidget.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Server"
-msgstr "Añadir servidor…"
+msgstr "Exportar servidor"
 
 #: widgets/client/mcpserverwidget.cpp:279
 #, kde-format
 msgid "An error occurred when exporting server."
-msgstr ""
+msgstr "Ha ocurrido un error al exportar el servidor."
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
@@ -707,7 +702,3 @@ msgid ""
 msgstr ""
 "Los clientes deben enviar este token como cabecera «Authorization: Bearer». "
 "El token se guarda en la cartera del sistema."
-
-#~ msgctxt "@action"
-#~ msgid "Server"
-#~ msgstr "Servidor"
