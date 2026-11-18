@@ -104,6 +104,9 @@ public:
     using ElicitationHandler = std::function<void(const ElicitationInfo &info,
                                                   const std::function<void(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &)> &answer)>;
 
+    /*!
+     * \brief The SamplingInfo class
+     */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT SamplingInfo {
         QString serverName;
         TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest request;
@@ -119,13 +122,25 @@ public:
      */
     using PluginProvider = std::function<TextAutoGenerateTextPlugin *()>;
 
+    /*!
+     * \brief TextAutoGenerateMcpToolsManager
+     * \param serverManager
+     * \param parent
+     */
     explicit TextAutoGenerateMcpToolsManager(TextAutoGenerateTextMcpProtocolCore::McpServerManager *serverManager, QObject *parent = nullptr);
+    /*!
+     * \brief ~TextAutoGenerateMcpToolsManager
+     */
     ~TextAutoGenerateMcpToolsManager() override;
 
     /*!
      * Connect to server \a identifier if it's not done yet, its tools are loaded when connected.
      */
     void connectServer(const QByteArray &identifier);
+    /*!
+     * \brief disconnectServer
+     * \param identifier
+     */
     void disconnectServer(const QByteArray &identifier);
 
     [[nodiscard]] Status status(const QByteArray &identifier) const;
@@ -163,6 +178,11 @@ public:
      */
     [[nodiscard]] static QJsonObject toolMetaData(const McpTool &tool);
 
+    /*!
+     * \brief client
+     * \param serverIdentifier
+     * \return
+     */
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager *client(const QByteArray &serverIdentifier) const;
 
     /*!
@@ -173,6 +193,11 @@ public:
                         QObject *context,
                         const std::function<void()> &callback,
                         std::chrono::milliseconds timeout = std::chrono::seconds(30));
+    /*!
+     * \brief isReady
+     * \param serverIdentifier
+     * \return
+     */
     [[nodiscard]] bool isReady(const QByteArray &serverIdentifier) const;
 
     /*!
@@ -183,7 +208,17 @@ public:
      * Identifier used in list of selected tools for tool \a toolName of MCP server \a serverIdentifier ("mcp:<identifier>/<tool>").
      */
     [[nodiscard]] static QByteArray toolIdentifier(const QByteArray &serverIdentifier, const QString &toolName);
+    /*!
+     * \brief isMcpToolIdentifier
+     * \param toolIdentifier
+     * \return
+     */
     [[nodiscard]] static bool isMcpToolIdentifier(const QByteArray &toolIdentifier);
+    /*!
+     * \brief serverIdentifier
+     * \param toolIdentifier
+     * \return
+     */
     [[nodiscard]] static QByteArray serverIdentifier(const QByteArray &toolIdentifier);
     /*!
      * Name of tool of \a toolIdentifier, empty when all tools of server are selected.
@@ -230,6 +265,10 @@ public:
      * Without handler sampling is not announced to servers. It must be defined before connecting to servers.
      */
     void setSamplingHandler(const SamplingHandler &handler);
+    /*!
+     * \brief setPluginProvider
+     * \param provider
+     */
     void setPluginProvider(const PluginProvider &provider);
     /*!
      * Tool needs a confirmation: handler is defined, tool is not read only and server is not always allowed.
@@ -263,7 +302,15 @@ public:
     [[nodiscard]] QByteArray chatIdOfToolCallInProgress(const QByteArray &serverIdentifier) const;
 
 Q_SIGNALS:
+    /*!
+     * \brief statusChanged
+     * \param identifier
+     */
     void statusChanged(const QByteArray &identifier);
+    /*!
+     * \brief toolsChanged
+     * \param identifier
+     */
     void toolsChanged(const QByteArray &identifier);
 
 private:
