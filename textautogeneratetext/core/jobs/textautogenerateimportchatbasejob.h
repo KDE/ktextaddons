@@ -69,6 +69,10 @@ Q_SIGNALS:
      * \param msgs The list of imported messages
      */
     void importDone(const QString &title, const QList<TextAutoGenerateText::TextAutoGenerateMessage> &msgs);
+    /*!
+     * \brief importFailed
+     * \param msg
+     */
     void importFailed(const QString &msg);
 
 protected:
