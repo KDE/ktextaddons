@@ -20,6 +20,13 @@ TextAutoGenerateTextLineEditAttachmentWidget::TextAutoGenerateTextLineEditAttach
 
 TextAutoGenerateTextLineEditAttachmentWidget::~TextAutoGenerateTextLineEditAttachmentWidget() = default;
 
+void TextAutoGenerateTextLineEditAttachmentWidget::addAttachements(const QStringList &fileNames)
+{
+    for (const auto &file : fileNames) {
+        addAttachement(file);
+    }
+}
+
 void TextAutoGenerateTextLineEditAttachmentWidget::addAttachement(const QString &fileName)
 {
     if (mMap.contains(fileName)) {
