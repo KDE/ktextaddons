@@ -65,7 +65,7 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
     auto addFromRegistryAction = addServerMenu->addAction(QIcon::fromTheme(u"network-server"_s), i18nc("@action", "From MCP Registry…"));
 
     addServerMenu->addSeparator();
-    auto importAction = addServerMenu->addAction(i18nc("@action", "Import…"));
+    auto importAction = addServerMenu->addAction(QIcon::fromTheme(u"document-import"_s), i18nc("@action", "Import…"));
     connect(importAction, &QAction::triggered, this, &McpServerWidget::slotImport);
 
     addMcpServerButton->setMenu(addServerMenu);
