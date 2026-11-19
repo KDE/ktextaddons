@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-17 12:10+0000\n"
+"POT-Creation-Date: 2026-11-18 20:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
@@ -34,7 +34,7 @@ msgid "Failed to write to file: %1"
 msgstr ""
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:53
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:77
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:80
 #, kde-format
 msgid "Json File"
 msgstr ""
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Failed to parse JSon file: %1"
 msgstr ""
 
-#: core/jobs/textautogenerateimportchatasjsonjob.cpp:69
+#: core/jobs/textautogenerateimportchatasjsonjob.cpp:72
 #, kde-format
 msgid "Failed to open file for reading: %1"
 msgstr ""
@@ -2543,8 +2543,470 @@ msgid ""
 "preservation than previous Qwen models."
 msgstr ""
 
-#: plugins/ollamacommon/ollamacommonmodelutils.cpp:398
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:353
+#, kde-format
+msgid ""
+"AutoTrust's decision models return choices, yes/no probabilities, and "
+"ratings for the questions you supply."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:355
+#, kde-format
+msgid ""
+"Beam is an open model by Reflection designed to deliver strong performance "
+"for areas such as agentic tool use, coding and general reasoning with an "
+"emphasis on token efficient usage."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:358
+#, kde-format
+msgid ""
+"Bonsai 2 from Prism ML is a family of vision models built for ternary "
+"weights - smaller models with close to full-precision quality."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:359
+#, kde-format
+msgid ""
+"Clef is a 27B multimodal model created by Cloudflare that turns a state and "
+"a schema of typed questions into decisions."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:360
+#, kde-format
+msgid ""
+"Clef-Flash is a 9B multimodal model that turns a state and a schema of typed "
+"questions into decisions."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:361
+#, kde-format
+msgid "d1 is a 3B decision model from Liquid AI, built on LFM2.5-VL-3B."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:362
+#, kde-format
+msgid "d1-omni is a multimodal 600M decision model from Liquid AI."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:363
+#, kde-format
+msgid ""
+"Turn text, structured data, and images into scored choices, yes/no answers, "
+"and ratings."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:364
+#, kde-format
+msgid ""
+"DeepSeek-V4-Pro is a frontier Mixture-of-Experts model with a large context "
+"window and three reasoning modes."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:366
+#, kde-format
+msgid ""
+"DeepSeek-V4.1-Flash is designed for greater capability, faster inference, "
+"higher throughput, and scaling to larger models."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:367
+#, kde-format
+msgid ""
+"EmbeddingGemma 2 is a multimodal embedding model from Google built on the "
+"Gemma 4 architecture."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:368
+#, kde-format
+msgid ""
+"Flint is a 39.8 billion-parameter mixture-of-experts model from Recursive, "
+"built for coding agents."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:369
+#, kde-format
+msgid "GLM-5.2 is Z.ai's flagship model for the era of long-horizon tasks."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:370
+#, kde-format
+msgid ""
+"Z.ai's flagship model and the most capable open-weights model for coding, "
+"with major gains on long-horizon agentic tasks."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:372
+#, kde-format
+msgid ""
+"Z.ai's first natively multimodal model, approaching Claude Opus 4.8 on "
+"coding and agentic benchmarks with just 18B active parameters."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:373
+#, kde-format
+msgid ""
+"GLM-OCR is a multimodal OCR model for complex document understanding, built "
+"on the GLM-V encoder-decoder architecture."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:375
+#, kde-format
+msgid ""
+"IBM Granite Models are a family of enterprise-ready, open foundation models "
+"that support multilingual capabilities, coding, retrieval-augmented "
+"generation (RAG), tool use, and structured JSON output. Released under "
+"Apache 2.0 license."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:378
+#, kde-format
+msgid ""
+"Granite Guardian 4.1 is a specialized safety and judging model from IBM "
+"Research that evaluates whether LLM prompts and responses meet specified "
+"harm criteria."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:381
+#, kde-format
+msgid ""
+"IBM Granite Models are a family of enterprise-ready, open foundation models "
+"that support multilingual capabilities, coding, retrieval-augmented "
+"generation (RAG), tool use, thinking and structured JSON output. Released "
+"under Apache 2.0 license."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:384
+#, kde-format
+msgid ""
+"594B Mixture-of-Experts model (17B active) with image input and up to 1M "
+"tokens of context, built for agentic coding and knowledge work."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:385
+#, kde-format
+msgid ""
+"Kev scores answers to structured questions about a supplied text state in a "
+"single forward pass."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:387
+#, kde-format
+msgid ""
+"Kimi K2.6 is an open-source, native multimodal agentic model that advances "
+"practical capabilities in long-horizon coding, coding-driven design, "
+"proactive autonomous execution, and swarm-based task orchestration."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:390
+#, kde-format
+msgid ""
+"Kimi K2.7 Code is Moonshot AI's coding-focused agentic model built upon Kimi "
+"K2.6, with substantial improvements on real-world long-horizon coding tasks "
+"and roughly 30% lower thinking-token usage."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:392
+#, kde-format
+msgid ""
+"Kimi K3 is an open-weight, native multimodal agentic model and Moonshot AI's "
+"most capable model to date."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:394
+#, kde-format
+msgid ""
+"Kimi K3.1 Pro is an open-weight, natively multimodal agentic model and "
+"Moonshot AI's most capable 3T-class model to date, with a 1M-token context "
+"window and major gains in coding, 3D creation, financial research, and "
+"factual accuracy."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:397
+#, kde-format
+msgid ""
+"Laguna S 2.1 is Poolside's most capable model to date, designed for long-"
+"horizon work. 70.2% on Terminal-Bench 2.1 at 118B-A8B."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:399
+#, kde-format
+msgid ""
+"Laguna XS 2.1 is a 33B total parameter Mixture-of-Experts model with 3B "
+"activated parameters per token designed for agentic coding and long-horizon "
+"work on a local machine."
+msgstr ""
+
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:402
+#, kde-format
+msgid ""
+"Laguna XS.2 is a 33B total parameter Mixture-of-Experts model with 3B "
+"activated parameters per token designed for agentic coding and long-horizon "
+"work on a local machine."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:404
+#, kde-format
+msgid ""
+"Laya is a 421M decision model from Convai Innovations, fine-tuned from "
+"ModernBERT-large."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:405
+#, kde-format
+msgid ""
+"LFM2.5-8B-A1B, an edge model built for fast, reliable tool calling on "
+"consumer hardware."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:406
+#, kde-format
+msgid ""
+"LFM3-1.7B is a tri-hybrid model for local agents and specialized "
+"applications."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:407
+#, kde-format
+msgid "LFM3-Audio-2B is a compact, fully featured audio model."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:408
+#, kde-format
+msgid ""
+"A single end-to-end model that understands text, images, video and audio, "
+"and answers in text and speech."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:409
+#, kde-format
+msgid ""
+"LFM3-VL-2B is a vision-language model for on-device visual understanding."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:410
+#, kde-format
+msgid ""
+"MedGemma is a collection of Gemma 3 variants that are trained for "
+"performance on medical text and image comprehension."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:411
+#, kde-format
+msgid "MedGemma 1.5 4B is an updated version of the MedGemma 4B model."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:412
+#, kde-format
+msgid ""
+"MiMo-V2.6-Distill-Qwen-9B is Xiaomi MiMo's 9B model for code and agent "
+"workflows."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:414
+#, kde-format
+msgid ""
+"Xiaomi's efficiency-balanced MiMo-V2.6 checkpoint, with 309B total "
+"parameters, 15B active, omnimodal input, and a 1M token context."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:415
+#, kde-format
+msgid ""
+"Xiaomi's flagship MiMo-V2.6 checkpoint, with 1.02T total parameters, 42B "
+"active, omnimodal input, and a 1M token context."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:416
+#, kde-format
+msgid ""
+"A GPT-4o Level MLLM for Single Image, Multi Image and High-FPS Video "
+"Understanding on Your Phone."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:417
+#, kde-format
+msgid ""
+"A Pocket-Sized MLLM for Ultra-Efficient Image and Video Understanding on "
+"Your Phone."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:418
+#, kde-format
+msgid ""
+"MiniMax M3: Coding & Agentic Frontier. 1M context window. Native "
+"Multimodality."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:420
+#, kde-format
+msgid ""
+"As a next-generation Flash model, M3.1 Flash delivers a generational leap in "
+"agentic tasks, coding, Computer Use and cybersecurity, while making online "
+"inference nearly three times faster and reducing usage costs by 70%."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:423
+#, kde-format
+msgid ""
+"Mistral Large 4 is Mistral's open-weight, general-purpose multimodal model. "
+"Its granular Mixture-of-Experts design activates 52B of 1.05T total "
+"parameters, with a 1.6B vision encoder handling images."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:426
+#, kde-format
+msgid ""
+"Mistral Medium 3.5 is the first flagship model of Mistral AI that merged "
+"instruction-following, reasoning, and coding in a single set of 128B weights."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:429
+#, kde-format
+msgid ""
+"Meta's latest open model built for always-on local agents. 30B parameters, "
+"licensed under Apache 2.0 and runs on a single GPU - tuned for tool use, "
+"long tasks, and failure recovery."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:432
+#, kde-format
+msgid ""
+"Muse Spark Open is a natively multimodal model with 816B total parameters "
+"(42B active) and a 1M-token context window. Built for coding and agentic "
+"work, it excels at long-horizon tasks, complex software engineering, and "
+"multi-step reasoning."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:434
+#, kde-format
+msgid ""
+"NVIDIA Nemotron 3 Ultra is built for high-throughput reasoning and long-"
+"running agent workflows."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:435
+#, kde-format
+msgid ""
+"Nemotron 3.5 Bolt is NVIDIA's compact vision-language model for local "
+"coding, reasoning, and tool use."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:437
+#, kde-format
+msgid ""
+"NVIDIA Nemotron 3.5 Lightning is an open 30B mixture-of-experts (MoE) model "
+"with 3B active parameters built for always-on agents."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:438
+#, kde-format
+msgid ""
+"Nemotron 3.5 Super is NVIDIA's vision-language model for coding, reasoning, "
+"tool use, and document understanding."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:440
+#, kde-format
+msgid ""
+"NVIDIA Nemotron 3 Nano Omni is a multimodal large language model that "
+"unifies video, audio, image, and text understanding to support enterprise-"
+"grade Q&A, summarization, transcription, and document intelligence workflows."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:442
+#, kde-format
+msgid "A 9B decision model from Bespoke Labs for fast, typed classification."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:443
+#, kde-format
+msgid ""
+"A 9B decision model from Bespoke Labs for fast classification, routing, and "
+"scoring."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:445
+#, kde-format
+msgid ""
+"North Mini Code is Cohere's first model for developers - a 30B Mixture-of-"
+"Experts model with 3B active parameters, built for agentic software "
+"engineering."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:447
+#, kde-format
+msgid "A self-improving family of open-source models for agentic coding."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:448
+#, kde-format
+msgid ""
+"Ornith-1.5 is a major step toward building foundation models through end-to-"
+"end self-improvement."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:450
+#, kde-format
+msgid ""
+"Phonon is Gradium's text-to-speech family. It turns written text into spoken "
+"audio as it generates, making it useful for reading assistant replies, "
+"narrating passages, and adding a voice to local apps."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:452
+#, kde-format
+msgid ""
+"pplx-decider is a 27B decision model from Perplexity, fine-tuned from "
+"Qwen3.8-27B."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:453
+#, kde-format
+msgid ""
+"pplx-decider-flash is a 4B decision model from Perplexity, built on "
+"Qwen3.5-4B."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:455
+#, kde-format
+msgid ""
+"Qwen3-Coder-Next is a coding-focused language model from Alibaba's Qwen "
+"team, optimized for agentic coding workflows and local development."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:456
+#, kde-format
+msgid ""
+"Qwen3.8 delivers substantial gains across coding, professional work, "
+"research, and long-horizon agentic tasks."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:457
+#, kde-format
+msgid "An experimental preview of the architecture that will underpin Qwen4."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:458
+#, kde-format
+msgid ""
+"65B dense model built for agentic coding, with up to 1M tokens of context."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:459
+#, kde-format
+msgid ""
+"A 2B decision model from Strands Agents for fast classification, routing, "
+"and scoring."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:460
+#, kde-format
+msgid "A 4B decision model from Together AI for fast classification."
+msgstr ""
+
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:506
+#: plugins/ollamacommon/ollamacommonmodelutils.cpp:510
 #, kde-format
 msgid "The user is called %1"
 msgstr ""
