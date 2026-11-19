@@ -102,9 +102,7 @@ QString TranslatorEngineLoader::currentPluginName(const QString &key) const
 QMap<QString, QString> TranslatorEngineLoader::translatorEngineInfos() const
 {
     QMap<QString, QString> map;
-    QHashIterator<QString, TranslatorEngineClient *> i(d->translatorClients);
-    while (i.hasNext()) {
-        i.next();
+    for (auto i = d->translatorClients.cbegin(), end = d->translatorClients.cend(); i != end; ++i) {
         map.insert(i.key(), i.value()->translatedName() + u" (%1)"_s.arg(TranslatorEngineClient::convertEngineType(i.value()->engineType())));
     }
     return map;

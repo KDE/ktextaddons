@@ -91,9 +91,7 @@ TextAutoGenerateTextClient *TextAutoGenerateEngineLoader::searchTextAutoGenerate
 QList<TextAutoGenerateTextClient::SupportedServer> TextAutoGenerateEngineLoader::supportedServers() const
 {
     QList<TextAutoGenerateTextClient::SupportedServer> lst;
-    QHashIterator<QString, TextAutoGenerateTextClient *> i(d->autogenerateTextClients);
-    while (i.hasNext()) {
-        i.next();
+    for (auto i = d->autogenerateTextClients.cbegin(), end = d->autogenerateTextClients.cend(); i != end; ++i) {
         lst += i.value()->supportedServers();
     }
     std::sort(lst.begin(), lst.end(), [](const TextAutoGenerateTextClient::SupportedServer &r, const TextAutoGenerateTextClient::SupportedServer &l) {

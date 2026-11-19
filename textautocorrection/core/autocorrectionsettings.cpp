@@ -378,9 +378,7 @@ void AutoCorrectionSettings::setAutocorrectEntries(const QHash<QString, QString>
 {
     d->mMaxFindStringLength = 0;
     d->mMinFindStringLength = 0;
-    QHashIterator<QString, QString> i(entries);
-    while (i.hasNext()) {
-        i.next();
+    for (auto i = entries.cbegin(), end = entries.cend(); i != end; ++i) {
         const int findStringLenght(i.key().length());
         d->mMaxFindStringLength = qMax(d->mMaxFindStringLength, findStringLenght);
         d->mMinFindStringLength = qMin(d->mMinFindStringLength, findStringLenght);

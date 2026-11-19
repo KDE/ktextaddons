@@ -228,6 +228,7 @@ add_feature_info(
 option(DISABLE_AUTOTEST_BROKEN_CI "Disable autotest broken on CI (work locally)" OFF)
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
+add_definitions(-DQT_NO_JAVA_STYLE_ITERATORS)
 ecm_set_disabled_deprecation_versions(
     QT 6.12.0
     KF 6.32.0

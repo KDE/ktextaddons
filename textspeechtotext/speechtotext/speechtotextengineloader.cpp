@@ -117,9 +117,7 @@ bool SpeechToTextEngineLoader::showConfigureDialog(const QString &clientName, QW
 QMap<QString, QString> SpeechToTextEngineLoader::speechToTextEngineInfos() const
 {
     QMap<QString, QString> map;
-    QHashIterator<QString, SpeechToTextClient *> i(d->speechToTextClients);
-    while (i.hasNext()) {
-        i.next();
+    for (auto i = d->speechToTextClients.cbegin(), end = d->speechToTextClients.cend(); i != end; ++i) {
         map.insert(i.key(), i.value()->translatedName());
     }
     return map;

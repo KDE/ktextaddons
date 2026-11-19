@@ -12,6 +12,7 @@
 #include <KPluginMetaData>
 #include <QFileInfo>
 #include <QSet>
+#include <ranges>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGeneratePluginTextManager::TextAutoGeneratePluginTextManager(QObject *parent)
@@ -43,12 +44,9 @@ void TextAutoGeneratePluginTextManager::initializePluginList()
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"autogeneratetext/textplugins"_s);
     const TextAddonsCore::PluginUtil::PluginsStateList pair = TextAddonsCore::PluginUtil::loadPluginSetting({}, configGroupName(), configPrefixSettingKey());
 
-    QListIterator<KPluginMetaData> i(plugins);
-    i.toBack();
     QSet<QString> unique;
-    while (i.hasPrevious()) {
+    for (const auto &data : plugins | std::views::reverse) {
         TextAutoGeneratePluginTextManagerInfo info;
-        const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
         info.pluginData = TextAddonsCore::PluginUtil::createPluginMetaData(data);

@@ -70,9 +70,7 @@ bool ExportLibreOfficeAutocorrection::exportDocumentList()
 
     streamWriter.writeStartElement(u"block-list:block-list"_s);
     streamWriter.writeAttribute(u"xmlns:block-list"_s, u"http://openoffice.org/2001/block-list"_s);
-    QHashIterator<QString, QString> i(mAutocorrectEntries);
-    while (i.hasNext()) {
-        i.next();
+    for (auto i = mAutocorrectEntries.cbegin(), end = mAutocorrectEntries.cend(); i != end; ++i) {
         streamWriter.writeStartElement(u"block-list:block"_s);
         streamWriter.writeAttribute(u"block-list:abbreviated-name"_s, i.key());
         streamWriter.writeAttribute(u"block-list:name"_s, i.value());

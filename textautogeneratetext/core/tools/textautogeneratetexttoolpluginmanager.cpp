@@ -19,6 +19,7 @@
 #include <QSet>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerManager>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
+#include <ranges>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
 TextAutoGenerateTextToolPluginManager::TextAutoGenerateTextToolPluginManager(QObject *parent)
@@ -50,12 +51,9 @@ void TextAutoGenerateTextToolPluginManager::initializePluginList()
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"autogeneratetext/toolplugins"_s);
     const TextAddonsCore::PluginUtil::PluginsStateList pair = TextAddonsCore::PluginUtil::loadPluginSetting({}, configGroupName(), configPrefixSettingKey());
 
-    QListIterator<KPluginMetaData> i(plugins);
-    i.toBack();
     QSet<QString> unique;
-    while (i.hasPrevious()) {
+    for (const auto &data : plugins | std::views::reverse) {
         TextAutoGenerateTextToolPluginManagerInfo info;
-        const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
         info.pluginData = TextAddonsCore::PluginUtil::createPluginMetaData(data);
