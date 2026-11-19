@@ -65,6 +65,8 @@ target_sources(
         configure/textautogeneratetextconfiguremcpserverswidget.cpp
         configure/textautogeneratetextconfigurepluginswidget.h
         configure/textautogeneratetextconfigurepluginswidget.cpp
+        configure/textautogeneratetextconfigurepromptsagentswidget.h
+        configure/textautogeneratetextconfigurepromptsagentswidget.cpp
         common/textautogeneratetextmodelcombobox.h
         common/textautogeneratetextmodelcombobox.cpp
         common/textautogeneratetextlineeditwidget.h
@@ -351,6 +353,7 @@ ecm_generate_headers(TextAutoGenerateText_Camelcasestextautogeneratetextconfigur
     TextAutoGenerateTextConfigurePluginsWidget
     TextAutoGenerateTextConfigurePromptWidget
     TextAutoGenerateTextConfigureMcpServersWidget
+    TextAutoGenerateTextConfigurePromptsAgentsWidget
     REQUIRED_HEADERS TextAutoGenerateText_textautogeneratetextconfigurewidgets_HEADERS
     PREFIX TextAutoGenerateText
     RELATIVE configure

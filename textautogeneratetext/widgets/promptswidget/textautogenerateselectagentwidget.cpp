@@ -15,15 +15,13 @@ TextAutoGenerateSelectAgentWidget::TextAutoGenerateSelectAgentWidget(TextAutoGen
     : QWidget{parent}
     , mListWidget(new TextAutoGenerateSelectAgentListWidget(this))
     , mAgentModel(new TextAutoGenerateTextAgentModel(this))
+    , mManager(manager)
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
     mAgentModel->setObjectName(u"mAgentModel"_s);
-    if (manager) {
-        mAgentModel->setAgents(manager->textAutoGenerateAgentPrompSkillManager()->agents());
-    }
 
     mListWidget->setModel(mAgentModel);
     mListWidget->setObjectName(u"mListWidget"_s);
@@ -32,6 +30,7 @@ TextAutoGenerateSelectAgentWidget::TextAutoGenerateSelectAgentWidget(TextAutoGen
     connect(mListWidget, &TextAutoGenerateSelectAgentListWidget::addAgent, this, &TextAutoGenerateSelectAgentWidget::slotAddAgent);
     connect(mListWidget, &TextAutoGenerateSelectAgentListWidget::editAgent, this, &TextAutoGenerateSelectAgentWidget::slotEditAgent);
     connect(mListWidget, &TextAutoGenerateSelectAgentListWidget::removeAgent, this, &TextAutoGenerateSelectAgentWidget::slotRemoveAgent);
+    load();
 }
 
 TextAutoGenerateSelectAgentWidget::~TextAutoGenerateSelectAgentWidget() = default;
@@ -44,16 +43,33 @@ QList<TextAutoGenerateAgent> TextAutoGenerateSelectAgentWidget::agents() const
 void TextAutoGenerateSelectAgentWidget::slotEditAgent(const TextAutoGenerateText::TextAutoGenerateAgent &agent)
 {
     mAgentModel->updateAgent(agent);
+    Q_EMIT settingsChanged();
 }
 
 void TextAutoGenerateSelectAgentWidget::slotAddAgent(const TextAutoGenerateText::TextAutoGenerateAgent &agent)
 {
     mAgentModel->addAgent(agent);
+    Q_EMIT settingsChanged();
 }
 
 void TextAutoGenerateSelectAgentWidget::slotRemoveAgent(const QByteArray &identifier)
 {
     mAgentModel->removeAgent(identifier);
+    Q_EMIT settingsChanged();
+}
+
+void TextAutoGenerateSelectAgentWidget::load()
+{
+    if (mManager) {
+        mAgentModel->setAgents(mManager->textAutoGenerateAgentPrompSkillManager()->agents());
+    }
+}
+
+void TextAutoGenerateSelectAgentWidget::save()
+{
+    if (mManager) {
+        mManager->textAutoGenerateAgentPrompSkillManager()->setAgents(mAgentModel->agents());
+    }
 }
 
 #include "moc_textautogenerateselectagentwidget.cpp"

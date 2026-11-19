@@ -17,6 +17,7 @@ TextAutoGenerateSelectPromptWidget::TextAutoGenerateSelectPromptWidget(TextAutoG
     : QWidget{parent}
     , mListWidget(new TextAutoGenerateSelectPromptListWidget(this))
     , mPromptModel(new TextAutoGenerateTextPromptModel(this))
+    , mManager(manager)
     , mSearchPromptWidget(new TextAutoGenerateSearchPromptWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
@@ -24,7 +25,6 @@ TextAutoGenerateSelectPromptWidget::TextAutoGenerateSelectPromptWidget(TextAutoG
     mainLayout->setContentsMargins({});
 
     mPromptModel->setObjectName(u"mPromptModel"_s);
-    mPromptModel->setPrompt(manager->textAutoGenerateAgentPrompSkillManager()->prompts());
     auto filterProxyModel = new TextAutoGenerateTextPromptSortFilterProxyModel(this);
     filterProxyModel->setSourceModel(mPromptModel);
 
@@ -39,6 +39,7 @@ TextAutoGenerateSelectPromptWidget::TextAutoGenerateSelectPromptWidget(TextAutoG
     connect(mListWidget, &TextAutoGenerateSelectPromptListWidget::addPrompt, this, &TextAutoGenerateSelectPromptWidget::slotAddPrompt);
     connect(mListWidget, &TextAutoGenerateSelectPromptListWidget::editPrompt, this, &TextAutoGenerateSelectPromptWidget::slotEditPrompt);
     connect(mListWidget, &TextAutoGenerateSelectPromptListWidget::removePrompt, this, &TextAutoGenerateSelectPromptWidget::slotRemovePrompt);
+    load();
 }
 
 TextAutoGenerateSelectPromptWidget::~TextAutoGenerateSelectPromptWidget() = default;
@@ -46,21 +47,38 @@ TextAutoGenerateSelectPromptWidget::~TextAutoGenerateSelectPromptWidget() = defa
 void TextAutoGenerateSelectPromptWidget::slotEditPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt)
 {
     mPromptModel->updatePrompt(prompt);
+    Q_EMIT settingsChanged();
 }
 
 void TextAutoGenerateSelectPromptWidget::slotAddPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt)
 {
     mPromptModel->addPrompt(prompt);
+    Q_EMIT settingsChanged();
 }
 
 void TextAutoGenerateSelectPromptWidget::slotRemovePrompt(const QByteArray &identifier)
 {
     mPromptModel->removePrompt(identifier);
+    Q_EMIT settingsChanged();
 }
 
 QList<TextAutoGeneratePrompt> TextAutoGenerateSelectPromptWidget::prompts() const
 {
     return mPromptModel->prompts();
+}
+
+void TextAutoGenerateSelectPromptWidget::load()
+{
+    if (mManager) {
+        mPromptModel->setPrompt(mManager->textAutoGenerateAgentPrompSkillManager()->prompts());
+    }
+}
+
+void TextAutoGenerateSelectPromptWidget::save()
+{
+    if (mManager) {
+        mManager->textAutoGenerateAgentPrompSkillManager()->setPrompts(mPromptModel->prompts());
+    }
 }
 
 #include "moc_textautogenerateselectpromptwidget.cpp"

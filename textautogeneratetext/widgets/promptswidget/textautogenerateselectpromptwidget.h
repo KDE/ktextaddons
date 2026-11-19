@@ -24,12 +24,21 @@ public:
 
     [[nodiscard]] QList<TextAutoGeneratePrompt> prompts() const;
 
+    // Load prompts from manager (changes are discarded)
+    void load();
+    // Apply changes to manager (it's not saved on disk)
+    void save();
+
+Q_SIGNALS:
+    void settingsChanged();
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemovePrompt(const QByteArray &identifier);
     TextAutoGenerateSelectPromptListWidget *const mListWidget;
     TextAutoGenerateTextPromptModel *const mPromptModel;
+    TextAutoGenerateManager *const mManager;
     TextAutoGenerateSearchPromptWidget *const mSearchPromptWidget;
 };
 }

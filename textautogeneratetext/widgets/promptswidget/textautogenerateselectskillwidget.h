@@ -23,11 +23,18 @@ public:
 
     [[nodiscard]] QList<TextAutoGenerateSkill> skills() const;
 
+    void load();
+    void save();
+
+Q_SIGNALS:
+    void settingsChanged();
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditSkill(const TextAutoGenerateText::TextAutoGenerateSkill &skill);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotAddSkill(const TextAutoGenerateText::TextAutoGenerateSkill &skill);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotRemoveSkill(const QByteArray &identifier);
     TextAutoGenerateSelectSkillListWidget *const mListWidget;
     TextAutoGenerateTextSkillModel *const mSkillModel;
+    TextAutoGenerateManager *const mManager;
 };
 }
