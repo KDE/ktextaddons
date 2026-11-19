@@ -33,6 +33,11 @@ public:
      */
     ~TextAutoGenerateQuickAskWidget() override;
 
+    /*!
+     * Fills the input line with the message, attachments and tools of \a info without sending it.
+     */
+    void prepare(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
+
 private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void loadEngine();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditingFinished(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info,
@@ -50,7 +55,6 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateCurrentPage();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray quickAskChatId();
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotPrepareMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
     TEXTAUTOGENERATETEXT_NO_EXPORT void
     slotEditingFinished2(const QString &str,
                          const QByteArray &messageUuid,

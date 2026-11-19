@@ -34,8 +34,7 @@ public:
     void ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
 
     /*!
-     * \brief prepare
-     * \param info
+     * Fills the input line with the message, attachments and tools of \a info without sending it.
      */
     void prepare(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
 

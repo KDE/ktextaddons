@@ -91,12 +91,6 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
                 [this](const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info) {
                     slotAskMessageRequester(info);
                 });
-        connect(mManager,
-                &TextAutoGenerateManager::prepareMessageRequested,
-                this,
-                [this](const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info) {
-                    slotPrepareMessageRequester(info);
-                });
     }
     loadEngine();
 }
@@ -126,7 +120,7 @@ void TextAutoGenerateQuickAskWidget::slotEditMessage(const QModelIndex &index)
     mTextAutoGenerateQuickAskViewWidget->editMessage(uuid, messageStr);
 }
 
-void TextAutoGenerateQuickAskWidget::slotPrepareMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
+void TextAutoGenerateQuickAskWidget::prepare(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
 {
     mTextAutoGenerateQuickAskViewWidget->prepareMessage(info.message, info.attachments, info.tools);
 }
