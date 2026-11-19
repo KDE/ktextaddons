@@ -91,6 +91,12 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
                 [this](const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info) {
                     slotAskMessageRequester(info);
                 });
+        connect(mManager,
+                &TextAutoGenerateManager::prepareMessageRequested,
+                this,
+                [this](const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info) {
+                    slotPrepareMessageRequester(info);
+                });
     }
     loadEngine();
 }
@@ -118,6 +124,11 @@ void TextAutoGenerateQuickAskWidget::slotEditMessage(const QModelIndex &index)
     const QByteArray uuid = index.data(TextAutoGenerateMessagesModel::UuidRole).toByteArray();
     const QString messageStr = index.data(TextAutoGenerateMessagesModel::OriginalMessageRole).toString();
     mTextAutoGenerateQuickAskViewWidget->editMessage(uuid, messageStr);
+}
+
+void TextAutoGenerateQuickAskWidget::slotPrepareMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
+{
+    mTextAutoGenerateQuickAskViewWidget->prepareMessage(info.message, info.attachments, info.tools);
 }
 
 void TextAutoGenerateQuickAskWidget::slotAskMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)

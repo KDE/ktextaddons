@@ -23,6 +23,8 @@ public:
     void editMessage(const QByteArray &uuid, const QString &messageStr);
     void setChatId(const QByteArray &chatId);
 
+    void prepareMessage(const QString &str, const QStringList &attachments, const QList<QByteArray> &tools);
+
 Q_SIGNALS:
     void editingFinished(const QString &str,
                          const QByteArray &uuid,

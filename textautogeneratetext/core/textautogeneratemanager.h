@@ -566,6 +566,13 @@ public:
      * \return
      */
     [[nodiscard]] QString localDatabasePath() const;
+
+    /*!
+     * \brief prepare
+     * \param info
+     */
+    void prepare(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
+
 Q_SIGNALS:
     /*!
      * Emitted when a message should be sent.
@@ -575,6 +582,13 @@ Q_SIGNALS:
      * Emitted when a message should be asked from the assistant.
      */
     void askMessageRequested(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
+
+    /*!
+     * \brief prepareMessageRequested
+     * \param info
+     */
+    void prepareMessageRequested(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
+
     /*!
      * Emitted when all plugins have been initialized.
      */

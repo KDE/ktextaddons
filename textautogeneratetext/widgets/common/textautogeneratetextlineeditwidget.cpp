@@ -70,7 +70,7 @@ TextAutoGenerateTextLineEditWidget::TextAutoGenerateTextLineEditWidget(TextAutoG
         const QStringList fileNames = QFileDialog::getOpenFileNames(this, i18nc("@title:window", "Select File"), {}, filterFiles.join(u";;"_s));
         if (!fileNames.isEmpty()) {
             for (const auto &f : fileNames) {
-                mTextLineEditAttachmentWidget->addAttachement(f);
+                mTextLineEditAttachmentWidget->addAttachment(f);
             }
         }
     });
@@ -221,6 +221,18 @@ void TextAutoGenerateTextLineEditWidget::setDefaultActivatedTools()
 QList<QByteArray> TextAutoGenerateTextLineEditWidget::activatedTools() const
 {
     return mTextAutoGenerateToolsWidget->generateListOfActiveTools();
+}
+
+void TextAutoGenerateTextLineEditWidget::prepareMessage(const QString &str, const QStringList &attachments, const QList<QByteArray> &tools)
+{
+    clearLineEdit();
+    setText(str);
+    mTextLineEditAttachmentWidget->addAttachments(attachments);
+    if (tools.isEmpty()) {
+        setDefaultActivatedTools();
+    } else {
+        setActivatedTools(tools);
+    }
 }
 
 void TextAutoGenerateTextLineEditWidget::slotCurrentModelChanged()

@@ -96,6 +96,11 @@ void TextAutoGenerateQuickAskViewWidget::setChatId(const QByteArray &chatId)
     mTextAutoGenerateTextLineWidget->setChatId(chatId);
 }
 
+void TextAutoGenerateQuickAskViewWidget::prepareMessage(const QString &str, const QStringList &attachments, const QList<QByteArray> &tools)
+{
+    mTextAutoGenerateTextLineWidget->prepareMessage(str, attachments, tools);
+}
+
 void TextAutoGenerateQuickAskViewWidget::slotShowInternalToolsMetaData()
 {
     TextAutoGenerateToolShowMetaDataDialog dlg(this);

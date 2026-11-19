@@ -98,6 +98,7 @@ private:
                                                           const QModelIndex &index,
                                                           const QList<QByteArray> &tools,
                                                           const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &att);
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotPrepareMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT bool lineEditWidgetEnabledState() const;
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotQuickSearchText(bool enabled);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotErrorOccurred(QNetworkReply::NetworkError e, const QString &errorString);

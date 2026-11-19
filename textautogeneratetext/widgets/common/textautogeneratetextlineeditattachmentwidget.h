@@ -21,8 +21,8 @@ public:
     explicit TextAutoGenerateTextLineEditAttachmentWidget(QWidget *parent = nullptr);
     ~TextAutoGenerateTextLineEditAttachmentWidget() override;
 
-    void addAttachement(const QString &fileName);
-    void addAttachements(const QStringList &fileNames);
+    void addAttachment(const QString &fileName);
+    void addAttachments(const QStringList &fileNames);
 
     [[nodiscard]] QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> attachmentElementInfoList() const;
     void clear();

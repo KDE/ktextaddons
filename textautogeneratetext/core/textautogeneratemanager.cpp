@@ -641,6 +641,11 @@ QString TextAutoGenerateManager::localDatabasePath() const
     return TextAutoGenerateLocalDatabaseUtils::localDatabasePath();
 }
 
+void TextAutoGenerateManager::prepare(const AskMessageInfo &info)
+{
+    Q_EMIT prepareMessageRequested(info);
+}
+
 QList<TextAutoGenerateSearchMessage> TextAutoGenerateManager::searchTextInDatabase(const QString &searchText)
 {
     return mDatabaseManager->searchTextInDatabase(mTextAutoGenerateChatsModel->chatsId(), searchText);

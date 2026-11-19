@@ -33,6 +33,12 @@ public:
      */
     void ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
 
+    /*!
+     * \brief prepare
+     * \param info
+     */
+    void prepare(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
+
 private:
     TextAutoGenerateQuickAskWidget *const mTextAutoGenerateQuickAskWidget;
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;

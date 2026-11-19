@@ -91,6 +91,12 @@ TextAutoGenerateWidget::TextAutoGenerateWidget(TextAutoGenerateText::TextAutoGen
                 [this](const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info) {
                     slotAskMessageRequester(info);
                 });
+        connect(mManager,
+                &TextAutoGenerateManager::prepareMessageRequested,
+                this,
+                [this](const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info) {
+                    slotPrepareMessageRequester(info);
+                });
 
         connect(mManager, &TextAutoGenerateManager::currentChatIdChanged, this, [this]() {
             mTextAutoGenerateTextLineEditWidget->setEnabled(lineEditWidgetEnabledState());
@@ -305,6 +311,11 @@ void TextAutoGenerateWidget::slotInitializeDone()
     }
     mAskMessageList.clear();
     mHeaderWidget->setModelList(plugin->models());
+}
+
+void TextAutoGenerateWidget::slotPrepareMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
+{
+    mTextAutoGenerateTextLineEditWidget->prepareMessage(info.message, info.attachments, info.tools);
 }
 
 void TextAutoGenerateWidget::slotAskMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)

@@ -50,6 +50,7 @@ private:
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateCurrentPage();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index);
     [[nodiscard]] TEXTAUTOGENERATETEXT_NO_EXPORT QByteArray quickAskChatId();
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotPrepareMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
     TEXTAUTOGENERATETEXT_NO_EXPORT void
     slotEditingFinished2(const QString &str,
                          const QByteArray &messageUuid,

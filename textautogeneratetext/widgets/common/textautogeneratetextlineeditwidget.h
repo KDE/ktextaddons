@@ -44,6 +44,8 @@ public:
     void setDefaultActivatedTools();
     [[nodiscard]] QList<QByteArray> activatedTools() const;
 
+    void prepareMessage(const QString &str, const QStringList &attachments, const QList<QByteArray> &tools);
+
 Q_SIGNALS:
     void editingFinished(const QString &str,
                          const QByteArray &uuid,

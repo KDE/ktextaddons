@@ -46,4 +46,11 @@ void TextAutoGenerateQuickAskDialog::ask(const TextAutoGenerateText::TextAutoGen
     }
 }
 
+void TextAutoGenerateQuickAskDialog::prepare(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
+{
+    if (mManager) {
+        mManager->prepare(info);
+    }
+}
+
 #include "moc_textautogeneratequickaskdialog.cpp"
