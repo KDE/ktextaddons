@@ -85,12 +85,6 @@ TextAutoGenerateQuickAskWidget::TextAutoGenerateQuickAskWidget(TextAutoGenerateT
         // Quick ask has its own ephemeral chat: it doesn't change or reuse the current chat of the main window
         mQuickAskChatId = mManager->createEphemeralChat();
         mTextAutoGenerateQuickAskViewWidget->setChatId(mQuickAskChatId);
-        connect(mManager,
-                &TextAutoGenerateManager::askMessageRequested,
-                this,
-                [this](const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info) {
-                    slotAskMessageRequester(info);
-                });
     }
     loadEngine();
 }
@@ -125,7 +119,7 @@ void TextAutoGenerateQuickAskWidget::prepare(const TextAutoGenerateText::TextAut
     mTextAutoGenerateQuickAskViewWidget->prepareMessage(info.message, info.attachments, info.tools);
 }
 
-void TextAutoGenerateQuickAskWidget::slotAskMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
+void TextAutoGenerateQuickAskWidget::ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
 {
     if (!mPluginWasInitialized) {
         mAskMessageList.append(info);

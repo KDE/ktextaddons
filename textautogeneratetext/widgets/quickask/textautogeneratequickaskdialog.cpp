@@ -42,7 +42,7 @@ TextAutoGenerateQuickAskDialog::~TextAutoGenerateQuickAskDialog() = default;
 void TextAutoGenerateQuickAskDialog::ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info)
 {
     if (mManager) {
-        mManager->ask(info);
+        mTextAutoGenerateQuickAskWidget->ask(info);
     }
 }
 

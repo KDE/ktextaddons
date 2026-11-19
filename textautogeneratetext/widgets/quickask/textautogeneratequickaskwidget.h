@@ -34,6 +34,11 @@ public:
     ~TextAutoGenerateQuickAskWidget() override;
 
     /*!
+     * Sends \a info to the assistant in the quick ask chat. It is queued until the plugin is initialized.
+     */
+    void ask(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
+
+    /*!
      * Fills the input line with the message, attachments and tools of \a info without sending it.
      */
     void prepare(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
@@ -50,7 +55,6 @@ private:
                                                           const QModelIndex &index,
                                                           const QList<QByteArray> &tools,
                                                           const QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> &att);
-    TEXTAUTOGENERATETEXT_NO_EXPORT void slotAskMessageRequester(const TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo &info);
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotConfigureInstances();
     TEXTAUTOGENERATETEXT_NO_EXPORT void updateCurrentPage();
     TEXTAUTOGENERATETEXT_NO_EXPORT void slotEditMessage(const QModelIndex &index);
