@@ -331,7 +331,7 @@ msgstr "اضبط الكلام إلى نص"
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
 #, kde-format
 msgid "Test:"
-msgstr ""
+msgstr "اختبر:"
 
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:109
 #, kde-format
