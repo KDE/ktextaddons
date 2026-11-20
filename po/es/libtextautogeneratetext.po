@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-18 20:20+0000\n"
+"POT-Creation-Date: 2026-11-19 18:14+0000\n"
 "PO-Revision-Date: 2026-11-07 01:32+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -316,40 +316,40 @@ msgstr "<br><b>Token de introducción:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Token de terminación:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:223
 #, kde-format
 msgid "MCP tool: %1 (%2)"
 msgstr "Herramienta MCP: %1 (%2)"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "MCP server: %1"
 msgstr "Servidor MCP: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:251
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:249
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "Complementos de herramientas:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:257
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:255
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Identificador de la herramienta: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:256
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:124
 #, kde-format
 msgid "On"
 msgstr "Activado"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:256
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:124
 #, kde-format
 msgid "Off"
 msgstr "Desactivado"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:256
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:124
 #, kde-format
 msgid "Activate: %1"
 msgstr "Activar: %1"
@@ -801,7 +801,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Introduzca el nombre del modelo como «nombre:etiqueta»"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:48
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:516
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:517
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -3713,7 +3713,7 @@ msgid "Enter a message"
 msgstr "Introduzca un mensaje"
 
 #: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:82
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:503
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
@@ -3789,6 +3789,29 @@ msgstr "Complementos de texto"
 #, kde-format
 msgid "Tool Plugins"
 msgstr "Complementos de herramientas"
+
+#: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:35
+#, fuzzy, kde-format
+#| msgid "Prompt"
+msgctxt "@title:tab"
+msgid "Prompts"
+msgstr "Indicaciones"
+
+#: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:37
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Skill"
+msgctxt "@title:tab"
+msgid "Skills"
+msgstr "Habilidad"
+
+#: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:39
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Agent"
+msgctxt "@title:tab"
+msgid "Agents"
+msgstr "Agente"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
@@ -4218,12 +4241,12 @@ msgstr "Máx. de tókenes:"
 msgid "Thinking:"
 msgstr "Pensando:"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:119
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:117
 #, kde-format
 msgid "Text Plugins:"
 msgstr "Complementos de texto:"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:125
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:123
 #, kde-format
 msgid "Text identifier: %1"
 msgstr "Identificador de texto: %1"
@@ -4658,44 +4681,44 @@ msgstr[1] "%1 herramientas"
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr "Herramientas del servidor MCP «%1» (%2)"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:499
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:500
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Editar…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:508
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:509
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Detener"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:508
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:509
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
 msgstr "Leer"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:512
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:513
 #: widgets/view/textautogeneratedelegateutils.cpp:71
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Copiar"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:520
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:521
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Actualizar"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:524
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:525
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
 msgstr "Fork"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:656
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:657
 #, kde-format
 msgid "Block Code copied."
 msgstr "Código de bloque copiado."

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-18 20:20+0000\n"
-"PO-Revision-Date: 2026-11-06 16:48+0200\n"
+"POT-Creation-Date: 2026-11-19 18:14+0000\n"
+"PO-Revision-Date: 2026-11-19 19:34+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -314,40 +314,40 @@ msgstr "<br><b>Жетон запиту:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Жетон завершеності:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:223
 #, kde-format
 msgid "MCP tool: %1 (%2)"
 msgstr "Інструмент MCP: %1 (%2)"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "MCP server: %1"
 msgstr "Сервер MCP: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:251
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:249
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "Додатки інструментів:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:257
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:255
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Ідентифікатор інструменту: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:256
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:124
 #, kde-format
 msgid "On"
 msgstr "Увімкнено"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:256
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:124
 #, kde-format
 msgid "Off"
 msgstr "Вимкнено"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:256
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:124
 #, kde-format
 msgid "Activate: %1"
 msgstr "Активація: %1"
@@ -798,7 +798,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Будь ласка, введіть назву моделі у форматі «назва:мітка»"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:48
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:516
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:517
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -3002,6 +3002,8 @@ msgid ""
 "AutoTrust's decision models return choices, yes/no probabilities, and "
 "ratings for the questions you supply."
 msgstr ""
+"Моделі прийняття рішень AutoTrust надають варіанти вибору, ймовірності (так/"
+"ні) та оцінки для запитань, які ви надаєте."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:355
 #, kde-format
@@ -3010,6 +3012,10 @@ msgid ""
 "for areas such as agentic tool use, coding and general reasoning with an "
 "emphasis on token efficient usage."
 msgstr ""
+"Beam — це відкрита модель від Reflection, розроблена для забезпечення "
+"високої ефективності в таких сферах, як використання інструментів "
+"автономними агентами, написання програмного коду та загальні міркування, з "
+"акцентом на заощадливе використання жетонів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:358
 #, kde-format
@@ -3017,6 +3023,9 @@ msgid ""
 "Bonsai 2 from Prism ML is a family of vision models built for ternary "
 "weights - smaller models with close to full-precision quality."
 msgstr ""
+"Bonsai 2 від Prism ML — це сімейство моделей комп’ютерного зору, розроблених "
+"для роботи з тернарними вагами; це компактні моделі, які за якістю майже не "
+"поступаються моделям із повною точністю."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:359
 #, kde-format
@@ -3024,6 +3033,9 @@ msgid ""
 "Clef is a 27B multimodal model created by Cloudflare that turns a state and "
 "a schema of typed questions into decisions."
 msgstr ""
+"Clef — це мультимодальна модель із 27 мільярдами параметрів, створена "
+"компанією Cloudflare, яка перетворює стан і схему типізованих запитань на "
+"рішення."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:360
 #, kde-format
@@ -3031,16 +3043,22 @@ msgid ""
 "Clef-Flash is a 9B multimodal model that turns a state and a schema of typed "
 "questions into decisions."
 msgstr ""
+"Clef-Flash — це мультимодальна модель (9 мільярдів параметрів), яка "
+"перетворює стан і схему типізованих запитань на рішення."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:361
 #, kde-format
 msgid "d1 is a 3B decision model from Liquid AI, built on LFM2.5-VL-3B."
 msgstr ""
+"d1 — це модель прийняття рішень з 3 мільярдами параметрів від Liquid AI, "
+"створена на базі LFM2.5-VL-3B."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:362
 #, kde-format
 msgid "d1-omni is a multimodal 600M decision model from Liquid AI."
 msgstr ""
+"d1-omni — це мультимодальна модель прийняття рішень із 600 мільйонами "
+"параметрів від Liquid AI."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:363
 #, kde-format
@@ -3048,6 +3066,8 @@ msgid ""
 "Turn text, structured data, and images into scored choices, yes/no answers, "
 "and ratings."
 msgstr ""
+"Перетворюйте текст, структуровані дані та зображення на варіанти з оцінками, "
+"відповіді «так/ні» і рейтинги."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:364
 #, kde-format
@@ -3055,6 +3075,8 @@ msgid ""
 "DeepSeek-V4-Pro is a frontier Mixture-of-Experts model with a large context "
 "window and three reasoning modes."
 msgstr ""
+"DeepSeek-V4-Pro — це передова модель типу «суміш експертів», що має велике "
+"вікно контексту та три режими міркування."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:366
 #, kde-format
@@ -3062,16 +3084,18 @@ msgid ""
 "DeepSeek-V4.1-Flash is designed for greater capability, faster inference, "
 "higher throughput, and scaling to larger models."
 msgstr ""
+"DeepSeek-V4.1-Flash розроблено для забезпечення ширших можливостей, швидшого "
+"виконання висновків, вищої пропускної здатності та масштабування до більших "
+"моделей."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:367
-#, fuzzy, kde-format
-#| msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
+#, kde-format
 msgid ""
 "EmbeddingGemma 2 is a multimodal embedding model from Google built on the "
 "Gemma 4 architecture."
 msgstr ""
-"EmbeddingGemma є вбудовуваною моделлю із 300 мільйонами параметрів від "
-"Google."
+"EmbeddingGemma 2 — це мультимодальна модель вбудовування від Google, "
+"побудована на архітектурі Gemma 4."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:368
 #, kde-format
@@ -3079,11 +3103,15 @@ msgid ""
 "Flint is a 39.8 billion-parameter mixture-of-experts model from Recursive, "
 "built for coding agents."
 msgstr ""
+"Flint — це модель типу «суміш експертів» із 39,8 мільярдів параметрів від "
+"компанії Recursive, створена для агентів програмування."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:369
 #, kde-format
 msgid "GLM-5.2 is Z.ai's flagship model for the era of long-horizon tasks."
 msgstr ""
+"GLM-5.2 — це флагманська модель від Z.ai для епохи завдань із довгостроковим "
+"горизонтом."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:370
 #, kde-format
@@ -3091,6 +3119,9 @@ msgid ""
 "Z.ai's flagship model and the most capable open-weights model for coding, "
 "with major gains on long-horizon agentic tasks."
 msgstr ""
+"Флагманська модель від Z.ai — найпотужніша модель із відкритою вагою для "
+"написання коду, що демонструє значні успіхи у виконанні агентних завдань із "
+"тривалим горизонтом планування."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:372
 #, kde-format
@@ -3098,6 +3129,9 @@ msgid ""
 "Z.ai's first natively multimodal model, approaching Claude Opus 4.8 on "
 "coding and agentic benchmarks with just 18B active parameters."
 msgstr ""
+"Перша нативно-мультимодальна модель від Z.ai, яка за показниками в задачах "
+"із написання коду та роботи агентів наближається до Claude Opus 4.8, маючи "
+"лише 18 мільярдів активних параметрів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:373
 #, kde-format
@@ -3105,6 +3139,9 @@ msgid ""
 "GLM-OCR is a multimodal OCR model for complex document understanding, built "
 "on the GLM-V encoder-decoder architecture."
 msgstr ""
+"GLM-OCR — це мультимодальна модель оптичного розпізнавання символів для "
+"розуміння складних документів, побудована на архітектурі «енкодер-декодер» "
+"GLM-V."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:375
 #, kde-format
@@ -3114,6 +3151,12 @@ msgid ""
 "generation (RAG), tool use, and structured JSON output. Released under "
 "Apache 2.0 license."
 msgstr ""
+"Моделі IBM Granite — це сімейство відкритих базових моделей, готових до "
+"використання в корпоративному середовищі. Вони підтримують багатомовність, "
+"написання програмного коду, генерацію з доповненням пошуком (RAG), "
+"використання зовнішніх інструментів, а також формування структурованих "
+"вихідних даних у форматі JSON. Моделі випущено за умов ліцензування Apache "
+"2.0."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:378
 #, kde-format
@@ -3122,6 +3165,9 @@ msgid ""
 "Research that evaluates whether LLM prompts and responses meet specified "
 "harm criteria."
 msgstr ""
+"Granite Guardian 4.1 — це спеціалізована модель безпеки та оцінювання від "
+"IBM Research, яка перевіряє, чи відповідають запити до великих мовних "
+"моделей і відповіді на них установленим критеріям шкідливості."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:381
 #, kde-format
@@ -3131,6 +3177,11 @@ msgid ""
 "generation (RAG), tool use, thinking and structured JSON output. Released "
 "under Apache 2.0 license."
 msgstr ""
+"Моделі IBM Granite — це сімейство готових до корпоративного використання "
+"відкритих базових моделей, які підтримують багатомовність, написання коду, "
+"генерацію з доповненням пошуком (RAG), використання інструментів, процеси "
+"мислення та структурований вивід у форматі JSON. Вони випущені на умовах "
+"ліцензії Apache 2.0."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:384
 #, kde-format
@@ -3138,6 +3189,9 @@ msgid ""
 "594B Mixture-of-Experts model (17B active) with image input and up to 1M "
 "tokens of context, built for agentic coding and knowledge work."
 msgstr ""
+"Модель типу «суміш експертів» обсягом 594 млрд параметрів (17 млрд "
+"активних), що підтримує введення зображень і контекст обсягом до 1 мільйонів "
+"токенів; розроблена для агентного написання коду та інтелектуальної праці."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:385
 #, kde-format
@@ -3145,6 +3199,8 @@ msgid ""
 "Kev scores answers to structured questions about a supplied text state in a "
 "single forward pass."
 msgstr ""
+"Kev оцінює відповіді на структуровані запитання щодо наданого тексту за один "
+"прямий прохід."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:387
 #, kde-format
@@ -3153,6 +3209,10 @@ msgid ""
 "practical capabilities in long-horizon coding, coding-driven design, "
 "proactive autonomous execution, and swarm-based task orchestration."
 msgstr ""
+"Kimi K2.6 — це мультимодальна агентна модель із відкритим початковим кодом, "
+"яка розширює практичні можливості у сферах довгострокового програмування, "
+"проєктування на основі коду, проактивного автономного виконання завдань та "
+"оркестрації завдань за допомогою груп агентів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:390
 #, kde-format
@@ -3161,6 +3221,11 @@ msgid ""
 "K2.6, with substantial improvements on real-world long-horizon coding tasks "
 "and roughly 30% lower thinking-token usage."
 msgstr ""
+"Kimi K2.7 Code — це агентна модель від Moonshot AI, спеціалізована на "
+"написанні коду та створена на базі Kimi K2.6. Вона вирізняється значними "
+"покращеннями у виконанні практичних завдань із програмування, що потребують "
+"довгострокового планування, а також споживає приблизно на 30% менше токенів "
+"на етапі «мислення»."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:392
 #, kde-format
@@ -3168,6 +3233,9 @@ msgid ""
 "Kimi K3 is an open-weight, native multimodal agentic model and Moonshot AI's "
 "most capable model to date."
 msgstr ""
+"Kimi K3 — це мультимодальна агентна модель із відкритою вагою, розроблена як "
+"мультимодальна за своєю природою; на сьогодні це найпотужніша модель від "
+"Moonshot AI."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:394
 #, kde-format
@@ -3177,6 +3245,11 @@ msgid ""
 "window and major gains in coding, 3D creation, financial research, and "
 "factual accuracy."
 msgstr ""
+"Kimi K3.1 Pro — це агентна модель із відкритими вагами та вбудованою "
+"мультимодальністю; на сьогодні це найпотужніша модель класу 3T від компанії "
+"Moonshot AI, що має контекстне вікно обсягом 1 мільйон токенів і демонструє "
+"значні покращення в таких сферах, як написання коду, створення 3D-вмісту, "
+"фінансові дослідження та фактична точність."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:397
 #, kde-format
@@ -3184,6 +3257,9 @@ msgid ""
 "Laguna S 2.1 is Poolside's most capable model to date, designed for long-"
 "horizon work. 70.2% on Terminal-Bench 2.1 at 118B-A8B."
 msgstr ""
+"Laguna S 2.1 — це найпотужніша на сьогодні модель від Poolside, розроблена "
+"для виконання завдань із тривалим горизонтом планування. Результат: 70,2% у "
+"тесті Terminal-Bench 2.1 (конфігурація 118B-A8B)."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:399
 #, kde-format
@@ -3192,6 +3268,11 @@ msgid ""
 "activated parameters per token designed for agentic coding and long-horizon "
 "work on a local machine."
 msgstr ""
+"Laguna XS 2.1 — це модель архітектури «суміш експертів» із загальною "
+"кількістю параметрів 33 мільярди, з яких 3 мільярди параметрів активуються "
+"для кожного токена; вона розроблена для виконання завдань із написання коду "
+"в агентному режимі та роботи над довгостроковими проєктами на локальному "
+"комп’ютері."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:402
 #, kde-format
@@ -3200,6 +3281,11 @@ msgid ""
 "activated parameters per token designed for agentic coding and long-horizon "
 "work on a local machine."
 msgstr ""
+"Laguna XS.2 — це модель архітектури «суміш експертів» із загальною кількістю "
+"33 мільярди параметрів, де для кожного токена залучається 3 мільярди "
+"параметрів; вона розроблена для виконання завдань із написання коду в "
+"агентному режимі та роботи над довготривалими проєктами на локальному "
+"комп’ютері."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:404
 #, kde-format
@@ -3207,6 +3293,8 @@ msgid ""
 "Laya is a 421M decision model from Convai Innovations, fine-tuned from "
 "ModernBERT-large."
 msgstr ""
+"Laya — це модель прийняття рішень із 421 мільйоном параметрів від Convai "
+"Innovations, донавчена на базі ModernBERT-large."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:405
 #, kde-format
@@ -3214,6 +3302,8 @@ msgid ""
 "LFM2.5-8B-A1B, an edge model built for fast, reliable tool calling on "
 "consumer hardware."
 msgstr ""
+"LFM2.5-8B-A1B — периферійна модель, створена для швидкого й надійного "
+"виклику інструментів на споживчому обладнанні."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:406
 #, kde-format
@@ -3221,11 +3311,13 @@ msgid ""
 "LFM3-1.7B is a tri-hybrid model for local agents and specialized "
 "applications."
 msgstr ""
+"LFM3-1.7B — це тригібридна модель для локальних агентів і спеціалізованих "
+"застосувань."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:407
 #, kde-format
 msgid "LFM3-Audio-2B is a compact, fully featured audio model."
-msgstr ""
+msgstr "LFM3-Audio-2B — це компактна, повнофункціональна аудіомодель."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:408
 #, kde-format
@@ -3233,12 +3325,16 @@ msgid ""
 "A single end-to-end model that understands text, images, video and audio, "
 "and answers in text and speech."
 msgstr ""
+"Єдина наскрізна модель, яка розуміє текст, зображення, відео та аудіо,а "
+"також відповідає текстом і мовленням."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:409
 #, kde-format
 msgid ""
 "LFM3-VL-2B is a vision-language model for on-device visual understanding."
 msgstr ""
+"LFM3-VL-2B — це модель візуальної мови для візуального розпізнавання на "
+"пристрої."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:410
 #, kde-format
@@ -3246,11 +3342,13 @@ msgid ""
 "MedGemma is a collection of Gemma 3 variants that are trained for "
 "performance on medical text and image comprehension."
 msgstr ""
+"MedGemma — це набір варіантів моделі Gemma 3, навчених ефективно розуміти "
+"медичні тексти та зображення."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:411
 #, kde-format
 msgid "MedGemma 1.5 4B is an updated version of the MedGemma 4B model."
-msgstr ""
+msgstr "MedGemma 1.5 4B — це оновлена ​​версія моделі MedGemma 4B."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:412
 #, kde-format
@@ -3258,6 +3356,8 @@ msgid ""
 "MiMo-V2.6-Distill-Qwen-9B is Xiaomi MiMo's 9B model for code and agent "
 "workflows."
 msgstr ""
+"MiMo-V2.6-Distill-Qwen-9B — це модель від Xiaomi MiMo з 9 мільярдами "
+"параметрів, призначена для роботи з кодом та агентними процесами."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:414
 #, kde-format
@@ -3265,6 +3365,9 @@ msgid ""
 "Xiaomi's efficiency-balanced MiMo-V2.6 checkpoint, with 309B total "
 "parameters, 15B active, omnimodal input, and a 1M token context."
 msgstr ""
+"Збалансована за показником ефективності контрольна точка MiMo-V2.6 від "
+"Xiaomi: 309 мільярдами параметрів загалом (15 мільярдів активних), підтримка "
+"мультимодальних вхідних даних і контекст обсягом 1 мільйон токенів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:415
 #, kde-format
@@ -3272,6 +3375,9 @@ msgid ""
 "Xiaomi's flagship MiMo-V2.6 checkpoint, with 1.02T total parameters, 42B "
 "active, omnimodal input, and a 1M token context."
 msgstr ""
+"Флагманська контрольна точка MiMo-V2.6 від Xiaomi: загалом 1,02 трильйонів "
+"параметрів (42 мільярди активних), підтримка мультимодальних вхідних даних і "
+"контекст обсягом 1 мільйон токенів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:416
 #, kde-format
@@ -3279,6 +3385,9 @@ msgid ""
 "A GPT-4o Level MLLM for Single Image, Multi Image and High-FPS Video "
 "Understanding on Your Phone."
 msgstr ""
+"Мультимодальна велика мовна модель (MLLM) рівня GPT-4o для розуміння одного "
+"зображення, кількох зображень і відео з високою частотою кадрів — на вашому "
+"телефоні."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:417
 #, kde-format
@@ -3286,6 +3395,8 @@ msgid ""
 "A Pocket-Sized MLLM for Ultra-Efficient Image and Video Understanding on "
 "Your Phone."
 msgstr ""
+"Компактна мультимодальна велика мовна модель (MLLM) для надефективного "
+"розуміння зображень і відео на вашому телефоні."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:418
 #, kde-format
@@ -3293,6 +3404,8 @@ msgid ""
 "MiniMax M3: Coding & Agentic Frontier. 1M context window. Native "
 "Multimodality."
 msgstr ""
+"MiniMax M3: передові рішення в галузі кодування та агентних систем. "
+"Контекстне вікно обсягом 1 мільйон токенів. Вбудована мультимодальність."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:420
 #, kde-format
@@ -3301,6 +3414,10 @@ msgid ""
 "agentic tasks, coding, Computer Use and cybersecurity, while making online "
 "inference nearly three times faster and reducing usage costs by 70%."
 msgstr ""
+"Будучи моделлю Flash нового покоління, M3.1 Flash забезпечує якісний стрибок "
+"у виконанні агентних завдань, написанні коду, взаємодії з комп'ютером та "
+"кібербезпеці, водночас роблячи онлайн-інференс майже втричі швидшим і "
+"знижуючи витрати на використання на 70%."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:423
 #, kde-format
@@ -3309,6 +3426,11 @@ msgid ""
 "Its granular Mixture-of-Experts design activates 52B of 1.05T total "
 "parameters, with a 1.6B vision encoder handling images."
 msgstr ""
+"Mistral Large 4 — це мультимодальна модель загального призначення від "
+"компанії Mistral із відкритою архітектурою ваг.Її деталізована структура "
+"типу «суміш експертів» активує 52 мільярди параметрів із загальної кількості "
+"1,05 трильйонів,а обробку зображень забезпечує візуальний енкодер обсягом "
+"1,6 мільярдів параметрів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:426
 #, kde-format
@@ -3316,6 +3438,9 @@ msgid ""
 "Mistral Medium 3.5 is the first flagship model of Mistral AI that merged "
 "instruction-following, reasoning, and coding in a single set of 128B weights."
 msgstr ""
+"Mistral Medium 3.5 — це перша флагманська модель від Mistral AI, яка "
+"об’єднала здатність виконувати інструкції, міркувати та писати код в єдиному "
+"наборі зі 128 мільярдів параметрів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:429
 #, kde-format
@@ -3324,6 +3449,11 @@ msgid ""
 "licensed under Apache 2.0 and runs on a single GPU - tuned for tool use, "
 "long tasks, and failure recovery."
 msgstr ""
+"Новітня відкрита модель від Meta, розроблена для локальних агентів, що "
+"працюють постійно. Вона має 30 мільярдів параметрів, поширюється за "
+"ліцензією Apache 2.0 і працює на одному графічному процесорі; модель "
+"оптимізована для використання інструментів, виконання тривалих завдань та "
+"відновлення після збоїв."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:432
 #, kde-format
@@ -3333,6 +3463,11 @@ msgid ""
 "work, it excels at long-horizon tasks, complex software engineering, and "
 "multi-step reasoning."
 msgstr ""
+"Muse Spark Open — це нативно мультимодальна модель із загальною кількістю "
+"параметрів 816 мільярдів (42 мільярди активних) і контекстним вікном обсягом "
+"1 мільйон токенів. Вона розроблена для написання коду та виконання агентних "
+"завдань і демонструє високу ефективність у вирішенні довгострокових завдань, "
+"складній розробці програмного забезпечення та багатоетапних міркуваннях."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:434
 #, kde-format
@@ -3340,6 +3475,8 @@ msgid ""
 "NVIDIA Nemotron 3 Ultra is built for high-throughput reasoning and long-"
 "running agent workflows."
 msgstr ""
+"NVIDIA Nemotron 3 Ultra створено для високоефективного виконання логічних "
+"операцій та тривалих робочих процесів за участю агентів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:435
 #, kde-format
@@ -3347,6 +3484,9 @@ msgid ""
 "Nemotron 3.5 Bolt is NVIDIA's compact vision-language model for local "
 "coding, reasoning, and tool use."
 msgstr ""
+"Nemotron 3.5 Bolt — це компактна мультимодальна модель від NVIDIA, "
+"призначена для локального написання коду, міркування та використання "
+"інструментів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:437
 #, kde-format
@@ -3354,6 +3494,9 @@ msgid ""
 "NVIDIA Nemotron 3.5 Lightning is an open 30B mixture-of-experts (MoE) model "
 "with 3B active parameters built for always-on agents."
 msgstr ""
+"NVIDIA Nemotron 3.5 Lightning — це відкрита модель архітектури «суміш "
+"експертів» із 30 мільярдів параметрів (3 мільярди активних параметрів), "
+"розроблена для агентів, що працюють у постійному режимі."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:438
 #, kde-format
@@ -3361,6 +3504,9 @@ msgid ""
 "Nemotron 3.5 Super is NVIDIA's vision-language model for coding, reasoning, "
 "tool use, and document understanding."
 msgstr ""
+"Nemotron 3.5 Super — це мультимодальна модель від NVIDIA, призначена для "
+"написання коду, логічних міркувань, використання інструментів і розуміння "
+"документів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:440
 #, kde-format
@@ -3369,11 +3515,17 @@ msgid ""
 "unifies video, audio, image, and text understanding to support enterprise-"
 "grade Q&A, summarization, transcription, and document intelligence workflows."
 msgstr ""
+"NVIDIA Nemotron 3 Nano Omni — це мультимодальна велика мовна модель, яка "
+"об’єднує розуміння відео, аудіо, зображень і тексту для забезпечення "
+"корпоративних завдань, таких як відповіді на запитання, створення резюме, "
+"транскрибування та інтелектуальна обробка документів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:442
 #, kde-format
 msgid "A 9B decision model from Bespoke Labs for fast, typed classification."
 msgstr ""
+"Модель прийняття рішень з 9 мільярдами параметрів від Bespoke Labs для "
+"швидкої класифікації з визначенням типів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:443
 #, kde-format
@@ -3381,6 +3533,8 @@ msgid ""
 "A 9B decision model from Bespoke Labs for fast classification, routing, and "
 "scoring."
 msgstr ""
+"Модель прийняття рішень із 9 мільярдів параметрів від Bespoke Labs для "
+"швидкої класифікації, маршрутизації та оцінювання."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:445
 #, kde-format
@@ -3389,15 +3543,17 @@ msgid ""
 "Experts model with 3B active parameters, built for agentic software "
 "engineering."
 msgstr ""
+"North Mini Code — це перша модель від Cohere, призначена для розробників; "
+"вона побудована за архітектурою «суміш експертів», налічує 30 мільярдами "
+"параметрів (з яких 3 мільярди є активними) і створена для розробки "
+"програмного забезпечення з використанням агентів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:447
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alibaba's performant long context models for agentic and coding tasks."
+#, kde-format
 msgid "A self-improving family of open-source models for agentic coding."
 msgstr ""
-"Швидкісні моделі з довгим контекстом від Alibaba для агентів та завдань з "
-"програмування."
+"Сімейство моделей із відкритим вихідним кодом для агентного програмування, "
+"здатних до самовдосконалення."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:448
 #, kde-format
@@ -3405,6 +3561,8 @@ msgid ""
 "Ornith-1.5 is a major step toward building foundation models through end-to-"
 "end self-improvement."
 msgstr ""
+"Ornith-1.5 — це важливий крок до створення базових моделей шляхом "
+"наскрізного самовдосконалення."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:450
 #, kde-format
@@ -3413,6 +3571,11 @@ msgid ""
 "audio as it generates, making it useful for reading assistant replies, "
 "narrating passages, and adding a voice to local apps."
 msgstr ""
+"Phonon — це сімейство технологій перетворення тексту на мовлення від "
+"Gradium. Воно перетворює письмовий текст на усне мовлення у режимі реального "
+"часу, що дозволяє використовувати його для озвучування відповідей "
+"помічників, читання уривків тексту, а також для надання голосу локальним "
+"програмам."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:452
 #, kde-format
@@ -3420,6 +3583,8 @@ msgid ""
 "pplx-decider is a 27B decision model from Perplexity, fine-tuned from "
 "Qwen3.8-27B."
 msgstr ""
+"pplx-decider — це модель прийняття рішень із 27 мільярдами параметрів від "
+"Perplexity, донавчена на базі Qwen3.8-27B."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:453
 #, kde-format
@@ -3427,6 +3592,8 @@ msgid ""
 "pplx-decider-flash is a 4B decision model from Perplexity, built on "
 "Qwen3.5-4B."
 msgstr ""
+"pplx-decider-flash — це модель прийняття рішень із 4 мільярдами параметрів "
+"від Perplexity, створена на базі Qwen3.5-4B."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:455
 #, kde-format
@@ -3434,6 +3601,9 @@ msgid ""
 "Qwen3-Coder-Next is a coding-focused language model from Alibaba's Qwen "
 "team, optimized for agentic coding workflows and local development."
 msgstr ""
+"Qwen3-Coder-Next — це мовна модель, орієнтована на написання коду, від "
+"команди Qwen компанії Alibaba; вона оптимізована для агентних робочих "
+"процесів програмування та локальної розробки."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:456
 #, kde-format
@@ -3441,17 +3611,23 @@ msgid ""
 "Qwen3.8 delivers substantial gains across coding, professional work, "
 "research, and long-horizon agentic tasks."
 msgstr ""
+"Qwen3.8 забезпечує значні покращення у сферах програмування, професійної "
+"діяльності, досліджень, а також у виконанні агентних завдань, розрахованих "
+"на тривалий період."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:457
 #, kde-format
 msgid "An experimental preview of the architecture that will underpin Qwen4."
 msgstr ""
+"Експериментальна попередня версія архітектури, яка ляже в основу Qwen4."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:458
 #, kde-format
 msgid ""
 "65B dense model built for agentic coding, with up to 1M tokens of context."
 msgstr ""
+"Щільна модель із 65 мільярдами параметрів, створена для агентного написання "
+"коду, з контекстом обсягом до 1 мільйоном токенів."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:459
 #, kde-format
@@ -3459,11 +3635,15 @@ msgid ""
 "A 2B decision model from Strands Agents for fast classification, routing, "
 "and scoring."
 msgstr ""
+"Модель прийняття рішень з 2 мільярдами параметрів від Strands Agents для "
+"швидкої класифікації, маршрутизації та оцінювання."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:460
 #, kde-format
 msgid "A 4B decision model from Together AI for fast classification."
 msgstr ""
+"Модель прийняття рішень із 4 мільярдами параметрів від Together AI для "
+"швидкої класифікації."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:506
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:510
@@ -3693,7 +3873,7 @@ msgid "Enter a message"
 msgstr "Введіть повідомлення"
 
 #: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:82
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:503
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
@@ -3769,6 +3949,29 @@ msgstr "Додатки для роботи з текстом"
 #, kde-format
 msgid "Tool Plugins"
 msgstr "Додатки інструментів"
+
+#: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:35
+#, fuzzy, kde-format
+#| msgid "Prompt"
+msgctxt "@title:tab"
+msgid "Prompts"
+msgstr "Запит"
+
+#: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:37
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Skill"
+msgctxt "@title:tab"
+msgid "Skills"
+msgstr "Майстерність"
+
+#: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:39
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Agent"
+msgctxt "@title:tab"
+msgid "Agents"
+msgstr "Агент"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
@@ -4199,12 +4402,12 @@ msgstr "Макс. жетонів:"
 msgid "Thinking:"
 msgstr "Рівень обдумування:"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:119
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:117
 #, kde-format
 msgid "Text Plugins:"
 msgstr "Текстові додатки:"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:125
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:123
 #, kde-format
 msgid "Text identifier: %1"
 msgstr "Текстовий ідентифікатор: %1"
@@ -4639,44 +4842,44 @@ msgstr[3] "1 інструмент"
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr "Інструменти сервера MCP «%1» (%2)"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:499
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:500
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Змінити…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:508
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:509
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Зупинити"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:508
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:509
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
 msgstr "Вимовити"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:512
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:513
 #: widgets/view/textautogeneratedelegateutils.cpp:71
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Копіювати"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:520
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:521
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Оновити"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:524
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:525
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
 msgstr "Відгалуження"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:656
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:657
 #, kde-format
 msgid "Block Code copied."
 msgstr "Скопійовано блок коду."

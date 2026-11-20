@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-16 12:19+0000\n"
-"PO-Revision-Date: 2026-11-14 16:56+0400\n"
+"PO-Revision-Date: 2026-11-19 17:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -89,7 +89,7 @@ msgstr "توقف الخادم"
 #: plugins/client/mcpclientutils.cpp:130
 #, kde-format
 msgid "Authentication failed: the server rejected the access token."
-msgstr ""
+msgstr "فشل الاستيثاق: رفض الخادم رمز الوصول."
 
 #: plugins/client/mcpclientutils.cpp:132
 #, kde-format
@@ -97,34 +97,35 @@ msgid ""
 "Authentication required. The server uses OAuth authorization, which is not "
 "supported: set an access token in the server settings."
 msgstr ""
+"الاستيثاق مطلوب. يستخدم الخادم تخويل OAuth، وهو غير مدعوم: عيّن رمز وصول في "
+"إعدادات الخادم."
 
 #: plugins/client/mcpclientutils.cpp:134
 #, kde-format
 msgid "Authentication required: set an access token in the server settings."
-msgstr ""
+msgstr "الاستيثاق مطلوب: عيّن رمز وصول في إعدادات الخادم."
 
 #: plugins/client/mcpclientutils.cpp:137
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions."
-msgstr ""
+msgstr "رُفض الوصول: رمز الوصول لا يمنح الأذونات المطلوبة."
 
 #: plugins/client/mcpclientutils.cpp:138
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions (%1)."
-msgstr ""
+msgstr "رُفض الوصول: رمز الوصول لا يمنح الأذونات المطلوبة (%1)."
 
 #: plugins/client/mcpclientutils.cpp:140
 #, kde-format
 msgid "Access denied by the server."
-msgstr ""
+msgstr "رُفض الوصول من الخادم."
 
 #: plugins/client/mcpclientutils.cpp:143
-#, fuzzy, kde-format
-#| msgid "Server started"
+#, kde-format
 msgid "Server message: %1"
-msgstr "بدأ الخادم"
+msgstr "رسالة الخادم: %1"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
@@ -370,19 +371,15 @@ msgid "Add"
 msgstr "أضِف"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Do you want to remove this server (%1)?"
+#, kde-format
 msgid "Do you want to remove this variable."
-msgstr "أتريد إزالة هذا الخادم (%1)؟"
+msgstr "هل تريد إزالة هذا المتغير؟"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Header"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Variable"
-msgstr "أزِل الترويسة"
+msgstr "أزل المتغير"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:26
 #, kde-format
@@ -531,12 +528,10 @@ msgid "Configure Tools…"
 msgstr "اضبط الأدوات…"
 
 #: widgets/client/mcpserverlistview.cpp:96
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import…"
+#, kde-format
 msgctxt "@action"
 msgid "Export…"
-msgstr "استورد…"
+msgstr "صدّر…"
 
 #: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
@@ -592,45 +587,39 @@ msgid "Add MCP Server"
 msgstr "أضف خادم MCP"
 
 #: widgets/client/mcpserverwidget.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Servers"
-msgstr "استورد خادمًا…"
+msgstr "استورد الخوادم"
 
 #: widgets/client/mcpserverwidget.cpp:238
 #: widgets/client/mcpserverwidget.cpp:269
 #, kde-format
 msgid "JSON Files (*.json)"
-msgstr ""
+msgstr "ملفات JSON (*.json)"
 
 #: widgets/client/mcpserverwidget.cpp:245
 #, kde-format
 msgid "An error occurred when importing server."
-msgstr ""
+msgstr "حدث خطأ أثناء استيراد الخادم."
 
 #: widgets/client/mcpserverwidget.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Server"
-msgstr "استورد خادمًا…"
+msgstr "استورد الخادم"
 
 #: widgets/client/mcpserverwidget.cpp:267
 #: widgets/client/mcpserverwidget.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Import Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Server"
-msgstr "استورد خادمًا…"
+msgstr "صدّر الخادم"
 
 #: widgets/client/mcpserverwidget.cpp:279
 #, kde-format
 msgid "An error occurred when exporting server."
-msgstr ""
+msgstr "حدث خطأ أثناء تصدير الخادم."
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

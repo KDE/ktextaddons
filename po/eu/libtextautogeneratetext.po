@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-18 20:20+0000\n"
+"POT-Creation-Date: 2026-11-19 18:14+0000\n"
 "PO-Revision-Date: 2026-09-28 21:07+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -325,40 +325,40 @@ msgstr "<br><b>Eskaeraren tokena:</b> %1"
 msgid "<br><b>Completion Token:</b> %1"
 msgstr "<br><b>Osatzearen tokena:</b> %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:223
 #, kde-format
 msgid "MCP tool: %1 (%2)"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:227
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:225
 #, kde-format
 msgid "MCP server: %1"
 msgstr ""
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:251
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:249
 #, kde-format
 msgid "Tool Plugins:"
 msgstr "Tresna-pluginak:"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:257
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:255
 #, kde-format
 msgid "Tool identifier: %1"
 msgstr "Tresnaren identifikatzailea: %1"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:256
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:124
 #, kde-format
 msgid "On"
 msgstr "Aktibatuta"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:256
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:124
 #, kde-format
 msgid "Off"
 msgstr "Desaktibatuta"
 
-#: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
+#: core/tools/textautogeneratetexttoolpluginmanager.cpp:256
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:124
 #, kde-format
 msgid "Activate: %1"
 msgstr "Aktibatu: %1"
@@ -812,7 +812,7 @@ msgid "Please enter model name as \"name:tag\""
 msgstr "Mesedez, sartu ereduaren izena \"izena:etiketa\" gisa"
 
 #: plugins/ollama/modelsmanager/ollamamodeldownloadprogresswidget.cpp:48
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:516
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:517
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cancel"
@@ -3690,7 +3690,7 @@ msgid "Enter a message"
 msgstr "Sartu mezu bat"
 
 #: widgets/common/textautogeneratetextlineeditattachmentclickablewidget.cpp:82
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:503
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:504
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove"
@@ -3766,6 +3766,30 @@ msgstr "Testu-pluginak"
 #, kde-format
 msgid "Tool Plugins"
 msgstr "Tresna-pluginak"
+
+#: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:35
+#, fuzzy, kde-format
+#| msgid "Prompt"
+msgctxt "@title:tab"
+msgid "Prompts"
+msgstr "Eskaera"
+
+# 2026-09-28 al. Trebetasuna hautagai ona da, baina AA ingurunean skill objektu tekniko bihurtzen ari da —sistemari gaitasun jakin bat ematen dion konfigurazio/definizio modukoa—, eta horrelakoetan gaitasuna ere aztertu beharko genuke. Kode-testuingurua ikusi gabe ez nuke oraindik gidarako skill → trebetasun finkatuko. Jokoetan dugun skill → trebetasun-maila beste kontzeptu bat da.
+#: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:37
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Skill"
+msgctxt "@title:tab"
+msgid "Skills"
+msgstr "Trebetasuna"
+
+#: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:39
+#, fuzzy, kde-format
+#| msgctxt "@label:textbox"
+#| msgid "Arguments:"
+msgctxt "@title:tab"
+msgid "Agents"
+msgstr "Argumentuak:"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
@@ -4203,12 +4227,12 @@ msgstr "Gehieneko token kopurua:"
 msgid "Thinking:"
 msgstr "Arrazoitzen…"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:119
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:117
 #, kde-format
 msgid "Text Plugins:"
 msgstr "Testu-pluginak:"
 
-#: widgets/plugintext/textautogenerateplugintextmanager.cpp:125
+#: widgets/plugintext/textautogenerateplugintextmanager.cpp:123
 #, fuzzy, kde-format
 #| msgid "Tool identifier: %1"
 msgid "Text identifier: %1"
@@ -4662,44 +4686,44 @@ msgstr[1] ""
 msgid "Tools of MCP server \"%1\" (%2)"
 msgstr ""
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:499
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:500
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit…"
 msgstr "Editatu…"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:508
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:509
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Stop"
 msgstr "Gelditu"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:508
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:509
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Speak"
 msgstr "Irakurri ozen"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:512
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:513
 #: widgets/view/textautogeneratedelegateutils.cpp:71
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy"
 msgstr "Kopiatu"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:520
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:521
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Refresh"
 msgstr "Berritu"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:524
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:525
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fork"
 msgstr "Adarkatu"
 
-#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:656
+#: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:657
 #, kde-format
 msgid "Block Code copied."
 msgstr "Kode-blokea kopiatu da."

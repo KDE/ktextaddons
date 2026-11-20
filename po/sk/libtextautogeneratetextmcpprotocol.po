@@ -85,7 +85,7 @@ msgstr "Server sa zastavil"
 #: plugins/client/mcpclientutils.cpp:130
 #, kde-format
 msgid "Authentication failed: the server rejected the access token."
-msgstr ""
+msgstr "Overenie zlyhalo: server odmietol prístupový token."
 
 #: plugins/client/mcpclientutils.cpp:132
 #, kde-format
@@ -93,34 +93,37 @@ msgid ""
 "Authentication required. The server uses OAuth authorization, which is not "
 "supported: set an access token in the server settings."
 msgstr ""
+"Vyžaduje sa overenie. Server používa autorizáciu OAuth, ktorá nie je "
+"podporovaná: nastavte prístupový token v nastaveniach servera."
 
 #: plugins/client/mcpclientutils.cpp:134
 #, kde-format
 msgid "Authentication required: set an access token in the server settings."
 msgstr ""
+"Vyžaduje sa overenie: nastavte prístupový token v nastaveniach servera."
 
 #: plugins/client/mcpclientutils.cpp:137
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions."
-msgstr ""
+msgstr "Prístup zamietnutý: prístupový token neudeľuje požadované oprávnenia."
 
 #: plugins/client/mcpclientutils.cpp:138
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions (%1)."
 msgstr ""
+"Prístup zamietnutý: prístupový token neudeľuje požadované oprávnenia (%1)."
 
 #: plugins/client/mcpclientutils.cpp:140
 #, kde-format
 msgid "Access denied by the server."
-msgstr ""
+msgstr "Prístup zamietnutý serverom."
 
 #: plugins/client/mcpclientutils.cpp:143
-#, fuzzy, kde-format
-#| msgid "Server started"
+#, kde-format
 msgid "Server message: %1"
-msgstr "Server sa spustil"
+msgstr "Správa servera: %1"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
@@ -340,26 +343,22 @@ msgid "Remove"
 msgstr "Odstrániť"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@title:column"
 msgid "Name"
-msgstr "Názov:"
+msgstr "Názov"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Name: Value"
+#, kde-format
 msgctxt "@title:column"
 msgid "Value"
-msgstr "Názov: Hodnota"
+msgstr "Hodnota"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "An empty value keeps the variable from the user environment."
-msgstr ""
+msgstr "Prázdna hodnota ponechá premennú z používateľského prostredia."
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:39
 #: widgets/client/addmcpstreamablehttpserverheaderwidget.cpp:33
@@ -369,19 +368,15 @@ msgid "Add"
 msgstr "Pridať"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Do you want to remove this server (%1)?"
+#, kde-format
 msgid "Do you want to remove this variable."
-msgstr "Chcete odstrániť tento server (%1)?"
+msgstr "Chcete odstrániť túto premennú?"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Header"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Variable"
-msgstr "Odstrániť hlavičku"
+msgstr "Odstrániť premennú"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:26
 #, kde-format
@@ -396,11 +391,10 @@ msgid "Arguments:"
 msgstr "Argumenty:"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:36
-#, fuzzy, kde-format
-#| msgid "Environment variables:"
+#, kde-format
 msgctxt "@label"
 msgid "Environment:"
-msgstr "Premenné prostredia:"
+msgstr "Prostredie:"
 
 #: widgets/client/addmcpstreamablehttpserverheaderconfiguredialog.cpp:25
 #, kde-format
@@ -513,12 +507,10 @@ msgid "Add Server…"
 msgstr "Pridať server…"
 
 #: widgets/client/mcpserverlistview.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@action"
 msgid "Import Server…"
-msgstr "Pridať server…"
+msgstr "Importovať server…"
 
 #: widgets/client/mcpserverlistview.cpp:77
 #, kde-format
@@ -530,13 +522,13 @@ msgstr "Upraviť…"
 #, kde-format
 msgctxt "@action"
 msgid "Configure Tools…"
-msgstr ""
+msgstr "Nastaviť nástroje…"
 
 #: widgets/client/mcpserverlistview.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export…"
-msgstr ""
+msgstr "Exportovať…"
 
 #: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
@@ -578,61 +570,54 @@ msgstr "Z registra MCP…"
 #, kde-format
 msgctxt "@action"
 msgid "Import…"
-msgstr ""
+msgstr "Importovať..."
 
 #: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
 msgid "This server does not provide a supported transport (remote or package)."
 msgstr ""
+"Tento server neposkytuje podporovaný transport (vzdialený alebo balík)."
 
 #: widgets/client/mcpserverwidget.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add MCP Server"
-msgstr "Pridať server"
+msgstr "Pridať server MCP"
 
 #: widgets/client/mcpserverwidget.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Servers"
-msgstr "Pridať server…"
+msgstr "Importovať servery"
 
 #: widgets/client/mcpserverwidget.cpp:238
 #: widgets/client/mcpserverwidget.cpp:269
 #, kde-format
 msgid "JSON Files (*.json)"
-msgstr ""
+msgstr "Súbory JSON (*.json)"
 
 #: widgets/client/mcpserverwidget.cpp:245
 #, kde-format
 msgid "An error occurred when importing server."
-msgstr ""
+msgstr "Pri importe servera nastala chyba."
 
 #: widgets/client/mcpserverwidget.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Server"
-msgstr "Pridať server…"
+msgstr "Importovať server"
 
 #: widgets/client/mcpserverwidget.cpp:267
 #: widgets/client/mcpserverwidget.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Server"
-msgstr "Pridať server…"
+msgstr "Exportovať server"
 
 #: widgets/client/mcpserverwidget.cpp:279
 #, kde-format
 msgid "An error occurred when exporting server."
-msgstr ""
+msgstr "Pri exporte servera nastala chyba."
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

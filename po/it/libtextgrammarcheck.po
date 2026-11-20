@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-15 12:36+0000\n"
-"PO-Revision-Date: 2026-09-29 13:32+0200\n"
+"PO-Revision-Date: 2026-11-18 09:01+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: common/grammarresulttextedit.cpp:37
 #, kde-format
@@ -131,10 +131,9 @@ msgid "Grammalecte path not found."
 msgstr "Percorso di Grammalecte non trovato."
 
 #: grammalecte/grammalecteresultwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Grammalecte program file not found."
+#, kde-format
 msgid "Python program file not found."
-msgstr "Il programma Grammalecte non è stato trovato."
+msgstr "File di programma Python non trovato."
 
 #: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format

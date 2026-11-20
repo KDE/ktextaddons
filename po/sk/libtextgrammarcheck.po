@@ -132,10 +132,9 @@ msgid "Grammalecte path not found."
 msgstr "Nenašla sa cesta ku Grammalecte."
 
 #: grammalecte/grammalecteresultwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Grammalecte program file not found."
+#, kde-format
 msgid "Python program file not found."
-msgstr "Súbor programu Grammalecte nebol nájdený."
+msgstr "Súbor programu Python nebol nájdený."
 
 #: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format

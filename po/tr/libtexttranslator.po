@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ruqola\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-11 13:41+0000\n"
-"PO-Revision-Date: 2026-08-27 20:05+0300\n"
+"PO-Revision-Date: 2026-11-19 19:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -372,7 +372,7 @@ msgstr "Hata: %1"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use translation cache"
-msgstr "Çeviri önbelleği kullan"
+msgstr "Çeviri ön belleği kullan"
 
 #: translator/plugins/bergamot/bergamotenginesettingswidget.cpp:28
 #, kde-format
