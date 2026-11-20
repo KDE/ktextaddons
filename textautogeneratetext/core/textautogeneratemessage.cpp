@@ -342,7 +342,7 @@ TextAutoGenerateMessage TextAutoGenerateMessage::deserialize(const QJsonObject &
 QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson(bool hasSystemMessageSupport, bool hasTextOnlySupport) const
 {
     QJsonObject obj;
-    if (mContent.isEmpty()) {
+    if (mContent.isEmpty() && (!mMessageAttachments || mMessageAttachments->isEmpty())) {
         return obj;
     }
     QString role;
