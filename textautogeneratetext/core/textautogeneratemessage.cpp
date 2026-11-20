@@ -17,6 +17,37 @@ using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 bool TextAutoGenerateMessage::sAllowInsertText = false;
 
+namespace
+{
+// Image attachments are stored as data URLs ("data:image/png;base64,<payload>"),
+// see TextAutoGenerateAttachmentUtils::createAttachmentElementInfoFromFile().
+// Ollama expects only the base64 payload.
+[[nodiscard]] QByteArray imageBase64Payload(const QByteArray &content)
+{
+    if (content.startsWith("data:"_ba)) {
+        if (const qsizetype commaIdx = content.indexOf(','); commaIdx != -1) {
+            return content.sliced(commaIdx + 1);
+        }
+    }
+    return content;
+}
+
+[[nodiscard]] QJsonArray ollamaImages(const TextAutoGenerateAttachments *attachments)
+{
+    QJsonArray images;
+    if (!attachments) {
+        return images;
+    }
+    const auto atts = attachments->messageAttachments();
+    for (const auto &att : atts) {
+        if (att.attachmentType() == TextAutoGenerateAttachment::AttachmentType::Image) {
+            images.append(QString::fromLatin1(imageBase64Payload(att.content())));
+        }
+    }
+    return images;
+}
+}
+
 TextAutoGenerateMessage::TextAutoGenerateMessage() = default;
 
 TextAutoGenerateMessage::~TextAutoGenerateMessage() = default;
@@ -380,10 +411,8 @@ QJsonObject TextAutoGenerateMessage::convertToOllamaChatJson(bool hasSystemMessa
         }
     }
     obj["content"_L1] = contentStr;
-    if (!hasTextOnlySupport) {
-        // TODO add images
-        // obj["images"_L1] = //TODO add list;
-    }
+    // Images are added in convertToChatJson(), as their format depends on the backend
+    Q_UNUSED(hasTextOnlySupport)
     return obj;
 }
 
@@ -467,7 +496,13 @@ QList<QJsonObject> TextAutoGenerateMessage::convertToChatJson(bool hasSystemMess
     for (const auto &value : mToolExchange) {
         list.append(convertToolExchangeToChatJson(value.toObject(), format));
     }
-    if (const QJsonObject obj = convertToOllamaChatJson(hasSystemMessageSupport, hasTextOnlySupport); !obj.isEmpty()) {
+    if (QJsonObject obj = convertToOllamaChatJson(hasSystemMessageSupport, hasTextOnlySupport); !obj.isEmpty()) {
+        // "images" only exists in Ollama native API; OpenAI-compatible APIs (MistralAI, ...) don't support it
+        if (!hasTextOnlySupport && format == ToolCallFormat::Ollama) {
+            if (const QJsonArray images = ollamaImages(messageAttachments()); !images.isEmpty()) {
+                obj["images"_L1] = images;
+            }
+        }
         list.append(obj);
     }
     return list;
