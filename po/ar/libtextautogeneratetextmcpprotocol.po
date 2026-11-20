@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-14 15:12+0000\n"
-"PO-Revision-Date: 2026-11-14 16:56+0400\n"
+"PO-Revision-Date: 2026-11-19 17:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -479,7 +479,7 @@ msgstr "اضبط الأدوات…"
 #, kde-format
 msgctxt "@action"
 msgid "Export…"
-msgstr ""
+msgstr "صدّر…"
 
 #: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
@@ -535,45 +535,39 @@ msgid "Add MCP Server"
 msgstr "أضف خادم MCP"
 
 #: widgets/client/mcpserverwidget.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Servers"
-msgstr "أزل الخادم"
+msgstr "استورد الخوادم"
 
 #: widgets/client/mcpserverwidget.cpp:238
 #: widgets/client/mcpserverwidget.cpp:269
 #, kde-format
 msgid "JSON Files (*.json)"
-msgstr ""
+msgstr "ملفات JSON (*.json)"
 
 #: widgets/client/mcpserverwidget.cpp:245
 #, kde-format
 msgid "An error occurred when importing server."
-msgstr ""
+msgstr "حدث خطأ أثناء استيراد الخادم."
 
 #: widgets/client/mcpserverwidget.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Server"
-msgstr "أزل الخادم"
+msgstr "استورد الخادم"
 
 #: widgets/client/mcpserverwidget.cpp:267
 #: widgets/client/mcpserverwidget.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Remove Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Server"
-msgstr "أزل الخادم"
+msgstr "صدّر الخادم"
 
 #: widgets/client/mcpserverwidget.cpp:279
 #, kde-format
 msgid "An error occurred when exporting server."
-msgstr ""
+msgstr "حدث خطأ أثناء تصدير الخادم."
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

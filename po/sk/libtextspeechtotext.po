@@ -328,7 +328,7 @@ msgstr "Nastaviť Speech To Text"
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
 #, kde-format
 msgid "Test:"
-msgstr ""
+msgstr "Test:"
 
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:109
 #, kde-format
