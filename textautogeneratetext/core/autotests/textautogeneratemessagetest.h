@@ -24,4 +24,9 @@ private Q_SLOTS:
     void shouldSerializeToolExchange();
     void shouldConvertToolExchangeToOpenAI();
     void shouldConvertToolExchangeToOllama();
+    void shouldConvertImagesToOllama();
+    void shouldConvertImagesToOllama_data();
+    void shouldConvertImageOnlyMessageToOllama();
+    void shouldNotConvertImagesToOpenAI();
+    void shouldNotConvertImagesWithTextOnlySupport();
 };
