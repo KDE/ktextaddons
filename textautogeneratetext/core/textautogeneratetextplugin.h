@@ -8,6 +8,7 @@
 #include "textautogeneratetextcore_export.h"
 #include <KConfigGroup>
 #include <QJsonArray>
+#include <QMultiHash>
 #include <QObject>
 #include <TextAutoGenerateText/TextAutoGenerateAttachmentUtils>
 #include <TextAutoGenerateText/TextAutoGenerateMessage>

@@ -11,6 +11,7 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <QPluginLoader>
+#include <QSet>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextTranslator;
 class TextTranslator::TranslatorEngineLoaderPrivate

@@ -6,6 +6,7 @@
 #pragma once
 #include "core/textautogenerateattachmentutils.h"
 #include "textautogeneratetext_private_export.h"
+#include <QMap>
 #include <QWidget>
 namespace TextAddonsWidgets
 {

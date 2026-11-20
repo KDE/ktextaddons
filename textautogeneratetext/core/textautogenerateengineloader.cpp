@@ -10,6 +10,7 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <QPluginLoader>
+#include <QSet>
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateText;
 class TextAutoGenerateText::TextAutoGenerateEngineLoaderPrivate
