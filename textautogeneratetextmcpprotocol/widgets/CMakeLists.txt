@@ -71,8 +71,6 @@ target_sources(
         client/addmcpstreamablehttpserverheaderconfiguredialog.cpp
         client/addmcpstreamablehttpserverheaderconfigurewidget.h
         client/addmcpstreamablehttpserverheaderconfigurewidget.cpp
-        common/selecttypecombobox.h
-        common/selecttypecombobox.cpp
         client/mcpregistryserverlistview.h
         client/mcpregistryserverlistview.cpp
         client/mcpregistryserverlistviewdelegate.h
@@ -81,6 +79,10 @@ target_sources(
         client/mcpregistryserverinfowidget.cpp
         client/addmcpregistryserverdialog.h
         client/addmcpregistryserverdialog.cpp
+        common/selecttypecombobox.h
+        common/selecttypecombobox.cpp
+        configure/mcpserverconfigurationmodulewidget.h
+        configure/mcpserverconfigurationmodulewidget.cpp
 )
 
 target_include_directories(
@@ -111,11 +113,20 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotoco
     RELATIVE server
 )
 
+ecm_generate_headers(TextAutoGenerateTextMcpProtocolWidgets_Camelcasesconfigure_HEADERS
+    HEADER_NAMES
+        MCPServerConfigurationModuleWidget
+    REQUIRED_HEADERS TextAutoGenerateTextMcpProtocolWidgets_configure_HEADERS
+    PREFIX TextAutoGenerateTextMcpProtocolWidgets
+    RELATIVE configure
+)
+
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolwidgets_export.h
         ${TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolclient_HEADERS}
         ${TextAutoGenerateTextMcpProtocolWidgets_mcpprotocolserver_HEADERS}
+        ${TextAutoGenerateTextMcpProtocolWidgets_configure_HEADERS}
     DESTINATION
         ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolWidgets/textautogeneratetextmcpprotocolwidgets
     COMPONENT Devel
@@ -125,6 +136,7 @@ install(
     FILES
         ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolserver_HEADERS}
         ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolclient_HEADERS}
+        ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesconfigure_HEADERS}
     DESTINATION
         ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolWidgets/TextAutoGenerateTextMcpProtocolWidgets
     COMPONENT Devel
@@ -204,5 +216,6 @@ ecm_installed_library_check_include_strings(KF6TextAutoGenerateTextMcpProtocolWi
     HEADERS
     ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolclient_HEADERS}
         ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesmcpprotocolserver_HEADERS}
+        ${TextAutoGenerateTextMcpProtocolWidgets_Camelcasesconfigure_HEADERS}
     PREFIX TextAutoGenerateTextMcpProtocolWidgets
 )
