@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-19 18:14+0000\n"
-"PO-Revision-Date: 2026-11-19 11:39+0200\n"
+"PO-Revision-Date: 2026-11-20 07:36+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -3934,27 +3934,22 @@ msgid "Tool Plugins"
 msgstr "Модули инструментов"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:35
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Prompts"
-msgstr "Запрос"
+msgstr "Запросы"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Skill"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Skills"
-msgstr "Навык"
+msgstr "Навыки"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Agent"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Agents"
-msgstr "Агент"
+msgstr "Агенты"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-19 18:14+0000\n"
-"PO-Revision-Date: 2026-11-06 11:46+0100\n"
+"PO-Revision-Date: 2026-11-20 18:27+0100\n"
 "Last-Translator: freek <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2991,6 +2991,8 @@ msgid ""
 "AutoTrust's decision models return choices, yes/no probabilities, and "
 "ratings for the questions you supply."
 msgstr ""
+"De beslissingsmodellen van AutoTrust leveren keuzes, ja/nee-"
+"waarschijnlijkheden en beoordelingen op voor de vragen die u aanlevert."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:355
 #, kde-format
@@ -2999,6 +3001,9 @@ msgid ""
 "for areas such as agentic tool use, coding and general reasoning with an "
 "emphasis on token efficient usage."
 msgstr ""
+"Beam is een open model van Reflection, ontworpen om sterke prestaties te "
+"leveren op gebieden zoals het gebruik van tools door agents, programmeren en "
+"algemeen redeneren, waarbij de nadruk ligt op een efficiënt tokengebruik."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:358
 #, kde-format
@@ -3006,6 +3011,10 @@ msgid ""
 "Bonsai 2 from Prism ML is a family of vision models built for ternary "
 "weights - smaller models with close to full-precision quality."
 msgstr ""
+"Bonsai 2 van Prism ML is een familie van visiemodellen die zijn ontworpen "
+"voor ternaire gewichten; het zijn compactere modellen die een kwaliteit "
+"bieden die dicht in de buurt komt van die van modellen met volledige "
+"precisie."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:359
 #, kde-format
@@ -3013,6 +3022,9 @@ msgid ""
 "Clef is a 27B multimodal model created by Cloudflare that turns a state and "
 "a schema of typed questions into decisions."
 msgstr ""
+"Clef is een multimodaal model met 27 miljard parameters, ontwikkeld door "
+"Cloudflare, dat een status en een schema van getypeerde vragen omzet in "
+"beslissingen."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:360
 #, kde-format
@@ -3053,12 +3065,13 @@ msgid ""
 msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:367
-#, fuzzy, kde-format
-#| msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
+#, kde-format
 msgid ""
 "EmbeddingGemma 2 is a multimodal embedding model from Google built on the "
 "Gemma 4 architecture."
-msgstr "EmbeddingGemma is een 300M parameters inbeddend model uit Google."
+msgstr ""
+"EmbeddingGemma 2 is een multimodaal embeddingmodel van Google, gebouwd op de "
+"Gemma 4-architectuur."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:368
 #, kde-format
@@ -3378,13 +3391,11 @@ msgid ""
 msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:447
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alibaba's performant long context models for agentic and coding tasks."
+#, kde-format
 msgid "A self-improving family of open-source models for agentic coding."
 msgstr ""
-"Presterende lange context modellen van Alibaba voor taken van agenten en "
-"codering."
+"Een zelfverbeterende familie van open-source-modellen voor agentisch "
+"programmeren."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:448
 #, kde-format
@@ -3759,27 +3770,22 @@ msgid "Tool Plugins"
 msgstr "Plug-ins voor hulpmiddelen"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:35
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Prompts"
-msgstr "Prompt"
+msgstr "Prompts"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Skill"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Skills"
-msgstr "Vaardigheid"
+msgstr "Vaardigheden"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Agent"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Agents"
-msgstr "Agent"
+msgstr "Agents"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format

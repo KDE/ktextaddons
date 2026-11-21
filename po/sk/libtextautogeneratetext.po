@@ -3850,27 +3850,22 @@ msgid "Tool Plugins"
 msgstr "Moduly nástrojov"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:35
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Prompts"
-msgstr "Výzva"
+msgstr "Výzvy"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Skill"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Skills"
-msgstr "Zručnosť"
+msgstr "Zručnosti"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Agent"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Agents"
-msgstr "Agent"
+msgstr "Agenti"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format

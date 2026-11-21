@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-16 12:19+0000\n"
-"PO-Revision-Date: 2026-11-13 14:25+0200\n"
+"PO-Revision-Date: 2026-11-20 10:57+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
@@ -89,7 +89,7 @@ msgstr "השרת נעצר"
 #: plugins/client/mcpclientutils.cpp:130
 #, kde-format
 msgid "Authentication failed: the server rejected the access token."
-msgstr ""
+msgstr "האימות נכשל: השרת דחה את אסימון הגישה."
 
 #: plugins/client/mcpclientutils.cpp:132
 #, kde-format
@@ -97,34 +97,35 @@ msgid ""
 "Authentication required. The server uses OAuth authorization, which is not "
 "supported: set an access token in the server settings."
 msgstr ""
+"נדרש אימות. השרת משתמש באימות OAuth, שאינו נתמך: יש להגדיר אסימון גישה "
+"בהגדרות השרת"
 
 #: plugins/client/mcpclientutils.cpp:134
 #, kde-format
 msgid "Authentication required: set an access token in the server settings."
-msgstr ""
+msgstr "נדרש אימות: יש להגדיר אסימון גישה בהגדרות השרת."
 
 #: plugins/client/mcpclientutils.cpp:137
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions."
-msgstr ""
+msgstr "הגישה נדחתה: אסימון הגישה לא מעניק את ההרשאות הנחוצות."
 
 #: plugins/client/mcpclientutils.cpp:138
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions (%1)."
-msgstr ""
+msgstr "הגישה נדחתה: אסימון הגישה לא מעניק את ההרשאות הנחוצות (%1)."
 
 #: plugins/client/mcpclientutils.cpp:140
 #, kde-format
 msgid "Access denied by the server."
-msgstr ""
+msgstr "השרת דחה את הגישה."
 
 #: plugins/client/mcpclientutils.cpp:143
-#, fuzzy, kde-format
-#| msgid "Server started"
+#, kde-format
 msgid "Server message: %1"
-msgstr "השרת הופעל"
+msgstr "הודעת השרת: %1"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
@@ -368,19 +369,15 @@ msgid "Add"
 msgstr "הוספה"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Do you want to remove this server (%1)?"
+#, kde-format
 msgid "Do you want to remove this variable."
-msgstr "להסיר את השרת הזה (%1)?"
+msgstr "להסיר את המשתנה הזה."
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Header"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Variable"
-msgstr "הסרת כותרת"
+msgstr "הסרת משתנה"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:26
 #, kde-format
@@ -511,12 +508,10 @@ msgid "Add Server…"
 msgstr "הוספת שרת…"
 
 #: widgets/client/mcpserverlistview.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@action"
 msgid "Import Server…"
-msgstr "הוספת שרת…"
+msgstr "ייבוא שרת…"
 
 #: widgets/client/mcpserverlistview.cpp:77
 #, kde-format
@@ -534,7 +529,7 @@ msgstr "הגדרת כלים…"
 #, kde-format
 msgctxt "@action"
 msgid "Export…"
-msgstr ""
+msgstr "ייצוא…"
 
 #: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
@@ -576,7 +571,7 @@ msgstr "מספריית MCP…"
 #, kde-format
 msgctxt "@action"
 msgid "Import…"
-msgstr ""
+msgstr "ייבוא…"
 
 #: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
@@ -590,45 +585,39 @@ msgid "Add MCP Server"
 msgstr "הוספת שרת MCP"
 
 #: widgets/client/mcpserverwidget.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Servers"
-msgstr "הוספת שרת…"
+msgstr "ייבוא שרתים"
 
 #: widgets/client/mcpserverwidget.cpp:238
 #: widgets/client/mcpserverwidget.cpp:269
 #, kde-format
 msgid "JSON Files (*.json)"
-msgstr ""
+msgstr "קובצי JSON ‏(‎*.json)"
 
 #: widgets/client/mcpserverwidget.cpp:245
 #, kde-format
 msgid "An error occurred when importing server."
-msgstr ""
+msgstr "אירעה שגיאה בייבוא השרת."
 
 #: widgets/client/mcpserverwidget.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Server"
-msgstr "הוספת שרת…"
+msgstr "ייבוא שרת"
 
 #: widgets/client/mcpserverwidget.cpp:267
 #: widgets/client/mcpserverwidget.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Server"
-msgstr "הוספת שרת…"
+msgstr "ייצוא שרת"
 
 #: widgets/client/mcpserverwidget.cpp:279
 #, kde-format
 msgid "An error occurred when exporting server."
-msgstr ""
+msgstr "אירעה שגיאה בייצוא השרת."
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
