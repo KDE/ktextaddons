@@ -4,10 +4,20 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpserverconfigurationmodulewidget.h"
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
 #include <QCheckBox>
+#include <QProcess>
 #include <QVBoxLayout>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolServerUtils>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSettings>
 #include <TextAutoGenerateTextMcpProtocolWidgets/McpProtocolServerConfigureWidget>
+#if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
+#include <QDBusConnection>
+#include <QDBusConnectionInterface>
+#include <QDBusMessage>
+#endif
 
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
 using namespace Qt::Literals::StringLiterals;
@@ -47,22 +57,57 @@ MCPServerConfigurationModuleWidget::~MCPServerConfigurationModuleWidget() = defa
 
 void MCPServerConfigurationModuleWidget::load()
 {
-    // TODO
+    KSharedConfigPtr config = KSharedConfig::openConfig(mConfigName);
+    KConfigGroup group = config->group(u"General"_s);
+
+    mEnabled->setChecked(group.readEntry("Enabled", false));
+    mConfirmModify->setChecked(group.readEntry("AskModify", true));
+
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolServerUtils::loadSettings(config,
+                                                                              this,
+                                                                              [this](const TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings &settings) {
+                                                                                  mMcpProtocolServerConfigureWidget->setSettings(settings);
+                                                                                  Q_EMIT needSave(false);
+                                                                              });
 }
 
 void MCPServerConfigurationModuleWidget::save()
 {
-    // TODO
+    KSharedConfigPtr config = KSharedConfig::openConfig(mConfigName);
+    KConfigGroup group = config->group(u"General"_s);
+    group.writeEntry("Enabled", mEnabled->isChecked());
+    group.writeEntry("AskModify", mConfirmModify->isChecked());
+
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolServerUtils::saveSettings(config, mMcpProtocolServerConfigureWidget->settings());
+    config->sync();
+    reloadServer();
 }
 
 void MCPServerConfigurationModuleWidget::defaults()
 {
-    // TODO
+    mEnabled->setChecked(false);
+    mConfirmModify->setChecked(true);
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setServerUrl(TextAutoGenerateTextMcpProtocolCore::McpProtocolServerUtils::defaultServerUrl());
+    mMcpProtocolServerConfigureWidget->setSettings(settings);
+    Q_EMIT configureChanged();
 }
 
 void MCPServerConfigurationModuleWidget::reloadServer()
 {
-    // TODO
+#if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
+    if (!mDbusName.isEmpty()) {
+        QDBusConnection bus = QDBusConnection::sessionBus();
+        if (bus.isConnected() && bus.interface() && bus.interface()->isServiceRegistered(mDbusName)) {
+            const QDBusMessage msg = QDBusMessage::createMethodCall(mDbusName, u"/"_s, mDbusName, u"reload"_s);
+            bus.asyncCall(msg);
+            return;
+        }
+    }
+#endif
+    if (mEnabled->isChecked() && !mExecName.isEmpty()) {
+        QProcess::startDetached(mExecName, {});
+    }
 }
 
 QString MCPServerConfigurationModuleWidget::execName() const

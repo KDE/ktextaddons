@@ -156,6 +156,10 @@ target_link_libraries(
         KF6::TextAddonsCore
 )
 
+if(NOT WIN32 AND NOT APPLE)
+    target_link_libraries(KF6TextAutoGenerateTextMcpProtocolWidgets PRIVATE Qt::DBus)
+endif()
+
 set_target_properties(
     KF6TextAutoGenerateTextMcpProtocolWidgets
     PROPERTIES

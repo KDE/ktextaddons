@@ -47,11 +47,12 @@ public:
     void defaults();
 
     /*!
-     * \brief defaults
+     * \brief Returns the name of the configuration file used to load and save the settings.
      */
     [[nodiscard]] QString configName() const;
     /*!
-     * \brief defaults
+     * \brief Sets the name of the configuration file used to load and save the settings.
+     * \param newConfigName the configuration file name (e.g. "kdeworkspacemcprc")
      */
     void setConfigName(const QString &newConfigName);
 
@@ -82,6 +83,12 @@ Q_SIGNALS:
      * \brief configureChanged
      */
     void configureChanged();
+
+    /*!
+     * \brief Emitted when the settings have been loaded, to reset the "needs save" state.
+     * \param state true if the module has unsaved changes, false otherwise
+     */
+    void needSave(bool state);
 
 private:
     TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void reloadServer();
