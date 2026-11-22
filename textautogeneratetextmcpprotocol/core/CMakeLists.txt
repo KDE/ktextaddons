@@ -301,6 +301,8 @@ target_sources(
         server/mcpprotocolserverresource.cpp
         server/mcpprotocolservertool.h
         server/mcpprotocolservertool.cpp
+        server/mcpprotocolserverconfirmationtool.h
+        server/mcpprotocolserverconfirmationtool.cpp
         server/mcpprotocolservertoolcall.h
         server/mcpprotocolservertoolcall.cpp
         server/mcpprotocolservertoolarguments.h
@@ -377,6 +379,7 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver
     McpProtocolServerPrompt
     McpProtocolServerResource
     McpProtocolServerTool
+    McpProtocolServerConfirmationTool
     McpProtocolServerToolCall
     McpProtocolServerToolArguments
     McpProtocolServerUtils
@@ -554,6 +557,7 @@ target_link_libraries(
     PRIVATE
         KF6::I18n
         qt6keychain
+        KF6::Notifications
 )
 
 set_target_properties(
@@ -622,3 +626,5 @@ ecm_installed_library_check_include_strings(KF6TextAutoGenerateTextMcpProtocolCo
 
     PREFIX TextAutoGenerateTextMcpProtocolCore
 )
+
+install(FILES data/textautogeneratetextmcpprotocol.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})

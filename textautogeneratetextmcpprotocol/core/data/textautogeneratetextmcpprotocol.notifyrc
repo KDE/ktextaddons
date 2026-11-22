@@ -1,0 +1,10 @@
+[Global]
+IconName=network-server
+Name=MCP Protocol
+Comment=Model Context Protocol servers
+
+[Event/Mcp-Tool-Confirmation]
+Name=MCP Tool Asks Confirmation
+Comment=An MCP client wants to run a tool which modifies data
+Action=Popup
+Urgency=Normal
