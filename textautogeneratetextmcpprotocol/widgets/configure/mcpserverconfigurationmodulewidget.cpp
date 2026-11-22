@@ -64,3 +64,41 @@ void MCPServerConfigurationModuleWidget::reloadServer()
 {
     // TODO
 }
+
+QString MCPServerConfigurationModuleWidget::execName() const
+{
+    return mExecName;
+}
+
+void MCPServerConfigurationModuleWidget::setExecName(const QString &newExecName)
+{
+    mExecName = newExecName;
+}
+
+QString MCPServerConfigurationModuleWidget::dbusName() const
+{
+    return mDbusName;
+}
+
+void MCPServerConfigurationModuleWidget::setDbusName(const QString &newDbusName)
+{
+    mDbusName = newDbusName;
+}
+
+QString MCPServerConfigurationModuleWidget::configName() const
+{
+    return mConfigName;
+}
+
+void MCPServerConfigurationModuleWidget::setConfigName(const QString &newConfigName)
+{
+    mConfigName = newConfigName;
+}
+
+QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolWidgets::MCPServerConfigurationModuleWidget &t)
+{
+    d.space() << "mConfigName: " << t.configName();
+    d.space() << "mDbusName: " << t.dbusName();
+    d.space() << "mExecName: " << t.execName();
+    return d;
+}

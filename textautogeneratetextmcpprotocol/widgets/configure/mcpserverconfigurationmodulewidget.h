@@ -8,6 +8,7 @@
 #include "textautogeneratetextmcpprotocolwidgets_export.h"
 #include <QWidget>
 class QCheckBox;
+class QDebug;
 namespace TextAutoGenerateTextMcpProtocolWidgets
 {
 class McpProtocolServerConfigureWidget;
@@ -45,6 +46,37 @@ public:
      */
     void defaults();
 
+    /*!
+     * \brief defaults
+     */
+    [[nodiscard]] QString configName() const;
+    /*!
+     * \brief defaults
+     */
+    void setConfigName(const QString &newConfigName);
+
+    /*!
+     * \brief dbusName
+     * \return
+     */
+    [[nodiscard]] QString dbusName() const;
+    /*!
+     * \brief setDbusName
+     * \param newDbusName
+     */
+    void setDbusName(const QString &newDbusName);
+
+    /*!
+     * \brief execName
+     * \return
+     */
+    [[nodiscard]] QString execName() const;
+    /*!
+     * \brief setExecName
+     * \param newExecName
+     */
+    void setExecName(const QString &newExecName);
+
 Q_SIGNALS:
     /*!
      * \brief configureChanged
@@ -52,9 +84,13 @@ Q_SIGNALS:
     void configureChanged();
 
 private:
-    void reloadServer();
+    TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_NO_EXPORT void reloadServer();
+    QString mConfigName;
+    QString mDbusName;
+    QString mExecName;
     TextAutoGenerateTextMcpProtocolWidgets::McpProtocolServerConfigureWidget *const mMcpProtocolServerConfigureWidget;
     QCheckBox *const mEnabled;
     QCheckBox *const mConfirmModify;
 };
 }
+TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolWidgets::MCPServerConfigurationModuleWidget &t);
