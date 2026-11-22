@@ -58,7 +58,7 @@ MCPServerConfigurationModuleWidget::~MCPServerConfigurationModuleWidget() = defa
 void MCPServerConfigurationModuleWidget::load()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(mConfigName);
-    KConfigGroup group = config->group(u"General"_s);
+    const KConfigGroup group = config->group(u"General"_s);
 
     mEnabled->setChecked(group.readEntry("Enabled", false));
     mConfirmModify->setChecked(group.readEntry("AskModify", true));
