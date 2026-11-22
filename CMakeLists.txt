@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2022-2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.29)
-set(KTEXTADDONS_CURRENT_VERSION "2.3.45")
+set(KTEXTADDONS_CURRENT_VERSION "2.3.46")
 project(KTextAddons VERSION ${KTEXTADDONS_CURRENT_VERSION})
 
 set(QT_REQUIRED_VERSION "6.10.0")
@@ -159,6 +159,7 @@ find_package(
         TextWidgets
         ItemViews
         IconThemes
+        Notifications
 )
 
 option(BUILD_KIO_SUPPORT "Build with KIO support" ON)
