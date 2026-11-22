@@ -538,6 +538,13 @@ install(
 
 install(
     FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolcore_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolCore
+    COMPONENT Devel
+)
+
+install(
+    FILES
         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolcommon_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolclient_HEADERS}
         ${TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolserver_HEADERS}
