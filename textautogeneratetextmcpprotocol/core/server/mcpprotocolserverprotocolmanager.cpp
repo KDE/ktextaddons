@@ -177,7 +177,7 @@ void McpProtocolServerProtocolManager::addTool(std::unique_ptr<McpProtocolServer
         return;
     }
     const QString name = tool->definition().name();
-    auto it = std::find_if(mTools.begin(), mTools.end(), [&name](const auto &t) {
+    const auto it = std::find_if(mTools.begin(), mTools.end(), [&name](const auto &t) {
         return t->definition().name() == name;
     });
     if (it != mTools.end()) {
@@ -259,7 +259,7 @@ void McpProtocolServerProtocolManager::addPrompt(std::unique_ptr<McpProtocolServ
         return;
     }
     const QString name = prompt->definition().name();
-    auto it = std::find_if(mPrompts.begin(), mPrompts.end(), [&name](const auto &p) {
+    const auto it = std::find_if(mPrompts.begin(), mPrompts.end(), [&name](const auto &p) {
         return p->definition().name() == name;
     });
     if (it != mPrompts.end()) {
@@ -307,7 +307,7 @@ void McpProtocolServerProtocolManager::addResource(std::unique_ptr<McpProtocolSe
         return;
     }
     const QString uri = resource->definition().uri();
-    auto it = std::find_if(mResources.begin(), mResources.end(), [&uri](const auto &r) {
+    const auto it = std::find_if(mResources.begin(), mResources.end(), [&uri](const auto &r) {
         return r->definition().uri() == uri;
     });
     if (it != mResources.end()) {
