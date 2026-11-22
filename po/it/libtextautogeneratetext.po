@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-19 18:14+0000\n"
-"PO-Revision-Date: 2026-11-06 14:16+0100\n"
+"PO-Revision-Date: 2026-11-20 11:39+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -3017,6 +3017,8 @@ msgid ""
 "AutoTrust's decision models return choices, yes/no probabilities, and "
 "ratings for the questions you supply."
 msgstr ""
+"I modelli decisionali di AutoTrust restituiscono scelte, probabilità di tipo "
+"sì/no e valutazioni per le domande fornite."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:355
 #, kde-format
@@ -3025,6 +3027,10 @@ msgid ""
 "for areas such as agentic tool use, coding and general reasoning with an "
 "emphasis on token efficient usage."
 msgstr ""
+"Beam è un modello aperto sviluppato da Reflection, progettato per offrire "
+"prestazioni elevate in ambiti quali l'utilizzo di strumenti tramite agenti, "
+"la programmazione e il ragionamento generale, con un'attenzione particolare "
+"all'efficienza nell'uso dei token."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:358
 #, kde-format
@@ -3032,6 +3038,9 @@ msgid ""
 "Bonsai 2 from Prism ML is a family of vision models built for ternary "
 "weights - smaller models with close to full-precision quality."
 msgstr ""
+"Bonsai 2 di Prism ML è una famiglia di modelli di visione basati su pesi "
+"ternari: modelli più compatti che offrono una qualità vicina a quella a "
+"piena precisione."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:359
 #, kde-format
@@ -3039,6 +3048,8 @@ msgid ""
 "Clef is a 27B multimodal model created by Cloudflare that turns a state and "
 "a schema of typed questions into decisions."
 msgstr ""
+"Clef è un modello multimodale da 27B, creato da Cloudflare, che trasforma "
+"uno stato e uno schema di domande tipizzate in decisioni."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:360
 #, kde-format
@@ -3046,16 +3057,21 @@ msgid ""
 "Clef-Flash is a 9B multimodal model that turns a state and a schema of typed "
 "questions into decisions."
 msgstr ""
+"Clef-Flash è un modello multimodale da 9B che trasforma uno stato e uno "
+"schema di domande tipizzate in decisioni."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:361
 #, kde-format
 msgid "d1 is a 3B decision model from Liquid AI, built on LFM2.5-VL-3B."
 msgstr ""
+"d1 è un modello decisionale da 3B di Liquid AI, basato su LFM2.5-VL-3B."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:362
 #, kde-format
 msgid "d1-omni is a multimodal 600M decision model from Liquid AI."
 msgstr ""
+"d1-omni è un modello decisionale multimodale da 600M, sviluppato da Liquid "
+"AI."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:363
 #, kde-format
@@ -3063,6 +3079,8 @@ msgid ""
 "Turn text, structured data, and images into scored choices, yes/no answers, "
 "and ratings."
 msgstr ""
+"Trasforma testo, dati strutturati e immagini in scelte con punteggio, "
+"risposte sì/no e valutazioni."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:364
 #, kde-format
@@ -3070,6 +3088,8 @@ msgid ""
 "DeepSeek-V4-Pro is a frontier Mixture-of-Experts model with a large context "
 "window and three reasoning modes."
 msgstr ""
+"DeepSeek-V4-Pro è un modello all'avanguardia di tipo «Mixture-of-Experts», "
+"dotato di un'ampia finestra di contesto e di tre modalità di ragionamento."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:366
 #, kde-format
@@ -3077,16 +3097,18 @@ msgid ""
 "DeepSeek-V4.1-Flash is designed for greater capability, faster inference, "
 "higher throughput, and scaling to larger models."
 msgstr ""
+"DeepSeek-V4.1-Flash è progettato per offrire maggiori capacità, un'inferenza "
+"più rapida, un throughput più elevato e la possibilità di scalare verso "
+"modelli di dimensioni maggiori."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:367
-#, fuzzy, kde-format
-#| msgid "EmbeddingGemma is a 300M parameter embedding model from Google."
+#, kde-format
 msgid ""
 "EmbeddingGemma 2 is a multimodal embedding model from Google built on the "
 "Gemma 4 architecture."
 msgstr ""
-"EmbeddingGemma è un modello di incorporamento di parametri da 300 milioni di "
-"Google."
+"EmbeddingGemma 2 è un modello di embedding multimodale di Google, basato "
+"sull'architettura Gemma 4."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:368
 #, kde-format
@@ -3094,11 +3116,16 @@ msgid ""
 "Flint is a 39.8 billion-parameter mixture-of-experts model from Recursive, "
 "built for coding agents."
 msgstr ""
+"Flint è un modello di tipo «mixture-of-experts» da 39,8 miliardi di "
+"parametri, sviluppato da Recursive e pensato per agenti che si occupano di "
+"programmazione."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:369
 #, kde-format
 msgid "GLM-5.2 is Z.ai's flagship model for the era of long-horizon tasks."
 msgstr ""
+"GLM-5.2 è il modello di punta di Z.ai per l'era delle attività a lungo "
+"orizzonte temporale."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:370
 #, kde-format
@@ -3106,6 +3133,9 @@ msgid ""
 "Z.ai's flagship model and the most capable open-weights model for coding, "
 "with major gains on long-horizon agentic tasks."
 msgstr ""
+"Il modello di punta di Z.ai, nonché il più capace tra i modelli a pesi "
+"aperti per la programmazione, con notevoli progressi nell'esecuzione di "
+"attività basate su agenti che richiedono un orizzonte temporale esteso."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:372
 #, kde-format
@@ -3113,6 +3143,9 @@ msgid ""
 "Z.ai's first natively multimodal model, approaching Claude Opus 4.8 on "
 "coding and agentic benchmarks with just 18B active parameters."
 msgstr ""
+"Il primo modello nativamente multimodale di Z.ai, che si avvicina a Claude "
+"Opus 4.8 nei benchmark di programmazione e di capacità agentiche, pur "
+"contando solo 18 miliardi di parametri attivi."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:373
 #, kde-format
@@ -3120,6 +3153,8 @@ msgid ""
 "GLM-OCR is a multimodal OCR model for complex document understanding, built "
 "on the GLM-V encoder-decoder architecture."
 msgstr ""
+"GLM-OCR è un modello OCR multimodale per la comprensione di documenti "
+"complessi, basato sull'architettura encoder-decoder GLM-V."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:375
 #, kde-format
@@ -3129,6 +3164,11 @@ msgid ""
 "generation (RAG), tool use, and structured JSON output. Released under "
 "Apache 2.0 license."
 msgstr ""
+"I modelli IBM Granite costituiscono una famiglia di modelli di base aperti, "
+"pronti per l'uso aziendale, che supportano funzionalità multilingue, "
+"programmazione, generazione aumentata tramite recupero (RAG), utilizzo di "
+"strumenti e output in formato JSON strutturato. Sono rilasciati con licenza "
+"Apache 2.0."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:378
 #, kde-format
@@ -3137,6 +3177,9 @@ msgid ""
 "Research that evaluates whether LLM prompts and responses meet specified "
 "harm criteria."
 msgstr ""
+"Granite Guardian 4.1 è un modello specializzato di IBM Research, destinato "
+"alla sicurezza e alla valutazione, che analizza se i prompt e le risposte di "
+"un LLM soddisfano determinati criteri relativi ai rischi o ai danni."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:381
 #, kde-format
@@ -3146,6 +3189,11 @@ msgid ""
 "generation (RAG), tool use, thinking and structured JSON output. Released "
 "under Apache 2.0 license."
 msgstr ""
+"I modelli IBM Granite costituiscono una famiglia di modelli di base aperti, "
+"pronti per l'uso aziendale, che supportano funzionalità multilingue, "
+"programmazione, generazione aumentata tramite recupero (RAG), utilizzo di "
+"strumenti, capacità di ragionamento e output in formato JSON strutturato. "
+"Sono rilasciati con licenza Apache 2.0."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:384
 #, kde-format
@@ -3153,6 +3201,10 @@ msgid ""
 "594B Mixture-of-Experts model (17B active) with image input and up to 1M "
 "tokens of context, built for agentic coding and knowledge work."
 msgstr ""
+"Modello Mixture-of-Experts da 594B di parametri (17B attivi), dotato di "
+"capacità di input per immagini e di un contesto fino a 1 milione di token; "
+"progettato per attività di programmazione di tipo agentico e lavoro basato "
+"sulla conoscenza."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:385
 #, kde-format
@@ -3160,6 +3212,8 @@ msgid ""
 "Kev scores answers to structured questions about a supplied text state in a "
 "single forward pass."
 msgstr ""
+"Kev genera le risposte a domande strutturate relative a un testo fornito in "
+"un unico passaggio in avanti (forward pass)."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:387
 #, kde-format
@@ -3168,6 +3222,10 @@ msgid ""
 "practical capabilities in long-horizon coding, coding-driven design, "
 "proactive autonomous execution, and swarm-based task orchestration."
 msgstr ""
+"Kimi K2.6 è un modello agente multimodale nativo e open source che potenzia "
+"le capacità pratiche in ambiti quali la programmazione a lungo termine, la "
+"progettazione guidata dal codice, l'esecuzione autonoma proattiva e "
+"l'orchestrazione di attività basata su sistemi a sciame."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:390
 #, kde-format
@@ -3176,6 +3234,11 @@ msgid ""
 "K2.6, with substantial improvements on real-world long-horizon coding tasks "
 "and roughly 30% lower thinking-token usage."
 msgstr ""
+"Kimi K2.7 Code è un modello agente di Moonshot AI incentrato sulla "
+"programmazione, basato su Kimi K2.6; presenta notevoli miglioramenti "
+"nell'esecuzione di attività di programmazione complesse e di lunga durata in "
+"contesti reali, oltre a una riduzione di circa il 30% nell'utilizzo di token "
+"di ragionamento."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:392
 #, kde-format
@@ -3183,6 +3246,8 @@ msgid ""
 "Kimi K3 is an open-weight, native multimodal agentic model and Moonshot AI's "
 "most capable model to date."
 msgstr ""
+"Kimi K3 è un modello agente multimodale nativo a pesi aperti, nonché il "
+"modello più capace realizzato finora da Moonshot AI."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:394
 #, kde-format
@@ -3192,6 +3257,11 @@ msgid ""
 "window and major gains in coding, 3D creation, financial research, and "
 "factual accuracy."
 msgstr ""
+"Kimi K3.1 Pro è un modello agente multimodale nativo, a pesi aperti, che "
+"rappresenta il modello di classe 3T più avanzato di Moonshot AI a oggi; è "
+"dotato di una finestra di contesto da 1 milione di token e offre notevoli "
+"miglioramenti nella programmazione, nella creazione 3D, nella ricerca "
+"finanziaria e nell'accuratezza fattuale."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:397
 #, kde-format
@@ -3199,6 +3269,9 @@ msgid ""
 "Laguna S 2.1 is Poolside's most capable model to date, designed for long-"
 "horizon work. 70.2% on Terminal-Bench 2.1 at 118B-A8B."
 msgstr ""
+"Laguna S 2.1 è il modello più avanzato di Poolside realizzato finora, "
+"progettato per attività a lungo termine. Ha ottenuto il 70,2% nel benchmark "
+"Terminal-Bench 2.1, nella configurazione 118B-A8B."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:399
 #, kde-format
@@ -3207,6 +3280,10 @@ msgid ""
 "activated parameters per token designed for agentic coding and long-horizon "
 "work on a local machine."
 msgstr ""
+"Laguna XS 2.1 è un modello di tipo Mixture-of-Experts con un totale di 33 "
+"miliardi di parametri, di cui 3 miliardi attivati ​​per ogni token; è "
+"progettato per attività di programmazione basate su agenti e per compiti a "
+"lungo termine, da eseguire su una macchina locale."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:402
 #, kde-format
@@ -3215,6 +3292,10 @@ msgid ""
 "activated parameters per token designed for agentic coding and long-horizon "
 "work on a local machine."
 msgstr ""
+"Laguna XS.2 è un modello di tipo Mixture-of-Experts con un totale di 33 "
+"miliardi di parametri, di cui 3 miliardi attivati ​​per ogni token; è "
+"progettato per attività di programmazione basate su agenti e per lavori a "
+"lungo termine, da eseguire su una macchina locale."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:404
 #, kde-format
@@ -3222,6 +3303,8 @@ msgid ""
 "Laya is a 421M decision model from Convai Innovations, fine-tuned from "
 "ModernBERT-large."
 msgstr ""
+"Laya è un modello decisionale da 421 milioni di parametri di Convai "
+"Innovations, perfezionato a partire da ModernBERT-large."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:405
 #, kde-format
@@ -3229,6 +3312,8 @@ msgid ""
 "LFM2.5-8B-A1B, an edge model built for fast, reliable tool calling on "
 "consumer hardware."
 msgstr ""
+"LFM2.5-8B-A1B, un modello edge progettato per l'invocazione rapida e "
+"affidabile di strumenti su hardware di consumo."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:406
 #, kde-format
@@ -3236,11 +3321,14 @@ msgid ""
 "LFM3-1.7B is a tri-hybrid model for local agents and specialized "
 "applications."
 msgstr ""
+"LFM3-1.7B è un modello tri-ibrido destinato ad agenti locali e applicazioni "
+"specializzate."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:407
 #, kde-format
 msgid "LFM3-Audio-2B is a compact, fully featured audio model."
 msgstr ""
+"LFM3-Audio-2B è un modello audio compatto e completo di ogni funzionalità."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:408
 #, kde-format
@@ -3248,12 +3336,16 @@ msgid ""
 "A single end-to-end model that understands text, images, video and audio, "
 "and answers in text and speech."
 msgstr ""
+"Un unico modello end-to-end in grado di comprendere testo, immagini, video e "
+"audio, e di rispondere tramite testo e voce."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:409
 #, kde-format
 msgid ""
 "LFM3-VL-2B is a vision-language model for on-device visual understanding."
 msgstr ""
+"LFM3-VL-2B è un modello visivo-linguistico per la comprensione visiva su "
+"dispositivo."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:410
 #, kde-format
@@ -3261,11 +3353,13 @@ msgid ""
 "MedGemma is a collection of Gemma 3 variants that are trained for "
 "performance on medical text and image comprehension."
 msgstr ""
+"MedGemma è una raccolta di varianti di Gemma 3 addestrate per offrire "
+"prestazioni elevate nella comprensione di testi e immagini in ambito medico."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:411
 #, kde-format
 msgid "MedGemma 1.5 4B is an updated version of the MedGemma 4B model."
-msgstr ""
+msgstr "MedGemma 1.5 4B è una versione aggiornata del modello MedGemma 4B."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:412
 #, kde-format
@@ -3273,6 +3367,8 @@ msgid ""
 "MiMo-V2.6-Distill-Qwen-9B is Xiaomi MiMo's 9B model for code and agent "
 "workflows."
 msgstr ""
+"MiMo-V2.6-Distill-Qwen-9B è il modello da 9B di Xiaomi MiMo, destinato a "
+"flussi di lavoro legati al codice e agli agenti."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:414
 #, kde-format
@@ -3280,6 +3376,9 @@ msgid ""
 "Xiaomi's efficiency-balanced MiMo-V2.6 checkpoint, with 309B total "
 "parameters, 15B active, omnimodal input, and a 1M token context."
 msgstr ""
+"Il checkpoint MiMo-V2.6 di Xiaomi, ottimizzato per l'efficienza, conta 309 "
+"miliardi di parametri totali (di cui 15 miliardi attivi), supporta input "
+"omnimodali e una finestra di contesto di 1 milione di token."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:415
 #, kde-format
@@ -3287,6 +3386,9 @@ msgid ""
 "Xiaomi's flagship MiMo-V2.6 checkpoint, with 1.02T total parameters, 42B "
 "active, omnimodal input, and a 1M token context."
 msgstr ""
+"Il checkpoint di punta di Xiaomi, MiMo-V2.6, conta 1,02 trilioni di "
+"parametri totali, di cui 42 miliardi attivi; supporta input omnimodali e una "
+"finestra di contesto da 1 milione di token."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:416
 #, kde-format
@@ -3294,6 +3396,8 @@ msgid ""
 "A GPT-4o Level MLLM for Single Image, Multi Image and High-FPS Video "
 "Understanding on Your Phone."
 msgstr ""
+"Un MLLM di livello GPT-4o per la comprensione di singole immagini, immagini "
+"multiple e video ad alto frame rate, direttamente sul tuo telefono."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:417
 #, kde-format
@@ -3301,6 +3405,8 @@ msgid ""
 "A Pocket-Sized MLLM for Ultra-Efficient Image and Video Understanding on "
 "Your Phone."
 msgstr ""
+"Un MLLM tascabile per una comprensione di immagini e video ultra-efficiente "
+"sul proprio smartphone."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:418
 #, kde-format
@@ -3308,6 +3414,8 @@ msgid ""
 "MiniMax M3: Coding & Agentic Frontier. 1M context window. Native "
 "Multimodality."
 msgstr ""
+"MiniMax M3: programmazione e frontiera degli agenti. Finestra di contesto da "
+"1 milione di token. Multimodalità nativa."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:420
 #, kde-format
@@ -3316,6 +3424,11 @@ msgid ""
 "agentic tasks, coding, Computer Use and cybersecurity, while making online "
 "inference nearly three times faster and reducing usage costs by 70%."
 msgstr ""
+"In quanto modello Flash di nuova generazione, M3.1 Flash segna un salto "
+"generazionale in ambiti quali le attività basate su agenti, la "
+"programmazione, l'utilizzo del computer e la sicurezza informatica, rendendo "
+"al contempo l'inferenza in linea quasi tre volte più veloce e riducendo i "
+"costi di utilizzo del 70%."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:423
 #, kde-format
@@ -3324,6 +3437,11 @@ msgid ""
 "Its granular Mixture-of-Experts design activates 52B of 1.05T total "
 "parameters, with a 1.6B vision encoder handling images."
 msgstr ""
+"Mistral Large 4 è il modello multimodale di uso generale a pesi aperti di "
+"Mistral. La sua architettura a Mixture-of-Experts a granularità fine attiva "
+"52 miliardi di parametri su un totale di 1,05 trilioni, avvalendosi di un "
+"codificatore visivo da 1,6 miliardi di parametri per l'elaborazione delle "
+"immagini."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:426
 #, kde-format
@@ -3331,6 +3449,9 @@ msgid ""
 "Mistral Medium 3.5 is the first flagship model of Mistral AI that merged "
 "instruction-following, reasoning, and coding in a single set of 128B weights."
 msgstr ""
+"Mistral Medium 3.5 è il primo modello di punta di Mistral AI che ha unito la "
+"capacità di seguire istruzioni, il ragionamento e la programmazione in un "
+"unico insieme di 128 miliardi di pesi."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:429
 #, kde-format
@@ -3339,6 +3460,10 @@ msgid ""
 "licensed under Apache 2.0 and runs on a single GPU - tuned for tool use, "
 "long tasks, and failure recovery."
 msgstr ""
+"L'ultimo modello aperto di Meta, progettato per agenti locali sempre attivi. "
+"Con 30 miliardi di parametri e licenza Apache 2.0, è in grado di funzionare "
+"su una singola GPU; è ottimizzato per l'utilizzo di strumenti, l'esecuzione "
+"di attività prolungate e il ripristino in caso di errore."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:432
 #, kde-format
@@ -3348,6 +3473,11 @@ msgid ""
 "work, it excels at long-horizon tasks, complex software engineering, and "
 "multi-step reasoning."
 msgstr ""
+"Muse Spark Open è un modello nativamente multimodale, dotato di 816B di "
+"parametri (42 miliardi attivi) e di una finestra di contesto da 1 milione di "
+"token. Progettato per la programmazione e per attività di tipo agentico, "
+"eccelle in compiti a lungo termine, nell'ingegneria del software complessa e "
+"nel ragionamento a più fasi."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:434
 #, kde-format
@@ -3355,6 +3485,9 @@ msgid ""
 "NVIDIA Nemotron 3 Ultra is built for high-throughput reasoning and long-"
 "running agent workflows."
 msgstr ""
+"NVIDIA Nemotron 3 Ultra è progettato per il ragionamento ad alto throughput "
+"e per flussi di lavoro basati su agenti che richiedono tempi di esecuzione "
+"prolungati."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:435
 #, kde-format
@@ -3362,6 +3495,9 @@ msgid ""
 "Nemotron 3.5 Bolt is NVIDIA's compact vision-language model for local "
 "coding, reasoning, and tool use."
 msgstr ""
+"Nemotron 3.5 Bolt è il modello multimodale (vision-language) compatto di "
+"NVIDIA, pensato per la programmazione, il ragionamento e l'utilizzo di "
+"strumenti in locale."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:437
 #, kde-format
@@ -3369,6 +3505,9 @@ msgid ""
 "NVIDIA Nemotron 3.5 Lightning is an open 30B mixture-of-experts (MoE) model "
 "with 3B active parameters built for always-on agents."
 msgstr ""
+"NVIDIA Nemotron 3.5 Lightning è un modello open di tipo Mixture-of-experts "
+"(MoE) da 30 miliardi di parametri, con 3 miliardi di parametri attivi, "
+"progettato per agenti sempre attivi."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:438
 #, kde-format
@@ -3376,6 +3515,9 @@ msgid ""
 "Nemotron 3.5 Super is NVIDIA's vision-language model for coding, reasoning, "
 "tool use, and document understanding."
 msgstr ""
+"Nemotron 3.5 Super è il modello visione-linguaggio di NVIDIA per la "
+"programmazione, il ragionamento, l'utilizzo di strumenti e la comprensione "
+"di documenti."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:440
 #, kde-format
@@ -3384,11 +3526,17 @@ msgid ""
 "unifies video, audio, image, and text understanding to support enterprise-"
 "grade Q&A, summarization, transcription, and document intelligence workflows."
 msgstr ""
+"NVIDIA Nemotron 3 Nano Omni è un modello linguistico di grandi dimensioni "
+"multimodale che unifica la comprensione di video, audio, immagini e testo, a "
+"Q&A di livello aziendale, riassunto, trascrizione e analisi intelligente dei "
+"documenti."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:442
 #, kde-format
 msgid "A 9B decision model from Bespoke Labs for fast, typed classification."
 msgstr ""
+"Un modello decisionale da 9B di Bespoke Labs per una classificazione rapida "
+"e tipizzata."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:443
 #, kde-format
@@ -3396,6 +3544,8 @@ msgid ""
 "A 9B decision model from Bespoke Labs for fast classification, routing, and "
 "scoring."
 msgstr ""
+"Un modello decisionale da 9B di Bespoke Labs per una rapida classificazione, "
+"instradamento e assegnazione di punteggi."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:445
 #, kde-format
@@ -3404,15 +3554,17 @@ msgid ""
 "Experts model with 3B active parameters, built for agentic software "
 "engineering."
 msgstr ""
+"North Mini Code è il primo modello di Cohere pensato per gli sviluppatori: "
+"un modello di tipo Mixture-of-Experts da 30 miliardi di parametri, con 3 "
+"miliardi di parametri attivi, progettato per l'ingegneria del software "
+"basata su agenti."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:447
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alibaba's performant long context models for agentic and coding tasks."
+#, kde-format
 msgid "A self-improving family of open-source models for agentic coding."
 msgstr ""
-"Modelli performanti di Alibaba per contesti lunghi per attività di codifica "
-"e agenti."
+"Una famiglia di modelli open source in grado di auto-migliorarsi, pensata "
+"per la programmazione basata su agenti."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:448
 #, kde-format
@@ -3420,6 +3572,8 @@ msgid ""
 "Ornith-1.5 is a major step toward building foundation models through end-to-"
 "end self-improvement."
 msgstr ""
+"Ornith-1.5 rappresenta un passo importante verso la creazione di modelli di "
+"base attraverso un processo di auto-miglioramento end-to-end."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:450
 #, kde-format
@@ -3428,6 +3582,10 @@ msgid ""
 "audio as it generates, making it useful for reading assistant replies, "
 "narrating passages, and adding a voice to local apps."
 msgstr ""
+"Phonon è la famiglia di soluzioni sintesi vocale di Gradium. Converte il "
+"testo scritto in audio parlato in tempo reale, rendendolo utile per leggere "
+"le risposte degli assistenti, narrare brani e dare una voce alle "
+"applicazioni locali."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:452
 #, kde-format
@@ -3435,6 +3593,8 @@ msgid ""
 "pplx-decider is a 27B decision model from Perplexity, fine-tuned from "
 "Qwen3.8-27B."
 msgstr ""
+"pplx-decider è un modello decisionale da 27B di Perplexity, ottimizzato a "
+"partire da Qwen3.8-27B."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:453
 #, kde-format
@@ -3442,6 +3602,8 @@ msgid ""
 "pplx-decider-flash is a 4B decision model from Perplexity, built on "
 "Qwen3.5-4B."
 msgstr ""
+"pplx-decider-flash è un modello decisionale da 4B di Perplexity, basato su "
+"Qwen3.5-4B."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:455
 #, kde-format
@@ -3449,6 +3611,9 @@ msgid ""
 "Qwen3-Coder-Next is a coding-focused language model from Alibaba's Qwen "
 "team, optimized for agentic coding workflows and local development."
 msgstr ""
+"Qwen3-Coder-Next è un modello linguistico incentrato sulla programmazione, "
+"sviluppato dal team Qwen di Alibaba e ottimizzato per flussi di lavoro di "
+"codifica basati su agenti e per lo sviluppo in locale."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:456
 #, kde-format
@@ -3456,17 +3621,23 @@ msgid ""
 "Qwen3.8 delivers substantial gains across coding, professional work, "
 "research, and long-horizon agentic tasks."
 msgstr ""
+"Qwen3.8 offre miglioramenti significativi nell'ambito della programmazione, "
+"del lavoro professionale, della ricerca e delle attività basate su agenti "
+"che richiedono una prospettiva a lungo termine."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:457
 #, kde-format
 msgid "An experimental preview of the architecture that will underpin Qwen4."
 msgstr ""
+"Un'anteprima sperimentale dell'architettura che costituirà la base di Qwen4."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:458
 #, kde-format
 msgid ""
 "65B dense model built for agentic coding, with up to 1M tokens of context."
 msgstr ""
+"Modello denso da 65B, progettato per la programmazione tramite agenti, con "
+"un contesto fino a 1 milione di token."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:459
 #, kde-format
@@ -3474,11 +3645,14 @@ msgid ""
 "A 2B decision model from Strands Agents for fast classification, routing, "
 "and scoring."
 msgstr ""
+"Un modello decisionale da 2B di Strands Agents per una rapida "
+"classificazione, instradamento e assegnazione di punteggi."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:460
 #, kde-format
 msgid "A 4B decision model from Together AI for fast classification."
 msgstr ""
+"Un modello decisionale da 4B di Together AI per una classificazione rapida."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:506
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:510
@@ -3786,27 +3960,22 @@ msgid "Tool Plugins"
 msgstr "Estensioni strumenti"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:35
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Prompts"
 msgstr "Prompt"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Skill"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Skills"
-msgstr "Abilità"
+msgstr "Skill"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Agent"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Agents"
-msgstr "Agente"
+msgstr "Agenti"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format

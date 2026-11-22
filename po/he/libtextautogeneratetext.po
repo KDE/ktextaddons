@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-19 18:14+0000\n"
-"PO-Revision-Date: 2026-11-08 09:13+0200\n"
+"PO-Revision-Date: 2026-11-21 08:09+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
@@ -2947,7 +2947,7 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:369
 #, kde-format
 msgid "GLM-5.2 is Z.ai's flagship model for the era of long-horizon tasks."
-msgstr ""
+msgstr "GLM-5.2 הוא מודל הדגל של Z.ai לעידן המשימות לטווח ארוך."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:370
 #, kde-format
@@ -2955,6 +2955,8 @@ msgid ""
 "Z.ai's flagship model and the most capable open-weights model for coding, "
 "with major gains on long-horizon agentic tasks."
 msgstr ""
+"מודל הדגל של Z.ai ומודל המשקלות הפתוחות עם הכי הרבה יכולות לפיתוח תוכנה, עם "
+"שיפורים משמעותיים למשימות ארוכות טווח עם סוכנים."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:372
 #, kde-format

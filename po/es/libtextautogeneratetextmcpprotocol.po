@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-16 12:19+0000\n"
+"POT-Creation-Date: 2026-11-21 18:03+0000\n"
 "PO-Revision-Date: 2026-11-17 19:48+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -626,6 +626,17 @@ msgstr "Exportar servidor"
 #, kde-format
 msgid "An error occurred when exporting server."
 msgstr "Ha ocurrido un error al exportar el servidor."
+
+#: widgets/configure/mcpserverconfigurationmodulewidget.cpp:17
+#, kde-format
+msgid "Enabled"
+msgstr ""
+
+#: widgets/configure/mcpserverconfigurationmodulewidget.cpp:18
+#, kde-format
+msgctxt "@option:check"
+msgid "Ask confirmation before running tools which modify data"
+msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

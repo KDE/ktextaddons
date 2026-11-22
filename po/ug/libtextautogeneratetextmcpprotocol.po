@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-16 12:19+0000\n"
+"POT-Creation-Date: 2026-11-21 18:03+0000\n"
 "PO-Revision-Date: 2026-09-23 06:56+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -646,6 +646,17 @@ msgstr "مۇلازىمېتىر قوش"
 #: widgets/client/mcpserverwidget.cpp:279
 #, kde-format
 msgid "An error occurred when exporting server."
+msgstr ""
+
+#: widgets/configure/mcpserverconfigurationmodulewidget.cpp:17
+#, kde-format
+msgid "Enabled"
+msgstr ""
+
+#: widgets/configure/mcpserverconfigurationmodulewidget.cpp:18
+#, kde-format
+msgctxt "@option:check"
+msgid "Ask confirmation before running tools which modify data"
 msgstr ""
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
