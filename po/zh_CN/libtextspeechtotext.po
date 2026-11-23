@@ -66,11 +66,10 @@ msgstr "Vosk 插件设置"
 #, kde-format
 msgctxt "@action"
 msgid "Mark as Active"
-msgstr ""
+msgstr "标记为活动"
 
 #: speechtotext/plugins/vosk/voskenginelanguagetreeview.cpp:40
-#, fuzzy, kde-format
-#| msgid "Download"
+#, kde-format
 msgctxt "@action"
 msgid "Download"
 msgstr "下载"
@@ -149,7 +148,7 @@ msgstr "大小"
 #: speechtotext/plugins/vosk/voskspeechtotextmodel.cpp:126
 #, kde-format
 msgid "Active"
-msgstr ""
+msgstr "活动"
 
 #: speechtotext/plugins/whisper/whisperspeechtotextclient.cpp:30
 #, kde-format
@@ -159,122 +158,119 @@ msgstr "Whisper"
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:100
 #, kde-format
 msgid "The whisper backend stopped unexpectedly."
-msgstr ""
+msgstr "Whisper 后端程序已意外停止。"
 
 #: speechtotext/plugins/whisper/whisperspeechtotextdevice.cpp:232
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:29
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:104
 #, kde-format
 msgid "Whisper is not installed. Missing: %1"
-msgstr ""
+msgstr "Whisper 没有安装。缺失：%1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextcheckjob.cpp:26
 #, kde-format
 msgid "Whisper is not usable. Please reinstall it."
-msgstr ""
+msgstr "Whisper 不可用。请重新安装它。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:117
 #, kde-format
 msgid "Downloading the %1 model…"
-msgstr ""
+msgstr "正在下载 %1 模型…"
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:120
 #, kde-format
 msgid "The %1 model is already downloaded."
-msgstr ""
+msgstr "%1 已经下载。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:122
 #, kde-format
 msgid "The %1 model is downloaded."
-msgstr ""
+msgstr "%1 模型已下载。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextdownloadmodeljob.cpp:125
 #, kde-format
 msgid "Unable to download the %1 model: %2"
-msgstr ""
+msgstr "无法下载 %1 模型：%2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:56
 #, kde-format
 msgid "Unable to start %1"
-msgstr ""
+msgstr "无法启动 %1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstalljob.cpp:76
 #, kde-format
 msgid "Unable to install module. Exit code: %1"
-msgstr ""
+msgstr "无法安装模块。退出代码：%1"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallmessagewidget.cpp:20
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgctxt "@action"
 msgid "Install"
-msgstr "已安装"
+msgstr "安装"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythondialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Install Whisper Package"
-msgstr ""
+msgstr "安装 Whisper 软件包"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:29
-#, fuzzy, kde-format
-#| msgid "Download"
+#, kde-format
 msgctxt "@action:button"
 msgid "Download Model"
-msgstr "下载"
+msgstr "下载模型"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:52
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Model used for dictation:"
-msgstr ""
+msgstr "用于听写的模型："
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:98
 #, kde-format
 msgid "Nothing to install."
-msgstr ""
+msgstr "没有可安装的软件包。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:105
 #, kde-format
 msgid "Creating the python virtual environment…"
-msgstr ""
+msgstr "正在创建 Python 虚拟环境…"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:108
 #, kde-format
 msgid "Python virtual environment created."
-msgstr ""
+msgstr "Python 虚拟环境已创建。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:112
 #, kde-format
 msgid "Unable to create the python virtual environment."
-msgstr ""
+msgstr "无法创建 Python 虚拟环境。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:130
 #, kde-format
 msgid "Installing modules in %1: %2"
-msgstr ""
+msgstr "正在安装 %1 中的模块：%2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:135
 #, kde-format
 msgid "Installation done."
-msgstr ""
+msgstr "安装完成。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Installed"
+#, kde-format
 msgid "Installation failed."
-msgstr "已安装"
+msgstr "安装失败。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:161
 #, kde-format
 msgctxt "@info:progress <downloaded> of <size of the model>"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1，共 %2"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:171
 #, kde-format
 msgid "Unable to download the %1 model."
-msgstr ""
+msgstr "无法下载 %1 模型。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextinstallpythonwidget.cpp:187
 #, kde-format
@@ -282,6 +278,8 @@ msgid ""
 "The %1 model is not on disk: it is downloaded the first time it is used, "
 "which makes that dictation a long one. The Download Model button does it now."
 msgstr ""
+"%1 模型不在磁盘上：首次使用时会下载，因此第一次听写可能会比较耗时。点击“下载"
+"模型”可以立即下载。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:30
 #, kde-format
@@ -289,37 +287,37 @@ msgctxt ""
 "@item:inlistbox <model name> (<size on disk>), the model is already "
 "downloaded"
 msgid "%1 (%2, downloaded)"
-msgstr ""
+msgstr "%1 (%2，已下载)"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:34
 #, kde-format
 msgctxt "@item:inlistbox <model name> (<size on disk>)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Transcribes every language whisper knows."
-msgstr ""
+msgstr "转录 Whisper 支持的的每一种语言。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Transcribes english only, but about twice as fast."
-msgstr ""
+msgstr "仅转录英文，但速度大约快一倍。"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Takes %1 on disk, downloaded the first time it is used."
-msgstr ""
+msgstr "占用 %1 磁盘空间，首次使用时下载"
 
 #: speechtotext/whisperinstall/whisperspeechtotextmodelcombobox.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Used when no model was chosen."
-msgstr ""
+msgstr "没有选择模型时使用。"
 
 #: speechtotext/widgets/speechtotextconfiguredialog.cpp:20
 #, kde-format
@@ -330,12 +328,12 @@ msgstr "配置语音到文本功能"
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:52
 #, kde-format
 msgid "Test:"
-msgstr ""
+msgstr "测试："
 
 #: speechtotext/widgets/speechtotextconfigurewidget.cpp:109
 #, kde-format
 msgid "Whisper installation is broken. Please reinstall it."
-msgstr ""
+msgstr "系统安装的 Whisper 已损坏。请重新安装。"
 
 #: speechtotext/widgets/speechtotextenginecomboboxwidget.cpp:28
 #, kde-format
@@ -358,8 +356,3 @@ msgstr "输入："
 #, kde-format
 msgid "Default"
 msgstr "默认"
-
-#, fuzzy
-#~| msgid "Language"
-#~ msgid "Language:"
-#~ msgstr "语言"

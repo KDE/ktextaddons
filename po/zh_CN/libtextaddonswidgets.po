@@ -295,21 +295,3 @@ msgstr "<h1>版本更新历史</h1>"
 #, kde-format
 msgid "All Versions"
 msgstr "所有版本"
-
-#~ msgid "What's new in %2. %1"
-#~ msgstr "%2. %1 的新功能"
-
-#~ msgid "Important changes since last version:"
-#~ msgstr "自上一版本以来的重要变更："
-
-#~ msgid "Some of the new features in this release include:"
-#~ msgstr "此版本新增的部分特性："
-
-#~ msgid "Some bug fixing:"
-#~ msgstr "修复的部分程序缺陷："
-
-#~ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-#~ msgstr "<h1><i> 版本 %1 </i></h1><hr/><br>"
-
-#~ msgid "..."
-#~ msgstr "..."

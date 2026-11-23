@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-21 18:03+0000\n"
-"PO-Revision-Date: 2026-11-19 22:32+0100\n"
+"POT-Creation-Date: 2026-11-22 20:46+0000\n"
+"PO-Revision-Date: 2026-11-22 12:04+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -54,6 +54,38 @@ msgstr "Стандартен IO"
 msgctxt "@item:inlistbox"
 msgid "Streamable HTTP"
 msgstr "HTTP с поточно предаване"
+
+#: core/server/mcpprotocolserverconfirmationtool.cpp:104
+#, kde-format
+msgid "Too many confirmations are pending"
+msgstr ""
+
+#: core/server/mcpprotocolserverconfirmationtool.cpp:117
+#, kde-format
+msgid "MCP tool asks confirmation"
+msgstr ""
+
+#: core/server/mcpprotocolserverconfirmationtool.cpp:118
+#, kde-format
+msgid ""
+"Run \"%1\"?\n"
+"%2"
+msgstr ""
+
+#: core/server/mcpprotocolserverconfirmationtool.cpp:131
+#, kde-format
+msgid "Action refused by user"
+msgstr ""
+
+#: core/server/mcpprotocolserverconfirmationtool.cpp:135
+#, kde-format
+msgid "Accept"
+msgstr ""
+
+#: core/server/mcpprotocolserverconfirmationtool.cpp:146
+#, kde-format
+msgid "Reject"
+msgstr ""
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:128
 #, kde-format
@@ -623,16 +655,18 @@ msgstr "Експортиране на сървър"
 msgid "An error occurred when exporting server."
 msgstr "Възникна грешка при експортиране на сървъра."
 
-#: widgets/configure/mcpserverconfigurationmodulewidget.cpp:17
+#: widgets/configure/mcpserverconfigurationmodulewidget.cpp:27
 #, kde-format
 msgid "Enabled"
-msgstr ""
+msgstr "Активиран"
 
-#: widgets/configure/mcpserverconfigurationmodulewidget.cpp:18
+#: widgets/configure/mcpserverconfigurationmodulewidget.cpp:28
 #, kde-format
 msgctxt "@option:check"
 msgid "Ask confirmation before running tools which modify data"
 msgstr ""
+"Изискване на потвърждение преди изпълнение на инструменти, които променят "
+"данни"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
