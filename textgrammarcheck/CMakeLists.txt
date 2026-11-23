@@ -31,13 +31,6 @@ install(
     NAMESPACE KF6::
 )
 
-install(
-    FILES
-        ${CMAKE_CURRENT_BINARY_DIR}/textgrammarcheck_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextGrammarCheck/
-    COMPONENT Devel
-)
-
 add_library(KF6TextGrammarCheck)
 add_library(KF6::TextGrammarCheck ALIAS KF6TextGrammarCheck)
 ecm_qt_declare_logging_category(KF6TextGrammarCheck HEADER textgrammarcheck_debug.h

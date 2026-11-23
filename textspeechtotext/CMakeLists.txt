@@ -24,13 +24,6 @@ install(
     NAMESPACE KF6::
 )
 
-install(
-    FILES
-        ${CMAKE_CURRENT_BINARY_DIR}/textspeechtotext_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextSpeechToText/
-    COMPONENT Devel
-)
-
 add_library(KF6TextSpeechToText)
 add_library(KF6::TextSpeechToText ALIAS KF6TextSpeechToText)
 ecm_qt_declare_logging_category(KF6TextSpeechToText HEADER textspeechtotext_debug.h

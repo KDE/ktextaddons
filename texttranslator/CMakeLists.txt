@@ -24,13 +24,6 @@ install(
     NAMESPACE KF6::
 )
 
-install(
-    FILES
-        ${CMAKE_CURRENT_BINARY_DIR}/texttranslator_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextTranslator/
-    COMPONENT Devel
-)
-
 if(BUILD_DESIGNERPLUGIN)
     add_subdirectory(designer)
 endif()
