@@ -63,7 +63,7 @@ void McpServerListView::slotExportMcpServer(const QModelIndex &index)
 void McpServerListView::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
-    auto addServerAction = new QAction(i18nc("@action", "Add Server…"), &menu);
+    auto addServerAction = new QAction(QIcon::fromTheme(u"document-new"_s), i18nc("@action", "Add Server…"), &menu);
     menu.addAction(addServerAction);
     connect(addServerAction, &QAction::triggered, this, &McpServerListView::addServer);
 
