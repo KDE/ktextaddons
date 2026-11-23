@@ -59,7 +59,7 @@ McpServerWidget::McpServerWidget(TextAutoGenerateTextMcpProtocolCore::McpServerM
     hboxLayout->addWidget(addMcpServerButton);
     auto addServerMenu = new QMenu(addMcpServerButton);
 
-    auto addServerAction = addServerMenu->addAction(i18nc("@action", "Add Server…"));
+    auto addServerAction = addServerMenu->addAction(QIcon::fromTheme(u"document-new"_s), i18nc("@action", "Add Server…"));
 
     addServerMenu->addSeparator();
     auto addFromRegistryAction = addServerMenu->addAction(QIcon::fromTheme(u"network-server"_s), i18nc("@action", "From MCP Registry…"));
