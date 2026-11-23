@@ -142,6 +142,13 @@ install(
     COMPONENT Devel
 )
 
+install(
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/textautogeneratetextmcpprotocolwidgets_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextAutoGenerateTextMcpProtocolWidgets
+    COMPONENT Devel
+)
+
 target_link_libraries(
     KF6TextAutoGenerateTextMcpProtocolWidgets
     PUBLIC
