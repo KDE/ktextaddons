@@ -1,10 +1,22 @@
 [Global]
 IconName=network-server
 Name=MCP Protocol
+Name[ca]=Protocol MCP
+Name[es]=Protocolo MCP
+Name[pt_BR]=Protocolo MCP
 Comment=Model Context Protocol servers
+Comment[ca]=Servidors «Model Context Protocol»
+Comment[es]=Servidores del protocolo de contexto de modelos
+Comment[pt_BR]=Servidores de Protocolo de Contexto de Modelo
 
 [Event/Mcp-Tool-Confirmation]
 Name=MCP Tool Asks Confirmation
+Name[ca]=L'eina MCP demana confirmació
+Name[es]=La herramienta MCP solicita confirmación
+Name[pt_BR]=Ferramenta MCP solicita confirmação
 Comment=An MCP client wants to run a tool which modifies data
+Comment[ca]=Un client MCP vol executar una eina que modifica dades
+Comment[es]=Un cliente MCP quiere ejecutar una herramienta que modifica datos
+Comment[pt_BR]=Um cliente MCP deseja executar uma ferramenta que modifica dados
 Action=Popup
 Urgency=Normal
