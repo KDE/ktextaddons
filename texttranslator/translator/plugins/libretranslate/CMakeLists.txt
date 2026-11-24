@@ -2,7 +2,12 @@
 # SPDX-FileCopyrightText: none
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/)
-add_library(translator_libretranslate MODULE)
+add_library(
+    translator_libretranslate
+    MODULE
+    libretranslatelanguagejob.h
+    libretranslatelanguagejob.cpp
+)
 
 ecm_qt_declare_logging_category(translator_libretranslate_debug_SRCS
     HEADER libretranslatetranslator_debug.h
