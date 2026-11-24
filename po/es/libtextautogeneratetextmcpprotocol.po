@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-22 20:46+0000\n"
-"PO-Revision-Date: 2026-11-17 19:48+0100\n"
+"PO-Revision-Date: 2026-11-23 18:09+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -60,12 +60,12 @@ msgstr "HTTP transmisible"
 #: core/server/mcpprotocolserverconfirmationtool.cpp:104
 #, kde-format
 msgid "Too many confirmations are pending"
-msgstr ""
+msgstr "Hay demasiadas confirmaciones pendientes"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:117
 #, kde-format
 msgid "MCP tool asks confirmation"
-msgstr ""
+msgstr "La herramienta MCP solicita confirmación"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:118
 #, kde-format
@@ -73,21 +73,23 @@ msgid ""
 "Run \"%1\"?\n"
 "%2"
 msgstr ""
+"¿Ejecutar «%1»?\n"
+"%2"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:131
 #, kde-format
 msgid "Action refused by user"
-msgstr ""
+msgstr "Acción rechazada por el usuario"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:135
 #, kde-format
 msgid "Accept"
-msgstr ""
+msgstr "Aceptar"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:146
 #, kde-format
 msgid "Reject"
-msgstr ""
+msgstr "Rechazar"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:128
 #, kde-format
@@ -662,13 +664,14 @@ msgstr "Ha ocurrido un error al exportar el servidor."
 #: widgets/configure/mcpserverconfigurationmodulewidget.cpp:27
 #, kde-format
 msgid "Enabled"
-msgstr ""
+msgstr "Activado"
 
 #: widgets/configure/mcpserverconfigurationmodulewidget.cpp:28
 #, kde-format
 msgctxt "@option:check"
 msgid "Ask confirmation before running tools which modify data"
 msgstr ""
+"Solicitar confirmación antes de ejecutar herramientas que modifican datos"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format
