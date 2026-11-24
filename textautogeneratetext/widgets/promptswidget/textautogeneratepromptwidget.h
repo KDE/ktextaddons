@@ -24,7 +24,11 @@ public:
     void setPrompt(const TextAutoGenerateText::TextAutoGeneratePrompt &prompt);
     [[nodiscard]] TextAutoGenerateText::TextAutoGeneratePrompt prompt() const;
 
+Q_SIGNALS:
+    void enableOkButton(bool enabled);
+
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotNameChanged(const QString &name);
     TextAutoGenerateText::TextAutoGeneratePrompt mCurrentPrompt;
     QLineEdit *const mName;
     KIconButton *const mIconName;

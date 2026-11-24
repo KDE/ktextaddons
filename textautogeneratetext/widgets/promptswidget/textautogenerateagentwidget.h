@@ -23,7 +23,11 @@ public:
     void setAgent(const TextAutoGenerateText::TextAutoGenerateAgent &agent);
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateAgent agent() const;
 
+Q_SIGNALS:
+    void enableOkButton(bool enabled);
+
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotNameChanged(const QString &name);
     TextAutoGenerateText::TextAutoGenerateAgent mCurrentAgent;
     QLineEdit *const mName;
     KIconButton *const mIconName;

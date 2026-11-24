@@ -10,6 +10,7 @@
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
+#include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(TextAutoGenerateSkillWidgetTest)
 using namespace Qt::Literals::StringLiterals;
@@ -59,6 +60,23 @@ void TextAutoGenerateSkillWidgetTest::shouldKeepIdentifier()
     QCOMPARE(result.identifier(), "foo"_ba);
     QCOMPARE(result.name(), u"newname"_s);
     QCOMPARE(result.iconName(), u"document-edit"_s);
+}
+
+void TextAutoGenerateSkillWidgetTest::shouldEmitEnableOkButton()
+{
+    TextAutoGenerateText::TextAutoGenerateSkillWidget w;
+    QSignalSpy enableOkButtonSpy(&w, &TextAutoGenerateText::TextAutoGenerateSkillWidget::enableOkButton);
+    auto mName = w.findChild<QLineEdit *>(u"mName"_s);
+    QVERIFY(mName);
+
+    mName->setText(u"foo"_s);
+    QCOMPARE(enableOkButtonSpy.count(), 1);
+    QVERIFY(enableOkButtonSpy.at(0).at(0).toBool());
+
+    // Whitespace only is not a name.
+    mName->setText(u"   "_s);
+    QCOMPARE(enableOkButtonSpy.count(), 2);
+    QVERIFY(!enableOkButtonSpy.at(1).at(0).toBool());
 }
 
 #include "moc_textautogenerateskillwidgettest.cpp"

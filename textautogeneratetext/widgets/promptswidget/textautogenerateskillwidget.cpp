@@ -27,6 +27,7 @@ TextAutoGenerateSkillWidget::TextAutoGenerateSkillWidget(QWidget *parent)
 
     mName->setObjectName(u"mName"_s);
     KLineEditEventHandler::catchReturnKey(mName);
+    connect(mName, &QLineEdit::textChanged, this, &TextAutoGenerateSkillWidget::slotNameChanged);
 
     mIconName->setObjectName(u"mIconName"_s);
     mDescription->setObjectName(u"mDescription"_s);
@@ -40,6 +41,11 @@ TextAutoGenerateSkillWidget::TextAutoGenerateSkillWidget(QWidget *parent)
 }
 
 TextAutoGenerateSkillWidget::~TextAutoGenerateSkillWidget() = default;
+
+void TextAutoGenerateSkillWidget::slotNameChanged(const QString &name)
+{
+    Q_EMIT enableOkButton(!name.trimmed().isEmpty());
+}
 
 void TextAutoGenerateSkillWidget::setSkill(const TextAutoGenerateText::TextAutoGenerateSkill &skill)
 {

@@ -8,6 +8,7 @@
 #include "textautogenerateskillwidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
+#include <QPushButton>
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 using namespace Qt::Literals::StringLiterals;
@@ -32,6 +33,12 @@ TextAutoGenerateSkillDialog::TextAutoGenerateSkillDialog(QWidget *parent)
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGenerateSkillDialog::reject);
     connect(button, &QDialogButtonBox::accepted, this, &TextAutoGenerateSkillDialog::accept);
+
+    auto okButton = button->button(QDialogButtonBox::Ok);
+    okButton->setObjectName(u"okButton"_s);
+    okButton->setEnabled(false);
+    connect(mSkillWidget, &TextAutoGenerateSkillWidget::enableOkButton, okButton, &QPushButton::setEnabled);
+
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextAutoGenerateSkillDialogGroupName), QSize(400, 300));
 }
 

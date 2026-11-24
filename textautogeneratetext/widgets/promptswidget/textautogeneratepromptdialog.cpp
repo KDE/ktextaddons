@@ -8,6 +8,7 @@
 #include "textautogeneratepromptwidget.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
+#include <QPushButton>
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 using namespace Qt::Literals::StringLiterals;
@@ -32,6 +33,12 @@ TextAutoGeneratePromptDialog::TextAutoGeneratePromptDialog(QWidget *parent)
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &TextAutoGeneratePromptDialog::reject);
     connect(button, &QDialogButtonBox::accepted, this, &TextAutoGeneratePromptDialog::accept);
+
+    auto okButton = button->button(QDialogButtonBox::Ok);
+    okButton->setObjectName(u"okButton"_s);
+    okButton->setEnabled(false);
+    connect(mPromptWidget, &TextAutoGeneratePromptWidget::enableOkButton, okButton, &QPushButton::setEnabled);
+
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myTextAutoGeneratePromptDialogGroupName), QSize(400, 300));
 }
 

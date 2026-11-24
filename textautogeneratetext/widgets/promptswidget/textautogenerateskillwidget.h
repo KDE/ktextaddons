@@ -23,7 +23,11 @@ public:
     void setSkill(const TextAutoGenerateText::TextAutoGenerateSkill &skill);
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateSkill skill() const;
 
+Q_SIGNALS:
+    void enableOkButton(bool enabled);
+
 private:
+    TEXTAUTOGENERATETEXT_NO_EXPORT void slotNameChanged(const QString &name);
     TextAutoGenerateText::TextAutoGenerateSkill mCurrentSkill;
     QLineEdit *const mName;
     KIconButton *const mIconName;

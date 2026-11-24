@@ -26,6 +26,7 @@ TextAutoGenerateAgentWidget::TextAutoGenerateAgentWidget(QWidget *parent)
 
     mName->setObjectName(u"mName"_s);
     KLineEditEventHandler::catchReturnKey(mName);
+    connect(mName, &QLineEdit::textChanged, this, &TextAutoGenerateAgentWidget::slotNameChanged);
 
     mIconName->setObjectName(u"mIconName"_s);
     mDescription->setObjectName(u"mDescription"_s);
@@ -36,6 +37,11 @@ TextAutoGenerateAgentWidget::TextAutoGenerateAgentWidget(QWidget *parent)
 }
 
 TextAutoGenerateAgentWidget::~TextAutoGenerateAgentWidget() = default;
+
+void TextAutoGenerateAgentWidget::slotNameChanged(const QString &name)
+{
+    Q_EMIT enableOkButton(!name.trimmed().isEmpty());
+}
 
 void TextAutoGenerateAgentWidget::setAgent(const TextAutoGenerateText::TextAutoGenerateAgent &agent)
 {
