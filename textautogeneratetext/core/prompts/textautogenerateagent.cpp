@@ -54,6 +54,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateAgent &t
     d.space() << "name:" << t.name();
     d.space() << "description:" << t.description();
     d.space() << "identifier:" << t.identifier();
+    d.space() << "iconName:" << t.iconName();
     return d;
 }
 
@@ -62,16 +63,28 @@ void TextAutoGenerateAgent::save(KConfigGroup &grp) const
     grp.writeEntry("name", name());
     grp.writeEntry("description", description());
     grp.writeEntry("identifier", identifier());
+    grp.writeEntry("iconName", iconName());
 }
 
 void TextAutoGenerateAgent::load(const KConfigGroup &grp)
 {
     setName(grp.readEntry("name"));
     setDescription(grp.readEntry("description"));
+    setIconName(grp.readEntry("iconName"));
     setIdentifier(grp.readEntry("identifier", QString::fromLatin1(mIdentifier)).toLatin1());
 }
 
 void TextAutoGenerateAgent::createUniqueIdentifier()
 {
     mIdentifier = QUuid::createUuid().toByteArray(QUuid::Id128);
+}
+
+QString TextAutoGenerateAgent::iconName() const
+{
+    return mIconName;
+}
+
+void TextAutoGenerateAgent::setIconName(const QString &newIconName)
+{
+    mIconName = newIconName;
 }

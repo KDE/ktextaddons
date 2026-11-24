@@ -81,10 +81,22 @@ public:
      */
     void createUniqueIdentifier();
 
+    /*!
+     * \brief iconName
+     * \return
+     */
+    [[nodiscard]] QString iconName() const;
+    /*!
+     * \brief setIconName
+     * \param newIconName
+     */
+    void setIconName(const QString &newIconName);
+
 private:
     QString mName;
     QString mDescription;
     QByteArray mIdentifier;
+    QString mIconName;
 };
 }
 Q_DECLARE_TYPEINFO(TextAutoGenerateText::TextAutoGenerateAgent, Q_RELOCATABLE_TYPE);
