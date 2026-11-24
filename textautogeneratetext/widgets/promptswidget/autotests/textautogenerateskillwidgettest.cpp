@@ -6,6 +6,7 @@
 
 #include "textautogenerateskillwidgettest.h"
 #include "widgets/promptswidget/textautogenerateskillwidget.h"
+#include <KIconButton>
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
@@ -28,6 +29,10 @@ void TextAutoGenerateSkillWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mName);
     QVERIFY(mName->text().isEmpty());
 
+    auto mIconName = w.findChild<KIconButton *>(u"mIconName"_s);
+    QVERIFY(mIconName);
+    QVERIFY(mIconName->icon().isEmpty());
+
     auto mDescription = w.findChild<QLineEdit *>(u"mDescription"_s);
     QVERIFY(mDescription);
     QVERIFY(mDescription->text().isEmpty());
@@ -43,6 +48,7 @@ void TextAutoGenerateSkillWidgetTest::shouldKeepIdentifier()
     TextAutoGenerateText::TextAutoGenerateSkill skill;
     skill.setIdentifier("foo"_ba);
     skill.setName(u"bla"_s);
+    skill.setIconName(u"document-edit"_s);
     skill.setDescription(u"description"_s);
     skill.setInstructions(u"instructions"_s);
     w.setSkill(skill);
@@ -52,6 +58,7 @@ void TextAutoGenerateSkillWidgetTest::shouldKeepIdentifier()
     const TextAutoGenerateText::TextAutoGenerateSkill result = w.skill();
     QCOMPARE(result.identifier(), "foo"_ba);
     QCOMPARE(result.name(), u"newname"_s);
+    QCOMPARE(result.iconName(), u"document-edit"_s);
 }
 
 #include "moc_textautogenerateskillwidgettest.cpp"

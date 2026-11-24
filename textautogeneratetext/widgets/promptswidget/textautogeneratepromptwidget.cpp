@@ -6,6 +6,7 @@
 
 #include "textautogeneratepromptwidget.h"
 #include "widgets/promptswidget/textautogeneratepromptcategorycombobox.h"
+#include <KIconButton>
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -16,6 +17,7 @@ using namespace TextAutoGenerateText;
 TextAutoGeneratePromptWidget::TextAutoGeneratePromptWidget(QWidget *parent)
     : QWidget{parent}
     , mName(new QLineEdit(this))
+    , mIconName(new KIconButton(this))
     , mCommandCompletion(new QLineEdit(this))
     , mDescription(new QPlainTextEdit(this))
     , mPrompt(new QPlainTextEdit(this))
@@ -28,6 +30,8 @@ TextAutoGeneratePromptWidget::TextAutoGeneratePromptWidget(QWidget *parent)
     mName->setObjectName(u"mName"_s);
     KLineEditEventHandler::catchReturnKey(mName);
 
+    mIconName->setObjectName(u"mIconName"_s);
+
     mCommandCompletion->setObjectName(u"mCommandCompletion"_s);
     KLineEditEventHandler::catchReturnKey(mCommandCompletion);
 
@@ -37,6 +41,7 @@ TextAutoGeneratePromptWidget::TextAutoGeneratePromptWidget(QWidget *parent)
     mPrompt->setObjectName(u"mPrompt"_s);
 
     mainLayout->addRow(i18n("Name:"), mName);
+    mainLayout->addRow(i18n("Icon:"), mIconName);
     mainLayout->addRow(i18n("Category:"), mCategory);
     mainLayout->addRow(i18n("Description:"), mDescription);
     mainLayout->addRow(i18n("Prompt:"), mPrompt);
@@ -49,6 +54,7 @@ void TextAutoGeneratePromptWidget::setPrompt(const TextAutoGenerateText::TextAut
 {
     mCurrentPrompt = prompt;
     mName->setText(prompt.name());
+    mIconName->setIcon(prompt.iconName());
     mDescription->setPlainText(prompt.description());
     mPrompt->setPlainText(prompt.text());
     mCategory->setCategory(prompt.category());
@@ -64,6 +70,7 @@ TextAutoGenerateText::TextAutoGeneratePrompt TextAutoGeneratePromptWidget::promp
     prompt.setDescription(mDescription->toPlainText());
     prompt.setText(mPrompt->toPlainText());
     prompt.setName(mName->text());
+    prompt.setIconName(mIconName->icon());
     prompt.setCategory(mCategory->category());
     prompt.setCommandCompletion(mCommandCompletion->text());
     return prompt;

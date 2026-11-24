@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateagentwidget.h"
+#include <KIconButton>
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -16,6 +17,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateAgentWidget::TextAutoGenerateAgentWidget(QWidget *parent)
     : QWidget{parent}
     , mName(new QLineEdit(this))
+    , mIconName(new KIconButton(this))
     , mDescription(new QPlainTextEdit(this))
 {
     auto mainLayout = new QFormLayout(this);
@@ -24,9 +26,12 @@ TextAutoGenerateAgentWidget::TextAutoGenerateAgentWidget(QWidget *parent)
 
     mName->setObjectName(u"mName"_s);
     KLineEditEventHandler::catchReturnKey(mName);
+
+    mIconName->setObjectName(u"mIconName"_s);
     mDescription->setObjectName(u"mDescription"_s);
 
     mainLayout->addRow(i18n("Name:"), mName);
+    mainLayout->addRow(i18n("Icon:"), mIconName);
     mainLayout->addRow(i18n("Description:"), mDescription);
 }
 
@@ -36,6 +41,7 @@ void TextAutoGenerateAgentWidget::setAgent(const TextAutoGenerateText::TextAutoG
 {
     mCurrentAgent = agent;
     mName->setText(agent.name());
+    mIconName->setIcon(agent.iconName());
     mDescription->setPlainText(agent.description());
 }
 
@@ -47,6 +53,7 @@ TextAutoGenerateText::TextAutoGenerateAgent TextAutoGenerateAgentWidget::agent()
     }
     agent.setDescription(mDescription->toPlainText());
     agent.setName(mName->text());
+    agent.setIconName(mIconName->icon());
     return agent;
 }
 

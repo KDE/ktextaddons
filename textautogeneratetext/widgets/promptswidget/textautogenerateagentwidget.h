@@ -8,6 +8,7 @@
 #include "core/prompts/textautogenerateagent.h"
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+class KIconButton;
 class QLineEdit;
 class QPlainTextEdit;
 namespace TextAutoGenerateText
@@ -25,6 +26,7 @@ public:
 private:
     TextAutoGenerateText::TextAutoGenerateAgent mCurrentAgent;
     QLineEdit *const mName;
+    KIconButton *const mIconName;
     QPlainTextEdit *const mDescription;
 };
 }

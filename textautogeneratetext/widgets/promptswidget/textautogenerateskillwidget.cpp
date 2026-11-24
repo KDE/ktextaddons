@@ -5,6 +5,7 @@
 */
 
 #include "textautogenerateskillwidget.h"
+#include <KIconButton>
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QFormLayout>
@@ -16,6 +17,7 @@ using namespace TextAutoGenerateText;
 TextAutoGenerateSkillWidget::TextAutoGenerateSkillWidget(QWidget *parent)
     : QWidget{parent}
     , mName(new QLineEdit(this))
+    , mIconName(new KIconButton(this))
     , mDescription(new QLineEdit(this))
     , mInstructions(new QPlainTextEdit(this))
 {
@@ -25,11 +27,14 @@ TextAutoGenerateSkillWidget::TextAutoGenerateSkillWidget(QWidget *parent)
 
     mName->setObjectName(u"mName"_s);
     KLineEditEventHandler::catchReturnKey(mName);
+
+    mIconName->setObjectName(u"mIconName"_s);
     mDescription->setObjectName(u"mDescription"_s);
     KLineEditEventHandler::catchReturnKey(mDescription);
     mInstructions->setObjectName(u"mInstructions"_s);
 
     mainLayout->addRow(i18n("Name:"), mName);
+    mainLayout->addRow(i18n("Icon:"), mIconName);
     mainLayout->addRow(i18n("Description:"), mDescription);
     mainLayout->addRow(i18n("Instructions:"), mInstructions);
 }
@@ -40,6 +45,7 @@ void TextAutoGenerateSkillWidget::setSkill(const TextAutoGenerateText::TextAutoG
 {
     mCurrentSkill = skill;
     mName->setText(skill.name());
+    mIconName->setIcon(skill.iconName());
     mDescription->setText(skill.description());
     mInstructions->setPlainText(skill.instructions());
 }
@@ -53,6 +59,7 @@ TextAutoGenerateText::TextAutoGenerateSkill TextAutoGenerateSkillWidget::skill()
     skill.setDescription(mDescription->text());
     skill.setInstructions(mInstructions->toPlainText());
     skill.setName(mName->text());
+    skill.setIconName(mIconName->icon());
     return skill;
 }
 

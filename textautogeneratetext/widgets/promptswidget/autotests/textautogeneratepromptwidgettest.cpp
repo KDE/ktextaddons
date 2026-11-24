@@ -6,6 +6,7 @@
 
 #include "textautogeneratepromptwidgettest.h"
 #include "widgets/promptswidget/textautogeneratepromptwidget.h"
+#include <KIconButton>
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
@@ -29,6 +30,10 @@ void TextAutoGeneratePromptWidgetTest::shouldHaveDefaultValues()
     auto mName = w.findChild<QLineEdit *>(u"mName"_s);
     QVERIFY(mName);
     QVERIFY(mName->text().isEmpty());
+
+    auto mIconName = w.findChild<KIconButton *>(u"mIconName"_s);
+    QVERIFY(mIconName);
+    QVERIFY(mIconName->icon().isEmpty());
 
     auto mDescription = w.findChild<QPlainTextEdit *>(u"mDescription"_s);
     QVERIFY(mDescription);

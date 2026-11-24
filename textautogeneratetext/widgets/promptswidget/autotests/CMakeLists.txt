@@ -5,7 +5,7 @@ macro(add_textautogenerate_widgets_prompts_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_name}.h TEST_NAME ${_name}
         NAME_PREFIX "textautogenerate-widget-prompts-"
-        LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateText
+        LINK_LIBRARIES Qt::Test KF6::TextAutoGenerateText KF6::IconWidgets
     )
 endmacro()
 

@@ -8,6 +8,7 @@
 #include "core/prompts/textautogenerateprompt.h"
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
+class KIconButton;
 class QLineEdit;
 class QPlainTextEdit;
 namespace TextAutoGenerateText
@@ -26,6 +27,7 @@ public:
 private:
     TextAutoGenerateText::TextAutoGeneratePrompt mCurrentPrompt;
     QLineEdit *const mName;
+    KIconButton *const mIconName;
     QLineEdit *const mCommandCompletion;
     QPlainTextEdit *const mDescription;
     QPlainTextEdit *const mPrompt;

@@ -6,6 +6,7 @@
 
 #include "textautogenerateagentwidgettest.h"
 #include "widgets/promptswidget/textautogenerateagentwidget.h"
+#include <KIconButton>
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QPlainTextEdit>
@@ -28,6 +29,10 @@ void TextAutoGenerateAgentWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mName);
     QVERIFY(mName->text().isEmpty());
 
+    auto mIconName = w.findChild<KIconButton *>(u"mIconName"_s);
+    QVERIFY(mIconName);
+    QVERIFY(mIconName->icon().isEmpty());
+
     auto mDescription = w.findChild<QPlainTextEdit *>(u"mDescription"_s);
     QVERIFY(mDescription);
     QVERIFY(mDescription->toPlainText().isEmpty());
@@ -39,6 +44,7 @@ void TextAutoGenerateAgentWidgetTest::shouldKeepIdentifier()
     TextAutoGenerateText::TextAutoGenerateAgent agent;
     agent.setIdentifier("foo"_ba);
     agent.setName(u"bla"_s);
+    agent.setIconName(u"document-edit"_s);
     agent.setDescription(u"description"_s);
     w.setAgent(agent);
     QCOMPARE(w.agent(), agent);
@@ -47,6 +53,7 @@ void TextAutoGenerateAgentWidgetTest::shouldKeepIdentifier()
     const TextAutoGenerateText::TextAutoGenerateAgent result = w.agent();
     QCOMPARE(result.identifier(), "foo"_ba);
     QCOMPARE(result.name(), u"newname"_s);
+    QCOMPARE(result.iconName(), u"document-edit"_s);
 }
 
 #include "moc_textautogenerateagentwidgettest.cpp"
