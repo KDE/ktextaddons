@@ -8,6 +8,7 @@
 #include "core/textautogenerateagentprompskillmanager.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogenerateselectagentlistwidget.h"
+#include <QLineEdit>
 #include <QVBoxLayout>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -16,15 +17,20 @@ TextAutoGenerateSelectAgentWidget::TextAutoGenerateSelectAgentWidget(TextAutoGen
     , mListWidget(new TextAutoGenerateSelectAgentListWidget(this))
     , mAgentModel(new TextAutoGenerateTextAgentModel(this))
     , mManager(manager)
+    , mSearchLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
+    mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
+    mSearchLineEdit->setClearButtonEnabled(true);
+    mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search agent…"));
     mAgentModel->setObjectName(u"mAgentModel"_s);
 
     mListWidget->setModel(mAgentModel);
     mListWidget->setObjectName(u"mListWidget"_s);
+    mainLayout->addWidget(mSearchLineEdit);
     mainLayout->addWidget(mListWidget);
 
     connect(mListWidget, &TextAutoGenerateSelectAgentListWidget::addAgent, this, &TextAutoGenerateSelectAgentWidget::slotAddAgent);

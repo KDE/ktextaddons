@@ -6,6 +6,7 @@
 #include "textautogeneratesearchpromptwidget.h"
 #include "textautogeneratepromptcategorycombobox.h"
 #include <KLineEditEventHandler>
+#include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QLineEdit>
 
@@ -23,6 +24,8 @@ TextAutoGenerateSearchPromptWidget::TextAutoGenerateSearchPromptWidget(QWidget *
     mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
     mPromptComboBox->setObjectName(u"mPromptComboBox"_s);
     KLineEditEventHandler::catchReturnKey(mSearchLineEdit);
+    mSearchLineEdit->setClearButtonEnabled(true);
+    mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search prompt…"));
 
     mainLayout->addWidget(mSearchLineEdit);
     mainLayout->addWidget(mPromptComboBox);
