@@ -20,6 +20,7 @@ void TextAutoGenerateSkillTest::shouldHaveDefaultValues()
     QVERIFY(skill.name().isEmpty());
     QVERIFY(skill.instructions().isEmpty());
     QVERIFY(skill.identifier().isEmpty());
+    QVERIFY(skill.iconName().isEmpty());
     QVERIFY(!skill.isValid());
 }
 

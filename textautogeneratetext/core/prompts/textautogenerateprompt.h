@@ -135,6 +135,17 @@ public:
      */
     void createUniqueIdentifier();
 
+    /*!
+     * \brief iconName
+     * \return
+     */
+    [[nodiscard]] QString iconName() const;
+    /*!
+     * \brief setIconName
+     * \param newIconName
+     */
+    void setIconName(const QString &newIconName);
+
 private:
     Category mCategory = Category::Unknown;
     QString mName;
@@ -142,6 +153,7 @@ private:
     QString mDescription;
     QString mCommandCompletion;
     QByteArray mIdentifier;
+    QString mIconName;
     bool mEnabled = true;
 };
 }

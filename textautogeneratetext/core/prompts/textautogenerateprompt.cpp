@@ -117,6 +117,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGeneratePrompt &
     d.space() << "enabled:" << t.enabled();
     d.space() << "category:" << t.category();
     d.space() << "identifier:" << t.identifier();
+    d.space() << "iconName:" << t.iconName();
     d.space() << "command:" << t.commandCompletion();
     return d;
 }
@@ -130,6 +131,7 @@ void TextAutoGeneratePrompt::save(KConfigGroup &grp) const
     grp.writeEntry("enabled", enabled());
     grp.writeEntry("category", TextAutoGeneratePrompt::convertCategoryToString(category()));
     grp.writeEntry("identifier", identifier());
+    grp.writeEntry("iconName", iconName());
 }
 
 void TextAutoGeneratePrompt::load(const KConfigGroup &grp)
@@ -138,6 +140,7 @@ void TextAutoGeneratePrompt::load(const KConfigGroup &grp)
     setName(grp.readEntry("name"));
     setDescription(grp.readEntry("description"));
     setEnabled(grp.readEntry("enabled", true));
+    setIconName(grp.readEntry("iconName"));
     setIdentifier(grp.readEntry("identifier", QString::fromLatin1(mIdentifier)).toLatin1());
     setCommandCompletion(grp.readEntry("command"));
     setCategory(TextAutoGeneratePrompt::convertStringToCategory(grp.readEntry("category")));
@@ -156,6 +159,16 @@ void TextAutoGeneratePrompt::setCommandCompletion(const QString &newCommandCompl
 void TextAutoGeneratePrompt::createUniqueIdentifier()
 {
     mIdentifier = QUuid::createUuid().toByteArray(QUuid::Id128);
+}
+
+QString TextAutoGeneratePrompt::iconName() const
+{
+    return mIconName;
+}
+
+void TextAutoGeneratePrompt::setIconName(const QString &newIconName)
+{
+    mIconName = newIconName;
 }
 
 #include "moc_textautogenerateprompt.cpp"

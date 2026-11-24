@@ -65,6 +65,7 @@ QDebug operator<<(QDebug d, const TextAutoGenerateText::TextAutoGenerateSkill &t
     d.space() << "description:" << t.description();
     d.space() << "instructions:" << t.instructions();
     d.space() << "identifier:" << t.identifier();
+    d.space() << "iconName:" << t.iconName();
     return d;
 }
 
@@ -74,12 +75,14 @@ void TextAutoGenerateSkill::save(KConfigGroup &grp) const
     grp.writeEntry("description", description());
     grp.writeEntry("instructions", instructions());
     grp.writeEntry("identifier", identifier());
+    grp.writeEntry("iconName", iconName());
 }
 
 void TextAutoGenerateSkill::load(const KConfigGroup &grp)
 {
     setName(grp.readEntry("name"));
     setDescription(grp.readEntry("description"));
+    setIconName(grp.readEntry("iconName"));
     setIdentifier(grp.readEntry("identifier", QString::fromLatin1(mIdentifier)).toLatin1());
     setInstructions(grp.readEntry("instructions"));
 }
@@ -87,4 +90,14 @@ void TextAutoGenerateSkill::load(const KConfigGroup &grp)
 void TextAutoGenerateSkill::createUniqueIdentifier()
 {
     mIdentifier = QUuid::createUuid().toByteArray(QUuid::Id128);
+}
+
+QString TextAutoGenerateSkill::iconName() const
+{
+    return mIconName;
+}
+
+void TextAutoGenerateSkill::setIconName(const QString &newIconName)
+{
+    mIconName = newIconName;
 }
