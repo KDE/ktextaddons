@@ -97,7 +97,7 @@ void LibreTranslateEnginePlugin::parseTranslation(QNetworkReply *reply)
 
 void LibreTranslateEnginePlugin::loadSettings()
 {
-    KConfigGroup myGroup(KSharedConfig::openConfig(), LibreTranslateEngineUtil::groupName());
+    const KConfigGroup myGroup(KSharedConfig::openConfig(), LibreTranslateEngineUtil::groupName());
     mServerUrl = myGroup.readEntry(LibreTranslateEngineUtil::serverUrlKey(), LibreTranslateEngineUtil::defaultServerUrl());
     // Fallback
     if (mServerUrl.isEmpty()) {
