@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-15 03:14+0000\n"
-"PO-Revision-Date: 2026-09-22 22:34+0200\n"
+"PO-Revision-Date: 2026-11-24 22:23+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -247,7 +247,7 @@ msgstr ""
 #, kde-format
 msgid "No new version found. Build can be found <a href=\"%1\">here</a>."
 msgstr ""
-"Няма нова версия. Изграждането може да бъде намерено <a href=\"%1\">тук</a>."
+"Няма нова версия. Изграждането може да бъде намерено <a href=„%1“>тук</a>."
 
 #: verifynewversion/verifynewversionwidget.cpp:31
 #, kde-format
@@ -310,7 +310,7 @@ msgstr "Какво ново в %1. %2"
 #: whatsnewng/whatsnewngutils.cpp:25
 #, kde-format
 msgid "<b><i><a href=\"%1\">Release Note</a></i></b>"
-msgstr "<b><i><a href=\"%1\">Бележки към версията</a></i></b>"
+msgstr "<b><i><a href=„%1“>Бележки към версията</a></i></b>"
 
 #: whatsnewng/whatsnewngutils.cpp:33
 #, kde-format
