@@ -14,6 +14,7 @@
 class QObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+class McpProtocolTool;
 class McpProtocolSettings;
 /*!
  * \namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolServerUtils
@@ -72,5 +73,10 @@ loadSettings(const KSharedConfig::Ptr &config, QObject *context, std::function<v
  * \param settings
  */
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void saveSettings(const KSharedConfig::Ptr &config, const McpProtocolSettings &settings);
+
+/*!
+ *
+ */
+void printTools(const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolTool> &lst);
 }
 }

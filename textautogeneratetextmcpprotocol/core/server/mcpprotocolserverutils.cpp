@@ -8,7 +8,9 @@
 #include "common/mcpprotocolkeychainutils.h"
 #include "common/mcpprotocolsettings.h"
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KSharedConfig>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTool>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
@@ -98,4 +100,17 @@ void McpProtocolServerUtils::saveSettings(const KSharedConfig::Ptr &config, cons
 void McpProtocolServerUtils::saveSettings(const McpProtocolSettings &settings)
 {
     saveSettings(KSharedConfig::openConfig(McpProtocolCommonUtils::serverConfigFileName()), settings);
+}
+
+void McpProtocolServerUtils::printTools(const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolTool> &lst)
+{
+    qsizetype nameWidth = 0;
+    for (const auto &tool : lst) {
+        nameWidth = std::max(nameWidth, tool.name().size());
+    }
+    QTextStream out(stdout);
+    out << i18n("List of Tools:") << '\n';
+    for (const auto &tool : lst) {
+        out << "   " << tool.name().leftJustified(nameWidth) << "   " << tool.description().value_or(tool.title().value_or({})) << '\n';
+    }
 }
