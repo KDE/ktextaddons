@@ -5,6 +5,7 @@
 */
 
 #include "libretranslatelanguagejob.h"
+#include "libretranslatetranslator_debug.h"
 
 LibreTranslateLanguageJob::LibreTranslateLanguageJob(QObject *parent)
     : QObject{parent}
@@ -24,3 +25,5 @@ void LibreTranslateLanguageJob::start()
     // TODO
     deleteLater();
 }
+
+#include "moc_libretranslatelanguagejob.cpp"
