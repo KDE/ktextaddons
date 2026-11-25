@@ -1,22 +1,38 @@
 [Global]
 IconName=network-server
 Name=MCP Protocol
+Name[bg]=Протокол MCP
 Name[ca]=Protocol MCP
 Name[es]=Protocolo MCP
+Name[he]=פרוטוקול MCP
+Name[nl]=MCP-protocol
 Name[pt_BR]=Protocolo MCP
+Name[tr]=MCP Protokolü
 Comment=Model Context Protocol servers
+Comment[bg]=Сървъри на Model Context Protocol
 Comment[ca]=Servidors «Model Context Protocol»
 Comment[es]=Servidores del protocolo de contexto de modelos
+Comment[he]=שרתי פרוטוקול הקשר מודל (MCP)
+Comment[nl]=Model Context Protocol servers
 Comment[pt_BR]=Servidores de Protocolo de Contexto de Modelo
+Comment[tr]=Model Bağlam Protokolü sunucuları
 
 [Event/Mcp-Tool-Confirmation]
 Name=MCP Tool Asks Confirmation
+Name[bg]=Инструмент на MCP изисква потвърждаване
 Name[ca]=L'eina MCP demana confirmació
 Name[es]=La herramienta MCP solicita confirmación
+Name[he]=כלי MCP מבקש אישור
+Name[nl]=MCP-hulpmiddel vraagt ​​om bevestiging
 Name[pt_BR]=Ferramenta MCP solicita confirmação
+Name[tr]=MCP Aracı Onay İstiyor
 Comment=An MCP client wants to run a tool which modifies data
+Comment[bg]=Клиент на MCP иска да изпълни инструмент, който променя данни
 Comment[ca]=Un client MCP vol executar una eina que modifica dades
 Comment[es]=Un cliente MCP quiere ejecutar una herramienta que modifica datos
+Comment[he]=לקוח MCP רוצה להריץ כלי שמשנה נתונים
+Comment[nl]=Een MCP-client wil een hulpmiddel uitvoeren die gegevens wijzigt.
 Comment[pt_BR]=Um cliente MCP deseja executar uma ferramenta que modifica dados
+Comment[tr]=Bir MCP istemcisi, veride değişiklik yapan bir aracı çalıştırmak istiyor
 Action=Popup
 Urgency=Normal
