@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2022-2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 set(translator_libretranslate_LIB qt6keychain)
-ecm_add_test(libretranslateengineclienttest.cpp libretranslateengineclienttest.h ../libretranslateengineclient.cpp ../libretranslateengineplugin.cpp
+ecm_add_test(libretranslateengineclienttest.cpp libretranslateengineclienttest.h ../libretranslateengineclient.cpp ../libretranslateengineplugin.cpp ../libretranslatetextjob.cpp
     ../libretranslateengineconfiguredialog.cpp ../libretranslateengineconfigurewidget.cpp ../libretranslateengineutil.h ../libretranslateengineutil.cpp
     ${translator_libretranslate_debug_SRCS}
     TEST_NAME libretranslateengineclienttest

@@ -24,7 +24,6 @@ public:
 
 private:
     void loadSettings();
-    void parseTranslation(QNetworkReply *reply);
     void slotApiKeyRead(QKeychain::Job *baseJob);
     void translateText();
     QString mServerUrl;

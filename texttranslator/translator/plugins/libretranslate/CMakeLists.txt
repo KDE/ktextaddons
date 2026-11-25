@@ -29,6 +29,8 @@ target_sources(
         libretranslateengineutil.cpp
         libretranslatelanguagejob.h
         libretranslatelanguagejob.cpp
+        libretranslatetextjob.h
+        libretranslatetextjob.cpp
 )
 
 target_link_libraries(
