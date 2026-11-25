@@ -1,0 +1,57 @@
+/*
+  SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+
+  SPDX-License-Identifier: GPL-2.0-or-later
+*/
+#pragma once
+#include "textautogeneratetextmcpprotocolcore_export.h"
+#include <QByteArray>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolSubscriptionsListenRequestParams>
+#include <TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils>
+class QDebug;
+class QJsonObject;
+namespace TextAutoGenerateTextMcpProtocolCore
+{
+class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolSubscriptionsListenRequest
+{
+public:
+    /*!
+     */
+    McpProtocolSubscriptionsListenRequest();
+
+    /*!
+     */
+    [[nodiscard]] static QByteArray type();
+
+    /*!
+     */
+    [[nodiscard]] bool operator==(const McpProtocolSubscriptionsListenRequest &other) const;
+
+    /*!
+     */
+    [[nodiscard]] static McpProtocolSubscriptionsListenRequest fromJson(const QJsonObject &obj);
+    /*!
+     */
+    [[nodiscard]] static QJsonObject toJson(const McpProtocolSubscriptionsListenRequest &subscriptionsListenRequest);
+
+    /*!
+     */
+    [[nodiscard]] McpProtocolUtils::RequestId id() const;
+    /*!
+     */
+    void setId(const McpProtocolUtils::RequestId &newId);
+
+    /*!
+     */
+    [[nodiscard]] McpProtocolSubscriptionsListenRequestParams params() const;
+    /*!
+     */
+    void setParams(McpProtocolSubscriptionsListenRequestParams newParams);
+
+private:
+    McpProtocolUtils::RequestId mId;
+    McpProtocolSubscriptionsListenRequestParams mParams;
+};
+}
+Q_DECLARE_TYPEINFO(TextAutoGenerateTextMcpProtocolCore::McpProtocolSubscriptionsListenRequest, Q_RELOCATABLE_TYPE);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QDebug operator<<(QDebug d, const TextAutoGenerateTextMcpProtocolCore::McpProtocolSubscriptionsListenRequest &t);

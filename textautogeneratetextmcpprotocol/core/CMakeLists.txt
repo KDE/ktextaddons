@@ -251,6 +251,20 @@ target_sources(
         impl/mcpprotocolinitializeresult.h
         impl/mcpprotocoldiscoverresult.cpp
         impl/mcpprotocoldiscoverresult.h
+        impl/mcpprotocolsubscriptionfilter.cpp
+        impl/mcpprotocolsubscriptionfilter.h
+        impl/mcpprotocolsubscriptionslistenrequestparams.cpp
+        impl/mcpprotocolsubscriptionslistenrequestparams.h
+        impl/mcpprotocolsubscriptionslistenrequest.cpp
+        impl/mcpprotocolsubscriptionslistenrequest.h
+        impl/mcpprotocolsubscriptionslistenresultmetaobject.cpp
+        impl/mcpprotocolsubscriptionslistenresultmetaobject.h
+        impl/mcpprotocolsubscriptionslistenresult.cpp
+        impl/mcpprotocolsubscriptionslistenresult.h
+        impl/mcpprotocolsubscriptionsacknowledgednotificationparams.cpp
+        impl/mcpprotocolsubscriptionsacknowledgednotificationparams.h
+        impl/mcpprotocolsubscriptionsacknowledgednotification.cpp
+        impl/mcpprotocolsubscriptionsacknowledgednotification.h
         impl/mcpprotocolservercapabilities.h
         impl/mcpprotocolservercapabilities.cpp
         impl/mcpprotocolelicitrequestformparams.h
@@ -497,6 +511,13 @@ ecm_generate_headers(TextAutoGenerateTextMcpProtocol_Camelcasesmcpprotocolimpl_H
     McpProtocolJSONRPCResultResponse
     McpProtocolInitializeResult
     McpProtocolDiscoverResult
+    McpProtocolSubscriptionFilter
+    McpProtocolSubscriptionsListenRequestParams
+    McpProtocolSubscriptionsListenRequest
+    McpProtocolSubscriptionsListenResultMetaObject
+    McpProtocolSubscriptionsListenResult
+    McpProtocolSubscriptionsAcknowledgedNotificationParams
+    McpProtocolSubscriptionsAcknowledgedNotification
     McpProtocolServerCapabilities
     McpProtocolElicitRequestFormParams
     McpProtocolElicitRequestURLParams
