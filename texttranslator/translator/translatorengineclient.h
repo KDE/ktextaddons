@@ -85,6 +85,11 @@ Q_SIGNALS:
     /*!
      */
     void configureChanged();
+    /*!
+     * Emitted when the list of supported languages changed (e.g. loaded asynchronously from a server).
+     * Callers must reload supportedFromLanguages() and supportedToLanguages().
+     */
+    void languagesChanged();
 
 protected:
     /*!

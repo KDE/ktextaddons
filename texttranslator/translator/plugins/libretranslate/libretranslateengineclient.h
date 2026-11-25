@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include <QStringList>
 #include <TextTranslator/TranslatorEngineClient>
 namespace QKeychain
 {
@@ -30,9 +31,21 @@ public:
     [[nodiscard]] bool showConfigureDialog(QWidget *parentWidget) override;
     [[nodiscard]] TextTranslator::TranslatorEngineClient::EngineType engineType() const override;
 
+    void generateToListFromCurrentToLanguage(const QString &languageCode) override;
+
 protected:
     [[nodiscard]] bool isSupported(TextTranslator::TranslatorUtil::Language lang) const override;
 
 private:
     void slotPasswordWritten(QKeychain::Job *baseJob);
+    void slotLanguagesLoaded(const QString &serverUrl, const QMap<QString, QStringList> &languages);
+    void resetLanguages();
+    void loadLanguages();
+    void updateToLanguageList();
+    [[nodiscard]] static QString serverUrl();
+    // Source language code -> target language codes, as returned by the server
+    QMap<QString, QStringList> mLanguageTargets;
+    QMap<TextTranslator::TranslatorUtil::Language, QString> mToLanguages;
+    QString mLanguageCode;
+    bool mLanguagesRequested = false;
 };

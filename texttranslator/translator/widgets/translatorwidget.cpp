@@ -333,6 +333,9 @@ void TranslatorWidget::switchEngine()
         delete d->translatorPlugin;
         d->translatorPlugin = nullptr;
     }
+    if (d->translatorClient) {
+        disconnect(d->translatorClient, &TextTranslator::TranslatorEngineClient::languagesChanged, this, &TranslatorWidget::slotLanguagesChanged);
+    }
     d->translatorClient = TextTranslator::TranslatorEngineLoader::self()->createTranslatorClient(d->engineName);
     if (!d->translatorClient) {
         if (const QString fallBackEngineName = TextTranslator::TranslatorEngineLoader::self()->fallbackFirstEngine(); !fallBackEngineName.isEmpty()) {
@@ -343,10 +346,34 @@ void TranslatorWidget::switchEngine()
         d->translatorPlugin = d->translatorClient->createTranslator();
         connect(d->translatorPlugin, &TextTranslator::TranslatorEnginePlugin::translateDone, this, &TranslatorWidget::slotTranslateDone);
         connect(d->translatorPlugin, &TextTranslator::TranslatorEnginePlugin::translateFailed, this, &TranslatorWidget::slotTranslateFailed);
+        connect(d->translatorClient, &TextTranslator::TranslatorEngineClient::languagesChanged, this, &TranslatorWidget::slotLanguagesChanged);
         d->initLanguage();
         d->engineNameLabel->setText(u"[%1]"_s.arg(d->translatorClient->translatedName()));
         d->invert->setVisible(d->translatorClient->hasInvertSupport());
         updatePlaceHolder();
+    }
+}
+
+void TranslatorWidget::slotLanguagesChanged()
+{
+    const QString from = d->fromCombobox->currentData().toString();
+    const QString to = d->toCombobox->currentData().toString();
+
+    // Refill without triggering a translation
+    const QSignalBlocker blockerFrom(d->fromCombobox);
+    const QSignalBlocker blockerTo(d->toCombobox);
+    d->initLanguage();
+    int indexFrom = d->fromCombobox->findData(from);
+    if (indexFrom == -1) {
+        indexFrom = 0;
+    }
+    d->fromCombobox->setCurrentIndex(indexFrom);
+    const QString lang = d->fromCombobox->itemData(indexFrom).toString();
+    d->invert->setEnabled(lang != "auto"_L1);
+    d->translatorClient->generateToListFromCurrentToLanguage(lang);
+    d->fillToCombobox(lang);
+    if (const int indexTo = d->toCombobox->findData(to); indexTo != -1) {
+        d->toCombobox->setCurrentIndex(indexTo);
     }
 }
 

@@ -103,6 +103,7 @@ private:
     TEXTTRANSLATOR_NO_EXPORT void switchEngine();
     TEXTTRANSLATOR_NO_EXPORT void loadEngineSettings();
     TEXTTRANSLATOR_NO_EXPORT void updatePlaceHolder();
+    TEXTTRANSLATOR_NO_EXPORT void slotLanguagesChanged();
     class TranslatorWidgetPrivate;
     std::unique_ptr<TranslatorWidgetPrivate> const d;
 };

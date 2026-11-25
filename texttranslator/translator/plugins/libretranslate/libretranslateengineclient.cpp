@@ -9,18 +9,36 @@
 #include "libretranslateengineconfiguredialog.h"
 #include "libretranslateengineplugin.h"
 #include "libretranslateengineutil.h"
+#include "libretranslatelanguagesjob.h"
 #include "libretranslatetranslator_debug.h"
 #include "translator/misc/translatorutil.h"
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <QPointer>
+#include <optional>
 #include <qt6keychain/keychain.h>
 
 using namespace Qt::Literals::StringLiterals;
+namespace
+{
+// Don't use TranslatorUtil::stringToLanguage(): it falls back to English for unknown codes
+std::optional<TextTranslator::TranslatorUtil::Language> codeToLanguage(const QString &code)
+{
+    for (int i = TextTranslator::TranslatorUtil::Language::automatic + 1; i <= TextTranslator::TranslatorUtil::Language::lastLanguage; ++i) {
+        if (const auto language = static_cast<TextTranslator::TranslatorUtil::Language>(i); TextTranslator::TranslatorUtil::languageCode(language) == code) {
+            return language;
+        }
+    }
+    return std::nullopt;
+}
+}
+
 LibreTranslateEngineClient::LibreTranslateEngineClient(QObject *parent)
     : TextTranslator::TranslatorEngineClient{parent}
 {
+    // Server url can change: reload the languages list
+    connect(this, &LibreTranslateEngineClient::configureChanged, this, &LibreTranslateEngineClient::resetLanguages);
 }
 
 LibreTranslateEngineClient::~LibreTranslateEngineClient() = default;
@@ -44,6 +62,8 @@ TextTranslator::TranslatorEnginePlugin *LibreTranslateEngineClient::createTransl
 
 QMap<TextTranslator::TranslatorUtil::Language, QString> LibreTranslateEngineClient::supportedFromLanguages()
 {
+    loadLanguages();
+    // Use the static list until the server answered
     if (mFromLanguages.isEmpty()) {
         mFromLanguages = fillLanguages();
     }
@@ -52,7 +72,93 @@ QMap<TextTranslator::TranslatorUtil::Language, QString> LibreTranslateEngineClie
 
 QMap<TextTranslator::TranslatorUtil::Language, QString> LibreTranslateEngineClient::supportedToLanguages()
 {
-    return supportedFromLanguages();
+    if (mLanguageTargets.isEmpty()) {
+        return supportedFromLanguages();
+    }
+    return mToLanguages;
+}
+
+void LibreTranslateEngineClient::generateToListFromCurrentToLanguage(const QString &languageCode)
+{
+    mLanguageCode = languageCode;
+    loadLanguages();
+    updateToLanguageList();
+}
+
+QString LibreTranslateEngineClient::serverUrl()
+{
+    const KConfigGroup myGroup(KSharedConfig::openConfig(), LibreTranslateEngineUtil::groupName());
+    QString url = myGroup.readEntry(LibreTranslateEngineUtil::serverUrlKey(), LibreTranslateEngineUtil::defaultServerUrl());
+    if (url.isEmpty()) {
+        url = LibreTranslateEngineUtil::defaultServerUrl();
+    }
+    return LibreTranslateEngineUtil::adaptUrl(url);
+}
+
+void LibreTranslateEngineClient::loadLanguages()
+{
+    if (mLanguagesRequested) {
+        return;
+    }
+    mLanguagesRequested = true;
+    const QString url = serverUrl();
+    auto job = new LibreTranslateLanguagesJob(this);
+    job->setInfo({.serverUrl = url});
+    connect(job, &LibreTranslateLanguagesJob::getLanguagesDone, this, [this, url](const QMap<QString, QStringList> &languages) {
+        slotLanguagesLoaded(url, languages);
+    });
+    connect(job, &LibreTranslateLanguagesJob::getLanguagesFailed, this, [](const QString &errorStr) {
+        qCWarning(TRANSLATOR_LIBRETRANSLATE_LOG) << "Impossible to get languages list:" << errorStr;
+    });
+    job->start();
+}
+
+void LibreTranslateEngineClient::slotLanguagesLoaded(const QString &url, const QMap<QString, QStringList> &languages)
+{
+    if (url != serverUrl()) {
+        // Server changed while the job was running
+        return;
+    }
+    mLanguageTargets = languages;
+    mFromLanguages.clear();
+    const auto automatic = TextTranslator::TranslatorUtil::automatic;
+    mFromLanguages.insert(automatic, TextTranslator::TranslatorUtil::translatedLanguage(automatic));
+    for (const auto &[code, targets] : mLanguageTargets.asKeyValueRange()) {
+        if (const auto language = codeToLanguage(code); language.has_value()) {
+            mFromLanguages.insert(*language, TextTranslator::TranslatorUtil::translatedLanguage(*language));
+        }
+    }
+    updateToLanguageList();
+    Q_EMIT languagesChanged();
+}
+
+void LibreTranslateEngineClient::updateToLanguageList()
+{
+    mToLanguages.clear();
+    const auto addTargets = [this](const QStringList &targets) {
+        for (const QString &code : targets) {
+            if (const auto language = codeToLanguage(code); language.has_value()) {
+                mToLanguages.insert(*language, TextTranslator::TranslatorUtil::translatedLanguage(*language));
+            }
+        }
+    };
+    // "auto" or unknown source: offer every target supported by the server
+    if (const auto it = mLanguageTargets.constFind(mLanguageCode); it != mLanguageTargets.cend()) {
+        addTargets(*it);
+    } else {
+        for (const QStringList &targets : std::as_const(mLanguageTargets)) {
+            addTargets(targets);
+        }
+    }
+}
+
+void LibreTranslateEngineClient::resetLanguages()
+{
+    mLanguageTargets.clear();
+    mFromLanguages.clear();
+    mToLanguages.clear();
+    mLanguagesRequested = false;
+    Q_EMIT languagesChanged();
 }
 
 bool LibreTranslateEngineClient::hasConfigurationDialog() const
