@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2022-2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 set(translator_libretranslate_LIB qt6keychain)
-ecm_add_test(libretranslateengineclienttest.cpp libretranslateengineclienttest.h ../libretranslateengineclient.cpp ../libretranslateengineplugin.cpp ../libretranslatetextjob.cpp
+ecm_add_test(libretranslateengineclienttest.cpp libretranslateengineclienttest.h ../libretranslateengineclient.cpp ../libretranslateengineplugin.cpp ../libretranslatetextjob.cpp ../libretranslatelanguagesjob.cpp
     ../libretranslateengineconfiguredialog.cpp ../libretranslateengineconfigurewidget.cpp ../libretranslateengineutil.h ../libretranslateengineutil.cpp
     ${translator_libretranslate_debug_SRCS}
     TEST_NAME libretranslateengineclienttest
@@ -31,4 +31,13 @@ ecm_add_test(libretranslateengineutiltest.cpp libretranslateengineutiltest.h
     TEST_NAME libretranslateengineutiltest
 
     LINK_LIBRARIES KF6::TextAddonsWidgets KF6::WidgetsAddons Qt::Test Qt::Gui KF6::TextTranslator KF6::I18n
+)
+
+######
+ecm_add_test(libretranslatelanguagesjobtest.cpp libretranslatelanguagesjobtest.h
+    ../libretranslatelanguagesjob.cpp
+    ${translator_libretranslate_debug_SRCS}
+    TEST_NAME libretranslatelanguagesjobtest
+
+    LINK_LIBRARIES Qt::Test Qt::Network KF6::TextTranslator KF6::I18n
 )
