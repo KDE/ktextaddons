@@ -5,7 +5,7 @@
 */
 
 #pragma once
-
+#include <QNetworkReply>
 #include <QObject>
 
 class LibreTranslateLanguagesJob : public QObject
@@ -31,6 +31,7 @@ public:
 Q_SIGNALS:
     void getLanguagesFailed();
     void getLanguagesDone();
+    void networkError(QNetworkReply::NetworkError error);
 
 private:
     LibreTranslateLanguagesInfo mInfo;
