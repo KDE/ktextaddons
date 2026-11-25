@@ -879,7 +879,7 @@ void McpProtocolClientProtocolManager::initializeResponseReceived(const QJsonObj
 {
     if (const QJsonValue resultValue = obj.value("result"_L1); resultValue.isObject()) {
         const McpProtocolInitializeResult result = McpProtocolInitializeResult::fromJson(resultValue.toObject());
-        if (McpProtocolUtils::convertProtocolVersionFromString(result.protocolVersion()) == McpProtocolUtils::ProtocolVersion::Unknown) {
+        if (!McpProtocolUtils::isInitializeProtocolVersion(McpProtocolUtils::convertProtocolVersionFromString(result.protocolVersion()))) {
             qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Unsupported protocol version:" << result.protocolVersion();
             Q_EMIT error(i18n("Unsupported protocol version: %1", result.protocolVersion()));
             // Specification: client must disconnect

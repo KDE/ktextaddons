@@ -24,11 +24,11 @@ QJsonObject jsonRequest(const QString &method, int id, const QJsonObject &params
     return obj;
 }
 
-QJsonObject initializeRequest(int id)
+QJsonObject initializeRequest(int id, const QString &protocolVersion = u"2025-11-25"_s)
 {
     return jsonRequest(u"initialize"_s,
                        id,
-                       QJsonObject{{"protocolVersion"_L1, u"2025-11-25"_s},
+                       QJsonObject{{"protocolVersion"_L1, protocolVersion},
                                    {"capabilities"_L1, QJsonObject{}},
                                    {"clientInfo"_L1, QJsonObject{{"name"_L1, u"test"_s}, {"version"_L1, u"1"_s}}}});
 }
@@ -111,6 +111,34 @@ void McpServerStdioTest::shouldExchangeMessagesWithClient()
 
     client.stop();
     QTRY_COMPARE(finishedSpy.count(), 1);
+}
+
+void McpServerStdioTest::shouldNegotiateProtocolVersion()
+{
+    McpClientStdioPluginInterface client;
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings;
+    settings.setCommand(helperPath());
+    client.setSettings(settings);
+    QSignalSpy startedSpy(&client, &McpClientStdioPluginInterface::started);
+    QSignalSpy receivedSpy(&client, &McpClientStdioPluginInterface::received);
+    client.start();
+    QTRY_COMPARE(startedSpy.count(), 1);
+
+    // Supported version requested by client is kept
+    client.send(initializeRequest(1, u"2025-06-18"_s));
+    QTRY_COMPARE(receivedSpy.count(), 1);
+    QCOMPARE(receivedSpy.at(0).at(0).toJsonObject().value("result"_L1).toObject().value("protocolVersion"_L1).toString(), u"2025-06-18"_s);
+
+    // 2026-07-28 removed initialize: server must answer with the latest version using initialize
+    client.send(initializeRequest(2, u"2026-07-28"_s));
+    QTRY_COMPARE(receivedSpy.count(), 2);
+    QCOMPARE(receivedSpy.at(1).at(0).toJsonObject().value("result"_L1).toObject().value("protocolVersion"_L1).toString(), u"2025-11-25"_s);
+
+    // Unknown version
+    client.send(initializeRequest(3, u"kde"_s));
+    QTRY_COMPARE(receivedSpy.count(), 3);
+    QCOMPARE(receivedSpy.at(2).at(0).toJsonObject().value("result"_L1).toObject().value("protocolVersion"_L1).toString(), u"2025-11-25"_s);
+    client.stop();
 }
 
 void McpServerStdioTest::shouldExitWhenStdinIsClosed()

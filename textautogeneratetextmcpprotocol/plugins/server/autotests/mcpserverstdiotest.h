@@ -16,6 +16,7 @@ public:
 
 private Q_SLOTS:
     void shouldExchangeMessagesWithClient();
+    void shouldNegotiateProtocolVersion();
     void shouldExitWhenStdinIsClosed();
     void shouldIgnoreInvalidJson();
     void shouldReadMessageSplitInSeveralWrites();

@@ -179,6 +179,9 @@ void McpProtocolUtilsTest::shouldConvertProtocolVersionToString()
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(
                  TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_11_25),
              u"2025-11-25"_s);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionToString(
+                 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2026_07_28),
+             u"2026-07-28"_s);
 }
 
 void McpProtocolUtilsTest::shouldConvertProtocolVersionFromString()
@@ -191,10 +194,24 @@ void McpProtocolUtilsTest::shouldConvertProtocolVersionFromString()
              TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_06_18);
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(u"2025-11-25"_s),
              TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_11_25);
+    QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(u"2026-07-28"_s),
+             TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2026_07_28);
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(u"kde"_s),
              TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::Unknown);
     QCOMPARE(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFromString(QString()),
              TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::Unknown);
+}
+
+void McpProtocolUtilsTest::shouldNegotiateOnlyInitializeProtocolVersions()
+{
+    using TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion;
+    QVERIFY(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::isInitializeProtocolVersion(ProtocolVersion::V2024_11_05));
+    QVERIFY(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::isInitializeProtocolVersion(ProtocolVersion::V2025_03_26));
+    QVERIFY(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::isInitializeProtocolVersion(ProtocolVersion::V2025_06_18));
+    QVERIFY(TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::isInitializeProtocolVersion(ProtocolVersion::V2025_11_25));
+    // initialize was removed in 2026-07-28
+    QVERIFY(!TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::isInitializeProtocolVersion(ProtocolVersion::V2026_07_28));
+    QVERIFY(!TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::isInitializeProtocolVersion(ProtocolVersion::Unknown));
 }
 
 void McpProtocolUtilsTest::shouldOrderLoggingLevelBySeverity()

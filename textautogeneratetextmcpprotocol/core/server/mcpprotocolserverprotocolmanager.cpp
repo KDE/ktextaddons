@@ -601,7 +601,7 @@ void McpProtocolServerProtocolManager::initialize(const QJsonValue &id, const QJ
     // Use version of client when we support it
     const McpProtocolInitializeRequestParams initializeParams = McpProtocolInitializeRequestParams::fromJson(params);
     QString version = initializeParams.protocolVersion();
-    if (McpProtocolUtils::convertProtocolVersionFromString(version) == McpProtocolUtils::ProtocolVersion::Unknown) {
+    if (!McpProtocolUtils::isInitializeProtocolVersion(McpProtocolUtils::convertProtocolVersionFromString(version))) {
         version = McpProtocolUtils::convertProtocolVersionToString(McpProtocolUtils::ProtocolVersion::V2025_11_25);
     }
     // New client: previous one will never answer

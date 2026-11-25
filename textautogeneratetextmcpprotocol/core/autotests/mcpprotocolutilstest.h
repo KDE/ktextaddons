@@ -25,6 +25,7 @@ private Q_SLOTS:
     void shouldConvertCacheScopeFromString();
     void shouldConvertProtocolVersionToString();
     void shouldConvertProtocolVersionFromString();
+    void shouldNegotiateOnlyInitializeProtocolVersions();
     void shouldOrderLoggingLevelBySeverity();
     void shouldKeepLargeRequestId();
     void shouldNotConvertFractionalRequestIdToZero();

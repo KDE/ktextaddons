@@ -13,6 +13,8 @@
 #include "mcpprotocolcanceltaskresult.h"
 #include "mcpprotocolcompleterequest.h"
 #include "mcpprotocolcompleteresult.h"
+#include "mcpprotocoldiscoverrequest.h"
+#include "mcpprotocoldiscoverresult.h"
 #include "mcpprotocolelicitationcompletenotification.h"
 #include "mcpprotocolembeddedresource.h"
 #include "mcpprotocolgetpromptrequest.h"
@@ -52,6 +54,9 @@
 #include "mcpprotocolrootslistchangednotification.h"
 #include "mcpprotocolsetlevelrequest.h"
 #include "mcpprotocolsubscriberequest.h"
+#include "mcpprotocolsubscriptionsacknowledgednotification.h"
+#include "mcpprotocolsubscriptionslistenrequest.h"
+#include "mcpprotocolsubscriptionslistenresult.h"
 #include "mcpprotocoltaskstatusnotification.h"
 #include "mcpprotocoltextcontent.h"
 #include "mcpprotocoltextresourcecontents.h"
@@ -449,6 +454,10 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverResultFromJson(cons
         return {};
     }
     const QJsonObject obj = val.toObject();
+    // DiscoverResult carries "capabilities" too: test its own required field first
+    if (obj.contains("supportedVersions"_L1)) {
+        return McpProtocolDiscoverResult::fromJson(obj);
+    }
     if (obj.contains("capabilities"_L1)) {
         return McpProtocolInitializeResult::fromJson(obj);
     }
@@ -478,6 +487,9 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverResultFromJson(cons
     }
     if (obj.contains("completion"_L1)) {
         return McpProtocolCompleteResult::fromJson(obj);
+    }
+    if (obj.value("_meta"_L1).toObject().contains("io.modelcontextprotocol/subscriptionId"_L1)) {
+        return McpProtocolSubscriptionsListenResult::fromJson(obj);
     }
     // The remaining alternatives cannot be told apart by shape: GetTaskResult and
     // CancelTaskResult both carry the Task fields, and GetTaskPayloadResult is a bare
@@ -598,6 +610,10 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::clientRequestFromJson(con
         return ClientRequest(McpProtocolSetLevelRequest::fromJson(valObj));
     } else if (dispatchValue == QLatin1StringView(McpProtocolCompleteRequest::type())) {
         return ClientRequest(McpProtocolCompleteRequest::fromJson(valObj));
+    } else if (dispatchValue == QLatin1StringView(McpProtocolDiscoverRequest::type())) {
+        return ClientRequest(McpProtocolDiscoverRequest::fromJson(valObj));
+    } else if (dispatchValue == QLatin1StringView(McpProtocolSubscriptionsListenRequest::type())) {
+        return ClientRequest(McpProtocolSubscriptionsListenRequest::fromJson(valObj));
     }
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ClientRequest: unknown method \"" << dispatchValue << "\"";
     return {};
@@ -641,6 +657,8 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::serverNotificationFromJso
         return ServerNotification(McpProtocolLoggingMessageNotification::fromJson(valObj));
     } else if (dispatchValue == QLatin1StringView(McpProtocolElicitationCompleteNotification::type())) {
         return ServerNotification(McpProtocolElicitationCompleteNotification::fromJson(valObj));
+    } else if (dispatchValue == QLatin1StringView(McpProtocolSubscriptionsAcknowledgedNotification::type())) {
+        return ServerNotification(McpProtocolSubscriptionsAcknowledgedNotification::fromJson(valObj));
     }
 
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "Invalid ServerNotification: unknown method \"" << dispatchValue << "\"";
@@ -760,8 +778,26 @@ QString TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVe
         return u"2025-06-18"_s;
     case TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_11_25:
         return u"2025-11-25"_s;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2026_07_28:
+        return u"2026-07-28"_s;
     }
     return {};
+}
+
+bool TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::isInitializeProtocolVersion(
+    TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion version)
+{
+    switch (version) {
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2024_11_05:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_03_26:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_06_18:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_11_25:
+        return true;
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::Unknown:
+    case TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2026_07_28:
+        return false;
+    }
+    return false;
 }
 
 TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion
@@ -775,6 +811,8 @@ TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::convertProtocolVersionFro
         return TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_06_18;
     } else if (str == "2025-11-25"_L1) {
         return TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2025_11_25;
+    } else if (str == "2026-07-28"_L1) {
+        return TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::V2026_07_28;
     }
     qCWarning(TEXTAUTOGENERATEMCPPROTOCOLCORE_LOG) << "convertProtocolVersionFromString invalid: " << str;
     return TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ProtocolVersion::Unknown;

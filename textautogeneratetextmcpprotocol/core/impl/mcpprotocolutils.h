@@ -45,6 +45,8 @@ class McpProtocolCancelTaskRequest;
 class McpProtocolListTasksRequest;
 class McpProtocolSetLevelRequest;
 class McpProtocolCompleteRequest;
+class McpProtocolDiscoverRequest;
+class McpProtocolSubscriptionsListenRequest;
 
 class McpProtocolCancelledNotification;
 class McpProtocolInitializedNotification;
@@ -58,6 +60,7 @@ class McpProtocolPromptListChangedNotification;
 class McpProtocolToolListChangedNotification;
 class McpProtocolLoggingMessageNotification;
 class McpProtocolElicitationCompleteNotification;
+class McpProtocolSubscriptionsAcknowledgedNotification;
 
 class McpProtocolResult;
 class McpProtocolInitializeResult;
@@ -73,6 +76,8 @@ class McpProtocolGetTaskPayloadResult;
 class McpProtocolCancelTaskResult;
 class McpProtocolListTasksResult;
 class McpProtocolCompleteResult;
+class McpProtocolDiscoverResult;
+class McpProtocolSubscriptionsListenResult;
 class McpProtocolCreateMessageRequest;
 class McpProtocolListRootsRequest;
 class McpProtocolElicitRequest;
@@ -125,7 +130,9 @@ using ClientRequest = std::variant<McpProtocolInitializeRequest,
                                    McpProtocolCancelTaskRequest,
                                    McpProtocolListTasksRequest,
                                    McpProtocolSetLevelRequest,
-                                   McpProtocolCompleteRequest>;
+                                   McpProtocolCompleteRequest,
+                                   McpProtocolDiscoverRequest,
+                                   McpProtocolSubscriptionsListenRequest>;
 
 using ContentBlock =
     std::variant<McpProtocolTextContent, McpProtocolImageContent, McpProtocolAudioContent, McpProtocolResourceLink, McpProtocolEmbeddedResource>;
@@ -153,6 +160,7 @@ enum class ProtocolVersion : uint8_t {
     V2025_03_26,
     V2025_06_18,
     V2025_11_25,
+    V2026_07_28,
 };
 
 /*!
@@ -195,7 +203,8 @@ using ServerNotification = std::variant<McpProtocolCancelledNotification,
                                         McpProtocolToolListChangedNotification,
                                         McpProtocolTaskStatusNotification,
                                         McpProtocolLoggingMessageNotification,
-                                        McpProtocolElicitationCompleteNotification>;
+                                        McpProtocolElicitationCompleteNotification,
+                                        McpProtocolSubscriptionsAcknowledgedNotification>;
 
 using ClientNotification = std::variant<McpProtocolCancelledNotification,
                                         McpProtocolInitializedNotification,
@@ -216,7 +225,9 @@ using ServerResult = std::variant<McpProtocolResult,
                                   McpProtocolGetTaskPayloadResult,
                                   McpProtocolCancelTaskResult,
                                   McpProtocolListTasksResult,
-                                  McpProtocolCompleteResult>;
+                                  McpProtocolCompleteResult,
+                                  McpProtocolDiscoverResult,
+                                  McpProtocolSubscriptionsListenResult>;
 
 using ClientResult = std::variant<McpProtocolResult,
                                   McpProtocolGetTaskResult,
@@ -308,6 +319,11 @@ embeddedResourceResourceFromJson(const QJsonValue &val);
 /*!
  */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::ProtocolVersion convertProtocolVersionFromString(const QString &str);
+/*!
+ * Returns true when \a version can be negotiated with the initialize handshake.
+ * Protocol 2026-07-28 removed initialize: it uses server/discover instead.
+ */
+[[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT bool isInitializeProtocolVersion(McpProtocolUtils::ProtocolVersion version);
 
 /*!
  */
