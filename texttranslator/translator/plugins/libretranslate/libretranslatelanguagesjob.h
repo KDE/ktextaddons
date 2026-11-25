@@ -5,8 +5,10 @@
 */
 
 #pragma once
+#include <QMap>
 #include <QNetworkReply>
 #include <QObject>
+#include <QStringList>
 
 class LibreTranslateLanguagesJob : public QObject
 {
@@ -27,11 +29,15 @@ public:
     [[nodiscard]] LibreTranslateLanguagesInfo info() const;
     void setInfo(const LibreTranslateLanguagesInfo &newInfo);
 
+    // Lang -> supported language (to)
+    [[nodiscard]] static QMap<QString, QStringList> parseLanguages(const QByteArray &data);
+
 Q_SIGNALS:
-    void getLanguagesFailed();
-    void getLanguagesDone();
+    void getLanguagesFailed(const QString &errorStr);
+    void getLanguagesDone(const QMap<QString, QStringList> &languages);
     void networkError(QNetworkReply::NetworkError error);
 
 private:
+    void parseReply(QNetworkReply *reply);
     LibreTranslateLanguagesInfo mInfo;
 };
