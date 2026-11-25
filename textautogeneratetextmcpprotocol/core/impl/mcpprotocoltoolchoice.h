@@ -12,10 +12,17 @@ class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolToolChoice
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolToolChoice
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolToolChoice
 {
     Q_GADGET
 public:
+    /*!
+     */
     enum class Mode : uint8_t {
         Auto = 0,
         None,

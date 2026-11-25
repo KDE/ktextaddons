@@ -12,6 +12,11 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolSubscribeRequest
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolSubscribeRequest
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolSubscribeRequest
 {
 public:

@@ -14,6 +14,11 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolImageContent
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolImageContent
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolImageContent
 {
 public:

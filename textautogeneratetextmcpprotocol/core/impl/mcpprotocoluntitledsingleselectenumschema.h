@@ -14,6 +14,11 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolUntitledSingleSelectEnumSchema
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolUntitledSingleSelectEnumSchema
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUntitledSingleSelectEnumSchema
 {
 public:

@@ -13,29 +13,62 @@ namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolPluginInterface;
 class McpProtocolSettings;
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolClient
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolClient
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolClient : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit McpProtocolClient(TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType protocolType, QObject *parent = nullptr);
+    /*!
+     */
     ~McpProtocolClient() override;
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin::TransportType protocolType() const;
+    /*!
+     */
     void setSettings(const McpProtocolSettings &settings);
 
+    /*!
+     */
     void start();
+    /*!
+     */
     void stop();
 
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
 
+    /*!
+     */
     void notify(const QJsonObject &obj);
+    /*!
+     */
     void request(const QJsonObject &obj);
+    /*!
+     */
     void respond(const QJsonObject &obj);
 
 Q_SIGNALS:
+    /*!
+     */
     void started();
+    /*!
+     */
     void received(const QJsonObject &obj);
+    /*!
+     */
     void error(const QString &str);
+    /*!
+     */
     void finished();
 
 private:

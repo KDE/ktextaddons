@@ -11,6 +11,11 @@
 class QDebug;
 namespace TextAutoCorrectionCore
 {
+/*!
+ * \namespace TextAutoCorrectionCore::AutoCorrectionUtils
+ * \inmodule TextAutoCorrectionCore
+ * \inheaderfile TextAutoCorrectionCore/AutoCorrectionUtils
+ */
 namespace AutoCorrectionUtils
 {
 /*!

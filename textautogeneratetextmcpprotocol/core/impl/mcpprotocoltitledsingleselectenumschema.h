@@ -13,13 +13,29 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledSingleSelectEnumSchema
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolTitledSingleSelectEnumSchema
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolTitledSingleSelectEnumSchema
 {
 public:
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledSingleSelectEnumSchema::OneOfItem
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolTitledSingleSelectEnumSchema
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT OneOfItem {
+        /*!
+         */
         QString mConstValue;
+        /*!
+         */
         QString mTitle;
 
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolTitledSingleSelectEnumSchema::OneOfItem &other) const;
 
         /*!
@@ -33,9 +49,17 @@ public:
          */
         [[nodiscard]] bool isValid() const;
 
+        /*!
+         */
         [[nodiscard]] QString constValue() const;
+        /*!
+         */
         void setConstValue(const QString &newConstValue);
+        /*!
+         */
         [[nodiscard]] QString title() const;
+        /*!
+         */
         void setTitle(const QString &newTitle);
     };
     /*!

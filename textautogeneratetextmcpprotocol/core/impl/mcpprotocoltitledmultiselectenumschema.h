@@ -14,15 +14,38 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolTitledMultiSelectEnumSchema
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolTitledMultiSelectEnumSchema
 {
 public:
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema::Items
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolTitledMultiSelectEnumSchema
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Items {
+        /*!
+         * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem
+         * \inmodule TextAutoGenerateTextMcpProtocolCore
+         * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolTitledMultiSelectEnumSchema
+         */
         struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT AnyOfItem {
+            /*!
+             */
             QString mConstValue;
+            /*!
+             */
             QString mTitle;
+            /*!
+             */
             [[nodiscard]] bool operator==(const McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem &other) const;
 
+            /*!
+             */
             [[nodiscard]] static McpProtocolTitledMultiSelectEnumSchema::Items::AnyOfItem fromJson(const QJsonObject &obj);
             /*!
              */
@@ -32,12 +55,22 @@ public:
              */
             [[nodiscard]] bool isValid() const;
 
+            /*!
+             */
             [[nodiscard]] QString constValue() const;
+            /*!
+             */
             void setConstValue(const QString &newConstValue);
+            /*!
+             */
             [[nodiscard]] QString title() const;
+            /*!
+             */
             void setTitle(const QString &newTitle);
         };
 
+        /*!
+         */
         QList<AnyOfItem> mAnyOf;
 
         /*!
@@ -50,7 +83,11 @@ public:
          */
         [[nodiscard]] bool operator==(const McpProtocolTitledMultiSelectEnumSchema::Items &other) const;
 
+        /*!
+         */
         [[nodiscard]] QList<AnyOfItem> anyOf() const;
+        /*!
+         */
         void setAnyOf(QList<AnyOfItem> newAnyOf);
     };
     /*!

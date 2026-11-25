@@ -11,31 +11,58 @@
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolPluginInterface
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolPluginInterface
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolPluginInterface : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit McpProtocolPluginInterface(QObject *parent = nullptr);
+    /*!
+     */
     ~McpProtocolPluginInterface() override;
 
+    /*!
+     */
     virtual void start() = 0;
     /*!
      * Stop transport. finished() is emitted when it's stopped.
      */
     virtual void stop() = 0;
 
+    /*!
+     */
     void setSettings(const McpProtocolSettings &settings);
 
+    /*!
+     */
     [[nodiscard]] virtual bool canStart() const;
 
+    /*!
+     */
     virtual void send(const QJsonObject &obj) = 0;
 
+    /*!
+     */
     [[nodiscard]] McpProtocolSettings protocolSettings() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void started();
+    /*!
+     */
     void received(const QJsonObject &obj);
+    /*!
+     */
     void error(const QString &str);
+    /*!
+     */
     void finished();
 
 private:

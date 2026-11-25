@@ -10,8 +10,11 @@
 namespace TextSpeechToText
 {
 class SpeechToTextConfigureWidget;
-/**
- * @brief The SpeechToTextConfigureDialog class
+/*!
+ * \class TextSpeechToText::SpeechToTextConfigureDialog
+ * \inmodule TextSpeechToText
+ * \inheaderfile TextSpeechToText/SpeechToTextConfigureDialog
+ * \brief The SpeechToTextConfigureDialog class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextConfigureDialog : public QDialog

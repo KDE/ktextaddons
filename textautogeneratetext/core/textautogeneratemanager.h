@@ -50,6 +50,8 @@ class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum class Category : uint16_t {
         Unknown = 0,
         Tools = 1,
@@ -69,13 +71,28 @@ public:
     Q_DECLARE_FLAGS(Categories, Category)
     Q_FLAG(Categories)
 
+    /*!
+     * \class TextAutoGenerateText::TextAutoGenerateManager::AskMessageInfo
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateManager
+     */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT AskMessageInfo {
+        /*!
+         */
         QString message;
+        /*!
+         */
         QStringList attachments;
+        /*!
+         */
         QList<QByteArray> tools;
+        /*!
+         */
         [[nodiscard]] bool isValid() const;
     };
 
+    /*!
+     */
     enum class FileType : uint8_t {
         Unknown = 0,
         Attachment,
@@ -84,6 +101,8 @@ public:
     };
     Q_ENUM(FileType)
 
+    /*!
+     */
     enum class EmptyHistory : uint8_t {
         // Creates a new chat when there is no chat
         CreateChat,

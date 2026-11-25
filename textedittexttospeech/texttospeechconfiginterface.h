@@ -24,11 +24,26 @@ class TEXTEDITTEXTTOSPEECH_EXPORT TextToSpeechConfigInterface : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     * \class TextEditTextToSpeech::TextToSpeechConfigInterface::EngineSettings
+     * \inmodule TextEditTextToSpeech
+     * \inheaderfile TextEditTextToSpeech/TextToSpeechConfigInterface
+     */
     struct EngineSettings {
+        /*!
+         */
         int rate = 0;
+        /*!
+         */
         int pitch = 0;
+        /*!
+         */
         int volume = 0;
+        /*!
+         */
         QVoice voice;
+        /*!
+         */
         QString localeName;
     };
     /*!

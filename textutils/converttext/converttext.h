@@ -13,6 +13,11 @@ class QTextCursor;
 
 namespace TextUtils
 {
+/*!
+ * \namespace TextUtils::ConvertText
+ * \inmodule TextUtils
+ * \inheaderfile TextUtils/ConvertText
+ */
 namespace ConvertText
 {
 /*!

@@ -32,6 +32,8 @@ public:
     explicit RichTextBrowser(QWidget *parent = nullptr);
     /*! Destroys the browser. */
     ~RichTextBrowser() override;
+    /*!
+     */
     enum SupportFeature {
         None = 0,
         Search = 1,

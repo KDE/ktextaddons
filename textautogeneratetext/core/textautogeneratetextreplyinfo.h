@@ -12,6 +12,9 @@ class QJsonObject;
 namespace TextAutoGenerateText
 {
 /*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextReplyInfo
+ * \inmodule TextAutoGenerateTextCore
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextReplyInfo
  * \brief The TextAutoGenerateTextReplyInfo class represents information about a reply from an LLM.
  *
  * When an LLM generates a completion, the server generally will return some information about the completion, including the
@@ -19,6 +22,8 @@ namespace TextAutoGenerateText
  * If any one of these fields is not available, it will be set to its default value.
  */
 struct TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextReplyInfo {
+    /*!
+     */
     enum class ReplyType : uint8_t {
         Unknown = 0,
         Ollama = 1,
@@ -26,33 +31,55 @@ struct TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextReplyInfo {
     };
 
     //! The total time from when the request was received by the server to when the reply was returned.
+    /*!
+     */
     std::chrono::nanoseconds totalDuration = {};
 
     //! The time spent loading the model.
+    /*!
+     */
     std::chrono::nanoseconds loadDuration = {};
 
     //! The number of tokens in the prompt.
+    /*!
+     */
     quint64 promptEvalTokenCount = 0;
 
     //! The time spent evaluating the prompt.
+    /*!
+     */
     std::chrono::nanoseconds promptEvalDuration = {};
 
     //! The number of tokens in the reply.
+    /*!
+     */
     quint64 tokenCount = 0;
 
     //! The number of completion in the reply.
+    /*!
+     */
     quint64 completionTokens = 0;
 
     //! The number of prompt tokens in the reply.
+    /*!
+     */
     quint64 promptTokens = 0;
 
     //! The time spent generating the reply.
+    /*!
+     */
     std::chrono::nanoseconds duration = {};
 
+    /*!
+     */
     ReplyType replyType = ReplyType::Unknown;
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const TextAutoGenerateTextReplyInfo &other) const;
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
     /*!

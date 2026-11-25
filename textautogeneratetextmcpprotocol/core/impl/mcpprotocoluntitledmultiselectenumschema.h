@@ -14,14 +14,32 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolUntitledMultiSelectEnumSchema
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolUntitledMultiSelectEnumSchema
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUntitledMultiSelectEnumSchema
 {
 public:
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolUntitledMultiSelectEnumSchema::Items
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolUntitledMultiSelectEnumSchema
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Items {
+        /*!
+         */
         QStringList mEnum;
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolUntitledMultiSelectEnumSchema::Items &other) const;
 
+        /*!
+         */
         [[nodiscard]] QStringList enumValue() const;
+        /*!
+         */
         void setEnum(QStringList newEnum);
 
         /*!

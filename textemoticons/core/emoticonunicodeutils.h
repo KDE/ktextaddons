@@ -9,6 +9,11 @@
 #include <QString>
 namespace TextEmoticonsCore
 {
+/*!
+ * \namespace TextEmoticonsCore::EmoticonUnicodeUtils
+ * \inmodule TextEmoticonsCore
+ * \inheaderfile TextEmoticonsCore/EmoticonUnicodeUtils
+ */
 namespace EmoticonUnicodeUtils
 {
 /*!

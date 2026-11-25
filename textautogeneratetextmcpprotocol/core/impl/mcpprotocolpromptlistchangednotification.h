@@ -12,6 +12,11 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptListChangedNotification
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptListChangedNotification
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolPromptListChangedNotification
 {
 public:
@@ -19,6 +24,8 @@ public:
      */
     McpProtocolPromptListChangedNotification();
 
+    /*!
+     */
     [[nodiscard]] static QByteArray type();
     /*!
      */

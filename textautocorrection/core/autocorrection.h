@@ -14,7 +14,7 @@ class QTextDocument;
 namespace TextAutoCorrectionCore
 {
 class AutoCorrectionPrivate;
-/*!\n
+/*!
  * \class TextAutoCorrectionCore::AutoCorrection
  * \inmodule TextAutoCorrectionCore
  * \inheaderfile TextAutoCorrectionCore/AutoCorrection

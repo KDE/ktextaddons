@@ -15,6 +15,11 @@ class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolPromptMessage
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolPromptMessage
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolPromptMessage
 {
 public:
@@ -24,9 +29,17 @@ public:
     /*!
      */
     ~McpProtocolPromptMessage();
+    /*!
+     */
     McpProtocolPromptMessage(const McpProtocolPromptMessage &) = default;
+    /*!
+     */
     McpProtocolPromptMessage(McpProtocolPromptMessage &&) noexcept = default;
+    /*!
+     */
     McpProtocolPromptMessage &operator=(const McpProtocolPromptMessage &) = default;
+    /*!
+     */
     McpProtocolPromptMessage &operator=(McpProtocolPromptMessage &&) noexcept = default;
 
     /*!

@@ -10,10 +10,17 @@
 namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolPluginInterface;
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolPlugin
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolPlugin
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolPlugin : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum class PluginType : uint8_t {
         Unknown = 0,
         Server,
@@ -21,6 +28,8 @@ public:
     };
     Q_ENUM(PluginType)
 
+    /*!
+     */
     enum class TransportType : uint8_t {
         Unknown = 0,
         Sse,
@@ -46,6 +55,8 @@ public:
                                                                       QObject *parent) = 0;
 
 protected:
+    /*!
+     */
     PluginType mPluginType = PluginType::Unknown;
 };
 }

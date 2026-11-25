@@ -24,6 +24,8 @@ class TEXTTRANSLATOR_EXPORT TranslatorEngineClient : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum EngineType {
         Local,
         Network,
@@ -98,6 +100,8 @@ protected:
     /*!
      */
     [[nodiscard]] virtual bool isSupported(TextTranslator::TranslatorUtil::Language lang) const = 0;
+    /*!
+     */
     QMap<TranslatorUtil::Language, QString> mFromLanguages;
 };
 }

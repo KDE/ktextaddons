@@ -26,8 +26,14 @@ public:
      * \brief Structure containing information for importing a chat
      */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT ImportChatInfo {
+        /*!
+         */
         QString filename;
+        /*!
+         */
         QString chatTitle;
+        /*!
+         */
         [[nodiscard]] bool isValid() const;
     };
 

@@ -11,6 +11,11 @@ namespace TextAutoGenerateTextMcpProtocolCore
 {
 class McpProtocolMeta;
 class McpProtocolTool;
+/*!
+ * \namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolCommonUtils
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolCommonUtils
+ */
 namespace McpProtocolCommonUtils
 {
 /*!

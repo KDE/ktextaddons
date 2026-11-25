@@ -14,6 +14,11 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolAudioContent
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolAudioContent
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolAudioContent
 {
 public:
@@ -61,7 +66,11 @@ public:
      */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     [[nodiscard]] std::optional<McpProtocolMeta> meta() const;
+    /*!
+     */
     void setMeta(std::optional<McpProtocolMeta> newMeta);
 
 private:

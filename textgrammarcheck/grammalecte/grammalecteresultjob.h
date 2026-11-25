@@ -27,6 +27,8 @@ public:
     /*! Destroys the job. */
     ~GrammalecteResultJob() override;
 
+    /*!
+     */
     enum class ErrorType : uint8_t {
         NoError = 0,
         TextIsEmpty = 1,

@@ -7,3 +7,9 @@
 
     \brief TextTranslator provides translator class.
 */
+
+/*!
+    \namespace TextTranslator
+    \inmodule TextTranslator
+    \brief The TextTranslator namespace contains the classes of the TextTranslator module.
+*/

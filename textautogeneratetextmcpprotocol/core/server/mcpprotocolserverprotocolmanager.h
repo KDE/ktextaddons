@@ -219,7 +219,11 @@ public:
      * JSON-RPC error codes
      */
     static constexpr int methodNotFoundCode = -32601;
+    /*!
+     */
     static constexpr int invalidParamsCode = -32602;
+    /*!
+     */
     static constexpr int internalErrorCode = -32603;
     /*!
      * MCP error code: resources/read with an unknown uri

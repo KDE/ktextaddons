@@ -32,6 +32,8 @@ Q_SIGNALS:
     void translateText();
 
 protected:
+    /*!
+     */
     void dropEvent(QDropEvent *) override;
 };
 
@@ -91,6 +93,8 @@ private:
     TEXTTRANSLATOR_NO_EXPORT void slotConfigChanged();
 
 protected:
+    /*!
+     */
     bool event(QEvent *e) override;
 
 Q_SIGNALS:

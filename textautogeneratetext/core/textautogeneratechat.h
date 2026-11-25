@@ -24,6 +24,8 @@ class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateChat
 {
     Q_GADGET
 public:
+    /*!
+     */
     enum class SectionHistory : uint8_t {
         Ephemeral,
         Favorite,
@@ -36,6 +38,8 @@ public:
     };
     Q_ENUM(SectionHistory)
 
+    /*!
+     */
     enum class Persistence : uint8_t {
         Persisted,
         Ephemeral,

@@ -27,21 +27,51 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestFormParams
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolElicitRequestFormParams
 {
 public:
     using Meta = McpProtocolRequestMeta;
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequestFormParams::RequestedSchema
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitRequestFormParams
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT RequestedSchema {
+        /*!
+         */
         std::optional<QString> mDollarschema;
+        /*!
+         */
         QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> mProperties;
+        /*!
+         */
         std::optional<QStringList> mRequired;
 
+        /*!
+         */
         [[nodiscard]] std::optional<QString> dollarschema() const;
+        /*!
+         */
         void setDollarschema(std::optional<QString> newDollarschema);
+        /*!
+         */
         [[nodiscard]] std::optional<QStringList> required() const;
+        /*!
+         */
         void setRequired(std::optional<QStringList> newRequired);
+        /*!
+         */
         [[nodiscard]] QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> properties() const;
+        /*!
+         */
         void setProperties(QMap<QString, McpProtocolUtils::PrimitiveSchemaDefinition> newProperties);
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolElicitRequestFormParams::RequestedSchema &other) const;
         /*!
          */

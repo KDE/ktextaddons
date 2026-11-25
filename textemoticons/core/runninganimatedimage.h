@@ -12,6 +12,11 @@
 class QMovie;
 namespace TextEmoticonsCore
 {
+/*!
+ * \class TextEmoticonsCore::RunningAnimatedImage
+ * \inmodule TextEmoticonsCore
+ * \inheaderfile TextEmoticonsCore/RunningAnimatedImage
+ */
 struct TEXTEMOTICONSCORE_EXPORT RunningAnimatedImage {
     /*!
      * \brief Constructs a RunningAnimatedImage with the given model index

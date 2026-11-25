@@ -21,6 +21,8 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpRegistryServerModel : public
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum McpRegistryServerRoles : uint16_t {
         Name = Qt::UserRole + 1,
         Description,

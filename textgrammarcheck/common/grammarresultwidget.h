@@ -48,7 +48,11 @@ Q_SIGNALS:
 protected:
     /*! Adds extra widgets to the result display. Can be overridden by subclasses. */
     virtual void addExtraWidget();
+    /*!
+     */
     GrammarResultTextEdit *const mResult;
+    /*!
+     */
     QHBoxLayout *mExtraWidgetLayout = nullptr;
 };
 }

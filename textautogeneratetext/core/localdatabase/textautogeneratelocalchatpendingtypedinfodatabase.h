@@ -11,20 +11,39 @@
 class QSqlTableModel;
 namespace TextAutoGenerateText
 {
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateLocalChatPendingTypedInfoDatabase
+ * \inmodule TextAutoGenerateTextCore
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateLocalChatPendingTypedInfoDatabase
+ */
 class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateLocalChatPendingTypedInfoDatabase : public TextAutoGenerateLocalDatabaseAbstract
 {
 public:
+    /*!
+     */
     TextAutoGenerateLocalChatPendingTypedInfoDatabase();
+    /*!
+     */
     ~TextAutoGenerateLocalChatPendingTypedInfoDatabase() override;
 
+    /*!
+     */
     [[nodiscard]] std::unique_ptr<QSqlTableModel> createChatPendingInfoModel() const;
 
+    /*!
+     */
     void updateChatPendingTypedInfo(const QByteArray &roomId, const TextAutoGenerateChatSettings::PendingTypedInfo &pendingTypedInfo);
+    /*!
+     */
     void deleteChatPendingTypedInfo(const QByteArray &roomId);
 
+    /*!
+     */
     [[nodiscard]] QMap<QByteArray /*RoomId*/, TextAutoGenerateChatSettings::PendingTypedInfo> loadChatPendingTypedInfo();
 
 protected:
+    /*!
+     */
     [[nodiscard]] QString schemaDataBase() const override;
 
 private:

@@ -29,6 +29,8 @@ class TEXTEMOTICONSCORE_EXPORT EmojiModelManager : public QObject
     Q_PROPERTY(EmojiModelManager::EmojiTone emojiTone READ emojiTone WRITE setEmojiTone NOTIFY emojiToneChanged)
 
 public:
+    /*!
+     */
     enum class EmojiTone : uint8_t {
         All, // Show all emoji
         Original, // Show

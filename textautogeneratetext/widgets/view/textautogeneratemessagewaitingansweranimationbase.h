@@ -12,12 +12,26 @@ class QDebug;
 class QSequentialAnimationGroup;
 namespace TextAutoGenerateText
 {
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimationBase
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateMessageWaitingAnswerAnimationBase
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessageWaitingAnswerAnimationBase : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     * \class TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimationBase::ScaleAndOpacity
+     * \inmodule TextAutoGenerateText
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateMessageWaitingAnswerAnimationBase
+     */
     struct ScaleAndOpacity {
+        /*!
+         */
         qreal scale = 0.0;
+        /*!
+         */
         qreal opacity = 0.0;
     };
 
@@ -62,6 +76,8 @@ Q_SIGNALS:
     void waitingAnswerDone(const QModelIndex &index);
 
 protected:
+    /*!
+     */
     QPersistentModelIndex mModelIndex;
 
 private:

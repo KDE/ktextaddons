@@ -25,6 +25,8 @@ class TEXTADDONSWIDGETS_EXPORT RichTextQuickTextFormat : public QFrame
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum class QuickTextFormatType : uint8_t {
         Unknown = 0,
         Bold = 1,

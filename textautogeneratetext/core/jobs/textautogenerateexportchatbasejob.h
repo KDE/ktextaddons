@@ -26,9 +26,17 @@ public:
      * \brief Structure containing information for exporting a chat
      */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT ExportChatInfo {
+        /*!
+         */
         QString filename;
+        /*!
+         */
         QString chatTitle;
+        /*!
+         */
         QList<TextAutoGenerateText::TextAutoGenerateMessage> listMessages;
+        /*!
+         */
         [[nodiscard]] bool isValid() const;
     };
 
@@ -68,6 +76,8 @@ Q_SIGNALS:
      * \brief Emitted when export is complete
      */
     void exportDone(const QString &filename);
+    /*!
+     */
     void exportFailed(const QString &msg);
 
 protected:

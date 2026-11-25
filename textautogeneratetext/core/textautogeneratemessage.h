@@ -290,10 +290,18 @@ public:
      */
     void setTextToSpeechInProgress(bool newTextToSpeechInProgress);
 
+    /*!
+     */
     [[nodiscard]] static bool allowInsertText();
+    /*!
+     */
     static void setAllowInsertText(bool newSAllowInsertText);
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextReplyInfo info() const;
+    /*!
+     */
     void setInfo(const TextAutoGenerateText::TextAutoGenerateTextReplyInfo &newInfo);
 
     /*!
@@ -302,6 +310,8 @@ public:
      * or {"role":"tool","tool_call_id","name","content"}.
      */
     [[nodiscard]] QJsonArray toolExchange() const;
+    /*!
+     */
     void setToolExchange(const QJsonArray &newToolExchange);
     /*!
      * Add tool calls requested by LLM (with text \a content sent before them) and their \a results.

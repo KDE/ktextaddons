@@ -32,6 +32,8 @@ public:
      */
     ~TextToSpeechWidget() override;
 
+    /*!
+     */
     enum State {
         Stop = 0,
         Play,

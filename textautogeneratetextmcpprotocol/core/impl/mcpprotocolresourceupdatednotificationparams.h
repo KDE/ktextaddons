@@ -12,6 +12,11 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolResourceUpdatedNotificationParams
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolResourceUpdatedNotificationParams
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolResourceUpdatedNotificationParams
 {
 public:
@@ -44,6 +49,8 @@ public:
     /*!
      */
     [[nodiscard]] QString uri() const;
+    /*!
+     */
     void setUri(const QString &newUri);
 
 private:

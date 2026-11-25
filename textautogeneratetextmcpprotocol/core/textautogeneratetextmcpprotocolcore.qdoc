@@ -7,3 +7,9 @@
 
     \brief TextAutoGenerateTextMcpProtocolCore provides mcp protocol support core lib.
 */
+
+/*!
+    \namespace TextAutoGenerateTextMcpProtocolCore
+    \inmodule TextAutoGenerateTextMcpProtocolCore
+    \brief The TextAutoGenerateTextMcpProtocolCore namespace contains the classes of the TextAutoGenerateTextMcpProtocolCore module.
+*/

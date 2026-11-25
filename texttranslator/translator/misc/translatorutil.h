@@ -23,8 +23,12 @@ namespace TextTranslator
 class TEXTTRANSLATOR_EXPORT TranslatorUtil
 {
 public:
+    /*!
+     */
     TranslatorUtil();
 
+    /*!
+     */
     enum Language : int {
         automatic = 0,
         en,
@@ -94,6 +98,8 @@ public:
     static void addItemToFromComboBox(QComboBox *combo, const QString &languageCode, const QString &translatedStr);
 
     // Only for test
+    /*!
+     */
     [[nodiscard]] static QMap<TranslatorUtil::Language, QString> translatedLanguages();
 
     /*!

@@ -59,6 +59,8 @@ public:
      */
     virtual void call(TextAutoGenerateTextMcpProtocolCore::McpProtocolServerToolCall *call) = 0;
 
+    /*!
+     */
     [[nodiscard]] static McpProtocolTool
     createTool(const QString &name, const QString &description, const QMap<QString, QJsonObject> &properties = {}, const QStringList &required = {});
 
@@ -81,6 +83,8 @@ public:
      */
     [[nodiscard]] static McpProtocolToolAnnotations annotations(ToolKind kind);
 
+    /*!
+     */
     [[nodiscard]] static QJsonObject schemaProperty(const QString &type, const QString &description);
 
     /*!

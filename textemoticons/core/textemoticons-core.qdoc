@@ -7,3 +7,9 @@
 
     \brief TextEmoticons Core provides some emoticon core lib.
 */
+
+/*!
+    \namespace TextEmoticonsCore
+    \inmodule TextEmoticonsCore
+    \brief The TextEmoticonsCore namespace contains the classes of the TextEmoticonsCore module.
+*/

@@ -13,6 +13,11 @@ class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolLegacyTitledEnumSchema
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolLegacyTitledEnumSchema
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolLegacyTitledEnumSchema
 {
 public:
@@ -20,6 +25,8 @@ public:
      */
     McpProtocolLegacyTitledEnumSchema();
 
+    /*!
+     */
     [[nodiscard]] static QByteArray type();
 
     /*!

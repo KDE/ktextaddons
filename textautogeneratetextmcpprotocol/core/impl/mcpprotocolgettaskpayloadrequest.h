@@ -13,12 +13,26 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolGetTaskPayloadRequest
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolGetTaskPayloadRequest
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolGetTaskPayloadRequest
 {
 public:
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolGetTaskPayloadRequest::Params
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolGetTaskPayloadRequest
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Params {
+        /*!
+         */
         QString mTaskId;
 
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolGetTaskPayloadRequest::Params &other) const;
         /*!
          */
@@ -31,7 +45,11 @@ public:
          */
         [[nodiscard]] static QJsonObject toJson(const McpProtocolGetTaskPayloadRequest::Params &params);
 
+        /*!
+         */
         [[nodiscard]] QString taskId() const;
+        /*!
+         */
         void setTaskId(const QString &newTaskId);
     };
 
@@ -39,6 +57,8 @@ public:
      */
     McpProtocolGetTaskPayloadRequest();
 
+    /*!
+     */
     [[nodiscard]] static QByteArray type();
 
     /*!

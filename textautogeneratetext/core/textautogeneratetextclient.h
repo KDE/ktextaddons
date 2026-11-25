@@ -33,13 +33,26 @@ public:
         Broken,
     };
     /*!
+     * \class TextAutoGenerateText::TextAutoGenerateTextClient::SupportedServer
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextClient
      * \brief The SupportedServer class
      */
     struct SupportedServer {
+        /*!
+         */
         QString localizedName;
+        /*!
+         */
         QString identifier;
+        /*!
+         */
         QString pluginName;
+        /*!
+         */
         bool isLocalServer = false;
+        /*!
+         */
         [[nodiscard]] bool isValid() const;
     };
 

@@ -21,10 +21,23 @@ class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateManagerBase : public QObje
 {
     Q_OBJECT
 public:
+    /*!
+     * \class TextAutoGenerateText::TextAutoGenerateManagerBase::ModelsInfo
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateManagerBase
+     */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT ModelsInfo {
+        /*!
+         */
         QList<TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier> models;
+        /*!
+         */
         QString errorOccured;
+        /*!
+         */
         bool hasError = false;
+        /*!
+         */
         bool isReady = false;
     };
     /*!
@@ -99,6 +112,8 @@ Q_SIGNALS:
     void errorOccurred(QNetworkReply::NetworkError e, const QString &errorString);
 
 protected:
+    /*!
+     */
     QMetaObject::Connection mCheckConnect;
 };
 }

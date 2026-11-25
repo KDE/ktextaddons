@@ -7,3 +7,9 @@
 
     \brief TextAutoGenerateTextCore provides the non-widget AI support classes.
 */
+
+/*!
+    \namespace TextAutoGenerateText
+    \inmodule TextAutoGenerateTextCore
+    \brief The TextAutoGenerateText namespace contains the classes of the TextAutoGenerateTextCore module.
+*/

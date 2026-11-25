@@ -94,6 +94,11 @@ class McpProtocolCreateMessageResult;
 class McpProtocolElicitResult;
 class McpProtocolListRootsResult;
 }
+/*!
+ * \namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolUtils
+ */
 namespace TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils
 {
 using RequestId = std::variant<QString, qint64>;
@@ -132,12 +137,16 @@ using EmptyResult = McpProtocolResult;
 using ElicitResultContentValue = std::variant<QStringList, QString, int, double, bool>;
 
 using ElicitResultContent = QMap<QString, ElicitResultContentValue>;
+/*!
+ */
 enum class Role : uint8_t {
     Unknown,
     Assistant,
     User,
 };
 
+/*!
+ */
 enum class ProtocolVersion : uint8_t {
     Unknown = 0,
     V2024_11_05,
@@ -146,6 +155,8 @@ enum class ProtocolVersion : uint8_t {
     V2025_11_25,
 };
 
+/*!
+ */
 enum class LoggingLevel : uint8_t {
     Debug,
     Info,
@@ -158,6 +169,8 @@ enum class LoggingLevel : uint8_t {
     Unknown,
 };
 
+/*!
+ */
 enum class TaskStatus : uint8_t {
     Cancelled,
     Completed,
@@ -167,6 +180,8 @@ enum class TaskStatus : uint8_t {
     Unknown,
 };
 
+/*!
+ */
 enum class CacheScope : uint8_t {
     Public,
     Private,
@@ -266,27 +281,53 @@ using JSONRPCMessage =
 embeddedResourceResourceFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue embeddedResourceResourceToJson(const EmbeddedResourceResource &val);
 
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT RequestId requestIdFromJson(const QJsonValue &val);
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QJsonValue requestIdToJson(const RequestId &val);
 // JSON-RPC request id must be a string or a number
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT bool isValidRequestId(const QJsonValue &val);
 
 [[nodiscard]] ProgressToken progressTokenFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue progressTokenToJson(const ProgressToken &val);
 
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertRoleToString(McpProtocolUtils::Role role);
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::Role convertRoleFromString(const QString &str);
 
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertProtocolVersionToString(McpProtocolUtils::ProtocolVersion version);
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::ProtocolVersion convertProtocolVersionFromString(const QString &str);
 
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertLoggingLevelToString(McpProtocolUtils::LoggingLevel level);
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::LoggingLevel convertLoggingLevelFromString(const QString &str);
 
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertTaskStatusToString(McpProtocolUtils::TaskStatus status);
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::TaskStatus convertTaskStatusFromString(const QString &str);
 
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString convertCacheScopeToString(McpProtocolUtils::CacheScope scope);
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolUtils::CacheScope convertCacheScopeFromString(const QString &str);
 
 [[nodiscard]] QJsonObject contentBlocktoJson(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ContentBlock &val);
@@ -332,6 +373,8 @@ primitiveSchemaDefinitionFromJson(const QJsonValue &val);
 [[nodiscard]] QJsonValue elicitRequestParamsToJson(const ElicitRequestParams &val);
 [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::ElicitRequestParams elicitRequestParamsFromJson(const QJsonValue &val);
 
+/*!
+ */
 [[nodiscard]] TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT QString
 getCompleteRequestParamsRef(const TextAutoGenerateTextMcpProtocolCore::McpProtocolUtils::CompleteRequestParamsRef &token);
 }

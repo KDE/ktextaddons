@@ -23,38 +23,78 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpRegistryServerInfo
 {
 public:
     /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo::EnvironmentVariable
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpRegistryServerInfo
      * \brief Environment variable used by a package
      */
     struct EnvironmentVariable {
+        /*!
+         */
         QString name;
+        /*!
+         */
         QString description;
+        /*!
+         */
         bool isRequired = false;
+        /*!
+         */
         bool isSecret = false;
     };
     /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo::Package
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpRegistryServerInfo
      * \brief Package (npm, pypi, oci, …) which allows to run the server locally
      */
     struct Package {
+        /*!
+         */
         QString registryType;
+        /*!
+         */
         QString identifier;
+        /*!
+         */
         QString version;
+        /*!
+         */
         QString runtimeHint;
+        /*!
+         */
         QString transportType;
+        /*!
+         */
         QList<EnvironmentVariable> environmentVariables;
     };
     /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo::Remote
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpRegistryServerInfo
      * \brief Remote endpoint of the server
      */
     struct Remote {
+        /*!
+         */
         QString type;
+        /*!
+         */
         QString url;
     };
 
     /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpRegistryServerInfo::Icon
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpRegistryServerInfo
      * \brief The Icon class
      */
     struct Icon {
+        /*!
+         */
         QString url;
+        /*!
+         */
         QString mimetype;
     };
 
@@ -86,10 +126,18 @@ public:
      */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     [[nodiscard]] QString name() const;
+    /*!
+     */
     void setName(const QString &newName);
 
+    /*!
+     */
     [[nodiscard]] QString title() const;
+    /*!
+     */
     void setTitle(const QString &newTitle);
 
     /*!

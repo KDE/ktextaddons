@@ -40,6 +40,8 @@ Q_SIGNALS:
     void complete(const QModelIndex &index);
 
 protected:
+    /*!
+     */
     CompletionListView *const mCompletionListView;
 };
 }

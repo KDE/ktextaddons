@@ -7,3 +7,9 @@
 
     \brief TextGrammarCheck provides grammar check support.
 */
+
+/*!
+    \namespace TextGrammarCheck
+    \inmodule TextGrammarCheck
+    \brief The TextGrammarCheck namespace contains the classes of the TextGrammarCheck module.
+*/

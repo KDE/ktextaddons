@@ -22,14 +22,35 @@ class TextAutoGenerateManager;
 class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateChatSettings
 {
 public:
+    /*!
+     * \class TextAutoGenerateText::TextAutoGenerateChatSettings::PendingTypedInfo
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateChatSettings
+     */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT PendingTypedInfo {
+        /*!
+         */
         QString text;
+        /*!
+         */
         int scrollbarPosition = -1;
+        /*!
+         */
         QList<QByteArray> tools;
+        /*!
+         */
         [[nodiscard]] bool isValid() const;
+        /*!
+         */
         [[nodiscard]] bool hasPendingMessageTyped() const;
+        /*!
+         */
         [[nodiscard]] static QJsonObject serialize(const PendingTypedInfo &url);
+        /*!
+         */
         [[nodiscard]] static PendingTypedInfo deserialize(const QJsonObject &o);
+        /*!
+         */
         [[nodiscard]] bool operator==(const PendingTypedInfo &other) const;
     };
     /*!

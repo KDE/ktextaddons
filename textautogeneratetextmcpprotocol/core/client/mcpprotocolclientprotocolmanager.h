@@ -32,10 +32,17 @@ class McpProtocolCreateMessageResult;
 class McpProtocolElicitResult;
 class McpProtocolLoggingMessageNotificationParams;
 class McpProtocolProgressNotificationParams;
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolClientProtocolManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum class MethodType : uint8_t {
         Unknown = 0,
         Ping,
@@ -56,6 +63,8 @@ public:
     };
     Q_ENUM(MethodType)
 
+    /*!
+     */
     enum class MessageDirection : uint8_t {
         Sent = 0,
         Received,
@@ -63,23 +72,46 @@ public:
     Q_ENUM(MessageDirection)
 
     /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolClientProtocolManager::MessageInfo
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolClientProtocolManager
      * Request sent to server or message received from server, emitted with messageLogged().
      */
     struct MessageInfo {
+        /*!
+         */
         QJsonObject message;
+        /*!
+         */
         QDateTime dateTime;
         // Numeric JSON-RPC id, -1 for notifications or string id
+        /*!
+         */
         qint64 identifier = -1;
+        /*!
+         */
         MethodType type = MethodType::Unknown;
+        /*!
+         */
         MessageDirection direction = MessageDirection::Sent;
         // Time between request and its response, -1 otherwise
+        /*!
+         */
         qint64 elapsedMs = -1;
     };
 
+    /*!
+     */
     explicit McpProtocolClientProtocolManager(const TextAutoGenerateTextMcpProtocolCore::McpServer &server, QObject *parent = nullptr);
+    /*!
+     */
     ~McpProtocolClientProtocolManager() override;
 
+    /*!
+     */
     void initializeClient();
+    /*!
+     */
     void stopClient();
 
     /*!
@@ -110,6 +142,8 @@ public:
      * an error response (code -32001) is emitted with received().
      */
     [[nodiscard]] std::chrono::milliseconds requestTimeout() const;
+    /*!
+     */
     void setRequestTimeout(std::chrono::milliseconds timeout);
 
     /*!

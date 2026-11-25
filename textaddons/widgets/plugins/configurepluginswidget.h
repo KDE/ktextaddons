@@ -26,6 +26,8 @@ class TEXTADDONSWIDGETS_EXPORT ConfigurePluginsWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum PluginItemData {
         Description = Qt::UserRole + 1,
     };
@@ -86,19 +88,36 @@ protected:
      */
     void initializeDone();
 
+    /*!
+     * \class TextAddonsWidgets::ConfigurePluginsWidget::PluginItem
+     * \inmodule TextAddonsWidgets
+     * \inheaderfile TextAddonsWidgets/ConfigurePluginsWidget
+     */
     class PluginItem : public QTreeWidgetItem
     {
     public:
+        /*!
+         */
         explicit PluginItem(QTreeWidgetItem *parent)
             : QTreeWidgetItem(parent)
         {
         }
 
+        /*!
+         */
         QString mIdentifier;
+        /*!
+         */
         bool mEnableByDefault = false;
+        /*!
+         */
         bool mHasConfigureSupport = false;
+        /*!
+         */
         bool mEnableFromUserSettings = false;
     };
+    /*!
+     */
     void fillTopItems(const QList<TextAddonsCore::PluginUtilData> &lst,
                       const QString &topLevelItemName,
                       const QString &groupName,
@@ -107,8 +126,14 @@ protected:
                       const QString &configureGroupName,
                       bool checkable = true,
                       const QString &fileName = {});
+    /*!
+     */
     void resetToUserSettings(const QList<PluginItem *> &items);
+    /*!
+     */
     void changeState(const QList<PluginItem *> &items);
+    /*!
+     */
     void savePlugins(const QString &groupName, const QString &prefixSettingKey, const QList<PluginItem *> &listItems, const QString &configName = {});
 
 private:

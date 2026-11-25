@@ -14,14 +14,32 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteResult
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteResult
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolCompleteResult
 {
 public:
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteResult::Completion
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteResult
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Completion {
+        /*!
+         */
         QStringList mValues;
+        /*!
+         */
         std::optional<bool> mHasMore;
+        /*!
+         */
         std::optional<int> mTotal;
 
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolCompleteResult::Completion &other) const;
 
         /*!
@@ -31,11 +49,23 @@ public:
          */
         [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteResult::Completion &completion);
 
+        /*!
+         */
         [[nodiscard]] QStringList values() const;
+        /*!
+         */
         void setValues(QStringList newValues);
+        /*!
+         */
         [[nodiscard]] std::optional<bool> hasMore() const;
+        /*!
+         */
         void setHasMore(std::optional<bool> newHasMore);
+        /*!
+         */
         [[nodiscard]] std::optional<int> total() const;
+        /*!
+         */
         void setTotal(std::optional<int> newTotal);
     };
 

@@ -22,6 +22,8 @@ class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGeneratePrompt
 {
     Q_GADGET
 public:
+    /*!
+     */
     enum class Category : uint8_t {
         Unknown,
         Travel,

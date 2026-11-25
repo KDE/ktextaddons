@@ -12,9 +12,18 @@ class QWidget;
 class QUrl;
 namespace TextAddonsWidgets
 {
+/*!
+ * \namespace TextAddonsWidgets::SaveFileUtils
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/SaveFileUtils
+ */
 namespace SaveFileUtils
 {
+/*!
+ */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT QString querySaveFileName(QWidget *parent, const QString &title, const QUrl &fileToSave);
+/*!
+ */
 [[nodiscard]] TEXTADDONSWIDGETS_EXPORT QString saveFile(QWidget *parent, const QString &filePath, const QString &title);
 }
 }

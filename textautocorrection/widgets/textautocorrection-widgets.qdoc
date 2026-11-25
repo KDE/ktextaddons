@@ -7,3 +7,9 @@
 
     \brief TextAutoCorrection Widgets provides some autocorrection widgets lib.
 */
+
+/*!
+    \namespace TextAutoCorrectionWidgets
+    \inmodule TextAutoCorrectionWidgets
+    \brief The TextAutoCorrectionWidgets namespace contains the classes of the TextAutoCorrectionWidgets module.
+*/

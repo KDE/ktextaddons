@@ -26,6 +26,8 @@ class TEXTCUSTOMEDITOR_EXPORT TextEditFindBarBase : public QWidget
     Q_OBJECT
 
 public:
+    /*!
+     */
     enum FindFlag {
         FindBackward = 0x00001,
         FindCaseSensitively = 0x00002,
@@ -109,10 +111,20 @@ private Q_SLOTS:
     virtual void slotReplaceAllText() = 0;
 
 protected:
+    /*!
+     */
     QString mLastSearchStr;
+    /*!
+     */
     QRegularExpression mLastSearchRegExp;
+    /*!
+     */
     TextFindWidget *const mFindWidget;
+    /*!
+     */
     TextReplaceWidget *const mReplaceWidget;
+    /*!
+     */
     bool mHideWhenClose = true;
 };
 }

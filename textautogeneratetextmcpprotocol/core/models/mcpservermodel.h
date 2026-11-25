@@ -21,6 +21,8 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpServerModel : public QAbstra
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum MCPServerRoles : uint16_t {
         Name = Qt::UserRole + 1,
         Enabled,

@@ -16,13 +16,27 @@ class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteRequestParams
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolCompleteRequestParams
 {
 public:
     using Meta = McpProtocolRequestMeta;
 
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Argument
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteRequestParams
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Argument {
+        /*!
+         */
         QString mName;
+        /*!
+         */
         QString mValue;
         /*!
          */
@@ -30,19 +44,36 @@ public:
         /*!
          */
         [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams::Argument &argument);
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolCompleteRequestParams::Argument &other) const;
         /*!
          */
         [[nodiscard]] bool isValid() const;
 
+        /*!
+         */
         [[nodiscard]] QString value() const;
+        /*!
+         */
         void setValue(const QString &newValue);
 
+        /*!
+         */
         [[nodiscard]] QString name() const;
+        /*!
+         */
         void setName(const QString &newName);
     };
 
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolCompleteRequestParams::Context
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolCompleteRequestParams
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Context {
+        /*!
+         */
         std::optional<QMap<QString, QString>> mArguments;
         /*!
          */
@@ -50,9 +81,15 @@ public:
         /*!
          */
         [[nodiscard]] static QJsonObject toJson(const McpProtocolCompleteRequestParams::Context &context);
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolCompleteRequestParams::Context &other) const;
 
+        /*!
+         */
         [[nodiscard]] std::optional<QMap<QString, QString>> arguments() const;
+        /*!
+         */
         void setArguments(std::optional<QMap<QString, QString>> newArguments);
     };
     /*!

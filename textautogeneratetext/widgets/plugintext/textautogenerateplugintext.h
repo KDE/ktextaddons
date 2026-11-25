@@ -60,6 +60,8 @@ Q_SIGNALS:
     void successMessage(const QString &message);
 
 protected:
+    /*!
+     */
     bool mEnabled = true;
 };
 }

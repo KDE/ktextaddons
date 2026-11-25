@@ -13,8 +13,11 @@ namespace TextSpeechToText
 {
 class SpeechToTextEngineComboBoxWidget;
 class SpeechToTextSelectDeviceWidget;
-/**
- * @brief The SpeechToTextConfigureWidget class
+/*!
+ * \class TextSpeechToText::SpeechToTextConfigureWidget
+ * \inmodule TextSpeechToText
+ * \inheaderfile TextSpeechToText/SpeechToTextConfigureWidget
+ * \brief The SpeechToTextConfigureWidget class
  * \author Laurent Montel <montel@kde.org>
  */
 class TEXTSPEECHTOTEXT_EXPORT SpeechToTextConfigureWidget : public QWidget

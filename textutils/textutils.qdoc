@@ -7,3 +7,9 @@
 
     \brief TextUtils provides some text utils class.
 */
+
+/*!
+    \namespace TextUtils
+    \inmodule TextUtils
+    \brief The TextUtils namespace contains the classes of the TextUtils module.
+*/

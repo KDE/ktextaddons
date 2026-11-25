@@ -23,6 +23,8 @@ class TEXTADDONSWIDGETS_EXPORT OpenSavedFileFolderWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum class FileType : uint8_t {
         Unknown = 0,
         Attachment,

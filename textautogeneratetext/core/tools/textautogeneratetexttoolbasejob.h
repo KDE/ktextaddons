@@ -84,10 +84,20 @@ Q_SIGNALS:
     void error(const QString &errorStr);
 
 protected:
+    /*!
+     */
     QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgument> mToolArguments;
+    /*!
+     */
     QStringList mRequired;
+    /*!
+     */
     QByteArray mMessageUuid;
+    /*!
+     */
     QByteArray mChatId;
+    /*!
+     */
     QByteArray mToolIdentifier;
 };
 }

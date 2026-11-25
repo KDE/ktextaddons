@@ -10,6 +10,11 @@
 #include <QString>
 namespace TextAddonsWidgets
 {
+/*!
+ * \namespace TextAddonsWidgets::NeedUpdateParseHtmlUtil
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/NeedUpdateParseHtmlUtil
+ */
 namespace NeedUpdateParseHtmlUtil
 {
 /*!

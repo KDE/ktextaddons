@@ -91,14 +91,32 @@ public:
     void setUrl(const QString &url);
 
 protected:
+    /*!
+     */
     QStringList mSuggestions;
+    /*!
+     */
     QString mError;
+    /*!
+     */
     QString mOption;
+    /*!
+     */
     QString mRule;
+    /*!
+     */
     QString mUrl;
+    /*!
+     */
     QColor mColor;
+    /*!
+     */
     int mBlockId = -1;
+    /*!
+     */
     int mStart = -1;
+    /*!
+     */
     int mLength = -1;
 };
 }

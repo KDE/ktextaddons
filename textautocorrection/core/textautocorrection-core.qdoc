@@ -7,3 +7,9 @@
 
     \brief TextAutoCorrection Core provides some autocorrection core lib.
 */
+
+/*!
+    \namespace TextAutoCorrectionCore
+    \inmodule TextAutoCorrectionCore
+    \brief The TextAutoCorrectionCore namespace contains the classes of the TextAutoCorrectionCore module.
+*/

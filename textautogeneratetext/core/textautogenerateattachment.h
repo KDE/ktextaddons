@@ -24,6 +24,8 @@ class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateAttachment
 {
     Q_GADGET
 public:
+    /*!
+     */
     enum class AttachmentType : uint8_t {
         Unknown = 0,
         File,

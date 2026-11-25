@@ -10,6 +10,11 @@
 #include <QString>
 namespace TextAddonsWidgets
 {
+/*!
+ * \namespace TextAddonsWidgets::NeedUpdateVersionUtils
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/NeedUpdateVersionUtils
+ */
 namespace NeedUpdateVersionUtils
 {
 /*!

@@ -17,16 +17,35 @@ namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextToolPlugin;
 class TextAutoGenerateManager;
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextToolPluginManagerInfo
+ * \inmodule TextAutoGenerateTextCore
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolPluginManager
+ */
 class TextAutoGenerateTextToolPluginManagerInfo
 {
 public:
+    /*!
+     */
     TextAutoGenerateTextToolPluginManagerInfo() = default;
 
+    /*!
+     */
     KPluginMetaData data;
+    /*!
+     */
     QString metaDataFileNameBaseName;
+    /*!
+     */
     QString metaDataFileName;
+    /*!
+     */
     TextAddonsCore::PluginUtilData pluginData;
+    /*!
+     */
     TextAutoGenerateTextToolPlugin *plugin = nullptr;
+    /*!
+     */
     bool isEnabled = true;
 };
 /*!
@@ -40,10 +59,23 @@ class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolPluginManager fina
 {
     Q_OBJECT
 public:
+    /*!
+     * \class TextAutoGenerateText::TextAutoGenerateTextToolPluginManager::PluginToolInfo
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolPluginManager
+     */
     struct PluginToolInfo {
+        /*!
+         */
         QString iconName;
+        /*!
+         */
         QString displayName;
+        /*!
+         */
         QString description;
+        /*!
+         */
         QByteArray identifier;
     };
     /*!

@@ -23,6 +23,8 @@ class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolPluginProperty
 {
     Q_GADGET
 public:
+    /*!
+     */
     enum class PropertyType : uint8_t {
         String = 0,
         Number,

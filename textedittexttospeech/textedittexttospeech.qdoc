@@ -7,3 +7,9 @@
 
     \brief TextEditTextToSpeech provides text to speech api.
 */
+
+/*!
+    \namespace TextEditTextToSpeech
+    \inmodule TextEditTextToSpeech
+    \brief The TextEditTextToSpeech namespace contains the classes of the TextEditTextToSpeech module.
+*/

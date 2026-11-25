@@ -25,11 +25,26 @@ class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolPlugin : public QO
 {
     Q_OBJECT
 public:
+    /*!
+     * \class TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolPlugin
+     */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT TextToolPluginInfo {
+        /*!
+         */
         QString content;
+        /*!
+         */
         QByteArray messageUuid;
+        /*!
+         */
         QByteArray chatId;
+        /*!
+         */
         QByteArray toolIdentifier;
+        /*!
+         */
         QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> attachementInfoList;
     };
 
@@ -102,10 +117,20 @@ protected:
     /*!
      */
     [[nodiscard]] QJsonObject generateMetadata() const;
+    /*!
+     */
     QList<TextAutoGenerateTextToolPluginProperty> mProperties;
+    /*!
+     */
     QStringList mRequired;
+    /*!
+     */
     QByteArray mToolNameId;
+    /*!
+     */
     QJsonObject mMetaData;
+    /*!
+     */
     bool mEnabled = true;
 };
 }

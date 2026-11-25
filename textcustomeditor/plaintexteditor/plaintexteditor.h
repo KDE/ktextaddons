@@ -39,6 +39,8 @@ public:
     /*! Destroys the editor. */
     ~PlainTextEditor() override;
 
+    /*!
+     */
     enum SupportFeature {
         None = 0,
         Search = 1,

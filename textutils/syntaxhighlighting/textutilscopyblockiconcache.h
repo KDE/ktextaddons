@@ -21,6 +21,8 @@ namespace TextUtils
 class TEXTUTILS_EXPORT TextUtilsCopyBlockIconCache
 {
 public:
+    /*!
+     */
     enum class IconType : uint8_t {
         Unknown = 0,
         CopyText,

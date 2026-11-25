@@ -9,6 +9,11 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateMessageWaitingAnswerAnimation
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateMessageWaitingAnswerAnimation
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateMessageWaitingAnswerAnimation : public TextAutoGenerateMessageWaitingAnswerAnimationBase
 {
     Q_OBJECT

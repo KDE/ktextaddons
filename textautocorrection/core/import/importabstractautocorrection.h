@@ -103,13 +103,29 @@ public:
     [[nodiscard]] int minFindStringLenght() const;
 
 protected:
+    /*!
+     */
     int mMaxFindStringLength = 0;
+    /*!
+     */
     int mMinFindStringLength = 0;
+    /*!
+     */
     QSet<QString> mUpperCaseExceptions;
+    /*!
+     */
     QSet<QString> mTwoUpperLetterExceptions;
+    /*!
+     */
     QHash<QString, QString> mAutocorrectEntries;
+    /*!
+     */
     QHash<QString, QString> mSuperScriptEntries;
+    /*!
+     */
     AutoCorrectionUtils::TypographicQuotes mTypographicSingleQuotes;
+    /*!
+     */
     AutoCorrectionUtils::TypographicQuotes mTypographicDoubleQuotes;
 };
 }

@@ -12,19 +12,38 @@ class QSqlTableModel;
 
 namespace TextAutoGenerateText
 {
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateLocalChatsDatabase
+ * \inmodule TextAutoGenerateTextCore
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateLocalChatsDatabase
+ */
 class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateLocalChatsDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
 {
 public:
+    /*!
+     */
     TextAutoGenerateLocalChatsDatabase();
+    /*!
+     */
     ~TextAutoGenerateLocalChatsDatabase() override;
 
+    /*!
+     */
     void deleteChat(const QByteArray &chatId);
+    /*!
+     */
     void insertOrUpdateChat(const TextAutoGenerateChat &chat);
 
+    /*!
+     */
     [[nodiscard]] QList<TextAutoGenerateChat> loadChats() const;
+    /*!
+     */
     [[nodiscard]] std::unique_ptr<QSqlTableModel> createChatsModel() const;
 
 protected:
+    /*!
+     */
     [[nodiscard]] QString schemaDataBase() const override;
 
 private:

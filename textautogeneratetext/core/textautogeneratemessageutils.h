@@ -10,6 +10,11 @@
 #include <QString>
 namespace TextAutoGenerateText
 {
+/*!
+ * \namespace TextAutoGenerateText::TextAutoGenerateMessageUtils
+ * \inmodule TextAutoGenerateTextCore
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateMessageUtils
+ */
 namespace TextAutoGenerateMessageUtils
 {
 /*!

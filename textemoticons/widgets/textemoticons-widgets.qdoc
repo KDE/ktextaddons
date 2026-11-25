@@ -7,3 +7,9 @@
 
     \brief TextEmoticons Widgets provides some emoticon widgets lib.
 */
+
+/*!
+    \namespace TextEmoticonsWidgets
+    \inmodule TextEmoticonsWidgets
+    \brief The TextEmoticonsWidgets namespace contains the classes of the TextEmoticonsWidgets module.
+*/

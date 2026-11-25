@@ -13,10 +13,17 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolToolExecution
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolToolExecution
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolToolExecution
 {
     Q_GADGET
 public:
+    /*!
+     */
     enum class TaskSupport : uint8_t {
         Unknown = 0,
         Forbidden,

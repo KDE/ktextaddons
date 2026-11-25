@@ -13,6 +13,11 @@ class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolReadResourceRequestParams
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolReadResourceRequestParams
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolReadResourceRequestParams
 {
 public:
@@ -44,7 +49,11 @@ public:
      */
     void setMeta(std::optional<Meta> newMeta);
 
+    /*!
+     */
     [[nodiscard]] QString uri() const;
+    /*!
+     */
     void setUri(const QString &newUri);
 
 private:

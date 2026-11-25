@@ -20,7 +20,11 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT McpProtocolServerConfigureDi
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit McpProtocolServerConfigureDialog(QWidget *parent = nullptr);
+    /*!
+     */
     ~McpProtocolServerConfigureDialog() override;
 
 private:

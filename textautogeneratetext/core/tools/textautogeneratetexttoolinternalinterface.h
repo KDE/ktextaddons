@@ -12,6 +12,11 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateTextToolInternalJob;
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextToolInternalInterface
+ * \inmodule TextAutoGenerateTextCore
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolInternalInterface
+ */
 class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolInternalInterface : public QObject
 {
     Q_OBJECT
@@ -42,6 +47,8 @@ public:
      */
     [[nodiscard]] virtual TextAutoGenerateText::TextAutoGenerateTextToolInternalJob *callTool(const QByteArray &toolName) = 0;
 
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateText::TextAutoGenerateTextToolInternal toolInternal(const QByteArray &toolName) const;
 
     /*!
@@ -53,6 +60,8 @@ public:
     [[nodiscard]] QList<QJsonObject> toolInternalMetaData() const;
 
 protected:
+    /*!
+     */
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternal> mTools;
 
 private:

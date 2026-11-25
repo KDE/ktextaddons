@@ -37,6 +37,8 @@ public:
      */
     [[nodiscard]] bool isReady() const;
 
+    /*!
+     */
     enum State {
         Ready = 0,
         Speaking,

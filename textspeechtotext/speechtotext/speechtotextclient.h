@@ -21,6 +21,8 @@ class TEXTSPEECHTOTEXT_EXPORT SpeechToTextClient : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum EngineType {
         Locale,
         Network,

@@ -7,6 +7,11 @@
 #pragma once
 #include "textaddonswidgets_export.h"
 #include <QString>
+/*!
+ * \namespace TextAddonsWidgets::ExecutableUtils
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/ExecutableUtils
+ */
 namespace TextAddonsWidgets::ExecutableUtils
 {
 /*!

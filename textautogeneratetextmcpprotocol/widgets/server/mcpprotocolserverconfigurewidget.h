@@ -23,15 +23,27 @@ class TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS_EXPORT McpProtocolServerConfigureWi
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit McpProtocolServerConfigureWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~McpProtocolServerConfigureWidget() override;
 
+    /*!
+     */
     void setSettings(const TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings &settings);
+    /*!
+     */
     [[nodiscard]] TextAutoGenerateTextMcpProtocolCore::McpProtocolSettings settings() const;
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void settingsChanged();
 
 private:

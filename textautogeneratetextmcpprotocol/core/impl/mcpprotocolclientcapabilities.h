@@ -13,93 +13,247 @@
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolClientCapabilities
 {
 public:
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Elicitation
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Elicitation {
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolClientCapabilities::Elicitation &other) const;
+        /*!
+         */
         [[nodiscard]] static Elicitation fromJson(const QJsonObject &obj);
+        /*!
+         */
         [[nodiscard]] static QJsonObject toJson(const Elicitation &elicitation);
+        /*!
+         */
         std::optional<QMap<QString, QJsonValue>> mForm;
+        /*!
+         */
         std::optional<QMap<QString, QJsonValue>> mUrl;
 
+        /*!
+         */
         [[nodiscard]] std::optional<QMap<QString, QJsonValue>> form() const;
+        /*!
+         */
         void setForm(std::optional<QMap<QString, QJsonValue>> newForm);
+        /*!
+         */
         [[nodiscard]] std::optional<QMap<QString, QJsonValue>> url() const;
+        /*!
+         */
         void setUrl(std::optional<QMap<QString, QJsonValue>> newUrl);
     };
 
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Roots
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Roots {
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolClientCapabilities::Roots &other) const;
+        /*!
+         */
         [[nodiscard]] static Roots fromJson(const QJsonObject &obj);
+        /*!
+         */
         [[nodiscard]] static QJsonObject toJson(const Roots &roots);
+        /*!
+         */
         std::optional<bool> mListChanged;
 
+        /*!
+         */
         [[nodiscard]] std::optional<bool> listChanged() const;
+        /*!
+         */
         void setListChanged(std::optional<bool> newListChanged);
     };
 
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Sampling
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Sampling {
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolClientCapabilities::Sampling &other) const;
+        /*!
+         */
         [[nodiscard]] static Sampling fromJson(const QJsonObject &obj);
+        /*!
+         */
         [[nodiscard]] static QJsonObject toJson(const Sampling &sampling);
 
+        /*!
+         */
         [[nodiscard]] std::optional<QMap<QString, QJsonValue>> context() const;
+        /*!
+         */
         void setContext(std::optional<QMap<QString, QJsonValue>> newContext);
+        /*!
+         */
         [[nodiscard]] std::optional<QMap<QString, QJsonValue>> tools() const;
+        /*!
+         */
         void setTools(std::optional<QMap<QString, QJsonValue>> newTools);
 
+        /*!
+         */
         std::optional<QMap<QString, QJsonValue>> mContext;
+        /*!
+         */
         std::optional<QMap<QString, QJsonValue>> mTools;
     };
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Tasks
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Tasks {
+        /*!
+         * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Tasks::Requests
+         * \inmodule TextAutoGenerateTextMcpProtocolCore
+         * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities
+         */
         struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Requests {
+            /*!
+             * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Tasks::Requests::Elicitation
+             * \inmodule TextAutoGenerateTextMcpProtocolCore
+             * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities
+             */
             struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Elicitation {
+                /*!
+                 */
                 std::optional<QMap<QString, QJsonValue>> mCreate;
 
+                /*!
+                 */
                 [[nodiscard]] bool operator==(const Elicitation &other) const;
+                /*!
+                 */
                 [[nodiscard]] static Elicitation fromJson(const QJsonObject &obj);
+                /*!
+                 */
                 [[nodiscard]] static QJsonObject toJson(const Elicitation &elicitation);
 
+                /*!
+                 */
                 [[nodiscard]] std::optional<QMap<QString, QJsonValue>> create() const;
+                /*!
+                 */
                 void setCreate(std::optional<QMap<QString, QJsonValue>> newCreate);
             };
+            /*!
+             * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolClientCapabilities::Tasks::Requests::Sampling
+             * \inmodule TextAutoGenerateTextMcpProtocolCore
+             * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolClientCapabilities
+             */
             struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Sampling {
+                /*!
+                 */
                 std::optional<QMap<QString, QJsonValue>> mCreateMessage;
 
+                /*!
+                 */
                 [[nodiscard]] bool operator==(const Sampling &other) const;
+                /*!
+                 */
                 [[nodiscard]] static Sampling fromJson(const QJsonObject &obj);
+                /*!
+                 */
                 [[nodiscard]] static QJsonObject toJson(const Sampling &sampling);
 
+                /*!
+                 */
                 [[nodiscard]] std::optional<QMap<QString, QJsonValue>> createMessage() const;
+                /*!
+                 */
                 void setCreateMessage(std::optional<QMap<QString, QJsonValue>> newCreateMessage);
             };
+            /*!
+             */
             [[nodiscard]] bool operator==(const Requests &other) const;
+            /*!
+             */
             [[nodiscard]] static Requests fromJson(const QJsonObject &obj);
+            /*!
+             */
             [[nodiscard]] static QJsonObject toJson(const Requests &requests);
 
+            /*!
+             */
             std::optional<Elicitation> mElicitation;
+            /*!
+             */
             std::optional<Sampling> mSampling;
 
+            /*!
+             */
             [[nodiscard]] std::optional<Sampling> sampling() const;
+            /*!
+             */
             void setSampling(std::optional<Sampling> newSampling);
+            /*!
+             */
             [[nodiscard]] std::optional<Elicitation> elicitation() const;
+            /*!
+             */
             void setElicitation(std::optional<Elicitation> newElicitation);
         };
 
+        /*!
+         */
         [[nodiscard]] bool operator==(const Tasks &other) const;
+        /*!
+         */
         [[nodiscard]] static Tasks fromJson(const QJsonObject &obj);
+        /*!
+         */
         [[nodiscard]] static QJsonObject toJson(const Tasks &tasks);
 
+        /*!
+         */
         std::optional<QMap<QString, QJsonValue>> mCancel;
+        /*!
+         */
         std::optional<QMap<QString, QJsonValue>> mList;
+        /*!
+         */
         std::optional<Requests> mRequests;
 
+        /*!
+         */
         [[nodiscard]] std::optional<QMap<QString, QJsonValue>> list() const;
+        /*!
+         */
         void setList(std::optional<QMap<QString, QJsonValue>> newList);
+        /*!
+         */
         [[nodiscard]] std::optional<QMap<QString, QJsonValue>> cancel() const;
+        /*!
+         */
         void setCancel(std::optional<QMap<QString, QJsonValue>> newCancel);
+        /*!
+         */
         [[nodiscard]] std::optional<Requests> requests() const;
+        /*!
+         */
         void setRequests(std::optional<Requests> newRequests);
     };
 

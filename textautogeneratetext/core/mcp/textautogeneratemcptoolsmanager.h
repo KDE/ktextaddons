@@ -40,6 +40,8 @@ class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateMcpToolsManager : public Q
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum class Status : uint8_t {
         Disconnected,
         Connecting,
@@ -49,6 +51,8 @@ public:
     Q_ENUM(Status)
 
     // Risk of a tool, deduced from MCP annotations (missing hints mean worst case)
+    /*!
+     */
     enum class ToolRisk : uint8_t {
         ReadOnly,
         Modify,
@@ -56,22 +60,49 @@ public:
     };
     Q_ENUM(ToolRisk)
 
+    /*!
+     * \class TextAutoGenerateText::TextAutoGenerateMcpToolsManager::McpTool
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateMcpToolsManager
+     */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT McpTool {
+        /*!
+         */
         QByteArray serverIdentifier;
         // Name used by MCP server
+        /*!
+         */
         QString name;
+        /*!
+         */
         QString displayName;
         // Unique name sent to LLM ("server__tool")
+        /*!
+         */
         QByteArray exposedName;
+        /*!
+         */
         QString description;
+        /*!
+         */
         QJsonObject inputSchema;
+        /*!
+         */
         ToolRisk risk = ToolRisk::Destructive;
         // Group of tool defined in _meta ("org.kde/group", "org.kde/groupTitle"), empty when tool has no group
+        /*!
+         */
         QString groupName;
+        /*!
+         */
         QString groupTitle;
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpTool &other) const;
     };
 
+    /*!
+     */
     enum class ToolConfirmation : uint8_t {
         Deny,
         Allow,
@@ -80,11 +111,24 @@ public:
     };
     Q_ENUM(ToolConfirmation)
 
+    /*!
+     * \class TextAutoGenerateText::TextAutoGenerateMcpToolsManager::ToolConfirmationInfo
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateMcpToolsManager
+     */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT ToolConfirmationInfo {
+        /*!
+         */
         McpTool tool;
+        /*!
+         */
         QString serverName;
+        /*!
+         */
         QJsonObject arguments;
         // Chat whose answer calls tool, empty when it's unknown
+        /*!
+         */
         QByteArray chatId;
     };
     /*!
@@ -92,10 +136,21 @@ public:
      */
     using ConfirmationHandler = std::function<void(const ToolConfirmationInfo &info, const std::function<void(ToolConfirmation)> &answer)>;
 
+    /*!
+     * \class TextAutoGenerateText::TextAutoGenerateMcpToolsManager::ElicitationInfo
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateMcpToolsManager
+     */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT ElicitationInfo {
+        /*!
+         */
         QString serverName;
+        /*!
+         */
         TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitRequest request;
         // Chat whose tool call led to request, empty when it's unknown (see chatIdOfToolCallInProgress())
+        /*!
+         */
         QByteArray chatId;
     };
     /*!
@@ -105,12 +160,21 @@ public:
                                                   const std::function<void(const TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitResult &)> &answer)>;
 
     /*!
+     * \class TextAutoGenerateText::TextAutoGenerateMcpToolsManager::SamplingInfo
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateMcpToolsManager
      * \brief The SamplingInfo class
      */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT SamplingInfo {
+        /*!
+         */
         QString serverName;
+        /*!
+         */
         TextAutoGenerateTextMcpProtocolCore::McpProtocolCreateMessageRequest request;
         // Chat whose tool call led to request, empty when it's unknown (see chatIdOfToolCallInProgress())
+        /*!
+         */
         QByteArray chatId;
     };
     /*!
@@ -143,7 +207,11 @@ public:
      */
     void disconnectServer(const QByteArray &identifier);
 
+    /*!
+     */
     [[nodiscard]] Status status(const QByteArray &identifier) const;
+    /*!
+     */
     [[nodiscard]] QString errorString(const QByteArray &identifier) const;
 
     /*!
@@ -294,6 +362,8 @@ public:
      * (elicitation, sampling) are associated to this chat. Each call must be removed with removeToolCallInProgress().
      */
     void addToolCallInProgress(const QByteArray &serverIdentifier, const QByteArray &chatId);
+    /*!
+     */
     void removeToolCallInProgress(const QByteArray &serverIdentifier, const QByteArray &chatId);
     /*!
      * Returns chat of tool calls in progress on server \a serverIdentifier.

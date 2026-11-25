@@ -22,7 +22,11 @@ namespace TextAutoGenerateText
 class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateLocalProjectsDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
 {
 public:
+    /*!
+     */
     TextAutoGenerateLocalProjectsDatabase();
+    /*!
+     */
     ~TextAutoGenerateLocalProjectsDatabase() override;
 
     /*! Removes the project identified by \a projectId from the database. */
@@ -36,6 +40,8 @@ public:
     [[nodiscard]] std::unique_ptr<QSqlTableModel> createProjectsModel() const;
 
 protected:
+    /*!
+     */
     [[nodiscard]] QString schemaDataBase() const override;
 
 private:

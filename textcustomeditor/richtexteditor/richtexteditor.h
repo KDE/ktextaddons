@@ -41,6 +41,8 @@ public:
     explicit RichTextEditor(QWidget *parent = nullptr);
     /*! Destroys the editor. */
     ~RichTextEditor() override;
+    /*!
+     */
     enum SupportFeature {
         None = 0,
         Search = 1,
@@ -117,6 +119,8 @@ public:
     void addIgnoreWords(const QStringList &lst);
 
     // Reimplement it in subclass
+    /*!
+     */
     virtual void forceAutoCorrection(bool selectedText = false);
 
     /*!

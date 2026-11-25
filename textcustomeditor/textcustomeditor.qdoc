@@ -7,3 +7,9 @@
 
     \brief TextCustomEditor provides custom editor.
 */
+
+/*!
+    \namespace TextCustomEditor
+    \inmodule TextCustomEditor
+    \brief The TextCustomEditor namespace contains the classes of the TextCustomEditor module.
+*/

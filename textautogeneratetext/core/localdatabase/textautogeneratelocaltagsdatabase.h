@@ -22,7 +22,11 @@ namespace TextAutoGenerateText
 class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateLocalTagsDatabase : public TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
 {
 public:
+    /*!
+     */
     TextAutoGenerateLocalTagsDatabase();
+    /*!
+     */
     ~TextAutoGenerateLocalTagsDatabase() override;
 
     /*! Removes the tag identified by \a tagId from the database. */
@@ -36,6 +40,8 @@ public:
     [[nodiscard]] std::unique_ptr<QSqlTableModel> createTagsModel() const;
 
 protected:
+    /*!
+     */
     [[nodiscard]] QString schemaDataBase() const override;
 
 private:

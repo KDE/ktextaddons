@@ -10,9 +10,16 @@
 #include <QString>
 namespace TextAutoGenerateText
 {
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateLocalDatabaseAbstract
+ * \inmodule TextAutoGenerateTextCore
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateLocalDatabaseAbstract
+ */
 class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateLocalDatabaseAbstract
 {
 public:
+    /*!
+     */
     enum class DatabaseType {
         Unknown = 0,
         Chats,
@@ -22,21 +29,43 @@ public:
         Projects,
     };
 
+    /*!
+     */
     explicit TextAutoGenerateLocalDatabaseAbstract(const QString &basePath, DatabaseType type);
+    /*!
+     */
     virtual ~TextAutoGenerateLocalDatabaseAbstract();
 
+    /*!
+     */
     [[nodiscard]] QString dbFileName(const QString &id) const;
 
     // Only for test!
+    /*!
+     */
     [[nodiscard]] QString schemaDatabaseStr() const;
 
 protected:
+    /*!
+     */
     [[nodiscard]] virtual QString schemaDataBase() const;
+    /*!
+     */
     [[nodiscard]] QString databaseName() const;
+    /*!
+     */
     [[nodiscard]] bool initializeDataBase(const QString &chatId, QSqlDatabase &db);
+    /*!
+     */
     [[nodiscard]] bool checkDataBase(const QString &id, QSqlDatabase &db);
+    /*!
+     */
     const QString mBasePath;
+    /*!
+     */
     const DatabaseType mDatabaseType = DatabaseType::Unknown;
+    /*!
+     */
     [[nodiscard]] QString generateDbName(const QString &id) const;
 };
 

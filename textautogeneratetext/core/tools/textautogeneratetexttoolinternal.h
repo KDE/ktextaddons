@@ -12,6 +12,11 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateText
 {
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateTextToolInternal
+ * \inmodule TextAutoGenerateTextCore
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolInternal
+ */
 class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolInternal
 {
 public:

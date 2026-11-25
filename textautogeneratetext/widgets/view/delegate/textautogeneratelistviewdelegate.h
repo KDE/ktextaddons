@@ -11,6 +11,11 @@
 class QListView;
 namespace TextAutoGenerateText
 {
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateListViewDelegate
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateListViewDelegate
+ */
 class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateListViewDelegate : public TextAutoGenerateListViewMessageBaseDelegate
 {
     Q_OBJECT

@@ -76,6 +76,8 @@ Q_SIGNALS:
     void exportServer(const QByteArray &id);
 
 protected:
+    /*!
+     */
     void contextMenuEvent(QContextMenuEvent *event) override;
 
 private:

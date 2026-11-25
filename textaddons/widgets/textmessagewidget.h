@@ -10,12 +10,12 @@
 class QTimer;
 namespace TextAddonsWidgets
 {
-/**
+/*!
  * \class TextAddonsWidgets::TextMessageWidget
  * \inmodule TextAddonsWidgets
  * \inheaderfile TextAddonsWidgets/TextMessageWidget
  *
- * @short A widget that displays messages in the top-left corner.
+ * \brief A widget that displays messages in the top-left corner.
  *
  * This is a widget with thin border and rounded corners that displays a given
  * text along as an icon. It's meant to be used for displaying messages to the

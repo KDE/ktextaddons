@@ -98,6 +98,8 @@ protected:
                                                  int &blockCodeIndex,
                                                  int &numberOfTextSearched,
                                                  int hightLightStringIndex) = 0;
+    /*!
+     */
     bool mAllowInsertText = false;
 };
 }

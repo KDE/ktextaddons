@@ -25,6 +25,8 @@ class TEXTEMOTICONSCORE_EXPORT EmojiModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum EmoticonsRoles {
         UnicodeEmoji = Qt::UserRole + 1,
         Identifier,

@@ -12,6 +12,11 @@ class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolSetLevelRequestParams
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolSetLevelRequestParams
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolSetLevelRequestParams
 {
 public:
@@ -43,7 +48,11 @@ public:
      */
     void setMeta(std::optional<Meta> newMeta);
 
+    /*!
+     */
     [[nodiscard]] McpProtocolUtils::LoggingLevel level() const;
+    /*!
+     */
     void setLevel(McpProtocolUtils::LoggingLevel newLevel);
 
 private:

@@ -50,6 +50,8 @@ Q_SIGNALS:
     void finished(const TextAutoGenerateText::TextAutoGenerateTextToolPlugin::TextToolPluginInfo &info);
 
 protected:
+    /*!
+     */
     QList<TextAutoGenerateText::TextAutoGenerateTextToolPluginProperty> mProperties;
 };
 }

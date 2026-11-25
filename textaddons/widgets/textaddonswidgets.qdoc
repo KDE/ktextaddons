@@ -7,3 +7,9 @@
 
     \brief TextAddonsWidgets provides some addons widgets.
 */
+
+/*!
+    \namespace TextAddonsWidgets
+    \inmodule TextAddonsWidgets
+    \brief The TextAddonsWidgets namespace contains the classes of the TextAddonsWidgets module.
+*/

@@ -22,11 +22,26 @@ class TEXTAUTOGENERATETEXTCORE_EXPORT TextAutoGenerateTextToolInternalJob : publ
 {
     Q_OBJECT
 public:
+    /*!
+     * \class TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::TextToolPluginInfo
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextToolInternalJob
+     */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT TextToolPluginInfo {
+        /*!
+         */
         QString content;
+        /*!
+         */
         QByteArray messageUuid;
+        /*!
+         */
         QByteArray chatId;
+        /*!
+         */
         QByteArray toolIdentifier;
+        /*!
+         */
         QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> attachementInfoList;
     };
 
@@ -58,6 +73,8 @@ Q_SIGNALS:
     void finished(const TextAutoGenerateText::TextAutoGenerateTextToolInternalJob::TextToolPluginInfo &info);
 
 protected:
+    /*!
+     */
     QList<TextAutoGenerateText::TextAutoGenerateTextToolInternalProperty> mProperties;
 };
 }

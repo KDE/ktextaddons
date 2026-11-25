@@ -10,14 +10,36 @@ class QDebug;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateAttachments;
+/*!
+ * \namespace TextAutoGenerateText::TextAutoGenerateAttachmentUtils
+ * \inmodule TextAutoGenerateTextCore
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateAttachmentUtils
+ */
 namespace TextAutoGenerateAttachmentUtils
 {
+/*!
+ * \class TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo
+ * \inmodule TextAutoGenerateTextCore
+ * \inheaderfile TextAutoGenerateText/TextAutoGenerateAttachmentUtils
+ */
 struct TEXTAUTOGENERATETEXTCORE_EXPORT AttachmentElementInfo {
+    /*!
+     */
     QByteArray attachmentId;
+    /*!
+     */
     QByteArray mimeType;
+    /*!
+     */
     QByteArray content;
+    /*!
+     */
     QString name;
+    /*!
+     */
     TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType attachmentType = TextAutoGenerateText::TextAutoGenerateAttachment::AttachmentType::Unknown;
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 };
 

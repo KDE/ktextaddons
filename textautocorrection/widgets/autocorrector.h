@@ -45,6 +45,8 @@ public:
      */
     explicit AutoCorrector(QPlainTextEdit *textEdit);
 
+    /*!
+     */
     ~AutoCorrector() override;
 
     /*!

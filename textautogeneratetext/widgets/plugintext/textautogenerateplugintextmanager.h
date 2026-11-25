@@ -14,16 +14,35 @@
 namespace TextAutoGenerateText
 {
 class TextAutoGeneratePluginText;
+/*!
+ * \class TextAutoGenerateText::TextAutoGeneratePluginTextManagerInfo
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/TextAutoGeneratePluginTextManager
+ */
 class TextAutoGeneratePluginTextManagerInfo
 {
 public:
+    /*!
+     */
     TextAutoGeneratePluginTextManagerInfo() = default;
 
+    /*!
+     */
     KPluginMetaData data;
+    /*!
+     */
     QString metaDataFileNameBaseName;
+    /*!
+     */
     QString metaDataFileName;
+    /*!
+     */
     TextAddonsCore::PluginUtilData pluginData;
+    /*!
+     */
     TextAutoGeneratePluginText *plugin = nullptr;
+    /*!
+     */
     bool isEnabled = true;
 };
 

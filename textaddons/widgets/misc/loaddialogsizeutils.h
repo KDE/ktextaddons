@@ -9,9 +9,18 @@
 #include <QString>
 class QDialog;
 class QWidget;
+/*!
+ * \namespace TextAddonsWidgets::LoadDialogSizeUtils
+ * \inmodule TextAddonsWidgets
+ * \inheaderfile TextAddonsWidgets/LoadDialogSizeUtils
+ */
 namespace TextAddonsWidgets::LoadDialogSizeUtils
 {
+/*!
+ */
 void TEXTADDONSWIDGETS_EXPORT loadDialogSizeScaled(QWidget *w, const QString &key, int width, int height);
+/*!
+ */
 void TEXTADDONSWIDGETS_EXPORT saveDialogSize(QWidget *w, const QString &key);
 /*!
  * Makes \a dialog restore its size when it is first shown and store it again

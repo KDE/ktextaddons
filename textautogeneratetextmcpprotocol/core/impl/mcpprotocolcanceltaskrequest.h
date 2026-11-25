@@ -12,19 +12,41 @@ class QJsonObject;
 class QDebug;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolCancelTaskRequest
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolCancelTaskRequest
 {
 public:
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolCancelTaskRequest::Params
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolCancelTaskRequest
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Params {
+        /*!
+         */
         QString mTaskId;
 
+        /*!
+         */
         [[nodiscard]] QString taskId() const;
+        /*!
+         */
         void setTaskId(const QString &newTaskId);
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolCancelTaskRequest::Params &other) const;
         /*!
          */
         [[nodiscard]] bool isValid() const;
+        /*!
+         */
         [[nodiscard]] static Params fromJson(const QJsonObject &obj);
+        /*!
+         */
         [[nodiscard]] static QJsonObject toJson(const Params &params);
     };
     /*!

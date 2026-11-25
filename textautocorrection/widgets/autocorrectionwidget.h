@@ -27,6 +27,8 @@ class TEXTAUTOCORRECTIONWIDGETS_EXPORT AutoCorrectionWidget : public QWidget
     Q_OBJECT
 
 public:
+    /*!
+     */
     enum ImportFileType {
         LibreOffice,
         KMail,

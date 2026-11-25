@@ -23,9 +23,20 @@ class TEXTGRAMMARCHECK_EXPORT GrammalecteGenerateConfigOptionJob : public QObjec
 {
     Q_OBJECT
 public:
+    /*!
+     * \class TextGrammarCheck::GrammalecteGenerateConfigOptionJob::Option
+     * \inmodule TextGrammarCheck
+     * \inheaderfile TextGrammarCheck/GrammalecteGenerateConfigOptionJob
+     */
     struct Option {
+        /*!
+         */
         QString optionName;
+        /*!
+         */
         QString description;
+        /*!
+         */
         bool defaultValue = false;
     };
 

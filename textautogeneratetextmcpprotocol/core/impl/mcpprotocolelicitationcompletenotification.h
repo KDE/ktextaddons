@@ -11,18 +11,40 @@ class QDebug;
 class QJsonObject;
 namespace TextAutoGenerateTextMcpProtocolCore
 {
+/*!
+ * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitationCompleteNotification
+ * \inmodule TextAutoGenerateTextMcpProtocolCore
+ * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitationCompleteNotification
+ */
 class TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT McpProtocolElicitationCompleteNotification
 {
 public:
+    /*!
+     * \class TextAutoGenerateTextMcpProtocolCore::McpProtocolElicitationCompleteNotification::Params
+     * \inmodule TextAutoGenerateTextMcpProtocolCore
+     * \inheaderfile TextAutoGenerateTextMcpProtocolCore/McpProtocolElicitationCompleteNotification
+     */
     struct TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT Params {
+        /*!
+         */
         QString mElicitationId;
+        /*!
+         */
         [[nodiscard]] const QString &elicitationId() const;
+        /*!
+         */
         void setElicitationId(const QString &newElicitationId);
+        /*!
+         */
         [[nodiscard]] bool operator==(const McpProtocolElicitationCompleteNotification::Params &other) const;
         /*!
          */
         [[nodiscard]] bool isValid() const;
+        /*!
+         */
         [[nodiscard]] static Params fromJson(const QJsonObject &obj);
+        /*!
+         */
         [[nodiscard]] static QJsonObject toJson(const Params &params);
     };
 
@@ -30,6 +52,8 @@ public:
      */
     McpProtocolElicitationCompleteNotification();
 
+    /*!
+     */
     [[nodiscard]] static QByteArray type();
 
     /*!

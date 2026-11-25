@@ -22,6 +22,8 @@ class TEXTAUTOGENERATETEXT_EXPORT TextAutoGenerateBaseListView : public QListVie
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum class Mode : uint8_t {
         Editing = 0,
         Viewing,
@@ -108,9 +110,17 @@ protected:
     /*!
      */
     virtual bool mouseEvent(QMouseEvent *event, const QStyleOptionViewItem &option, const QModelIndex &index);
+    /*!
+     */
     TextAutoGenerateListViewBaseDelegate *mDelegate = nullptr;
+    /*!
+     */
     TextAutoGenerateText::TextAutoGenerateManager *const mManager;
+    /*!
+     */
     QPoint mPressedPosition;
+    /*!
+     */
     QPersistentModelIndex mCurrentIndex;
 
 private:

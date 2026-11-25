@@ -43,37 +43,76 @@ public:
         Network,
     };
     /*!
+     * \class TextAutoGenerateText::TextAutoGenerateTextPlugin::ModelInfoNameAndIdentifier
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextPlugin
      * \brief The ModelInfoNameAndIdentifier class
      */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT ModelInfoNameAndIdentifier {
+        /*!
+         */
         QString modelName;
+        /*!
+         */
         QString identifier;
         // Model can answer messages (false for embedding models): only these models are used as fallback model
+        /*!
+         */
         bool chat = true;
+        /*!
+         */
         [[nodiscard]] bool isValid() const;
     };
 
     /*!
+     * \class TextAutoGenerateText::TextAutoGenerateTextPlugin::SendToAssistantInfo
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextPlugin
      * \brief The SendToAssistantInfo class
      */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT SendToAssistantInfo {
+        /*!
+         */
         QString message;
+        /*!
+         */
         QByteArray messageUuid;
+        /*!
+         */
         QByteArray chatId;
+        /*!
+         */
         QJsonArray messagesArray;
+        /*!
+         */
         QList<QByteArray> tools;
         // Number of requests already sent with tool results
+        /*!
+         */
         int toolTurn = 0;
     };
 
     /*!
+     * \class TextAutoGenerateText::TextAutoGenerateTextPlugin::EditSendInfo
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextPlugin
      * \brief The EditSendInfo class
      */
     struct TEXTAUTOGENERATETEXTCORE_EXPORT EditSendInfo {
+        /*!
+         */
         QString message;
+        /*!
+         */
         QByteArray messageUuid;
+        /*!
+         */
         QByteArray chatId;
+        /*!
+         */
         QList<QByteArray> tools;
+        /*!
+         */
         QList<TextAutoGenerateText::TextAutoGenerateAttachmentUtils::AttachmentElementInfo> attachmentInfoList;
     };
 
@@ -90,8 +129,17 @@ public:
      */
     virtual void showConfigureDialog(QWidget *parentWidget) = 0;
 
+    /*!
+     * \class TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo
+     * \inmodule TextAutoGenerateTextCore
+     * \inheaderfile TextAutoGenerateText/TextAutoGenerateTextPlugin
+     */
     struct ActivateInstanceActionInfo {
+        /*!
+         */
         QAction *action = nullptr;
+        /*!
+         */
         QString text;
     };
 
@@ -294,7 +342,11 @@ protected:
      * Running requests of MCP servers are cancelled.
      */
     void cancelToolCalls(const QByteArray &uuid);
+    /*!
+     */
     QMultiHash<TextAutoGenerateText::TextAutoGenerateReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
+    /*!
+     */
     QList<ModelInfoNameAndIdentifier> mModels;
 
 private:

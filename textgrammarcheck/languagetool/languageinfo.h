@@ -22,21 +22,41 @@ namespace TextGrammarCheck
 class TEXTGRAMMARCHECK_EXPORT LanguageInfo
 {
 public:
+    /*!
+     */
     LanguageInfo();
 
+    /*!
+     */
     [[nodiscard]] QString name() const;
+    /*!
+     */
     void setName(const QString &name);
 
+    /*!
+     */
     [[nodiscard]] QString longCode() const;
+    /*!
+     */
     void setLongCode(const QString &longCode);
 
+    /*!
+     */
     [[nodiscard]] QString code() const;
+    /*!
+     */
     void setCode(const QString &code);
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     void parse(const QJsonObject &obj);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const LanguageInfo &other) const;
 
 private:

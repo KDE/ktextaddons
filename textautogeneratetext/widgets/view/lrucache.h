@@ -9,13 +9,29 @@
 #include <algorithm>
 #include <vector>
 
+/*!
+ * \class LRUCache
+ * \inmodule TextAutoGenerateText
+ * \inheaderfile TextAutoGenerateText/LRUCache
+ */
 template<typename Key, typename Value>
 class LRUCache
 {
 public:
+    /*!
+     * \class LRUCache::Entry
+     * \inmodule TextAutoGenerateText
+     * \inheaderfile TextAutoGenerateText/LRUCache
+     */
     struct Entry {
+        /*!
+         */
         Key key;
+        /*!
+         */
         Value value;
+        /*!
+         */
         bool operator==(const Key &rhs) const
         {
             return key == rhs;
@@ -32,26 +48,36 @@ public:
     using iterator = typename Entries::const_iterator;
     using const_iterator = typename Entries::const_iterator;
 
+    /*!
+     */
     void setMaxEntries(int maxEntries)
     {
         mMaxEntries = maxEntries;
     }
 
+    /*!
+     */
     std::size_t size() const
     {
         return mEntries.size();
     }
 
+    /*!
+     */
     const_iterator begin() const
     {
         return mEntries.begin();
     }
 
+    /*!
+     */
     const_iterator end() const
     {
         return std::next(mEntries.begin(), size());
     }
 
+    /*!
+     */
     const_iterator find(const Key &key)
     {
         // using non-const iterators here since we will re-insert when we find
@@ -67,6 +93,8 @@ public:
         return mEntries.cbegin();
     }
 
+    /*!
+     */
     void insert(Key key, Value value)
     {
         auto entriesSize = size();
@@ -83,6 +111,8 @@ public:
         mEntries.front() = {std::move(key), std::move(value)};
     }
 
+    /*!
+     */
     bool remove(const Key &key)
     {
         const auto begin = mEntries.begin();
@@ -97,6 +127,8 @@ public:
         return true;
     }
 
+    /*!
+     */
     void clear()
     {
         mEntries.clear();
