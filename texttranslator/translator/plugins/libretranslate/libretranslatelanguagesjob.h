@@ -8,30 +8,30 @@
 
 #include <QObject>
 
-class LibreTranslateLanguageJob : public QObject
+class LibreTranslateLanguagesJob : public QObject
 {
     Q_OBJECT
 public:
-    struct LibreTranslateLanguageInfo {
+    struct LibreTranslateLanguagesInfo {
         QString apiKey;
         QString serverUrl;
 
         [[nodiscard]] bool isValid() const;
     };
-    explicit LibreTranslateLanguageJob(QObject *parent = nullptr);
-    ~LibreTranslateLanguageJob() override;
+    explicit LibreTranslateLanguagesJob(QObject *parent = nullptr);
+    ~LibreTranslateLanguagesJob() override;
 
     [[nodiscard]] bool canStart() const;
 
     void start();
 
-    [[nodiscard]] LibreTranslateLanguageInfo info() const;
-    void setInfo(const LibreTranslateLanguageInfo &newInfo);
+    [[nodiscard]] LibreTranslateLanguagesInfo info() const;
+    void setInfo(const LibreTranslateLanguagesInfo &newInfo);
 
 Q_SIGNALS:
     void getLanguagesFailed();
     void getLanguagesDone();
 
 private:
-    LibreTranslateLanguageInfo mInfo;
+    LibreTranslateLanguagesInfo mInfo;
 };

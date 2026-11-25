@@ -27,8 +27,8 @@ target_sources(
         libretranslateengineconfigurewidget.cpp
         libretranslateengineutil.h
         libretranslateengineutil.cpp
-        libretranslatelanguagejob.h
-        libretranslatelanguagejob.cpp
+        libretranslatelanguagesjob.h
+        libretranslatelanguagesjob.cpp
         libretranslatetextjob.h
         libretranslatetextjob.cpp
 )
