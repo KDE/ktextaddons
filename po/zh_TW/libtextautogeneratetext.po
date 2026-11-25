@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 18:14+0000\n"
+"POT-Creation-Date: 2026-11-24 18:50+0000\n"
 "PO-Revision-Date: 2026-11-05 22:59+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -683,9 +683,9 @@ msgstr "已安裝的模型"
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:68
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:61
 #: widgets/projects/textautogenerateprojectwidget.cpp:33
-#: widgets/promptswidget/textautogenerateagentwidget.cpp:29
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:39
-#: widgets/promptswidget/textautogenerateskillwidget.cpp:32
+#: widgets/promptswidget/textautogenerateagentwidget.cpp:34
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:44
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:37
 #: widgets/tags/textautogeneratetagwidget.cpp:34
 #, kde-format
 msgid "Name:"
@@ -757,7 +757,7 @@ msgid "Tag:"
 msgstr "標籤："
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:42
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:48
 #, kde-format
 msgid "Prompt:"
 msgstr "Prompt："
@@ -4047,19 +4047,22 @@ msgid "Project name…"
 msgstr "專案名稱："
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
+#: widgets/promptswidget/textautogenerateagentwidget.cpp:35
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:45
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:38
 #, kde-format
 msgid "Icon:"
 msgstr "圖示："
 
-#: widgets/promptswidget/textautogenerateagentdialog.cpp:23
+#: widgets/promptswidget/textautogenerateagentdialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Agent"
 msgstr "代理"
 
-#: widgets/promptswidget/textautogenerateagentwidget.cpp:30
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
-#: widgets/promptswidget/textautogenerateskillwidget.cpp:33
+#: widgets/promptswidget/textautogenerateagentwidget.cpp:36
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:47
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:39
 #, kde-format
 msgid "Description:"
 msgstr "描述："
@@ -4079,21 +4082,29 @@ msgstr "旅行"
 msgid "Undefined"
 msgstr "未定義"
 
-#: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "提示詞"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:40
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:46
 #, kde-format
 msgid "Category:"
 msgstr "分類："
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:49
 #, kde-format
 msgid "Command Completion:"
 msgstr "指令補全："
+
+#: widgets/promptswidget/textautogeneratesearchpromptwidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search prompt…"
+msgstr "搜尋…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
 #, kde-format
@@ -4117,6 +4128,14 @@ msgstr "您確定要移除這個代理（%1）嗎？"
 msgctxt "@title"
 msgid "Remove Agent"
 msgstr "移除代理"
+
+#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search agent…"
+msgstr "搜尋…"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -4164,13 +4183,13 @@ msgctxt "@title"
 msgid "Remove Skill"
 msgstr "移除 Skill"
 
-#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Skill"
 msgstr "Skill"
 
-#: widgets/promptswidget/textautogenerateskillwidget.cpp:34
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:40
 #, kde-format
 msgid "Instructions:"
 msgstr "指示："

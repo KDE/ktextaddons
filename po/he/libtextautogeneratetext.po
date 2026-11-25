@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 18:14+0000\n"
-"PO-Revision-Date: 2026-11-21 08:09+0200\n"
+"POT-Creation-Date: 2026-11-24 18:50+0000\n"
+"PO-Revision-Date: 2026-11-24 11:39+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
@@ -678,9 +678,9 @@ msgstr "מודל מותקן"
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:68
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:61
 #: widgets/projects/textautogenerateprojectwidget.cpp:33
-#: widgets/promptswidget/textautogenerateagentwidget.cpp:29
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:39
-#: widgets/promptswidget/textautogenerateskillwidget.cpp:32
+#: widgets/promptswidget/textautogenerateagentwidget.cpp:34
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:44
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:37
 #: widgets/tags/textautogeneratetagwidget.cpp:34
 #, kde-format
 msgid "Name:"
@@ -752,7 +752,7 @@ msgid "Tag:"
 msgstr "תגית:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:42
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:48
 #, kde-format
 msgid "Prompt:"
 msgstr "בקשה:"
@@ -2868,6 +2868,8 @@ msgid ""
 "AutoTrust's decision models return choices, yes/no probabilities, and "
 "ratings for the questions you supply."
 msgstr ""
+"המודלים להחלטות של AutoTrust מחזירים אפשרויות, הסתברויות של כן/לא ודירוגים "
+"לשאלות שמסופקות."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:355
 #, kde-format
@@ -3257,13 +3259,9 @@ msgid ""
 msgstr ""
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:447
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alibaba's performant long context models for agentic and coding tasks."
+#, kde-format
 msgid "A self-improving family of open-source models for agentic coding."
-msgstr ""
-"המודלים של Alibaba עם הביצועים המשופרים והקשרים ארועים למשימות שמפעילות "
-"סוכנים או פיתוח קוד."
+msgstr "משפחה של מודלים בקוד פתוח שמשפרים את עצמם למטרות כתיבת קוד עם סוכנים."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:448
 #, kde-format
@@ -3311,13 +3309,14 @@ msgstr ""
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:457
 #, kde-format
 msgid "An experimental preview of the architecture that will underpin Qwen4."
-msgstr ""
+msgstr "תצוגה מקדימה ניסיונית של הארכיקטורה שתשמש כבסיס ל־Qwen4."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:458
 #, kde-format
 msgid ""
 "65B dense model built for agentic coding, with up to 1M tokens of context."
 msgstr ""
+"מודל דחוס בגודל 65B שנבנה לכתיבת קוד עם סוכנים, עם עד מיליון אסימוני הקשר."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:459
 #, kde-format
@@ -3628,27 +3627,22 @@ msgid "Tool Plugins"
 msgstr "תוספי כלים"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:35
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Prompts"
-msgstr "בקשה"
+msgstr "בקשות"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Skill"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Skills"
-msgstr "מיומנות"
+msgstr "מיומנויות"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Agent"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Agents"
-msgstr "סוכן"
+msgstr "סוכנים"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
@@ -4158,19 +4152,22 @@ msgid "Project name…"
 msgstr "שם המיזם…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
+#: widgets/promptswidget/textautogenerateagentwidget.cpp:35
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:45
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:38
 #, kde-format
 msgid "Icon:"
 msgstr "סמל:"
 
-#: widgets/promptswidget/textautogenerateagentdialog.cpp:23
+#: widgets/promptswidget/textautogenerateagentdialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Agent"
 msgstr "סוכן"
 
-#: widgets/promptswidget/textautogenerateagentwidget.cpp:30
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
-#: widgets/promptswidget/textautogenerateskillwidget.cpp:33
+#: widgets/promptswidget/textautogenerateagentwidget.cpp:36
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:47
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:39
 #, kde-format
 msgid "Description:"
 msgstr "תיאור:"
@@ -4190,21 +4187,29 @@ msgstr "טיול"
 msgid "Undefined"
 msgstr "לא מוגדר"
 
-#: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "בקשה"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:40
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:46
 #, kde-format
 msgid "Category:"
 msgstr "קטגוריה:"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:49
 #, kde-format
 msgid "Command Completion:"
 msgstr "השלמת פקודות:"
+
+#: widgets/promptswidget/textautogeneratesearchpromptwidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search prompt…"
+msgstr "חיפוש…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
 #, kde-format
@@ -4228,6 +4233,14 @@ msgstr "להסיר את הסוכן הזה (%1)?"
 msgctxt "@title"
 msgid "Remove Agent"
 msgstr "הסרת סוכן"
+
+#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search agent…"
+msgstr "חיפוש…"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -4275,13 +4288,13 @@ msgctxt "@title"
 msgid "Remove Skill"
 msgstr "הסרת מיומנות"
 
-#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Skill"
 msgstr "מיומנות"
 
-#: widgets/promptswidget/textautogenerateskillwidget.cpp:34
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:40
 #, kde-format
 msgid "Instructions:"
 msgstr "הנחיות:"

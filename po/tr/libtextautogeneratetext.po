@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 18:14+0000\n"
+"POT-Creation-Date: 2026-11-24 18:50+0000\n"
 "PO-Revision-Date: 2026-11-23 18:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -680,9 +680,9 @@ msgstr "Kurulu Model"
 #: plugins/ollamaonline/ollamaonlineconfigurewidget.cpp:68
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:61
 #: widgets/projects/textautogenerateprojectwidget.cpp:33
-#: widgets/promptswidget/textautogenerateagentwidget.cpp:29
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:39
-#: widgets/promptswidget/textautogenerateskillwidget.cpp:32
+#: widgets/promptswidget/textautogenerateagentwidget.cpp:34
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:44
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:37
 #: widgets/tags/textautogeneratetagwidget.cpp:34
 #, kde-format
 msgid "Name:"
@@ -754,7 +754,7 @@ msgid "Tag:"
 msgstr "Künye:"
 
 #: plugins/ollama/modelsmanager/ollamamodelcreatefromexistingmodelwidget.cpp:44
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:42
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:48
 #, kde-format
 msgid "Prompt:"
 msgstr "İstem:"
@@ -4290,19 +4290,22 @@ msgid "Project name…"
 msgstr "Proje adı…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
+#: widgets/promptswidget/textautogenerateagentwidget.cpp:35
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:45
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:38
 #, kde-format
 msgid "Icon:"
 msgstr "Simge:"
 
-#: widgets/promptswidget/textautogenerateagentdialog.cpp:23
+#: widgets/promptswidget/textautogenerateagentdialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Agent"
 msgstr "Aracı"
 
-#: widgets/promptswidget/textautogenerateagentwidget.cpp:30
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
-#: widgets/promptswidget/textautogenerateskillwidget.cpp:33
+#: widgets/promptswidget/textautogenerateagentwidget.cpp:36
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:47
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:39
 #, kde-format
 msgid "Description:"
 msgstr "Açıklama:"
@@ -4322,21 +4325,29 @@ msgstr "Yolculuk"
 msgid "Undefined"
 msgstr "Tanımlanmamış"
 
-#: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
+#: widgets/promptswidget/textautogeneratepromptdialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "İstem"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:40
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:46
 #, kde-format
 msgid "Category:"
 msgstr "Kategori:"
 
-#: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
+#: widgets/promptswidget/textautogeneratepromptwidget.cpp:49
 #, kde-format
 msgid "Command Completion:"
 msgstr "Komut tamamlama:"
+
+#: widgets/promptswidget/textautogeneratesearchpromptwidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search prompt…"
+msgstr "Ara…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
 #, kde-format
@@ -4360,6 +4371,14 @@ msgstr "Bu aracıyı (%1) kaldırmak istiyor musunuz?"
 msgctxt "@title"
 msgid "Remove Agent"
 msgstr "Aracıyı Kaldır"
+
+#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search agent…"
+msgstr "Ara…"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -4407,13 +4426,13 @@ msgctxt "@title"
 msgid "Remove Skill"
 msgstr "Yeteneği Kaldır"
 
-#: widgets/promptswidget/textautogenerateskilldialog.cpp:23
+#: widgets/promptswidget/textautogenerateskilldialog.cpp:24
 #, kde-format
 msgctxt "@title:window"
 msgid "Skill"
 msgstr "Yetenek"
 
-#: widgets/promptswidget/textautogenerateskillwidget.cpp:34
+#: widgets/promptswidget/textautogenerateskillwidget.cpp:40
 #, kde-format
 msgid "Instructions:"
 msgstr "Yönergeler:"

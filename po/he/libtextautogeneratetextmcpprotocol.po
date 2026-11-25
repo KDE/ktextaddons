@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-22 20:46+0000\n"
-"PO-Revision-Date: 2026-11-20 10:57+0200\n"
+"PO-Revision-Date: 2026-11-24 09:34+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
@@ -59,12 +59,12 @@ msgstr "HTTP שניתן להזרים"
 #: core/server/mcpprotocolserverconfirmationtool.cpp:104
 #, kde-format
 msgid "Too many confirmations are pending"
-msgstr ""
+msgstr "יותר מדי אישורים ממתינים"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:117
 #, kde-format
 msgid "MCP tool asks confirmation"
-msgstr ""
+msgstr "כלי MCP מבקש אישור"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:118
 #, kde-format
@@ -72,21 +72,23 @@ msgid ""
 "Run \"%1\"?\n"
 "%2"
 msgstr ""
+"להריץ את „%1”?\n"
+"%2"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:131
 #, kde-format
 msgid "Action refused by user"
-msgstr ""
+msgstr "הפעולה סורבה על ידי המשתמש"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:135
 #, kde-format
 msgid "Accept"
-msgstr ""
+msgstr "הסכמה"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:146
 #, kde-format
 msgid "Reject"
-msgstr ""
+msgstr "סירוב"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:128
 #, kde-format
@@ -654,13 +656,13 @@ msgstr "אירעה שגיאה בייצוא השרת."
 #: widgets/configure/mcpserverconfigurationmodulewidget.cpp:27
 #, kde-format
 msgid "Enabled"
-msgstr ""
+msgstr "פעיל"
 
 #: widgets/configure/mcpserverconfigurationmodulewidget.cpp:28
 #, kde-format
 msgctxt "@option:check"
 msgid "Ask confirmation before running tools which modify data"
-msgstr ""
+msgstr "לבקש אישור לפני הרצת כלים שמשנים נתונים"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

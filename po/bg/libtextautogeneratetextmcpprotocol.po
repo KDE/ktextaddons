@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-22 20:46+0000\n"
-"PO-Revision-Date: 2026-11-22 12:04+0100\n"
+"PO-Revision-Date: 2026-11-24 22:15+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -58,12 +58,12 @@ msgstr "HTTP с поточно предаване"
 #: core/server/mcpprotocolserverconfirmationtool.cpp:104
 #, kde-format
 msgid "Too many confirmations are pending"
-msgstr ""
+msgstr "Твърде много висящи потвърждения"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:117
 #, kde-format
 msgid "MCP tool asks confirmation"
-msgstr ""
+msgstr "Запитване за потвърждение от MCP инструмент"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:118
 #, kde-format
@@ -71,21 +71,23 @@ msgid ""
 "Run \"%1\"?\n"
 "%2"
 msgstr ""
+"Стартиране на „%1“?\n"
+"%2"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:131
 #, kde-format
 msgid "Action refused by user"
-msgstr ""
+msgstr "Действието е отказано от потребителя"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:135
 #, kde-format
 msgid "Accept"
-msgstr ""
+msgstr "Приемане"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:146
 #, kde-format
 msgid "Reject"
-msgstr ""
+msgstr "Отхвърляне"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:128
 #, kde-format
