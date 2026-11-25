@@ -113,6 +113,6 @@ void McpProtocolServerUtils::printTools(const QList<TextAutoGenerateTextMcpProto
     QTextStream out(stdout);
     out << i18n("List of Tools:") << '\n';
     for (const auto &tool : lst) {
-        out << "   " << tool.name().leftJustified(nameWidth) << "   " << tool.description().value_or(tool.title().value_or({})) << '\n';
+        out << "   " << tool.name().leftJustified(nameWidth) << "   " << tool.description().value_or(tool.title().value_or(QString())) << '\n';
     }
 }
