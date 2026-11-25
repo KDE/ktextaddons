@@ -44,6 +44,6 @@ void LibreTranslateLanguagesJob::setInfo(const LibreTranslateLanguagesInfo &newI
 
 bool LibreTranslateLanguagesJob::LibreTranslateLanguagesInfo::isValid() const
 {
-    return !apiKey.isEmpty() || !serverUrl.isEmpty();
+    return !serverUrl.isEmpty();
 }
 #include "moc_libretranslatelanguagesjob.cpp"

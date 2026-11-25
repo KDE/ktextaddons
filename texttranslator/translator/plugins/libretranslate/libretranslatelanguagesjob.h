@@ -13,7 +13,6 @@ class LibreTranslateLanguagesJob : public QObject
     Q_OBJECT
 public:
     struct LibreTranslateLanguagesInfo {
-        QString apiKey;
         QString serverUrl;
 
         [[nodiscard]] bool isValid() const;
