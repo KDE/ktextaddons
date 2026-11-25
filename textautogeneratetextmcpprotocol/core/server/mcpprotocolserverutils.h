@@ -8,6 +8,7 @@
 #include "textautogeneratetextmcpprotocolcore_export.h"
 #include <KSharedConfig>
 #include <QByteArray>
+#include <QList>
 #include <QString>
 #include <QUrl>
 #include <functional>
@@ -75,8 +76,9 @@ loadSettings(const KSharedConfig::Ptr &config, QObject *context, std::function<v
 TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void saveSettings(const KSharedConfig::Ptr &config, const McpProtocolSettings &settings);
 
 /*!
- *
+ * \brief printTools
+ * Print name and description of tools \a lst on standard output (used by --list-tools command line option).
  */
-void printTools(const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolTool> &lst);
+TEXTAUTOGENERATETEXTMCPPROTOCOLCORE_EXPORT void printTools(const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolTool> &lst);
 }
 }

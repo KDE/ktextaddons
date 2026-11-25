@@ -10,7 +10,9 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
+#include <QTextStream>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTool>
+#include <algorithm>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace TextAutoGenerateTextMcpProtocolCore;
