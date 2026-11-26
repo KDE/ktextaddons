@@ -8,6 +8,8 @@
 #include "core/models/textautogeneratetextskillmodel.h"
 #include "widgets/promptswidget/textautogenerateselectskilllistwidget.h"
 #include "widgets/promptswidget/textautogenerateselectskillwidget.h"
+#include <QLineEdit>
+#include <QSortFilterProxyModel>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateSelectSkillWidgetTest)
@@ -29,7 +31,16 @@ void TextAutoGenerateSelectSkillWidgetTest::shouldHaveDefaultValues()
 
     auto mSkillModel = w.findChild<TextAutoGenerateText::TextAutoGenerateTextSkillModel *>(u"mSkillModel"_s);
     QVERIFY(mSkillModel);
-    QCOMPARE(mListWidget->model(), mSkillModel);
+    auto mSearchLineEdit = w.findChild<QLineEdit *>(u"mSearchLineEdit"_s);
+    QVERIFY(mSearchLineEdit);
+    QVERIFY(mSearchLineEdit->text().isEmpty());
+    QVERIFY(mSearchLineEdit->isClearButtonEnabled());
+    QVERIFY(!mSearchLineEdit->placeholderText().isEmpty());
+
+    auto mFilterProxyModel = w.findChild<QSortFilterProxyModel *>(u"mFilterProxyModel"_s);
+    QVERIFY(mFilterProxyModel);
+    QCOMPARE(mFilterProxyModel->sourceModel(), mSkillModel);
+    QCOMPARE(mListWidget->model(), mFilterProxyModel);
     QVERIFY(w.skills().isEmpty());
 }
 

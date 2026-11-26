@@ -8,7 +8,9 @@
 #include "core/textautogenerateagentprompskillmanager.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogenerateselectagentlistwidget.h"
+#include <KLocalizedString>
 #include <QLineEdit>
+#include <QSortFilterProxyModel>
 #include <QVBoxLayout>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -18,6 +20,7 @@ TextAutoGenerateSelectAgentWidget::TextAutoGenerateSelectAgentWidget(TextAutoGen
     , mAgentModel(new TextAutoGenerateTextAgentModel(this))
     , mManager(manager)
     , mSearchLineEdit(new QLineEdit(this))
+    , mFilterProxyModel(new QSortFilterProxyModel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
@@ -28,10 +31,17 @@ TextAutoGenerateSelectAgentWidget::TextAutoGenerateSelectAgentWidget(TextAutoGen
     mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search agent…"));
     mAgentModel->setObjectName(u"mAgentModel"_s);
 
-    mListWidget->setModel(mAgentModel);
+    mFilterProxyModel->setObjectName(u"mFilterProxyModel"_s);
+    mFilterProxyModel->setSourceModel(mAgentModel);
+    mFilterProxyModel->setFilterRole(TextAutoGenerateTextAgentModel::Name);
+    mFilterProxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
+
+    mListWidget->setModel(mFilterProxyModel);
     mListWidget->setObjectName(u"mListWidget"_s);
     mainLayout->addWidget(mSearchLineEdit);
     mainLayout->addWidget(mListWidget);
+
+    connect(mSearchLineEdit, &QLineEdit::textChanged, mFilterProxyModel, &QSortFilterProxyModel::setFilterFixedString);
 
     connect(mListWidget, &TextAutoGenerateSelectAgentListWidget::addAgent, this, &TextAutoGenerateSelectAgentWidget::slotAddAgent);
     connect(mListWidget, &TextAutoGenerateSelectAgentListWidget::editAgent, this, &TextAutoGenerateSelectAgentWidget::slotEditAgent);

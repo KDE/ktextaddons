@@ -8,6 +8,8 @@
 #include "core/models/textautogeneratetextagentmodel.h"
 #include "widgets/promptswidget/textautogenerateselectagentlistwidget.h"
 #include "widgets/promptswidget/textautogenerateselectagentwidget.h"
+#include <QLineEdit>
+#include <QSortFilterProxyModel>
 #include <QTest>
 #include <QVBoxLayout>
 QTEST_MAIN(TextAutoGenerateSelectAgentWidgetTest)
@@ -29,7 +31,16 @@ void TextAutoGenerateSelectAgentWidgetTest::shouldHaveDefaultValues()
 
     auto mAgentModel = w.findChild<TextAutoGenerateText::TextAutoGenerateTextAgentModel *>(u"mAgentModel"_s);
     QVERIFY(mAgentModel);
-    QCOMPARE(mListWidget->model(), mAgentModel);
+    auto mSearchLineEdit = w.findChild<QLineEdit *>(u"mSearchLineEdit"_s);
+    QVERIFY(mSearchLineEdit);
+    QVERIFY(mSearchLineEdit->text().isEmpty());
+    QVERIFY(mSearchLineEdit->isClearButtonEnabled());
+    QVERIFY(!mSearchLineEdit->placeholderText().isEmpty());
+
+    auto mFilterProxyModel = w.findChild<QSortFilterProxyModel *>(u"mFilterProxyModel"_s);
+    QVERIFY(mFilterProxyModel);
+    QCOMPARE(mFilterProxyModel->sourceModel(), mAgentModel);
+    QCOMPARE(mListWidget->model(), mFilterProxyModel);
     QVERIFY(w.agents().isEmpty());
 }
 

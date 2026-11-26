@@ -8,6 +8,9 @@
 #include "core/textautogenerateagentprompskillmanager.h"
 #include "core/textautogeneratemanager.h"
 #include "textautogenerateselectskilllistwidget.h"
+#include <KLocalizedString>
+#include <QLineEdit>
+#include <QSortFilterProxyModel>
 #include <QVBoxLayout>
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -16,16 +19,30 @@ TextAutoGenerateSelectSkillWidget::TextAutoGenerateSelectSkillWidget(TextAutoGen
     , mListWidget(new TextAutoGenerateSelectSkillListWidget(this))
     , mSkillModel(new TextAutoGenerateTextSkillModel(this))
     , mManager(manager)
+    , mSearchLineEdit(new QLineEdit(this))
+    , mFilterProxyModel(new QSortFilterProxyModel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
+    mSearchLineEdit->setObjectName(u"mSearchLineEdit"_s);
+    mSearchLineEdit->setClearButtonEnabled(true);
+    mSearchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search skill…"));
+    mainLayout->addWidget(mSearchLineEdit);
+
     mSkillModel->setObjectName(u"mSkillModel"_s);
 
-    mListWidget->setModel(mSkillModel);
+    mFilterProxyModel->setObjectName(u"mFilterProxyModel"_s);
+    mFilterProxyModel->setSourceModel(mSkillModel);
+    mFilterProxyModel->setFilterRole(TextAutoGenerateTextSkillModel::Name);
+    mFilterProxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
+
+    mListWidget->setModel(mFilterProxyModel);
     mListWidget->setObjectName(u"mListWidget"_s);
     mainLayout->addWidget(mListWidget);
+
+    connect(mSearchLineEdit, &QLineEdit::textChanged, mFilterProxyModel, &QSortFilterProxyModel::setFilterFixedString);
 
     connect(mListWidget, &TextAutoGenerateSelectSkillListWidget::addSkill, this, &TextAutoGenerateSelectSkillWidget::slotAddSkill);
     connect(mListWidget, &TextAutoGenerateSelectSkillListWidget::editSkill, this, &TextAutoGenerateSelectSkillWidget::slotEditSkill);

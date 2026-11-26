@@ -9,6 +9,7 @@
 #include "textautogeneratetext_private_export.h"
 #include <QWidget>
 class QLineEdit;
+class QSortFilterProxyModel;
 namespace TextAutoGenerateText
 {
 class TextAutoGenerateManager;
@@ -40,5 +41,6 @@ private:
     TextAutoGenerateTextAgentModel *const mAgentModel;
     TextAutoGenerateManager *const mManager;
     QLineEdit *const mSearchLineEdit;
+    QSortFilterProxyModel *const mFilterProxyModel;
 };
 }
