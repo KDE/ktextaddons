@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtexttranslator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-11 13:41+0000\n"
+"POT-Creation-Date: 2026-11-25 18:32+0000\n"
 "PO-Revision-Date: 2026-08-27 12:40+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -552,7 +552,7 @@ msgid "Api Key:"
 msgstr "Clave de la API:"
 
 #: translator/plugins/deepl/deeplengineplugin.cpp:40
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:42
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server needs Api Key."
 msgstr "El servidor necesita clave de API:"
@@ -567,7 +567,7 @@ msgstr "Google"
 msgid "Invalid answer."
 msgstr "Respuesta no válida."
 
-#: translator/plugins/libretranslate/libretranslateengineclient.cpp:35
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:53
 #, kde-format
 msgid "Libre Translate"
 msgstr "Libre Translate"
@@ -584,10 +584,16 @@ msgstr "El servidor solicita clave de API"
 msgid "Server Url:"
 msgstr "URL del servidor:"
 
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:38
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:36
+#: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:32
 #, kde-format
 msgid "Server url is not defined."
 msgstr "No se ha definido el URL del servidor."
+
+#: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:76
+#, kde-format
+msgid "Server returned an invalid languages list."
+msgstr ""
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:32
 #, kde-format
@@ -747,7 +753,7 @@ msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Configurar"
 
-#: translator/widgets/translatorwidget.cpp:357
+#: translator/widgets/translatorwidget.cpp:384
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -757,24 +763,24 @@ msgstr ""
 "Arrastre el texto que quiera traducir (tenga cuidado, ya que el texto se "
 "enviará al servidor externo)."
 
-#: translator/widgets/translatorwidget.cpp:359
+#: translator/widgets/translatorwidget.cpp:386
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Arrastre el texto que quiera traducir."
 
-#: translator/widgets/translatorwidget.cpp:410
+#: translator/widgets/translatorwidget.cpp:437
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "No se ha detectado conexión de red. No se puede traducir texto."
 
-#: translator/widgets/translatorwidget.cpp:410
+#: translator/widgets/translatorwidget.cpp:437
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "No hay red"
 
-#: translator/widgets/translatorwidget.cpp:447
+#: translator/widgets/translatorwidget.cpp:474
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

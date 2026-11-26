@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kdepim-addons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-15 12:36+0000\n"
-"PO-Revision-Date: 2026-09-29 05:48+0200\n"
+"PO-Revision-Date: 2026-11-25 14:11+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: common/grammarresulttextedit.cpp:37
 #, kde-format
@@ -132,10 +132,9 @@ msgid "Grammalecte path not found."
 msgstr "Grammalecte-ის ბილიკი ვერ ვიპოვე."
 
 #: grammalecte/grammalecteresultwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Grammalecte program file not found."
+#, kde-format
 msgid "Python program file not found."
-msgstr "Grammalecte-ის გამშვები ფაილი ვერ ვიპოვე."
+msgstr "Python-ის გამშვები ფაილი ვერ ვიპოვე."
 
 #: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format

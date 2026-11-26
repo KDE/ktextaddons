@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-11 13:41+0000\n"
+"POT-Creation-Date: 2026-11-25 18:32+0000\n"
 "PO-Revision-Date: 2026-08-27 21:59+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -557,7 +557,7 @@ msgid "Api Key:"
 msgstr "API-gakoa:"
 
 #: translator/plugins/deepl/deeplengineplugin.cpp:40
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:42
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server needs Api Key."
 msgstr "Zerbitzariak API-gakoa behar du."
@@ -572,7 +572,7 @@ msgstr "Google"
 msgid "Invalid answer."
 msgstr "Erantzun baliogabea."
 
-#: translator/plugins/libretranslate/libretranslateengineclient.cpp:35
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:53
 #, kde-format
 msgid "Libre Translate"
 msgstr "Libre Translate"
@@ -589,10 +589,16 @@ msgstr "Zerbitzariak API-gakoa behar du"
 msgid "Server Url:"
 msgstr "Zerbitzariaren URLa:"
 
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:38
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:36
+#: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:32
 #, kde-format
 msgid "Server url is not defined."
 msgstr "Zerbitzariaren URLa ez dago definituta."
+
+#: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:76
+#, kde-format
+msgid "Server returned an invalid languages list."
+msgstr ""
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:32
 #, kde-format
@@ -751,7 +757,7 @@ msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Konfiguratu"
 
-#: translator/widgets/translatorwidget.cpp:357
+#: translator/widgets/translatorwidget.cpp:384
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -761,24 +767,24 @@ msgstr ""
 "Arrastatu itzuli nahi duzun testua. Kontuz: testua kanpoko zerbitzari batera "
 "bidaliko da."
 
-#: translator/widgets/translatorwidget.cpp:359
+#: translator/widgets/translatorwidget.cpp:386
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Arrastatu itzuli nahi duzun testua."
 
-#: translator/widgets/translatorwidget.cpp:410
+#: translator/widgets/translatorwidget.cpp:437
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Ez da sareko konexiorik hauteman; ezin dugu testua itzuli."
 
-#: translator/widgets/translatorwidget.cpp:410
+#: translator/widgets/translatorwidget.cpp:437
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Sarerik ez"
 
-#: translator/widgets/translatorwidget.cpp:447
+#: translator/widgets/translatorwidget.cpp:474
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

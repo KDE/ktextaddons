@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-11 13:41+0000\n"
+"POT-Creation-Date: 2026-11-25 18:32+0000\n"
 "PO-Revision-Date: 2026-09-23 06:56+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -545,7 +545,7 @@ msgid "Api Key:"
 msgstr ""
 
 #: translator/plugins/deepl/deeplengineplugin.cpp:40
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:42
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server needs Api Key."
 msgstr ""
@@ -560,7 +560,7 @@ msgstr ""
 msgid "Invalid answer."
 msgstr ""
 
-#: translator/plugins/libretranslate/libretranslateengineclient.cpp:35
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:53
 #, kde-format
 msgid "Libre Translate"
 msgstr ""
@@ -577,9 +577,15 @@ msgstr ""
 msgid "Server Url:"
 msgstr ""
 
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:38
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:36
+#: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:32
 #, kde-format
 msgid "Server url is not defined."
+msgstr ""
+
+#: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:76
+#, kde-format
+msgid "Server returned an invalid languages list."
 msgstr ""
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:32
@@ -739,7 +745,7 @@ msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "سەپلە"
 
-#: translator/widgets/translatorwidget.cpp:357
+#: translator/widgets/translatorwidget.cpp:384
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -747,24 +753,24 @@ msgid ""
 "external Server)."
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:359
+#: translator/widgets/translatorwidget.cpp:386
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:410
+#: translator/widgets/translatorwidget.cpp:437
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:410
+#: translator/widgets/translatorwidget.cpp:437
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr ""
 
-#: translator/widgets/translatorwidget.cpp:447
+#: translator/widgets/translatorwidget.cpp:474
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

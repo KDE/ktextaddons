@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-11 13:41+0000\n"
+"POT-Creation-Date: 2026-11-25 18:32+0000\n"
 "PO-Revision-Date: 2026-08-19 13:40+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -553,7 +553,7 @@ msgid "Api Key:"
 msgstr "API raktas:"
 
 #: translator/plugins/deepl/deeplengineplugin.cpp:40
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:42
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server needs Api Key."
 msgstr "Serveris reikalauja API rakto."
@@ -568,7 +568,7 @@ msgstr "Google"
 msgid "Invalid answer."
 msgstr "Netinkamas atsakymas."
 
-#: translator/plugins/libretranslate/libretranslateengineclient.cpp:35
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:53
 #, kde-format
 msgid "Libre Translate"
 msgstr "Libre Translate"
@@ -585,10 +585,16 @@ msgstr "Serveris reikalavo API rakto"
 msgid "Server Url:"
 msgstr "Serverio URL:"
 
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:38
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:36
+#: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:32
 #, kde-format
 msgid "Server url is not defined."
 msgstr "Serverio URL nėra apibrėžtas."
+
+#: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:76
+#, kde-format
+msgid "Server returned an invalid languages list."
+msgstr ""
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:32
 #, kde-format
@@ -747,7 +753,7 @@ msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "Konfigūruoti"
 
-#: translator/widgets/translatorwidget.cpp:357
+#: translator/widgets/translatorwidget.cpp:384
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -757,24 +763,24 @@ msgstr ""
 "Tempkite tekstą, kurį norite versti. (Būkite atsargūs, tekstas bus išsiųstas "
 "į išorinį serverį)."
 
-#: translator/widgets/translatorwidget.cpp:359
+#: translator/widgets/translatorwidget.cpp:386
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "Tempkite tekstą, kurį norite versti."
 
-#: translator/widgets/translatorwidget.cpp:410
+#: translator/widgets/translatorwidget.cpp:437
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "Neaptiktas joks tinklo ryšys, nepavyks išversti teksto."
 
-#: translator/widgets/translatorwidget.cpp:410
+#: translator/widgets/translatorwidget.cpp:437
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "Nėra tinklo"
 
-#: translator/widgets/translatorwidget.cpp:447
+#: translator/widgets/translatorwidget.cpp:474
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

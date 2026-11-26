@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-24 18:50+0000\n"
-"PO-Revision-Date: 2026-11-20 19:40+0100\n"
+"PO-Revision-Date: 2026-11-25 10:48+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -4512,12 +4512,10 @@ msgid "Command Completion:"
 msgstr "Compleció d'ordres:"
 
 #: widgets/promptswidget/textautogeneratesearchpromptwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search prompt…"
-msgstr "Cerca…"
+msgstr "Cerca indicació…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
 #, kde-format
@@ -4543,12 +4541,10 @@ msgid "Remove Agent"
 msgstr "Elimina l'agent"
 
 #: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search agent…"
-msgstr "Cerca…"
+msgstr "Cerca un agent…"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format

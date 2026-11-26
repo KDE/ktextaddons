@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-11 13:41+0000\n"
+"POT-Creation-Date: 2026-11-25 18:32+0000\n"
 "PO-Revision-Date: 2024-12-25 19:35+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -552,7 +552,7 @@ msgid "Api Key:"
 msgstr "अपि कील :"
 
 #: translator/plugins/deepl/deeplengineplugin.cpp:40
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:42
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:40
 #, kde-format
 msgid "Server needs Api Key."
 msgstr "सर्वरस्य कृते Api Key इत्यस्य आवश्यकता अस्ति ।"
@@ -567,7 +567,7 @@ msgstr "गूगल"
 msgid "Invalid answer."
 msgstr "असिद्धम् उत्तरम् ।"
 
-#: translator/plugins/libretranslate/libretranslateengineclient.cpp:35
+#: translator/plugins/libretranslate/libretranslateengineclient.cpp:53
 #, kde-format
 msgid "Libre Translate"
 msgstr "Libre अनुवाद करें"
@@ -584,10 +584,16 @@ msgstr "सर्वरस्य आवश्यकता आसीत् Api Ke
 msgid "Server Url:"
 msgstr "सर्वर Url: ."
 
-#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:38
+#: translator/plugins/libretranslate/libretranslateengineplugin.cpp:36
+#: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:32
 #, kde-format
 msgid "Server url is not defined."
 msgstr "सर्वर url परिभाषितं नास्ति।"
+
+#: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:76
+#, kde-format
+msgid "Server returned an invalid languages list."
+msgstr ""
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:32
 #, kde-format
@@ -747,7 +753,7 @@ msgctxt "@info:tooltip"
 msgid "Configure"
 msgstr "विन्यस्तं कुर्वन्तु"
 
-#: translator/widgets/translatorwidget.cpp:357
+#: translator/widgets/translatorwidget.cpp:384
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -757,24 +763,24 @@ msgstr ""
 "यस्य पाठस्य अनुवादं कर्तुम् इच्छति तत् कर्षतु । (सावधानं भवतु पाठः बाह्यसर्वर प्रति प्रेषितः "
 "भविष्यति)।"
 
-#: translator/widgets/translatorwidget.cpp:359
+#: translator/widgets/translatorwidget.cpp:386
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Drag text that you want to translate."
 msgstr "यस्य पाठस्य अनुवादं कर्तुम् इच्छति तत् कर्षतु ।"
 
-#: translator/widgets/translatorwidget.cpp:410
+#: translator/widgets/translatorwidget.cpp:437
 #, kde-format
 msgid "No network connection detected, we cannot translate text."
 msgstr "कोऽपि जालसंयोजनः न ज्ञातः, वयं पाठस्य अनुवादं कर्तुं न शक्नुमः ।"
 
-#: translator/widgets/translatorwidget.cpp:410
+#: translator/widgets/translatorwidget.cpp:437
 #, kde-format
 msgctxt "@title:window"
 msgid "No network"
 msgstr "न जालम्"
 
-#: translator/widgets/translatorwidget.cpp:447
+#: translator/widgets/translatorwidget.cpp:474
 #, kde-format
 msgctxt "@title:window"
 msgid "Translate error"

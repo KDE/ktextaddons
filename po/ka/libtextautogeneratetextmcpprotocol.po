@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-22 20:46+0000\n"
-"PO-Revision-Date: 2026-11-06 06:39+0100\n"
+"POT-Creation-Date: 2026-11-25 20:59+0000\n"
+"PO-Revision-Date: 2026-11-25 14:10+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -59,12 +59,12 @@ msgstr "დასტრიმვადი HTTP"
 #: core/server/mcpprotocolserverconfirmationtool.cpp:104
 #, kde-format
 msgid "Too many confirmations are pending"
-msgstr ""
+msgstr "რიგში მეტისმეტად ბევრი დადასტურებაა"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:117
 #, kde-format
 msgid "MCP tool asks confirmation"
-msgstr ""
+msgstr "MCP-ის ხელსაწყო დადასტურებას მოითხოვს"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:118
 #, kde-format
@@ -72,21 +72,23 @@ msgid ""
 "Run \"%1\"?\n"
 "%2"
 msgstr ""
+"გაეშვას \"%1\"?\n"
+"%2"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:131
 #, kde-format
 msgid "Action refused by user"
-msgstr ""
+msgstr "ქმედება უარყოფილია მომხმარებლის მიერ"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:135
 #, kde-format
 msgid "Accept"
-msgstr ""
+msgstr "მიღება"
 
 #: core/server/mcpprotocolserverconfirmationtool.cpp:146
 #, kde-format
 msgid "Reject"
-msgstr ""
+msgstr "უარყოფა"
 
 #: core/server/mcpprotocolserverprotocolmanager.cpp:128
 #, kde-format
@@ -118,10 +120,15 @@ msgstr "სერვერი გაეშვა"
 msgid "Server stopped"
 msgstr "სერვერი გაჩერდა"
 
+#: core/server/mcpprotocolserverutils.cpp:114
+#, kde-format
+msgid "List of Tools:"
+msgstr ""
+
 #: plugins/client/mcpclientutils.cpp:130
 #, kde-format
 msgid "Authentication failed: the server rejected the access token."
-msgstr ""
+msgstr "ავთენტიკაცია ჩავარდა: სერვერმა უარჰყო წვდომის ტოკენი."
 
 #: plugins/client/mcpclientutils.cpp:132
 #, kde-format
@@ -129,34 +136,36 @@ msgid ""
 "Authentication required. The server uses OAuth authorization, which is not "
 "supported: set an access token in the server settings."
 msgstr ""
+"ავთენტიკაცია აუცილებელია. სერვერი იყენებს OAuth ავტორიზაციას, რომელიც "
+"მხარდაჭერილი არაა: დააყენეთ წვდომის ტოკენი სერვერის პარამეტრებში."
 
 #: plugins/client/mcpclientutils.cpp:134
 #, kde-format
 msgid "Authentication required: set an access token in the server settings."
 msgstr ""
+"ავთენტიკაცია აუცილებელია: დააყენეთ წვდომის ტოკენი სერვერის პარამეტრებში."
 
 #: plugins/client/mcpclientutils.cpp:137
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions."
-msgstr ""
+msgstr "წვდომა აკრძალულია: წვდომის ტოკენი საჭირო უფლებებს არ იძლევა."
 
 #: plugins/client/mcpclientutils.cpp:138
 #, kde-format
 msgid ""
 "Access denied: the access token does not grant the required permissions (%1)."
-msgstr ""
+msgstr "წვდომა აკრძალულია: წვდომის ტოკენი საჭირო უფლებებს არ იძლევა (%1)."
 
 #: plugins/client/mcpclientutils.cpp:140
 #, kde-format
 msgid "Access denied by the server."
-msgstr ""
+msgstr "წვდომა აკრძალულია სერვერის მიერ."
 
 #: plugins/client/mcpclientutils.cpp:143
-#, fuzzy, kde-format
-#| msgid "Server started"
+#, kde-format
 msgid "Server message: %1"
-msgstr "სერვერი გაეშვა"
+msgstr "სერვერის შეტყობინება: %1"
 
 #: plugins/client/sse/mcpclientsse.cpp:43
 #: plugins/client/streamablehttp/mcpclientstreamablehttp.cpp:64
@@ -400,19 +409,15 @@ msgid "Add"
 msgstr "დამატება"
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:84
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Do you want to remove this server (%1)?"
+#, kde-format
 msgid "Do you want to remove this variable."
-msgstr "მართლა გნებავთ, წაშალოთ ეს სერვერი (%1)?"
+msgstr "გსურთ ამ ცვლადის წაშლა."
 
 #: widgets/client/addmcpstdioserverenvironmentwidget.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Header"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Variable"
-msgstr "თავსართის წაშლა"
+msgstr "ცვლადის წაშლა"
 
 #: widgets/client/addmcpstdioserverwidget.cpp:26
 #, kde-format
@@ -543,12 +548,10 @@ msgid "Add Server…"
 msgstr "სერვერის დამატება…"
 
 #: widgets/client/mcpserverlistview.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@action"
 msgid "Import Server…"
-msgstr "სერვერის დამატება…"
+msgstr "სერვერის შემოტანა…"
 
 #: widgets/client/mcpserverlistview.cpp:77
 #, kde-format
@@ -566,7 +569,7 @@ msgstr "ხელსაწყოების მორგება…"
 #, kde-format
 msgctxt "@action"
 msgid "Export…"
-msgstr ""
+msgstr "გატანა…"
 
 #: widgets/client/mcpserverlistview.cpp:103
 #, kde-format
@@ -608,7 +611,7 @@ msgstr "MCP რეესტრიდან…"
 #, kde-format
 msgctxt "@action"
 msgid "Import…"
-msgstr ""
+msgstr "შემოტანა…"
 
 #: widgets/client/mcpserverwidget.cpp:185
 #, kde-format
@@ -623,56 +626,51 @@ msgid "Add MCP Server"
 msgstr "MCP სერვერის დამატება"
 
 #: widgets/client/mcpserverwidget.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Servers"
-msgstr "სერვერის დამატება…"
+msgstr "სერვერების შემოტანა"
 
 #: widgets/client/mcpserverwidget.cpp:238
 #: widgets/client/mcpserverwidget.cpp:269
 #, kde-format
 msgid "JSON Files (*.json)"
-msgstr ""
+msgstr "JSON ფაილები (*.json)"
 
 #: widgets/client/mcpserverwidget.cpp:245
 #, kde-format
 msgid "An error occurred when importing server."
-msgstr ""
+msgstr "სერვერის შემოტანისას აღმოჩენილია შეცდომა."
 
 #: widgets/client/mcpserverwidget.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Server"
-msgstr "სერვერის დამატება…"
+msgstr "სერვერის შემოტანა"
 
 #: widgets/client/mcpserverwidget.cpp:267
 #: widgets/client/mcpserverwidget.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Server…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Server"
-msgstr "სერვერის დამატება…"
+msgstr "სერვერის გატანა"
 
 #: widgets/client/mcpserverwidget.cpp:279
 #, kde-format
 msgid "An error occurred when exporting server."
-msgstr ""
+msgstr "სერვერის გატანისას აღმოჩენილია შეცდომა."
 
 #: widgets/configure/mcpserverconfigurationmodulewidget.cpp:27
 #, kde-format
 msgid "Enabled"
-msgstr ""
+msgstr "ჩართულია"
 
 #: widgets/configure/mcpserverconfigurationmodulewidget.cpp:28
 #, kde-format
 msgctxt "@option:check"
 msgid "Ask confirmation before running tools which modify data"
 msgstr ""
+"დადასტურების მოთხოვნა იმ ხელსაწყოების გაშვებამდე, რომლებიც მონაცემებს ცვლიან"
 
 #: widgets/server/mcpprotocolserverconfiguredialog.cpp:25
 #, kde-format

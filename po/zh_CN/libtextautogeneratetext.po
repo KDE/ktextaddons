@@ -144,7 +144,7 @@ msgstr "可以删除或覆盖数据"
 #: core/models/textautogeneratechatsmodel.cpp:97
 #, kde-format
 msgid "New Chat..."
-msgstr "新聊天..."
+msgstr "新建对话..."
 
 #: core/models/textautogeneratechatsmodel.cpp:237
 #, kde-format
@@ -1414,7 +1414,7 @@ msgid ""
 "General use chat model based on Llama and Llama 2 with 2K to 16K context "
 "sizes."
 msgstr ""
-"基于 Llama 和 Llama 2 的通用聊天模型，支持 2 千 (2K) 至 1 万 6 千 (16K) 标记"
+"基于 Llama 和 Llama 2 的通用对话模型，支持 2 千 (2K) 至 1 万 6 千 (16K) 标记"
 "的上下文大小。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:80
@@ -1698,7 +1698,7 @@ msgid ""
 "feedback focused on improving chatbot helpfulness."
 msgstr ""
 "Starling 是一个大型语言模型，通过从人工智能反馈中强化学习训练而成，重点在于提"
-"升聊天机器人的有用性。"
+"升对话机器人的有用性。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:130
 #, kde-format
@@ -1731,7 +1731,7 @@ msgid ""
 "for use in summarization, text generation, and chat bots."
 msgstr ""
 "Technology Innovation Institute (TII) 开发的一个大型语言模型，用于摘要、文本"
-"生成和聊天机器人。"
+"生成和对话机器人。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:137
 #, kde-format
@@ -1925,7 +1925,7 @@ msgstr ""
 msgid ""
 "A lightweight chat model allowing accurate, and responsive output without "
 "requiring high-end hardware."
-msgstr "一种轻量级的聊天模型，能够实现准确且迅速的输出，无需高端硬件支持。"
+msgstr "一款轻量级对话模型，能够实现准确且迅速的输出，无需高端硬件支持。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:173
 #, kde-format
@@ -2008,7 +2008,7 @@ msgstr "一款由具备前沿性能水平的混合专家模型 (MoE)，使用高
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:183
 #, kde-format
 msgid "A 7B chat model fine-tuned with high-quality data and based on Zephyr."
-msgstr "一款基于 Zephyr 并使用高质量数据进行微调的 70 亿 (7B) 聊天模型。"
+msgstr "一款基于 Zephyr 并使用高质量数据进行微调的 70 亿 (7B) 对话模型。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:184
 #, kde-format
@@ -2017,7 +2017,7 @@ msgid ""
 "Designed for chat and code generation."
 msgstr ""
 "基于 Open Orca 的 OpenChat 模型与 Garage-bAInd 的 Platypus 2 模型的合并模型。"
-"专为聊天和代码生成而设计。"
+"专为对话和代码生成而设计。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:185
 #, kde-format
@@ -2085,7 +2085,7 @@ msgstr ""
 msgid ""
 "A robust conversational model designed to be used for both chat and instruct "
 "use cases."
-msgstr "一个强大的对话模型，针对聊天和指令两种场景设计。"
+msgstr "一个强大的对话模型，针对对话和指令两种场景设计。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:196
 #, kde-format
@@ -4130,7 +4130,7 @@ msgstr "移除项目"
 msgid ""
 "Do you want to remove this project (%1)? Its chats will be kept, outside of "
 "any project."
-msgstr "你想要删除此项目 (%1) 吗？它的聊天将被保留在任何项目之外。"
+msgstr "你想要删除此项目 (%1) 吗？它的对话将被保留，但独立于任何项目之外。"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
 #, kde-format
@@ -4228,8 +4228,6 @@ msgstr "命令补全："
 
 #: widgets/promptswidget/textautogeneratesearchpromptwidget.cpp:28
 #, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
 msgctxt "@info:placeholder"
 msgid "Search prompt…"
 msgstr "搜索…"
@@ -4259,8 +4257,6 @@ msgstr "移除智能体"
 
 #: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
 #, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
 msgctxt "@info:placeholder"
 msgid "Search agent…"
 msgstr "搜索…"
@@ -4446,7 +4442,7 @@ msgstr "对话"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr "新聊天"
+msgstr "新建对话"
 
 #: widgets/textautogenerateheaderwidget.cpp:56
 #, kde-format
@@ -4470,7 +4466,7 @@ msgstr "搜索… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr "仅显示包含所选标签之一的聊天"
+msgstr "仅显示包含所选标签之一的对话"
 
 #: widgets/textautogeneratehistorywidget.cpp:54
 #, kde-format
@@ -4482,19 +4478,19 @@ msgstr "清除标签"
 #, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "搜索聊天记录"
+msgstr "搜索对话记录"
 
 #: widgets/textautogeneratehistorywidget.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
-msgstr "上一个聊天"
+msgstr "上一个对话"
 
 #: widgets/textautogeneratehistorywidget.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Next Chat"
-msgstr "下一个聊天"
+msgstr "下一个对话"
 
 #: widgets/textautogeneratesearchdialog.cpp:25
 #, kde-format
@@ -4665,7 +4661,7 @@ msgstr "插入文本"
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr "新聊天"
+msgstr "新建对话"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:157
 #, kde-format

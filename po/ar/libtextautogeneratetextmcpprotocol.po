@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-22 20:46+0000\n"
+"POT-Creation-Date: 2026-11-25 20:59+0000\n"
 "PO-Revision-Date: 2026-11-19 17:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -117,6 +117,11 @@ msgstr "بدأ الخادم"
 #, kde-format
 msgid "Server stopped"
 msgstr "توقف الخادم"
+
+#: core/server/mcpprotocolserverutils.cpp:114
+#, kde-format
+msgid "List of Tools:"
+msgstr ""
 
 #: plugins/client/mcpclientutils.cpp:130
 #, kde-format

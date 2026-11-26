@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-16 01:04+0000\n"
-"PO-Revision-Date: 2026-08-23 09:01+0200\n"
+"PO-Revision-Date: 2026-11-20 19:27+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -302,21 +302,3 @@ msgstr "<h1>Historial de Què hi ha de nou</h1>"
 #, kde-format
 msgid "All Versions"
 msgstr "Totes les versions"
-
-#~ msgid "What's new in %2. %1"
-#~ msgstr "Què hi ha de nou a %2. %1"
-
-#~ msgid "Important changes since last version:"
-#~ msgstr "Canvis importants des de l'última versió:"
-
-#~ msgid "Some of the new features in this release include:"
-#~ msgstr "Alguna de les característiques noves que inclou esta versió:"
-
-#~ msgid "Some bug fixing:"
-#~ msgstr "Algunes esmenes d'errors:"
-
-#~ msgid "<h1><i> Version %1 </i></h1><hr/><br>"
-#~ msgstr "<h1><i> Versió %1 </i></h1><hr/><br>"
-
-#~ msgid "..."
-#~ msgstr "…"
