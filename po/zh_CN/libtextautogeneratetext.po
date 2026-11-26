@@ -21,70 +21,68 @@ msgstr ""
 #: core/jobs/textautogenerateaskjob.cpp:40
 #, kde-format
 msgid "Impossible to start job. Manager is null or text is empty."
-msgstr ""
+msgstr "无法启动作业。管理器不存在或文本为空。"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:37
 #, kde-format
 msgid "Failed to open file for writing: %1"
-msgstr ""
+msgstr "打开文件进行写入失败：%1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:42
 #, kde-format
 msgid "Failed to write to file: %1"
-msgstr ""
+msgstr "写入文件失败：%1"
 
 #: core/jobs/textautogenerateexportchatasjsonjob.cpp:53
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:77
 #, kde-format
 msgid "Json File"
-msgstr ""
+msgstr "Json 文件"
 
 #: core/jobs/textautogenerateexportchatbasejob.cpp:38
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to export file."
-msgstr "无法启动 Ollama。"
+msgstr "无法导出文件。"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:41
 #, kde-format
 msgid "Failed to parse JSon file: %1"
-msgstr ""
+msgstr "解析 JSON 文件失败：%1"
 
 #: core/jobs/textautogenerateimportchatasjsonjob.cpp:69
 #, kde-format
 msgid "Failed to open file for reading: %1"
-msgstr ""
+msgstr "打开文件进行读取失败：%1"
 
 #: core/jobs/textautogenerateimportchatbasejob.cpp:37
-#, fuzzy, kde-format
-#| msgid "Impossible to start Ollama."
+#, kde-format
 msgid "Impossible to import file."
-msgstr "无法启动 Ollama。"
+msgstr "无法导入文件。"
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:96
 #, kde-format
 msgid "No LLM available."
-msgstr ""
+msgstr "没有可用的 LLM。"
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:101
 #, kde-format
 msgid "Sampling request contains unsupported content."
-msgstr ""
+msgstr "采样请求包含不支持的内容。"
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:110
 #, kde-format
 msgid "LLM doesn't support sampling requests."
-msgstr ""
+msgstr "LLM 不支持采样请求。"
 
 #: core/mcp/textautogeneratemcpsamplingjob.cpp:125
 #, kde-format
 msgid "LLM returned an empty answer."
-msgstr ""
+msgstr "LLM 返回了一个空答案。"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:35
 #, kde-format
 msgid "Tool \"%1\" is not available."
-msgstr ""
+msgstr "工具“%1”不可用。"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:57
 #, kde-format
@@ -92,70 +90,67 @@ msgid ""
 "Tool \"%1\" needs an authorization: user was asked to open a web page. Ask "
 "the user to tell you when it is done, then call the tool again."
 msgstr ""
+"工具“%1”需要授权：系统已提示用户打开一个网页。请让该用户在完成操作后通知您，"
+"再重新调用该工具。"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:63
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:174
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:190
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:201
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error"
+#, kde-format
 msgid "Error: %1"
-msgstr "错误"
+msgstr "错误：%1"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:68
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:80
 #, kde-format
 msgid "Error: server was stopped."
-msgstr ""
+msgstr "错误：服务器已停止。"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:76
 #, kde-format
 msgid "User refused to run tool \"%1\"."
-msgstr ""
+msgstr "用户拒绝运行工具“%1”。"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:83
 #, kde-format
 msgid "Calling tool \"%1\"…"
-msgstr ""
+msgstr "正在调用工具“%1”…"
 
 #: core/mcp/textautogeneratemcptoolcalljob.cpp:86
 #, kde-format
 msgid "Error: impossible to call tool \"%1\"."
-msgstr ""
+msgstr "错误：无法调用工具“%1”。"
 
 #: core/mcp/textautogeneratemcptoolsmanager.cpp:109
 #, kde-format
 msgid "Server is invalid or disabled."
-msgstr ""
+msgstr "服务器无效或已禁用。"
 
 #: core/mcp/textautogeneratemcptoolsutils.cpp:85
 #, kde-format
 msgid "Read-only"
-msgstr ""
+msgstr "只读"
 
 #: core/mcp/textautogeneratemcptoolsutils.cpp:87
-#, fuzzy, kde-format
-#| msgid "Modified At:"
+#, kde-format
 msgid "Modifies data"
-msgstr " 修改时间："
+msgstr "修改数据"
 
 #: core/mcp/textautogeneratemcptoolsutils.cpp:89
 #, kde-format
 msgid "May delete or overwrite data"
-msgstr ""
+msgstr "可以删除或覆盖数据"
 
 #: core/models/textautogeneratechatsmodel.cpp:97
 #, kde-format
 msgid "New Chat..."
-msgstr "新聊天..."
+msgstr "新建对话..."
 
 #: core/models/textautogeneratechatsmodel.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@title Preferences page name"
-#| msgid "General"
+#, kde-format
 msgid "Ephemeral"
-msgstr "常规"
+msgstr "非持久化对话"
 
 #: core/models/textautogeneratechatsmodel.cpp:239
 #, kde-format
@@ -319,18 +314,17 @@ msgstr "<br><b>补全词元：</b> %1"
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:226
 #, kde-format
 msgid "MCP tool: %1 (%2)"
-msgstr ""
+msgstr "MCP 工具：%1 (%2)"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:228
 #, kde-format
 msgid "MCP server: %1"
-msgstr ""
+msgstr "MCP 服务器：%1"
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:252
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins:"
-msgstr "工具插件"
+msgstr "工具插件："
 
 #: core/tools/textautogeneratetexttoolpluginmanager.cpp:258
 #, kde-format
@@ -358,7 +352,7 @@ msgstr "激活：%1"
 #: core/tools/textautogeneratetoolcalljob.cpp:49
 #, kde-format
 msgid "Tool \"%1\" not found."
-msgstr ""
+msgstr "没有找到工具“%1”。"
 
 #: plugins/genericnetworkplugin/genericnetworkclient.cpp:27
 #, kde-format
@@ -400,11 +394,10 @@ msgid "Failed to connect to interface at %1: %2"
 msgstr "无法连接到位于 %1 的接口：%2"
 
 #: plugins/genericnetworkplugin/genericnetworknetworkpluginconfigurewidget.cpp:37
-#, fuzzy, kde-format
-#| msgid "Modelfile"
+#, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Model default"
-msgstr "模型文件"
+msgstr "模型默认值"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:27
 #, kde-format
@@ -489,10 +482,9 @@ msgid "OpenRouter AI"
 msgstr "OpenRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:59
-#, fuzzy, kde-format
-#| msgid "OpenRouter AI"
+#, kde-format
 msgid "OrcaRouter AI"
-msgstr "OpenRouter AI"
+msgstr "OrcaRouter AI"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:61
 #, kde-format
@@ -508,18 +500,17 @@ msgstr "AtlasCloud OpenAI 兼容 API"
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:65
 #, kde-format
 msgid "Google Gemini"
-msgstr ""
+msgstr "谷歌 Gemini"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:67
-#, fuzzy, kde-format
-#| msgid "OpenAI"
+#, kde-format
 msgid "OpenAI API"
-msgstr "OpenAI"
+msgstr "OpenAI API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:69
 #, kde-format
 msgid "DeepSeek"
-msgstr ""
+msgstr "DeepSeek"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:255
 #, kde-format
@@ -572,49 +563,46 @@ msgid "Sarvam AI instance"
 msgstr "Sarvam AI 实例"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:288
-#, fuzzy, kde-format
-#| msgid "AtlasCloud OpenAI-compatible API"
+#, kde-format
 msgid "OrcaRouter OpenAI-compatible API"
-msgstr "AtlasCloud OpenAI 兼容 API"
+msgstr "OrcaRouter OpenAI 兼容 API"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:290
 #, kde-format
 msgid "OpenAI API (custom)"
-msgstr ""
+msgstr "OpenAI API (自定义)"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:292
-#, fuzzy, kde-format
-#| msgid "Mistral AI large language models"
+#, kde-format
 msgid "DeepSeek large language models"
-msgstr "Mistral AI 大语言模型"
+msgstr "DeepSeek 大语言模型"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:640
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Disabled"
-msgstr ""
+msgstr "禁用"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:642
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Enabled"
-msgstr ""
+msgstr "启用"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:644
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Minimal"
-msgstr ""
+msgstr "最小"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:646
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Low"
-msgstr ""
+msgstr "低"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:648
-#, fuzzy, kde-format
-#| msgid "Medium"
+#, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Medium"
 msgstr "中"
@@ -623,13 +611,13 @@ msgstr "中"
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "High"
-msgstr ""
+msgstr "高"
 
 #: plugins/genericnetworkplugin/genericnetworkserverinfo.cpp:652
 #, kde-format
 msgctxt "@item:inlistbox thinking level"
 msgid "Extra High"
-msgstr ""
+msgstr "超高"
 
 #: plugins/llamacpp/llamacppclient.cpp:27
 #: plugins/llamacpp/llamacppplugin.cpp:91
@@ -1427,7 +1415,7 @@ msgid ""
 "General use chat model based on Llama and Llama 2 with 2K to 16K context "
 "sizes."
 msgstr ""
-"基于 Llama 和 Llama 2 的通用聊天模型，支持 2 千 (2K) 至 1 万 6 千 (16K) 标记"
+"基于 Llama 和 Llama 2 的通用对话模型，支持 2 千 (2K) 至 1 万 6 千 (16K) 标记"
 "的上下文大小。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:80
@@ -1711,7 +1699,7 @@ msgid ""
 "feedback focused on improving chatbot helpfulness."
 msgstr ""
 "Starling 是一个大型语言模型，通过从人工智能反馈中强化学习训练而成，重点在于提"
-"升聊天机器人的有用性。"
+"升对话机器人的有用性。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:130
 #, kde-format
@@ -1744,7 +1732,7 @@ msgid ""
 "for use in summarization, text generation, and chat bots."
 msgstr ""
 "Technology Innovation Institute (TII) 开发的一个大型语言模型，用于摘要、文本"
-"生成和聊天机器人。"
+"生成和对话机器人。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:137
 #, kde-format
@@ -1938,7 +1926,7 @@ msgstr ""
 msgid ""
 "A lightweight chat model allowing accurate, and responsive output without "
 "requiring high-end hardware."
-msgstr "一种轻量级的聊天模型，能够实现准确且迅速的输出，无需高端硬件支持。"
+msgstr "一款轻量级对话模型，能够实现准确且迅速的输出，无需高端硬件支持。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:173
 #, kde-format
@@ -2021,7 +2009,7 @@ msgstr "一款由具备前沿性能水平的混合专家模型 (MoE)，使用高
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:183
 #, kde-format
 msgid "A 7B chat model fine-tuned with high-quality data and based on Zephyr."
-msgstr "一款基于 Zephyr 并使用高质量数据进行微调的 70 亿 (7B) 聊天模型。"
+msgstr "一款基于 Zephyr 并使用高质量数据进行微调的 70 亿 (7B) 对话模型。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:184
 #, kde-format
@@ -2030,7 +2018,7 @@ msgid ""
 "Designed for chat and code generation."
 msgstr ""
 "基于 Open Orca 的 OpenChat 模型与 Garage-bAInd 的 Platypus 2 模型的合并模型。"
-"专为聊天和代码生成而设计。"
+"专为对话和代码生成而设计。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:185
 #, kde-format
@@ -2098,7 +2086,7 @@ msgstr ""
 msgid ""
 "A robust conversational model designed to be used for both chat and instruct "
 "use cases."
-msgstr "一个强大的对话模型，针对聊天和指令两种场景设计。"
+msgstr "一个强大的对话模型，针对对话和指令两种场景设计。"
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:196
 #, kde-format
@@ -3058,17 +3046,17 @@ msgstr "附加文件"
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:64
 #, kde-format
 msgid "Image file %1"
-msgstr ""
+msgstr "图像文件 %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:67
 #, kde-format
 msgid "Audio file %1"
-msgstr ""
+msgstr "音频文件 %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:69
 #, kde-format
 msgid "Text file %1"
-msgstr ""
+msgstr "文本文件 %1"
 
 #: widgets/common/textautogeneratetextlineeditwidget.cpp:70
 #, kde-format
@@ -3108,7 +3096,7 @@ msgstr "元数据信息"
 #, kde-format
 msgctxt "@label"
 msgid "Run tools without confirmation:"
-msgstr ""
+msgstr "运行工具而无需确认："
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:52
 #, kde-format
@@ -3116,8 +3104,7 @@ msgid "Text Plugins"
 msgstr "文本插件"
 
 #: widgets/configure/textautogeneratetextconfigurepluginswidget.cpp:59
-#, fuzzy, kde-format
-#| msgid "Tools Plugins"
+#, kde-format
 msgid "Tool Plugins"
 msgstr "工具插件"
 
@@ -3236,66 +3223,60 @@ msgstr "添加实例…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from MCP Server"
-msgstr ""
+msgstr "来自 MCP 服务器的请求"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Accept"
-msgstr ""
+msgstr "接受"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:32
 #, kde-format
 msgctxt "@action:button"
 msgid "Decline"
-msgstr ""
+msgstr "拒绝"
 
 #: widgets/mcp/textautogenerateelicitationdialog.cpp:55
 #, kde-format
 msgctxt "@title:window"
 msgid "Request from %1"
-msgstr ""
+msgstr "来自 %1 的请求"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:217
 #, kde-format
 msgid "URL:"
-msgstr ""
+msgstr "URL："
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:246
 #, kde-format
 msgctxt "Label of required field"
 msgid "%1 (required):"
-msgstr ""
+msgstr "%1 (必须):"
 
 #: widgets/mcp/textautogenerateelicitationwidget.cpp:248
 #, kde-format
 msgctxt "Label of field"
 msgid "%1:"
-msgstr ""
+msgstr "%1："
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools"
-msgstr "配置 %1"
+msgstr "配置工具"
 
 #: widgets/mcp/textautogeneratemcpservertoolsdialog.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Tools of %1"
-msgstr "配置 %1"
+msgstr "配置 %1 的工具"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Allow to select tools"
+#, kde-format
 msgctxt "@option:check"
 msgid "Only allow selected tools"
-msgstr "允许选择工具"
+msgstr "仅允许选定的工具"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:45
 #, kde-format
@@ -3303,144 +3284,136 @@ msgctxt "@info:tooltip"
 msgid ""
 "Tools which are not selected are not sent to LLM. New tools of server are "
 "not allowed."
-msgstr ""
+msgstr "未选择的工具不会被发送到 LLM。不允许使用新的服务器工具。"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:60
-#, fuzzy, kde-format
-#| msgid "Tools"
+#, kde-format
 msgctxt "@item:inlistbox"
 msgid "All Tools"
-msgstr "工具"
+msgstr "所有工具"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
-msgstr "全部选中"
+msgstr "选择全部"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unselect All"
-msgstr "全部选中"
+msgstr "取消选择全部"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:169
 #, kde-format
 msgid "Apply changes to load the list of tools of this server."
-msgstr ""
+msgstr "应用更改来加载此服务器的工具列表。"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:170
 #, kde-format
 msgid "Enable this server to load the list of its tools."
-msgstr ""
+msgstr "启用此服务器以加载工具列表。"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:177
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:183
 #, kde-format
 msgid "Not connected"
-msgstr ""
+msgstr "未连接"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:180
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:186
 #, kde-format
 msgid "Connecting…"
-msgstr ""
+msgstr "正在连接…"
 
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:186
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Show internal tools…"
+#, kde-format
 msgid "Loading tools…"
-msgstr "显示内建工具…"
+msgstr "正在加载工具…"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:23
 #, kde-format
 msgid "The MCP server \"%1\" wants to run the tool \"%2\"."
-msgstr ""
+msgstr "MCP 服务器“%1”想要运行工具“%2”。"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Arguments:"
+#, kde-format
 msgid ""
 "Arguments:\n"
 "%1"
-msgstr "参数："
+msgstr ""
+"参数：\n"
+"%1"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:27
-#, fuzzy, kde-format
-#| msgid "Plugins Tool:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Run Tool"
-msgstr "插件工具："
+msgstr "运行工具"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Allow"
-msgstr ""
+msgstr "允许"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Always Allow This Server"
-msgstr ""
+msgstr "总是允许此服务器"
 
 #: widgets/mcp/textautogeneratemcptoolconfirmation.cpp:30
 #, kde-format
 msgctxt "@action:button"
 msgid "Deny"
-msgstr ""
+msgstr "拒绝"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:29
 #, kde-format
 msgid "[Image]"
-msgstr ""
+msgstr "[图像]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:32
 #, kde-format
 msgid "[Audio]"
-msgstr ""
+msgstr "[音频]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:35
 #, kde-format
 msgid "[Tool call]"
-msgstr ""
+msgstr "[工具调用]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:38
 #, kde-format
 msgid "[Tool result]"
-msgstr ""
+msgstr "[工具结果]"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Sampling Request from MCP Server"
-msgstr ""
+msgstr "来自 MCP 服务器的采样请求"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Send to LLM"
-msgstr ""
+msgstr "发送到 LLM"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Reject"
-msgstr ""
+msgstr "拒绝"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:89
 #, kde-format
 msgid ""
 "The MCP server \"%1\" wants to send the following messages to the LLM. The "
 "generated answer will be returned to the server."
-msgstr ""
+msgstr "MCP 服务器“%1”想要向LLM 发送以下消息。生成的答案将返回到该服务器。"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:102
 #, kde-format
@@ -3448,6 +3421,8 @@ msgid ""
 "System prompt:\n"
 "%1"
 msgstr ""
+"系统提示词：\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3455,6 +3430,8 @@ msgid ""
 "Assistant:\n"
 "%1"
 msgstr ""
+"辅助程序：\n"
+"%1"
 
 #: widgets/mcp/textautogeneratesamplingdialog.cpp:107
 #, kde-format
@@ -3462,6 +3439,8 @@ msgid ""
 "User:\n"
 "%1"
 msgstr ""
+"用户：\n"
+"%1"
 
 #: widgets/menu/textautogeneratemenuconfiguredialog.cpp:24
 #, kde-format
@@ -3523,25 +3502,24 @@ msgid ""
 "How much the model reasons before answering. A higher level gives better "
 "answers to complex questions, but is slower and uses more tokens."
 msgstr ""
+"模型在回答前进行推理的程度。级别越高，对复杂问题的回答越好，但速度越慢，消耗"
+"的词元也越多。"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:57
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Comma-separated, used when the server doesn't list its models"
-msgstr ""
+msgstr "逗号分隔，当服务器不列出其模型时使用"
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Copy URL"
+#, kde-format
 msgid "Custom URL:"
-msgstr "复制 URL"
+msgstr "自定义 URL："
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:63
-#, fuzzy, kde-format
-#| msgid "Models"
+#, kde-format
 msgid "Models:"
-msgstr "模型"
+msgstr "模型："
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:66
 #, kde-format
@@ -3549,112 +3527,103 @@ msgid "Max Tokens:"
 msgstr "最大词元数："
 
 #: widgets/networkpluginconfigure/textautogeneratenetworkpluginconfigurewidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Thinking"
+#, kde-format
 msgid "Thinking:"
-msgstr "思考"
+msgstr "思考："
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:120
-#, fuzzy, kde-format
-#| msgid "Text Plugins"
+#, kde-format
 msgid "Text Plugins:"
-msgstr "文本插件"
+msgstr "文本插件："
 
 #: widgets/plugintext/textautogenerateplugintextmanager.cpp:126
-#, fuzzy, kde-format
-#| msgid "Tool identifier: %1"
+#, kde-format
 msgid "Text identifier: %1"
-msgstr "工具识别符：%1"
+msgstr "文本标识符：%1"
 
 #: widgets/projects/textautogeneratemanageprojectsdialog.cpp:22
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Projects"
-msgstr ""
+msgstr "管理项目"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Project…"
-msgstr ""
+msgstr "添加项目…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Project…"
-msgstr "修改…"
+msgstr "修改项目…"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Project"
-msgstr "移除模型"
+msgstr "移除项目"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:118
 #, kde-format
 msgid ""
 "Do you want to remove this project (%1)? Its chats will be kept, outside of "
 "any project."
-msgstr ""
+msgstr "你想要删除此项目 (%1) 吗？它的对话将被保留，但独立于任何项目之外。"
 
 #: widgets/projects/textautogeneratemanageprojectswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Project"
-msgstr "移除模型"
+msgstr "移除项目"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Project"
-msgstr ""
+msgstr "添加项目"
 
 #: widgets/projects/textautogenerateprojectdialog.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Project"
-msgstr ""
+msgstr "修改项目"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:23
 #, kde-format
 msgctxt "@title:menu"
 msgid "Project"
-msgstr ""
+msgstr "项目"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:50
 #, kde-format
 msgctxt "@action"
 msgid "No Project"
-msgstr ""
+msgstr "没有项目"
 
 #: widgets/projects/textautogenerateprojectsmenu.cpp:76
 #, kde-format
 msgctxt "@action"
 msgid "Manage Projects…"
-msgstr ""
+msgstr "管理项目…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Project name…"
-msgstr ""
+msgstr "项目名称…"
 
 #: widgets/projects/textautogenerateprojectwidget.cpp:34
 #, kde-format
 msgid "Icon:"
-msgstr ""
+msgstr "图标："
 
 #: widgets/promptswidget/textautogenerateagentdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Agent"
-msgstr ""
+msgstr "智能体"
 
 #: widgets/promptswidget/textautogenerateagentwidget.cpp:30
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:41
@@ -3666,129 +3635,108 @@ msgstr "描述："
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:21
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "杂项"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:22
 #, kde-format
 msgid "Travel"
-msgstr ""
+msgstr "旅行"
 
 #: widgets/promptswidget/textautogeneratepromptcategorycombobox.cpp:23
 #, kde-format
 msgid "Undefined"
-msgstr ""
+msgstr "未定义"
 
 #: widgets/promptswidget/textautogeneratepromptdialog.cpp:23
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:window"
 msgid "Prompt"
 msgstr "提示词"
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Categories"
+#, kde-format
 msgid "Category:"
-msgstr "类别"
+msgstr "类别："
 
 #: widgets/promptswidget/textautogeneratepromptwidget.cpp:43
 #, kde-format
 msgid "Command Completion:"
-msgstr ""
+msgstr "命令补全："
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Instance…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Agent…"
-msgstr "添加实例…"
+msgstr "添加智能体…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Agent"
-msgstr "移除"
+msgstr "移除智能体"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance (%1)?"
+#, kde-format
 msgid "Do you want to remove this agent (%1)?"
-msgstr "您想要移除此实例 (%1) 吗？"
+msgstr "您想要移除此智能体 (%1) 吗？"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Agent"
-msgstr "移除"
+msgstr "移除智能体"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
 msgctxt "@action"
 msgid "Add prompt…"
-msgstr ""
+msgstr "添加提示词…"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Prompt"
-msgstr "移除模型"
+msgstr "移除提示词"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:47
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this prompt (%1)?"
-msgstr "您想要移除此模型 (%1) 吗？"
+msgstr "您想要移除此提示词 (%1) 吗？"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Prompt"
-msgstr "移除模型"
+msgstr "移除提示词"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Instance…"
+#, kde-format
 msgctxt "@action"
 msgid "Add Skill…"
-msgstr "添加实例…"
+msgstr "添加技能…"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:41
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@action"
 msgid "Remove Skill"
-msgstr "移除模型"
+msgstr "移除技能"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:44
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this model (%1)?"
+#, kde-format
 msgid "Do you want to remove this skill (%1)?"
-msgstr "您想要移除此模型 (%1) 吗？"
+msgstr "您想要移除此技能 (%1) 吗？"
 
 #: widgets/promptswidget/textautogenerateselectskilllistwidget.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Remove Model"
+#, kde-format
 msgctxt "@title"
 msgid "Remove Skill"
-msgstr "移除模型"
+msgstr "移除技能"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Skill"
-msgstr ""
+msgstr "技能"
 
 #: widgets/promptswidget/textautogenerateskillwidget.cpp:34
 #, kde-format
@@ -3837,88 +3785,77 @@ msgstr "保存对话到数据库"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Tags"
-msgstr ""
+msgstr "管理标签"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Add Instance…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Tag…"
-msgstr "添加实例…"
+msgstr "添加标签…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify Tag…"
-msgstr "修改…"
+msgstr "修改标签…"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove Tag"
-msgstr "移除"
+msgstr "移除标签"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:118
-#, fuzzy, kde-format
-#| msgid "Do you want to remove this instance (%1)?"
+#, kde-format
 msgid "Do you want to remove this tag (%1)?"
-msgstr "您想要移除此实例 (%1) 吗？"
+msgstr "您想要移除此标签 (%1) 吗？"
 
 #: widgets/tags/textautogeneratemanagetagswidget.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Remove"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Tag"
-msgstr "移除"
+msgstr "移除标签"
 
 #: widgets/tags/textautogenerateselecttagscombobox.cpp:118
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag selected"
-msgstr ""
+msgstr "没有选择标签"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:23
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Tag"
-msgstr ""
+msgstr "添加标签"
 
 #: widgets/tags/textautogeneratetagdialog.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Modify…"
+#, kde-format
 msgctxt "@title:window"
 msgid "Modify Tag"
-msgstr "修改…"
+msgstr "修改标签"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:35
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tags"
-msgstr ""
+msgstr "标签"
 
 #: widgets/tags/textautogeneratetagsmenu.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Manage Tags…"
-msgstr ""
+msgstr "管理标签…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:27
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Tag name…"
-msgstr ""
+msgstr "标签名称…"
 
 #: widgets/tags/textautogeneratetagwidget.cpp:35
 #, kde-format
 msgid "Color:"
-msgstr ""
+msgstr "颜色："
 
 #: widgets/textautogeneratedialog.cpp:32
 #, kde-format
@@ -3930,15 +3867,13 @@ msgstr "对话"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Chat"
-msgstr "新聊天"
+msgstr "新建对话"
 
 #: widgets/textautogenerateheaderwidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Remove Discussion"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Ephemeral Discussion"
-msgstr "移除讨论"
+msgstr "非持久化对话"
 
 #: widgets/textautogenerateheaderwidget.cpp:63
 #, kde-format
@@ -3956,35 +3891,31 @@ msgstr "搜索… (%1)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Only show the chats which have one of the selected tags"
-msgstr ""
+msgstr "仅显示包含所选标签之一的对话"
 
 #: widgets/textautogeneratehistorywidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Clear"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear tags"
-msgstr "清除"
+msgstr "清除标签"
 
 #: widgets/textautogeneratehistorywidget.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Search Channels"
+#, kde-format
 msgctxt "@action"
 msgid "Search Chat"
-msgstr "搜索频道"
+msgstr "搜索对话记录"
 
 #: widgets/textautogeneratehistorywidget.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "Previous Chat"
-msgstr "上一个聊天"
+msgstr "上一个对话"
 
 #: widgets/textautogeneratehistorywidget.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Next Chat"
-msgstr "下一个聊天"
+msgstr "下一个对话"
 
 #: widgets/textautogeneratesearchdialog.cpp:25
 #, kde-format
@@ -4015,26 +3946,25 @@ msgid "Tools:"
 msgstr "工具："
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
-#, fuzzy, kde-format
-#| msgid "No plugin found."
+#, kde-format
 msgid "No tools found"
-msgstr "没有找到插件。"
+msgstr "没有找到工具"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:192
 #, kde-format
 msgid "No allowed tools"
-msgstr ""
+msgstr "没有允许的工具"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:194
 #, kde-format
 msgid "1 tool"
 msgid_plural "%1 tools"
-msgstr[0] ""
+msgstr[0] "%1 个工具"
 
 #: widgets/toolswidget/textautogeneratetoolswidget.cpp:204
 #, kde-format
 msgid "Tools of MCP server \"%1\" (%2)"
-msgstr ""
+msgstr "MCP 服务器“%1” 的工具 (%2)"
 
 #: widgets/view/delegate/textautogeneratelistviewdelegate.cpp:500
 #, kde-format
@@ -4156,7 +4086,7 @@ msgstr "插入文本"
 #, kde-format
 msgctxt "@action"
 msgid "New Chat"
-msgstr "新聊天"
+msgstr "新建对话"
 
 #: widgets/view/textautogeneratehistorylistview.cpp:157
 #, kde-format
@@ -4208,19 +4138,3 @@ msgstr "没有找到归档。"
 #, kde-format
 msgid "No Messages Found."
 msgstr "没有找到消息。"
-
-#~ msgctxt "@title"
-#~ msgid "Copy Block Code"
-#~ msgstr "复制代码块"
-
-#~ msgid "Plugins Text:"
-#~ msgstr "插件文本："
-
-#~ msgid "Images (*.png *.xpm *.jpg *.gif)"
-#~ msgstr "图像 (*.png *.xpm *.jpg *.gif)"
-
-#~ msgid "Audio (*.mp4 *.avi)"
-#~ msgstr "音频 (*.mp4 *.avi)"
-
-#~ msgid "Text (*.txt *.md)"
-#~ msgstr "文本 (*.txt *.md)"

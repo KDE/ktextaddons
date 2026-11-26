@@ -130,10 +130,9 @@ msgid "Grammalecte path not found."
 msgstr "找不到 Grammalecte 路径。"
 
 #: grammalecte/grammalecteresultwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Grammalecte program file not found."
+#, kde-format
 msgid "Python program file not found."
-msgstr "找不到 Grammalecte 程序文件。"
+msgstr "找不到 Python 程序文件。"
 
 #: grammalecte/grammalecteresultwidget.cpp:71
 #, kde-format
@@ -334,7 +333,7 @@ msgstr "刷新"
 #: languagetool/languagetoolgetlistoflanguagejob.cpp:36
 #, kde-format
 msgid "Url is empty."
-msgstr ""
+msgstr "URL 为空。"
 
 #: languagetool/languagetoolresultwidget.cpp:64
 #, kde-format
