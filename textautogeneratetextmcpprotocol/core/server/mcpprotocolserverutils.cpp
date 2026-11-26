@@ -106,13 +106,46 @@ void McpProtocolServerUtils::saveSettings(const McpProtocolSettings &settings)
 
 void McpProtocolServerUtils::printTools(const QList<TextAutoGenerateTextMcpProtocolCore::McpProtocolTool> &lst)
 {
+    struct ToolInfo {
+        QString groupName;
+        QString groupTitle;
+        QString toolName;
+        QString description;
+    };
+
+    QList<ToolInfo> toolInfoLst;
+    toolInfoLst.reserve(lst.count());
+
     qsizetype nameWidth = 0;
     for (const auto &tool : lst) {
-        nameWidth = std::max(nameWidth, tool.name().size());
+        ToolInfo i;
+        i.toolName = tool.name();
+        i.description = tool.description().value_or(tool.title().value_or(QString()));
+
+        nameWidth = std::max(nameWidth, i.toolName.size());
+
+        if (const auto meta = tool.meta(); meta.has_value() && meta->meta().has_value()) {
+            const auto values = *meta->meta();
+            i.groupName = values.value(McpProtocolCommonUtils::metaGroupName()).toString();
+            i.groupTitle = values.value(McpProtocolCommonUtils::metaGroupTitle()).toString();
+        }
+        toolInfoLst.append(std::move(i));
     }
+
+    // Tools without group first, then tools grouped by _meta group
+    std::sort(toolInfoLst.begin(), toolInfoLst.end(), [](const ToolInfo &left, const ToolInfo &right) {
+        return std::tie(left.groupName, left.toolName) < std::tie(right.groupName, right.toolName);
+    });
+
     QTextStream out(stdout);
     out << i18n("List of Tools:") << '\n';
-    for (const auto &tool : lst) {
-        out << "   " << tool.name().leftJustified(nameWidth) << "   " << tool.description().value_or(tool.title().value_or(QString())) << '\n';
+
+    QString currentGroupName;
+    for (const auto &tool : toolInfoLst) {
+        if (tool.groupName != currentGroupName) {
+            currentGroupName = tool.groupName;
+            out << "   " << (tool.groupTitle.isEmpty() ? tool.groupName : tool.groupTitle) << '\n';
+        }
+        out << "      " << tool.toolName.leftJustified(nameWidth) << "   " << tool.description << '\n';
     }
 }
