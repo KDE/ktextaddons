@@ -20,4 +20,5 @@ private Q_SLOTS:
     void shouldAddPrompt();
     void shouldRemovePrompt();
     void shouldUpdatePrompt();
+    void shouldReturnDecorationRole();
 };

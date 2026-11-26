@@ -5,6 +5,7 @@
 */
 #include "textautogeneratetextskillmodel.h"
 #include "textautogeneratetextcore_debug.h"
+#include <QIcon>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextSkillModel::TextAutoGenerateTextSkillModel(QObject *parent)
@@ -34,6 +35,11 @@ QVariant TextAutoGenerateTextSkillModel::data(const QModelIndex &index, int role
     case Qt::DisplayRole:
     case Name:
         return item.name();
+    case Qt::DecorationRole:
+        if (const QString iconName = item.iconName(); !iconName.isEmpty()) {
+            return QIcon::fromTheme(iconName);
+        }
+        break;
     case Description:
         return item.description();
     case Instructions:

@@ -5,6 +5,7 @@
 */
 #include "textautogeneratetextagentmodel.h"
 #include "textautogeneratetextcore_debug.h"
+#include <QIcon>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextAgentModel::TextAutoGenerateTextAgentModel(QObject *parent)
@@ -34,6 +35,11 @@ QVariant TextAutoGenerateTextAgentModel::data(const QModelIndex &index, int role
     case Qt::DisplayRole:
     case Name:
         return item.name();
+    case Qt::DecorationRole:
+        if (const QString iconName = item.iconName(); !iconName.isEmpty()) {
+            return QIcon::fromTheme(iconName);
+        }
+        break;
     case Description:
         return item.description();
     case Identifier:

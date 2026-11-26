@@ -5,6 +5,7 @@
 */
 #include "textautogeneratetextagentmodeltest.h"
 #include "core/models/textautogeneratetextagentmodel.h"
+#include <QIcon>
 #include <QSignalSpy>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateTextAgentModelTest)
@@ -108,6 +109,19 @@ void TextAutoGenerateTextAgentModelTest::shouldUpdateAgent()
     model.updateAgent(createAgent("unknown"_ba, u"foobla"_s));
     QCOMPARE(dataChangedSpy.count(), 1);
     QCOMPARE(model.rowCount(), 2);
+}
+
+void TextAutoGenerateTextAgentModelTest::shouldReturnDecorationRole()
+{
+    TextAutoGenerateText::TextAutoGenerateTextAgentModel model;
+    TextAutoGenerateText::TextAutoGenerateAgent withIcon = createAgent("foo"_ba, u"bla"_s);
+    withIcon.setIconName(u"document-edit"_s);
+    model.setAgents({createAgent("foo1"_ba, u"bla1"_s), withIcon});
+
+    QVERIFY(!model.index(0).data(Qt::DecorationRole).isValid());
+    const QVariant decoration = model.index(1).data(Qt::DecorationRole);
+    QVERIFY(decoration.isValid());
+    QCOMPARE(decoration.metaType(), QMetaType::fromType<QIcon>());
 }
 
 #include "moc_textautogeneratetextagentmodeltest.cpp"

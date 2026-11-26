@@ -5,6 +5,7 @@
 */
 #include "textautogeneratetextpromptmodel.h"
 #include "textautogeneratetextcore_debug.h"
+#include <QIcon>
 
 using namespace TextAutoGenerateText;
 TextAutoGenerateTextPromptModel::TextAutoGenerateTextPromptModel(QObject *parent)
@@ -34,6 +35,11 @@ QVariant TextAutoGenerateTextPromptModel::data(const QModelIndex &index, int rol
     case Qt::DisplayRole:
     case Name:
         return prompt.name();
+    case Qt::DecorationRole:
+        if (const QString iconName = prompt.iconName(); !iconName.isEmpty()) {
+            return QIcon::fromTheme(iconName);
+        }
+        break;
     case Description:
         return prompt.description();
     case PromptText:

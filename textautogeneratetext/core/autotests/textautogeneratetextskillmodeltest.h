@@ -20,4 +20,5 @@ private Q_SLOTS:
     void shouldAddSkill();
     void shouldRemoveSkill();
     void shouldUpdateSkill();
+    void shouldReturnDecorationRole();
 };

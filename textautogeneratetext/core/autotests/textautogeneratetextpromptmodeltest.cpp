@@ -5,6 +5,7 @@
 */
 #include "textautogeneratetextpromptmodeltest.h"
 #include "core/models/textautogeneratetextpromptmodel.h"
+#include <QIcon>
 #include <QSignalSpy>
 #include <QTest>
 QTEST_GUILESS_MAIN(TextAutoGenerateTextPromptModelTest)
@@ -118,6 +119,19 @@ void TextAutoGenerateTextPromptModelTest::shouldUpdatePrompt()
     model.updatePrompt(createPrompt("unknown"_ba, u"foobla"_s));
     QCOMPARE(dataChangedSpy.count(), 1);
     QCOMPARE(model.rowCount(), 2);
+}
+
+void TextAutoGenerateTextPromptModelTest::shouldReturnDecorationRole()
+{
+    TextAutoGenerateText::TextAutoGenerateTextPromptModel model;
+    TextAutoGenerateText::TextAutoGeneratePrompt withIcon = createPrompt("foo"_ba, u"bla"_s);
+    withIcon.setIconName(u"document-edit"_s);
+    model.setPrompt({createPrompt("foo1"_ba, u"bla1"_s), withIcon});
+
+    QVERIFY(!model.index(0).data(Qt::DecorationRole).isValid());
+    const QVariant decoration = model.index(1).data(Qt::DecorationRole);
+    QVERIFY(decoration.isValid());
+    QCOMPARE(decoration.metaType(), QMetaType::fromType<QIcon>());
 }
 
 #include "moc_textautogeneratetextpromptmodeltest.cpp"

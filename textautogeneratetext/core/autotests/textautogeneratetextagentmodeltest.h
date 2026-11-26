@@ -20,4 +20,5 @@ private Q_SLOTS:
     void shouldAddAgent();
     void shouldRemoveAgent();
     void shouldUpdateAgent();
+    void shouldReturnDecorationRole();
 };
