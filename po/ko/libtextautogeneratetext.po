@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-24 18:50+0000\n"
+"POT-Creation-Date: 2026-11-26 18:45+0000\n"
 "PO-Revision-Date: 2026-05-26 21:41+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -4051,7 +4051,7 @@ msgctxt "@title"
 msgid "Remove Agent"
 msgstr "삭제…"
 
-#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
+#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:31
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "New Chat"
@@ -4114,6 +4114,14 @@ msgstr "삭제하시겠습니까?"
 msgctxt "@title"
 msgid "Remove Skill"
 msgstr "모델 새로 고침"
+
+#: widgets/promptswidget/textautogenerateselectskillwidget.cpp:31
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "New Chat"
+msgctxt "@info:placeholder"
+msgid "Search skill…"
+msgstr "새 대화"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:24
 #, kde-format

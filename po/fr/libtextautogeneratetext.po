@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-24 18:50+0000\n"
+"POT-Creation-Date: 2026-11-26 18:45+0000\n"
 "PO-Revision-Date: 2026-08-25 15:36+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -4455,7 +4455,7 @@ msgctxt "@title"
 msgid "Remove Agent"
 msgstr "Supprimer"
 
-#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
+#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:31
 #, fuzzy, kde-format
 #| msgctxt "@info:placeholder"
 #| msgid "Search…"
@@ -4518,6 +4518,14 @@ msgstr "Voulez-vous vraiment supprimer ce modèle (%1) ?"
 msgctxt "@title"
 msgid "Remove Skill"
 msgstr "Supprimer un modèle"
+
+#: widgets/promptswidget/textautogenerateselectskillwidget.cpp:31
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search skill…"
+msgstr "Rechercher..."
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:24
 #, kde-format

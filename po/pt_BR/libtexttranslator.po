@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-25 18:32+0000\n"
-"PO-Revision-Date: 2026-08-27 07:02-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@kde.org>\n"
+"PO-Revision-Date: 2026-11-26 05:19-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -590,7 +590,7 @@ msgstr "A URL do servidor não está definida."
 #: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:76
 #, kde-format
 msgid "Server returned an invalid languages list."
-msgstr ""
+msgstr "O servidor retornou uma lista de idiomas inválida."
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:32
 #, kde-format

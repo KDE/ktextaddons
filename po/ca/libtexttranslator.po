@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-25 18:32+0000\n"
-"PO-Revision-Date: 2026-08-27 08:50+0200\n"
+"PO-Revision-Date: 2026-11-26 11:21+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: translator/misc/translatorutil.cpp:33
 #, kde-format
@@ -592,7 +592,7 @@ msgstr "No s'ha definit l'URL del servidor."
 #: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:76
 #, kde-format
 msgid "Server returned an invalid languages list."
-msgstr ""
+msgstr "El servidor ha retornat una llista d'idiomes no vàlida."
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:32
 #, kde-format

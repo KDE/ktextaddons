@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-25 20:59+0000\n"
-"PO-Revision-Date: 2026-11-23 11:00+0100\n"
+"POT-Creation-Date: 2026-11-26 06:32+0000\n"
+"PO-Revision-Date: 2026-11-26 09:23+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -121,10 +121,10 @@ msgstr "El servidor s'ha iniciat"
 msgid "Server stopped"
 msgstr "El servidor s'ha aturat"
 
-#: core/server/mcpprotocolserverutils.cpp:114
+#: core/server/mcpprotocolserverutils.cpp:141
 #, kde-format
 msgid "List of Tools:"
-msgstr ""
+msgstr "Llista d'eines:"
 
 #: plugins/client/mcpclientutils.cpp:130
 #, kde-format

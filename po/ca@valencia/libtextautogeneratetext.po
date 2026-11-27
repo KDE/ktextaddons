@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-24 18:50+0000\n"
+"POT-Creation-Date: 2026-11-26 18:45+0000\n"
 "PO-Revision-Date: 2026-11-25 10:48+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -4538,7 +4538,7 @@ msgctxt "@title"
 msgid "Remove Agent"
 msgstr "Elimina l'agent"
 
-#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
+#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:31
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search agent…"
@@ -4589,6 +4589,14 @@ msgstr "Voleu eliminar esta habilitat (%1)?"
 msgctxt "@title"
 msgid "Remove Skill"
 msgstr "Elimina l'habilitat"
+
+#: widgets/promptswidget/textautogenerateselectskillwidget.cpp:31
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search skill…"
+msgstr "Busca…"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:24
 #, kde-format

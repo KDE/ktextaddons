@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-24 18:50+0000\n"
+"POT-Creation-Date: 2026-11-26 18:45+0000\n"
 "PO-Revision-Date: 2025-03-19 13:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -3930,7 +3930,7 @@ msgctxt "@title"
 msgid "Remove Agent"
 msgstr "Configurar a IA"
 
-#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
+#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:31
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search agent…"
@@ -3985,6 +3985,12 @@ msgstr ""
 msgctxt "@title"
 msgid "Remove Skill"
 msgstr "Configurar a IA"
+
+#: widgets/promptswidget/textautogenerateselectskillwidget.cpp:31
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search skill…"
+msgstr ""
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:24
 #, kde-format

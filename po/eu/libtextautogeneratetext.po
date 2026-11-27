@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-24 18:50+0000\n"
+"POT-Creation-Date: 2026-11-26 18:45+0000\n"
 "PO-Revision-Date: 2026-09-28 21:07+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -4403,7 +4403,7 @@ msgctxt "@title"
 msgid "Remove Agent"
 msgstr "Etiketa kendu"
 
-#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
+#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:31
 #, fuzzy, kde-format
 #| msgctxt "@info:placeholder"
 #| msgid "Search…"
@@ -4463,6 +4463,14 @@ msgstr "Eredu hau kendu nahi duzu (%1)?"
 msgctxt "@title"
 msgid "Remove Skill"
 msgstr "Kendu eredua"
+
+#: widgets/promptswidget/textautogenerateselectskillwidget.cpp:31
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search skill…"
+msgstr "Bilatu…"
 
 # 2026-09-28 al. Trebetasuna hautagai ona da, baina AA ingurunean skill objektu tekniko bihurtzen ari da —sistemari gaitasun jakin bat ematen dion konfigurazio/definizio modukoa—, eta horrelakoetan gaitasuna ere aztertu beharko genuke. Kode-testuingurua ikusi gabe ez nuke oraindik gidarako skill → trebetasun finkatuko. Jokoetan dugun skill → trebetasun-maila beste kontzeptu bat da.
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:24

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-24 18:50+0000\n"
+"POT-Creation-Date: 2026-11-26 18:45+0000\n"
 "PO-Revision-Date: 2026-11-20 07:36+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -4547,7 +4547,7 @@ msgctxt "@title"
 msgid "Remove Agent"
 msgstr "Удаление агента"
 
-#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
+#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:31
 #, fuzzy, kde-format
 #| msgctxt "@info:placeholder"
 #| msgid "Search…"
@@ -4600,6 +4600,14 @@ msgstr "Удалить этот навык (%1)?"
 msgctxt "@title"
 msgid "Remove Skill"
 msgstr "Удаление навыка"
+
+#: widgets/promptswidget/textautogenerateselectskillwidget.cpp:31
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search skill…"
+msgstr "Поиск…"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:24
 #, kde-format

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetext\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-24 18:50+0000\n"
-"PO-Revision-Date: 2026-11-21 00:56+0100\n"
+"POT-Creation-Date: 2026-11-26 18:45+0000\n"
+"PO-Revision-Date: 2026-11-27 00:38+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3435,6 +3435,10 @@ msgid ""
 "Experts model with 3B active parameters, built for agentic software "
 "engineering."
 msgstr ""
+"North Mini Code es el primer modelo de Cohere para desarrolladores: un "
+"modelo de mezcla de expertos de 30 000 millones de parámetros, con 3000 "
+"millones de parámetros activos, diseñado para la ingeniería de software "
+"basada en agentes."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:447
 #, kde-format
@@ -3449,6 +3453,8 @@ msgid ""
 "Ornith-1.5 is a major step toward building foundation models through end-to-"
 "end self-improvement."
 msgstr ""
+"Ornith-1.5 constituye un paso importante hacia la creación de modelos base "
+"mediante la mejora automática de extremo a extremo."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:450
 #, kde-format
@@ -3468,6 +3474,8 @@ msgid ""
 "pplx-decider is a 27B decision model from Perplexity, fine-tuned from "
 "Qwen3.8-27B."
 msgstr ""
+"pplx-decider es un modelo de decisión de 27B de Perplexity, ajustado a "
+"partir de Qwen3.8-27B."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:453
 #, kde-format
@@ -3475,6 +3483,8 @@ msgid ""
 "pplx-decider-flash is a 4B decision model from Perplexity, built on "
 "Qwen3.5-4B."
 msgstr ""
+"pplx-decider-flash es un modelo de decisión de 4B de Perplexity, construido "
+"sobre Qwen3.5-4B."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:455
 #, kde-format
@@ -3482,6 +3492,9 @@ msgid ""
 "Qwen3-Coder-Next is a coding-focused language model from Alibaba's Qwen "
 "team, optimized for agentic coding workflows and local development."
 msgstr ""
+"Qwen3-Coder-Next es un modelo de lenguaje centrado en la programación, "
+"desarrollado por el equipo Qwen de Alibaba y optimizado para flujos de "
+"trabajo de programación basados ​​en agentes y para el desarrollo local."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:456
 #, kde-format
@@ -3489,17 +3502,22 @@ msgid ""
 "Qwen3.8 delivers substantial gains across coding, professional work, "
 "research, and long-horizon agentic tasks."
 msgstr ""
+"Qwen3.8 ofrece mejoras sustanciales en programación, trabajo profesional, "
+"investigación y tareas de agentes a largo plazo."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:457
 #, kde-format
 msgid "An experimental preview of the architecture that will underpin Qwen4."
 msgstr ""
+"Un adelanto experimental de la arquitectura que servirá de base para Qwen4."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:458
 #, kde-format
 msgid ""
 "65B dense model built for agentic coding, with up to 1M tokens of context."
 msgstr ""
+"Modelo denso de 65B diseñado para la programación mediante agentes, con "
+"hasta 1 millón de tókenes de contexto."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:459
 #, kde-format
@@ -3507,11 +3525,14 @@ msgid ""
 "A 2B decision model from Strands Agents for fast classification, routing, "
 "and scoring."
 msgstr ""
+"Un modelo de decisión 2B de Strands Agents para una rápida clasificación, "
+"enrutamiento y puntuación."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:460
 #, kde-format
 msgid "A 4B decision model from Together AI for fast classification."
 msgstr ""
+"Un modelo de decisión de 4B de Together AI para una clasificación rápida."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:506
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:510
@@ -3820,27 +3841,22 @@ msgid "Tool Plugins"
 msgstr "Complementos de herramientas"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:35
-#, fuzzy, kde-format
-#| msgid "Prompt"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Prompts"
 msgstr "Indicaciones"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Skill"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Skills"
-msgstr "Habilidad"
+msgstr "Habilidades"
 
 #: widgets/configure/textautogeneratetextconfigurepromptsagentswidget.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Agent"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Agents"
-msgstr "Agente"
+msgstr "Agentes"
 
 #: widgets/configure/textautogeneratetextconfigurepromptwidget.cpp:24
 #, kde-format
@@ -4408,12 +4424,10 @@ msgid "Command Completion:"
 msgstr "Terminación de órdenes:"
 
 #: widgets/promptswidget/textautogeneratesearchpromptwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search prompt…"
-msgstr "Buscar…"
+msgstr "Indicación de búsqueda…"
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
 #, kde-format
@@ -4438,13 +4452,11 @@ msgctxt "@title"
 msgid "Remove Agent"
 msgstr "Eliminar agente"
 
-#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder"
-#| msgid "Search…"
+#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:31
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search agent…"
-msgstr "Buscar…"
+msgstr "Agente de búsqueda…"
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -4491,6 +4503,14 @@ msgstr "¿Quiere eliminar esta habilidad (%1)?"
 msgctxt "@title"
 msgid "Remove Skill"
 msgstr "Eliminar habilidad"
+
+#: widgets/promptswidget/textautogenerateselectskillwidget.cpp:31
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search skill…"
+msgstr "Buscar…"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:24
 #, kde-format

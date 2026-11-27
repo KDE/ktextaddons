@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-25 20:59+0000\n"
-"PO-Revision-Date: 2026-11-24 23:43+0100\n"
+"POT-Creation-Date: 2026-11-26 06:32+0000\n"
+"PO-Revision-Date: 2026-11-26 14:33+0100\n"
 "Last-Translator: freek <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -119,10 +119,10 @@ msgstr "Server is gestart"
 msgid "Server stopped"
 msgstr "Server is gestopt."
 
-#: core/server/mcpprotocolserverutils.cpp:114
+#: core/server/mcpprotocolserverutils.cpp:141
 #, kde-format
 msgid "List of Tools:"
-msgstr ""
+msgstr "Lijst met hulpmiddelen:"
 
 #: plugins/client/mcpclientutils.cpp:130
 #, kde-format

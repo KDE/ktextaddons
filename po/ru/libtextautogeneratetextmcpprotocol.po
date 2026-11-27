@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtextautogeneratetextmcpprotocol\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-25 20:59+0000\n"
+"POT-Creation-Date: 2026-11-26 06:32+0000\n"
 "PO-Revision-Date: 2026-11-23 07:49+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -119,7 +119,7 @@ msgstr "Сервер запущен"
 msgid "Server stopped"
 msgstr "Сервер остановлен"
 
-#: core/server/mcpprotocolserverutils.cpp:114
+#: core/server/mcpprotocolserverutils.cpp:141
 #, kde-format
 msgid "List of Tools:"
 msgstr ""

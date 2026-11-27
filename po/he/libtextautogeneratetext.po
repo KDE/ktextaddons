@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-24 18:50+0000\n"
-"PO-Revision-Date: 2026-11-24 11:39+0200\n"
+"POT-Creation-Date: 2026-11-26 18:45+0000\n"
+"PO-Revision-Date: 2026-11-26 15:35+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
@@ -3257,6 +3257,8 @@ msgid ""
 "Experts model with 3B active parameters, built for agentic software "
 "engineering."
 msgstr ""
+"North Mini Code הוא המודל הראשון של Cohere למפתחים, 30B של ערבוב תחומי "
+"מומחיות עם 3B משתנים פעילים, נבנה להנדסת תוכנה נתמכת סוכנים."
 
 #: plugins/ollamacommon/ollamacommonmodelutils.cpp:447
 #, kde-format
@@ -4234,7 +4236,7 @@ msgctxt "@title"
 msgid "Remove Agent"
 msgstr "הסרת סוכן"
 
-#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
+#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:31
 #, fuzzy, kde-format
 #| msgctxt "@info:placeholder"
 #| msgid "Search…"
@@ -4287,6 +4289,14 @@ msgstr "להסיר את המיומנות הזאת (%1)?"
 msgctxt "@title"
 msgid "Remove Skill"
 msgstr "הסרת מיומנות"
+
+#: widgets/promptswidget/textautogenerateselectskillwidget.cpp:31
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search skill…"
+msgstr "חיפוש…"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:24
 #, kde-format

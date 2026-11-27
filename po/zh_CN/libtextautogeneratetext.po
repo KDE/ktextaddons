@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-24 18:50+0000\n"
+"POT-Creation-Date: 2026-11-26 18:45+0000\n"
 "PO-Revision-Date: 2025-02-21 19:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -4227,10 +4227,10 @@ msgid "Command Completion:"
 msgstr "命令补全："
 
 #: widgets/promptswidget/textautogeneratesearchpromptwidget.cpp:28
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search prompt…"
-msgstr "搜索…"
+msgstr ""
 
 #: widgets/promptswidget/textautogenerateselectagentlistwidget.cpp:27
 #, kde-format
@@ -4255,11 +4255,11 @@ msgctxt "@title"
 msgid "Remove Agent"
 msgstr "移除智能体"
 
-#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:28
-#, fuzzy, kde-format
+#: widgets/promptswidget/textautogenerateselectagentwidget.cpp:31
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search agent…"
-msgstr "搜索…"
+msgstr ""
 
 #: widgets/promptswidget/textautogenerateselectpromptlistwidget.cpp:29
 #, kde-format
@@ -4306,6 +4306,14 @@ msgstr "您想要移除此技能 (%1) 吗？"
 msgctxt "@title"
 msgid "Remove Skill"
 msgstr "移除技能"
+
+#: widgets/promptswidget/textautogenerateselectskillwidget.cpp:31
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder"
+#| msgid "Search…"
+msgctxt "@info:placeholder"
+msgid "Search skill…"
+msgstr "搜索…"
 
 #: widgets/promptswidget/textautogenerateskilldialog.cpp:24
 #, kde-format
