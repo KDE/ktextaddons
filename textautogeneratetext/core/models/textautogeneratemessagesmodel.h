@@ -186,7 +186,7 @@ public:
     void appendToolExchange(const QByteArray &uuid,
                             const QString &content,
                             const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &toolCalls,
-                            const QList<QPair<QByteArray, QString>> &results);
+                            const QList<std::pair<QByteArray, QString>> &results);
 
     /*!
      * Returns the current search text.

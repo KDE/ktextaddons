@@ -189,7 +189,7 @@ void TextAutoGenerateTextPlugin::processToolCalls(const SendToAssistantInfo &inf
     connect(job,
             &TextAutoGenerateToolCallJob::toolResults,
             this,
-            [this, info, toolCalls, content = response.response](const QList<QPair<QByteArray, QString>> &results) {
+            [this, info, toolCalls, content = response.response](const QList<std::pair<QByteArray, QString>> &results) {
                 d->toolCallJobs.remove(info.messageUuid);
                 auto messageModel = d->manager->messagesModelFromChatId(info.chatId);
                 if (!messageModel) {

@@ -399,7 +399,7 @@ void TextAutoGenerateMessage::setToolExchange(const QJsonArray &newToolExchange)
 
 void TextAutoGenerateMessage::appendToolExchange(const QString &content,
                                                  const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &toolCalls,
-                                                 const QList<QPair<QByteArray, QString>> &results)
+                                                 const QList<std::pair<QByteArray, QString>> &results)
 {
     QJsonArray calls;
     for (const auto &toolCall : toolCalls) {

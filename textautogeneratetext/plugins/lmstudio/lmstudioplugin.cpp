@@ -122,22 +122,22 @@ void LMStudioPlugin::sendToAssistant(const SendToAssistantInfo &info)
     const QByteArray chatId = info.chatId;
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &LMStudioReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
-                                                       manager()->replaceContent(chatId, messageUuid, reply->readResponse(), {}); // TODO
-                                                   })));
+        std::pair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &LMStudioReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
+                                                           manager()->replaceContent(chatId, messageUuid, reply->readResponse(), {}); // TODO
+                                                       })));
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &LMStudioReply::finished, this, [reply, messageUuid, chatId, info, this] {
-                                                       if (const auto response = reply->readResponse(); response.hasToolCallArguments()) {
-                                                           processToolCalls(info, response);
-                                                       } else {
-                                                           manager()->changeInProgress(chatId, messageUuid, false);
-                                                       }
-                                                       qCDebug(AUTOGENERATETEXT_LMSTUDIO_PLUGIN_LOG) << " progress finished";
-                                                       mConnections.remove(reply);
-                                                       reply->deleteLater();
-                                                       // Q_EMIT finished(message); // TODO add message as argument ???
-                                                   })));
+        std::pair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &LMStudioReply::finished, this, [reply, messageUuid, chatId, info, this] {
+                                                           if (const auto response = reply->readResponse(); response.hasToolCallArguments()) {
+                                                               processToolCalls(info, response);
+                                                           } else {
+                                                               manager()->changeInProgress(chatId, messageUuid, false);
+                                                           }
+                                                           qCDebug(AUTOGENERATETEXT_LMSTUDIO_PLUGIN_LOG) << " progress finished";
+                                                           mConnections.remove(reply);
+                                                           reply->deleteLater();
+                                                           // Q_EMIT finished(message); // TODO add message as argument ???
+                                                       })));
 }
 
 QString LMStudioPlugin::displayName() const

@@ -443,7 +443,7 @@ TextAutoGenerateMessagesModel::convertToOllamaChat(bool hasSystemMessageSupport,
 void TextAutoGenerateMessagesModel::appendToolExchange(const QByteArray &uuid,
                                                        const QString &content,
                                                        const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &toolCalls,
-                                                       const QList<QPair<QByteArray, QString>> &results)
+                                                       const QList<std::pair<QByteArray, QString>> &results)
 {
     if (auto it = findMessage(uuid); it != mMessages.end()) {
         (*it).appendToolExchange(content, toolCalls, results);
