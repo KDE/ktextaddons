@@ -4,11 +4,20 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpserverlistviewdelegate.h"
+#include "mcserverlistviewdelegateutils.h"
 #include <QApplication>
 #include <QIcon>
 #include <QPainter>
 #include <TextAutoGenerateTextMcpProtocolCore/McpServerModel>
 using namespace TextAutoGenerateTextMcpProtocolWidgets;
+
+namespace
+{
+QStyle *widgetStyle(const QStyleOptionViewItem &option)
+{
+    return option.widget ? option.widget->style() : QApplication::style();
+}
+}
 
 McpServerListViewDelegate::McpServerListViewDelegate(QObject *parent)
     : QStyledItemDelegate{parent}
@@ -16,26 +25,6 @@ McpServerListViewDelegate::McpServerListViewDelegate(QObject *parent)
 }
 
 McpServerListViewDelegate::~McpServerListViewDelegate() = default;
-
-namespace
-{
-QFont descriptionFont(const QFont &font)
-{
-    QFont f = font;
-    f.setItalic(true);
-    if (f.pointSizeF() > 0) {
-        f.setPointSizeF(qMax(1.0, f.pointSizeF() - 2));
-    } else if (f.pixelSize() > 0) {
-        f.setPixelSize(qMax(1, f.pixelSize() - 2));
-    }
-    return f;
-}
-
-QStyle *widgetStyle(const QStyleOptionViewItem &option)
-{
-    return option.widget ? option.widget->style() : QApplication::style();
-}
-}
 
 void McpServerListViewDelegate::initStyleOption(QStyleOptionViewItem *option, const QModelIndex &index) const
 {
@@ -70,7 +59,7 @@ void McpServerListViewDelegate::paint(QPainter *painter, const QStyleOptionViewI
     const int textMargin = style->pixelMetric(QStyle::PM_FocusFrameHMargin, nullptr, opt.widget) + 1;
     textRect.adjust(textMargin, 0, -textMargin, 0);
 
-    const QFont descFont = descriptionFont(opt.font);
+    const QFont descFont = McServerListViewDelegateUtils::descriptionFont(opt.font);
     const QFontMetrics fontMetrics(opt.font);
     const QFontMetrics descFontMetrics(descFont);
     const int top = textRect.top() + qMax(0, (textRect.height() - fontMetrics.height() - descFontMetrics.height()) / 2);
@@ -103,7 +92,7 @@ QSize McpServerListViewDelegate::sizeHint(const QStyleOptionViewItem &option, co
     const QStyle *style = widgetStyle(opt);
 
     const QFontMetrics fontMetrics(opt.font);
-    const QFontMetrics descFontMetrics(descriptionFont(opt.font));
+    const QFontMetrics descFontMetrics(McServerListViewDelegateUtils::descriptionFont(opt.font));
     const QString serverTypeName = index.data(TextAutoGenerateTextMcpProtocolCore::McpServerModel::ServerType).toString();
 
     const int textMargin = style->pixelMetric(QStyle::PM_FocusFrameHMargin, nullptr, opt.widget) + 1;
