@@ -8,11 +8,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX TEXTAUTOGENERATETEXTMCPPROTOCOLWIDGETS
     SOVERSION 1
 )
 
-add_library(
-    KF6TextAutoGenerateTextMcpProtocolWidgets
-    client/mcserverlistviewdelegateutils.h
-    client/mcserverlistviewdelegateutils.cpp
-)
+add_library(KF6TextAutoGenerateTextMcpProtocolWidgets)
 
 add_library(KF6::TextAutoGenerateTextMcpProtocolWidgets ALIAS KF6TextAutoGenerateTextMcpProtocolWidgets)
 
@@ -41,6 +37,8 @@ target_sources(
         server/mcpprotocolserverconfiguredialog.cpp
         server/mcpprotocolserverconfiguretokenwidget.h
         server/mcpprotocolserverconfiguretokenwidget.cpp
+        client/mcserverlistviewdelegateutils.h
+        client/mcserverlistviewdelegateutils.cpp
         client/addmcpregistryserverwidget.h
         client/addmcpregistryserverwidget.cpp
         client/addmcpserverdialog.cpp
