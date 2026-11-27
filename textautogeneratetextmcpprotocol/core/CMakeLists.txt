@@ -583,6 +583,7 @@ target_link_libraries(
         KF6::CoreAddons
         KF6::ConfigCore
     PRIVATE
+        KF6::TextUtils
         KF6::I18n
         qt6keychain
         KF6::Notifications

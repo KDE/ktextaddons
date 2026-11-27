@@ -12,6 +12,7 @@
 #include <KSharedConfig>
 #include <QTextStream>
 #include <TextAutoGenerateTextMcpProtocolCore/McpProtocolTool>
+#include <TextUtils/TextUtilsColorShell>
 #include <algorithm>
 
 using namespace Qt::Literals::StringLiterals;
@@ -138,14 +139,14 @@ void McpProtocolServerUtils::printTools(const QList<TextAutoGenerateTextMcpProto
     });
 
     QTextStream out(stdout);
-    out << i18n("List of Tools:") << '\n';
+    out << TextUtils::TextUtilsColorShell::bold(i18n("List of Tools:")) << '\n';
 
     QString currentGroupName;
     for (const auto &tool : toolInfoLst) {
         if (tool.groupName != currentGroupName) {
             currentGroupName = tool.groupName;
-            out << "   " << (tool.groupTitle.isEmpty() ? tool.groupName : tool.groupTitle) << '\n';
+            out << "   " << TextUtils::TextUtilsColorShell::cyan(tool.groupTitle.isEmpty() ? tool.groupName : tool.groupTitle) << '\n';
         }
-        out << "      " << tool.toolName.leftJustified(nameWidth) << "   " << tool.description << '\n';
+        out << "      " << TextUtils::TextUtilsColorShell::bold(tool.toolName.leftJustified(nameWidth)) << "   " << tool.description << '\n';
     }
 }
