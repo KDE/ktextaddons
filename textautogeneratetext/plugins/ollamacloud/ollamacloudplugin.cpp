@@ -115,16 +115,16 @@ void OllamaCloudPlugin::askToAssistant(const QString &msg)
     const QByteArray uuid = TextAutoGenerateText::TextAutoGenerateTextUtils::generateUUid();
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::contentAdded, this, [reply, this]() {
-                                                       Q_EMIT askToAssistantAnswer(reply->readResponse());
-                                                   })));
+        std::pair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::contentAdded, this, [reply, this]() {
+                                                           Q_EMIT askToAssistantAnswer(reply->readResponse());
+                                                       })));
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::finished, this, [reply, this] {
-                                                       Q_EMIT askToAssistantDone();
-                                                       mConnections.remove(reply);
-                                                       reply->deleteLater();
-                                                   })));
+        std::pair<QByteArray, QMetaObject::Connection>(uuid, connect(reply, &TextAutoGenerateText::TextAutoGenerateReply::finished, this, [reply, this] {
+                                                           Q_EMIT askToAssistantDone();
+                                                           mConnections.remove(reply);
+                                                           reply->deleteLater();
+                                                       })));
 }
 
 TextAutoGenerateText::TextAutoGenerateReply *OllamaCloudPlugin::chatCompletion(const TextAutoGenerateText::TextAutoGenerateTextRequest &request)
@@ -143,21 +143,23 @@ void OllamaCloudPlugin::sendToAssistant(const SendToAssistantInfo &info)
     const QByteArray chatId = info.chatId;
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaCommonReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
-                                                       manager()->replaceContent(chatId, messageUuid, reply->readResponse(), {}); // TODO
-                                                   })));
+        std::pair<QByteArray, QMetaObject::Connection>(messageUuid,
+                                                       connect(reply, &OllamaCommonReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
+                                                           manager()->replaceContent(chatId, messageUuid, reply->readResponse(), {}); // TODO
+                                                       })));
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &OllamaCommonReply::finished, this, [reply, messageUuid, chatId, info, this] {
-                                                       if (const auto response = reply->readResponse(); response.hasToolCallArguments()) {
-                                                           processToolCalls(info, response);
-                                                       } else {
-                                                           manager()->changeInProgress(chatId, messageUuid, false);
-                                                       }
-                                                       qCDebug(AUTOGENERATETEXT_OLLAMACLOUD_PLUGIN_LOG) << " progress finished";
-                                                       mConnections.remove(reply);
-                                                       reply->deleteLater();
-                                                   })));
+        std::pair<QByteArray, QMetaObject::Connection>(messageUuid,
+                                                       connect(reply, &OllamaCommonReply::finished, this, [reply, messageUuid, chatId, info, this] {
+                                                           if (const auto response = reply->readResponse(); response.hasToolCallArguments()) {
+                                                               processToolCalls(info, response);
+                                                           } else {
+                                                               manager()->changeInProgress(chatId, messageUuid, false);
+                                                           }
+                                                           qCDebug(AUTOGENERATETEXT_OLLAMACLOUD_PLUGIN_LOG) << " progress finished";
+                                                           mConnections.remove(reply);
+                                                           reply->deleteLater();
+                                                       })));
 }
 
 QString OllamaCloudPlugin::displayName() const

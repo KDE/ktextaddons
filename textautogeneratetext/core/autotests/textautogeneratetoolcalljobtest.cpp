@@ -113,7 +113,7 @@ void TextAutoGenerateToolCallJobTest::shouldCallSeveralTools()
     QCOMPARE(info.content, u"sync_tool a\nasync_tool b"_s);
     // Result of each tool, in order of tool calls
     QCOMPARE(toolResultsSpy.count(), 1);
-    using ToolResults = QList<QPair<QByteArray, QString>>;
+    using ToolResults = QList<std::pair<QByteArray, QString>>;
     const auto results = toolResultsSpy.at(0).at(0).value<ToolResults>();
     const ToolResults expected{{"id_sync_tool"_ba, u"sync_tool a"_s}, {"id_async_tool"_ba, u"async_tool b"_s}};
     QCOMPARE(results, expected);

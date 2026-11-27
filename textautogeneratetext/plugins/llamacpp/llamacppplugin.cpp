@@ -129,12 +129,12 @@ void LLamaCppPlugin::sendToAssistant(const SendToAssistantInfo &info)
     const QByteArray chatId = info.chatId;
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &LMStudioReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
+        std::pair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &LMStudioReply::contentAdded, this, [reply, messageUuid, chatId, this]() {
                                                        manager()->replaceContent(chatId, messageUuid, reply->readResponse(), {}); // TODO
                                                    })));
     mConnections.insert(
         reply,
-        QPair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &LMStudioReply::finished, this, [reply, messageUuid, chatId, info, this] {
+        std::pair<QByteArray, QMetaObject::Connection>(messageUuid, connect(reply, &LMStudioReply::finished, this, [reply, messageUuid, chatId, info, this] {
                                                        if (const auto response = reply->readResponse(); response.hasToolCallArguments()) {
                                                            processToolCalls(info, response);
                                                        } else {

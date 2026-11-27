@@ -232,6 +232,7 @@ add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 add_definitions(-DQT_NO_JAVA_STYLE_ITERATORS)
 if(ECM_VERSION VERSION_GREATER_EQUAL "6.33.0")
     add_definitions(-DQT_LEAN_HEADERS=2)
+    add_definitions(-DQT_NO_QPAIR)
 endif()
 ecm_set_disabled_deprecation_versions(
     QT 6.12.0

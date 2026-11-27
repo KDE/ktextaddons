@@ -318,7 +318,7 @@ public:
      */
     void appendToolExchange(const QString &content,
                             const QList<TextAutoGenerateText::TextAutoGenerateReply::ToolCallArgumentInfo> &toolCalls,
-                            const QList<QPair<QByteArray, QString>> &results);
+                            const QList<std::pair<QByteArray, QString>> &results);
 
     /*!
      * Convert message (tool exchange and content) to messages sent to LLM.

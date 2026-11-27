@@ -344,7 +344,7 @@ protected:
     void cancelToolCalls(const QByteArray &uuid);
     /*!
      */
-    QMultiHash<TextAutoGenerateText::TextAutoGenerateReply *, QPair<QByteArray, QMetaObject::Connection>> mConnections;
+    QMultiHash<TextAutoGenerateText::TextAutoGenerateReply *, std::pair<QByteArray, QMetaObject::Connection>> mConnections;
     /*!
      */
     QList<ModelInfoNameAndIdentifier> mModels;

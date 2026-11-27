@@ -90,7 +90,7 @@ Q_SIGNALS:
     /*!
      * \brief Emitted before finished() with result of each tool call (tool call id, result), in order of tool calls
      */
-    void toolResults(const QList<QPair<QByteArray, QString>> &results);
+    void toolResults(const QList<std::pair<QByteArray, QString>> &results);
 
 private:
     [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *
@@ -106,7 +106,7 @@ private:
     const QList<TextAutoGenerateReply::ToolCallArgumentInfo> mInfos;
     QStringList mResult;
     // Result of each tool call (same order as mInfos)
-    QList<QPair<QByteArray, QString>> mToolResults;
+    QList<std::pair<QByteArray, QString>> mToolResults;
     QHash<TextAutoGenerateText::TextAutoGenerateTextToolBaseJob *, int> mJobIndex;
     QList<TextAutoGenerateAttachmentUtils::AttachmentElementInfo> mAttachments;
     QByteArray mToolIdentifier;
