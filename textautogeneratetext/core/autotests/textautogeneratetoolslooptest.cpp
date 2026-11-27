@@ -64,9 +64,6 @@ public:
     bool alwaysCallTool = false;
     TextAutoGenerateText::TextAutoGenerateMessage::ToolCallFormat format = TextAutoGenerateText::TextAutoGenerateMessage::ToolCallFormat::OpenAI;
 
-    void showConfigureDialog(QWidget *) override
-    {
-    }
     [[nodiscard]] QString translatedPluginName() const override
     {
         return u"fake"_s;

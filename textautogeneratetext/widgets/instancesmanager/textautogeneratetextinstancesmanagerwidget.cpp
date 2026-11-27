@@ -20,6 +20,7 @@
 #include <QVBoxLayout>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 #include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
+#include <TextAutoGenerateText/TextAutoGenerateTextPluginConfigure>
 
 using namespace TextAutoGenerateText;
 using namespace Qt::Literals::StringLiterals;
@@ -65,8 +66,12 @@ TextAutoGenerateTextInstancesManagerWidget::TextAutoGenerateTextInstancesManager
     });
     connect(mInstancesManagerListView, &TextAutoGenerateTextInstancesManagerListView::editInstance, this, [this](const QByteArray &uuid) {
         if (auto plugin = mManager->textAutoGenerateTextInstancesManager()->textAutoGenerateTextInstanceModel()->editInstance(uuid); plugin) {
-            plugin->showConfigureDialog(this);
-            Q_EMIT settingsChanged();
+            if (auto configureDialog = qobject_cast<TextAutoGenerateText::TextAutoGenerateTextPluginConfigure *>(plugin); configureDialog) {
+                configureDialog->showConfigureDialog(this);
+                Q_EMIT settingsChanged();
+            } else {
+                qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << "Plugin doesn't support configure dialog: " << uuid;
+            }
         } else {
             qCWarning(TEXTAUTOGENERATETEXT_WIDGET_LOG) << " Impossible to edit instance " << uuid;
         }

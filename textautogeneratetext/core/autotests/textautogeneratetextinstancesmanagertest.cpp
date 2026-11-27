@@ -17,7 +17,6 @@ class CustomPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
 public:
     using TextAutoGenerateTextPlugin::TextAutoGenerateTextPlugin;
 
-    void showConfigureDialog(QWidget *parentWidget) override;
     [[nodiscard]] QString translatedPluginName() const override;
     [[nodiscard]] QString engineName() const override;
     [[nodiscard]] QString currentModel() const override;
@@ -40,10 +39,6 @@ private:
     QString mCurrentModel;
     QString mDisplayName;
 };
-
-void CustomPlugin::showConfigureDialog([[maybe_unused]] QWidget *parentWidget)
-{
-}
 
 QString CustomPlugin::translatedPluginName() const
 {

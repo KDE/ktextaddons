@@ -17,7 +17,6 @@
 #include <memory>
 class QDebug;
 class QAction;
-class QWidget;
 class QJsonObject;
 namespace TextAutoGenerateText
 {
@@ -124,10 +123,6 @@ public:
     /*!
      */
     ~TextAutoGenerateTextPlugin() override;
-
-    /*!
-     */
-    virtual void showConfigureDialog(QWidget *parentWidget) = 0;
 
     /*!
      * \class TextAutoGenerateText::TextAutoGenerateTextPlugin::ActivateInstanceActionInfo

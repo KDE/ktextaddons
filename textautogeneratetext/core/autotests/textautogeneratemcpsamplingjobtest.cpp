@@ -46,9 +46,6 @@ public:
     QList<TextAutoGenerateText::TextAutoGenerateTextRequest> requests;
     QPointer<FakeReply> reply;
 
-    void showConfigureDialog(QWidget *) override
-    {
-    }
     [[nodiscard]] QString translatedPluginName() const override
     {
         return u"fake"_s;

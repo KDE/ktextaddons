@@ -5,15 +5,16 @@
 */
 
 #pragma once
-
 #include "core/textautogeneratetextplugin.h"
+#include <TextAutoGenerateText/TextAutoGenerateTextPluginConfigure>
 #include <memory>
 
 class OllamaCloudSettings;
 class OllamaCloudManager;
-class OllamaCloudPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
+class OllamaCloudPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin, public TextAutoGenerateText::TextAutoGenerateTextPluginConfigure
 {
     Q_OBJECT
+    Q_INTERFACES(TextAutoGenerateText::TextAutoGenerateTextPluginConfigure)
 public:
     explicit OllamaCloudPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
                                TextAutoGenerateText::TextAutoGenerateTextInstance *instance,

@@ -8,12 +8,13 @@
 #pragma once
 
 #include "core/textautogeneratetextplugin.h"
-
+#include <TextAutoGenerateText/TextAutoGenerateTextPluginConfigure>
 class LLamaCppSettings;
 class QAction;
-class LLamaCppPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
+class LLamaCppPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin, public TextAutoGenerateText::TextAutoGenerateTextPluginConfigure
 {
     Q_OBJECT
+    Q_INTERFACES(TextAutoGenerateText::TextAutoGenerateTextPluginConfigure)
 public:
     explicit LLamaCppPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
                             TextAutoGenerateText::TextAutoGenerateTextInstance *instance,

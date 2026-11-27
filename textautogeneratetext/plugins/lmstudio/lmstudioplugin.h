@@ -8,13 +8,15 @@
 #pragma once
 
 #include "core/textautogeneratetextplugin.h"
+#include <TextAutoGenerateText/TextAutoGenerateTextPluginConfigure>
 
 class LMStudioManager;
 class LMStudioSettings;
 class QAction;
-class LMStudioPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
+class LMStudioPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin, public TextAutoGenerateText::TextAutoGenerateTextPluginConfigure
 {
     Q_OBJECT
+    Q_INTERFACES(TextAutoGenerateText::TextAutoGenerateTextPluginConfigure)
 public:
     explicit LMStudioPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
                             TextAutoGenerateText::TextAutoGenerateTextInstance *instance,

@@ -7,11 +7,13 @@
 #pragma once
 
 #include <TextAutoGenerateText/TextAutoGenerateTextPlugin>
+#include <TextAutoGenerateText/TextAutoGenerateTextPluginConfigure>
 class GenericNetworkSettings;
 class GenericNetworkManager;
-class GenericNetworkPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
+class GenericNetworkPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin, public TextAutoGenerateText::TextAutoGenerateTextPluginConfigure
 {
     Q_OBJECT
+    Q_INTERFACES(TextAutoGenerateText::TextAutoGenerateTextPluginConfigure)
 public:
     explicit GenericNetworkPlugin(TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
                                   TextAutoGenerateText::TextAutoGenerateManager *manager,

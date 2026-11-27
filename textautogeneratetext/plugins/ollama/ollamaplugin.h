@@ -7,13 +7,14 @@
 #pragma once
 
 #include "core/textautogeneratetextplugin.h"
-
+#include <TextAutoGenerateText/TextAutoGenerateTextPluginConfigure>
 class QAction;
 class OllamaManager;
 class OllamaSettings;
-class OllamaPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin
+class OllamaPlugin : public TextAutoGenerateText::TextAutoGenerateTextPlugin, public TextAutoGenerateText::TextAutoGenerateTextPluginConfigure
 {
     Q_OBJECT
+    Q_INTERFACES(TextAutoGenerateText::TextAutoGenerateTextPluginConfigure)
 public:
     explicit OllamaPlugin(TextAutoGenerateText::TextAutoGenerateManager *manager,
                           TextAutoGenerateText::TextAutoGenerateTextInstance *instance,
