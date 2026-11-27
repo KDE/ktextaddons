@@ -14,6 +14,8 @@ add_library(
     server/mcpprotocolserverconfiguretokenwidget.cpp
     client/addmcpregistryserverwidget.h
     client/addmcpregistryserverwidget.cpp
+    client/mcserverlistviewdelegateutils.h
+    client/mcserverlistviewdelegateutils.cpp
 )
 
 add_library(KF6::TextAutoGenerateTextMcpProtocolWidgets ALIAS KF6TextAutoGenerateTextMcpProtocolWidgets)

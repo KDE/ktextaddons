@@ -4,6 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "mcpregistryserverlistviewdelegate.h"
+#include "mcserverlistviewdelegateutils.h"
 #include <QApplication>
 #include <QIcon>
 #include <QNetworkAccessManager>
@@ -23,24 +24,6 @@ McpRegistryServerListViewDelegate::~McpRegistryServerListViewDelegate() = defaul
 
 namespace
 {
-QFont nameFont(const QFont &font)
-{
-    QFont f = font;
-    f.setBold(true);
-    return f;
-}
-
-QFont descriptionFont(const QFont &font)
-{
-    QFont f = font;
-    if (f.pointSizeF() > 0) {
-        f.setPointSizeF(qMax(1.0, f.pointSizeF() - 1));
-    } else if (f.pixelSize() > 0) {
-        f.setPixelSize(qMax(1, f.pixelSize() - 1));
-    }
-    return f;
-}
-
 QStyle *widgetStyle(const QStyleOptionViewItem &option)
 {
     return option.widget ? option.widget->style() : QApplication::style();
@@ -128,8 +111,8 @@ void McpRegistryServerListViewDelegate::paint(QPainter *painter, const QStyleOpt
     }
     textRect.setLeft(iconRect.right() + 1 + iconSpacing(opt));
 
-    const QFont titleFont = nameFont(opt.font);
-    const QFont descFont = descriptionFont(opt.font);
+    const QFont titleFont = McServerListViewDelegateUtils::nameFont(opt.font);
+    const QFont descFont = McServerListViewDelegateUtils::descriptionFont(opt.font);
     const QFontMetrics fontMetrics(titleFont);
     const QFontMetrics descFontMetrics(descFont);
     const int contentHeight = fontMetrics.height() + (description.isEmpty() ? 0 : descFontMetrics.height());
@@ -165,8 +148,8 @@ QSize McpRegistryServerListViewDelegate::sizeHint(const QStyleOptionViewItem &op
     initStyleOption(&opt, index);
     const QStyle *style = widgetStyle(opt);
 
-    const QFontMetrics fontMetrics(nameFont(opt.font));
-    const QFontMetrics descFontMetrics(descriptionFont(opt.font));
+    const QFontMetrics fontMetrics(McServerListViewDelegateUtils::nameFont(opt.font));
+    const QFontMetrics descFontMetrics(McServerListViewDelegateUtils::descriptionFont(opt.font));
     const QString description = index.data(TextAutoGenerateTextMcpProtocolCore::McpRegistryServerModel::Description).toString();
 
     const int textMargin = style->pixelMetric(QStyle::PM_FocusFrameHMargin, nullptr, opt.widget) + 1;
