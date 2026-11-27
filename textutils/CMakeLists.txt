@@ -40,6 +40,8 @@ target_sources(
         texttohtml/textutilstexttohtml_p.h
         texttohtml/textutilsemoticonsparser.cpp
         texttohtml/textutilsemoticonsparser_p.h
+        colorshell/textutilscolorshell.h
+        colorshell/textutilscolorshell.cpp
         textutils_private_export.h
 )
 
@@ -159,12 +161,21 @@ ecm_generate_headers(TextUtils_CMark_CamelCase_HEADERS
     RELATIVE cmark
 )
 
+ecm_generate_headers(TextUtils_Colorshell_CamelCase_HEADERS
+    HEADER_NAMES
+    TextUtilsColorShell
+    REQUIRED_HEADERS TextUtils_Colorshell_HEADERS
+    PREFIX TextUtils
+    RELATIVE colorshell
+)
+
 set(TEXTUTILS_FILES
     ${TextUtils_HEADERS}
     ${TextUtils_Syntaxhighlighting_HEADERS}
     ${TextUtils_CMark_HEADERS}
     ${TextUtils_Colors_HEADERS}
     ${TextUtils_TextToHtml_HEADERS}
+    ${TextUtils_Colorshell_HEADERS}
 )
 
 install(
@@ -181,6 +192,7 @@ install(
         ${TextUtils_CMark_CamelCase_HEADERS}
         ${TextUtils_Colors_CamelCase_HEADERS}
         ${TextUtils_TextToHtml_CamelCase_HEADERS}
+        ${TextUtils_Colorshell_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/TextUtils/TextUtils/
     COMPONENT Devel
 )
@@ -236,5 +248,6 @@ ecm_installed_library_check_include_strings(KF6TextUtils
     ${TextUtils_CMark_CamelCase_HEADERS}
     ${TextUtils_Colors_CamelCase_HEADERS}
     ${TextUtils_TextToHtml_CamelCase_HEADERS}
+    ${TextUtils_Colorshell_CamelCase_HEADERS}
     PREFIX TextUtils
 )
