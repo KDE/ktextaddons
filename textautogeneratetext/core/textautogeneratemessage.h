@@ -8,7 +8,6 @@
 
 #include "textautogeneratetextcore_export.h"
 #include <QJsonArray>
-#include <QPair>
 #include <TextAutoGenerateText/TextAutoGenerateAnswerInfo>
 #include <TextAutoGenerateText/TextAutoGenerateAttachments>
 #include <TextAutoGenerateText/TextAutoGenerateReply>
