@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-25 18:32+0000\n"
-"PO-Revision-Date: 2026-09-22 22:40+0200\n"
-"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"PO-Revision-Date: 2026-11-27 07:58+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -590,7 +590,7 @@ msgstr "Не задан URL-адрес сервера."
 #: translator/plugins/libretranslate/libretranslatelanguagesjob.cpp:76
 #, kde-format
 msgid "Server returned an invalid languages list."
-msgstr ""
+msgstr "Сервер вернул неверный список языков."
 
 #: translator/plugins/lingva/lingvaengineclient.cpp:32
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-26 06:32+0000\n"
+"POT-Creation-Date: 2026-11-27 19:21+0000\n"
 "PO-Revision-Date: 2026-10-29 18:24+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -117,7 +117,7 @@ msgstr "Palvelin käynnistynyt"
 msgid "Server stopped"
 msgstr "Palvelin pysähtynyt"
 
-#: core/server/mcpprotocolserverutils.cpp:141
+#: core/server/mcpprotocolserverutils.cpp:142
 #, kde-format
 msgid "List of Tools:"
 msgstr ""

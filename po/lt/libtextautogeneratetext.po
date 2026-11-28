@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktextaddons\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-26 18:45+0000\n"
+"POT-Creation-Date: 2026-11-27 18:45+0000\n"
 "PO-Revision-Date: 2025-09-01 00:41+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -966,24 +966,24 @@ msgstr ""
 msgid "Ollama"
 msgstr ""
 
-#: plugins/ollama/ollamaplugin.cpp:231
+#: plugins/ollama/ollamaplugin.cpp:233
 #, kde-format
 msgid ""
 "Ollama not found on system. Ask to your administrator system to install it."
 msgstr ""
 
-#: plugins/ollama/ollamaplugin.cpp:233
+#: plugins/ollama/ollamaplugin.cpp:235
 #, kde-format
 msgid "Ollama not found on system. Please install it."
 msgstr ""
 
-#: plugins/ollama/ollamaplugin.cpp:234
+#: plugins/ollama/ollamaplugin.cpp:236
 #, kde-format
 msgctxt "@action"
 msgid "Download Ollama"
 msgstr ""
 
-#: plugins/ollama/ollamaplugin.cpp:240
+#: plugins/ollama/ollamaplugin.cpp:242
 #, kde-format
 msgctxt "@action"
 msgid "Start Ollama"
@@ -3413,7 +3413,7 @@ msgctxt "@title"
 msgid "Remove Instance"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:46
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:47
 #: widgets/mcp/textautogeneratemcpservertoolswidget.cpp:55
 #: widgets/textautogeneratesearchwidget.cpp:30
 #, kde-format
@@ -3421,7 +3421,7 @@ msgctxt "@info:placeholder"
 msgid "Search…"
 msgstr ""
 
-#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:53
+#: widgets/instancesmanager/textautogeneratetextinstancesmanagerwidget.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add Instance…"
