@@ -281,10 +281,6 @@ target_link_libraries(
         KF6::TextUtils
 )
 
-if(TARGET Qt6::TextToSpeech)
-    target_link_libraries(KF6TextAutoGenerateTextCore PRIVATE KF6::TextEditTextToSpeech)
-endif()
-
 if(NOT WIN32 AND NOT APPLE)
     target_link_libraries(KF6TextAutoGenerateTextCore PRIVATE Qt::DBus)
 endif()

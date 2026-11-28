@@ -410,6 +410,12 @@ public:
 #endif
 
     /*!
+     * Updates the text-to-speech in progress state of messages when speech switches
+     * from \a previousId to \a currentId (-1 when there is none).
+     */
+    void slotAboutToSynthesizeChanged(qsizetype previousId, qsizetype currentId);
+
+    /*!
      * Returns whether debug mode is enabled.
      * \return true if debug mode is enabled, false otherwise
      */
@@ -711,7 +717,6 @@ private Q_SLOTS:
 
 private:
     TEXTAUTOGENERATETEXTCORE_NO_EXPORT void setChatPersistence(const QByteArray &chatId, TextAutoGenerateChat::Persistence persistence);
-    TEXTAUTOGENERATETEXTCORE_NO_EXPORT void slotAboutToSynthesizeChanged(qsizetype previousId, qsizetype currentId);
     TEXTAUTOGENERATETEXTCORE_NO_EXPORT void checkInitializedMessagesModel();
     TEXTAUTOGENERATETEXTCORE_NO_EXPORT void initializeMessagesModel(const QByteArray &chatId);
     [[nodiscard]] TEXTAUTOGENERATETEXTCORE_NO_EXPORT QByteArray addChat(const QString &title, TextAutoGenerateChat::Persistence persistence);

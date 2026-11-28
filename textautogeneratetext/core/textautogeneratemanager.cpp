@@ -34,7 +34,6 @@
 #endif
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include "core/texttospeech/textautogeneratetexttospeechenqueuemanager.h"
-#include <TextEditTextToSpeech/TextToSpeech>
 #endif
 
 #include <KLocalizedString>
@@ -111,12 +110,6 @@ TextAutoGenerateManager::TextAutoGenerateManager(QObject *parent)
     connect(this, &TextAutoGenerateManager::configChanged, this, &TextAutoGenerateManager::loadEngine);
     mTextAutoGenerateSettings->load();
     mTextAutoGenerateAgentPrompSkillManager->load();
-#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-    connect(TextEditTextToSpeech::TextToSpeech::self(),
-            &TextEditTextToSpeech::TextToSpeech::aboutToSynthesize,
-            this,
-            &TextAutoGenerateManager::slotAboutToSynthesizeChanged);
-#endif
     mTextAutoGenerateChatSettings->loadChatPendingTypedInfo();
 }
 

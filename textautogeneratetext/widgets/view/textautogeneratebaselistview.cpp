@@ -34,6 +34,14 @@ TextAutoGenerateBaseListView::TextAutoGenerateBaseListView(TextAutoGenerateText:
     setProperty("_breeze_borders_sides", QVariant::fromValue(QFlags{Qt::BottomEdge}));
     if (mManager) {
         connect(mManager, &TextAutoGenerateText::TextAutoGenerateManager::fontSizeChanged, this, &TextAutoGenerateBaseListView::slotFontChanged);
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+        // Several views share the same manager: connect only once
+        connect(TextEditTextToSpeech::TextToSpeech::self(),
+                &TextEditTextToSpeech::TextToSpeech::aboutToSynthesize,
+                mManager,
+                &TextAutoGenerateText::TextAutoGenerateManager::slotAboutToSynthesizeChanged,
+                Qt::UniqueConnection);
+#endif
     }
 
     setVerticalScrollMode(QAbstractItemView::ScrollPerPixel); // nicer in case of huge messages
